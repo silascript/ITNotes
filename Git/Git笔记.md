@@ -1,5 +1,6 @@
 ---
 date created: 2022-11-07 02:06
+date updated: 2022-11-07 03:48
 ---
 
 # Git 笔记
@@ -178,24 +179,25 @@ git push origin --tags
 ```shell
 git config --global init.defaultBranch <名称>
 ```
- 设置完默认分支后，可以查看 `~/.gitconfig` 配置文件，可以看到如下的内容：
- ```
- [init]
-	defaultBranch = main
-```
 
+设置完默认分支后，可以查看 `~/.gitconfig` 配置文件，可以看到如下的内容：
+
+```
+[init]
+   defaultBranch = main
+```
 
 #### <span id="git_branch_showbranch">显示当前分支</span>
 
 ```shell
 git branch
 ```
+
 如果本地仓库只进行了`git add` 操作，从未有 `git commit` 操作，将不会生成任何分支。
 
 而第一次 `git commit` 后生成默认分支，原来未设置全局默认分支名称前，默认分支都叫「master」。
 
 如果你的仓库`git init` 在你，设置全局默认分支名称之前，那你 `commit` 后生成的分支仍叫 「master」。
-
 
 #### <span id="git_branch_chockout">切换分支</span>
 
@@ -203,11 +205,17 @@ git branch
 git checkout 分支名
 ```
 
+#### <span id="git_branch_midify">修改分支名</span>
+
+```bash
+git branch -M 名称
+```
+
 ---
 
-### 辅助操作
+### 常用辅助操作
 
-查看版本当前状态:
+#### 查看版本当前状态
 
 ```shell
 git status
@@ -215,7 +223,7 @@ git status
 
 ![](Git笔记.assets/2020-12-06 10-24-40屏幕截图.png)
 
-查看提交日志:
+#### 查看提交日志
 
 ```shell
 git log
@@ -223,7 +231,7 @@ git log
 
 ![](Git笔记.assets/2020-12-06 10-26-02屏幕截图.png)
 
-查看当前分支:
+#### 查看当前分支
 
 ```shell
 git branch
@@ -231,13 +239,9 @@ git branch
 
 ![](Git笔记.assets/2020-12-06 10-26-57屏幕截图.png)
 
-修改当前分支名称：
+更多的分支操作请参考：[分支操作](#git_branch)
 
-```bash
-git branch -M 名称
-```
-
-查看暂存区:
+#### 查看暂存区
 
 ```shell
 git ls-files -s
@@ -245,7 +249,11 @@ git ls-files -s
 
 ![](Git笔记.assets/2020-12-06 10-28-33屏幕截图.png)
 
-查看远程版本库:
+---
+
+### <span id="git_remote">远程相关</span>
+
+#### 查看远程库信息
 
 ```shell
 git remote show 远程版本库名称
@@ -259,7 +267,7 @@ git remote show 远程版本库名称
 git remote -v 
 ```
 
-修改远程仓库地址：
+#### 修改远程仓库地址
 
 方法三种：
 
@@ -281,6 +289,47 @@ git remote add 远程仓库名 远程仓库地址
 3. 直接修改config文件
 
 在目录下有一个.git目录，是存放git相关的数据，其中有一个config文件，是存储一git相关配置，其中就有远程仓库地址，将其修改即可。
+
+#### 非空本地库与非空远程库关联
+
+本地库`commit` 完了，再关联远程库：
+
+```shell
+git remote add 远程库名称 远程库地址
+```
+
+试着使用 `git push -u origin main` 看能不能 `push` 成功，由于远程库非空，所以不可能成功，会有如下错误提示：
+
+```
+提示：更新被拒绝，因为远程仓库包含您本地尚不存在的提交。这通常是因为另外
+提示：一个仓库已向该引用进行了推送。再次推送前，您可能需要先整合远程变更
+提示：（如 'git pull ...'）。
+提示：详见 'git push --help' 中的 'Note about fast-forwards' 小节。
+```
+
+处理这种问题，就得使用以下命令：
+
+```shell
+git pull --rebase origin main
+```
+
+> 使用 ` git pull --rebase  ` 命令前提是工作区干净。
+
+经过这个特殊的 `pull`，因为远程和本地都是非空，所以肯定是出现冲突，一般来说，新建的远程，可能是因为 `README.md` 文件或授权文件而冲突。
+
+`git rebase`，顾名思义，就是*重新定义*（re）*起点*（base）的作用，即重新定义分支的版本库状态。
+
+`git pull --rebase` 执行过程中会将本地当前分支里的每个提交（commit）取消掉，然后把将本地当前分支更新为最新的 `origin` 分支。
+
+`git pull --rebase` 执行后如果有合并冲突，使用以下三种方式处理这些冲突：
+
+* `git rebase --abort` 会放弃合并，回到rebase操作之前的状态，之前的提交的不会丢弃
+* `git rebase --skip` 则会将引起冲突的 `commit` 丢弃掉
+* `git rebase --continue` 合并冲突，结合 `git add 文件` 命令一起用与修复冲突，提示开发者，一步一步地有没有解决冲突
+
+第三种最常用，`git rebase --continue` 就可以线性的连接本地分支与远程分支，无误之后就回退出，回到主分支上。
+
+执行完`git rebase --continue` 后，就能正常 `git push`了，这时本地仓库就与远程仓库正常「关联」起来了。
 
 ---
 
@@ -397,15 +446,29 @@ Github 访问慢可以使用重设 Host 映射解决。
 
 1. 检测可用的ip
 
-		> 有两个常用网站可以检测
-		>
-		> * <http://ping.chinaz.com>
-		>
-		> ![](Git笔记.assets/2020-12-15 01-10-40屏幕截图.png)
-		>
-		> * <https://www.ipaddress.com>
-		>
-		> ![](Git笔记.assets/2020-12-15 01-13-12屏幕截图.png)
+		`````````
+		 ````````
+		  ```````
+		   ``````
+		    `````
+		     ````
+		      ```
+		       > 有两个常用网站可以检测
+		       >
+		       > * <http://ping.chinaz.com>
+		       >
+		       > ![](Git笔记.assets/2020-12-15 01-10-40屏幕截图.png)
+		       >
+		       > * <https://www.ipaddress.com>
+		       >
+		       > ![](Git笔记.assets/2020-12-15 01-13-12屏幕截图.png)
+		      ```
+		     ````
+		    `````
+		   ``````
+		  ```````
+		 ````````
+		`````````
 
 检测出的 ip，最好自己 **ping**一下，选速度比较快的几个。
 
@@ -459,7 +522,21 @@ Github 访问慢可以使用重设 Host 映射解决。
 
 2. hosts管理小工具: [SwitchHosts](https://github.com/oldj/SwitchHosts)
 
-		SwitchHosts与GitHub520配合使用，能够方便快速使用最新的ip映射github相关的网址s
+		`````````
+		 ````````
+		  ```````
+		   ``````
+		    `````
+		     ````
+		      ```
+		       SwitchHosts与GitHub520配合使用，能够方便快速使用最新的ip映射github相关的网址s
+		      ```
+		     ````
+		    `````
+		   ``````
+		  ```````
+		 ````````
+		`````````
 
 ###### 相关 host 地址
 

@@ -1,0 +1,43 @@
+apt-get install smartmontools
+smartctl -a /dev/sda|grep Wear
+
+看写入量等数据：
+sudo smartctl -l devstat /dev/sda
+
+
+查看当前系统支持的IO调度算法
+dmesg | grep -i scheduler
+
+查看当前系统的I/O调度算法
+cat /sys/block/sdb/queue/scheduler
+
+检查fstrim定时任务
+sudo systemctl status fstrim.timer
+
+列出所有定时任务
+sudo systemctl list-timers --all
+
+
+
+manjaro 清理垃圾
+清理缓存：
+pacman -Scc
+
+清理无用的包：
+sudo pacman -R $(pacman -Qdtq)
+
+
+日志相关：
+
+只保留一周的日志：
+journalctl --vacuum-time=1w
+
+只保留500MB的日志：
+journalctl --vacuum-size=500M
+
+
+
+
+
+
+

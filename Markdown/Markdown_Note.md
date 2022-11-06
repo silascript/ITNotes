@@ -1,0 +1,272 @@
+# Markdown 笔记
+
+
+轻量级标记语言。比 html 简单多了，非常适合不会 html 的人写文档。
+
+Markdown 比 doc等文档更开放，更易于发布。
+
+
+
+---
+
+## 目录
+* [基础](#md_basic)
+* [扩展](#md_extra)
+	* [使用 Font Awesome](#md_extra_fontawesome)
+	* [徽章相关](#md_extra_badge)
+* [高级](#md_advance)
+	* [画图](#md_draw)
+* [相关工具](#md_tools)
+	* [Markdown 编辑器](#md_tools_mdeditors)
+		* [Obsidian](#md_tools_obsidian)
+		* [Joplin](#md_tools_joplin)
+---
+
+## <span id="md_basic">基础</span>
+
+### 标题
+使用`#` 号来表示标题。标题共有 6 个级别，分别以对于数量的 `#` 来表示。
+
+
+
+```markdown
+# 一级标题
+## 二级标题
+### 三级标题
+#### 四级标题
+##### 五级标题
+###### 六级标题
+
+```
+
+
+
+
+---
+
+## <span id="md_extra">扩展</span> 
+
+### <span id="md_extra_fontawesome">使用 Font Awesome 来加图标</span>
+Font Awesome 使用步骤：
+
+1. 引入css
+在 markdown 文件最后引入 Font Awesome 文件。
+```html
+<head>
+<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+
+</head>
+```
+> 可以找下国内的 CDN。  
+> 常用 CDN：  
+> [bootcdn](https://www.bootcdn.cn)
+
+
+2. 插入符号 
+
+示例：
+
+> 各版本的写法有区别
+
+5.x
+
+<i class="fab fa-weibo"></i> `<i class="fab fa-weibo"></i>`
+
+6.x
+
+<i class="fa-brands fa-weibo"></i> `<i class="fa-brands fa-weibo"></i>`
+
+<i class="fa-brands fa-weixin"></i> `<i class="fa-brands fa-weixin"></i>`
+
+
+
+##### 调节符号尺寸
+
+示例：
+
+把微信的符号调大
+
+<!-- <i class="fa-brands fa-weixin fa-2x"></i> `<i class="fa-brands fa-weixin fa-2x"></i>` -->
+<i class="fab fa-weixin fa-2x"></i> `<i class="fab fa-weixin fa-2x"></i>`
+
+尺寸参数有下列这些：
+
+* fa-2xs <i class="fab fa-weixin fa-2xs"></i>
+* fa-xs <i class="fab fa-weixin fa-xs"></i>
+* fa-sm <i class="fab fa-weixin fa-sm"></i>
+* fa-lg <i class="fab fa-weixin fa-lg"></i>
+* fa-xl <i class="fab fa-weixin fa-xl"></i>
+* fa-2xl <i class="fab fa-weixin fa-2xl"></i>
+* fa-2x 至 fa-10x
+	* fa-2x <i class="fab fa-weixin fa-2x"></i> 
+	* fa-3x <i class="fab fa-weixin fa-3x"></i> 
+	* fa-4x <i class="fab fa-weixin fa-4x"></i> 
+	* fa-5x <i class="fab fa-weixin fa-5x"></i> 
+	* fa-6x <i class="fab fa-weixin fa-6x"></i> 
+	* fa-7x <i class="fab fa-weixin fa-7x"></i> 
+	* fa-8x <i class="fab fa-weixin fa-8x"></i> 
+	* fa-9x <i class="fab fa-weixin fa-9x"></i> 
+	* fa-10x <i class="fab fa-weixin fa-10x"></i> 
+
+| 相对尺寸 | 字体尺寸 | 同等像素值 |
+|:--------:|:--------:|:----------:|
+|  fa-2xs  | 0.625em  |    10px    |
+|  fa-xs   |  0.75em  |    12px    |
+|  fa-sm   | 0.875em  |    14px    |
+|  fa-lg   |  1.25em  |    20px    |
+|  fa-xl   |  1.5em   |    24px    |
+|  fa-2xl  |   2em    |    32px    |
+
+
+符号默认大小是 16px。
+
+##### 让符号转动 
+只要加入`fa-span` 就可以让符号转起来。
+
+示例：
+
+<i class="fab fa-weixin fa-spin"></i> `<i class="fab fa-weixin fa-spin"></i>`
+
+
+
+具体的符号列表及写法请参数：[Font Awesome 符号列表](https://fontawesome.com/icons)
+
+
+---
+### <span id="md_extra_badge">徽章相关</span>
+
+
+进入[shields.io](http://www.shields.io/) ，在输入框中输入 「lable」、「messge」和颜色，点击「Make Badge」，网站就能帮你生成一个徽章。
+
+![md_badge_shields](./Markdown_Note.assets/md_badge_shields.png)
+
+新生成的徽章：
+![md_badge_new](./Markdown_Note.assets/md_badge_new.png)
+
+地址栏中的地址就是就个徽章的网址。你可以嵌入你的页面中。就如像下面这样：
+
+![silascript-hello](https://img.shields.io/badge/silascript-hello-blue) `![silascript-hello](https://img.shields.io/badge/silascript-hello-blue)`
+> 跟图片写法一致。
+
+
+以上演示制作的徽章是是静态的。[shields.io](http://www.shields.io/) 还能生成动态的徽章。具体玩法，网站有介绍。
+
+
+除了[shields.io](http://www.shields.io/) 外，还有其他类似的网站也能制作徽章，使用方式大同小异。 
+
+
+徽章制作网站列表：
+* [shields.io](http://www.shields.io/)
+* [badgen](https://badgen.net)
+* [forthebadge](https://forthebadge.com)
+* [badge.fury](https://badge.fury.io)
+
+
+---
+
+## <span id="md_advance">高级</span>
+
+### <span id="md_draw">画图</span>
+
+在 Markdown 中绘图，使用的 [Mermaid](https://github.com/mermaid-js/mermaid) 这个工具。
+
+Mermaid 是一种基于 Javascript 的通过代码创建图表的工具，其使用类似于 Markdown 的语法。
+
+Mermaid 能绘制以下这些图：
+* 流程图：使用 `flowchart` 或 `graph` 关键字
+* 序列图：使用 `sequenceDiagram` 关键字
+* 甘特图：使用 `gantt` 关键字
+* 类图：使用 `classDiagram` 关键字
+* 饼状图：使用 `pie` 关键字
+* 状态图：使用 `stateDiagram` 关键字
+* 用户旅程图：使用 `journey` 关键字
+
+
+#### Mermaid 常用语法
+
+##### 流程图
+mermaid 有两种流程图：flowchart 流程图和 graph 流程图。
+
+###### flowchart 流程图
+
+flowchart 流程图的风格偏传统流程图。
+
+优点：显示效果比较朴素并可以较方便的调节引导线方向和流程图布局。
+
+缺点：语法过分复杂
+
+
+使用 `flowchart` 声明这个图是 flowchart 类型的图。
+
+然后跟着这个图的方向。
+- T：Top
+- B：Buttom
+- D：Down
+- L：Left
+- R：Right
+
+所以两两组合就指定了这个图的方向：
+* TB 或  TD：从上到下
+* BT：从下到上（没有 “DT”，只能是 `BT`）
+* LR：从左到右
+* RL：从右到左
+
+语句可以加 `;`，也可以省略。
+```mermaid
+flowchart LR;
+
+Start --> Stop
+```
+
+
+
+
+###### graph 流程图
+graph 流程图相较 flowchart 最大优点 **语法简单**。
+
+
+
+##### 序列图
+
+
+##### 甘特图
+
+##### 饼状图
+
+
+
+> 更多更详细的 Mermaid 的[文档](https://mermaid-js.github.io/mermaid/#/) 。
+
+---
+
+## <span id="md_tools">相关工具</span>
+
+### <span id="md_tools_mdeditors">Markdown 编辑器<span>
+
+#### Typora
+
+收费了！不介绍了！
+
+#### <span id="md_tools_obsidian">Obsidian</span>
+
+[Obsidian](https://obsidian.md) 这款编辑器，个人觉得完全可以替代 Typora。从功能上更强于 Typora 。
+
+Obsidian 设置更丰富，而且更自由，更换配色主题比 Typora 方便多了！
+
+Obsidian 是windows、macos 和 Linux 三平台都支持的编辑器。Linux 下它依赖 electron，有 Snap 版和 Appimage 版本。
+
+Obsidian 具体使用请参考：[Obsidian 笔记](../Obsidian/Obsidian_Note.md)
+
+#### <span id="md_tools_joplin">Joplin</span>
+
+[Joplin](https://joplinapp.org) 这款编辑器，全平台支持，有桌面版、手机版，甚至命令行版--这有点过分了。但个人感觉没有 Obsidian 这么惊艳！
+
+
+
+
+
+<head>
+	<!-- <script defer src="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script> -->
+	<!-- <script defer src="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.4/js/v4-shims.min.js"></script> -->
+	<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.4/css/all.css" >
+</head>

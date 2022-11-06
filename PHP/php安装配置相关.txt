@@ -1,0 +1,1 @@
+./configure --prefix=/usr/local/PHP/php7.3 --exec-prefix=/usr/local/PHP/php7.3 --bindir=/usr/local/PHP/php7.3/bin --with-config-file-path=/usr/local/PHP/php7.3/etc --with-apxs2=/usr/local/apache2.4/bin/apxs --enable-mysqlnd --with-mysqli --with-pdo-mysql --enable-exif --enable-mbstring --with-openssl --enable-session 

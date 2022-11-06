@@ -1,0 +1,28 @@
+
+
+在/usr/share/applications/目录中新建一个后缀名为desktop的文件
+
+
+[Desktop Entry] (这里大小写敏感，写错一个就不会显示)
+Type=Application 类型
+Name=名称
+Name[zh_CN]=简中名称
+Name[zh_TW]=繁中名称
+Comment=鼠标放在图标上时的提示文字
+Comment[zh_CN]=与上类似不过是简体中文
+Comment[zh_TW]=繁中的提示文字
+Icon=图标路径
+Exec=可执行文件的路径
+Categories=程序的分类标签，多个标签使用;号分隔(Application;IDE;Development;Editor)
+Terminal=false 是否使用启用终端
+StartupNotify=true
+
+
+
+
+
+
+
+
+
+

@@ -1,6 +1,6 @@
 ---
 date created: 2022-11-07 02:06
-date updated: 2022-11-07 03:48
+date updated: 2022-11-07 21:10
 ---
 
 # Git 笔记
@@ -174,6 +174,11 @@ git push origin --tags
 
 ### <span id="git_branch">分支</span>
 
+> Git 中的分支实际上是一个指向某个特定提交的*命名指针*。
+> 当你签出分支时，你将提交对象（由指针标识）中储存的数据复制到你的工作目录。
+> 当工作被复制到工作目录后，你可以进行任何操作（增删改），并且将更改作为一个新的提交对象储存到本地仓库
+> 命名指针会自动更新并指向你刚创建的提交对象，同时你的分支也将更新。
+
 #### <span id="git_branch_config_global_defaultbranch">配置默认分支</span>
 
 ```shell
@@ -187,7 +192,7 @@ git config --global init.defaultBranch <名称>
    defaultBranch = main
 ```
 
-#### <span id="git_branch_showbranch">显示当前分支</span>
+#### <span id="git_branch_showbranch">显示分支</span>
 
 ```shell
 git branch
@@ -198,6 +203,38 @@ git branch
 而第一次 `git commit` 后生成默认分支，原来未设置全局默认分支名称前，默认分支都叫「master」。
 
 如果你的仓库`git init` 在你，设置全局默认分支名称之前，那你 `commit` 后生成的分支仍叫 「master」。
+
+##### <span id="git_branch_showbranch_list">列出本地分支</span>
+
+```shell
+git branch --list
+```
+
+`--list` 这个选项可省略，即`git branch` 与 `git branch --list` 同价。
+
+##### <span id="git _branch_showbranch_all">列出所有分支</span>
+
+```shell
+git branch --all
+```
+
+这个分支把本地和远程的分支都列了出来。
+
+```
+* main
+  remotes/origin/main
+```
+
+「*」 表示正在查看（或「签出」--`checkout`）的分支。
+「remotes」 表示这个分支属于远程仓库，「origin」是这个远程仓库的「名称」，即在使用 `git remote add 名称 远程仓库地址` 这个操作时，所指定的名称。这个「名称」实际相当于是远程仓库的地址的一个标识符--相当于变量名，而远程地址是变量的值，使用这个变量名可以得到远程仓库的地址。
+
+「远程仓库名」+「远程分支名」，这就是这个远程分支的名称。
+
+##### <span id="git_branch_showbranch_remote">列出所有的远程分支</span>
+
+```shell
+git branch --remotes
+```
 
 #### <span id="git_branch_chockout">切换分支</span>
 
@@ -329,7 +366,7 @@ git pull --rebase origin main
 
 第三种最常用，`git rebase --continue` 就可以线性的连接本地分支与远程分支，无误之后就回退出，回到主分支上。
 
-执行完`git rebase --continue` 后，就能正常 `git push`了，这时本地仓库就与远程仓库正常「关联」起来了。
+执行完`git rebase --continue` 后，如果未解决冲突它会提示你要先解决冲突，然后执行 `git add`操作，再次 `commit` 个版本，当 `commit` 后（这其实就是将本地版本与刚 `git pull--rebase` 下来的版本「合并」成新的版本），「工作区」就又「干净」了，这时执行 `git rebase --continue` 操作，就会显示 `成功变基并更新 refs/heads/main` 这样的提示，证明 `rebase` 操作成功完成。完成「变基」操作后，这样 `git push -u origin main` 就能正常了，这时本地仓库就与远程仓库正常「关联」起来了。
 
 ---
 
@@ -446,29 +483,37 @@ Github 访问慢可以使用重设 Host 映射解决。
 
 1. 检测可用的ip
 
-		`````````
-		 ````````
-		  ```````
-		   ``````
-		    `````
-		     ````
-		      ```
-		       > 有两个常用网站可以检测
-		       >
-		       > * <http://ping.chinaz.com>
-		       >
-		       > ![](Git笔记.assets/2020-12-15 01-10-40屏幕截图.png)
-		       >
-		       > * <https://www.ipaddress.com>
-		       >
-		       > ![](Git笔记.assets/2020-12-15 01-13-12屏幕截图.png)
-		      ```
-		     ````
-		    `````
-		   ``````
-		  ```````
-		 ````````
-		`````````
+		`````````````
+		 ````````````
+		  ```````````
+		   ``````````
+		    `````````
+		     ````````
+		      ```````
+		       ``````
+		        `````
+		         ````
+		          ```
+		           > 有两个常用网站可以检测
+		           >
+		           > * <http://ping.chinaz.com>
+		           >
+		           > ![](Git笔记.assets/2020-12-15 01-10-40屏幕截图.png)
+		           >
+		           > * <https://www.ipaddress.com>
+		           >
+		           > ![](Git笔记.assets/2020-12-15 01-13-12屏幕截图.png)
+		          ```
+		         ````
+		        `````
+		       ``````
+		      ```````
+		     ````````
+		    `````````
+		   ``````````
+		  ```````````
+		 ````````````
+		`````````````
 
 检测出的 ip，最好自己 **ping**一下，选速度比较快的几个。
 
@@ -522,21 +567,29 @@ Github 访问慢可以使用重设 Host 映射解决。
 
 2. hosts管理小工具: [SwitchHosts](https://github.com/oldj/SwitchHosts)
 
-		`````````
-		 ````````
-		  ```````
-		   ``````
-		    `````
-		     ````
-		      ```
-		       SwitchHosts与GitHub520配合使用，能够方便快速使用最新的ip映射github相关的网址s
-		      ```
-		     ````
-		    `````
-		   ``````
-		  ```````
-		 ````````
-		`````````
+		`````````````
+		 ````````````
+		  ```````````
+		   ``````````
+		    `````````
+		     ````````
+		      ```````
+		       ``````
+		        `````
+		         ````
+		          ```
+		           SwitchHosts与GitHub520配合使用，能够方便快速使用最新的ip映射github相关的网址s
+		          ```
+		         ````
+		        `````
+		       ``````
+		      ```````
+		     ````````
+		    `````````
+		   ``````````
+		  ```````````
+		 ````````````
+		`````````````
 
 ###### 相关 host 地址
 

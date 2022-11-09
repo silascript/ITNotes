@@ -50,7 +50,6 @@
 
   bash_profile 文件是作为交互式登录 Shell 被调用情况下，被读取执行。
 
-
 在登录 Shell 的 bash 环境时，会依序执行以下三个文件其中一个：
 * `~/.bash_profile`
 * `~/.bash_login`
@@ -64,8 +63,6 @@
  > 这三个文件设定基本无差别，仅读取上有优先关系
 
 > 路径末尾不能以 **\/** 结尾，否则将导致整个 PATH 变量出错。
-
-
 
 ---
 
@@ -122,7 +119,6 @@ tar -xzvf xxx.tar.gz
 
 ```
 
-
 #### <span id="linux_tarc_comptools_bzip">bzip2</span>
 
 **bzip2** 是一个压缩能力更强的压缩程序，后缀名为 **.bz2**。
@@ -151,7 +147,6 @@ tar -xjvf xxx.tar.gz
 
 与 tar 配合使用，通过 **-Z** 参数来调用。
 
-
 使用示例：
 ```shell
 tar -cZf xxx.tar.Z *.jpg
@@ -163,7 +158,6 @@ tar -xZf xxx.tar.Z
 tar -cZvf xxx.tar.Z
 tar -xZvf xxx.tar.Z
 ```
-
 
 #### <span id="linux_tarc_comptools_xz">XZ Utils</span>
 
@@ -200,7 +194,6 @@ tar -xvf xxx.tar
 
 ```
 
-
 与 tar 配合使用，通过 **-J** 参数来调用。
 > 低版本的 tar 不支持，就得先 tar 再使用
 
@@ -215,6 +208,7 @@ tar -Jxf xxx.tar.xz
 ```
 
 ---
+
 ## <span id="linux_font">字体</span>
 
 安装字体：
@@ -234,11 +228,9 @@ fc-cache -fv
 fc-list :lang=zh
 ```
 
-
 ---
 
 ## <span id="linux_network">网络</span>
-
 
 ### 一些网络概念
 
@@ -264,28 +256,183 @@ fc-list :lang=zh
 
 ---
 
-### <span id="linux_network_command">Linux 中网络相关命令和工具<span>
+### <span id="linux_network_command">Linux 中网络相关命令和工具</span>
 
-#### <span id="linux_network_command_ip">ip</span>
+#### <span id="linux_network_command_ip">IP 概念</span>
 
-**ip** 是用来查询或维护网络相关的工具。
+`ip` 命令 是用来查询或维护网络相关的工具。
 
 包括**路由**（Routing）、**网络设备**（Device）、**策略路由**（Policy Routing）以及**隧道**（Tunnel）。
 
-**ip 常用命令**
+##### ip 常用命令
 
 * `ip link`：显示网络设备
-* `ip addr` ：查看网络地址
-    > 这个命令是把网络设置及网络地址、掩码都显示出来。比`ip link` 多显示一些信息。
+* `ip addr` ：查看网络地址  这个命令是把网络设置及网络地址、掩码都显示出来。比 `ip link` 多显示一些信息。
 * `ip linke show 网络设备名称`：显示指定网络设备的信息。
 * `ip link set 网络设备 up`：启用网络设备
 * `ip link set 网络设备 down`：禁用网络设备
 
+#### <span id="linux_network_command_downloader">命令下载工具</span>
 
-#### <span id="linux_network_command_curl">curl</span>
+##### <span id="linux_network_command_downloader_curl">curl</span>
 
-**curl** 是一个用来对服务器发起请求并把响应输出到标准输出的工具。
+[curl](https://curl.se) [![curl repo](https://img.shields.io/github/stars/curl/curl?style=social)](https://github.com/curl/curl) 是一个用来对服务器发起请求并把响应输出到标准输出的工具。所以单纯把它当成一个下载器，有点小瞧它了。
 
+###### curl 常用操作
+
+```shell
+# 什么参数选项都不要，就是向指定地址发送一个 get 请求
+# 然后将服务器响应的内容打印在屏幕上
+curl http://www.baidu.com
+```
+
+```shell
+# 将服务器响应保存成文件`a.html`
+curl -o a.html http://xxx.com
+```
+
+```shell
+# 注意这是 大 O，与上面的小 o 需要自已定义保存文件名不一样
+# 将服务器响应保存成文件，以请求的最后部分当成文件名
+curl -O http://www.com/a.html
+```
+
+##### <span id="linux_network_command_downloader_wget">wget</span>
+
+ [wget](https://www.gnu.org/software/wget/) 跟 [curl](https://curl.se) 类似的命令行下载器。
+
+ wget 与 [curl](#linux_network_command_curl) 不一样，它主要就是用于下载。
+
+###### wget 主要操作
+
+```shell
+# 无参 直接下载文件
+wget http://xxx.com
+```
+  由无参这种**默认**方式，wget 是直接下载文件，就能看出 wget 重点是放在下载上的。
+
+ ```shell
+ # 大O 下载并重命令文件
+ # 相当于 curl 的小o参数的操作
+ wget -O rename.zip http://xxxx.com/xxx.xxx
+```
+
+```shell
+# 断点下续传
+# 使用 wget -c 重新启动下载中断的文件
+wget -c http://xxx.com
+```
+
+ `-c` 和 `-O` 组合使用下载示例：
+ ```shell
+ wget -c -O miniconda_py39_4.12.0.sh https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh
+```
+
+```shell
+# --limit-rate= 使用来限速的
+wget --limit-rate=400k URL
+```
+
+```shell
+# 检测连接
+wget –-spider URL
+```
+示例：
+![wget spider](./Linux_Note.assets/wget_spider.png)
+
+```shell
+# 用于下载一个网站的多个资源
+# -r 是递归下载
+wget -r URL
+# 与递归下载配合使用，限定只下载指定类型的文件
+# -A 或 --accept= 后跟限定的文件类型，即文件扩展名列表，名扩展名使用逗号分隔
+wget -r -A 扩展名 URL
+
+# 与 -A 或 --accept 相反，--reject= 是拒绝下载指定类型文件，后面同样跟的是扩展名列表，同样使用逗号分隔
+wget -r --reject=pdf,exe URL
+
+# -l 或 --level=数字 指定递归深度，0 为不限制
+wget -r -l 1 URL
+
+# 示例：
+# 只递归一层 只下载 扩展名为 azw3 的文件
+wget -r -l 1 -A azw3 http://xxxxx
+
+```
+
+##### <span id="linux_network_command_downloader_aria2">aria2</span>
+
+[aria2](http://aria2.github.io)[![aria2 repo](https://img.shields.io/github/stars/aria2/aria2?style=social)](https://github.com/aria2/aria2) 是一款非常强大的下载工具。
+
+看它的一长串的定语，就知道它的强大：「多平台」、「支持多协议」、「支持多来尖」。
+
+aria2 可以从多个来源、多个协议下载资源，最大程序上利用了你的带宽。
+
+aria2 有着非常小的资源占用，在关闭磁盘缓存的情况下，物理内存占用通常为 4M，BT下载，CPU 占有率约为 6%。
+
+aria2 特点：
+* 高速、自动多线程下载；断点续传
+* 内存占用少
+* 多平台，支持 Windows、Linux、OSX、Android 等操作系统
+* 模块化；分段下载引擎，文件整合速度快
+* 支持 PRC 界面远程
+* 全面支持 BtiTorrent 协议
+
+##### <span id="linux_network_command_downloader_aria2_operate">aria2 常用操作</span>
+
+最简单的使用，就是什么参数或选项都不加：
+```shell
+# 直接在命令行下载，下载完成自动退出，跟 wget 的工作方式类似
+aria2c URL
+```
+
+设置连接数量：
+```shell
+# 下载连接的数量 默认为 5
+-s, --split=N 
+```
+
+断点续传：
+```shell
+# 继续下载一个仅部分分完成的文件
+-c, --continue[=true|false] 
+```
+
+```shell
+# 0 意味着不限制。
+# 可附加 K 或 M（1K=1024，1M=1024K）
+-u, --max-upload-limit=速度
+```
+
+文件分配方式：
+```shell
+# 文件预分配方式, 可选：none, prealloc, trunc, falloc, 默认:prealloc
+# 预分配对于机械硬盘可有效降低磁盘碎片、提升磁盘读写性能、延长磁盘寿命。
+# 机械硬盘使用 ext4（具有扩展支持），btrfs，xfs 或 NTFS（仅 MinGW 编译版本）等文件系统建议设置为 falloc
+# 若无法下载，提示 fallocate failed.cause：Operation not supported 则说明不支持，请设置为 none
+# prealloc 分配速度慢, trunc 无实际作用，不推荐使用。
+# 固态硬盘不需要预分配，只建议设置为 none ，否则可能会导致双倍文件大小的数据写入，从而影响寿命。
+--file-allocation=方式       
+```
+
+Aria2 除了使用命令行临时配置，还可以将配置写进配置文件 `aria2.conf`。
+
+###### <span id="linux_network_command_downloader_aria2_ui">Aria2 UI 工具</span>
+
+[aria2](#linux_network_command_downloader_aria2) 本身没有 UI ，这使得一些依赖图形界面的用户用起来不太方便，然后就出现各种基于 aria2 的带图形界面的下载器。 
+
+下面介绍几款，用得比较多的基于 aria2 的下载器。
+
+**Motrix**
+
+[Motrix](https://motrix.app) 是一款开源的支持多平台的，基于 [aria2](#linux_network_command_downloader_aria2) 的下载工具。
+
+它支持 HTTP、FTP、BT、磁力链、百度网盘等资源，界面简洁，开箱即用。
+
+**AriaNg**
+[AiraNg](https://github.com/mayswind/AriaNg) 基于 Aria2 Web 前端。同样也是开源的。
+
+![AriaNg screenshot](https://raw.githubusercontent.com/mayswind/AriaNg-WebSite/master/screenshots/desktop.png)
 
 ---
 
@@ -295,9 +442,7 @@ IPtables 中可以做各种网络地址转换，网络地址转换主要有两�
 
 **SNAT** 是 「source networkaddress translation」的缩写，即「源地址目标转换」。
 
-
 **DNAT** 是 「destination networkaddress translation」的缩写，即「目标网络地址转换」。
-
 
 ---
 
@@ -336,7 +481,6 @@ service ssh restart
 ```
 > 查看 ssh 是否已开启，可以使用 `ssh -V` 命令。
 
-
 #### 连接
 
 使用 ssh 命令连接到远程服务器：
@@ -361,7 +505,6 @@ ssh 用户名@ip -p 端口
 
 `StrictHostKeyChecking=yes` 是最安全级别。如果连接与 key 不匹配，就拒绝连接，不会提示详细信息。
 
-
 ### <span id="linux_ssh_tools">SSH 工具</span>
 
 #### <span id="linux_ssh_tools_putty">Putty</span>
@@ -377,11 +520,8 @@ ssh 用户名@ip -p 端口
 
 其实 [Electerm](https://electerm.html5beta.com) 是能当终端使用的。
 
-
 颜值还非常高：
 ![electerm](https://github.com/electerm/electerm-resource/raw/master/static/images/electerm.gif)
-
-
 
 #### <span id="linux_ssh_tools_tabby">Tabby</span>
 
@@ -397,10 +537,6 @@ ssh 用户名@ip -p 端口
 
 搭配插件，tabby 的配置能使用 gist 进行同步。
 
-
-
-
-
 #### <span id="linux_ssh_tools_finalshell">FinalShell</span>
 
 [FinalShell](https://www.hostbuf.com) 是一款 Win、Linux 和 Mac 都能用的 ssh 工具。
@@ -409,15 +545,11 @@ ssh 用户名@ip -p 端口
 
 缺点：耗内存、启动有点慢
 
-
-
-
 ---
 
 ## <span id="linux_shell">Shell 相关</span>
 
 具体请查看[Shell 笔记](./Shell_Note.md)
-
 
 ---
 
@@ -445,8 +577,6 @@ ssh 用户名@ip -p 端口
 > Categories=程序的分类标签，多个标签使用;号分隔(Application;IDE;Development;Editor)  
 > Terminal=false 是否使用启用终端  
 > StartupNotify=true 
-
-
 
 ---
 
@@ -481,7 +611,4 @@ source `.bashrc` 或 `.bash_profile`
 ```shell
 sudo ln -s /opt/KomodoEdit/bin/komodo /usr/local/bin/komodo
 ```
-
-
-
 

@@ -12,6 +12,12 @@
     * [bzip2](#linux_tarc_comptools_bzip)
     * [compress](#linux_tarc_comptools_compress)
     * [XZ](#linux_tarc_comptools_xz)
+* [文本处理](#linux_textprocessing)
+	* [文本处理常用命令](#linux_textprocessing_commands)
+	* [正则表达式](#linux_textprocessing_regex)
+	* [grep](#linux_textprocessing_regex)
+	* [sed](#linux_textprocessing_sed)
+	* [awk](#linux_textprocessing_awk)
 * [字体](#linux_font)
 * [网络](#linux_network)
   * [Linux 网络相关命令](#linux_network_command)
@@ -209,6 +215,134 @@ tar -Jxf xxx.tar.xz
 
 ---
 
+## <span id="linux_textprocessing">文本处理</span>
+
+### <span id="linux_textprocessing_commands">文本处理常用命令</span>
+
+#### <span id="linux_textprocessing_commands_cat">cat</span>
+
+`cat` 命令是由第一行开始显示文件内容。
+
+常用选项及参数：
+* `-A`：可列出一些特殊字符而不是空白而已
+* `-b`：列出行号，仅针对非空白行做行号显示，空白行不标行号
+* `-E`：结尾的断行字符 **$** 显示出来
+* `-n`：打印出行号，连空白行也会有行行号
+* `-T`：将 **tab** 键以 **\^I** 显示出来
+* `-v`：列出一些看不出来的特殊字符
+
+#### <span id="linux_textprocessing_commands_tac">tac</span>
+
+`tac` 命令是从最后一行开始显示，`tac` 是 `cat` 的倒着写。
+
+#### <span id="linux_textprocessing_commands_nl">nl</span>
+
+`nl` 添加行号打印
+
+`nl` 选项和参数：
+
+| 选项和参数 | 功能 |
+| :---: | :---: |
+| -b, --body-numbering=样式    |    使用 <样式> 对正文的行进行编号 |
+ |  -d, --section-delimiter=CC |      使用 CC 作为逻辑页分隔符 |
+ | -f, --footer-numbering=样式  |   使用 <样式> 对页脚的行进行编号 |
+ | -h, --header-numbering=样式  |   使用 <样式> 对页眉的行进行编号 |
+ | -i, --line-increment=数值    |   设置每一行行号的自动递增值 |
+ | -l, --join-blank-lines=数值  |   将 <数值> 行连续的空行视为一行 |
+ | -n, --number-format=格式     |   按照指定 <格式> 插入行号 |
+ | -p, --no-renumber            |   在切换至下一节时不重置行号值 |
+ | -s, --number-separator=字符串   | 在可能出现的行号后添加 <字符串> |
+ | -v, --starting-line-number=数值 |   每一节第一行的行号 |
+ | -w, --number-width=数值 |       设置行号的宽度为 <数值> 列 |
+
+样式列表：
+
+| 样式参数 | 功能 |
+| :---: | :---: |
+| a |  对所有行编号 |
+| t | 仅对非空行编号 |
+| n |  不对任何行编号 |
+| pBRE | 仅对匹配基本正则表达式 BRE 的行编号 |
+
+示例：
+
+```shell
+# 只有非空行显示行号
+nl -b t Ship_Note.md
+```
+
+```shell
+# 所有行都不显示行号
+nl -b n Ship_Note.md
+```
+
+```shell
+# 所有行都显示行号，包括空行
+nl -b a Ship_Note.md
+```
+
+行号格式：
+| 参数 | 对齐方式 | 有无前导 0 |
+|:---: |:---: |:---: |
+| ln | 左对齐 | 无前导 0 |
+| rn | 右对齐 | 无前导 0 |
+| rz | 右对齐 | 有前导 0 |
+
+示例：
+```shell
+nl -b t -n ln Ship_Note.md
+```
+![nl ln](./Linux_Note.assets/linux_textprocessing_nl_ln.png)
+
+```shell
+nl -b t -n rn Ship_Note.md
+```
+![nl rn](./Linux_Note.assets/linux_textprocessing_nl_rn.png)
+
+```shell
+nl -b t -n rz Ship_Note.md
+```
+![nl rz](./Linux_Note.assets/linux_textprocessing_nl_rz.png)
+
+#### <span id="linux_textprocessing_commands_more">more</span>
+
+#### <span id="linux_textprocessing_commands_head">head</span>
+
+#### <span id="linux_textprocessing_commands_tail">tail</span>
+
+#### <span id="linux_textprocessing_commands_tr">tr</span>
+
+#### <span id="linux_textprocessing_commands_wc">wc</span>
+
+`wc` 命令用于统计指定文本的行数、字数、字节数，格式：`wc [参数] 文本`。
+
+| 参数 | 功能 |
+| :---: | :---: |
+|  -l    |  统计行数     |
+|  -w   |    统计字数  |
+|   -c   |     统计字节数 |
+
+如果任何参数都不给，就是依次显示行数、字数和字节数的统计结果。
+
+#### <span id="linux_textprocessing_commands_stat">stat</span>
+
+`stat` 命令用于查看文件的具体不住信息和埋单信息，格式为：`stat 文件名称`。
+
+### <span id="linux_textprocessing_regex">正则表达式</span>
+
+### <span id="linux_textprocessing_grep">grep</span>
+grep 全称是 「global search regular expression and print out the line」，翻译过来就是**全局搜索正则表达式并把行打印出来**。
+
+grep 是一个程序族，包括了 **grep**、**egrep** 和 **fgrep**。
+
+Linux 中使用的 GNU 版本的 grep ，可以直接通过 `-G`、`-E` 和 `-F` 命令选项来使用 grep、egrep 和 fgrep 的功能。
+
+### <span id="linux_textprocessing_sed">sed</span>
+
+### <span id="linux_textprocessing_awk">awk</span>
+
+---
+
 ## <span id="linux_font">字体</span>
 
 安装字体：
@@ -398,13 +532,33 @@ aria2c URL
 -c, --continue[=true|false] 
 ```
 
+指定文件保存的文件名：
+```shell
+-o, --out=FILE
+```
+
+后台下载：
+```shell
+-D,–-deamon=true
+```
+
+下载速度限制：
+```shell
+# 单文件下载速度限制 
+# 单位 K 或 M
+--max-download-limit=速度
+# 全局
+# 单位 K 或 M
+--max-overall-download-limit=速度
+```
+
 ```shell
 # 0 意味着不限制。
 # 可附加 K 或 M（1K=1024，1M=1024K）
 -u, --max-upload-limit=速度
 ```
 
-文件分配方式：
+文件预分配方式：
 ```shell
 # 文件预分配方式, 可选：none, prealloc, trunc, falloc, 默认:prealloc
 # 预分配对于机械硬盘可有效降低磁盘碎片、提升磁盘读写性能、延长磁盘寿命。
@@ -412,10 +566,62 @@ aria2c URL
 # 若无法下载，提示 fallocate failed.cause：Operation not supported 则说明不支持，请设置为 none
 # prealloc 分配速度慢, trunc 无实际作用，不推荐使用。
 # 固态硬盘不需要预分配，只建议设置为 none ，否则可能会导致双倍文件大小的数据写入，从而影响寿命。
---file-allocation=方式       
+--file-allocation=方式
+```
+
+列出 BT 种子的内容：
+```shell
+aria2c -S **.torrent
+```
+
+开启 RPC：
+```shell
+aria2c --enable-rpc --rpc-listen-all
+```
+
+###### <span id="linux_network_command_downloader_aria2_config">Aria2 配置</span>
+
+默认用户配置文件放在：`~/.aria2/aria2.conf`
+也可以通过命令行 `aria2 --conf-path` 命令指定配置文件路径。
+示例：
+```shell
+aria2c --conf-path="/etc/aria2/aria2.conf"
 ```
 
 Aria2 除了使用命令行临时配置，还可以将配置写进配置文件 `aria2.conf`。
+
+常用配置：
+```
+# 磁盘缓存, 0 为禁用缓存，默认:16M
+# 磁盘缓存的作用是把下载的数据块临时存储在内存中，然后集中写入硬盘，以减少磁盘 I/O ，提升读写性能，延长硬盘寿命。
+# 建议在有足够的内存空闲情况下适当增加，但不要超过剩余可用内存空间大小。
+# 此项值仅决定上限，实际对内存的占用取决于网速(带宽)和设备性能等其它因素。
+disk-cache=64M
+
+# 文件预分配方式, 可选：none, prealloc, trunc, falloc, 默认:prealloc
+# 预分配对于机械硬盘可有效降低磁盘碎片、提升磁盘读写性能、延长磁盘寿命。
+# 机械硬盘使用 ext4（具有扩展支持），btrfs，xfs 或 NTFS（仅 MinGW 编译版本）等文件系统建议设置为 falloc
+# 若无法下载，提示 fallocate failed.cause：Operation not supported 则说明不支持，请设置为 none
+# prealloc 分配速度慢, trunc 无实际作用，不推荐使用。
+# 固态硬盘不需要预分配，只建议设置为 none ，否则可能会导致双倍文件大小的数据写入，从而影响寿命。
+file-allocation=none
+
+# 文件预分配大小限制。小于此选项值大小的文件不预分配空间，单位 K 或 M，默认：5M
+no-file-allocation-limit=64M
+
+# 断点续传
+continue=true
+
+# 文件预分配大小限制。小于此选项值大小的文件不预分配空间
+# 单位 K 或 M，默认：5M
+no-file-allocation-limit=64M
+
+# GZip 支持，默认:false
+http-accept-gzip=true
+
+```
+
+网上大神配置模板，可以参考着配：[https://github.com/P3TERX/aria2.conf/blob/master/aria2.conf](https://github.com/P3TERX/aria2.conf/blob/master/aria2.conf)
 
 ###### <span id="linux_network_command_downloader_aria2_ui">Aria2 UI 工具</span>
 

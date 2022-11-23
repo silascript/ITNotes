@@ -231,6 +231,9 @@ tar -Jxf xxx.tar.xz
 * `-T`：将 **tab** 键以 **\^I** 显示出来
 * `-v`：列出一些看不出来的特殊字符
 
+`cat -n` 这是将行号也一并打印出来。
+![cat n](./Linux_Note.assets/linux_textprocessing_cat_n.png)
+
 #### <span id="linux_textprocessing_commands_tac">tac</span>
 
 `tac` 命令是从最后一行开始显示，`tac` 是 `cat` 的倒着写。
@@ -265,6 +268,12 @@ tar -Jxf xxx.tar.xz
 | pBRE | 仅对匹配基本正则表达式 BRE 的行编号 |
 
 示例：
+
+```shell
+# 默认什么参数都不加
+nl Ship_Note.md
+```
+![nl 1](./Linux_Note.assets/linux_textprocessing_nl_1.png)
 
 ```shell
 # 只有非空行显示行号
@@ -304,7 +313,29 @@ nl -b t -n rz Ship_Note.md
 ```
 ![nl rz](./Linux_Note.assets/linux_textprocessing_nl_rz.png)
 
+效果相似命令对比：
+
+与 `nl` 命令相似，但 `cat -n` 是连空行也一并加上行号，而 `nl` 默认不加任何参数或选项，行号是忽略空行。如下图：
+
+![cat n diff nl](./Linux_Note.assets/linux_textprocessing_cat_n_diff_nl.png)
+
 #### <span id="linux_textprocessing_commands_more">more</span>
+
+[cat](#linux_textprocessing_commands_cat)、[tac](#linux_textprocessing_commands_tac) 和 [nl](#linux_textprocessing_commands_nl) 这三个命令都是把文件一次性打印在屏幕上。想要一页页的翻动查看，就使用 `more` 命令和 [less](#linux_textprocessing_commands_less) 命令。
+
+more 命令一些按键操作：
+* 空格（space）： 向下翻一页
+* Enter： 向下一行
+* `/`： 向下搜索「字符串」
+* `:f`： 显示出文件名及目前显示的行数
+* q： 退出 more，不再显示该文件内容
+* b 或 ctrl-b： 往回翻页，只对文件有用
+
+`more` 命令中的搜索：
+`/` 后输入要搜索的内容，按回车就开始向下搜索，按 `n` 就会跳转到下一个搜索结果。
+
+
+#### <span id="linux_textprocessing_commands_less">less</span>
 
 #### <span id="linux_textprocessing_commands_head">head</span>
 

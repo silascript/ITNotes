@@ -126,6 +126,14 @@ Obsidian 的插件分为 「核心插件」和「第三方插件」。
 
 ---
 
+##### <span id="obn_plugins_editing-toolbar">Editing-toolbar</span>
+
+[obsidian-editing-toolbar](https://github.com/cumany/obsidian-editing-toolbar) 是一个在编辑区显示常用 Markdown 组件的工具栏。
+
+![editing-toolbar demo](https://github.com/cumany/obsidian-editing-toolbar/raw/master/editing-toolbar-demo.gif)
+
+---
+
 ##### <span id="obn_plugins_vimrcsupport">Vimrc Support</span>
 
 [vimrc support](https://github.com/esm7/obsidian-vimrc-support) 是一个增加了内置的 vim 功能的插件。

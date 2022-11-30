@@ -452,6 +452,12 @@ curl http://www.baidu.com
 ```
 
 ```shell
+# 除了打印出响应内容外，还将 head 部分出打印出来
+curl -i url
+```
+
+
+```shell
 # 将服务器响应保存成文件`a.html`
 curl -o a.html http://xxx.com
 ```
@@ -461,6 +467,35 @@ curl -o a.html http://xxx.com
 # 将服务器响应保存成文件，以请求的最后部分当成文件名
 curl -O http://www.com/a.html
 ```
+
+```shell
+# 指定代理
+curl -x [protocol://]host[:port] Use this proxy
+```
+
+
+```shell
+# 指定请求方式 : GET POST 等
+# 一般来说，请求 GET 和 POST 都能向服务器发出获取数据的请求
+# 但 HTTP 协议在制定时，默认给了这些方式相应的语义，从这个请求的名称就能看出
+# GET 请求是向服务器发出获取数据的请求；而 POST 请求，是将数据提交到服务器的请求
+# 示例
+curl -X POST
+```
+
+```shell
+# 指定参数，或提交数据
+curl -d 
+```
+
+
+
+```shell
+# 只显示文档的 head 部分
+curl -I url
+```
+
+
 
 ##### <span id="linux_network_command_downloader_wget">wget</span>
 

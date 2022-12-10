@@ -46,7 +46,9 @@ Markdown 比 doc 等文档更开放，更易于发布。
 
 Mermaid 是一种基于 Javascript 的通过代码创建图表的工具，其使用类似于 Markdown 的语法。
 
-Mermaid 能绘制以下这些图：
+在 Markdown 中使用 Mermaid 是通过代码块来实现的，只需在代码块的语言指定中指定为 `mermaid` 就能在 Markdown 中使用 Mermaid 来展示各类图表。
+
+#### Mermaid 图形种类
 * 流程图：使用 `flowchart` 或 `graph` 关键字
 * 序列图：使用 `sequenceDiagram` 关键字
 * 甘特图：使用 `gantt` 关键字

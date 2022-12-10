@@ -1,11 +1,7 @@
 # ITNotes
 个人学习工作笔记和资料
 
-
-
 ---
-
-
 
 ## 数据库
 
@@ -39,7 +35,6 @@
 
 [C 语言笔记](C/C_Note.md)
 
-
 ### Python
 
 [Python 笔记](Python/Python_Note.md)
@@ -50,17 +45,14 @@
 
 [Linux 下安装配置Apache](PHP/Linux下安装配置Apache.md)
 
-
 ### Javascript
 
 [JS 笔记](JS/JS_Note.md)
 
 [DOM 笔记](JS/DOM_Note.md)
 
-
 ### Lua
 [Lua笔记](Lua/Lua_Note.md)
-
 
 ---
 
@@ -83,7 +75,7 @@
 ---
 
 ## Markdown 相关
-[Markdown](Markdown/Markdown_Note)
+[Markdown](Markdown/Markdown_Note.md)
 (Markdown/Markdown_Note)
 
 ---

@@ -160,6 +160,15 @@ VSCodium：
 >
 > 如果只清`~/.config/Code` 或 `~/.config/VSCodium` 这个设置目录，启动VSCode 或 VSCodium ，插件还是存在的。
 
+
+
+如果想让插件什么都放在 VSCode 根目录下，所以作以下操作：
+1. 从官网下载安装包，解压就能用的那个
+2. 解压到想要安装的路径下。
+3. 先不要启动 VSCode，在 VSCode 根目录下手动新建 `data` 目录，这个目录是存在用户数据及插件安装目录。如果想临时文件也放在这个目录中，所以在 `data` 目录下再新建一个 `tmp` 目录，用于存放临时文件。
+4. 启动 VSCode，这样 VSCode 就会将用户数据、插件等放到 `data` 目录中了，这样文件将 VSCode 作成「便携包」。
+
+
 ---
 
 ### <span id="editors_vscode_extensions">常用插件</span>

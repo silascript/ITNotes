@@ -1,8 +1,3 @@
----
-date created: 2022-11-08 18:22
-date updated: 2022-11-08 18:29
----
-
 # Python笔记
 
 ---

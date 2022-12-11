@@ -9,6 +9,8 @@
 *  [插件](#obn_plugin)
 	* [第三方插件](#obn_plugin_commp)
 	* [非 markdown 语法插件](#obn_plugins_notmarkdown)
+* [Obsidian 专用语法](#obn_syntax)
+	* [Callout Blocks](#obn_syntax_calloutblocks)
 
 ---
 
@@ -246,6 +248,68 @@ note 类型
 [Obsidian-Surfing](https://github.com/Quorafind/Obsidian-Surfing) 同样也是一个浏览器插件，这个插件是上面那个[obsdian-web-browser](#obn_plugin_brat_webbrowser) 插件的修改版本，其功能更为强大。
 
 **Obsidian-Surfing**  github 地址：[https://github.com/Quorafind/Obsidian-Surfing](https://github.com/Quorafind/Obsidian-Surfing) 。
+
+---
+
+## <span id="obn_syntax">Obsidian 专用语法</span>
+
+### <span id="obn_syntax_calloutblocks">Callout Blocks</span>
+
+Obsidian 的 「Callout Blocks」 语法实质是对原生 Markdown 引用语法的扩展，让引用块显示得更美观。
+
+Callout Blocks 语法：
+```markdown
+> [!类型] 标题
+> 正文
+```
+
+示例：
+
+> [!note] 示例1
+> 示例1 正文
+
+> [!help] 示例2
+> 示例2 正文
+
+如果想要 Callout Blocks 设置引用块默认展开或折叠效果，可以通过使用 `+` 和 `-` 来实现折叠效果的开启或关闭，`-`是折叠，`+` 展开，语法如下：
+
+```markdown
+> [!类型]+ 标题 
+
+> [!类型]- 标题
+```
+
+示例：
+
+> [!tip]+ 示例3
+> 示例3 这是默认展开 
+
+> [!tip]- 示例4
+> 示例4 这是默认折叠 
+
+Callout Blocks 的「类型」其实就是些图标及颜色样式，能够让引用块更具有「语义性」。
+
+Callout Blocks 预置类型：
+* `note`
+* `inof`
+* `abstract` 或 `summary`、`tldr`
+* `todo`
+* `tip` 或 `hint`、`important`
+* `success` 或 `check`、`done`
+* `question` 或 `help`、`faq`
+* `warning` 或 `caution`、`attention`
+* `failure` 或 `fail`、`missing`
+* `danger` 或  `error`
+* `bug`
+* `example`
+* `quote` 或 `cite`
+
+Callout Blocks 可以进行嵌套，如下例：
+> [!help] 示例1
+> > [!todo] 示例 1.1
+> > > [!example] 示例 1.1.1
+
+更多内容请参考：[callout blocks 官方文档](https://help.obsidian.md/How+to/Use+callouts)
 
 ---
 

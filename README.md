@@ -76,7 +76,6 @@
 
 ## Markdown 相关
 [Markdown](Markdown/Markdown_Note.md)
-(Markdown/Markdown_Note)
 
 ---
 

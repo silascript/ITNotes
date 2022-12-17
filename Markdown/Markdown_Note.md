@@ -22,6 +22,7 @@ Markdown 比 doc 等文档更开放，更易于发布。
 ## <span id="md_basic">基础</span>
 
 ### 标题
+
 使用`#` 号来表示标题。标题共有 6 个级别，分别以对于数量的 `#` 来表示。
 
 ```markdown
@@ -34,9 +35,17 @@ Markdown 比 doc 等文档更开放，更易于发布。
 
 ```
 
+### <span id="md_basic_tutorial_links">Markdown 相关教程</span>
+
+* [obsidian 论坛  成雙醬 的Markdown 教程](https://forum-zh.obsidian.md/t/topic/435)
+* [https://www.markdown.cn](https://www.markdown.cn)
+* [Github Markdown 规范](https://gfm.docschina.org/zh-hans/)
+
 ---
 
 ## <span id="md_advance">高级</span>
+
+---
 
 ### <span id="md_advance_draw">画图</span>
 

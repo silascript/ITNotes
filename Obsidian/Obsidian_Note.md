@@ -7,7 +7,10 @@
 * [Obsidian 配置目录](#obn_config_dir)
 * [Snippet](#obn_snippet)
 *  [插件](#obn_plugin)
-	* [第三方插件](#obn_plugin_commp)
+	* [第三方插件](#obn_plugins_commp)
+	* [quick explorer](#obn_plugins_quick-explorer)
+	* [show current file path](#obn_plugins_show-current-file-path)
+	* [floating-toc](#obn_plugins_obsidian-floating-toc-plugin)
 	* [非 markdown 语法插件](#obn_plugins_notmarkdown)
 * [Obsidian 专用语法](#obn_syntax)
 	* [Callout Blocks](#obn_syntax_calloutblocks)
@@ -58,18 +61,18 @@
 
 Obsidian 的插件分为 「核心插件」和「第三方插件」。
 
-### <span id="obn_plugin_commp">第三方插件</span>
+### <span id="obn_plugins_commp">第三方插件</span>
 
 要安装和使用第三方插件前，先得把「设置」中的「安全模式」开关关闭，才能浏览和安装第三方插件。
 
 #### 常用插件
 
-##### Quick Explorer
+##### <span id="obn_plugins_quick-explorer">Quick Explorer</span>
 这个插件，是在界面标题栏中显示，当前路径，并且可以快速浏览文件。
 
 ![obsidian_plugin_quickexplorer](./Obsidian_Note.assets/obsidian_plugin_quickexplorer.png)
 
-##### Show Current File Path
+##### <span id="obn_plugins_show-current-file-path">Show Current File Path</span>
 此插件是在底部状态栏上显示当前文件名，点击能够复制文件的路径名。
 > 默认情况，点击复制的是相对路径，只有在这个插件的设置中，打开了「Copy absolute path」选项才会复制绝对路径。
 
@@ -77,13 +80,18 @@ Obsidian 的插件分为 「核心插件」和「第三方插件」。
 
 ---
 
-##### Obsidian tabs
-这插件能让多个面板变成单面板多标签的形态。
-[Obsidian_Note](Obsidian_Note.md)
+##### <span id="obn_plugins_obtabs">~~Obsidian tabs~~</span>
+[Obsidian tabs](https://github.com/gitobsidiantutorial/obsidian-tabs) 这插件能让多个面板变成单面板多标签的形态。
+
+Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标签的功能已经成了内置功能。
+
+
 使用 **Obsidian tabs** 前：
+
 ![obsidian_plugin_tabs_before](./Obsidian_Note.assets/obsidian_plugin_tabs_before.png)
 
 使用 **Obsidian tabs** 后：
+
 ![obsidian_plugin_tabs_after](./Obsidian_Note.assets/obsidian_plugin_tabs_after.png)
 
 ---
@@ -130,9 +138,25 @@ Obsidian 的插件分为 「核心插件」和「第三方插件」。
 
 ##### <span id="obn_plugins_editing-toolbar">Editing-toolbar</span>
 
-[obsidian-editing-toolbar](https://github.com/cumany/obsidian-editing-toolbar) 是一个在编辑区显示常用 Markdown 组件的工具栏。
+[obsidian-editing-toolbar](https://github.com/cumany/obsidian-editing-toolbar) 是一个在编辑区显示常用 Markdown 组件的工具栏。 这个插件最初是  [cMenu](#obn_plugins_cmenu)  的魔改版本，后来才更名为「editing toolbar」。
 
 ![editing-toolbar demo](https://github.com/cumany/obsidian-editing-toolbar/raw/master/editing-toolbar-demo.gif)
+
+---
+
+##### <span id="obn_plugins_style-settings">Style Settings</span>
+
+[Style Settings](https://github.com/mgmeyers/obsidian-style-settings) 是一款对主题进一步细化调整美化的插件。很多优秀的主题，诸如  [Blue-Topaz](https://github.com/whyt-byte/Blue-Topaz_Obsidian-css) 、[Catppucin](https://github.com/catppuccin/obsidian) 都会适配这个插件。
+
+---
+
+##### <span id="obn_plugins_obsidian-floating-toc-plugin">Obsidian-floating-toc-plugin</span>
+
+[obsidian-floating-toc-plugin](https://github.com/cumany/obsidian-floating-toc-plugin)  是一个将当前 Markdown 文件大纲悬浮地在笔记侧边显示，是个非常实用的插件，极力推荐！
+
+这个插件就解决本应是 Obsidian 内置的功能：一个能够跳转的文件大纲自动生成--像大名鼎鼎的 [Typora](https://typora.io/) 就天生拥有这个功能。
+
+![float-toc](./Obsidian_Note.assets/obsidian_plugin_float-toc.png)
 
 ---
 
@@ -287,27 +311,39 @@ Callout Blocks 语法：
 > [!tip]- 示例4
 > 示例4 这是默认折叠 
 
-Callout Blocks 的「类型」其实就是些图标及颜色样式，能够让引用块更具有「语义性」。
+Callout Blocks 的「**类型**」其实就是些**图标**及**颜色**样式，能够让引用块更具有「语义性」。
 
 Callout Blocks 预置类型：
 * `note`
-* `inof`
+> [!note]
+* `info`
+> [!info]
 * `abstract` 或 `summary`、`tldr`
+> [!abstract]
 * `todo`
+>[!todo]
 * `tip` 或 `hint`、`important`
+> [!tip] 
 * `success` 或 `check`、`done`
+> [!success]
 * `question` 或 `help`、`faq`
+> [!help]
 * `warning` 或 `caution`、`attention`
 * `failure` 或 `fail`、`missing`
 * `danger` 或  `error`
 * `bug`
 * `example`
+> [!example]
 * `quote` 或 `cite`
+> [!quote]
 
-Callout Blocks 可以进行嵌套，如下例：
-> [!help] 示例1
-> > [!todo] 示例 1.1
-> > > [!example] 示例 1.1.1
+如果「标题」不写，那默认就会使用「类型」名称作为标题名。
+
+另外，Callout Blocks 还能可以进行嵌套，如下例：
+
+> [!help] 示例5
+> > [!todo] 示例 5.1
+> > > [!example] 示例 5.1.1
 
 更多内容请参考：[callout blocks 官方文档](https://help.obsidian.md/How+to/Use+callouts)
 

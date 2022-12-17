@@ -19,7 +19,7 @@
 	* [sed](#linux_textprocessing_sed)
 	* [awk](#linux_textprocessing_awk)
 * [字体](#linux_font)
-* [网络](#linux_network)
+* [网络](#linux_network) ^dee618
   * [Linux 网络相关命令](#linux_network_command)
     * [ip](#linux_network_command_ip)
     * [curl](#linux_network_command_curl)
@@ -397,7 +397,14 @@ fc-list :lang=zh
 
 ## <span id="linux_network">网络</span>
 
-### 一些网络概念
+### <span id="linux_networkd">一些网络概念</span>
+
+
+相关笔记列表：
+
+* [Network_Note](../Network/Network_Note.md)
+* [Http_Note](../Network/Http_Note.md)
+
 
 #### 以太
 

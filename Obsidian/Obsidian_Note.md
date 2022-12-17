@@ -11,9 +11,44 @@
 	* [quick explorer](#obn_plugins_quick-explorer)
 	* [show current file path](#obn_plugins_show-current-file-path)
 	* [floating-toc](#obn_plugins_obsidian-floating-toc-plugin)
+	* [Easy Typing](#obn_plugins_easy-typing)
 	* [非 markdown 语法插件](#obn_plugins_notmarkdown)
 * [Obsidian 专用语法](#obn_syntax)
 	* [Callout Blocks](#obn_syntax_calloutblocks)
+
+---
+
+## <span id="obn_config_settings_basice">基础设置</span>
+
+基础设置是非插件化，对 Obsidian 最原始的设置。
+
+
+### <span id="obn_config_settings_basice_edit">编辑</span>
+
+「默认视图」选择「阅读模式」（Reading View）。
+
+「默认编辑模式」选择「源码模式」，这样编辑更准确些，而且不用即时渲染还能节省性能，提高编辑的流畅度。
+> [! tip] 实时预览
+> 「实时预览模式」效果跟 [Typora](https://typora.io/) 默认的类似，就是一边编辑，编辑器一边给你渲染出发布的页面效果。
+
+
+### <span id="obn_config_settings_basice_filelinks">文件与链接</span>
+
+「文件与链接」选项的设置，主是对链接各种设置。
+
+
+#### 设置内部链接类型
+
+默认「内部链接类型」是「尽可能简短形式」，就是不管链接目标文件是否在当前目录，都以不加目录路径（即没有绝对路径，也没有相对路径），这样链接如果是当前目录当前文件内部链接还没什么问题，如果链接目标是目录的文件时，虽然在 Obsidian 中能够链接到，但这在实际 Markdown 使用会出现问题，会出现找不到链接情况。为了更符合 Markdown 使用习惯，应将链接类型改为「**基于当前目录的相对路径**」，这样它就是根据目标链接文件是否在当前目录而使用**相对路径**链接策略。
+
+#### 不使用 Wiki 链接
+为了使文档更符合 Markdown 规范，将「使用Wiki链接」选项给关闭，仅使用 Markdown 标准的 `[]()` 这种语法
+
+### <span id="obn_config_settings_appearance">外观</span>
+
+「外观」设置，主要是对[主题](#obn_themes) 、「字体」等设置。
+
+「外观」设置中还能使用 [CSS 代码片段](#obn_snippet)进行外观上更详细而深入的配置。
 
 ---
 
@@ -57,6 +92,11 @@
 [Bigger Link Popup Preview](https://github.com/kmaasrud/awesome-obsidian/blob/master/code/css-snippets/bigger-link-popup-preview.css) 这个 Snippet 可以加大预览窗口大小。
 
 ---
+
+## <span id="obn_themes">主题</span>
+
+---
+
 ## <span id="obn_plugin">插件</span>
 
 Obsidian 的插件分为 「核心插件」和「第三方插件」。
@@ -64,6 +104,12 @@ Obsidian 的插件分为 「核心插件」和「第三方插件」。
 ### <span id="obn_plugins_commp">第三方插件</span>
 
 要安装和使用第三方插件前，先得把「设置」中的「安全模式」开关关闭，才能浏览和安装第三方插件。
+
+插件安装，同样因为众所周知的原因，访问起来存在一定的困难性，因为它用的是 [github](https://github.com/)。
+
+各种解决访问 github 的方案：
+* [Github加速](../Git/Git笔记.md#Github加速)
+* [Github加速](../Git/Git笔记.md#git_github_acceleration)
 
 #### 常用插件
 
@@ -84,7 +130,6 @@ Obsidian 的插件分为 「核心插件」和「第三方插件」。
 [Obsidian tabs](https://github.com/gitobsidiantutorial/obsidian-tabs) 这插件能让多个面板变成单面板多标签的形态。
 
 Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标签的功能已经成了内置功能。
-
 
 使用 **Obsidian tabs** 前：
 
@@ -168,15 +213,21 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 ---
 
-##### Theme Picker
+##### <span id="obn_plugins_theme-picker">Theme Picker</span>
 
-快速切换已安装的主题。
+[Theme Picker](https://github.com/kenset/obsidian-theme-picker) 在状态上实现快速切换已安装的主题功能。这个插件另外还附带快速进行深色与浅色间切换功能。
 
----
+![obsidian-theme-picker-usage](https://raw.githubusercontent.com/kenset/obsidian-theme-picker/next/obsidian-theme-picker-usage.gif)
 
 ##### Folder Note Plugin
 
 这是一个目录插件。可以在点击SideBar 中的目录时，在面板上展现目录下的所有内容。
+
+##### <span id="obn_plugins_easy-typing">Easy Typing</span>
+
+[Easy Typing](https://github.com/Yaozhuwa/easy-typing-obsidian) 这是一个非常强悍的排版插件。真的非常强悍，没用，单看他的[README](https://github.com/Yaozhuwa/easy-typing-obsidian/blob/master/changelog.md)文档就吓到我了！
+
+具体功能参考：[Easy Typing 中文文档](https://github.com/Yaozhuwa/easy-typing-obsidian/blob/master/README_ZH.md)
 
 ---
 
@@ -350,6 +401,7 @@ Callout Blocks 预置类型：
 ---
 
 ##  相关资料
-[awesome-obsidian](https://github.com/kmaasrud/awesome-obsidian)
-[obsidian-snippets](https://github.com/deathau/obsidian-snippets)
+* [awesome-obsidian](https://github.com/kmaasrud/awesome-obsidian)
+* [obsidian-snippets](https://github.com/deathau/obsidian-snippets)
+* [Markdown 笔记](../Markdown/Markdown_Note.md)
 

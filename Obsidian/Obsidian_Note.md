@@ -7,7 +7,7 @@
 * [基础设置](#基础设置)
 	* [文件与链接](#文件与链接)
 		* [设置内部链接类型](#设置内部链接类型)
-	* [外观](Obsidian_Note.md#^f53495)
+		* [外观](#外观)
 * [Obsidian 配置目录](#obn_config_dir)
 * [Snippet](#obn_snippet)
 *  [插件](#obn_plugin)

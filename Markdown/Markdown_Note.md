@@ -8,8 +8,10 @@ Markdown 比 doc 等文档更开放，更易于发布。
 
 ## 目录
 * [基础](#md_basic)
+  * [关于锚点](#关于锚点)
 * [高级](#md_advance)
 	* [画图](#md_advance_draw)
+* [Markdown 相关教程](#Markdown%20相关教程)
 * [扩展](#md_extra)
 	* [使用 Font Awesome](#md_extra_fontawesome)
 	* [徽章相关](#md_extra_badge)
@@ -35,13 +37,8 @@ Markdown 比 doc 等文档更开放，更易于发布。
 
 ```
 
-### <span id="md_basic_tutorial_links">Markdown 相关教程</span>
 
-* [obsidian 论坛  成雙醬 的Markdown 教程](https://forum-zh.obsidian.md/t/topic/435)
-* [https://www.markdown.cn](https://www.markdown.cn)
-* [Github Markdown 规范](https://gfm.docschina.org/zh-hans/)
-
-#### <span id="md_anchor">关于锚点</span>
+### <span id="md_anchor">关于锚点</span>
 
 > [!example] 示例1：
 > 
@@ -95,12 +92,26 @@ Markdown 比 doc 等文档更开放，更易于发布。
 >> [!example] 示例1.1
 >> ![md_anchor_1](./Markdown_Note.assets/md_anchor_1.png) 
 >> 而出来是 ` [外观](Obsidian_Note.md#^f53495)` 这种效果，[Obsidian](../Obsidian/Obsidian_Note.md) 生成一个值来引用这个「锚点」,虽然不像之前使用 `#id` 方式引用出现 `unable to find ` 问题，同样也是没在预览窗口实现「锚点」内容的「完全」预览（说预览不完全是因为，它只预览出标题，但没有预览出标题「周围」的内容，这也体现了 Obsidian `#` 与 `^` 两种引用链接方式的不同），但是能够实现「锚点」跳转。
-> 
-> 
+>>> [!bug] 问题
+>>> `#^` 这种方式的引用在 [Obsidian_Note](../Obsidian/Obsidian_Note.md) 中跳转没问题，但在 [github](https://github.com/) 中就不能实现「锚点」跳转功能了，因为生成的链接的那个「值」是 Obsidian 自己特有的。 
+
+> [!summary] 总结
+> 现阶段，既要能在 Obsidian 中跳转成功，又能在 [github](https://github.com/) 中跳转成功，只能使用 `#标题` 方式。
+>  
 
 ---
 
 ## <span id="md_advance">高级</span>
+
+
+
+---
+
+## <span id="md_tutorial_links">Markdown 相关教程</span>
+
+* [obsidian 论坛  成雙醬 的Markdown 教程](https://forum-zh.obsidian.md/t/topic/435)
+* [https://www.markdown.cn](https://www.markdown.cn)
+* [Github Markdown 规范](https://gfm.docschina.org/zh-hans/)
 
 ---
 

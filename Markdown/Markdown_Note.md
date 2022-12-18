@@ -11,6 +11,7 @@ Markdown 比 doc 等文档更开放，更易于发布。
   * [关于锚点](#关于锚点)
 * [高级](#md_advance)
 	* [画图](#md_advance_draw)
+		* [mermain 中连接线的类型](#mermain-中连接线的类型)
 	* [Markdown相关教程](#Markdown相关教程)
 * [扩展](#md_extra)
 	* [使用 Font Awesome](#md_extra_fontawesome)
@@ -36,7 +37,6 @@ Markdown 比 doc 等文档更开放，更易于发布。
 ###### 六级标题
 
 ```
-
 
 ### <span id="md_anchor">关于锚点</span>
 
@@ -91,22 +91,34 @@ Markdown 比 doc 等文档更开放，更易于发布。
 > 
 >> [!example] 示例1.1
 >> ![md_anchor_1](./Markdown_Note.assets/md_anchor_1.png) 
->> 而出来是 ` [外观](Obsidian_Note.md#^f53495)` 这种效果，[Obsidian](../Obsidian/Obsidian_Note.md) 生成一个值来引用这个「锚点」,虽然不像之前使用 `#id` 方式引用出现 `unable to find ` 问题，同样也是没在预览窗口实现「锚点」内容的「完全」预览（说预览不完全是因为，它只预览出标题，但没有预览出标题「周围」的内容，这也体现了 Obsidian `#` 与 `^` 两种引用链接方式的不同），但是能够实现「锚点」跳转。
+>> 而出来是 ` [外观](Obsidian_Note.md#^f53495)` 这种效果，[Obsidian](../Obsidian/Obsidian_Note.md) 生成一个值来引用这个「锚点」,虽然不像之前使用 `#id` 方式引用出现 `unable to find section` 问题，同样也是没在预览窗口实现「锚点」内容的「完全」预览（说预览不完全是因为，它只预览出标题，但没有预览出标题「周围」的内容，这也体现了 Obsidian `#` 与 `^` 两种引用链接方式的不同），但是能够实现「锚点」跳转。
 >>> [!bug] 问题
 >>> `#^` 这种方式的引用在 [Obsidian_Note](../Obsidian/Obsidian_Note.md) 中跳转没问题，但在 [github](https://github.com/) 中就不能实现「锚点」跳转功能了，因为生成的链接的那个「值」是 Obsidian 自己特有的。 
 
 > [!bug] 空格问题
 > 如果标题中存在空格，在使用 `#标题` 方式引用时，Obsidian 中预览及跳转都没问题，但在 [github](https://github.com/) 是未能跳转成功的。
+>
 
 > [!summary] 总结
 > 现阶段，既要能在 Obsidian 中跳转成功，又能在 [github](https://github.com/) 中跳转成功，只能使用 `#标题` 方式。
+> 
+> 另外，中英混排的标题不能有空格，不然文档在  [github](https://github.com/) 下是不能跳转--其实在 [VSCode](https://code.visualstudio.com/)  使用 [Markdown预览插件](../Editors/Editors_Note.md#editors_vscode_extensions_markdown-preview-enhanced) 预览文档，这种有空格的中英混排标题，同样是不能完成跳转功能的。
+>
+>> [!help] 解决方案
+>> 1. 为了能使 [Obsidian](../Obsidian/Obsidian_Note.md) 的链接能够实现预览及跳转，而且更能体现 Markdown 的简单原则，在引用「锚点」时，尽量使用 `#标题` 这种更具备「语义性」的引用方式
+>> 2. 在定义「标题」时，尽量不要使用中英混排的标题
+>> 3. 在定义「标题」时，如果非要用到中英混排，尽量不要在其中使用**空格**
+>> 4. 在定义「标题」时，如果一定要中英混排而且还包含**空格**，那有两种处理方案：
+>> 	* 在引用这个「锚点」时，使用 `-` 来代替**空格**，如`[mermain 中连接线的类型](#mermain-中连接线的类型)`，这种方式只适合用于中英混排中英文是小写字母，如果英文出现大写字母，那这种方式也没用了！
+>> 	但这种方式，Obsidian 是不支持的，所以这种方式在 Obsidian 中是没法预览和跳转的，但在 github 中是可行的。
+>> 	* 那就只能使用 `#id` 这种对 [Obsidian](../Obsidian/Obsidian_Note.md) 不太「友好」的方式来引用「锚点」。
+>>  
+> 
 >  
 
 ---
 
 ## <span id="md_advance">高级</span>
-
-
 
 ---
 

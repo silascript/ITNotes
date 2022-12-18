@@ -4,6 +4,10 @@
 ---
 
 ## 目录
+* [基础设置](#基础设置)
+	* [文件与链接](#文件与链接)
+		* [设置内部链接类型](#设置内部链接类型)
+	* [外观](#外观)
 * [Obsidian 配置目录](#obn_config_dir)
 * [Snippet](#obn_snippet)
 *  [插件](#obn_plugin)
@@ -22,7 +26,6 @@
 
 基础设置是非插件化，对 Obsidian 最原始的设置。
 
-
 ### <span id="obn_config_settings_basice_edit">编辑</span>
 
 「默认视图」选择「阅读模式」（Reading View）。
@@ -31,11 +34,9 @@
 > [! tip] 实时预览
 > 「实时预览模式」效果跟 [Typora](https://typora.io/) 默认的类似，就是一边编辑，编辑器一边给你渲染出发布的页面效果。
 
-
 ### <span id="obn_config_settings_basice_filelinks">文件与链接</span>
 
 「文件与链接」选项的设置，主是对链接各种设置。
-
 
 #### 设置内部链接类型
 

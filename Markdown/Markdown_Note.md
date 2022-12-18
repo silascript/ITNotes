@@ -11,7 +11,7 @@ Markdown 比 doc 等文档更开放，更易于发布。
   * [关于锚点](#关于锚点)
 * [高级](#md_advance)
 	* [画图](#md_advance_draw)
-* [Markdown 相关教程](#Markdown%20相关教程)
+	* [Markdown相关教程](#Markdown相关教程)
 * [扩展](#md_extra)
 	* [使用 Font Awesome](#md_extra_fontawesome)
 	* [徽章相关](#md_extra_badge)
@@ -95,6 +95,9 @@ Markdown 比 doc 等文档更开放，更易于发布。
 >>> [!bug] 问题
 >>> `#^` 这种方式的引用在 [Obsidian_Note](../Obsidian/Obsidian_Note.md) 中跳转没问题，但在 [github](https://github.com/) 中就不能实现「锚点」跳转功能了，因为生成的链接的那个「值」是 Obsidian 自己特有的。 
 
+> [!bug] 空格问题
+> 如果标题中存在空格，在使用 `#标题` 方式引用时，Obsidian 中预览及跳转都没问题，但在 [github](https://github.com/) 是未能跳转成功的。
+
 > [!summary] 总结
 > 现阶段，既要能在 Obsidian 中跳转成功，又能在 [github](https://github.com/) 中跳转成功，只能使用 `#标题` 方式。
 >  
@@ -107,7 +110,7 @@ Markdown 比 doc 等文档更开放，更易于发布。
 
 ---
 
-## <span id="md_tutorial_links">Markdown 相关教程</span>
+## <span id="md_tutorial_links">Markdown相关教程</span>
 
 * [obsidian 论坛  成雙醬 的Markdown 教程](https://forum-zh.obsidian.md/t/topic/435)
 * [https://www.markdown.cn](https://www.markdown.cn)

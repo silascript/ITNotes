@@ -41,6 +41,63 @@ Markdown 比 doc 等文档更开放，更易于发布。
 * [https://www.markdown.cn](https://www.markdown.cn)
 * [Github Markdown 规范](https://gfm.docschina.org/zh-hans/)
 
+#### <span id="md_anchor">关于锚点</span>
+
+> [!example] 示例1：
+> 
+> ```markdown
+>	* [基础设置](#基础设置)
+>		* [文件与链接](#文件与链接)
+>			* [设置内部链接类型](#设置内部链接类型)
+>		* [外观](#外观)
+>	* [Obsidian 配置目录](#obn_config_dir)
+>	```
+>	
+> ```markdown
+>	## <span id="obn_config_settings_basice">基础设置</span>
+>		### <span id="obn_config_settings_basice_filelinks">文件与链接</span>
+>			#### 设置内部链接类型
+>			### <span id="obn_config_settings_appearance">外观</span>
+>		##  <span id="obn_config_dir">Obsidian 的配置目录</span>
+> ```
+> 
+> 
+> 这个例子使用了两种方式对「锚点」的定义与引用。
+> 1. 使用 `<span>` 这个行内标签，并且使用 `id` 属性为其定义「锚点」值。
+> 2. 什么都没加，直接就是原生的 Markdown 语法 `#` 符号定义标题。 
+> 
+> 而引用「锚点」时，同样也使用了两种方式：
+> 1. 对于部分使用了 `id` 指定「锚点」值的标题，使用 `#标题` 方式来引用「锚点」。
+> 2. 对于标准 Markdown 语法，即使用 `#标题` 方式定义标题来说，只能使用 `#标题` 方式来引用「锚点」。
+>
+> 来看下在[Obsidian](../Obsidian/Obsidian_Note.md) 及 [github](https://github.com) 上的效果：
+> 1. Obsidian 中使用 `<span id>` 这种方式定义的锚点，并在引用时使用 `#id` 的方式引用，Obsidian 找不到锚点。
+> 2. github 上无论哪种方式引用「锚点」都能实现链接跳转。
+>   
+> 顺便看下，[github](https://github.com) 渲染成 html 后，html 源码成了什么：
+> 
+> ```html
+>	<li><a href="#%E5%9F%BA%E7%A1%80%E8%AE%BE%E7%BD%AE">基础设置</a></li>
+>	<li><a href="#%E6%96%87%E4%BB%B6%E4%B8%8E%E9%93%BE%E6%8E%A5">文件与链接</a></li>
+>	<li><a href="#%E8%AE%BE%E7%BD%AE%E5%86%85%E9%83%A8%E9%93%BE%E6%8E%A5%E7%B1%BB%E5%9E%8B">设置内部链接类型</a></li>
+>	<li><a href="#%E5%A4%96%E8%A7%82">外观</a></li>
+>	<li><a href="#obn_config_dir">Obsidian 配置目录</a></li>
+> ```  
+>
+> 可以发现，`<span>`  在经过 [github](https://github.com) 渲染转换之后，生成的是 `<a>` 标签。
+> 
+>  使用 `id` 属性定义的「锚点」并使用 `#id` 方式引用的「锚点」，在经过渲染转换后，是非常标准的 html 「锚点」引用语法。
+>  
+>  但使用 `#标题` 方式引用「锚点」，[github](https://github.com) 就将中文标题「encoding」 了，可读性变差，但功能还是能实现的，这就是为什么 [github](https://github.com) 下两种方式都能实现跳转功能。
+>
+>  如果想要在 [Obsidian](../Obsidian/Obsidian_Note.md) 中使用指定锚点 `id` 值来引用「锚点」，可以使用 `^`  符号来引用：
+> 
+>> [!example] 示例1.1
+>> ![md_anchor_1](./Markdown_Note.assets/md_anchor_1.png) 
+>> 而出来是 ` [外观](Obsidian_Note.md#^f53495)` 这种效果，[Obsidian](../Obsidian/Obsidian_Note.md) 生成一个值来引用这个「锚点」,虽然不像之前使用 `#id` 方式引用出现 `unable to find ` 问题，同样也是没在预览窗口实现「锚点」内容的「完全」预览（说预览不完全是因为，它只预览出标题，但没有预览出标题「周围」的内容，这也体现了 Obsidian `#` 与 `^` 两种引用链接方式的不同），但是能够实现「锚点」跳转。
+> 
+> 
+
 ---
 
 ## <span id="md_advance">高级</span>

@@ -7,7 +7,7 @@
 * [基础设置](#基础设置)
 	* [文件与链接](#文件与链接)
 		* [设置内部链接类型](#设置内部链接类型)
-	* [外观](#外观)
+	* [外观](Obsidian_Note.md#^f53495)
 * [Obsidian 配置目录](#obn_config_dir)
 * [Snippet](#obn_snippet)
 *  [插件](#obn_plugin)
@@ -46,6 +46,8 @@
 为了使文档更符合 Markdown 规范，将「使用Wiki链接」选项给关闭，仅使用 Markdown 标准的 `[]()` 这种语法
 
 ### <span id="obn_config_settings_appearance">外观</span>
+
+^f53495
 
 「外观」设置，主要是对[主题](#obn_themes) 、「字体」等设置。
 

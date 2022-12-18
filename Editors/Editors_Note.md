@@ -197,10 +197,10 @@ VSCode 的语言包。
 使用这个插件，得先新建一个 gist 和 一个 token。
 
 * 新建一个 gist
-> [gist 具体操作](../Git/Git笔记.md#git_github_gist)
+> [gist 具体操作](../Git/Git_Note.md#git_github_gist)
 
 * 生成token
-生成一个 token，在生成 token 时，勾选 **scopes** 为 **gist**，如果不想麻烦，就把 token 的生命周期为 **No Expiration**。（[token 具体操作](../Git/Git笔记.md#git_github_token)）
+生成一个 token，在生成 token 时，勾选 **scopes** 为 **gist**，如果不想麻烦，就把 token 的生命周期为 **No Expiration**。（[token 具体操作](../Git/Git_Note.md#git_github_token)）
 
 * syncing 设置
 

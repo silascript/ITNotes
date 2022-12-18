@@ -81,7 +81,7 @@
 
 ## Git
 
-[Git笔记](Git/Git笔记.md)
+[Git_Note](Git/Git_Note.md)
 
 ---
 

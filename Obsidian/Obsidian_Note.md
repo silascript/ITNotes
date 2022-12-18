@@ -108,8 +108,7 @@ Obsidian 的插件分为 「核心插件」和「第三方插件」。
 插件安装，同样因为众所周知的原因，访问起来存在一定的困难性，因为它用的是 [github](https://github.com/)。
 
 各种解决访问 github 的方案：
-* [Github加速](../Git/Git笔记.md#Github加速)
-* [Github加速](../Git/Git笔记.md#git_github_acceleration)
+* [Github加速](../Git/Git_Note.md#Github加速)
 
 #### 常用插件
 
@@ -365,26 +364,43 @@ Callout Blocks 语法：
 Callout Blocks 的「**类型**」其实就是些**图标**及**颜色**样式，能够让引用块更具有「语义性」。
 
 Callout Blocks 预置类型：
+
 * `note`
 > [!note]
+
 * `info`
 > [!info]
+
 * `abstract` 或 `summary`、`tldr`
 > [!abstract]
+
 * `todo`
 >[!todo]
+
 * `tip` 或 `hint`、`important`
 > [!tip] 
+
 * `success` 或 `check`、`done`
 > [!success]
+
 * `question` 或 `help`、`faq`
 > [!help]
+
 * `warning` 或 `caution`、`attention`
+> [!waring]
+
 * `failure` 或 `fail`、`missing`
+> [!fail]
+
 * `danger` 或  `error`
+> [!danger]
+
 * `bug`
+> [!bug]
+
 * `example`
 > [!example]
+
 * `quote` 或 `cite`
 > [!quote]
 

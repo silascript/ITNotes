@@ -253,7 +253,7 @@ git branch -M 名称
 git status
 ```
 
-![](Git笔记.assets/2020-12-06 10-24-40屏幕截图.png)
+![](Git_Note.assets/2020-12-06 10-24-40屏幕截图.png)
 
 #### 查看提交日志
 
@@ -261,7 +261,7 @@ git status
 git log
 ```
 
-![](Git笔记.assets/2020-12-06 10-26-02屏幕截图.png)
+![](Git_Note.assets/2020-12-06 10-26-02屏幕截图.png)
 
 #### 查看当前分支
 
@@ -279,7 +279,7 @@ git branch
 git ls-files -s
 ```
 
-![](Git笔记.assets/2020-12-06 10-28-33屏幕截图.png)
+![](Git_Note.assets/2020-12-06 10-28-33屏幕截图.png)
 
 ---
 
@@ -291,7 +291,7 @@ git ls-files -s
 git remote show 远程版本库名称
 ```
 
-![](Git笔记.assets/2020-12-06 10-54-53屏幕截图.png)
+![](Git_Note.assets/2020-12-06 10-54-53屏幕截图.png)
 
 查看远程仓库信息：
 
@@ -382,7 +382,7 @@ Git 的核心部分是一个简单的键值对数据库(key-value data store)。
 
 * **index**文件:  保存暂存区信息
 
-![](Git笔记.assets/2020-12-02 22-37-58屏幕截图.png)
+![](Git_Note.assets/2020-12-02 22-37-58屏幕截图.png)
 
 #### Git对象
 
@@ -404,19 +404,19 @@ echo "hello world" | git hash-object --stdin
 
 结果:
 
-![](Git笔记.assets/2020-12-02 22-39-37屏幕截图.png)
+![](Git_Note.assets/2020-12-02 22-39-37屏幕截图.png)
 
 如果没有使用**-w** 选项，则在**objects**目录中不会生成相应的子目录.如下图:
 
-![](Git笔记.assets/2020-12-02 23-58-00屏幕截图.png)
+![](Git_Note.assets/2020-12-02 23-58-00屏幕截图.png)
 
 而使用**-w** 选项后，则会在**objects**目录中生成相应的子目录及文件，其目录名为hash值最高**2**位，剩下**38**位为文件名，如下图:
 
-![](Git笔记.assets/2020-12-03 00-01-30屏幕截图.png)
+![](Git_Note.assets/2020-12-03 00-01-30屏幕截图.png)
 
 又如：
 
-![](Git笔记.assets/2020-12-06 02-11-45屏幕截图.png)
+![](Git_Note.assets/2020-12-06 02-11-45屏幕截图.png)
 
 **cat-file**
 
@@ -428,7 +428,7 @@ echo "hello world" | git hash-object --stdin
 >
 > 如果hash object对象没找到则会报异常，如下图所示:
 >
-> ![](Git 笔记.assets/2020-12-02 23-54-00屏幕截图.png)
+> ![](Git_Note.assets/2020-12-02 23-54-00屏幕截图.png)
 >
 > **-t** 选项,可以让 Git 告诉我们其内部存储的任何对象类型
 
@@ -440,11 +440,11 @@ git cat-file -p 3b18e512dba79e4c8300dd08aeb37f8e728b8dad
 
 结果:
 
-![](Git笔记.assets/2020-12-03 00-04-47屏幕截图.png)
+![](Git_Note.assets/2020-12-03 00-04-47屏幕截图.png)
 
 #### 树对象
 
-![](Git笔记.assets/2020-12-06 02-14-33屏幕截图.png)
+![](Git_Note.assets/2020-12-06 02-14-33屏幕截图.png)
 
 ---
 
@@ -478,39 +478,21 @@ Github 访问慢可以使用重设 Host 映射解决。
 
 1. 检测可用的ip
 
-		`````````````
-		 ````````````
-		  ```````````
-		   ``````````
-		    `````````
-		     ````````
-		      ```````
-		       ``````
-		        `````
-		         ````
-		          ```
-		           > 有两个常用网站可以检测
-		           >
-		           > * <http://ping.chinaz.com>
-		           >
-		           > ![](Git笔记.assets/2020-12-15 01-10-40屏幕截图.png)
-		           >
-		           > * <https://www.ipaddress.com>
-		           >
-		           > ![](Git笔记.assets/2020-12-15 01-13-12屏幕截图.png)
-		          ```
-		         ````
-		        `````
-		       ``````
-		      ```````
-		     ````````
-		    `````````
-		   ``````````
-		  ```````````
-		 ````````````
-		`````````````
+```
+   > 有两个常用网站可以检测
+   >
+   > * <http://ping.chinaz.com>
+   >
+   > ![](Git笔记.assets/2020-12-15 01-10-40屏幕截图.png)
+   >
+   > * <https://www.ipaddress.com>
+   >
+   > ![](Git笔记.assets/2020-12-15 01-13-12屏幕截图.png)
+```
 
 检测出的 ip，最好自己 **ping**一下，选速度比较快的几个。
+
+
 
 2. 设置 Host 文件
 
@@ -528,6 +510,7 @@ Github 访问慢可以使用重设 Host 映射解决。
 
 需要重新设置 Host 的地址:
 
+> [!help] github host 文件映射
 > * github.com
 >
 > * gist.github.com
@@ -562,29 +545,9 @@ Github 访问慢可以使用重设 Host 映射解决。
 
 2. hosts管理小工具: [SwitchHosts](https://github.com/oldj/SwitchHosts)
 
-		`````````````
-		 ````````````
-		  ```````````
-		   ``````````
-		    `````````
-		     ````````
-		      ```````
-		       ``````
-		        `````
-		         ````
-		          ```
-		           SwitchHosts与GitHub520配合使用，能够方便快速使用最新的ip映射github相关的网址s
-		          ```
-		         ````
-		        `````
-		       ``````
-		      ```````
-		     ````````
-		    `````````
-		   ``````````
-		  ```````````
-		 ````````````
-		`````````````
+```
+SwitchHosts与GitHub520配合使用，能够方便快速使用最新的ip映射github相关的网址s
+```
 
 ###### 相关 host 地址
 
@@ -632,7 +595,7 @@ git config --global --unset url.https://github.com/.insteadof
 
 使用 [steam++](https://steampp.net/) 来加速 git 访问。
 
-![steam++](./Git笔记.assets/steampp.png)
+![steam++](Git_Note.assets/steampp.png)
 
 速度真的可以啊！而且这个软件是全平台的，Windows、mac 和 Linux 都支持。
 

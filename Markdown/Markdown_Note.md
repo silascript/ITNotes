@@ -112,24 +112,38 @@ Markdown 比 doc 等文档更开放，更易于发布。
 >> 3. 在定义「标题」时，如果非要用到中英混排，尽量不要在其中使用**空格**。
 >> 4. 在定义「标题」时，如果一定要中英混排而且还包含**空格**，那有两种处理方案：
 >> 	* 在引用这个「锚点」时，使用 `-` 来代替**空格**，如`[mermain 中连接线的类型](#mermain-中连接线的类型)`，这种方式只适合用于中英混排中英文是小写字母，如果英文出现大写字母，那这种方式也***可能***没用。
->> 	
 >> 	>>> [!tip] 各种预览对于大小写字母处理
 >> 	>>>	因为不同的渲染器转换器，出来的效果是有差异的。 
 >> 	>>>  * [github](https://github.com)  正常跳转。
 >> 	>>>  * [Typora](https://www.typoraio.cn/)  正常跳转。
 >> 	>>>  * [VSCode](../Editors/Editors_Note.md#editors_vscode) 的 [Markdown Preview Enhanced](../Editors/Editors_Note.md#Markdown-Preview-Enhanced) 插件中的预览效果，跳转不成功。
 >> 	>>>  * 使用浏览器 Markdown 插件进行 Markdown 文件预览时，跳转不成功。
->> 	>>>    
+>> 	>>>   
 >> 	>>>  从根上分析，HTML 文档中的**标签名**和**属性名**应该都是大小写**不敏感**的，按道理是不应该存在什么大小写而出现「锚点」跳转不了的问题，但事实就是有些预览方式存在这个问题。
->> 
->> 	  >>> [!help] 原理
->> 	  >>> 诸如[github](https://github.com) 在对 Markdown 文件进行渲染转换成 html 时，会将**空格**转换成 `-`，这才是引用「锚点」时，可以使用 `-`实现锚点跳转的原因所在。
->> 	  >>> 至于大写字母不生效的原因也很奇怪，因为 [github](https://github.com) 会将所有「锚点」定义的地方的 html `<a>`标签的 `href` 值中英文都从大写字母都转成小写字母，但引用「锚点」处的 `<a>` 标签的 `href` 属性值它没有转，这就是跳转出问题的可能原因，说「可能」，上面已经分析过了，HTML 标签中的属性值压根就不存在大小写敏感，而实际在 [github](https://github.com) 测试，大写字母做标题，引用这「锚点」时，是能成功跳转的，这也侧面证明了 HTML 标签属性值大小写不敏感这个事实。
->> 	   
->> 	* 如果不确定标题存在空格及英文大小写，造成引用「锚点」时跳转是否正常，那就直接使用 `#id` 这种对 [Obsidian](../Obsidian/Obsidian_Note.md) 不太「友好」的方式来引用「锚点」。
->> 	
+>> 	>>>
+>> 	>>>>[!help] 原理
+>> 	 >>>>  
+>> 	 >>>> 诸如 [github](https://github.com) 在对 Markdown 文件进行渲染转换成 html 时，会将**空格**转换成 `-`，这才是引用「锚点」时，可以使用 `-`实现锚点跳转的原因所在。
+>> 	>>>> 
+>> 	>>>> 至于大写字母不生效的原因也很奇怪，因为 [github](https://github.com) 会将所有「锚点」定义的地方的 html `<a>`标签的 `href` 值中英文都从大写字母都转成小写字母，但引用「锚点」处的 `<a>` 标签的 `href` 属性值它没有转，这就是跳转出问题的可能原因，说「可能」，上面已经分析过了，HTML 标签中的属性值压根就不存在大小写敏感，而实际在 [github](https://github.com) 测试，大写字母做标题，引用这「锚点」时，是能成功跳转的，这也侧面证明了 HTML 标签属性值大小写不敏感这个事实。
+>> 	>>>> 
+>> 	>>>> ```html
+>> 	>>>> <!-- 这个引用锚点 href  值就没有转成小写 #Mermaid-->
+>> 	>>>> <a href="#Mermaid-%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95">Mermaid 常用语法</a>
+>> 	>>>> <!-- 看到了吧，这是锚点定义的地方，即标题定义部分，它的 href 属性值 已经从大写转成小写 #mermaid -->
+>> 	>>>> <a id="user-content-mermaid-常用语法" class="anchor" aria-hidden="true" href="#mermaid-常用语法">Mermaid 常用语法</a>
+>> 	>>>> ```
+>> 	>>>> 
+>>  
+>> 	 * 如果不确定标题存在空格及英文大小写，造成引用「锚点」时跳转是否正常，那就直接使用 `#id` 这种对 [Obsidian](../Obsidian/Obsidian_Note.md) 不太「友好」的方式来引用「锚点」。
 > 
 >  
+
+```html
+<a href="#Mermaid-%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95">Mermaid 常用语法</a>
+<a id="user-content-mermaid-常用语法" class="anchor" aria-hidden="true" href="#mermaid-常用语法"></a>
+```
+
 
 ---
 

@@ -11,8 +11,9 @@ Markdown 比 doc 等文档更开放，更易于发布。
   * [关于锚点](#关于锚点)
 * [高级](#md_advance)
 	* [画图](#md_advance_draw)
+	* [Mermaid图形种类](#Mermaid图形种类)
 	* [Mermaid 常用语法](#Mermaid-常用语法)
-	* [mermaid 中连接线的类型](#mermaid-中连接线的类型)
+		* [mermaid 中连接线的类型](#mermaid-中连接线的类型)
 	* [Markdown相关教程](#Markdown相关教程)
 * [扩展](#md_extra)
 	* [使用 Font Awesome](#md_extra_fontawesome)
@@ -106,18 +107,27 @@ Markdown 比 doc 等文档更开放，更易于发布。
 > 另外，中英混排的标题不能有空格，不然文档在  [github](https://github.com/) 下是不能跳转--其实在 [VSCode](https://code.visualstudio.com/)  使用 [Markdown预览插件](../Editors/Editors_Note.md#editors_vscode_extensions_markdown-preview-enhanced) 预览文档，这种有空格的中英混排标题，同样是不能完成跳转功能的。
 >
 >> [!help] 解决方案
->> 1. 为了能使 [Obsidian](../Obsidian/Obsidian_Note.md) 的链接能够实现预览及跳转，而且更能体现 Markdown 的简单原则，在引用「锚点」时，尽量使用 `#标题` 这种更具备「语义性」的引用方式
->> 2. 在定义「标题」时，尽量不要使用中英混排的标题
->> 3. 在定义「标题」时，如果非要用到中英混排，尽量不要在其中使用**空格**
+>> 1. 为了能使 [Obsidian](../Obsidian/Obsidian_Note.md) 的链接能够实现预览及跳转，而且更能体现 Markdown 的简单原则，在引用「锚点」时，尽量使用 `#标题` 这种更具备「语义性」的引用方式。
+>> 2. 在定义「标题」时，尽量不要使用中英混排的标题。
+>> 3. 在定义「标题」时，如果非要用到中英混排，尽量不要在其中使用**空格**。
 >> 4. 在定义「标题」时，如果一定要中英混排而且还包含**空格**，那有两种处理方案：
->> 	* 在引用这个「锚点」时，使用 `-` 来代替**空格**，如`[mermain 中连接线的类型](#mermain-中连接线的类型)`，这种方式只适合用于中英混排中英文是小写字母，如果英文出现大写字母，那这种方式也没用了！
+>> 	* 在引用这个「锚点」时，使用 `-` 来代替**空格**，如`[mermain 中连接线的类型](#mermain-中连接线的类型)`，这种方式只适合用于中英混排中英文是小写字母，如果英文出现大写字母，那这种方式也***可能***没用。
+>> 	
+>> 	>>> [!tip] 各种预览对于大小写字母处理
+>> 	>>>	因为不同的渲染器转换器，出来的效果是有差异的。 
+>> 	>>>  * [github](https://github.com)  正常跳转。
+>> 	>>>  * [Typora](https://www.typoraio.cn/)  正常跳转。
+>> 	>>>  * [VSCode](../Editors/Editors_Note.md#editors_vscode) 的 [Markdown Preview Enhanced](../Editors/Editors_Note.md#Markdown-Preview-Enhanced) 插件中的预览效果，跳转不成功。
+>> 	>>>  * 使用浏览器 Markdown 插件进行 Markdown 文件预览时，跳转不成功。
+>> 	>>>    
+>> 	>>>  从根上分析，HTML 文档中的**标签名**和**属性名**应该都是大小写**不敏感**的，按道理是不应该存在什么大小写而出现「锚点」跳转不了的问题，但事实就是有些预览方式存在这个问题。
+>> 
 >> 	  >>> [!help] 原理
 >> 	  >>> 诸如[github](https://github.com) 在对 Markdown 文件进行渲染转换成 html 时，会将**空格**转换成 `-`，这才是引用「锚点」时，可以使用 `-`实现锚点跳转的原因所在。
->> 	  >>> 至于大写字母不生效的原因也很奇怪，因为 [github](https://github.com) 会将所有「锚点」定义的地方的 html `<a>`标签的 `href` 值中英文都从大写字母都转成小写字母，但引用「锚点」处的 `<a>` 标签的 `href` 属性值它没有转，哈哈，好奇葩啊，这才导致，如果你在定义「锚点」时存在英文大写字母，经过 [github](https://github.com) 的渲染转换，就会出现定义和引用不一致而不能进行「锚点」跳转的问题。
+>> 	  >>> 至于大写字母不生效的原因也很奇怪，因为 [github](https://github.com) 会将所有「锚点」定义的地方的 html `<a>`标签的 `href` 值中英文都从大写字母都转成小写字母，但引用「锚点」处的 `<a>` 标签的 `href` 属性值它没有转，这就是跳转出问题的可能原因，说「可能」，上面已经分析过了，HTML 标签中的属性值压根就不存在大小写敏感，而实际在 [github](https://github.com) 测试，大写字母做标题，引用这「锚点」时，是能成功跳转的，这也侧面证明了 HTML 标签属性值大小写不敏感这个事实。
 >> 	   
->> 	但这种方式，Obsidian 是不支持的，所以这种方式在 Obsidian 中是没法预览和跳转的，但在 github 中是可行的。
->> 	* 那就只能使用 `#id` 这种对 [Obsidian](../Obsidian/Obsidian_Note.md) 不太「友好」的方式来引用「锚点」。
->>  
+>> 	* 如果不确定标题存在空格及英文大小写，造成引用「锚点」时跳转是否正常，那就直接使用 `#id` 这种对 [Obsidian](../Obsidian/Obsidian_Note.md) 不太「友好」的方式来引用「锚点」。
+>> 	
 > 
 >  
 
@@ -145,7 +155,7 @@ Mermaid 是一种基于 Javascript 的通过代码创建图表的工具，其使
 
 在 Markdown 中使用 Mermaid 是通过代码块来实现的，只需在代码块的语言指定中指定为 `mermaid` 就能在 Markdown 中使用 Mermaid 来展示各类图表。
 
-#### Mermaid 图形种类
+#### Mermaid图形种类
 * 流程图：使用 `flowchart` 或 `graph` 关键字
 * 序列图：使用 `sequenceDiagram` 关键字
 * 甘特图：使用 `gantt` 关键字

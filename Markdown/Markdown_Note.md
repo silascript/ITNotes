@@ -9,6 +9,7 @@ Markdown 比 doc 等文档更开放，更易于发布。
 ## 目录
 * [基础](#md_basic)
   * [关于锚点](#关于锚点)
+	  * [相关测试](#相关测试)
 * [高级](#md_advance)
 	* [画图](#md_advance_draw)
 	* [Mermaid图形种类](#Mermaid图形种类)
@@ -137,12 +138,11 @@ Markdown 比 doc 等文档更开放，更易于发布。
 >>  
 >> 	 * 如果不确定标题存在空格及英文大小写，造成引用「锚点」时跳转是否正常，那就直接使用 `#id` 这种对 [Obsidian](../Obsidian/Obsidian_Note.md) 不太「友好」的方式来引用「锚点」。
 > 
->  
 
-```html
-<a href="#Mermaid-%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95">Mermaid 常用语法</a>
-<a id="user-content-mermaid-常用语法" class="anchor" aria-hidden="true" href="#mermaid-常用语法"></a>
-```
+
+#### 相关测试
+
+关于链接及「锚点」，这个[测试页面](Markdown_Test.md) 能说明很多东西。
 
 
 ---

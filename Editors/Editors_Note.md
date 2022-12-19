@@ -483,7 +483,9 @@ markdown 插件有很多，而 VSCode、VSCodiume 本身内置了 markdown 基�
 * `ctrl+shift-v`：预览
 > 侧边预览的快捷键与 vim 插件冲突
 
-
+> [!bug] 预览插件存在的问题
+> 
+> 这个预览插件，对于「锚点」跳转存在一定的问题，主是问题发生在中英混排标题时，特别是存在空格及英文大写字母情况下，问题详解请参考 [关于锚点](../Markdown/Markdown_Note.md#关于锚点)。
 
 ---
 

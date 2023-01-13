@@ -233,6 +233,20 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 ---
 
+#### <span id="obn_plugins_git">Git 相关</span>
+
+##### <span id="obn_plugins_git_obsidiangit">Obsidian Git</span>
+
+[Obsidian Git](https://github.com/denolehov/obsidian-git) 这个插件是让Obsidian 拥有常用 Git 功能的插件。
+
+
+Ctrl+P 呼出命令面板，搜索 「Obsidian Git:Open source control view」，这就在右侧边面板添加了 Git 的管理面板，它能方便对 当前 Git 库进行版本管理，比如 `git add` 及 `git commit`。个人习惯，会将这面板拖到左边。
+
+
+
+---
+
+
 #### <span id="obn_plugins_notmarkdown">非 markdown 语法插件</span>
 
 ##### Admonition

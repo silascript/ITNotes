@@ -128,6 +128,53 @@ Obsidian 的插件分为 「核心插件」和「第三方插件」。
 
 ---
 
+##### <span id="obn_plugins_quiet_outline">Quiet Outline</span>
+
+[Quiet Outline](https://github.com/guopenghui/obsidian-quiet-outline) 是一个功能更强的 outline 插件。
+
+![quiet_outline_screenshot_level](https://raw.githubusercontent.com/guopenghui/obsidian-quiet-outline/master/public/default-level.gif)
+
+
+---
+
+##### <span id="obn_plugins_linter">Linter</span>
+
+[Linter](https://github.com/platers/obsidian-linter) 是一款格式化 Markdown 文件的插件。
+
+常用设置：
+「Content」 选项卡：
+1. 「Emphasis Style」斜体书写风格。有三种选项：`consistent`、`asterisk`、`underscore`。
+2. 「Strong Style」 粗体书写风格。同样有三种选项：`consistent`、`asterisk`、`underscore`。
+3. 「Unordered List Style」无序列表书写风格 ，有四种。
+这几个选项设置，个人一般使用 `asterisk`，就是星号。
+
+「Spacing」 选项卡：
+1. 「Heading blank lines」 设置标题前后的空行，默认是在标题后空一行。
+
+
+Linter 插件还可以配合 [Commander](#obn_plugins_obsidian-commander) 插件，在侧边栏上添加一个按钮，方便格式化当前文件。
+
+
+---
+##### <span id="obn_plugins_table_generator">Table Generator</span>
+
+[Table Generator](https://github.com/quorafind/obsidian-table-generator) 是一款快速生成 Markdown 表格的插件。
+
+![table generator example](https://raw.githubusercontent.com/Quorafind/Obsidian-Table-Generator/master/media/example.gif)
+
+同样，这插件也配合[Commander](#obn_plugins_obsidian-commander) 插件，在侧边栏添加新建表格的按钮，方便添加表格。
+
+
+---
+##### <span id="obn_plugins_advanced_tables">Advanced Tables</span>
+
+[Advanced Tables](https://github.com/tgrosinger/advanced-tables-obsidian) 是一个编辑 Markdown 表格的插件。
+
+
+![advanced tables example](https://raw.githubusercontent.com/tgrosinger/advanced-tables-obsidian/main/resources/screenshots/basic-functionality.gif)
+
+---
+
 ##### <span id="obn_plugins_obtabs">~~Obsidian tabs~~</span>
 [Obsidian tabs](https://github.com/gitobsidiantutorial/obsidian-tabs) 这插件能让多个面板变成单面板多标签的形态。
 
@@ -163,7 +210,7 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 ---
 
-##### <span id="obn_plugins_obsidian-commander">obsidian-commander</span>
+##### <span id="obn_plugins_obsidian-commander">Commander</span>
 
 [obsidian-commander](https://github.com/phibr0/obsidian-commander) 是一个自定义命令插件。
 
@@ -220,6 +267,28 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 [Theme Picker](https://github.com/kenset/obsidian-theme-picker) 在状态上实现快速切换已安装的主题功能。这个插件另外还附带快速进行深色与浅色间切换功能。
 
 ![obsidian-theme-picker-usage](https://raw.githubusercontent.com/kenset/obsidian-theme-picker/next/obsidian-theme-picker-usage.gif)
+
+---
+##### <span id="obn_plugins_folder_icon">Icon-Folder</span>
+
+[Icon-Folder](https://github.com/FlorianWoelki/obsidian-icon-folder) 这个插件是给文件夹加图标的，让目录更具辨识度。
+
+---
+
+##### <span id="obn_plugins_file_color">File Color</span>
+
+[File Color](https://github.com/ecustic/obsidian-file-color) 这个插件是可以文件上色。
+
+此插件能兼容 [Icon-Folder](obn_plugins_folder_icon) 插件的。
+
+
+---
+
+##### <span id="obn_plugins_pangu">obsidian-pangu</span>
+
+[Obsidian Pangu](https://github.com/Natumsol/obsidian-pangu) 是一个为 Markdown 文件中数字英文添加空格。
+
+---
 
 ##### Folder Note Plugin
 

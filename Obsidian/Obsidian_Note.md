@@ -40,24 +40,24 @@
 
 #### 设置内部链接类型
 
-默认「内部链接类型」是「尽可能简短形式」，就是不管链接目标文件是否在当前目录，都以不加目录路径（即没有绝对路径，也没有相对路径），这样链接如果是当前目录当前文件内部链接还没什么问题，如果链接目标是目录的文件时，虽然在 Obsidian 中能够链接到，但这在实际 Markdown 使用会出现问题，会出现找不到链接情况。为了更符合 Markdown 使用习惯，应将链接类型改为「**基于当前目录的相对路径**」，这样它就是根据目标链接文件是否在当前目录而使用**相对路径**链接策略。
+默认「内部链接类型」是「尽可能简短形式」，就是不管链接目标文件是否在当前目录，都以不加目录路径（即没有绝对路径，也没有相对路径），这样链接如果是当前目录当前文件内部链接还没什么问题，如果链接目标是目录的文件时，虽然在 Obsidian 中能够链接到，但这在实际 Markdown 使用会出现问题，会出现找不到链接情况。为了更符合 Markdown 使用习惯，应将链接类型改为「**基于当前目录的相对路径**」，这样它就是根据目标链接文件是否在当前目录而使用 **相对路径** 链接策略。
 
 #### 不使用 Wiki 链接
-为了使文档更符合 Markdown 规范，将「使用Wiki链接」选项给关闭，仅使用 Markdown 标准的 `[]()` 这种语法
+为了使文档更符合 Markdown 规范，将「使用 Wiki 链接」选项给关闭，仅使用 Markdown 标准的 `[]()` 这种语法
 
 ### <span id="obn_config_settings_appearance">外观</span>
 
 ^f53495
 
-「外观」设置，主要是对[主题](#obn_themes) 、「字体」等设置。
+「外观」设置，主要是对 [主题](#obn_themes) 、「字体」等设置。
 
-「外观」设置中还能使用 [CSS 代码片段](#obn_snippet)进行外观上更详细而深入的配置。
+「外观」设置中还能使用 [CSS 代码片段](#obn_snippet) 进行外观上更详细而深入的配置。
 
 ---
 
 ##  <span id="obn_config_dir">Obsidian 的配置目录</span>
 
-在 Obsidian的 **vault**，就是所谓的「库」，其根目录下，Obsidian 会生成一个配置目录 **.obsidian**。
+在 Obsidian 的 **vault**，就是所谓的「库」，其根目录下，Obsidian 会生成一个配置目录 **.obsidian**。
 
 ### .obsidian 目录结构
 
@@ -88,7 +88,7 @@
 
 #### Clutter-Free Headings
 
-[clutter-free-headings](https://github.com/deathau/obsidian-snippets#clutter-free-headings)可以让标题那些「#」符号以「H1」~「H6」方式显示。
+[clutter-free-headings](https://github.com/deathau/obsidian-snippets#clutter-free-headings) 可以让标题那些「#」符号以「H1」~「H6」方式显示。
 
 #### Bigger Link Popup Preview
 
@@ -127,6 +127,14 @@ Obsidian 的插件分为 「核心插件」和「第三方插件」。
 ![obsidian_plugin_show_current_file_path](./Obsidian_Note.assets/obsidian_plugin_show_current_file_path.png)
 
 ---
+##### <span id="obn_plugins_better_word_count">Better Word Count</span>
+
+[Better Word Count](https://github.com/lukeleppan/better-word-count) 是一个增强型的统计字数的插件。
+
+使用这插件前，先把内置的字数统计功能给关闭了。
+
+
+---
 
 ##### <span id="obn_plugins_quiet_outline">Quiet Outline</span>
 
@@ -150,6 +158,7 @@ Obsidian 的插件分为 「核心插件」和「第三方插件」。
 
 「Spacing」 选项卡：
 1. 「Heading blank lines」 设置标题前后的空行，默认是在标题后空一行。
+2. 「Space between Chinese Japanese or Korean and English or numbers」，这选项是数字与汉字英文等间加空格。这功能是参考了 [中文文案排版指北](https://github.com/sparanoid/chinese-copywriting-guidelines) 这个中文 Markdown 文档排版建议方案文档来弄的！
 
 
 Linter 插件还可以配合 [Commander](#obn_plugins_obsidian-commander) 插件，在侧边栏上添加一个按钮，方便格式化当前文件。
@@ -162,7 +171,7 @@ Linter 插件还可以配合 [Commander](#obn_plugins_obsidian-commander) 插件
 
 ![table generator example](https://raw.githubusercontent.com/Quorafind/Obsidian-Table-Generator/master/media/example.gif)
 
-同样，这插件也配合[Commander](#obn_plugins_obsidian-commander) 插件，在侧边栏添加新建表格的按钮，方便添加表格。
+同样，这插件也配合 [Commander](#obn_plugins_obsidian-commander) 插件，在侧边栏添加新建表格的按钮，方便添加表格。
 
 
 ---
@@ -232,7 +241,7 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 ##### <span id="obn_plugins_editing-toolbar">Editing-toolbar</span>
 
-[obsidian-editing-toolbar](https://github.com/cumany/obsidian-editing-toolbar) 是一个在编辑区显示常用 Markdown 组件的工具栏。 这个插件最初是  [cMenu](#obn_plugins_cmenu)  的魔改版本，后来才更名为「editing toolbar」。
+[obsidian-editing-toolbar](https://github.com/cumany/obsidian-editing-toolbar) 是一个在编辑区显示常用 Markdown 组件的工具栏。 这个插件最初是 [cMenu](#obn_plugins_cmenu) 的魔改版本，后来才更名为「editing toolbar」。
 
 ![editing-toolbar demo](https://github.com/cumany/obsidian-editing-toolbar/raw/master/editing-toolbar-demo.gif)
 
@@ -240,17 +249,25 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 ##### <span id="obn_plugins_style-settings">Style Settings</span>
 
-[Style Settings](https://github.com/mgmeyers/obsidian-style-settings) 是一款对主题进一步细化调整美化的插件。很多优秀的主题，诸如  [Blue-Topaz](https://github.com/whyt-byte/Blue-Topaz_Obsidian-css) 、[Catppucin](https://github.com/catppuccin/obsidian) 都会适配这个插件。
+[Style Settings](https://github.com/mgmeyers/obsidian-style-settings) 是一款对主题进一步细化调整美化的插件。很多优秀的主题，诸如 [Blue-Topaz](https://github.com/whyt-byte/Blue-Topaz_Obsidian-css) 、[Catppucin](https://github.com/catppuccin/obsidian) 都会适配这个插件。
 
 ---
 
 ##### <span id="obn_plugins_obsidian-floating-toc-plugin">Obsidian-floating-toc-plugin</span>
 
-[obsidian-floating-toc-plugin](https://github.com/cumany/obsidian-floating-toc-plugin)  是一个将当前 Markdown 文件大纲悬浮地在笔记侧边显示，是个非常实用的插件，极力推荐！
+[obsidian-floating-toc-plugin](https://github.com/cumany/obsidian-floating-toc-plugin) 是一个将当前 Markdown 文件大纲悬浮地在笔记侧边显示，是个非常实用的插件，极力推荐！
 
-这个插件就解决本应是 Obsidian 内置的功能：一个能够跳转的文件大纲自动生成--像大名鼎鼎的 [Typora](https://typora.io/) 就天生拥有这个功能。
+这个插件就解决本应是 Obsidian 内置的功能：一个能够跳转的文件大纲自动生成 -- 像大名鼎鼎的 [Typora](https://typora.io/) 就天生拥有这个功能。
 
 ![float-toc](./Obsidian_Note.assets/obsidian_plugin_float-toc.png)
+
+---
+##### <span id="obn_plugins_htmltags_autocomplete">Html Tags AutoComplete</span>
+
+[Html Tags AutoComplete](https://github.com/bicarlsen/obsidian_html_tags_autocomplete) 这是一个自动补全 Html 标签的小插件。
+
+这插件除了 Html 标签补全功能外，能还标签间跳转的功能，提高了在文档中输入 html 时的书写流畅度。
+
 
 ---
 
@@ -258,7 +275,7 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 [vimrc support](https://github.com/esm7/obsidian-vimrc-support) 是一个增加了内置的 vim 功能的插件。
 
-不过这插件有点鸡肋，完全比不上在 vscode 上使用 vim的插件的体验，而且配置麻烦。
+不过这插件有点鸡肋，完全比不上在 vscode 上使用 vim 的插件的体验，而且配置麻烦。
 
 ---
 
@@ -288,15 +305,17 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 [Obsidian Pangu](https://github.com/Natumsol/obsidian-pangu) 是一个为 Markdown 文件中数字英文添加空格。
 
+这个功能在 [Linter](#obn_plugins_linter) 这插件中有了，所以 Pangu 这插件可以不装。
+
 ---
 
 ##### Folder Note Plugin
 
-这是一个目录插件。可以在点击SideBar 中的目录时，在面板上展现目录下的所有内容。
+这是一个目录插件。可以在点击 SideBar 中的目录时，在面板上展现目录下的所有内容。
 
 ##### <span id="obn_plugins_easy-typing">Easy Typing</span>
 
-[Easy Typing](https://github.com/Yaozhuwa/easy-typing-obsidian) 这是一个非常强悍的排版插件。真的非常强悍，没用，单看他的[README](https://github.com/Yaozhuwa/easy-typing-obsidian/blob/master/changelog.md)文档就吓到我了！
+[Easy Typing](https://github.com/Yaozhuwa/easy-typing-obsidian) 这是一个非常强悍的排版插件。真的非常强悍，没用，单看他的 [README](https://github.com/Yaozhuwa/easy-typing-obsidian/blob/master/changelog.md) 文档就吓到我了！
 
 具体功能参考：[Easy Typing 中文文档](https://github.com/Yaozhuwa/easy-typing-obsidian/blob/master/README_ZH.md)
 
@@ -306,7 +325,7 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 ##### <span id="obn_plugins_git_obsidiangit">Obsidian Git</span>
 
-[Obsidian Git](https://github.com/denolehov/obsidian-git) 这个插件是让Obsidian 拥有常用 Git 功能的插件。
+[Obsidian Git](https://github.com/denolehov/obsidian-git) 这个插件是让 Obsidian 拥有常用 Git 功能的插件。
 
 
 Ctrl+P 呼出命令面板，搜索 「Obsidian Git:Open source control view」，这就在右侧边面板添加了 Git 的管理面板，它能方便对 当前 Git 库进行版本管理，比如 `git add` 及 `git commit`。个人习惯，会将这面板拖到左边。
@@ -322,7 +341,7 @@ Ctrl+P 呼出命令面板，搜索 「Obsidian Git:Open source control view」�
 
 添加提示块。
 
-语法：ad-类型
+语法：ad- 类型
 
 ```ad-note
 note 类型
@@ -405,7 +424,7 @@ note 类型
 
 ##### <span id="obn_plugin_brat_surfing">Obsidian-Surfing</span>
 
-[Obsidian-Surfing](https://github.com/Quorafind/Obsidian-Surfing) 同样也是一个浏览器插件，这个插件是上面那个[obsdian-web-browser](#obn_plugin_brat_webbrowser) 插件的修改版本，其功能更为强大。
+[Obsidian-Surfing](https://github.com/Quorafind/Obsidian-Surfing) 同样也是一个浏览器插件，这个插件是上面那个 [obsdian-web-browser](#obn_plugin_brat_webbrowser) 插件的修改版本，其功能更为强大。
 
 **Obsidian-Surfing**  github 地址：[https://github.com/Quorafind/Obsidian-Surfing](https://github.com/Quorafind/Obsidian-Surfing) 。
 
@@ -425,13 +444,13 @@ Callout Blocks 语法：
 
 示例：
 
-> [!note] 示例1
-> 示例1 正文
+> [!note] 示例 1
+> 示例 1 正文
 
-> [!help] 示例2
-> 示例2 正文
+> [!help] 示例 2
+> 示例 2 正文
 
-如果想要 Callout Blocks 设置引用块默认展开或折叠效果，可以通过使用 `+` 和 `-` 来实现折叠效果的开启或关闭，`-`是折叠，`+` 展开，语法如下：
+如果想要 Callout Blocks 设置引用块默认展开或折叠效果，可以通过使用 `+` 和 `-` 来实现折叠效果的开启或关闭，`-` 是折叠，`+` 展开，语法如下：
 
 ```markdown
 > [!类型]+ 标题 
@@ -441,13 +460,13 @@ Callout Blocks 语法：
 
 示例：
 
-> [!tip]+ 示例3
-> 示例3 这是默认展开 
+> [!tip]+ 示例 3
+> 示例 3 这是默认展开 
 
-> [!tip]- 示例4
-> 示例4 这是默认折叠 
+> [!tip]- 示例 4
+> 示例 4 这是默认折叠 
 
-Callout Blocks 的「**类型**」其实就是些**图标**及**颜色**样式，能够让引用块更具有「语义性」。
+Callout Blocks 的「**类型**」其实就是些 **图标** 及 **颜色** 样式，能够让引用块更具有「语义性」。
 
 Callout Blocks 预置类型：
 
@@ -478,7 +497,7 @@ Callout Blocks 预置类型：
 * `failure` 或 `fail`、`missing`
 > [!fail]
 
-* `danger` 或  `error`
+* `danger` 或 `error`
 > [!danger]
 
 * `bug`
@@ -494,7 +513,7 @@ Callout Blocks 预置类型：
 
 另外，Callout Blocks 还能可以进行嵌套，如下例：
 
-> [!help] 示例5
+> [!help] 示例 5
 > > [!todo] 示例 5.1
 > > > [!example] 示例 5.1.1
 

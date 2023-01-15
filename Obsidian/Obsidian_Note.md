@@ -12,11 +12,17 @@
 * [Snippet](#obn_snippet)
 *  [插件](#obn_plugin)
 	* [第三方插件](#obn_plugins_commp)
-	* [quick explorer](#obn_plugins_quick-explorer)
-	* [show current file path](#obn_plugins_show-current-file-path)
-	* [floating-toc](#obn_plugins_obsidian-floating-toc-plugin)
-	* [Easy Typing](#obn_plugins_easy-typing)
+		* [常用插件](#常用插件)
+			* [quick explorer](#obn_plugins_quick-explorer)
+			* [show current file path](#obn_plugins_show-current-file-path)
+			* [Better Word Count](#obn_plugins_better_word_count)
+			* [Linter](#obn_plugins_linter)
+			* [floating-toc](#obn_plugins_obsidian-floating-toc-plugin)
+			* [Easy Typing](#obn_plugins_easy-typing)
+			* [Better Link Inserter](#obn_plugins_better_link_inserter)
+	* [Git 相关](#obn_plugins_git)
 	* [非 markdown 语法插件](#obn_plugins_notmarkdown)
+	* [未在社区插件库的插件](#obn_plugins_outside_community)
 * [Obsidian 专用语法](#obn_syntax)
 	* [Callout Blocks](#obn_syntax_calloutblocks)
 
@@ -199,11 +205,34 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 ---
 
+##### <span id="obn_plugins_crease">Crease</span>
+
+[Crease](https://github.com/liamcain/obsidian-creases) 这是一个非常实用的插件，它能快速根据标题折叠 Markdown 文件。
+
+![Crease ScreenShot](https://user-images.githubusercontent.com/693981/156103767-33f311de-39ac-422d-b8ea-987ea9c63f7b.png)
+
+
+---
+
+
 ##### <span id="obn_plugins_cp_btn_codeblocks">Copy Button for code blocks</span>
 
 [Copy Button for code blocks](https://github.com/jdbrice/obsidian-code-block-copy) 是一个在代码区添加一个复制按钮的插件。这插件异常的实用，非常推荐安装。
 
 ![copy button for code blocks screenshot](https://github.com/jdbrice/obsidian-code-block-copy/raw/main/screenshot.png)
+
+---
+
+##### <span id="obn_plugins_codeblock_enhancer">Code Block Enhancer</span>
+
+[Code Block Enhancer](https://github.com/nyable/obsidian-code-block-enhancer) 跟 [Copy Button for code blocks](#obn_plugins_cp_btn_codeblocks) 相似，都是对代码块的增强。
+
+---
+
+##### <span id="obn_plugins_better_file_link">Better File Link</span>
+
+[Better File Link](https://github.com/marcjulianschwarz/obsidian-file-link) 是一个增强了添加链接功能的插件，它可能通过点击添加文件按钮进到目录中添加相应的文件，增加了添加连接的流畅性。
+
 
 ---
 
@@ -262,6 +291,23 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 ![float-toc](./Obsidian_Note.assets/obsidian_plugin_float-toc.png)
 
 ---
+##### <span id="obn_plugins_scroll_to_top">Scroll to top</span>
+
+[Scroll to top](https://github.com/cloudhao1999/obsidian-scroll-to-top-plugin) 这是一个在当前文档上添加跳转文档头部及底部快捷按钮的插件，非常实用。这插件还实现了 [Style Setting](#obn_plugins_style-settings) 的细调。
+
+![scroll to top screenshot](https://camo.githubusercontent.com/6390b34120a87ea47de772596889bbb1b197b1e31710559741ebec59c6ea013d/68747470733a2f2f63646e2e737461746963616c792e636f6d2f67682f636c6f756468616f313939392f696d6167652d686f7374696e67406d61737465722f696d6167652e32797a386c723730756177302e77656270)
+
+
+---
+##### <span id="obn_plugins_lapel">Lapel</span>
+
+[Lapel](https://github.com/liamcain/obsidian-lapel) 这插件可以在行号列显示标题的级别。
+
+![lapel screenshot](https://user-images.githubusercontent.com/693981/158259622-e6d550d1-95ee-4fe4-82e7-490fe234b430.png)
+
+
+---
+
 ##### <span id="obn_plugins_htmltags_autocomplete">Html Tags AutoComplete</span>
 
 [Html Tags AutoComplete](https://github.com/bicarlsen/obsidian_html_tags_autocomplete) 这是一个自动补全 Html 标签的小插件。
@@ -318,6 +364,40 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 [Easy Typing](https://github.com/Yaozhuwa/easy-typing-obsidian) 这是一个非常强悍的排版插件。真的非常强悍，没用，单看他的 [README](https://github.com/Yaozhuwa/easy-typing-obsidian/blob/master/changelog.md) 文档就吓到我了！
 
 具体功能参考：[Easy Typing 中文文档](https://github.com/Yaozhuwa/easy-typing-obsidian/blob/master/README_ZH.md)
+
+
+---
+##### <span id="obn_plugins_calendar">Calendar</span>
+
+[Calendar](https://github.com/liamcain/obsidian-calendar-plugin) 一个简单的日历插件。
+
+![calendar screenshot](https://raw.githubusercontent.com/liamcain/obsidian-calendar-plugin/master/images/screenshot-full.png)
+
+
+---
+
+##### <span id="obn_plugins_file_info_panel">File Info Panel</span>
+
+[File Info Panel](https://github.com/CattailNu/obsidian-file-info-panel-plugin) 这插件是统计当前文档各种信息。
+
+![File Info Panel Screenshot](https://camo.githubusercontent.com/92ca8f5cba3116f813f8e54045349ca2b545ced7ace83c130d8e6e2521532e51/68747470733a2f2f6361747461696c2e6e752f6f6273696469616e2f73637265656e73686f745f3131302e706e67)
+
+
+---
+
+##### <span id="obn_plugins_recent_files"> Recent Files</span>
+
+[Recent Files](https://github.com/tgrosinger/recent-files-obsidian) 这插件可以列出最近编辑的文件。
+
+
+---
+
+##### <span id="obn_plugins_better_link_inserter">Better Link Inserter</span>
+
+[Better Link Inserter](https://github.com/salmund/obsidian-better-link-inserter) 是增强添加链接的插件。
+
+![better link inserter screenshot](https://user-images.githubusercontent.com/105465034/173254099-16e35e1a-dcff-4d08-87ac-0c5813d0480b.gif)
+
 
 ---
 

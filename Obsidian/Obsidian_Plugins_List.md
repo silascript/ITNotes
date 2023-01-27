@@ -27,6 +27,7 @@
 * [Better File Link](./Obsidian_Note.md#obn_plugins_better_file_link) 
 * [File Info Panel](./Obsidian_Note.md#obn_plugins_file_info_panel)
 * [Recent Files](./Obsidian_Note.md#obn_plugins_recent_files)
+* [Mermaid Tools](./Obsidian_Note.md#obn_plugins_mermaid_tools)
 
 更多的常用插件介绍，请参考 [Obsidian 笔记](./Obsidian_Note.md#obn_plugins_commp)
 

@@ -20,6 +20,8 @@
 			* [floating-toc](#obn_plugins_obsidian-floating-toc-plugin)
 			* [Easy Typing](#obn_plugins_easy-typing)
 			* [Better Link Inserter](#obn_plugins_better_link_inserter)
+	* [绘图相关](#obn_plugins_draw)
+		* [Mermaid Tools](#obn_plugins_mermaid_tools)
 	* [Git 相关](#obn_plugins_git)
 	* [非 markdown 语法插件](#obn_plugins_notmarkdown)
 	* [未在社区插件库的插件](#obn_plugins_outside_community)
@@ -398,6 +400,17 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 ![better link inserter screenshot](https://user-images.githubusercontent.com/105465034/173254099-16e35e1a-dcff-4d08-87ac-0c5813d0480b.gif)
 
+
+---
+
+#### <span id="obn_plugins_draw">绘图相关</span>
+
+##### <span id="obn_plugins_mermaid_tools">Mermaid Tools</span>
+
+[Mermaid Tools](https://github.com/dartungar/obsidian-mermaid) 是一个支持 [Mermaid](https://mermaid-js.github.io) 的插件，能够在 Markdown 文档中快速添加 Mermaid 图形组件。
+
+
+![Mermaid Tool screenshot](https://user-images.githubusercontent.com/36126057/214052070-780d4aab-6325-4729-b07b-836b395160fc.gif)
 
 ---
 

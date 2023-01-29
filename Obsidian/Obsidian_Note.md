@@ -1,4 +1,9 @@
-
+---
+aliases: 
+tags: markdown obsidian 
+modified: 2023-01-29, 8:42:20
+created: 2023-01-13, 12:27:45
+---
 # Obsidian 笔记
 
 ---
@@ -20,6 +25,7 @@
 			* [floating-toc](#obn_plugins_obsidian-floating-toc-plugin)
 			* [Easy Typing](#obn_plugins_easy-typing)
 			* [Better Link Inserter](#obn_plugins_better_link_inserter)
+			* [Colorful Tag](#obn_plugins_colorful_tag)
 	* [绘图相关](#obn_plugins_draw)
 		* [Mermaid Tools](#obn_plugins_mermaid_tools)
 	* [Git 相关](#obn_plugins_git)
@@ -168,6 +174,10 @@ Obsidian 的插件分为 「核心插件」和「第三方插件」。
 1. 「Heading blank lines」 设置标题前后的空行，默认是在标题后空一行。
 2. 「Space between Chinese Japanese or Korean and English or numbers」，这选项是数字与汉字英文等间加空格。这功能是参考了 [中文文案排版指北](https://github.com/sparanoid/chinese-copywriting-guidelines) 这个中文 Markdown 文档排版建议方案文档来弄的！
 
+[YAML] 选项卡：
+1. 「Format Tags in YAML」格式化 [tag][#obn_advanced_frontmatter_tag]，将 [YAML front matter](#obn_advanced_frontmatter) 中的 `#` 去除。
+2.  「Insert YAML attributes」添加缺少的属性，可以在属性文本框中加入属性，方便格式化时添加。
+3. 「YAML Timestamp」 这是添加时间戳的，可以添加建档时间及修改时间，时间格式也可自行设定。
 
 Linter 插件还可以配合 [Commander](#obn_plugins_obsidian-commander) 插件，在侧边栏上添加一个按钮，方便格式化当前文件。
 
@@ -403,6 +413,13 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 ---
 
+##### <span id="obn_plugins_colorful_tag">Colorful Tag</span>
+
+[Colorful Tag](https://github.com/rien7/obsidian-colorful-tag) 这是一个方便给 [Front matter](#obn_advanced_frontmatter) 中的 [tag](#obn_advanced_frontmatter_tag) 美化的插件。
+
+
+---
+
 #### <span id="obn_plugins_draw">绘图相关</span>
 
 ##### <span id="obn_plugins_mermaid_tools">Mermaid Tools</span>
@@ -520,6 +537,42 @@ note 类型
 [Obsidian-Surfing](https://github.com/Quorafind/Obsidian-Surfing) 同样也是一个浏览器插件，这个插件是上面那个 [obsdian-web-browser](#obn_plugin_brat_webbrowser) 插件的修改版本，其功能更为强大。
 
 **Obsidian-Surfing**  github 地址：[https://github.com/Quorafind/Obsidian-Surfing](https://github.com/Quorafind/Obsidian-Surfing) 。
+
+---
+
+## <span id="obn_advanced">Obsidian 高级用法</span>
+
+
+### <span id="obn_advanced_frontmatter">YAML front matter</span>
+
+Front matter 是放在文档形状的属性住处。这是这个文档的「元数据」。
+
+Front matter 以 `---` 开头和结束。
+
+示例：
+```yaml
+---
+key: value
+key2: value2
+key3: [one, two, three]
+key4:
+- 4
+- 5
+- 6
+---
+```
+
+Obsdian 原生有三个属性：[`tags`](#obn_advanced_frontmatter_tag)、`aliases` 以及 `cssclass`。
+
+
+#### <span id="obn_advanced_frontmatter_tag">Front matter 中的 Tag</span>
+
+`tags` 为属性名。以冒号 `:` 分隔属性及值，两者间使用一个空格分隔。
+
+`tags` 的值可以为一个也可以为多个。如果多个，可以有两种形式表示：
+1. 中括号阵列形式。[值 1，值 2，值 3]
+2. 列表形式。以 `-` 为各列表项的标识符。如上面示例中 `key4` 属性。
+
 
 ---
 

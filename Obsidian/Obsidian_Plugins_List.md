@@ -9,6 +9,7 @@ modified: 2023-01-30, 6:18:03
 ---
 
 * [Obsidian Git](./Obsidian_Note.md#obn_plugins_git_obsidiangit)
+* [Better Command Palette](./Obsidian_Note.md#obn_plugins_better_command_palette)
 * [Style Settings](./Obsidian_Note.md#obn_plugins_style-settings)
 * [Obsidian-floating-toc-plugin](./Obsidian_Note.md#obn_plugins_obsidian-floating-toc-plugin)
 * [Relative line Numbers](./Obsidian_Note.md#obn_plugins_relativelinenumbers)

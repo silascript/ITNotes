@@ -1,7 +1,7 @@
 ---
 aliases: 
 tags: markdown obsidian 
-modified: 2023-01-30, 7:45:12
+modified: 2023-01-30, 11:09:10
 created: 2023-01-13, 12:27:45
 ---
 # Obsidian 笔记
@@ -153,6 +153,29 @@ created: 2023-01-13, 12:27:45
 
 [Blue-topaz-examples](https://github.com/cumany/Blue-topaz-examples) 这是一个示例库。
 
+---
+
+## <span id="obn_basic">基础用法</span>
+
+
+### <span id="obn_basic_command_palette">命令面板</span>
+
+使用 `Ctrl+P` 可以打开「命令面板」。
+
+---
+
+### <span id="obn_basic_quickswitcher">快速切换</span>
+
+使用 `Ctrl+o` 就可以打开「快速切换」面板。
+
+在「快速切换」面板中有以下几个快捷键：
+
+* 「回车」就是在当前标签页打开，
+* `Ctrl+回车`：在新标签页打开
+* `Ctal+Alt+回车`：在新面板打开
+* `Shift+回车`：创建
+* `ESC`：退出
+
 
 
 ---
@@ -171,6 +194,35 @@ Obsidian 的插件分为 「核心插件」和「第三方插件」。
 * [Github加速](../Git/Git_Note.md#Github加速)
 
 #### 常用插件
+
+##### <span id="obn_plugins_better_command_palette">Better Command Palette</span>
+
+[Better Command Palette](https://github.com/AlexBieg/obsidian-better-command-palette) 是一个增强版的命令面板插件。
+
+
+这个插件对内置 [命令面板](#obn_basic_command_palette) 功能进行了增强。
+
+这看插件提供的增强版命令面板使用 `Ctrl+Shift+P` 快捷键呼出。
+
+这插件的特色：
+
+###### 合并快速切换功能
+
+在这个增强版命令面板中，可以使用 `/` 命令实现原来得使用 `Ctrl+o` 快捷键进行的 [快速切换](#obn_basic_quickswitcher) 功能。
+
+> [!tip] 注意
+> 这个在增强版命令面板中的 `/` 命令不是内置的 `/` 命令，内置的命令是在编辑区，并处于编辑状态时才触发的编辑快速命令。
+> 当然它也不是 vim 模式下那个搜索命令。
+
+命令面板与「快速切换」功能合并了，这就与 [VSCode_Note](../Editors/VSCode_Note.md) 等命令面板非常接近了。
+
+###### 快速查找 tag 相关的文档
+
+在这个增强版命令面板中，敲入 `#` 符号，就能触发搜索 tag 功能，在 `#` 之后继续输入 tag 名称，就能搜索出标记了此 tag 的所有文档。
+
+
+
+---
 
 ##### <span id="obn_plugins_quick-explorer">Quick Explorer</span>
 这个插件，是在界面标题栏中显示，当前路径，并且可以快速浏览文件。

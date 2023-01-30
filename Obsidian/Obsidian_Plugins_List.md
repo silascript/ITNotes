@@ -1,8 +1,8 @@
 ---
 aliases: 
-tags: ["obsidian","plugin","插件"]
+tags: obsidian plugin 
 created: 2023-01-13, 12:44:24
-modified: 2023-01-29, 8:42:59
+modified: 2023-01-30, 6:18:03
 ---
 # Obsidian 个人必装插件清单
 
@@ -34,6 +34,7 @@ modified: 2023-01-29, 8:42:59
 * [File Info Panel](./Obsidian_Note.md#obn_plugins_file_info_panel)
 * [Recent Files](./Obsidian_Note.md#obn_plugins_recent_files)
 * [Colorful Tag](./Obsidian_Note.md#obn_plugins_colorful_tag)
+* [Frontmatter Tag Suggest](./Obsidian_Note.md#obn_plugins_tagsuggest)
 * [Mermaid Tools](./Obsidian_Note.md#obn_plugins_mermaid_tools)
 
 更多的常用插件介绍，请参考 [Obsidian 笔记](./Obsidian_Note.md#obn_plugins_commp)

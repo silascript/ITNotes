@@ -1,4 +1,10 @@
-# Linux下安装MySQL5.7
+---
+aliases: 
+tags: linux mysql 
+created: 2023-01-13, 12:27:46
+modified: 2023-01-30, 9:24:37
+---
+# Linux 下安装 MySQL5.7
 
 
 ### 创建用户组及用户
@@ -18,14 +24,14 @@ ln -s full-path-to-mysql-VERSION-OS mysql
 
 
 
-#### 在mysql安装目录下新建mysql-files目录并分配权限
+#### 在 mysql 安装目录下新建 mysql-files 目录并分配权限
 
 ```shell
 mkdir mysql-files
 chmod 750 mysql-files
 ```
 
-> **data**目录不能提前建，它是由**mysqld** 初始化时通过**--datadir**来指定生成的
+> **data** 目录不能提前建，它是由 **mysqld** 初始化时通过**--datadir**来指定生成的
 
 
 
@@ -34,21 +40,21 @@ chmod 750 mysql-files
 ./bin/mysqld --initialize --user=mysql --basedir=/usr/local/mysql-5.7/ --datadir=/usr/local/mysql-5.7/data/ --pid-file=/usr/local/mysql-5.7/data/mysql.pid
 ```
 
-> **--datadir**选项是必需的，并且数据目录必须不存在。
+> **--datadir** 选项是必需的，并且数据目录必须不存在。
 >
-> 用**--initialize**会给root生成一个默认密码，**--initialize-insecure**不生成密码
+> 用**--initialize**会给 root 生成一个默认密码，**--initialize-insecure**不生成密码
 
-**--user** **--basedir** **--datadir** **--pid-file** 本来这几个选项是**mysql_install_db**的。
-
-
-
-> 从 MySQL 5.7.6 开始不推荐使用**mysql_install_db**，因为它的功能已集成到 MySQL 服务器**mysqld**中。要初始化 MySQL 安装，请使用**--initialize**或**--initialize-insecure**选项调用**mysqld**。
+**--user** **--basedir** **--datadir** **--pid-file** 本来这几个选项是 **mysql_install_db** 的。
 
 
 
+> 从 MySQL 5.7.6 开始不推荐使用 **mysql_install_db**，因为它的功能已集成到 MySQL 服务器 **mysqld** 中。要初始化 MySQL 安装，请使用**--initialize**或**--initialize-insecure**选项调用**mysqld**。
 
 
-#### **mysqld**的选项:
+
+
+
+#### **mysqld** 的选项:
 
 ```shell
 
@@ -68,11 +74,11 @@ chmod 750 mysql-files
 
 ```
 
-使用**mysqld --verbose --help** 查询**mysqld**的选项和参数，发现原来**mysql_install_db**中的选项，在**mysqld**中都存在了，这也印证了"**mysql_install_db**将在将来的 MySQL 版本中删除"的说法。
+使用 **mysqld --verbose --help** 查询 **mysqld** 的选项和参数，发现原来 **mysql_install_db** 中的选项，在 **mysqld** 中都存在了，这也印证了 "**mysql_install_db** 将在将来的 MySQL 版本中删除 " 的说法。
 
 
 
-默认情况,执行**mysqld** 可能缺少**libnuma**库,安装**numactl**就可以解决这个问题：
+默认情况,执行 **mysqld** 可能缺少 **libnuma** 库,安装 **numactl** 就可以解决这个问题：
 
 ```shell
 sudo pacman -S numactl
@@ -80,15 +86,15 @@ sudo pacman -S numactl
 
 
 
->**data**、**mysql-files**目录的用户必须是**mysql**
+>**data**、**mysql-files** 目录的用户必须是 **mysql**
 >
->所以在将**mysql安装目录**改回root或其他用户后，单独再次修改**data**和**mysql-files**目录的用户为**mysql**
+>所以在将 **mysql 安装目录** 改回 root 或其他用户后，单独再次修改 **data** 和 **mysql-files** 目录的用户为 **mysql**
 
 ```shell
 chown mysql data mysql-files
 ```
 
-###### 开启ssl
+###### 开启 ssl
 
 ```shell
 bin/mysql_ssl_rsa_setup --datadir=/usr/local/mysql-5.7/data
@@ -100,13 +106,13 @@ bin/mysql_ssl_rsa_setup --datadir=/usr/local/mysql-5.7/data
 
 
 
- #### 启动方式1: mysqld_safe         
+ #### 启动方式 1: mysqld_safe         
 
 ```shell
 bin/mysqld_safe --user=mysql &
 ```
 
-如果使用mysqld_safe方式登录，出现错误，往往是少了依赖。
+如果使用 mysqld_safe 方式登录，出现错误，往往是少了依赖。
 
 ![image-20200610022158342](./linux下安装mysql.assets/image-20200610022158342.png)
 
@@ -116,13 +122,13 @@ bin/mysqld_safe --user=mysql &
 sudo apt install libncurses5
 ```
 
-> 缺少libncurses.so.5，在arch里是ncurses5-compat-libs，同样进行安装：
+> 缺少 libncurses.so.5，在 arch 里是 ncurses5-compat-libs，同样进行安装：
 
 ```shell
 sudo pacman -S ncurses5-compat-libs　
 ```
 
-> 使用初始化生成的临时密码使用root登录
+> 使用初始化生成的临时密码使用 root 登录
 
 
 
@@ -130,7 +136,7 @@ sudo pacman -S ncurses5-compat-libs　
 
 
 
-#### 启动方式2: 使用mysql.server来启动
+#### 启动方式 2: 使用 mysql.server 来启动
 
 ```shell
 support-files/mysql.server start
@@ -143,7 +149,7 @@ support-files/mysql.server start
 >
 >明显就是缺少相应的库了。
 >
->缺少**libncurses.so.5**，在arch里是**ncurses5-compat-libs**，同样进行安装：
+>缺少 **libncurses.so.5**，在 arch 里是 **ncurses5-compat-libs**，同样进行安装：
 >
 >```shell
 >sudo pacman -S ncurses5-compat-libs
@@ -153,13 +159,13 @@ support-files/mysql.server start
 
 
 
-###### 为了方便将mysql.server添加为启动服务(旧)
+###### 为了方便将 mysql.server 添加为启动服务 (旧)
 
 ```shell
 cp support-files/mysql.server /etc/init.d/mysql.server
 ```
 
-###### suppor-files/mysql.server 会找/etc/下的my.cnf配置文件，如果/etc/下没有，将会到默认地址/usr/local/mysql/路径下找mysql_safe
+###### suppor-files/mysql.server 会找/etc/下的 my.cnf 配置文件，如果/etc/下没有，将会到默认地址/usr/local/mysql/路径下找 mysql_safe
 
 ![image-20200610114905111](./linux下安装mysql.assets/image-20200610114905111.png)
 
@@ -167,21 +173,21 @@ cp support-files/mysql.server /etc/init.d/mysql.server
 
 > **添加服务后重启，不然容易出现找不到服务**
 >
-> 如果报PID文件找不到就得重新初始化mysql了~
+> 如果报 PID 文件找不到就得重新初始化 mysql 了~
 
 
 
 
 
-###### manjaro下不使用以上方式添加启动服务
+###### manjaro 下不使用以上方式添加启动服务
 
->可以为**mysql.server**添加有个软链接
+>可以为 **mysql.server** 添加有个软链接
 >
 >```shell
 >sudo ln -s /usr/local/mysql-5.7/support-files/mysql.server /usr/local/bin/mysql_server-5.7
 >```
 >
->这样就直接调软链接就能启动和关闭mysql服务
+>这样就直接调软链接就能启动和关闭 mysql 服务
 >
 >```shell
 >sudo mysql_server-5.7 start
@@ -195,9 +201,9 @@ cp support-files/mysql.server /etc/init.d/mysql.server
 
 
 
-#### my.cnf配置
+#### my.cnf 配置
 
-my.cnf示例：
+my.cnf 示例：
 ```cnf
 [mysqld]
 basedir=/usr/local/mysql-5.7
@@ -217,10 +223,10 @@ pid-file=/usr/local/mysql-5.7/data/mysql.pid
 
 ```
 
-mysql5.6.6+版本，推荐加上 **explicit_defaults_for_timestamp=true**
+mysql5.6.6+ 版本，推荐加上 **explicit_defaults_for_timestamp=true**
 
 
-utf8mb4 cnf配置示例：
+utf8mb4 cnf 配置示例：
 ```cnf
 [client]
 default-character-set = utf8mb4
@@ -244,9 +250,9 @@ init_connect='SET NAMES utf8mb4'
 
 
 
-> **mysql_install_db**不创建默认的`my.cnf`文件
+> **mysql_install_db** 不创建默认的 `my.cnf` 文件
 >
-> 从 MySQL 5.7.18 开始，`my-default.cnf`不再包含在分发包中或由分发包安装
+> 从 MySQL 5.7.18 开始，`my-default.cnf` 不再包含在分发包中或由分发包安装
 
 
 
@@ -264,9 +270,9 @@ init_connect='SET NAMES utf8mb4'
 |      ~/.my.cnf      |             User-specific options             |
 |   ~/.mylogin.cnf    | User-specific login path options(client only) |
 
-> MySQL实例启动需要依赖**my.cnf**配置文件，而配置文件可以存在于多个操作系统目录下。
+> MySQL 实例启动需要依赖 **my.cnf** 配置文件，而配置文件可以存在于多个操作系统目录下。
 >
-> **my.cnf**的默认查找路径，从上往下找到的文件先读，但优先级逐级提升。
+> **my.cnf** 的默认查找路径，从上往下找到的文件先读，但优先级逐级提升。
 
 
 
@@ -280,17 +286,17 @@ default_character_set=utf8mb4
 default_character_set=utf8mb4
 
 ```
-> **[client]** 是客户端设置，而 **[mysql]** 其实也是客户端之一，是 MySQL自带的客户端。
+> **[client]** 是客户端设置，而 **[mysql]** 其实也是客户端之一，是 MySQL 自带的客户端。
 > `default_character_set` 这行代码就是设置默认字符编码。`utf8mb4` 对应 UTF-8，这才是「完整体」的 UTF-8。
-> 原来的「阉割版」MySQL的 `utf8` 被重命名为 `utf8mb3`，原因是它的码长度最多只有三个字符。 
+> 原来的「阉割版」MySQL 的 `utf8` 被重命名为 `utf8mb3`，原因是它的码长度最多只有三个字符。 
 
-设置完后，重启 MySQL。进入MySQL 后，使用 `status` 命令，可以查看相关信息，看配置是否成功。
+设置完后，重启 MySQL。进入 MySQL 后，使用 `status` 命令，可以查看相关信息，看配置是否成功。
 其中 `Client characterset` 和 `Conn.  characterset` 就是客户端的字符编码。
 
 
 ### 修改密码及权限
 
->使用初始化给的root帐号及随机密码登录mysql成功后，要修改密码
+>使用初始化给的 root 帐号及随机密码登录 mysql 成功后，要修改密码
 
 ```mysql
 alter user 'root'@'localhost' identified by 'youpassword'; 
@@ -310,13 +316,13 @@ flush privileges;
 grant all privileges on *.* to 'energy_pf'@'192.168.2.65' identified by 'energy_pf' with grant option;
 ```
 
-> **每次对用户权限修改、增加都得flush下**
+> **每次对用户权限修改、增加都得 flush 下**
 
 
-MySQL 8.0+版本，创建用户和授权应分开。
-所以上面那个 `grant ... identified by ...` 创建和授权一句搞掂的方式，在MySQL8下是无效的。
+MySQL 8.0+ 版本，创建用户和授权应分开。
+所以上面那个 `grant ... identified by ...` 创建和授权一句搞掂的方式，在 MySQL8 下是无效的。
 
-在MySQL8下应分「两步走」，使用以下方式：
+在 MySQL8 下应分「两步走」，使用以下方式：
 
 > 创建用户和授权都应先切换到 mysql 数据库（`use mysql;`）。
 
@@ -343,9 +349,9 @@ GRANT ALL PRIVILEGES ON *.* TO 'remote'@'%' WITH GRANT OPTION;
 
 
 
-##### 查看user表
+##### 查看 user 表
 
->user表是放在mysql数据库中
+>user 表是放在 mysql 数据库中
 >
 >所以先选择库再查询表
 >
@@ -356,7 +362,7 @@ GRANT ALL PRIVILEGES ON *.* TO 'remote'@'%' WITH GRANT OPTION;
 >
 >```
 >
->mysql5.7的user的密码是加密后放在**authentication_string**这个字段中。
+>mysql5.7 的 user 的密码是加密后放在 **authentication_string** 这个字段中。
 >
 >![image-20201130080857639](linux下安装mysql.assets/image-20201130080857639.png)
 
@@ -404,13 +410,13 @@ killall mysqld
 killall -9 mysqld
 ```
 
-如果原来使用mysqld_safe启动，可以使用**killall mysqld**关闭
+如果原来使用 mysqld_safe 启动，可以使用 **killall mysqld** 关闭
 
-> Unix 和类似 Unix 的系统上的 MySQL 发行版包含一个名为**mysql.server**的脚本，该脚本使用**mysqld_safe**启动 MySQL 服务器。它可以在使用 System V 样式的运行目录来启动和停止系统服务的系统(例如 Linux 和 Solaris)上使用。
+> Unix 和类似 Unix 的系统上的 MySQL 发行版包含一个名为 **mysql.server** 的脚本，该脚本使用 **mysqld_safe** 启动 MySQL 服务器。它可以在使用 System V 样式的运行目录来启动和停止系统服务的系统 (例如 Linux 和 Solaris) 上使用。
 >
-> **mysql.server**是在 MySQL 源代码树中使用的脚本名称。安装的名称可能不同(例如**mysqld**或**mysql**)。
+> **mysql.server** 是在 MySQL 源代码树中使用的脚本名称。安装的名称可能不同 (例如 **mysqld** 或 **mysql**)。
 
-使用**mysql.server**启动和停止mysql
+使用 **mysql.server** 启动和停止 mysql
 
 ```shell
 mysql.server start

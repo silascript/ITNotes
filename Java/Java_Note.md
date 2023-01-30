@@ -1,3 +1,9 @@
+---
+aliases: 
+tags: PL java Eclipse
+created: 2023-01-13, 12:27:45
+modified: 2023-01-30, 9:15:30
+---
 
 # Java 笔记
 
@@ -11,21 +17,21 @@
 
 ---
 
-## <span id="java_config">Java相关的配置</span>
+## <span id="java_config">Java 相关的配置</span>
 
 
 
 ---
 
-### Java11生成JRE
+### Java11 生成 JRE
 
-进入jdk安装目录后执行以下命令：
+进入 jdk 安装目录后执行以下命令：
 
 ```shell
 sudo ./bin/jlink --module-path jmods --add-modules java.desktop --output jre
 ```
 
->把jmodes目录所有模块都生成jre:
+>把 jmodes 目录所有模块都生成 jre:
 >
 >```shell
 >sudo ./bin/jlink --module-path jmods --add-modules ALL-MODULE-PATH --output jre
@@ -35,19 +41,19 @@ sudo ./bin/jlink --module-path jmods --add-modules java.desktop --output jre
 
 ---
 
-### <span id="java_eclipse">Eclipse相关</span>
+### <span id="java_eclipse">Eclipse 相关</span>
 
 #### <span id="java_eclipse_plugins">Eclipse 常用插件</span>
 
 * [jeeeyul_theme]() 是一个 Eclipse 界面主题插件。
 
-* [colortheme](https://marketplace.eclipse.org/content/eclipse-color-theme) 这个与上面那个不同，这是插件是针对编辑区的配色插件。 Eclipse 市场中的 color-theme 插件地址已经失效。 请到[这个](https://eclipse-color-theme.github.io/update/) 页面，其中有个链接： [download this update site as a zip archive](https://eclipse-color-theme.github.io/update/eclipse-color-theme-update-site.zip)，下载这个压缩包。将其中的 `features` 和 `plugins` 两个目录提取出来放到一个你自定义名称的目录中，如「color-theme」，将这个包括有 `features` 和 `plugins` 的目录放到Eclipse 安装目录下的 `dropins` 目录中，重启 Eclipse ，这个插件就能生效了！
+* [colortheme](https://marketplace.eclipse.org/content/eclipse-color-theme) 这个与上面那个不同，这是插件是针对编辑区的配色插件。 Eclipse 市场中的 color-theme 插件地址已经失效。 请到 [这个](https://eclipse-color-theme.github.io/update/) 页面，其中有个链接： [download this update site as a zip archive](https://eclipse-color-theme.github.io/update/eclipse-color-theme-update-site.zip)，下载这个压缩包。将其中的 `features` 和 `plugins` 两个目录提取出来放到一个你自定义名称的目录中，如「color-theme」，将这个包括有 `features` 和 `plugins` 的目录放到 Eclipse 安装目录下的 `dropins` 目录中，重启 Eclipse ，这个插件就能生效了！
 
 * [Bracketeer](https://marketplace.eclipse.org/content/bracketeer-java-jdt) 是一个使用注释方式标识出匹配大括号的插件。Eclipse 插件市场中的 Bracketeer 插件的地址已经失效了，应自行通过 「Install new Software」 这个方式添加插件安装地址。安装地址：https://chookapp.github.io/ChookappUpdateSite/
 
-* [Eclipse explorer](https://marketplace.eclipse.org/content/eclipse-explorer)  [![eclipse explorer repo](https://img.shields.io/github/stars/Jamling/eclipse-explorer?style=social)](https://github.com/Jamling/eclipse-explorer/releases)是打开项目本地目录的插件。同样的，插件市场的地址也是失效了，得到 github 中下载。同 color-theme一样，下载下的包是不能直接丢到 `dropins` 目录的，得把 `features` 和 `plugins` 目录提取出来。
+* [Eclipse explorer](https://marketplace.eclipse.org/content/eclipse-explorer)  [![eclipse explorer repo](https://img.shields.io/github/stars/Jamling/eclipse-explorer?style=social)](https://github.com/Jamling/eclipse-explorer/releases) 是打开项目本地目录的插件。同样的，插件市场的地址也是失效了，得到 github 中下载。同 color-theme 一样，下载下的包是不能直接丢到 `dropins` 目录的，得把 `features` 和 `plugins` 目录提取出来。
 
-* [Jcolon](https://mystilleef.github.io/eclipse4-jcolon/) [![jcolon repo](https://img.shields.io/github/stars/mystilleef/eclipse4-jcolon?style=social)](https://github.com/mystilleef/eclipse4-jcolon)是一款自动补分号的插件。真是自动，不需要按快捷键。
+* [Jcolon](https://mystilleef.github.io/eclipse4-jcolon/) [![jcolon repo](https://img.shields.io/github/stars/mystilleef/eclipse4-jcolon?style=social)](https://github.com/mystilleef/eclipse4-jcolon) 是一款自动补分号的插件。真是自动，不需要按快捷键。
 
 * [EditBox](https://marketplace.eclipse.org/content/editbox) 是一款显示代码范围的插件。
 
@@ -75,29 +81,29 @@ sudo ./bin/jlink --module-path jmods --add-modules java.desktop --output jre
 ---
 
 
-#### Eclipse基础的各种软件找不到jre
+#### Eclipse 基础的各种软件找不到 jre
 
->可以将在软件安装目录下建一个软链接指向jdk中的jre（如像java11+的没有预装**jre**，请用上面的命令生成**jre**）
+>可以将在软件安装目录下建一个软链接指向 jdk 中的 jre（如像 java11+ 的没有预装 **jre**，请用上面的命令生成 **jre**）
 >
->下面以**DBeaver**为例:
+>下面以 **DBeaver** 为例:
 >
 >```shell
 >sudo ln -s /opt/JDK/jdk11/jre /opt/dbeaver/jre
 >```
 
->Eclipse运行需要的模块:
+>Eclipse 运行需要的模块:
 >
 >java.base,java.desktop,java.logging,java.xml,java.naming,java.net.http,java.sql,java.sql.rowset
 >
 >
 
-#### Tomcat配置出问题
+#### Tomcat 配置出问题
 
->配置tomcat时，提示“eclipse tomcat unknown version of tomcat was specified”
+>配置 tomcat 时，提示“eclipse tomcat unknown version of tomcat was specified”
 >
->因为配置tomcat需要访问tomcat目录下的lib库,而访问此目录需要相应的权限
+>因为配置 tomcat 需要访问 tomcat 目录下的 lib 库,而访问此目录需要相应的权限
 >
->所以得修改lib目录的权限:
+>所以得修改 lib 目录的权限:
 >
 >```shell
 >chmod -R 777 apache-tomcat-xxx/lib
@@ -112,11 +118,11 @@ sudo chmod -R 755 tomcat-9.0.62
 
 
 
-#### 启动Tomcat后404
+#### 启动 Tomcat 后 404
 
 >![](Java相关.assets/eclipse_tomcat_publish.png)
 >
->要选第二项，就是将项目复制一份到tomcat安装目录下的wtpwebapps目录中进行发布
+>要选第二项，就是将项目复制一份到 tomcat 安装目录下的 wtpwebapps 目录中进行发布
 
 
 ---

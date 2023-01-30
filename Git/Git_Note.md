@@ -1,3 +1,9 @@
+---
+aliases: 
+tags: git github
+created: 2023-01-13, 12:27:45
+modified: 2023-01-30, 9:21:36
+---
 # Git 笔记
 
 ---
@@ -59,7 +65,7 @@ git commit -m "提交注释"
 git push
 ```
 
-push命令完整语法:
+push 命令完整语法:
 
 ```shell
 git push 远程名 本地分支:远程分支
@@ -68,7 +74,7 @@ git push 远程名 本地分支:远程分支
 git push --set-upstream 远程名 本地分支:远程分支
 ```
 
-如出现`更新被拒绝，因为远程仓库包含您本地尚不存在的提交。`这样的错误时，可以选择「强推」：
+如出现 `更新被拒绝，因为远程仓库包含您本地尚不存在的提交。` 这样的错误时，可以选择「强推」：
 
 ```shell
 git push origin +master
@@ -90,13 +96,13 @@ git fetch 地址
 
 **fetch** 命令并不会自动合并或修改你当前的工作
 
-如果要自动合并远程数据到本地，应使用**pull**命令:
+如果要自动合并远程数据到本地，应使用 **pull** 命令:
 
 ```shell
 git pull
 ```
 
-pull完整语法:
+pull 完整语法:
 
 ```shell
 git pull 远程名 本地分支:远程分支
@@ -117,25 +123,25 @@ git rm --cached 文件
 
 这个操作正好与 `add` 操作相反，add 是将工作区的文件添加进暂存区中，而 `rm` 操作是将暂存区的文件从暂存区中移除。
 
-如果的目录，最好加个`-r` 这样能把目录中的子目录也一并删除。
+如果的目录，最好加个 `-r` 这样能把目录中的子目录也一并删除。
 
 示例：`git rm -r --cached 目录`
 
 #### <span id="git_tag">tag 操作</span>
 
-查看所有tag：
+查看所有 tag：
 
 ```shell
 git tag 
 ```
 
-添加tag：
+添加 tag：
 
 ```shell
 git tag -a tag名称
 ```
 
-添加并指定tag信息：
+添加并指定 tag 信息：
 
 ```shell
 git tag -a tag名称 -m "tag信息"
@@ -147,19 +153,19 @@ git tag -a tag名称 -m "tag信息"
 git tag -a v1.12 -m "1.12版本"shell
 ```
 
-删除tag：
+删除 tag：
 
 ```shell
 git tag -d tag名称
 ```
 
-查看tag状态：
+查看 tag 状态：
 
 ```shell
 git show tag名称
 ```
 
-提交所有未提交的tag：
+提交所有未提交的 tag：
 
 ```shell
 git push origin --tags
@@ -169,7 +175,7 @@ git push origin --tags
 
 ### <span id="git_branch">分支</span>
 
-> Git 中的分支实际上是一个指向某个特定提交的*命名指针*。
+> Git 中的分支实际上是一个指向某个特定提交的 *命名指针*。
 > 当你签出分支时，你将提交对象（由指针标识）中储存的数据复制到你的工作目录。
 > 当工作被复制到工作目录后，你可以进行任何操作（增删改），并且将更改作为一个新的提交对象储存到本地仓库
 > 命名指针会自动更新并指向你刚创建的提交对象，同时你的分支也将更新。
@@ -193,11 +199,11 @@ git config --global init.defaultBranch <名称>
 git branch
 ```
 
-如果本地仓库只进行了`git add` 操作，从未有 `git commit` 操作，将不会生成任何分支。
+如果本地仓库只进行了 `git add` 操作，从未有 `git commit` 操作，将不会生成任何分支。
 
 而第一次 `git commit` 后生成默认分支，原来未设置全局默认分支名称前，默认分支都叫「master」。
 
-如果你的仓库`git init` 在你，设置全局默认分支名称之前，那你 `commit` 后生成的分支仍叫 「master」。
+如果你的仓库 `git init` 在你，设置全局默认分支名称之前，那你 `commit` 后生成的分支仍叫 「master」。
 
 ##### <span id="git_branch_showbranch_list">列出本地分支</span>
 
@@ -205,7 +211,7 @@ git branch
 git branch --list
 ```
 
-`--list` 这个选项可省略，即`git branch` 与 `git branch --list` 同价。
+`--list` 这个选项可省略，即 `git branch` 与 `git branch --list` 同价。
 
 ##### <span id="git _branch_showbranch_all">列出所有分支</span>
 
@@ -221,7 +227,7 @@ git branch --all
 ```
 
 「\*」 表示正在查看（或「签出」--`checkout`）的分支。
-「remotes」 表示这个分支属于远程仓库，「origin」是这个远程仓库的「名称」，即在使用 `git remote add 名称 远程仓库地址` 这个操作时，所指定的名称。这个「名称」实际相当于是远程仓库的地址的一个标识符--相当于变量名，而远程地址是变量的值，使用这个变量名可以得到远程仓库的地址。
+「remotes」 表示这个分支属于远程仓库，「origin」是这个远程仓库的「名称」，即在使用 `git remote add 名称 远程仓库地址` 这个操作时，所指定的名称。这个「名称」实际相当于是远程仓库的地址的一个标识符 -- 相当于变量名，而远程地址是变量的值，使用这个变量名可以得到远程仓库的地址。
 
 「远程仓库名」+「远程分支名」，这就是这个远程分支的名称。
 
@@ -253,7 +259,7 @@ git branch -M 名称
 git status
 ```
 
-![](Git_Note.assets/2020-12-06 10-24-40屏幕截图.png)
+![](Git_Note.assets/2020-12-06 10-24-40 屏幕截图.png)
 
 #### 查看提交日志
 
@@ -261,7 +267,7 @@ git status
 git log
 ```
 
-![](Git_Note.assets/2020-12-06 10-26-02屏幕截图.png)
+![](Git_Note.assets/2020-12-06 10-26-02 屏幕截图.png)
 
 #### 查看当前分支
 
@@ -269,7 +275,7 @@ git log
 git branch
 ```
 
-![](Git笔记.assets/2020-12-06 10-26-57屏幕截图.png)
+![](Git 笔记.assets/2020-12-06 10-26-57 屏幕截图.png)
 
 更多的分支操作请参考：[分支操作](#git_branch)
 
@@ -279,7 +285,7 @@ git branch
 git ls-files -s
 ```
 
-![](Git_Note.assets/2020-12-06 10-28-33屏幕截图.png)
+![](Git_Note.assets/2020-12-06 10-28-33 屏幕截图.png)
 
 ---
 
@@ -291,7 +297,7 @@ git ls-files -s
 git remote show 远程版本库名称
 ```
 
-![](Git_Note.assets/2020-12-06 10-54-53屏幕截图.png)
+![](Git_Note.assets/2020-12-06 10-54-53 屏幕截图.png)
 
 查看远程仓库信息：
 
@@ -303,7 +309,7 @@ git remote -v
 
 方法三种：
 
-1. 使用remote set-url 选项
+1. 使用 remote set-url 选项
 
 ```shell
 git remote 仓库名 set-url 远程仓库地址
@@ -318,13 +324,13 @@ git remote add 远程仓库名 远程仓库地址
 
 `git remote add` 这种方式关联远程仓库，远程仓库必须为空，不然 `push` 会出问题，除非你「强推」。
 
-3. 直接修改config文件
+3. 直接修改 config 文件
 
-在目录下有一个.git目录，是存放git相关的数据，其中有一个config文件，是存储一git相关配置，其中就有远程仓库地址，将其修改即可。
+在目录下有一个.git 目录，是存放 git 相关的数据，其中有一个 config 文件，是存储一 git 相关配置，其中就有远程仓库地址，将其修改即可。
 
 #### 非空本地库与非空远程库关联
 
-本地库`commit` 完了，再关联远程库：
+本地库 `commit` 完了，再关联远程库：
 
 ```shell
 git remote add 远程库名称 远程库地址
@@ -349,19 +355,19 @@ git pull --rebase origin main
 
 经过这个特殊的 `pull`，因为远程和本地都是非空，所以肯定是出现冲突，一般来说，新建的远程，可能是因为 `README.md` 文件或授权文件而冲突。
 
-`git rebase`，顾名思义，就是*重新定义*（re）*起点*（base）的作用，即重新定义分支的版本库状态。
+`git rebase`，顾名思义，就是 *重新定义*（re）*起点*（base）的作用，即重新定义分支的版本库状态。
 
 `git pull --rebase` 执行过程中会将本地当前分支里的每个提交（commit）取消掉，然后把将本地当前分支更新为最新的 `origin` 分支。
 
 `git pull --rebase` 执行后如果有合并冲突，使用以下三种方式处理这些冲突：
 
-* `git rebase --abort` 会放弃合并，回到rebase操作之前的状态，之前的提交的不会丢弃
+* `git rebase --abort` 会放弃合并，回到 rebase 操作之前的状态，之前的提交的不会丢弃
 * `git rebase --skip` 则会将引起冲突的 `commit` 丢弃掉
 * `git rebase --continue` 合并冲突，结合 `git add 文件` 命令一起用与修复冲突，提示开发者，一步一步地有没有解决冲突
 
 第三种最常用，`git rebase --continue` 就可以线性的连接本地分支与远程分支，无误之后就回退出，回到主分支上。
 
-执行完`git rebase --continue` 后，如果未解决冲突它会提示你要先解决冲突，然后执行 `git add`操作，再次 `commit` 个版本，当 `commit` 后（这其实就是将本地版本与刚 `git pull--rebase` 下来的版本「合并」成新的版本），「工作区」就又「干净」了，这时执行 `git rebase --continue` 操作，就会显示 `成功变基并更新 refs/heads/main` 这样的提示，证明 `rebase` 操作成功完成。完成「变基」操作后，这样 `git push -u origin main` 就能正常了，这时本地仓库就与远程仓库正常「关联」起来了。
+执行完 `git rebase --continue` 后，如果未解决冲突它会提示你要先解决冲突，然后执行 `git add` 操作，再次 `commit` 个版本，当 `commit` 后（这其实就是将本地版本与刚 `git pull--rebase` 下来的版本「合并」成新的版本），「工作区」就又「干净」了，这时执行 `git rebase --continue` 操作，就会显示 `成功变基并更新 refs/heads/main` 这样的提示，证明 `rebase` 操作成功完成。完成「变基」操作后，这样 `git push -u origin main` 就能正常了，这时本地仓库就与远程仓库正常「关联」起来了。
 
 ---
 
@@ -369,32 +375,32 @@ git pull --rebase origin main
 
 #### 基本概念
 
-Git 的核心部分是一个简单的键值对数据库(key-value data store)。 你可以向该数据库插入任意类型的内容,它会返回一个键值,通过该键值
-可以在任意时刻再次检索(retrieve)该内容。
+Git 的核心部分是一个简单的键值对数据库 (key-value data store)。 你可以向该数据库插入任意类型的内容,它会返回一个键值,通过该键值
+可以在任意时刻再次检索 (retrieve) 该内容。
 
 #### 重要部件
 
-* **objects**目录: 存储所有数据内容
+* **objects** 目录: 存储所有数据内容
 
-* **refs**目录:    存储指向数据(分支)的提交对象的指针
+* **refs** 目录: 存储指向数据 (分支) 的提交对象的指针
 
-* **HEAD**文件:  指示目前被检出的分支
+* **HEAD** 文件: 指示目前被检出的分支
 
-* **index**文件:  保存暂存区信息
+* **index** 文件: 保存暂存区信息
 
-![](Git_Note.assets/2020-12-02 22-37-58屏幕截图.png)
+![](Git_Note.assets/2020-12-02 22-37-58 屏幕截图.png)
 
-#### Git对象
+#### Git 对象
 
 ###### 常用命令
 
 **hash-object**
 
-> **-w** 选项指示 **hash-object** 命令存储数据对象;若不指定此选项,则该命令仅返回对应的键值。 **-w** 后跟要生成hash值的源目标。
+> **-w** 选项指示 **hash-object** 命令存储数据对象; 若不指定此选项,则该命令仅返回对应的键值。 **-w** 后跟要生成 hash 值的源目标。
 >
-> **--stdin** 选项则指示该命令从标准输入读取内容;若不指定此选项,则须在命令尾部给出待存储文件的路径。 该命令输出
-> 一个长度为**40**个字符的校验和。 这是一个 SHA-1 哈希值——一个将待存储的数据外加一个头部信息
-> (header)一起做 SHA-1 校验运算而得的校验和。
+> **--stdin** 选项则指示该命令从标准输入读取内容; 若不指定此选项,则须在命令尾部给出待存储文件的路径。 该命令输出
+> 一个长度为 **40** 个字符的校验和。 这是一个 SHA-1 哈希值——一个将待存储的数据外加一个头部信息
+> (header) 一起做 SHA-1 校验运算而得的校验和。
 
 示例:
 
@@ -404,19 +410,19 @@ echo "hello world" | git hash-object --stdin
 
 结果:
 
-![](Git_Note.assets/2020-12-02 22-39-37屏幕截图.png)
+![](Git_Note.assets/2020-12-02 22-39-37 屏幕截图.png)
 
-如果没有使用**-w** 选项，则在**objects**目录中不会生成相应的子目录.如下图:
+如果没有使用**-w** 选项，则在 **objects** 目录中不会生成相应的子目录.如下图:
 
-![](Git_Note.assets/2020-12-02 23-58-00屏幕截图.png)
+![](Git_Note.assets/2020-12-02 23-58-00 屏幕截图.png)
 
-而使用**-w** 选项后，则会在**objects**目录中生成相应的子目录及文件，其目录名为hash值最高**2**位，剩下**38**位为文件名，如下图:
+而使用**-w** 选项后，则会在 **objects** 目录中生成相应的子目录及文件，其目录名为 hash 值最高 **2** 位，剩下 **38** 位为文件名，如下图:
 
-![](Git_Note.assets/2020-12-03 00-01-30屏幕截图.png)
+![](Git_Note.assets/2020-12-03 00-01-30 屏幕截图.png)
 
 又如：
 
-![](Git_Note.assets/2020-12-06 02-11-45屏幕截图.png)
+![](Git_Note.assets/2020-12-06 02-11-45 屏幕截图.png)
 
 **cat-file**
 
@@ -424,11 +430,11 @@ echo "hello world" | git hash-object --stdin
 >
 > **-p** 选项可指示该命令自动判断内容的类型,并为我们显示格式友好的内容。
 >
-> 前提是存在相应hash object。既**hash-object**命令执行时，使用了**-w**选项，即将生成的hash object对象存储进**objects**目录。
+> 前提是存在相应 hash object。既 **hash-object** 命令执行时，使用了**-w**选项，即将生成的 hash object 对象存储进**objects**目录。
 >
-> 如果hash object对象没找到则会报异常，如下图所示:
+> 如果 hash object 对象没找到则会报异常，如下图所示:
 >
-> ![](Git_Note.assets/2020-12-02 23-54-00屏幕截图.png)
+> ![](Git_Note.assets/2020-12-02 23-54-00 屏幕截图.png)
 >
 > **-t** 选项,可以让 Git 告诉我们其内部存储的任何对象类型
 
@@ -440,11 +446,11 @@ git cat-file -p 3b18e512dba79e4c8300dd08aeb37f8e728b8dad
 
 结果:
 
-![](Git_Note.assets/2020-12-03 00-04-47屏幕截图.png)
+![](Git_Note.assets/2020-12-03 00-04-47 屏幕截图.png)
 
 #### 树对象
 
-![](Git_Note.assets/2020-12-06 02-14-33屏幕截图.png)
+![](Git_Note.assets/2020-12-06 02-14-33 屏幕截图.png)
 
 ---
 
@@ -458,9 +464,9 @@ clone 出现 `SSL certificate problem: certificate has expired` 错误。
 
 ---
 
-## <span id="git_github">GitHub使用</span>
+## <span id="git_github">GitHub 使用</span>
 
-### <span id="git_github_acceleration">Github加速</span>
+### <span id="git_github_acceleration">Github 加速</span>
 
 Github 因为众所周知的原因非常的慢，所以得通过一些「小手段」来提速。
 
@@ -476,7 +482,7 @@ Github 访问慢可以使用重设 Host 映射解决。
 
 步骤:
 
-1. 检测可用的ip
+1. 检测可用的 ip
 
 ```
    > 有两个常用网站可以检测
@@ -490,7 +496,7 @@ Github 访问慢可以使用重设 Host 映射解决。
    > ![](Git笔记.assets/2020-12-15 01-13-12屏幕截图.png)
 ```
 
-检测出的 ip，最好自己 **ping**一下，选速度比较快的几个。
+检测出的 ip，最好自己 **ping** 一下，选速度比较快的几个。
 
 
 
@@ -500,7 +506,7 @@ Github 访问慢可以使用重设 Host 映射解决。
 >
 > **修改 Host 文件**，需要 root 权限
 >
-> host 映射格式: **"ip 地址"**
+> host 映射格式: **"ip 地址 "**
 >
 > 例子：
 >
@@ -543,7 +549,7 @@ Github 访问慢可以使用重设 Host 映射解决。
 
 1. github hosts ip 映射库: [GitHub520](https://github.com/521xueweihan/GitHub520)
 
-2. hosts管理小工具: [SwitchHosts](https://github.com/oldj/SwitchHosts)
+2. hosts 管理小工具: [SwitchHosts](https://github.com/oldj/SwitchHosts)
 
 ```
 SwitchHosts与GitHub520配合使用，能够方便快速使用最新的ip映射github相关的网址s
@@ -558,7 +564,7 @@ SwitchHosts与GitHub520配合使用，能够方便快速使用最新的ip映射g
 
 #### <span id="git_github_mirrors">Github 镜像</span>
 
-换ip有时只有解决访问github网站问题，而clone操作仍会卡住，那么这就使用国内github的镜像网站来替换了。
+换 ip 有时只有解决访问 github 网站问题，而 clone 操作仍会卡住，那么这就使用国内 github 的镜像网站来替换了。
 
 命令如下：
 
@@ -599,7 +605,7 @@ git config --global --unset url.https://github.com/.insteadof
 
 速度真的可以啊！而且这个软件是全平台的，Windows、mac 和 Linux 都支持。
 
-类似的还有网易的 [UU加速器](https://uu.163.com/)，不过 **UU加速器**没有 Linux 版本。
+类似的还有网易的 [UU加速器](https://uu.163.com/)，不过 **UU 加速器** 没有 Linux 版本。
 
 ---
 
@@ -609,7 +615,7 @@ git config --global --unset url.https://github.com/.insteadof
 
 新建 gist：
 
-1. 点击 **Your gists** 进入 gist页面
+1. 点击 **Your gists** 进入 gist 页面
 2. 点 **+** 添加
 3. 输入 gist 名称和描述
 

@@ -1,6 +1,6 @@
 ---
 aliases: 
-tags: ["markdown", "typora", "obsidian"]
+tags: markdown editor obsidian typora mermaid
 created: 2023-01-13, 12:27:45
 modified: 2023-01-29, 4:33:24
 ---

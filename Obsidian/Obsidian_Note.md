@@ -1,7 +1,7 @@
 ---
 aliases: 
 tags: markdown obsidian 
-modified: 2023-01-29, 8:42:20
+modified: 2023-01-30, 7:45:12
 created: 2023-01-13, 12:27:45
 ---
 # Obsidian 笔记
@@ -112,6 +112,49 @@ created: 2023-01-13, 12:27:45
 
 ## <span id="obn_themes">主题</span>
 
+
+「外观」选项中，「主题」，点「管理」，就能浏览到社区主题，根据自己需要切换。
+
+有些主题还对一些组件做了进一步的设置，而这得依赖 [Style settings](#obn_plugins_style-settings) 这个插件，所以建议也把这个插件也装上。
+
+介绍几个好看的主题。
+
+
+### <span id="obn_themes_anuppuccin">AnuPpuccin</span>
+
+[AnuPpuccin](https://github.com/AnubisNekhet/AnuPpuccin) 是我用过显示 [Front matter](#obn_advanced_frontmatter) 的 [tag](#obn_advanced_frontmatter_tag) 比较正常的一个主题。而且配合 [Style settings](#obn_plugins_style-settings) 插件能做更多细节的美化设置。
+
+![anuppuccin rainbow folder](https://github.com/AnubisNekhet/AnuPpuccin/raw/main/assets/gh-rainbow-preview.webp)
+
+这主题一些特色的功能：
+* 「Rainbow folder」彩虹目录
+*  「File Browser」中有个「Enable folder icons for collapse indicators」选项，可以给目录添加有颜色的目录图标
+* 「Active line highlight」 高亮当前行
+* 「Callouts」能对 Callout 样式做更细致的美化设置
+* 「Headings」 标题颜色进行设置 
+* 「Layout」 能将界面布局设成 **卡片式**
+
+
+---
+
+### <span id="obn_themes_catppuccin">Catppuccin</span>
+
+[Catppuccin](https://github.com/catppuccin/obsidian) 这也是一个非常好看的主题，同样也配合 [Style settings](obn_plugins_style-settings) 插件做到更多细节的美化设置。
+
+
+---
+
+### <span id="obn_themes_bluetopaz">Blue Topaz</span>
+
+
+[Blue Topaz](https://github.com/whyt-byte/Blue-Topaz_Obsidian-css) 这也是一个牛主题，同样也配合 [Style settings](obn_plugins_style-settings) 进行美化设置。
+
+详细用法可以参考：[Blue Topaz 主题用法示例](https://kknwfe6755.feishu.cn/docs/doccn67RYLVN4IQZiJTwviIdnog#7Vvw7B)
+
+[Blue-topaz-examples](https://github.com/cumany/Blue-topaz-examples) 这是一个示例库。
+
+
+
 ---
 
 ## <span id="obn_plugin">插件</span>
@@ -175,7 +218,7 @@ Obsidian 的插件分为 「核心插件」和「第三方插件」。
 2. 「Space between Chinese Japanese or Korean and English or numbers」，这选项是数字与汉字英文等间加空格。这功能是参考了 [中文文案排版指北](https://github.com/sparanoid/chinese-copywriting-guidelines) 这个中文 Markdown 文档排版建议方案文档来弄的！
 
 [YAML] 选项卡：
-1. 「Format Tags in YAML」格式化 [tag][#obn_advanced_frontmatter_tag]，将 [YAML front matter](#obn_advanced_frontmatter) 中的 `#` 去除。
+1. 「Format Tags in YAML」格式化 [tag][#obn_advanced_frontmatter_tag]，将 [YAML front matter](#obn_advanced_frontmatter) 中的 **#**符号去除。 如果不想设置这个设置，可以安装 [Frontmatter Tag Suggest](#obn_plugins_tagsuggest) 插件，在输入并选定 tag 候选项时就直接去除**#**符号了。
 2.  「Insert YAML attributes」添加缺少的属性，可以在属性文本框中加入属性，方便格式化时添加。
 3. 「YAML Timestamp」 这是添加时间戳的，可以添加建档时间及修改时间，时间格式也可自行设定。
 
@@ -409,6 +452,18 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 [Better Link Inserter](https://github.com/salmund/obsidian-better-link-inserter) 是增强添加链接的插件。
 
 ![better link inserter screenshot](https://user-images.githubusercontent.com/105465034/173254099-16e35e1a-dcff-4d08-87ac-0c5813d0480b.gif)
+
+
+---
+
+##### <span id="obn_plugins_tagsuggest">Frontmatter Tag Suggest</span>
+
+
+[Frontmatter Tag Suggest](https://github.com/jmilldotdev/obsidian-frontmatter-tag-suggest) 是一个输入 tag 时的智能揭示插件。
+
+原始 Obsidian 在填写 tags 时，是先输入一个**#** 符号，然后软件就会列出 tag 候选列表让你选择，你选好了后，最终得到的是结果是：第一个 tag 前都加了一个**#**符号，而这个**#**符号在 YAML 语法中是注释标识符，所以是不符合规范的。解决方案有两个：一个是使用 [Linter](#obn_plugins_linter) 插件，通过插件设置选项，可以在格式化文档时去除**#**符号；另一个方案就是使用这个插件，使用了这个插件后，只要是在 `tags:` 后输入就不用敲**#**也能有 tag 候选提示，这样最终结果就已经没有**#**符号。
+
+装了这插件后，[Linter](#obn_plugins_linter) 插件中的去除**#**就成了一个备用设置，可设可不设了！
 
 
 ---

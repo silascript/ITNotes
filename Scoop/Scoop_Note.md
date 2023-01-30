@@ -1,3 +1,9 @@
+---
+aliases: 
+tags: windows scoop git
+created: 2023-01-13, 12:27:46
+modified: 2023-01-30, 9:20:35
+---
 # Scoop 笔记
 
 ---
@@ -24,7 +30,7 @@
 这种方式，官方推荐，但这种方式，会报 `Cannot find path 'C:\Users\xxx\scoop\buckets' because it does not exist.` 错误。因为是指定了目录，但装完 scoop 后，scoop 找 bucket 还是去 C 盘默认目录去找，这明显是找不到的，所以才会报错。
 
 
-方式2:
+方式 2:
 ```powershell
 $env:SCOOP='F:\scoop\locals'
 $env:SCOOP_GLOBAL='F:\scoop\global'
@@ -36,7 +42,7 @@ iwr get.scoop.sh | iex
 
 最好分开设置：
 
-设置scoop 目录：
+设置 scoop 目录：
 ```powershell
 $env:SCOOP='F:\scoop\locals'
 [Environment]::SetEnvironmentVariable('SCOOP', $env:SCOOP, 'User')
@@ -92,7 +98,7 @@ scoop config aria2-warining-enable false
 
 ## <span id="scoop_use">使用 Scoop</span>
 
-使用  scoop，可以先使用 `scoop checkup` 来检测下 scoop 存在什么问题。
+使用 scoop，可以先使用 `scoop checkup` 来检测下 scoop 存在什么问题。
 
 ---
 
@@ -106,7 +112,7 @@ scoop bucket known
 * [main](https://github.com/ScoopInstaller/Main)： 默认的主库
 * [extras](https://github.com/ScoopInstaller/Extras)： 官方扩展库
 * [version](https://github.com/ScoopInstaller/Versions)： 是旧版本软件库
-* [java](https://github.com/ScoopInstaller/Java)： java相关的，如各种 jdk
+* [java](https://github.com/ScoopInstaller/Java)： java 相关的，如各种 jdk
 * [dorado](https://github.com/chawyehsu/dorado)： 国内常用软件
 
 添加或移除 bucket
@@ -234,7 +240,7 @@ scoop cache rm *
 
 ### <span id="scoop_softs_basic">基础软件</span>
 
-基础软件是一些curl、wget、git 和一些模拟 linux 命令等软件。
+基础软件是一些 curl、wget、git 和一些模拟 linux 命令等软件。
 
 #### <span id="scoop_softs_basic_git">git</span>
 git 是 scoop 基础软件，并且不单只装 git，如果执行 `scoop install git` ，装的是一个 套件。
@@ -281,7 +287,7 @@ scoop install uutils-coreutils
 
 [crystaldiskinfo](https://crystalmark.info/en/) 是一款硬盘检测工具。这货还有一个美化版本：`crystaldiskinfo-shizuku` ：。
 
-[lux](https://github.com/iawia002/lux)  是一个使用 go 语言写的视频下载器。这货原来叫 `annie`。这软件依赖 [ffmpeg](https://www.ffmpeg.org/) ，ffmpeg 是视频库，所以要么先安装 ffmpeg，要么安装 lux 时，scoop 自动先安装 ffmpeg：。
+[lux](https://github.com/iawia002/lux) 是一个使用 go 语言写的视频下载器。这货原来叫 `annie`。这软件依赖 [ffmpeg](https://www.ffmpeg.org/) ，ffmpeg 是视频库，所以要么先安装 ffmpeg，要么安装 lux 时，scoop 自动先安装 ffmpeg：。
 
 
 [Shotcut](https://www.shotcut.org/) [![shotcut repo](https://img.shields.io/github/stars/mltframework/shotcut?style=social)](https://github.com/mltframework/shotcut) 开源免费的视频剪辑软件。这货同样依赖 `ffmpeg`。
@@ -332,10 +338,10 @@ Run 'mysqld --standalone' or 'mysqld --console' to start the Database,or run fol
 
 常见 MySQL 添加服务有四种形式：
 
-1. `mysqld --install` 添加一个使用默认服务名称（默认应该是 MySQL）且**自动启动**的服务
-2. `mysqld --install 服务名` 添加一个指定服务名称且**自动启动**的服务
-3. `mysqld --install-manual` 添加一个使用默认服务名称，**手动启动**的服务
-4. `mysqld --install-manual 服务名` 添加一个指定服务名称，**手动启动**的服务
+1. `mysqld --install` 添加一个使用默认服务名称（默认应该是 MySQL）且 **自动启动** 的服务
+2. `mysqld --install 服务名` 添加一个指定服务名称且 **自动启动** 的服务
+3. `mysqld --install-manual` 添加一个使用默认服务名称，**手动启动** 的服务
+4. `mysqld --install-manual 服务名` 添加一个指定服务名称，**手动启动** 的服务
 
 > 在添加服务时，还指定其他 `mysqld` 命令的其他属性，如最常见的，就是指定默认配置文件的指定：`--defaults-file="xxx\scoop\locals\apps\mysql\current\my.ini"`
 
@@ -383,15 +389,15 @@ windows 下有两个命令都可以启动 Windows 服务：
 > * sc only appeared with Windows NT
 > 可以看出，`net` 是 MS-DOS 时代的产物，而 `sc` 是 WinNT 时代的东西。
 
-`net stop mysql & net start mysql`，使用 `net` 重启 mysql 服务，命令会依次执行关闭和开启 mysql，在执行完 `net stop mysql` 这个命令后，**会等待**确认服务关闭之后，才会执行 `net start mysql` 这个开启服务的指令。
+`net stop mysql & net start mysql`，使用 `net` 重启 mysql 服务，命令会依次执行关闭和开启 mysql，在执行完 `net stop mysql` 这个命令后，**会等待** 确认服务关闭之后，才会执行 `net start mysql` 这个开启服务的指令。
 
-`sc stop mysql & sc start mysql`，同样是重启，这句代码则会执行失败，因为 `sc stop mysql` 这个指令，只是发送了一个关闭 mysql 的信号，`sc` 并**未等待**和确认服务是否关闭，这时服务极大可能是未完成关闭的，所以执行 `sc start mysql` ，就会出错。
+`sc stop mysql & sc start mysql`，同样是重启，这句代码则会执行失败，因为 `sc stop mysql` 这个指令，只是发送了一个关闭 mysql 的信号，`sc` 并 **未等待** 和确认服务是否关闭，这时服务极大可能是未完成关闭的，所以执行 `sc start mysql` ，就会出错。
 
 简单说，`net` 是线性的，而 `sc` 是非线性的。
 
 ---
 
-##### 进入MySQL后修改密码
+##### 进入 MySQL 后修改密码
 
 使用 scoop 安装的 MySQL 是没有初始密码的。 
 直接执行：` mysql -P 3366 -u root -p`
@@ -424,7 +430,7 @@ select user,host,authentication_string from user;
 
 #### <span id="scoop_softs_beauti_concfg">concfg</span>
 
-[concfg](https://github.com/lukesampson/concfg) 本来不是用来美化的，而且用来导出 Windows console 的配置的。而Windows console 配置无非就两种设置：字体和颜色。所以，这货就自然成了配色工具。而这货也非常贴心地内置了大量的配色方案。
+[concfg](https://github.com/lukesampson/concfg) 本来不是用来美化的，而且用来导出 Windows console 的配置的。而 Windows console 配置无非就两种设置：字体和颜色。所以，这货就自然成了配色工具。而这货也非常贴心地内置了大量的配色方案。
 
 ![atelier-cave](https://github.com/lukesampson/concfg/raw/master/preset_examples/atelier-cave.png)
 

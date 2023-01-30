@@ -1,3 +1,9 @@
+---
+aliases: 
+tags: database mysql
+created: 2023-01-13, 12:27:46
+modified: 2023-01-30, 9:24:06
+---
 # MySQL 笔记
 
 ---
@@ -12,7 +18,7 @@
 
 ### mycli
 
-[mycli](https://www.mycli.net)是一个阿三写的终端增强客户端，比 MySQL 自带的好用多了。
+[mycli](https://www.mycli.net) 是一个阿三写的终端增强客户端，比 MySQL 自带的好用多了。
 这货是用 Python 写的，所以通过 `pip install mycli` 命令来安装。
 mycli 支持 MySQL、MariaDB、Percona。
 
@@ -27,11 +33,11 @@ mycli 有语法高亮、代码提示、分页显示等非常实用的功能。
 常用配置：
 
 `syntax_style` 配置语法配色，值就里配色方案的名称。
-> 官方提供了几个[配色](https://www.mycli.net/syntax)。
+> 官方提供了几个 [配色](https://www.mycli.net/syntax)。
 
 
 ### 连接问题
-如果在连接 MySQL 8.x 时，出现`Public Key Retrieval is not allowed` 错误，请开启相应的权限。 
+如果在连接 MySQL 8.x 时，出现 `Public Key Retrieval is not allowed` 错误，请开启相应的权限。 
 
 ---
 

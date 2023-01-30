@@ -1,4 +1,10 @@
-# Ruby笔记
+---
+aliases: 
+tags: PL ruby
+created: 2023-01-13, 12:27:46
+modified: 2023-01-30, 7:55:06
+---
+# Ruby 笔记
 
 ---
 

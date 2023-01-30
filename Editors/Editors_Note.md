@@ -1,3 +1,12 @@
+---
+aliases: 
+tags: editor sublime vscode vim lsp
+created: 2023-01-13, 12:27:45
+modified: 2023-01-30, 7:48:25
+---
+
+
+
 # 编辑器笔记
 
 介绍常用的编辑器用法
@@ -5,47 +14,47 @@
 
 ---
 ## 目录
-- [编辑器笔记](#编辑器笔记)
-  - [目录](#目录)
-  - [SublimeText](#sublimetext)
-    - [Sublime 常用插件](#sublime-常用插件)
-      - [LSP相关](#lsp相关)
-    - [Sublime 相关连接](#sublime-相关连接)
-  - [VSCode](#vscode)
-    - [VSCode 目录结构](#vscode-目录结构)
-    - [常用插件](#常用插件)
-      - [本地化插件](#本地化插件)
-      - [Syncing（VSCode 同步配置插件）](#syncingvscode-同步配置插件)
-      - [Bookmarks](#bookmarks)
-      - [Better Comments](#better-comments)
-      - [Snippets Ranger](#snippets-ranger)
-      - [Git 相关插件](#git-相关插件)
-        - [GitLens](#gitlens)
-        - [Git History](#git-history)
-        - [Git Graph](#git-graph)
-      - [主题和文件图标](#主题和文件图标)
-        - [Gruvbox](#gruvbox)
-        - [Obsidian Dark](#obsidian-dark)
-        - [Rainglow](#rainglow)
-        - [图标](#图标)
-      - [模拟 vim 插件](#模拟-vim-插件)
-          - [vim 插件的问题](#vim-插件的问题)
-      - [Path Intellisense](#path-intellisense)
-      - [Project Manager](#project-manager)
-      - [Indent Rainbow](#indent-rainbow)
-      - [SVG 插件](#svg-插件)
-      - [Markdown插件](#markdown插件)
-        - [markdown-all-in-one](#markdown-all-in-one)
-        - [Markdown Preview Enhanced](#markdown-preview-enhanced)
-      - [笔记插件](#笔记插件)
-        - [Foam](#foam)
-      - [Python](#python)
-      - [VSCode 配置 C、C++ 开发环境](#vscode-配置-cc-开发环境)
-      - [前端插件](#前端插件)
-        - [LiveServer](#liveserver)
-        - [Vetur](#vetur)
-    - [相关连接](#相关连接)
-  - [Vim](#vim)
+* [编辑器笔记](#编辑器笔记)
+  * [目录](#目录)
+  * [SublimeText](#sublimetext)
+    * [Sublime 常用插件](#sublime-常用插件)
+      * [LSP相关](#lsp相关)
+    * [Sublime 相关连接](#sublime-相关连接)
+  * [VSCode](#vscode)
+    * [VSCode 目录结构](#vscode-目录结构)
+    * [常用插件](#常用插件)
+      * [本地化插件](#本地化插件)
+      * [Syncing（VSCode 同步配置插件）](#syncingvscode-同步配置插件)
+      * [Bookmarks](#bookmarks)
+      * [Better Comments](#better-comments)
+      * [Snippets Ranger](#snippets-ranger)
+      * [Git 相关插件](#git-相关插件)
+        * [GitLens](#gitlens)
+        * [Git History](#git-history)
+        * [Git Graph](#git-graph)
+      * [主题和文件图标](#主题和文件图标)
+        * [Gruvbox](#gruvbox)
+        * [Obsidian Dark](#obsidian-dark)
+        * [Rainglow](#rainglow)
+        * [图标](#图标)
+      * [模拟 vim 插件](#模拟-vim-插件)
+          * [vim 插件的问题](#vim-插件的问题)
+      * [Path Intellisense](#path-intellisense)
+      * [Project Manager](#project-manager)
+      * [Indent Rainbow](#indent-rainbow)
+      * [SVG 插件](#svg-插件)
+      * [Markdown插件](#markdown插件)
+        * [markdown-all-in-one](#markdown-all-in-one)
+        * [Markdown Preview Enhanced](#markdown-preview-enhanced)
+      * [笔记插件](#笔记插件)
+        * [Foam](#foam)
+      * [Python](#python)
+      * [VSCode 配置 C、C++ 开发环境](#vscode-配置-cc-开发环境)
+      * [前端插件](#前端插件)
+        * [LiveServer](#liveserver)
+        * [Vetur](#vetur)
+    * [相关连接](#相关连接)
+  * [Vim](#vim)
 
 ---
 ## <span id="editors_sublime">SublimeText</span>
@@ -75,7 +84,7 @@ SublimeText 基本设置：
 ### <span id="editors_sublime_plugins">Sublime 常用插件</span>
 
 在想知道有哪些插件，有两种方式查询：
-1. 通过[packagecontrol.io](https://packagecontrol.io) 这个网站中查询。
+1. 通过 [packagecontrol.io](https://packagecontrol.io) 这个网站中查询。
 > 本来这网站是有个中国镜像：[packagecontrol.cn](http://packagecontrol.cn) ，不过好像已经挂了。
 2. 通过在 SublimeText 中，使用 `Ctrl+Shift+P`，呼出命令面板，敲入 `pacakge`，就能列出插件相关的命令。
 > 命令很简单，不做过多介绍了，不非就是 `install` 安装插件，`upgrade` 升级插件，`remove` 卸载插件，`list` 列出插件。  
@@ -95,7 +104,7 @@ SublimeText 基本设置：
 ---
 
 
-#### <span id="editors_sublime_plugins_lsp">LSP相关</span>
+#### <span id="editors_sublime_plugins_lsp">LSP 相关</span>
 
 [关于LSP](../vim/LSP_Complete.md#about_lsp)
 
@@ -110,7 +119,7 @@ LSP 常用插件：
 
 这个插件不针对特定语言，属于基本 LSP 插件。其他特定语言 lsp 插件都在这插件之上建立的，所以如果要使用 LSP，这个插件必装。
 
-具体语言的 LSP 得再装特定的LSP 插件。--这个相当于 LSP 通用 Client，但有些语言得用特定 Client 才能调 LSP，所以这些语言对再装定的语言 LSP 插件。具体使用还得参考[LSP配置说明](https://lsp.sublimetext.io/language_servers)。
+具体语言的 LSP 得再装特定的 LSP 插件。-- 这个相当于 LSP 通用 Client，但有些语言得用特定 Client 才能调 LSP，所以这些语言对再装定的语言 LSP 插件。具体使用还得参考 [LSP配置说明](https://lsp.sublimetext.io/language_servers)。
 
 
 
@@ -131,7 +140,7 @@ LSP 常用插件：
 VSCode 主要有几个版本：
 
 
-[VSCode](https://code.visualstudio.com)  微软官方版本。
+[VSCode](https://code.visualstudio.com) 微软官方版本。
 
 
 [VSCodium](https://vscodium.com) 社区驱动的完全开源版本，其扩展源使用的是 [Open-VSX](https://www.gitpod.io/blog/open-vsx/)。
@@ -147,7 +156,7 @@ VSCode：
 
 `~/.config/Code` 设置目录
 
-`~/.vscode`   插件存放目录
+`~/.vscode` 插件存放目录
 
 
 VSCodium：
@@ -158,7 +167,7 @@ VSCodium：
 
 > 如果要重置 VSCode 或 VSCodium，就需要清理这两个目录。
 >
-> 如果只清`~/.config/Code` 或 `~/.config/VSCodium` 这个设置目录，启动VSCode 或 VSCodium ，插件还是存在的。
+> 如果只清 `~/.config/Code` 或 `~/.config/VSCodium` 这个设置目录，启动 VSCode 或 VSCodium ，插件还是存在的。
 
 
 
@@ -199,7 +208,7 @@ VSCode 的语言包。
 * 新建一个 gist
 > [gist 具体操作](../Git/Git_Note.md#git_github_gist)
 
-* 生成token
+* 生成 token
 生成一个 token，在生成 token 时，勾选 **scopes** 为 **gist**，如果不想麻烦，就把 token 的生命周期为 **No Expiration**。（[token 具体操作](../Git/Git_Note.md#git_github_token)）
 
 * syncing 设置
@@ -247,10 +256,10 @@ Bookmarks 快捷键：
 
 #### <span id="editors_vscode_extensions_snippetsranger">Snippets Ranger</span>
 
-[Snippets Ranger](https://open-vsx.org/extension/robole/snippets-ranger) [![Snippets Ranger Repo](https://img.shields.io/github/stars/robole/vscode-snippets-ranger?style=social)](https://github.com/robole/vscode-snippets-ranger)这是一个 snippet 管理插件。
+[Snippets Ranger](https://open-vsx.org/extension/robole/snippets-ranger) [![Snippets Ranger Repo](https://img.shields.io/github/stars/robole/vscode-snippets-ranger?style=social)](https://github.com/robole/vscode-snippets-ranger) 这是一个 snippet 管理插件。
 
 
-这个插件除了新建添加自己的 snippet 这个常规功能外，最最重要的是它能用一种更直观的方式查看当前vscode/vscodium 中已经存在的哪些 snippet。
+这个插件除了新建添加自己的 snippet 这个常规功能外，最最重要的是它能用一种更直观的方式查看当前 vscode/vscodium 中已经存在的哪些 snippet。
 
 而且它将这些 snippet 分了两大类，一类是内置的，另一类是插件提供的，如下图：
 
@@ -271,7 +280,7 @@ Bookmarks 快捷键：
 ##### <span id="editors_vscode_extensions_git_gitlens">GitLens</span>
 ![gitlens logo](https://gitlens.amod.io/assets/gitlens-logo.png)
 
-[GitLens](https://gitlens.amod.io/) 是 VSCode 重要的 Git 插件，增强了 VSCode 的 Git 的功能--VSCode 自带的 git 功能非常基础。而这个插件能让 VSCode 显示每一行代码的作者以及提交时间。
+[GitLens](https://gitlens.amod.io/) 是 VSCode 重要的 Git 插件，增强了 VSCode 的 Git 的功能 --VSCode 自带的 git 功能非常基础。而这个插件能让 VSCode 显示每一行代码的作者以及提交时间。
 
 
 
@@ -317,7 +326,7 @@ VSCode 有很多漂亮的 Theme 和 icon，可以根据自己喜好添加。
 
 ##### <span id="editors_vscode_extensions_theme_rainglow">Rainglow</span>
 
-[Rainglow](https://open-vsx.org/extension/daylerees/rainglow) [![Rainglow Repo](https://img.shields.io/github/stars/rainglow/vscode?style=social)](https://github.com/rainglow/vscode) 这是一个 theme 集合，包含了300多个语法本色和 主题。 喜欢没事换 theme 的人可以用下这个主题包。
+[Rainglow](https://open-vsx.org/extension/daylerees/rainglow) [![Rainglow Repo](https://img.shields.io/github/stars/rainglow/vscode?style=social)](https://github.com/rainglow/vscode) 这是一个 theme 集合，包含了 300 多个语法本色和 主题。 喜欢没事换 theme 的人可以用下这个主题包。
 
 如果想修改状态栏样式可以参考以下代码：
 ```json
@@ -398,7 +407,7 @@ easymotion 常用功能列表：
 
 vim 插件，使用时的卡顿，一般出现在编辑完文件，保存后，「Normal」模式与「Insert」模式切换的时候。估计这是由保存诱发的多原因造成的卡顿。
 
-VSCode/VSCodium 默认开启了 `occurrences Highlight` 这个功能时候，这个功能是光标停在当前单词上，编辑器就会将本页面所有该单词全部高亮。这个功能没什么用，至少不应该做为常用选项开启，即便是不卡的VSCode及Linux 版本的 VSCodium 下，开启此功能，会使页面一直「重绘」，发生「页面」跳动的现象，对于使用体验来讲也不是很好，再说这功能会诱使 Windows 下 VSCodium 原本卡顿的现象更为明显，所以建议最好关闭此功能。
+VSCode/VSCodium 默认开启了 `occurrences Highlight` 这个功能时候，这个功能是光标停在当前单词上，编辑器就会将本页面所有该单词全部高亮。这个功能没什么用，至少不应该做为常用选项开启，即便是不卡的 VSCode 及 Linux 版本的 VSCodium 下，开启此功能，会使页面一直「重绘」，发生「页面」跳动的现象，对于使用体验来讲也不是很好，再说这功能会诱使 Windows 下 VSCodium 原本卡顿的现象更为明显，所以建议最好关闭此功能。
 
 另外，`easymotion` 这个功能也有可能造成 vim 插件卡，所以没办法只能关闭。
 
@@ -431,7 +440,7 @@ VSCode/VSCodium 默认开启了 `occurrences Highlight` 这个功能时候，这
 
 ![indent rainbow example](https://raw.githubusercontent.com/oderwat/vscode-indent-rainbow/master/assets/example.png)
 
-`light` 模式，缩进不是默认`块式`（上图右），而是线的（上图左）。
+`light` 模式，缩进不是默认 `块式`（上图右），而是线的（上图左）。
 
 ```json
 "indentRainbow.indicatorStyle": "light",
@@ -451,13 +460,13 @@ VSCode/VSCodium 默认开启了 `occurrences Highlight` 这个功能时候，这
 
 #### <span id="editors_vscode_extensions_svg">SVG 插件</span>
 
-[SVG](https://open-vsx.org/extension/jock/svg) [![SVG Repo](https://img.shields.io/github/stars/lishu/vscode-svg2?style=social)](https://github.com/lishu/vscode-svg2) 插件，有自动完成 SVG 代码、能预览SVG 图片、快速取色等功能。
+[SVG](https://open-vsx.org/extension/jock/svg) [![SVG Repo](https://img.shields.io/github/stars/lishu/vscode-svg2?style=social)](https://github.com/lishu/vscode-svg2) 插件，有自动完成 SVG 代码、能预览 SVG 图片、快速取色等功能。
 
 
 
 ---
 
-#### <span id="editors_vscode_extensions_markdown">Markdown插件</span>
+#### <span id="editors_vscode_extensions_markdown">Markdown 插件</span>
 
 markdown 插件有很多，而 VSCode、VSCodiume 本身内置了 markdown 基础功能。
 
@@ -520,7 +529,7 @@ VSCodium 原装只内置了 `Python Language Basics`，这个内置插件只有�
 
 #### <span id="editors_vscode_cpp_devenv">VSCode 配置 C、C++ 开发环境</span>
 
-操作系统得先安装 LLVM、Clang等工具。
+操作系统得先安装 LLVM、Clang 等工具。
 
 Arch 系：
 ```shell
@@ -559,7 +568,7 @@ clangd --version
 
 * [clangd](https://open-vsx.org/extension/llvm-vs-code-extensions/vscode-clangd) [![Clangd Repo](https://img.shields.io/github/stars/clangd/vscode-clangd?style=social)](https://github.com/clangd/vscode-clangd) 如果要使用 Clang 来作语言服务，这个插件是必装的。
 
-* [code runner](https://open-vsx.org/extension/formulahendry/code-runner) [![Code Runner Repo](https://img.shields.io/github/stars/formulahendry/vscode-code-runner?style=social)](https://github.com/formulahendry/vscode-code-runner) 这个是代码运行插件，能跑C、C++、Java、Python等众多语言。
+* [code runner](https://open-vsx.org/extension/formulahendry/code-runner) [![Code Runner Repo](https://img.shields.io/github/stars/formulahendry/vscode-code-runner?style=social)](https://github.com/formulahendry/vscode-code-runner) 这个是代码运行插件，能跑 C、C++、Java、Python 等众多语言。
 
 
 

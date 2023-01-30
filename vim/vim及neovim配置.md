@@ -1,6 +1,12 @@
-# VIM及NeoVIM配置
+---
+aliases: 
+tags: editor vim neovim config setting
+created: 2023-01-13, 12:27:46
+modified: 2023-01-30, 7:54:24
+---
+# VIM 及 NeoVIM 配置
 
-## neovim配置
+## neovim 配置
 
 ### init.vim 配置文件
 
@@ -129,13 +135,13 @@ autocmd ColorScheme * call s:transparent_background()
 
 ```
 
->**注意:透明背景设置必须放在colortheme设置之后!**
+>**注意: 透明背景设置必须放在 colortheme 设置之后!**
 
 
 
-#### python相关
+#### python 相关
 
->如果python不起作用就使用**set pythonthreedll**来指定python的dll
+>如果 python 不起作用就使用 **set pythonthreedll** 来指定 python 的 dll
 
 ```shell
 if has('python3')
@@ -148,11 +154,11 @@ endif
 set pythonthreedll=I:/Scoop/apps/python-beta/current/python38.dll
 ```
 
->neovim不使用**set pythonthreedll**
+>neovim 不使用 **set pythonthreedll**
 >
->（neovim使用**:checkhealth**检测python支持）
+>（neovim 使用**:checkhealth**检测 python 支持）
 >
->neovim使用**pip**安装**pyvim**模块
+>neovim 使用 **pip** 安装 **pyvim** 模块
 
 ```shell
 pip3 install --user --upgrade pynvim

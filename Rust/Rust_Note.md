@@ -1,3 +1,9 @@
+---
+aliases: 
+tags: PL rust
+created: 2023-01-13, 12:27:46
+modified: 2023-01-30, 9:17:13
+---
 # Rust 笔记
 
 ---
@@ -38,11 +44,11 @@ Current installation options:
 1：默认设置
 
 2：自定义安装
-  自定义安装中有一个「配置文件」选项，它是在安装Rust toolchain 时，选择下载组件组。它有三个选项，一个`最小`、`默认`和`完整`。
+  自定义安装中有一个「配置文件」选项，它是在安装 Rust toolchain 时，选择下载组件组。它有三个选项，一个 `最小`、`默认` 和 `完整`。
 
   「最小」只有基本的：rustc rust-std 和 cargo。
 
-  「默认」在「最小」配置基础上加了 rust-docs、rustfmt和clippy。
+  「默认」在「最小」配置基础上加了 rust-docs、rustfmt 和 clippy。
   
   「完整」包括了元数据中包含的所有组件。
 
@@ -64,9 +70,9 @@ source $HOME/.cargo/env
 
 ```
 
-根据提示，`source` 下，让`~/.cargo/env` 这个配置文件生效。
+根据提示，`source` 下，让 `~/.cargo/env` 这个配置文件生效。
 
-`env` 这个文件是将cargo 配置到 `PATH` 环境变量中。
+`env` 这个文件是将 cargo 配置到 `PATH` 环境变量中。
 
 而如果安装选项选了 `modify PATH variable: yes`，`.cargo/env` 这个文件就会被配置到 `.bashrc`、`.bash_profile`、`.profile` 三个文件中：
   
@@ -194,7 +200,7 @@ Rust 官方语言服务是 [RLS](https://github.com/rust-lang/rls) （Rust Langu
 
 后来社区版的 [rust-analyzer](https://github.com/rust-lang/rust-analyzer) 被 Rust 「招安」成功，成为官方项目。
 
-未来 原来的RLS会「退役」，而 rust-analyzer 将会成为官方的语言服务--「rls-2.0」。
+未来 原来的 RLS 会「退役」，而 rust-analyzer 将会成为官方的语言服务 --「rls-2.0」。
 
 rust-analyzer 需要标准库的源码，所以得把源码装上：
 ```shell

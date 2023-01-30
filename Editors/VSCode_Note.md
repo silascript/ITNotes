@@ -1,3 +1,9 @@
+---
+aliases: 
+tags: editor vscode
+created: 2023-01-13, 12:27:45
+modified: 2023-01-30, 7:50:59
+---
 # VSCode 笔记
 
 ---

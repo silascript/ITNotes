@@ -1,3 +1,9 @@
+---
+aliases: 
+tags: editor vim plugin lsp markdown plugin  
+created: 2023-01-13, 12:27:46
+modified: 2023-01-30, 7:51:37
+---
 # vim 常用插件
 
 * [Plug插件](#plug)
@@ -37,9 +43,9 @@
 * [关于LSP及补全](#lsp_complete)
 
 
-### <span id="vimplugin_plug">Plug插件</span>
+### <span id="vimplugin_plug">Plug 插件</span>
 
-windows下装 [Plug 插件](https://github.com/junegunn/vim-plug)
+windows 下装 [Plug 插件](https://github.com/junegunn/vim-plug)
 
 ```po
 md ~\AppData\Local\nvim\autoload
@@ -52,7 +58,7 @@ $uri = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 )
 ```
 
-其中 `~\AppData\Local\nvim\autoload\plug.vim`，可以自行定义下载安装plug.vim文件的目录，可以用官方给的，就在`\AppData\Local\nvim\autoload` 下。如果是用 scoop 安装 neovim，可以放在 `current\share\nvim\runtime\autoload` 
+其中 `~\AppData\Local\nvim\autoload\plug.vim`，可以自行定义下载安装 plug.vim 文件的目录，可以用官方给的，就在 `\AppData\Local\nvim\autoload` 下。如果是用 scoop 安装 neovim，可以放在 `current\share\nvim\runtime\autoload` 
  这个目录下，同样起效。
 
 Linux vim：
@@ -68,7 +74,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 ```
 
 
-#### vim-plug插件配置
+#### vim-plug 插件配置
 
 ```vim
  call plug#begin()
@@ -78,13 +84,13 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 call plug#end()
 ```
 
-> 如果begin()中不写具体插件安装地下，windows下会装在 `C:\Users\用户名\AppData\Local\nvim\plugged` 这个目录下。
+> 如果 begin() 中不写具体插件安装地下，windows 下会装在 `C:\Users\用户名\AppData\Local\nvim\plugged` 这个目录下。
 >
 > 在 `begin` 与 `end` 之间是配置各种插件
 
-写完后，重启nvim后，使用 `PlugInstall` 命令来执行安装。如果不使用某插件就在配置文件中注释掉，再执行 `PlugUpdate` 命令完成移除插件。
+写完后，重启 nvim 后，使用 `PlugInstall` 命令来执行安装。如果不使用某插件就在配置文件中注释掉，再执行 `PlugUpdate` 命令完成移除插件。
 
-Plug 配置插件还可以**按需加载**:
+Plug 配置插件还可以 **按需加载**:
 
 例子:
 
@@ -96,11 +102,11 @@ Plug 'othree/xml.vim',{'for':'xml'}
 Plug 'google/vim-codefmt',{'on':['FormatCode','FormatLines']}
 ```
 
-常用**按需加载**:
+常用 **按需加载**:
 
-| `do`  | Post-update hook，某些vim插件在完成安装或更新后，需要执行额外的操作，可以使用 do 选项指定具体的操作或函数 |
+| `do`  | Post-update hook，某些 vim 插件在完成安装或更新后，需要执行额外的操作，可以使用 do 选项指定具体的操作或函数 |
 | ----- | ------------------------------------------------------------ |
-| `on`  | 按需加载: vim命令或`<Plug>`-mappings                         |
+| `on`  | 按需加载: vim 命令或 `<Plug>`-mappings                         |
 | `for` | 按需加载: 文件类型                                           |
 
 ### <span id="plugin_auto_pairs">自动括号匹配</span>
@@ -111,7 +117,7 @@ Plug 'jiangmiao/auto-pairs'
 
 [auto-pairs](https://github.com/jiangmiao/auto-pairs)
 
-### <span id="plugin_snippets">snippets插件</span>
+### <span id="plugin_snippets">snippets 插件</span>
 
 ```shell
 " snippet相关
@@ -121,11 +127,11 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 ```
 
->ultisnips这个插件依赖python,而且是特定版本，特别恶心,所以慎用！
+>ultisnips 这个插件依赖 python,而且是特定版本，特别恶心,所以慎用！
 
-使用另一个snippet引擎：**SnipMate**
+使用另一个 snippet 引擎：**SnipMate**
 
-**snipmate**这个插件需要依赖其他两个插件，所需插件如下配置:
+**snipmate** 这个插件需要依赖其他两个插件，所需插件如下配置:
 
 ```shell
 Plug 'MarcWeber/vim-addon-mw-utils'
@@ -134,23 +140,23 @@ Plug 'garbas/vim-snipmate'
 
 ```
 
-自定义snippets文件
+自定义 snippets 文件
 
-在~/.vim/目录新建一个目录**snippets**目录，用来存在自定义的snippets文件。
+在~/.vim/目录新建一个目录 **snippets** 目录，用来存在自定义的 snippets 文件。
 
-因为此目录位于所有插件之外，所以你自定义的snippets文件不会因为插件更新而被删除。
+因为此目录位于所有插件之外，所以你自定义的 snippets 文件不会因为插件更新而被删除。
 
-在snippets目录中建立你自定义的snippets文件，文件后缀名为**snippets**。
+在 snippets 目录中建立你自定义的 snippets 文件，文件后缀名为 **snippets**。
 
-例如，xml的snippets，就新建**xml.snippets**文件。
+例如，xml 的 snippets，就新建 **xml.snippets** 文件。
 
-snippets语法格式请参考[vim-snippets](https://github.com/honza/vim-snippets)
+snippets 语法格式请参考 [vim-snippets](https://github.com/honza/vim-snippets)
 
 ### <span id="plugin_format">格式化插件</span>
 
 #### vim-codefmt
 
-此插件是**google**开发的!
+此插件是 **google** 开发的!
 
 ```shell
 Plugin 'google/vim-maktaba'
@@ -159,18 +165,18 @@ Plugin 'google/vim-codefmt'
 
 vim-maktaba 这个插件得一起装，不然会报错。
 
-vim-codefmt使用，此插件对于C、C++、Java语言，依赖clang-format，所以得先安装clang-format,并且设置好默认的格式化配置文件。
+vim-codefmt 使用，此插件对于 C、C++、Java 语言，依赖 clang-format，所以得先安装 clang-format,并且设置好默认的格式化配置文件。
 
 各大语言使用的格式化工具:
 
-* C、C++和Java用的都是**Clang-Format**
-* go 用的是gofmt
-* HTML、CSS、SASS、LESS、JSON用的是nodejs 的**js-beautify**
-* rust用的是rustfmt
+* C、C++ 和 Java 用的都是 **Clang-Format**
+* go 用的是 gofmt
+* HTML、CSS、SASS、LESS、JSON 用的是 nodejs 的 **js-beautify**
+* rust 用的是 rustfmt
 
-顺便说下Clang-Format:
+顺便说下 Clang-Format:
 
-clang-format全局配置文件是放在用户根目录下的**.clang-format**,既~/.clang-format。
+clang-format 全局配置文件是放在用户根目录下的**.clang-format**,既~/.clang-format。
 
 样例：
 
@@ -188,9 +194,9 @@ AlignConsecutiveAssignments: true  # 连续赋值对齐
 # AlignConsecutiveDeclarations: true # 连续声明对齐
 ```
 
-vim-codefmt插件在vim中使用，就两个主要命令:
+vim-codefmt 插件在 vim 中使用，就两个主要命令:
 
-1. **:FormatLines**:格式化某些行代码
+1. **:FormatLines**: 格式化某些行代码
 
 2. **:FormatCode**：格式化整页代码
 
@@ -220,9 +226,9 @@ nerdcommentor 默认快捷键:
 
 取消注释:<Leader>cu
 
-Leader默认为**\\**
+Leader 默认为**\\**
 
-> 注意 此插件原来的github的地址为 **scrooloose/nerdcommenter**，如果原来装有的，得改下Plug 后的字符串值为 **preservim/nerdcommenter**，然后Clean下再Install。
+> 注意 此插件原来的 github 的地址为 **scrooloose/nerdcommenter**，如果原来装有的，得改下 Plug 后的字符串值为 **preservim/nerdcommenter**，然后 Clean 下再 Install。
 
 
 ### <span id="plugin_statusline">状态栏插件</span>
@@ -231,7 +237,7 @@ Leader默认为**\\**
 
 [vim-airline](https://github.com/vim-airline/vim-airline)
 
-包括airline的样式插件
+包括 airline 的样式插件
 
 ```vim
 Plug 'vim-airline/vim-airline'
@@ -268,7 +274,7 @@ let g:airline_theme='dark'
 #### <span id="plugin_syn_ployglot">vim-polyglot</span>
 [vim-polyglot](https://github.com/sheerun/vim-polyglot)
 
-vim-polyglot这个插件是插件集，它集成了众多语言相关的插件,语法高亮只是其中一个功能。
+vim-polyglot 这个插件是插件集，它集成了众多语言相关的插件,语法高亮只是其中一个功能。
 用户可以对某子插件进行自行设置。
 
 ##### <span id="plugin_syn_subplugin">部分子插件</span>
@@ -277,10 +283,10 @@ vim-polyglot这个插件是插件集，它集成了众多语言相关的插件,�
 
 [vim-markdown](https://github.com/plasticboy/vim-markdown)
 
-polyglot中的vim-markdown只有高法及**Concealing**功能。
-如果想要使用**vim-markdown**代码折叠，就得安装vim-markdown插件。
+polyglot 中的 vim-markdown 只有高法及 **Concealing** 功能。
+如果想要使用 **vim-markdown** 代码折叠，就得安装 vim-markdown 插件。
 
-vim-markdown折叠功能相关设置如下:
+vim-markdown 折叠功能相关设置如下:
 
 ```vim
 let g:vim_markdown_folding_disabled = 1 //0: 开启折叠 1: 关闭折叠
@@ -288,8 +294,8 @@ let g:vim_markdown_folding_level = 6 //折叠级别 未设置默认为1
 
 ```
 
-其实vim-markdown折叠功能有点坑，折叠是折了，但展开输入内容，1秒就重新折上~
-所以还是用vim8内置的折叠功能或[vim-markdown-folding](#vim-markdown-folding)这个插件好了!
+其实 vim-markdown 折叠功能有点坑，折叠是折了，但展开输入内容，1 秒就重新折上~
+所以还是用 vim8 内置的折叠功能或 [vim-markdown-folding](#vim-markdown-folding) 这个插件好了!
 
 ### <span id="plugin_operator">符号操作</span>
 
@@ -343,7 +349,7 @@ ysiw( ：  单词周围加圆括号，左括号是带空格的
 ysiw] ： 单词周围加方括号，右括号不带空格
 
 ysnw：  在 **n** 个单词周围加要加的符号或文本
-        > 如上面的 `ysiw` 类似，`ysiw` 只是 `ysnw`的特例，是对当前单词加东西
+        > 如上面的 `ysiw` 类似，`ysiw` 只是 `ysnw` 的特例，是对当前单词加东西
 
 ysiWb ：  以空格为分界加圆括号，这是不带空格的括号，大 `B` 代表不带空格的花括号
 
@@ -436,11 +442,11 @@ let g:gitgutter_enabled = 1
 
 ```
 
-vim-gigutter各种常用命令:
+vim-gigutter 各种常用命令:
 
- **:GitGutterToggle**  开启关闭gutter
+ **:GitGutterToggle** 开启关闭 gutter
 
- **:GitGutterLineHighlightsToggle**  开启关闭高亮相关行
+ **:GitGutterLineHighlightsToggle** 开启关闭高亮相关行
 
 ### vim-fugitive
 
@@ -453,9 +459,9 @@ vim-gigutter各种常用命令:
 :Git push
 ```
 
-**:Git** 后加git的常用命令，跟在终端下使用git相同，push提交时会切出终端输入远程仓库的用户名和密码。
+**:Git** 后加 git 的常用命令，跟在终端下使用 git 相同，push 提交时会切出终端输入远程仓库的用户名和密码。
 
-如果在neovim中使用**:Git push**不能弹出输入用户名和密码，就使用**:terminal git push**
+如果在 neovim 中使用**:Git push**不能弹出输入用户名和密码，就使用**:terminal git push**
 
 ### LoremIpsum
 
@@ -472,23 +478,23 @@ vim-gigutter各种常用命令:
 
 [vim-livedown](https://github.com/shime/vim-livedown)
 
-此插件使用到nodejs模块livedown，所以得先安装node的模块:
+此插件使用到 nodejs 模块 livedown，所以得先安装 node 的模块:
 
 ```shell
 npm install -g livedown
 ```
 
-.vimrc中加入以下代码:
+.vimrc 中加入以下代码:
 
 ```shell
 Plug 'shime/vim-livedown',{'on':['LivedownPreview','LivedownToggle','LivedownKill']}
 ```
 
-后面那{'on':....}是Plug的**按需加载**的设置
+后面那 {'on':....} 是 Plug 的 **按需加载** 的设置
 
-使用python的模块[grip](https://github.com/joeyespo/grip)，也能预览markdown
+使用 python 的模块 [grip](https://github.com/joeyespo/grip)，也能预览 markdown
 
-首先安装安装grip
+首先安装安装 grip
 
 ```shell
   pip install grip
@@ -511,7 +517,7 @@ Plug 'shime/vim-livedown',{'on':['LivedownPreview','LivedownToggle','LivedownKil
 
 #### vim-startify
 
-[]()  是一个 vim/neovim 启动页面的插件。
+[]() 是一个 vim/neovim 启动页面的插件。
 
  可以手动配启动页面显示的图案
 ```vimscript
@@ -564,14 +570,14 @@ let g:startify_custom_header =
 
 ##### <span id="plugin_mcursors_1">vim-visual-multi</span>
 
-[vim-visual-multi](https://github.com/mg979/vim-visual-multi) 这个插件能使vim进行多光标操作。
+[vim-visual-multi](https://github.com/mg979/vim-visual-multi) 这个插件能使 vim 进行多光标操作。
 
 常用操作步骤:
 <kbd>Ctrl-n</kbd>：进入多光标模式，并选中当前光标所在字符。
 
 在启动多光标模式的，继续按 <kbd>n</kbd>，能够选中相同的下一个字符。
 
-选择完成，可以按 <kbd>i</kbd>，<kbd>a</kbd>，<kbd>I</kbd>，<kbd>A</kbd> 进入Insert 模式，继续以下的操作。
+选择完成，可以按 <kbd>i</kbd>，<kbd>a</kbd>，<kbd>I</kbd>，<kbd>A</kbd> 进入 Insert 模式，继续以下的操作。
 
 按 <kbd>Exit</kbd> 可退出多光标模式。
 
@@ -606,22 +612,22 @@ let g:startify_custom_header =
 	
 	highlight HighlightedyankRegion cterm=reverse gui=reverse
 ```
-高亮颜色设置要放在colortheme设置之后。
+高亮颜色设置要放在 colortheme 设置之后。
 
 
-#### <span id="plugin_mark">mark相关</span>
+#### <span id="plugin_mark">mark 相关</span>
 ##### <span id="plugin_mk_signature">signature</span>
-[vim-signature](https://github.com/kshenoy/vim-signature) 是一个mark显示插件。
-在侧边栏显示mark标记。
+[vim-signature](https://github.com/kshenoy/vim-signature) 是一个 mark 显示插件。
+在侧边栏显示 mark 标记。
 
 ![](vim_plugin.assets/2021-04-29 20-03-01 的屏幕截图.png)
 
 常用操作:
 |命令|说明|
 | :---: | --- |
-| mx | 添加mark x是该mark的名称 可以是大小写字母 |
-| dmx | 移除当前行某个mark x是添加时的名称 |
-| m- | 移除当前行所有mark |
+| mx | 添加 mark x 是该 mark 的名称 可以是大小写字母 |
+| dmx | 移除当前行某个 mark x 是添加时的名称 |
+| m- | 移除当前行所有 mark |
 
 
 
@@ -629,7 +635,7 @@ let g:startify_custom_header =
 
 [vimspector](https://github.com/puremourning/vimspector)
 
-这是一个vim下多语言图形界面debug插件!
+这是一个 vim 下多语言图形界面 debug 插件!
 >A multi language graphical debugger for Vim
 
 安装:
@@ -656,7 +662,7 @@ Plugin 'puremourning/vimspector'
 
 ##### <span id="plugin_browser_github">open-browser-github</span>
 
-快速打开github。
+快速打开 github。
 
 [browser_github](https://github.com/tyru/open-browser-github.vim)
 
@@ -683,18 +689,18 @@ Plugin 'puremourning/vimspector'
 还有其他命令:
 
 * **:set foldlevel=数字**: 设置折叠级别
-* **zM**: 相当于set foldlevel=0
+* **zM**: 相当于 set foldlevel=0
 
 
 
-#### <span id="plugin_md_privew_1">Markdown预览插件</span>
+#### <span id="plugin_md_privew_1">Markdown 预览插件</span>
 
-Markdown 预览插件原理大同小异，都是通过启动一个小型［服务器］来加载渲染Markdown页面，从而实现预览效果。
-这小型［服务器］有可能是用Python实现，也有可能是NodeJS或其他技术。
+Markdown 预览插件原理大同小异，都是通过启动一个小型［服务器］来加载渲染 Markdown 页面，从而实现预览效果。
+这小型［服务器］有可能是用 Python 实现，也有可能是 NodeJS 或其他技术。
 
 [markdown-preview](https://github.com/iamcco/markdown-preview.nvim)
 
-这个插件是NodeJS实现，所以系统得装有NodeJS并且装上Yarn。
+这个插件是 NodeJS 实现，所以系统得装有 NodeJS 并且装上 Yarn。
 常用命令：
 
 ```vim
@@ -708,17 +714,17 @@ Markdown 预览插件原理大同小异，都是通过启动一个小型［服�
 ##### <span id="plugin_md_privew_2">vim-markdown-preview</span>
 
 [vim-markdown-preview](https://github.com/JamshedVesuna/vim-markdown-preview)
-这个插件是通过Python实现的,要使用此插件得先装[Grip](#https://github.com/joeyespo/grip)(--GitHub Readme Instant Preview)
+这个插件是通过 Python 实现的,要使用此插件得先装 [Grip](#https://github.com/joeyespo/grip)(--GitHub Readme Instant Preview)
 
 ##### <span id="plugin_md_privew_3">preview-markdown.vim</span>
 
 [preview-markdown.vim](https://github.com/skanehira/preview-markdown.vim)
 
-此插件需要[mrd](https://github.com/MichaelMure/mdr)(--MarkDown Renderer)
+此插件需要 [mrd](https://github.com/MichaelMure/mdr)(--MarkDown Renderer)
 >mdr is a standalone Markdown renderer for the terminal.
-因为这个插件是在vim内部使用terminal方式预览，所以对vim版本有限制：Vim 8.1.1401+
+因为这个插件是在 vim 内部使用 terminal 方式预览，所以对 vim 版本有限制：Vim 8.1.1401+
 
-#### <span id="plugin_md_table">Markdown表格相关的插件</span>
+#### <span id="plugin_md_table">Markdown 表格相关的插件</span>
 
 
 ##### <span id="plugin_md_table_1">VIM Table Mode</span>
@@ -736,7 +742,7 @@ markdown 表格的对齐方式那个行的输入。
 ```markdown
 |:-:|
 ```
-就能快速"生成"一个 **| :---: |** 这个对齐项
+就能快速 " 生成 " 一个 **| :---: |** 这个对齐项
 
 ##### <span id="plugin_md_table_2">markdowntable</span>
 
@@ -748,7 +754,7 @@ markdown 表格的对齐方式那个行的输入。
 ```
 
 
-### <span id="lsp_complete">关于LSP及补全</span>
+### <span id="lsp_complete">关于 LSP 及补全</span>
 
 [LSP及补全](./LSP_Complete.md)
 

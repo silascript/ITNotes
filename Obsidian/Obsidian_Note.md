@@ -1,7 +1,7 @@
 ---
 aliases: 
 tags: markdown obsidian 
-modified: 2023-01-30, 11:09:10
+modified: 2023-01-31, 11:06:52
 created: 2023-01-13, 12:27:45
 ---
 # Obsidian 笔记
@@ -158,6 +158,30 @@ created: 2023-01-13, 12:27:45
 ## <span id="obn_basic">基础用法</span>
 
 
+### <span id="obn_keys">常用快捷键</span>
+
+
+|    快捷键    |                      功能                      |
+|:------------:|:----------------------------------------------:|
+|      F2      |                   文件重命名                   |
+|    Ctrl+,    |                    打开设置                    |
+|    Ctrl+g    |                  打开关系图谱                  |
+|    Ctrl+o    | 打开 [快速切换](#obn_basic_quickswitcher) 面板 |
+|    Ctrl+p    |                  打开命令面板                  |
+|    Ctrl+e    |       当前文件页面编辑模式与阅读模式切换       |
+|    Ctrl+w    |                 关闭当前标签页                 |
+|    Ctrl+f    |                 在当前文件搜索                 |
+| Ctrl+Shift+f |                  所有文件搜索                  |
+|    Ctrl+k    |                  插件一个链接                  |
+|    Ctrl+t    |                   新建标签页                   |
+|    Ctrl+n    |                    新建笔记                    |
+|    Ctrl+/    |                 注释或取消注释                 |
+|    Ctrl+B    |                 加粗或取消加粗                 | 
+|              |                                                |
+|              |                                                |
+
+
+
 ### <span id="obn_basic_command_palette">命令面板</span>
 
 使用 `Ctrl+P` 可以打开「命令面板」。
@@ -172,7 +196,7 @@ created: 2023-01-13, 12:27:45
 
 * 「回车」就是在当前标签页打开，
 * `Ctrl+回车`：在新标签页打开
-* `Ctal+Alt+回车`：在新面板打开
+* `Ctrl+Alt+回车`：在新面板打开
 * `Shift+回车`：创建
 * `ESC`：退出
 
@@ -220,6 +244,23 @@ Obsidian 的插件分为 「核心插件」和「第三方插件」。
 
 在这个增强版命令面板中，敲入 `#` 符号，就能触发搜索 tag 功能，在 `#` 之后继续输入 tag 名称，就能搜索出标记了此 tag 的所有文档。
 
+---
+
+##### <span id="obn_plugins_quickswitcher_plus">Quick Switcher plus</span>
+
+[Quick Switcher plus](https://github.com/darlal/obsidian-switcher-plus) 这是一个对内置的 [快速切换](#obn_basic_quickswitcher) 功能的增强插件。
+
+内置「快速切换」只能搜索文件。而这个插件可以搜索标题等。
+
+建议把 `Ctrl+Shift+o` 快捷键绑到标准模式上，方便进一步操作。
+
+在 Quick Switch plus 面板存在几种搜索模式，不同的模式有不同的搜索切换方式。
+
+###### 标题模式
+输入 `#` 来触发标题械。 标题模式搜索下，会全文搜索指定的标题。
+
+###### 符号导航模式
+输入 `@` 来触发 符号导航。符号导航（「Symbol Navigation」）中的「符号」 包括标题、链接、Hashtag、[Callout](#obn_syntax_calloutblocks) 等。
 
 
 ---

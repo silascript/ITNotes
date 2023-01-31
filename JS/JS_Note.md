@@ -1,3 +1,9 @@
+---
+aliases: 
+tags: javascript js
+created: 2023-01-13, 12:27:45
+modified: 2023-01-31, 11:08:37
+---
 # JavaScript 笔记
 
 ## 目录
@@ -20,7 +26,7 @@
 
 #### <span id="jsn_basic_variable">变量</span>
 
-有3个关键字可以声明变量：**var**、**const** 和 **let**。
+有 3 个关键字可以声明变量：**var**、**const** 和 **let**。
 
 **var** 在 ECMAScript 的所有版本中都可以使用。
 
@@ -67,7 +73,7 @@ ECMAScript6 增加 **let** 和 **const** 从客观上为这门语言更精确地
 
 ### <span id="jsn_datatype">数据类型</span>
 
-ECMAScript变量可以包含两种不同类型的数据：原始值和引用值。
+ECMAScript 变量可以包含两种不同类型的数据：原始值和引用值。
 
 **原始值**（primitive value）就是简单数据。
 **引用值**（reference value）则是由多个值构成的对象。
@@ -84,7 +90,7 @@ ECMAScript变量可以包含两种不同类型的数据：原始值和引用值�
 
 变量声明未初始化，就相当于给变量赋予了「Undefined」值。
 
-永远不要显式地给某个变量设置「undifined」值。字面值 **undifined** 主要用于比较，而且在ECMA-262 第3版之前是不存在的。
+永远不要显式地给某个变量设置「undifined」值。字面值 **undifined** 主要用于比较，而且在 ECMA-262 第 3 版之前是不存在的。
 
 增加这个特殊值的目的就是为了正式明确空对象指针（null）和未初始化变量的区别。
 
@@ -98,9 +104,9 @@ ECMAScript变量可以包含两种不同类型的数据：原始值和引用值�
 
 #### <span id="jsn_datatype_null">Null 类型</span>
 
-Null类型只有一个值，即特殊值 **null**。
+Null 类型只有一个值，即特殊值 **null**。
 
-逻辑上讲，**null** 值表示一个空对象指针，这也是使用 typeof 传一个null，会返回「object」的原因。
+逻辑上讲，**null** 值表示一个空对象指针，这也是使用 typeof 传一个 null，会返回「object」的原因。
 
 **undifined** 是从 **null** 值派生而来的，因为 ECMA-262 将它们定义为表面上相等。
 
@@ -148,11 +154,11 @@ Boolean 类型有两个字面值： **true** 和 **false**。
 使用 **Number.NEGATIVE_INFINITY** 和 **Number_POSITIVE_INFINITY** 获取正、负 Infinity（这两个属性的值就是 -Infinity 和 Infinity）。
 
 
-确定一个数值是否在数值范围，即非**Infinity**，可以使用 **isFinite()** 函数来检测。
+确定一个数值是否在数值范围，即非 **Infinity**，可以使用 **isFinite()** 函数来检测。
 
 ##### <span id="jsn_datatype_number_NaN">NaN</span>
 
-NaN 的意思是 "Not a Number"，「不是数值」。用来表示本来要返回数值的操作失败。比如「除0」操作。
+NaN 的意思是 "Not a Number"，「不是数值」。用来表示本来要返回数值的操作失败。比如「除 0」操作。
 
 ECMAScript 提供了 **isNaN()** 函数，用来判断传入的参数是否「不是数值」。<br>
 该函数会尝试把传入的参数转换为数值。如涌转换为数值的值都会导致这个函数返回 **true**。

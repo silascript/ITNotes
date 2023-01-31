@@ -2,13 +2,14 @@
 aliases: 
 tags: obsidian plugin 
 created: 2023-01-13, 12:44:24
-modified: 2023-01-30, 6:18:03
+modified: 2023-01-31, 11:13:35
 ---
 # Obsidian 个人必装插件清单
 
 ---
 
 * [Obsidian Git](./Obsidian_Note.md#obn_plugins_git_obsidiangit)
+* [Quick Switcher Plus](./Obsidian_Note.md#obn_plugins_quickswitcher_plus)
 * [Better Command Palette](./Obsidian_Note.md#obn_plugins_better_command_palette)
 * [Style Settings](./Obsidian_Note.md#obn_plugins_style-settings)
 * [Obsidian-floating-toc-plugin](./Obsidian_Note.md#obn_plugins_obsidian-floating-toc-plugin)

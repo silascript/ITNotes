@@ -1,3 +1,9 @@
+---
+aliases: 
+tags: java javaweb jdbc http
+created: 2023-01-13, 12:27:45
+modified: 2023-01-31, 9:57:02
+---
 # Java Web 笔记
 
 ---
@@ -9,7 +15,7 @@
 	* [数据库连接池](#java_web_jdbc_dbconnpooling)
 ---
 
-## <span id="java_web_http_wrequest">HTTP及Web请求</span>
+## <span id="java_web_http_wrequest">HTTP 及 Web 请求</span>
 
 
 

@@ -1,3 +1,9 @@
+---
+aliases: 
+tags: font
+created: 2023-01-13, 12:27:45
+modified: 2023-01-31, 11:10:44
+---
 # 字体笔记
 
 介绍各类字体
@@ -16,7 +22,7 @@
 
 ### <span id="fonts_zh_notofont">思源字体</span>
 
-[思源字体](https://fonts.google.com/noto/fonts)是 Adobe 和 Google 领导开发的开源字体家族。
+[思源字体](https://fonts.google.com/noto/fonts) 是 Adobe 和 Google 领导开发的开源字体家族。
 
 「思源」一词来自成语「饮水思源」。
 
@@ -25,14 +31,14 @@
 * HW 英文和数字是半角
 * VF 可变自重字体 Variable Fonts
 * SC 简体中文
-* CN 简体中文中国 他和SC在有些字的笔画细节上有不同
+* CN 简体中文中国 他和 SC 在有些字的笔画细节上有不同
 * J 日语 K 韩语 HC 繁体香港 TC 繁体台湾
 
 格式：
 * .otf 常见字体格式
 * .ttf 常见字体格式，可以是单个字体，也可以是多字重合一字体
-* .ttc Super OTC 所有五种语言和所有七种粗细，以及常规和粗体的HW版 ，45合一字体。
-* .ttc OTC 五种语言合一，相比Super OTC，按七种字重分成了7个字体文件，五种语言五合一字体
+* .ttc Super OTC 所有五种语言和所有七种粗细，以及常规和粗体的 HW 版 ，45 合一字体。
+* .ttc OTC 五种语言合一，相比 Super OTC，按七种字重分成了 7 个字体文件，五种语言五合一字体
 
 
 思源分为「黑体」和「宋体」两种。
@@ -142,10 +148,10 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 ![noto child compare](./Fonts_Note.assets/noto_child_1.png)
 
 
-真服了，这些那几款有「泥古」倾向的字体，「配」和「妃」两字全「挂」了--估计是思源韩国版的「配」和「妃」本就是「己」字，所以基于韩国版本而制作的追求复古的衍生字体，在这两字都不太「古」！
+真服了，这些那几款有「泥古」倾向的字体，「配」和「妃」两字全「挂」了 -- 估计是思源韩国版的「配」和「妃」本就是「己」字，所以基于韩国版本而制作的追求复古的衍生字体，在这两字都不太「古」！
 
 当然，「配」这字到底是「己」，还是「巳」，亦或是「已」，其实存在争议。下面就稍微分析下这个字。
-> 「妃」其实是源于「配」，「古无轻唇」，陈梁之前，中国古汉语是没有「轻唇音」的（轻唇音即唇齿音），有的只有「重唇」，「重」即「重」（chong），重就是双，「重唇」即「双唇」。在南北朝陈、梁之前的古汉语只有双唇音：[p]、[p']、[b]、[m] -- 而大规律使用轻唇音[f]、[v]那得是五代后。r「妃」就是「配」，所以《左传》一开头：「惠公元妃孟子」，这里的「元妃」的「妃」应读双唇音，即「元配」。
+> 「妃」其实是源于「配」，「古无轻唇」，陈梁之前，中国古汉语是没有「轻唇音」的（轻唇音即唇齿音），有的只有「重唇」，「重」即「重」（chong），重就是双，「重唇」即「双唇」。在南北朝陈、梁之前的古汉语只有双唇音：[p]、[p']、[b]、[m] -- 而大规律使用轻唇音 [f]、[v] 那得是五代后。r「妃」就是「配」，所以《左传》一开头：「惠公元妃孟子」，这里的「元妃」的「妃」应读双唇音，即「元配」。
 
 「配」，本义为酒的颜色。《说文解字》：「酒色也」。「酉」本义为「酒」，那右边那就一定是「色」了。
 
@@ -183,7 +189,7 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 
 <img src="./Fonts_Note.assets/58_E344.svg" width="100" height="100" />
 
-> 以上「色」和「配」字的图片均来自[汉典网](https://www.zdic.net)
+> 以上「色」和「配」字的图片均来自 [汉典网](https://www.zdic.net)
 
 《康熙字典》：
 
@@ -322,7 +328,7 @@ DejaVu 的 「星号」是偏中上的，Menlo 将其改到居中位置。
 
 [Meslo LG](https://github.com/andreberg/Meslo-Font) 正是源于 Menlo。算是粉丝模仿开源版，并调整了行间距。
 
-其实可以把 Mesol 看成 [DejaVu](#fonts_program_dejavu) 衍生字体，只不过用了跟 Menlo 相似的字符调整策略--主要就是「星号」的居中调整。
+其实可以把 Mesol 看成 [DejaVu](#fonts_program_dejavu) 衍生字体，只不过用了跟 Menlo 相似的字符调整策略 -- 主要就是「星号」的居中调整。
 > 要区分是 DejaVu 还是 Menlo 或 Mesol，主要就是看「星号」的位置。
 
 ---
@@ -331,7 +337,7 @@ DejaVu 的 「星号」是偏中上的，Menlo 将其改到居中位置。
 
 [sarasa mono](https://github.com/be5invis/Sarasa-Gothic)（更纱黑体），懒人福音。
 
-这是思源字体+[Iosevka](https://typeof.net/Iosevka/) [![Iosevka](https://img.shields.io/github/stars/be5invis/Iosevka?style=social)](https://github.com/be5invis/Iosevka) 而成的字体。
+这是思源字体 +[Iosevka](https://typeof.net/Iosevka/) [![Iosevka](https://img.shields.io/github/stars/be5invis/Iosevka?style=social)](https://github.com/be5invis/Iosevka) 而成的字体。
 
 
 ---

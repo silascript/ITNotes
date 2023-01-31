@@ -1,8 +1,14 @@
+---
+aliases: 
+tags: java spring maven
+created: 2023-01-13, 12:27:45
+modified: 2023-01-31, 9:48:39
+---
 # Spring 笔记 1
 
-## Spring jar包及maven相关
+## Spring jar 包及 maven 相关
 
-使用maven时，引入Spring依赖时，不同的包有其不同的依赖，  这应该注意，以免重复引用。
+使用 maven 时，引入 Spring 依赖时，不同的包有其不同的依赖，  这应该注意，以免重复引用。
 
 **Spring Context 包的依赖：**
 * spring-core
@@ -53,8 +59,8 @@
 
 ![spring 包依赖结构2](./Spring_Note_1.assets/spring_2.png)
 
-从上面的包依赖，可以看出，spring各组件基础依赖都是core、beans和context，而**Spring Context** 包又包含了core和beans，所以如果做Spring非web应用时，只用在maven的pom文件中添加**Spring Context**的包就可以了。  
+从上面的包依赖，可以看出，spring 各组件基础依赖都是 core、beans 和 context，而 **Spring Context** 包又包含了 core 和 beans，所以如果做 Spring 非 web 应用时，只用在 maven 的 pom 文件中添加 **Spring Context** 的包就可以了。  
 
-如果使用web就多加个web包，如果是使用**Spring MVC**框架，那因为**Spring MVC** 包已经包含了**Spring Context**及其依赖包，所以maven的pom文件只用添加一个Spring MVC依赖就可以。
+如果使用 web 就多加个 web 包，如果是使用 **Spring MVC** 框架，那因为 **Spring MVC** 包已经包含了 **Spring Context** 及其依赖包，所以 maven 的 pom 文件只用添加一个 Spring MVC 依赖就可以。
 
 

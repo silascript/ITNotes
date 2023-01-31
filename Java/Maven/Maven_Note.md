@@ -1,3 +1,9 @@
+---
+aliases: 
+tags: java maven jdk
+created: 2023-01-13, 12:27:45
+modified: 2023-01-31, 9:50:15
+---
 # Maven 笔记
 
 ---
@@ -27,7 +33,7 @@ Maven 配置主要有两块配置：
 
 ## <span id="mvn_settings_mirror">配置镜像</span>
 
-国内镜像主要是[阿里](https://developer.aliyun.com/mvn/guide)、[网易](https://mirrors.163.com/.help/maven.html)、华为和腾讯。
+国内镜像主要是 [阿里](https://developer.aliyun.com/mvn/guide)、[网易](https://mirrors.163.com/.help/maven.html)、华为和腾讯。
 
 大体以阿里为主。
 
@@ -144,7 +150,7 @@ ${basedir}
 ```
 
 * `src/main/java` 项目源码所在的目录
-* `src/main/resources`  目录存放用于项目的资源的文件
+* `src/main/resources` 目录存放用于项目的资源的文件
 * `src/main/filters` 项目的资源过滤文件所在的目录
 * `src/main/webapp` 如果是 web 项目，这目录则是 web 应用源码所在的目录，像 html 文件和 `web.xml` 等都在该目录下。
 * `src/test/java` 测试代码目录

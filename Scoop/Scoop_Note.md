@@ -1,8 +1,11 @@
 ---
-aliases: 
-tags: windows scoop git
-created: 2023-01-13, 12:27:46
-modified: 2023-01-30, 9:20:35
+aliases: []
+tags:
+  - windows
+  - scoop
+  - git
+created: 2023-01-13 12:27:46
+modified: 2023-02-02 4:36:31
 ---
 # Scoop 笔记
 

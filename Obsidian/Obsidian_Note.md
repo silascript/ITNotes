@@ -1,8 +1,10 @@
 ---
-aliases: 
-tags: markdown obsidian 
-modified: 2023-01-31, 11:06:52
-created: 2023-01-13, 12:27:45
+aliases: []
+tags:
+  - markdown
+  - obsidian
+created: 2023-01-13 12:27:45
+modified: 2023-02-02 9:19:02
 ---
 # Obsidian 笔记
 
@@ -66,6 +68,9 @@ created: 2023-01-13, 12:27:45
 「外观」设置，主要是对 [主题](#obn_themes) 、「字体」等设置。
 
 「外观」设置中还能使用 [CSS 代码片段](#obn_snippet) 进行外观上更详细而深入的配置。
+
+「显示标签页标题栏」选项关闭。
+「窗口边框样式」设为「Obsidian 风格」，默认是「隐藏」，由于有时标签页多，而有时又要移动 Obsidian 窗口时，鼠标就会没地方拖动，所以最好把标题栏「释放」出来方便拖动。
 
 ---
 
@@ -133,6 +138,9 @@ created: 2023-01-13, 12:27:45
 * 「Callouts」能对 Callout 样式做更细致的美化设置
 * 「Headings」 标题颜色进行设置 
 * 「Layout」 能将界面布局设成 **卡片式**
+* 「Tabs」对标签页风格样式作设置
+> [!tip] 新建标签按钮设置
+> 默认时候，新建标签按钮都是放在右侧，如果将「Diable new tab button right alignment」这个选项开启，那新建标签页按钮就会跑到最后的一个标签后后面，这方便点击新建标签页。
 
 
 ---
@@ -310,10 +318,43 @@ Obsidian 的插件分为 「核心插件」和「第三方插件」。
 1. 「Heading blank lines」 设置标题前后的空行，默认是在标题后空一行。
 2. 「Space between Chinese Japanese or Korean and English or numbers」，这选项是数字与汉字英文等间加空格。这功能是参考了 [中文文案排版指北](https://github.com/sparanoid/chinese-copywriting-guidelines) 这个中文 Markdown 文档排版建议方案文档来弄的！
 
-[YAML] 选项卡：
+「YAML」 选项卡：
 1. 「Format Tags in YAML」格式化 [tag][#obn_advanced_frontmatter_tag]，将 [YAML front matter](#obn_advanced_frontmatter) 中的 **#**符号去除。 如果不想设置这个设置，可以安装 [Frontmatter Tag Suggest](#obn_plugins_tagsuggest) 插件，在输入并选定 tag 候选项时就直接去除**#**符号了。
 2.  「Insert YAML attributes」添加缺少的属性，可以在属性文本框中加入属性，方便格式化时添加。
 3. 「YAML Timestamp」 这是添加时间戳的，可以添加建档时间及修改时间，时间格式也可自行设定。
+	> [!tip] 时间戳格式
+	> **YYYY-MM-DD h:mm:ss**
+	> 
+	> `2023-01-13 12:27:45`
+4. 「YAML tags section style」 可以对 tag 风格进行格式化，可以在以下这些格式化风格可选
+	* multi-line 多行 
+		> [!example] 示例
+		> ```yaml
+		> - markdown
+		> - test
+		> ```
+	* single-line 单行 示例： `[markdown, test]`
+	* single string to single-line 单行字符串转成单行
+		> [!example] 示例
+		> 「single string」 单行字符串 是没有中括号的
+		>  `markdown test`
+	* single string to multi-line 单行字符串转成多行
+	* single-line space delimited 单行以空格分隔
+		> [!example] 示例
+		>  `[markdown test]`
+	* single string space delimited 单行字符串以空格分隔
+		> [!example] 示例
+		>  `markdown test`
+	* single string comma delimited 单行字符串以逗号分隔
+		> [!example] 示例
+		> `markdown, test`
+ 
+		> [!tip] tag 样式转换
+		> 标准 YAML 是多行，所以如果想使用多行，那就将「Default yaml array section style」设置为「multi-line」,并且 将「format yaml tags section」选项也开启，最后在「YAML tags section style」中选择「multi-line」。如果当前 yaml tag 是单行字符串，想要通过 Linter 转成多行，那就选「single string to multi-line」。
+		> Linter 可以配合 tag 揭示插件 [Front matter Tag Suggest](#obn_plugins_tagsuggest) 使用。一般在使用 **Front matter tag Suggest** 插件时，tag 是呈现「单行空格」形式，如果要转成标准 YAML 的多行样式，那 Linter 的选项就得选择「single string to multi-line」，如果要保持原状那就是选择「single string space delimited」。
+
+
+
 
 Linter 插件还可以配合 [Commander](#obn_plugins_obsidian-commander) 插件，在侧边栏上添加一个按钮，方便格式化当前文件。
 
@@ -447,6 +488,11 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 
 ---
+##### <span id="obn_plugins_remember_cursor_position">Remember cursor position</span>
+
+[Remember cursor position](https://github.com/dy-sh/obsidian-remember-cursor-position) 切换文档重开时，记住光标所在的位置。
+
+---
 ##### <span id="obn_plugins_lapel">Lapel</span>
 
 [Lapel](https://github.com/liamcain/obsidian-lapel) 这插件可以在行号列显示标题的级别。
@@ -549,6 +595,13 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 ---
 
+##### <span id="obn_plugins_auto_link_title">Auto Link Title</span>
+
+[Auto Link Title](https://github.com/zolrath/obsidian-auto-link-title) 是一个自动添加链接的标题。
+
+
+---
+
 ##### <span id="obn_plugins_tagsuggest">Frontmatter Tag Suggest</span>
 
 
@@ -564,6 +617,13 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 ##### <span id="obn_plugins_colorful_tag">Colorful Tag</span>
 
 [Colorful Tag](https://github.com/rien7/obsidian-colorful-tag) 这是一个方便给 [Front matter](#obn_advanced_frontmatter) 中的 [tag](#obn_advanced_frontmatter_tag) 美化的插件。
+
+
+
+---
+##### <span id="obn_plugins_tag_wrangler">Tag Wrangler</span>
+
+[Tag Wrangler](https://github.com/pjeby/tag-wrangler) tag 整理插件。
 
 
 ---

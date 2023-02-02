@@ -1,8 +1,13 @@
 ---
-aliases: 
-tags: markdown editor obsidian typora mermaid
-created: 2023-01-13, 12:27:45
-modified: 2023-01-29, 4:33:24
+aliases: []
+tags:
+  - markdown
+  - editor
+  - obsidian
+  - typora
+  - mermaid
+created: 2023-01-13 12:27:45
+modified: 2023-02-02 4:14:24
 ---
 
 # Markdown 笔记

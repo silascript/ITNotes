@@ -1,8 +1,10 @@
 ---
-aliases: 
-tags: obsidian plugin 
-created: 2023-01-13, 12:44:24
-modified: 2023-01-31, 11:13:35
+aliases: []
+tags:
+  - obsidian
+  - plugin
+created: 2023-01-13 12:44:24
+modified: 2023-02-02 4:14:15
 ---
 # Obsidian 个人必装插件清单
 

@@ -1,3 +1,16 @@
+---
+aliases:
+  - 
+tags:
+  - linux
+  - archlinux
+  - centos
+  - fedora
+  - ubuntu
+  - tar
+  - shell
+  - network
+---
 # Linux 笔记
 
 ---
@@ -40,7 +53,7 @@
   
   `~/.profile` 这是用户级别的环境变量配置文件。
 
-  大多数发行版使用的是`~/.profile` 。因为`~/.profile` 文件可以被所有 Shell 读取，而 `~/.bash_profile` 仅能被 **Bash Shell** 读取。
+  大多数发行版使用的是 `~/.profile` 。因为 `~/.profile` 文件可以被所有 Shell 读取，而 `~/.bash_profile` 仅能被 **Bash Shell** 读取。
 
 * bashrc
 
@@ -80,7 +93,7 @@ Linux 下打包和压缩是分两部分的。
 
 Linux 下最常用的打包程序就是 tar。
 
-tar 本身只能用来打包，不具备压缩能力。但 tar 可以与 gzip、bzip2等压缩工具结合一起来用。
+tar 本身只能用来打包，不具备压缩能力。但 tar 可以与 gzip、bzip2 等压缩工具结合一起来用。
 
 tar 包以 **.tar** 为后缀名。
 
@@ -334,7 +347,6 @@ more 命令一些按键操作：
 `more` 命令中的搜索：
 `/` 后输入要搜索的内容，按回车就开始向下搜索，按 `n` 就会跳转到下一个搜索结果。
 
-
 #### <span id="linux_textprocessing_commands_less">less</span>
 
 #### <span id="linux_textprocessing_commands_head">head</span>
@@ -362,7 +374,7 @@ more 命令一些按键操作：
 ### <span id="linux_textprocessing_regex">正则表达式</span>
 
 ### <span id="linux_textprocessing_grep">grep</span>
-grep 全称是 「global search regular expression and print out the line」，翻译过来就是**全局搜索正则表达式并把行打印出来**。
+grep 全称是 「global search regular expression and print out the line」，翻译过来就是 **全局搜索正则表达式并把行打印出来**。
 
 grep 是一个程序族，包括了 **grep**、**egrep** 和 **fgrep**。
 
@@ -399,16 +411,14 @@ fc-list :lang=zh
 
 ### <span id="linux_networkd">一些网络概念</span>
 
-
 相关笔记列表：
 
 * [Network_Note](../Network/Network_Note.md)
 * [Http_Note](../Network/Http_Note.md)
 
-
 #### 以太
 
-**以太**是一种虚拟的物质，英文 Ether的音译，一般可以理解为一种看不见摸不着的物质。
+**以太** 是一种虚拟的物质，英文 Ether 的音译，一般可以理解为一种看不见摸不着的物质。
 
 最早提出「以太」概念是亚里士多德。
 
@@ -416,7 +426,7 @@ fc-list :lang=zh
 
 虽然以太理论已经基本被淘汰，但「以太」这词在使用中并未消亡，「以太网」就是其一。
 
-以太网是一种计算机局域网技术，而IEEE 802.3 标准则是以太网技术被广泛应用之后制定的以太网技术标准。
+以太网是一种计算机局域网技术，而 IEEE 802.3 标准则是以太网技术被广泛应用之后制定的以太网技术标准。
 
 以太网是目前应用最普遍的局域网技术。
 
@@ -434,7 +444,7 @@ fc-list :lang=zh
 
 `ip` 命令 是用来查询或维护网络相关的工具。
 
-包括**路由**（Routing）、**网络设备**（Device）、**策略路由**（Policy Routing）以及**隧道**（Tunnel）。
+包括 **路由**（Routing）、**网络设备**（Device）、**策略路由**（Policy Routing）以及 **隧道**（Tunnel）。
 
 ##### ip 常用命令
 
@@ -463,7 +473,6 @@ curl http://www.baidu.com
 curl -i url
 ```
 
-
 ```shell
 # 将服务器响应保存成文件`a.html`
 curl -o a.html http://xxx.com
@@ -480,7 +489,6 @@ curl -O http://www.com/a.html
 curl -x [protocol://]host[:port] Use this proxy
 ```
 
-
 ```shell
 # 指定请求方式 : GET POST 等
 # 一般来说，请求 GET 和 POST 都能向服务器发出获取数据的请求
@@ -495,14 +503,10 @@ curl -X POST
 curl -d 
 ```
 
-
-
 ```shell
 # 只显示文档的 head 部分
 curl -I url
 ```
-
-
 
 ##### <span id="linux_network_command_downloader_wget">wget</span>
 
@@ -516,7 +520,7 @@ curl -I url
 # 无参 直接下载文件
 wget http://xxx.com
 ```
-  由无参这种**默认**方式，wget 是直接下载文件，就能看出 wget 重点是放在下载上的。
+  由无参这种 **默认** 方式，wget 是直接下载文件，就能看出 wget 重点是放在下载上的。
 
  ```shell
  # 大O 下载并重命令文件
@@ -575,7 +579,7 @@ wget -r -l 1 -A azw3 http://xxxxx
 
 aria2 可以从多个来源、多个协议下载资源，最大程序上利用了你的带宽。
 
-aria2 有着非常小的资源占用，在关闭磁盘缓存的情况下，物理内存占用通常为 4M，BT下载，CPU 占有率约为 6%。
+aria2 有着非常小的资源占用，在关闭磁盘缓存的情况下，物理内存占用通常为 4M，BT 下载，CPU 占有率约为 6%。
 
 aria2 特点：
 * 高速、自动多线程下载；断点续传
@@ -727,7 +731,7 @@ IPtables 中可以做各种网络地址转换，网络地址转换主要有两�
 
 ## <span id="linux_ssh">SSH</span>
 
-### <span id="linux_ssh_insconf">安装和设置SSH</span>
+### <span id="linux_ssh_insconf">安装和设置 SSH</span>
 
 以 debian 系为例
 
@@ -742,7 +746,7 @@ apt-get install openssh-server
 
 #### 设置：
 
-对`/etc/ssh/sshd_config` 文件进行设置。
+对 `/etc/ssh/sshd_config` 文件进行设置。
 
 * 开启端口：`Port 22`
 
@@ -750,7 +754,7 @@ apt-get install openssh-server
 
 * 添加 `PermitRootLogin yes` 使用 root 登录的权限
 
-* 将`PermitTTY` 设为 `yes`
+* 将 `PermitTTY` 设为 `yes`
 
 * 将 `UsePAM` 设为 `no`
 
@@ -774,9 +778,9 @@ ssh 用户名@ip -p 端口
 
 解决方法：
 
-方法1： 直接将 `.ssh/known_hosts` 文件删除即可。
+方法 1： 直接将 `.ssh/known_hosts` 文件删除即可。
 
-方法2： 修改 `/etc/ssh/ssh_config` 配置文件中，设置 `StrictHostKeyChecking` 的值
+方法 2： 修改 `/etc/ssh/ssh_config` 配置文件中，设置 `StrictHostKeyChecking` 的值
 
 默认情况下，`StrictHostKeyChecking=ask` 。出现提示，如果连接和 key 不匹配，给出提示，并拒绝登录。
 
@@ -804,11 +808,11 @@ ssh 用户名@ip -p 端口
 
 #### <span id="linux_ssh_tools_tabby">Tabby</span>
 
-[Tabby](https://tabby.sh) [![Tabby Repo](https://img.shields.io/github/stars/Eugeny/tabby?style=social)](https://github.com/Eugeny/tabby) 同样是一款Win、Linux 和 Mac 都能用的开源 SSH 工具。之前的名字叫 「Terminus」。
+[Tabby](https://tabby.sh) [![Tabby Repo](https://img.shields.io/github/stars/Eugeny/tabby?style=social)](https://github.com/Eugeny/tabby) 同样是一款 Win、Linux 和 Mac 都能用的开源 SSH 工具。之前的名字叫 「Terminus」。
 
 其实这货更像是一个终端，只是集成了 SSH 功能。
 
-这颜值比[Electerm](https://electerm.html5beta.com) 更高，功能更强。就是字体设置不太方便，还得手动输入字体名。
+这颜值比 [Electerm](https://electerm.html5beta.com) 更高，功能更强。就是字体设置不太方便，还得手动输入字体名。
 
 这货还能装插件，太过分了！
 
@@ -828,7 +832,7 @@ ssh 用户名@ip -p 端口
 
 ## <span id="linux_shell">Shell 相关</span>
 
-具体请查看[Shell 笔记](./Shell_Note.md)
+具体请查看 [Shell 笔记](./Shell_Note.md)
 
 ---
 
@@ -839,7 +843,7 @@ ssh 用户名@ip -p 端口
 ### <span id="linux_soft_install_desktop">使用 desktop</span>
 
 1. 新建 `desktop` 文件
-在/usr/share/applications/目录中新建一个后缀名为desktop的文件
+在/usr/share/applications/目录中新建一个后缀名为 desktop 的文件
 > 也可以在 .local/share/applications 目录新建 desktop 文件
 
 2. 编辑 `desktop` 文件
@@ -853,7 +857,7 @@ ssh 用户名@ip -p 端口
 > Comment[zh_TW]=繁中的提示文字  
 > Icon=图标路径  
 > Exec=可执行文件的路径  
-> Categories=程序的分类标签，多个标签使用;号分隔(Application;IDE;Development;Editor)  
+> Categories=程序的分类标签，多个标签使用; 号分隔 (Application;IDE;Development;Editor)  
 > Terminal=false 是否使用启用终端  
 > StartupNotify=true 
 
@@ -890,4 +894,13 @@ source `.bashrc` 或 `.bash_profile`
 ```shell
 sudo ln -s /opt/KomodoEdit/bin/komodo /usr/local/bin/komodo
 ```
+
+---
+
+## 其他 Linux 笔记
+
+* [ArchLinux_Note](ArchLinux_Note.md)
+* [CentOS_Note](CentOS_Note.md)
+* [Fedora_Note](Fedora_Note.md)
+* [Ubuntu_Note](Ubuntu_Note.md)
 

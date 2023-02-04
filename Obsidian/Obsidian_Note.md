@@ -1,5 +1,6 @@
 ---
-aliases: []
+aliases:
+  - 
 tags:
   - markdown
   - obsidian
@@ -117,13 +118,11 @@ modified: 2023-02-02 9:19:02
 
 ## <span id="obn_themes">主题</span>
 
-
 「外观」选项中，「主题」，点「管理」，就能浏览到社区主题，根据自己需要切换。
 
 有些主题还对一些组件做了进一步的设置，而这得依赖 [Style settings](#obn_plugins_style-settings) 这个插件，所以建议也把这个插件也装上。
 
 介绍几个好看的主题。
-
 
 ### <span id="obn_themes_anuppuccin">AnuPpuccin</span>
 
@@ -142,18 +141,15 @@ modified: 2023-02-02 9:19:02
 > [!tip] 新建标签按钮设置
 > 默认时候，新建标签按钮都是放在右侧，如果将「Diable new tab button right alignment」这个选项开启，那新建标签页按钮就会跑到最后的一个标签后后面，这方便点击新建标签页。
 
-
 ---
 
 ### <span id="obn_themes_catppuccin">Catppuccin</span>
 
 [Catppuccin](https://github.com/catppuccin/obsidian) 这也是一个非常好看的主题，同样也配合 [Style settings](obn_plugins_style-settings) 插件做到更多细节的美化设置。
 
-
 ---
 
 ### <span id="obn_themes_bluetopaz">Blue Topaz</span>
-
 
 [Blue Topaz](https://github.com/whyt-byte/Blue-Topaz_Obsidian-css) 这也是一个牛主题，同样也配合 [Style settings](obn_plugins_style-settings) 进行美化设置。
 
@@ -165,9 +161,7 @@ modified: 2023-02-02 9:19:02
 
 ## <span id="obn_basic">基础用法</span>
 
-
 ### <span id="obn_keys">常用快捷键</span>
-
 
 |    快捷键    |                      功能                      |
 |:------------:|:----------------------------------------------:|
@@ -188,8 +182,6 @@ modified: 2023-02-02 9:19:02
 |              |                                                |
 |              |                                                |
 
-
-
 ### <span id="obn_basic_command_palette">命令面板</span>
 
 使用 `Ctrl+P` 可以打开「命令面板」。
@@ -207,8 +199,6 @@ modified: 2023-02-02 9:19:02
 * `Ctrl+Alt+回车`：在新面板打开
 * `Shift+回车`：创建
 * `ESC`：退出
-
-
 
 ---
 
@@ -230,7 +220,6 @@ Obsidian 的插件分为 「核心插件」和「第三方插件」。
 ##### <span id="obn_plugins_better_command_palette">Better Command Palette</span>
 
 [Better Command Palette](https://github.com/AlexBieg/obsidian-better-command-palette) 是一个增强版的命令面板插件。
-
 
 这个插件对内置 [命令面板](#obn_basic_command_palette) 功能进行了增强。
 
@@ -270,7 +259,6 @@ Obsidian 的插件分为 「核心插件」和「第三方插件」。
 ###### 符号导航模式
 输入 `@` 来触发 符号导航。符号导航（「Symbol Navigation」）中的「符号」 包括标题、链接、Hashtag、[Callout](#obn_syntax_calloutblocks) 等。
 
-
 ---
 
 ##### <span id="obn_plugins_quick-explorer">Quick Explorer</span>
@@ -291,7 +279,6 @@ Obsidian 的插件分为 「核心插件」和「第三方插件」。
 
 使用这插件前，先把内置的字数统计功能给关闭了。
 
-
 ---
 
 ##### <span id="obn_plugins_quiet_outline">Quiet Outline</span>
@@ -299,7 +286,6 @@ Obsidian 的插件分为 「核心插件」和「第三方插件」。
 [Quiet Outline](https://github.com/guopenghui/obsidian-quiet-outline) 是一个功能更强的 outline 插件。
 
 ![quiet_outline_screenshot_level](https://raw.githubusercontent.com/guopenghui/obsidian-quiet-outline/master/public/default-level.gif)
-
 
 ---
 
@@ -353,11 +339,7 @@ Obsidian 的插件分为 「核心插件」和「第三方插件」。
 		> 标准 YAML 是多行，所以如果想使用多行，那就将「Default yaml array section style」设置为「multi-line」,并且 将「format yaml tags section」选项也开启，最后在「YAML tags section style」中选择「multi-line」。如果当前 yaml tag 是单行字符串，想要通过 Linter 转成多行，那就选「single string to multi-line」。
 		> Linter 可以配合 tag 揭示插件 [Front matter Tag Suggest](#obn_plugins_tagsuggest) 使用。一般在使用 **Front matter tag Suggest** 插件时，tag 是呈现「单行空格」形式，如果要转成标准 YAML 的多行样式，那 Linter 的选项就得选择「single string to multi-line」，如果要保持原状那就是选择「single string space delimited」。
 
-
-
-
 Linter 插件还可以配合 [Commander](#obn_plugins_obsidian-commander) 插件，在侧边栏上添加一个按钮，方便格式化当前文件。
-
 
 ---
 ##### <span id="obn_plugins_table_generator">Table Generator</span>
@@ -368,12 +350,10 @@ Linter 插件还可以配合 [Commander](#obn_plugins_obsidian-commander) 插件
 
 同样，这插件也配合 [Commander](#obn_plugins_obsidian-commander) 插件，在侧边栏添加新建表格的按钮，方便添加表格。
 
-
 ---
 ##### <span id="obn_plugins_advanced_tables">Advanced Tables</span>
 
 [Advanced Tables](https://github.com/tgrosinger/advanced-tables-obsidian) 是一个编辑 Markdown 表格的插件。
-
 
 ![advanced tables example](https://raw.githubusercontent.com/tgrosinger/advanced-tables-obsidian/main/resources/screenshots/basic-functionality.gif)
 
@@ -400,9 +380,7 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 ![Crease ScreenShot](https://user-images.githubusercontent.com/693981/156103767-33f311de-39ac-422d-b8ea-987ea9c63f7b.png)
 
-
 ---
-
 
 ##### <span id="obn_plugins_cp_btn_codeblocks">Copy Button for code blocks</span>
 
@@ -421,7 +399,6 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 ##### <span id="obn_plugins_better_file_link">Better File Link</span>
 
 [Better File Link](https://github.com/marcjulianschwarz/obsidian-file-link) 是一个增强了添加链接功能的插件，它可能通过点击添加文件按钮进到目录中添加相应的文件，增加了添加连接的流畅性。
-
 
 ---
 
@@ -486,7 +463,6 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 ![scroll to top screenshot](https://camo.githubusercontent.com/6390b34120a87ea47de772596889bbb1b197b1e31710559741ebec59c6ea013d/68747470733a2f2f63646e2e737461746963616c792e636f6d2f67682f636c6f756468616f313939392f696d6167652d686f7374696e67406d61737465722f696d6167652e32797a386c723730756177302e77656270)
 
-
 ---
 ##### <span id="obn_plugins_remember_cursor_position">Remember cursor position</span>
 
@@ -499,7 +475,6 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 ![lapel screenshot](https://user-images.githubusercontent.com/693981/158259622-e6d550d1-95ee-4fe4-82e7-490fe234b430.png)
 
-
 ---
 
 ##### <span id="obn_plugins_htmltags_autocomplete">Html Tags AutoComplete</span>
@@ -507,7 +482,6 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 [Html Tags AutoComplete](https://github.com/bicarlsen/obsidian_html_tags_autocomplete) 这是一个自动补全 Html 标签的小插件。
 
 这插件除了 Html 标签补全功能外，能还标签间跳转的功能，提高了在文档中输入 html 时的书写流畅度。
-
 
 ---
 
@@ -538,7 +512,6 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 此插件能兼容 [Icon-Folder](obn_plugins_folder_icon) 插件的。
 
-
 ---
 
 ##### <span id="obn_plugins_pangu">obsidian-pangu</span>
@@ -559,14 +532,12 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 具体功能参考：[Easy Typing 中文文档](https://github.com/Yaozhuwa/easy-typing-obsidian/blob/master/README_ZH.md)
 
-
 ---
 ##### <span id="obn_plugins_calendar">Calendar</span>
 
 [Calendar](https://github.com/liamcain/obsidian-calendar-plugin) 一个简单的日历插件。
 
 ![calendar screenshot](https://raw.githubusercontent.com/liamcain/obsidian-calendar-plugin/master/images/screenshot-full.png)
-
 
 ---
 
@@ -576,13 +547,27 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 ![File Info Panel Screenshot](https://camo.githubusercontent.com/92ca8f5cba3116f813f8e54045349ca2b545ced7ace83c130d8e6e2521532e51/68747470733a2f2f6361747461696c2e6e752f6f6273696469616e2f73637265656e73686f745f3131302e706e67)
 
-
 ---
 
 ##### <span id="obn_plugins_recent_files"> Recent Files</span>
 
 [Recent Files](https://github.com/tgrosinger/recent-files-obsidian) 这插件可以列出最近编辑的文件。
 
+---
+
+##### <span id="obn_plugins_jumptolink">Jump To Link</span>
+
+[Jump To Link](https://github.com/mrjackphil/obsidian-jump-to-link) 这个插件类似于 [vim](../vim/Vim_Note.md) 中 [easymotion](../vim/vim_plugin.md#easymotion) 插件，实现页面内跳转。
+
+此插件主要有几个命令，可以使用「命令面板」调出。
+
+###### Jump  to Link
+
+链接跳转。使用 `Ctrl+'` 快捷键，或从「命令面板」中搜索出并选中「Jump to Link」 选项后，当前页面可视范围中的所有链接都会被字母标识，只要按相应的字母，就会打开相应的链接 -- 如果想要在新标签页打开此链接，就多按个 `Shift` 键。
+
+###### Jump to Anywhere
+
+这个命令模式，顾名思义，这功能可以跳转到页面可视范围任一位置。同样的也得标识，而标识的指定可以跳转的位置，由给定的正则表达式确定。默认是标识至少有三个字母的英文单词，这个规则是可以在插件设置中「Jump To Anywhere」输入框中设置的。默认快捷键为 `Ctrl+;`。
 
 ---
 
@@ -592,18 +577,15 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 ![better link inserter screenshot](https://user-images.githubusercontent.com/105465034/173254099-16e35e1a-dcff-4d08-87ac-0c5813d0480b.gif)
 
-
 ---
 
 ##### <span id="obn_plugins_auto_link_title">Auto Link Title</span>
 
 [Auto Link Title](https://github.com/zolrath/obsidian-auto-link-title) 是一个自动添加链接的标题。
 
-
 ---
 
 ##### <span id="obn_plugins_tagsuggest">Frontmatter Tag Suggest</span>
-
 
 [Frontmatter Tag Suggest](https://github.com/jmilldotdev/obsidian-frontmatter-tag-suggest) 是一个输入 tag 时的智能揭示插件。
 
@@ -611,20 +593,16 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 装了这插件后，[Linter](#obn_plugins_linter) 插件中的去除**#**就成了一个备用设置，可设可不设了！
 
-
 ---
 
 ##### <span id="obn_plugins_colorful_tag">Colorful Tag</span>
 
 [Colorful Tag](https://github.com/rien7/obsidian-colorful-tag) 这是一个方便给 [Front matter](#obn_advanced_frontmatter) 中的 [tag](#obn_advanced_frontmatter_tag) 美化的插件。
 
-
-
 ---
 ##### <span id="obn_plugins_tag_wrangler">Tag Wrangler</span>
 
 [Tag Wrangler](https://github.com/pjeby/tag-wrangler) tag 整理插件。
-
 
 ---
 
@@ -633,7 +611,6 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 ##### <span id="obn_plugins_mermaid_tools">Mermaid Tools</span>
 
 [Mermaid Tools](https://github.com/dartungar/obsidian-mermaid) 是一个支持 [Mermaid](https://mermaid-js.github.io) 的插件，能够在 Markdown 文档中快速添加 Mermaid 图形组件。
-
 
 ![Mermaid Tool screenshot](https://user-images.githubusercontent.com/36126057/214052070-780d4aab-6325-4729-b07b-836b395160fc.gif)
 
@@ -645,13 +622,9 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 [Obsidian Git](https://github.com/denolehov/obsidian-git) 这个插件是让 Obsidian 拥有常用 Git 功能的插件。
 
-
 Ctrl+P 呼出命令面板，搜索 「Obsidian Git:Open source control view」，这就在右侧边面板添加了 Git 的管理面板，它能方便对 当前 Git 库进行版本管理，比如 `git add` 及 `git commit`。个人习惯，会将这面板拖到左边。
 
-
-
 ---
-
 
 #### <span id="obn_plugins_notmarkdown">非 markdown 语法插件</span>
 
@@ -750,7 +723,6 @@ note 类型
 
 ## <span id="obn_advanced">Obsidian 高级用法</span>
 
-
 ### <span id="obn_advanced_frontmatter">YAML front matter</span>
 
 Front matter 是放在文档形状的属性住处。这是这个文档的「元数据」。
@@ -772,7 +744,6 @@ key4:
 
 Obsdian 原生有三个属性：[`tags`](#obn_advanced_frontmatter_tag)、`aliases` 以及 `cssclass`。
 
-
 #### <span id="obn_advanced_frontmatter_tag">Front matter 中的 Tag</span>
 
 `tags` 为属性名。以冒号 `:` 分隔属性及值，两者间使用一个空格分隔。
@@ -780,7 +751,6 @@ Obsdian 原生有三个属性：[`tags`](#obn_advanced_frontmatter_tag)、`alias
 `tags` 的值可以为一个也可以为多个。如果多个，可以有两种形式表示：
 1. 中括号阵列形式。[值 1，值 2，值 3]
 2. 列表形式。以 `-` 为各列表项的标识符。如上面示例中 `key4` 属性。
-
 
 ---
 

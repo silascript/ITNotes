@@ -1,3 +1,11 @@
+---
+aliases:
+  - 
+tags:
+  - linux
+  - fedora
+  - centos
+---
 # Fedora 笔记
 
 ---
@@ -29,5 +37,10 @@ Fedora 换源核心操作就是修改以下 4 个文件：
 
 具体使用请参考：[Fedora 源使用帮助](https://mirrors.ustc.edu.cn/help/fedora.html)
 
+---
 
+## 其他相关笔记
+
+* [Linux_Note](Linux_Note.md)
+* [CentOS_Note](CentOS_Note.md)
 

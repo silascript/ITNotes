@@ -1,3 +1,12 @@
+---
+aliases:
+  - 
+tags:
+  - linux
+  - centos
+  - ssh
+  - yum
+---
 
 # CentOS 笔记
 
@@ -70,11 +79,10 @@
 
 ```
 
-
 #### 换源
 
 步骤：
-1. 先装wget 
+1. 先装 wget 
 ```shell
   yum install -y wget
 ```
@@ -82,9 +90,9 @@
 ```shell
   mv /etc/yum.repos.d/CentOS-Base.rep /etc/yum.repos.d/CentOS-Base.repo.backup
 ```
-> 要执行mv操作前，最好确认系统已经装了wget这下载软件  
-> 因为**mv**操作是直接将CentOS-Base.rep这个文件进行更名，如果更了名后，就不能装wget了
-> 如果安全为主，可以先使用复制**cp**操作进行备份，然后装wget，最后再删掉CentOS-Base.repo
+> 要执行 mv 操作前，最好确认系统已经装了 wget 这下载软件  
+> 因为 **mv** 操作是直接将 CentOS-Base.rep 这个文件进行更名，如果更了名后，就不能装 wget 了
+> 如果安全为主，可以先使用复制 **cp** 操作进行备份，然后装 wget，最后再删掉 CentOS-Base.repo
 
 3. 下载新的 CentOS-Base.repo 到 /etc/yum.repos.d/
 ```shell
@@ -101,22 +109,20 @@
 
 #### 第三方源
 
-* EPEL源:  
-    EPEL 即**Extra Packages for Enterprise Linux**，提供了1W+的软件包。
+* EPEL 源:  
+    EPEL 即 **Extra Packages for Enterprise Linux**，提供了 1W+ 的软件包。
 * ~~RPMforge~~
-> RPMForge 是被CentOS 社区认为是最安全也是最稳定的一个软件仓库。
-> RPMForge 的源需要下载相应的rpm包来安装。
+> RPMForge 是被 CentOS 社区认为是最安全也是最稳定的一个软件仓库。
+> RPMForge 的源需要下载相应的 rpm 包来安装。
 > RPMForge [官网](http://repoforge.org) 显示这个源很久没更，算是“废”了。
 * RPMFusion：  
-  这是为 Fedora和RHEL 提供额外RPM 软件包的第三方源。  
-  这个源的安装是通过RPM 包来安装。  
-  [中科大](http://mirrors.ustc.edu.cn/help/rpmfusion.html)、[清华](https://mirror.tuna.tsinghua.edu.cn/help/rpmfusion/) 等国内镜像都提供这个源RPM包。  
-  具体安装请参考各RPM 包提供方的安装说明。  
-  > 在 RHEL 或兼容发行版（如 CentOS ）上，您需要先启用 EPEL 源。--中科大 RPMFusion 安装备注。
+  这是为 Fedora 和 RHEL 提供额外 RPM 软件包的第三方源。  
+  这个源的安装是通过 RPM 包来安装。  
+  [中科大](http://mirrors.ustc.edu.cn/help/rpmfusion.html)、[清华](https://mirror.tuna.tsinghua.edu.cn/help/rpmfusion/) 等国内镜像都提供这个源 RPM 包。  
+  具体安装请参考各 RPM 包提供方的安装说明。  
+  > 在 RHEL 或兼容发行版（如 CentOS ）上，您需要先启用 EPEL 源。-- 中科大 RPMFusion 安装备注。
 * [Remi源](http://rpms.remirepo.net)：  
- 这个源的包是**最新稳定版**，都是 Linux 骨灰级玩家编译，所以稳定性是有保证的。 
-
-
+ 这个源的包是 **最新稳定版**，都是 Linux 骨灰级玩家编译，所以稳定性是有保证的。 
 
 无论是安哪个第三方源，安装前先查看下系统已有的源
 > ```shell
@@ -181,8 +187,8 @@
 
 ### <span id="cent_cs_ssh">启用 SSH 功能</span>
 
-  检测是是否已经安装了openssh
-  如果什么信息都不显示表示没有安装openssh
+  检测是是否已经安装了 openssh
+  如果什么信息都不显示表示没有安装 openssh
   yum list installed | grep openssh-server
   
   安装
@@ -195,15 +201,15 @@
   > ```
   > 如果没有出现 openssh 版本信息，就说明没有装 openssh-clients。
 
-  配置ssh
-  * 在 **/etc/ssh/** 目录下有**sshd_config**配置文件
+  配置 ssh
+  * 在 **/etc/ssh/** 目录下有 **sshd_config** 配置文件
   * 将端口号和访问 IP 地址的注释去掉
       ![centos_ssh_ip_port](./CentOS_Note.assets/centos_ssh_ip_port.png)
   * 允许 root 用户登录  
       ![centos_ssh_rootlogin](./CentOS_Note.assets/centos_ssh_rootlogin.png)
   * 将 **PermitTTY yes** 这一项的注释也去掉，并且将其值设置为 **yes**，才能开启远程登录
       ![centos_ssh_permittty](./CentOS_Note.assets/centos_ssh_permittty.png)
-  * 将**PasswordAuthentication**这一项也注释去掉并设为**yes**，这是用户密码登录
+  * 将 **PasswordAuthentication** 这一项也注释去掉并设为 **yes**，这是用户密码登录
       ![centos_ssh_pwauthentication](./CentOS_Note.assets/centos_ssh_pwauthentication.png)
 	* 将 `UsePAM` 改为 `no`
   * 改 root 登录密码
@@ -212,7 +218,7 @@
   ```
   > 输两次就行了
 
-  *  开启 sshd 服务
+  * 开启 sshd 服务
   ```shell
     sudo service sshd start
   ```
@@ -221,10 +227,15 @@
   service ssh restart
   ```
 
-
   * 检测服务是否开启成功
   ```shell
     ps -e | grep sshd
   ```
 
+---
+
+## 其他相关笔记
+
+* [Linux_Note](Linux_Note.md)
+* [Fedora_Note](Fedora_Note.md)
 

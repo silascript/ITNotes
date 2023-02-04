@@ -1,3 +1,24 @@
+---
+aliases:
+  - 
+tags:
+  - linux
+  - mysql
+  - it
+  - java
+  - c
+  - python
+  - php
+  - ruby
+  - rust
+  - javascript
+  - lua
+  - docker
+  - git
+  - markdown
+  - obsidian
+  - golang
+---
 # ITNotes
 个人学习工作笔记和资料
 
@@ -31,7 +52,7 @@
 
 [i++和++i分析](Java/i++和++i分析.md)
 
-### C语言
+### C 语言
 
 [C 语言笔记](C/C_Note.md)
 
@@ -54,13 +75,25 @@
 ### Lua
 [Lua笔记](Lua/Lua_Note.md)
 
+### Golang
+[GoLang_Note](GoLang/GoLang_Note.md)
+
+### Ruby
+
+[Ruby_Note](Ruby/Ruby_Note.md)
+
+### Rust
+[Rust_Note](Rust/Rust_Note.md)
+
 ---
 
 ## 编辑工具
 
 ### [文本编辑器](./Editors/Editors_Note.md)
 
-### VIM及NeoVim
+### VIM 及 NeoVim
+
+[Vim_Note](vim/Vim_Note.md)
 
 [vim常用操作](vim/vim常用操作.md)
 
@@ -94,6 +127,14 @@
 ## Docker
 
 [Docker 笔记](Docker/Docker_Note.md)
+
+---
+
+## 网络
+
+[Network_Note](Network/Network_Note.md)
+
+[Http_Note](Network/Http_Note.md)
 
 ---
 

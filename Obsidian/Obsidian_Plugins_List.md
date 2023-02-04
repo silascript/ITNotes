@@ -1,5 +1,6 @@
 ---
-aliases: []
+aliases:
+  - 
 tags:
   - obsidian
   - plugin
@@ -34,6 +35,7 @@ modified: 2023-02-02 4:14:15
 * [File Color](./Obsidian_Note.md#obn_plugins_file_color)
 * [Lapel](./Obsidian_Note.md#obn_plugins_lapel)
 * [Code Block Enhancer](./Obsidian_Note.md#obn_plugins_codeblock_enhancer)
+* [Jump To Link](./Obsidian_Note.md#obn_plugins_jumptolink)
 * [Better File Link](./Obsidian_Note.md#obn_plugins_better_file_link) 
 * [File Info Panel](./Obsidian_Note.md#obn_plugins_file_info_panel)
 * [Recent Files](./Obsidian_Note.md#obn_plugins_recent_files)

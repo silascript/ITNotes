@@ -1,6 +1,9 @@
 ---
-aliases: 
-tags: git github
+aliases:
+  - 
+tags:
+  - git
+  - github
 created: 2023-01-13, 12:27:45
 modified: 2023-01-30, 9:21:36
 ---
@@ -251,6 +254,10 @@ git branch -M 名称
 
 ---
 
+### <span id="git_stash">Stash</span>
+
+---
+
 ### 常用辅助操作
 
 #### 查看版本当前状态
@@ -497,8 +504,6 @@ Github 访问慢可以使用重设 Host 映射解决。
 ```
 
 检测出的 ip，最好自己 **ping** 一下，选速度比较快的几个。
-
-
 
 2. 设置 Host 文件
 

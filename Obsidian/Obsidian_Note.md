@@ -18,6 +18,9 @@ modified: 2023-02-02 9:19:02
 		* [外观](#外观)
 * [Obsidian 配置目录](#obn_config_dir)
 * [Snippet](#obn_snippet)
+* [主题](#obn_themes)
+* [基本用法](#obn_basic)
+	* [常用默认快捷键](#obn_default_hotkeys)
 *  [插件](#obn_plugin)
 	* [第三方插件](#obn_plugins_commp)
 		* [常用插件](#常用插件)
@@ -161,7 +164,7 @@ modified: 2023-02-02 9:19:02
 
 ## <span id="obn_basic">基础用法</span>
 
-### <span id="obn_keys">常用快捷键</span>
+### <span id="obn_default_hotkeys">常用默认快捷键</span>
 
 |    快捷键    |                      功能                      |
 |:------------:|:----------------------------------------------:|
@@ -178,9 +181,18 @@ modified: 2023-02-02 9:19:02
 |    Ctrl+t    |                   新建标签页                   |
 |    Ctrl+n    |                    新建笔记                    |
 |    Ctrl+/    |                 注释或取消注释                 |
-|    Ctrl+B    |                 加粗或取消加粗                 | 
+|    Ctrl+B    |                 加粗或取消加粗                 |
+|   Ctrl+Tab   |                   标签页切换                   | 
 |              |                                                |
-|              |                                                |
+
+> [!bug] 标签页切换问题
+>
+> 而经过测试，由 [Automatically Reveal Active File](https://github.com/shichongrui/obsidian-reveal-active-file) 这个插件会引发焦点失去的问题的！
+>  
+> 当使用 `Ctrl+Tab` 切换编辑区标签页时，标签是切换成功了，但焦点却从编辑区跳回侧边栏文件列表标签上。这个问题只会出现在切换前，「文件列表」处于可视状态下，如果是侧边栏其他标签，如「搜索」标签处于可视标签，但焦点是在编辑区某标签上，这时对编辑区作标签切换操作，焦点是不会「回到」侧边栏上，只有「文件列表」标签处于可视状态时，切换完后，焦点自动跳回文件列表标签。这应该是那个插件引起的，因为这个插件的功能就如它的简介中说的那样，是要在文件列表中显示当前文件。
+> > 「This plugin will automatically reveal the active file in the navigation when you open a file.」。
+
+---
 
 ### <span id="obn_basic_command_palette">命令面板</span>
 
@@ -199,6 +211,36 @@ modified: 2023-02-02 9:19:02
 * `Ctrl+Alt+回车`：在新面板打开
 * `Shift+回车`：创建
 * `ESC`：退出
+
+---
+
+### <span id="obn_basic_keboard_operation">全键盘操作</span>
+
+作为程序员，尽可能地使用键盘，而非鼠标。在使用 Obsidian 时，也贯彻这个精神。为了达到接受全键盘操作 Obsidian，得作以下设置。
+
+1. 开启 Obsidian 的 vim 模式
+2. 设置常用快捷键
+3. 尽可能使用 [命令面板](#obn_basic_command_palette) 和 [快速切换](#ob_basic_quickswitcher)
+
+#### 标签页切换操作
+
+使用 `Ctrl+Tab` 快捷键进行标签页切换。标签页不单止编辑区中的打开的各文档，而可以是侧边栏，文件列表、搜索等标签。
+
+设置并使用「将焦点切换至编辑区」快捷键，就能从其他区域，将焦点跳转回编辑区。
+> [!tip] 焦点切回编辑区
+> 我个人将此快捷键设置为 `Ctrl+M`。
+
+设置并使用「显示文件列表」快捷键，就能将焦点从比如编辑区跳转到侧边栏，对文件列表或搜索标签进行下一步的标签页切换操作。
+> [!tip] 焦点切回文件列表
+> 我个人将此快捷键设置为 `Ctrl+Shift+M`
+
+#### 侧边栏的开关
+
+这两个侧边栏都有相应的命令，都能通过「命令面板」操作，也都能设置快捷键，进行更快速的快捷键操作。
+
+左侧边栏就是文件列表、搜索那一块，对应的命令是：「折叠/展开左侧边栏」。 我个从设置为 `Win+Alt+L`。
+
+右侧边栏就是大纲等那一块，对应的命令是：「折叠/展开右侧边栏」。个人设置为 `Win+Alt+K`。
 
 ---
 

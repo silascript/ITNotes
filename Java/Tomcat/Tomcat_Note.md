@@ -1,3 +1,17 @@
+---
+aliases:
+  - 
+tags:
+  - java
+  - tomcat
+  - apache
+  - servlet
+  - jsp
+  - jdk
+  - web
+  - javaweb
+---
+
 # Tomcat 笔记
 
 ---
@@ -6,22 +20,27 @@
 * [配置](#tomcat_config)
 	* [配端口](#tomcat_config_port)
 
+---
+
+## <span id="tomcat_versions">Tomcat 版本</span>
+
+Tomcat 版本与 Java 版本、Servlet 版本、JSP 版本等对应关系：[wichversion](https://tomcat.apache.org/whichversion.html) 。
+
+支持 Java8 最后一个版本是 10.0.* 版本。从 10.1.* 版本是要求 Java 11，而 Tomcat 11.0 版本要求 Java 17。 
 
 ---
 
-
 ## <span id="tomcat_config">配置</span>
 
-tomcat的配置文件都放在`conf`目录下。
+tomcat 的配置文件都放在 `conf` 目录下。
 
 ### <span id="tomcat_config_port">配端口</span>
-使用文本编辑器打开该目录下的`server.xml`文件，最开始的 `port`，就是 tomcat 的端口：
+使用文本编辑器打开该目录下的 `server.xml` 文件，最开始的 `port`，就是 tomcat 的端口：
 ```xml
 <Connector port="8080" protocol="HTTP/1.1"
                connectionTimeout="20000"
                redirectPort="8443" />
 ```
-
 
 ### <span id="tomcat_config_user">用户配置</span>
 
@@ -41,8 +60,5 @@ tomcat的配置文件都放在`conf`目录下。
 ```xml
 <user username="manager" password="123456" roles="manager-gui"/>
 ```
-
-
-
 
 ---

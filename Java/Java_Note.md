@@ -1,6 +1,11 @@
 ---
-aliases: 
-tags: PL java Eclipse
+aliases:
+  - 
+tags:
+  - PL
+  - java
+  - jdk
+  - Eclipse
 created: 2023-01-13, 12:27:45
 modified: 2023-01-30, 9:15:30
 ---
@@ -12,14 +17,37 @@ modified: 2023-01-30, 9:15:30
 
 * [Java相关的配置](#java_config)
   * [Eclipse相关](#java_eclipse)
-
+* [SDKMan](#java_sdkman)
 * [Lambda 相关](#java_lambda)
 
 ---
 
+## <span id="java_jdk">JDK</span>
+
+不同的版本有不同的 JDK。而且不同厂商也有不同的 JDK。而非 [Oracle](https://www.oracle.com/) 的 JDK 均源于「Open JDK」。
+
+### JDK8 
+
+新的版本 JDK8 的部分命令更改。
+
+`java` 及 `javac` 查看版本信息的 ` --version` 选项已经没有了，只剩下 `-version` 方式可查看 jdk8 的版本信息。
+
+所以在新版本 jdk8 中查看版本信息只能使用：`java -version` 和 `javac -version`。
+
+但离奇的是，在 [JDK11](#JDK11) 及 [JDK17](#JDK17) 仍保持 `--version` 这种用法。猜测是想要把 java 8 跟后继的版本「区隔」开，而且给那些仍使用 java8 的「钉子户」程序员一个好像 java8 用不了的「错觉」。
+
+> [!info] 关于 version 选项
+> 通过 java 的帮助可以知道两种 `version` 是有一点区别的。
+> 
+> `-version` 将产品版本输出到错误流并退出
+> 
+>  `--version` 将产品版本输出到输出流并退出
+
+### JDK11
+
+### JDK17
+
 ## <span id="java_config">Java 相关的配置</span>
-
-
 
 ---
 
@@ -38,6 +66,55 @@ sudo ./bin/jlink --module-path jmods --add-modules java.desktop --output jre
 >```
 >
 >
+
+---
+
+## <span id="java_sdkman">SDKMan</span>
+
+[SDKMan](https://sdkman.io/) 是一个 Linux 系统中对 java 相关的软件管理器。它能够对软件安装、卸载、版本切换。
+
+### SDKMan 安装
+
+执行以下命令：
+```shell
+curl -s "https://get.sdkman.io" | bash
+```
+
+### SDKman 使用
+
+使用 `sdk help` 能查看 SDKMan 帮助，这个帮助已经涵盖了 SDKMan 几乎所有常用操作。
+
+SDKMane 语法 `sdk <command> [candidate] [version]`。
+
+* `command`：命令
+	* 最常用的命令：`list`、`install`、`uninstall`、`use`、`default`
+* `candidate`：目标软件
+* `version`：目标软件的版本号
+
+#### list 命令
+
+`list` 命令是用来浏览软件所有列表
+
+`sdk list`：什么软件名都不带的，就是列出 SDKMan 可以装哪些软件，使用 `J`、`K` 上下滚动，`q` 离开列表浏览模式。
+
+`sdk list 软件名`：列出此软件所有版本。
+
+以 `sdk list java` 为例：
+![sdkman list 1](./Java_Note.assets/sdkman_list_1.png)
+
+可以从截图看出列出了 SDKMan 包含的 JDK 版本信息。
+
+`Status` 栏的信息一般是表明这个版本是已安装（「installed」），亦或是本地包（「local only」）。
+
+`Use` 栏是表示此软件使用情况。`>` 表示当前正在使用，`*` 表示已经安装，`+` 表示本地安装包。
+
+`Version` 栏是版本号。 
+
+`Dist` 栏是版本发行商。
+
+`Identifier` 栏是标识符，用于安装时指定的。就是 `sdk <command> [candidate] [version]` 命令语法中最后那个 `version` 的值。
+
+#### install 命令
 
 ---
 
@@ -65,7 +142,6 @@ sudo ./bin/jlink --module-path jmods --add-modules java.desktop --output jre
 
 > editbox 安装地址：[http://editbox.sourceforge.net/updates](http://editbox.sourceforge.net/updates)
 
-
 * [relative-line-number](https://marketplace.eclipse.org/content/relative-line-number-ruler) 相对行号
 
 * [freemarker](https://marketplace.eclipse.org/content/freemarker-ide) freemarker 插件
@@ -79,7 +155,6 @@ sudo ./bin/jlink --module-path jmods --add-modules java.desktop --output jre
 * [mybatis-generator](https://marketplace.eclipse.org/content/mybatis-generator) MyBatis 生成插件。
 
 ---
-
 
 #### Eclipse 基础的各种软件找不到 jre
 
@@ -116,20 +191,15 @@ sudo ./bin/jlink --module-path jmods --add-modules java.desktop --output jre
 sudo chmod -R 755 tomcat-9.0.62
 ```
 
-
-
 #### 启动 Tomcat 后 404
 
 >![](Java相关.assets/eclipse_tomcat_publish.png)
 >
 >要选第二项，就是将项目复制一份到 tomcat 安装目录下的 wtpwebapps 目录中进行发布
 
-
 ---
 
 ## <span id="java_lambda">Lambda 相关</span>
-
-
 
 ---
 
@@ -158,7 +228,6 @@ LocalVariableTable:
 * `-v` 不仅会输出行号、局部变量表信息、反编译汇编代码，还会输出当前类用到的常量池等信息
 * `-l` 会输出行号和局部变量表信息
 * `-c` 会对当前 class 字节码进行反编译生成汇编代码
-
 
 示例：
 
@@ -263,9 +332,4 @@ Constant pool:
 SourceFile: "Test05.java"
 
 ```
-
-
-
-
-
 

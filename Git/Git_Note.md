@@ -14,6 +14,8 @@ modified: 2023-01-30, 9:21:36
 ## 目录
 
 * [Git 基本操作](#git_basic)
+	* [分支](#git_branch)
+	* [Stash](#git_stash)
 * [Github 使用](#git_github)
 	* [Github 加速](#git_github_acceleration)
 		* [改 Host 文件](#git_github_host)
@@ -255,6 +257,8 @@ git branch -M 名称
 ---
 
 ### <span id="git_stash">Stash</span>
+
+`git stash` 这个命令是将工作区及暂存区暂时「隐藏」起来。
 
 ---
 

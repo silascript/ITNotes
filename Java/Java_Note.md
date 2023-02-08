@@ -120,7 +120,25 @@ SDKMane 语法 `sdk <command> [candidate] [version]`。
 
 ### <span id="java_eclipse">Eclipse 相关</span>
 
+#### 一些概念
+
+##### 视图
+
+视图：View 是 Eclipse 中各个显示区域，如编辑区、「Package Explorer」区等。
+
+视图列表可以通过菜单「Window」-->「Show View」查看。
+
+##### 透视图
+
+透视图：Perspective 其实是 Eclipse UI 布局，不同工作流 UI 布局组件是不一样的。
+
+可以通过 Eclipse 右上角那个按钮「Open Perspective」 来查看各种透视图。
+
+![Eclipse Perspective](./Java_Note.assets/Eclipse_Perspective.png)
+
 #### <span id="java_eclipse_hotkeys">Eclipse 快捷键</span>
+
+##### 窗口操作
 
 `Ctrl+M`：最大化当前视图，看焦点在哪里哪里就最大化。
 
@@ -128,7 +146,23 @@ SDKMane 语法 `sdk <command> [candidate] [version]`。
 
 `Ctrl+Shift+W`：关闭所有窗口
 
-`Ctrl+Shift+F`：格式化代码
+`Ctrl+F6`：编辑区下一个标签页
+
+`Ctrl+Shift+F6`：编辑区上一个标签页
+
+`Ctrl+F7`：下一个 [视图](#视图)，如将焦点从编辑区移到「Package Explorer」区就可以使用这个快捷键。 ^488e15
+
+`F12`：激活编辑区，即将焦点从别的 [视图](#视图) 移回编辑区，这就不用 使用 [Ctrl+F7](#^488e15) 一个个视图跳了。
+
+`Ctrl+Shift+F7`：上一个 [视图](#视图)，与上面的操作类似。
+
+`Ctrl+F10`：显示 [视图](#视图) 菜单。
+
+`Ctrl+F8`：下一个 [透视图](#透视图)
+
+`Ctrl+Shift+F8`：上一个 [透视图](#透视图)
+
+##### 注释
 
 `Ctrl+/`：单行注释或取消注释
 
@@ -136,11 +170,35 @@ SDKMane 语法 `sdk <command> [candidate] [version]`。
 
 `Ctrl+Shift+\`：取消行注释
 
-`Ctrl+O`：显示当前类的结构，支持搜索指定的方法、属性等
+`Shift+Alt+J`：给类或方法添加文档注释
+
+##### 查找
+
+`Ctrl+O`：显示当前类中方法和属性的大纲，支持搜索指定的方法、属性等
 
 `Ctrl+T`：显示光标所在类的继承树结构
 
+`Ctrl+Shift+T`：查找类，可以使用「*」、「？」等通配符。
+
+`Ctrl+Shift+G`：查找类、方法和属性的引用。
+
 `Ctrl+K`：搜索选中的单词，并向下跳转，如果光标跳到了结果最尾项，再按 `Ctrl+K` 会往回跳到结果首项。
+
+`Ctrl+Shift+L`：显示所有 Eclipse 快捷键列表。
+
+##### 代码或文本操作
+
+`Ctrl+Shift+F`：格式化代码
+
+`Ctrl+P`：光标跳转到上次编辑的位置。
+
+`Crrl+Shift+P`：定位匹配符号，如**{}**、**[]**和**()**这些括号。
+
+`Home`：跳转行首。
+
+`End`：跳转么行尾。
+
+`Ctrl+L`：跳转到某行。快捷键会弹出一个输入框，可以输入要跳转行的行号。
 
 `Shift+Enter`：新建下一行，不用把光标移到行末再回车了。如果 Eclipse 装了 [Vrapper](#Vrapper) 插件，就可以使用 `o`（小写）来新建下一行。
 
@@ -153,6 +211,8 @@ SDKMane 语法 `sdk <command> [candidate] [version]`。
 `Ctrl+Alt+UP` 或 `Ctrl+Alt+Down`：复制当前行到上一行或下一行
 
 `Alt+Enter`：显示选中的当前项目或文件的属性
+
+`Ctrl+1`：快速修复，对于未导包的类处理时非常有用，它可以快速导入所有依赖项。
 
 ##### getter 和 setter 生成
 

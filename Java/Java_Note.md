@@ -120,19 +120,86 @@ SDKMane 语法 `sdk <command> [candidate] [version]`。
 
 ### <span id="java_eclipse">Eclipse 相关</span>
 
+#### <span id="java_eclipse_hotkeys">Eclipse 快捷键</span>
+
+`Ctrl+M`：最大化当前视图，看焦点在哪里哪里就最大化。
+
+`Ctrl+W`：关闭当前窗口
+
+`Ctrl+Shift+W`：关闭所有窗口
+
+`Ctrl+Shift+F`：格式化代码
+
+`Ctrl+/`：单行注释或取消注释
+
+`Ctrl+Shift+/`：多行注释
+
+`Ctrl+Shift+\`：取消行注释
+
+`Ctrl+O`：显示当前类的结构，支持搜索指定的方法、属性等
+
+`Ctrl+T`：显示光标所在类的继承树结构
+
+`Ctrl+K`：搜索选中的单词，并向下跳转，如果光标跳到了结果最尾项，再按 `Ctrl+K` 会往回跳到结果首项。
+
+`Shift+Enter`：新建下一行，不用把光标移到行末再回车了。如果 Eclipse 装了 [Vrapper](#Vrapper) 插件，就可以使用 `o`（小写）来新建下一行。
+
+`Ctrl+Shift+Enter`：新建上一行，不用把光标移到行首回车。如果 Eclipse 装了 [Vrapper](#Vrapper) 插件，就可以使用 vim 的 `O`（大写）来新建上一行。
+
+`Ctrl+D`：删除当前行
+
+`Alt+UP` 或 `Alt+Down`：将当前行的代码往上移或往下移
+
+`Ctrl+Alt+UP` 或 `Ctrl+Alt+Down`：复制当前行到上一行或下一行
+
+`Alt+Enter`：显示选中的当前项目或文件的属性
+
+##### getter 和 setter 生成
+
+1. `Shift+Alt+S`，呼出「Source」菜单 如果装了 [Vrapper](#Vrapper) 插件并装了 [Java extensions](#^491eb0) 子扩展，那就可以使用 `gm` 快捷键呼出「Source」菜单。
+2. 按 `r`，呼出 getter 和 setter 配置菜单
+3. 选择要生成 getter 和 setter 的属性，全选： `Alt+A`；取消所有： `Alt+D`；选择所有的 getter：`Alt+G`；选择所有 setter：`Alt+L`。
+4. 回车生成 getter 和 setter 如果 `Generate` 按钮失去焦点，就按 `Alt+G`。
+
+##### 生成构造方法
+
+1. `Shift+Alt+S`，呼出「Source」菜单，跟 [getter 和 setter 生成](#getter%20和%20setter%20生成) 完全一样
+2. 按 `o`，呼出构造方法配置菜单
+3. 选择构造方法所需的属性，如果全选就 `Alt+A`，取消所有选择就按 `Alt+D`
+4. 回车确认生成构造方法
+
+---
+
 #### <span id="java_eclipse_plugins">Eclipse 常用插件</span>
 
-* [jeeeyul_theme]() 是一个 Eclipse 界面主题插件。
+##### jeeeyuls-eclipse-themes
 
-* [colortheme](https://marketplace.eclipse.org/content/eclipse-color-theme) 这个与上面那个不同，这是插件是针对编辑区的配色插件。 Eclipse 市场中的 color-theme 插件地址已经失效。 请到 [这个](https://eclipse-color-theme.github.io/update/) 页面，其中有个链接： [download this update site as a zip archive](https://eclipse-color-theme.github.io/update/eclipse-color-theme-update-site.zip)，下载这个压缩包。将其中的 `features` 和 `plugins` 两个目录提取出来放到一个你自定义名称的目录中，如「color-theme」，将这个包括有 `features` 和 `plugins` 的目录放到 Eclipse 安装目录下的 `dropins` 目录中，重启 Eclipse ，这个插件就能生效了！
+[jeeeyul_theme](https://marketplace.eclipse.org/content/jeeeyuls-eclipse-themes) 是一个 Eclipse 界面主题插件。
 
-* [Bracketeer](https://marketplace.eclipse.org/content/bracketeer-java-jdt) 是一个使用注释方式标识出匹配大括号的插件。Eclipse 插件市场中的 Bracketeer 插件的地址已经失效了，应自行通过 「Install new Software」 这个方式添加插件安装地址。安装地址：https://chookapp.github.io/ChookappUpdateSite/
+##### colortheme
 
-* [Eclipse explorer](https://marketplace.eclipse.org/content/eclipse-explorer)  [![eclipse explorer repo](https://img.shields.io/github/stars/Jamling/eclipse-explorer?style=social)](https://github.com/Jamling/eclipse-explorer/releases) 是打开项目本地目录的插件。同样的，插件市场的地址也是失效了，得到 github 中下载。同 color-theme 一样，下载下的包是不能直接丢到 `dropins` 目录的，得把 `features` 和 `plugins` 目录提取出来。
+[colortheme](https://marketplace.eclipse.org/content/eclipse-color-theme) 这个与上面那个不同，这是插件是针对编辑区的配色插件。 Eclipse 市场中的 color-theme 插件地址已经失效。 请到 [这个](https://eclipse-color-theme.github.io/update/) 页面，其中有个链接： [download this update site as a zip archive](https://eclipse-color-theme.github.io/update/eclipse-color-theme-update-site.zip)，下载这个压缩包。将其中的 `features` 和 `plugins` 两个目录提取出来放到一个你自定义名称的目录中，如「color-theme」，将这个包括有 `features` 和 `plugins` 的目录放到 Eclipse 安装目录下的 `dropins` 目录中，重启 Eclipse ，这个插件就能生效了！
 
-* [Jcolon](https://mystilleef.github.io/eclipse4-jcolon/) [![jcolon repo](https://img.shields.io/github/stars/mystilleef/eclipse4-jcolon?style=social)](https://github.com/mystilleef/eclipse4-jcolon) 是一款自动补分号的插件。真是自动，不需要按快捷键。
+##### Bracketeer
 
-* [EditBox](https://marketplace.eclipse.org/content/editbox) 是一款显示代码范围的插件。
+[Bracketeer](https://marketplace.eclipse.org/content/bracketeer-java-jdt) 是一个使用注释方式标识出匹配大括号的插件。Eclipse 插件市场中的 Bracketeer 插件的地址已经失效了，应自行通过 「Install new Software」 这个方式添加插件安装地址。安装地址：[https://chookapp.github.io/ChookappUpdateSite/](https://chookapp.github.io/ChookappUpdateSite/)
+
+##### Eclipse explorer
+
+[Eclipse explorer](https://marketplace.eclipse.org/content/eclipse-explorer)  [![eclipse explorer repo](https://img.shields.io/github/stars/Jamling/eclipse-explorer?style=social)](https://github.com/Jamling/eclipse-explorer/releases) 是打开项目本地目录的插件。同样的，插件市场的地址也是失效了，得到 github 中下载。同 color-theme 一样，下载下的包是不能直接丢到 `dropins` 目录的，得把 `features` 和 `plugins` 目录提取出来。
+
+> [!tip] explorer
+> [Eclipse Explorer](https://marketplace.eclipse.org/content/eclipse-explorer) 这插件又在插件市场上架了。并且手动丢包到 `dropins` 目录方式，好像失效了 -- 至少在 Linux 上失效。
+> 
+> 安装地址为：[https://www.ieclipse.cn/PDESite/updates/](https://www.ieclipse.cn/PDESite/updates/)
+
+##### Jcolon
+
+[Jcolon](https://mystilleef.github.io/eclipse4-jcolon/) [![jcolon repo](https://img.shields.io/github/stars/mystilleef/eclipse4-jcolon?style=social)](https://github.com/mystilleef/eclipse4-jcolon) 是一款自动补分号的插件。真是自动，不需要按快捷键。
+
+##### EditBox
+
+[EditBox](https://marketplace.eclipse.org/content/editbox) 是一款显示代码范围的插件。
 
 ![EditBox preview](https://a.fsdn.com/con/app/proj/editbox/screenshots/238862.jpg/245/183/1.5)
 
@@ -142,17 +209,45 @@ SDKMane 语法 `sdk <command> [candidate] [version]`。
 
 > editbox 安装地址：[http://editbox.sourceforge.net/updates](http://editbox.sourceforge.net/updates)
 
-* [relative-line-number](https://marketplace.eclipse.org/content/relative-line-number-ruler) 相对行号
+##### relative-line-number
 
-* [freemarker](https://marketplace.eclipse.org/content/freemarker-ide) freemarker 插件
+[relative-line-number](https://marketplace.eclipse.org/content/relative-line-number-ruler) 相对行号。
 
-* [SQL DAL Maker](https://github.com/panedrone/sqldalmaker) 数据链接层生成插件
+##### freemarker
 
-* [mybatipse](https://marketplace.eclipse.org/content/mybatipse) [![mybatipse repo](https://img.shields.io/github/stars/mybatis/mybatipse?style=social)](https://github.com/mybatis/mybatipse/) MyBatis 插件。
+[freemarker](https://marketplace.eclipse.org/content/freemarker-ide) freemarker 插件。这插件 github 地址：[https://github.com/ddekany/jbosstools-freemarker](https://github.com/ddekany/jbosstools-freemarker) 。
+
+这个插件是从 [JBossTools Freemarker](https://github.com/jbosstools/jbosstools-freemarker) 插件中分支出来的，因为原版的插件在 JBoss Tools 4.5.3 时就已经被移除了，估计是 Freemarker 用得人太少，已经算是过时的技术了，所以 JBoss 就把这货从 JBoss Tools 中移除掉。
+
+事实上这插件也已经有 2 年多没更新了，估计停止维护也不远了，现在还是能用的。不过估计随着 Eclipse 继续版本迭代，不兼容性迟早会出现，到时候是真的就用不了了！
+
+##### SQL DAL Maker
+
+[SQL DAL Maker](https://github.com/panedrone/sqldalmaker) 数据链接层生成插件
+
+##### mybatipse
+
+[mybatipse](https://marketplace.eclipse.org/content/mybatipse) [![mybatipse repo](https://img.shields.io/github/stars/mybatis/mybatipse?style=social)](https://github.com/mybatis/mybatipse/) MyBatis 插件。
 
   mybatis 中 xml、java 文件的各种功能增强，如自动完成、相关 sql 关联等，使用 mybatis 必装的插件。
 
-* [mybatis-generator](https://marketplace.eclipse.org/content/mybatis-generator) MyBatis 生成插件。
+##### MyBatis-Generator
+
+[mybatis-generator](https://marketplace.eclipse.org/content/mybatis-generator) MyBatis 生成插件。
+
+##### Vrapper
+
+[Vrapper](https://marketplace.eclipse.org/content/vrapper/) 是一个在 Eclipse 上模拟 [vim](../vim/Vim_Note.md) 的插件。
+
+这插件有几个子扩展，是 vim 下常用的插件模拟。
+
+推荐安装大名鼎鼎的 [Surround](../vim/vim_plugin.md#Surround)。
+
+另外，作为 Java 开发，也建议把 「Java extensions」这个扩展也勾选安装上。其实这个折展就是为 Eclipse 两个右键菜单添加 vim 式的快捷键： ^491eb0
+* `gr` Eclipse 「refactor」（重构）菜单
+* `gm`：Eclipse 「source」菜单
+
+Vrapper 更详细使用请参考 [Vrapper Documentation](https://vrapper.sourceforge.net/documentation/?topic=introduction)。
 
 ---
 

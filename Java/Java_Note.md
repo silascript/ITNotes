@@ -15,8 +15,10 @@ modified: 2023-01-30, 9:15:30
 ---
 ## 目录
 
+* [JDK](#java_jdk)
+	* [Open JDK](#OpenJDK)
 * [Java相关的配置](#java_config)
-  * [Eclipse相关](#java_eclipse)
+	* [Eclipse相关](#java_eclipse)
 * [SDKMan](#java_sdkman)
 * [Lambda 相关](#java_lambda)
 
@@ -24,7 +26,58 @@ modified: 2023-01-30, 9:15:30
 
 ## <span id="java_jdk">JDK</span>
 
-不同的版本有不同的 JDK。而且不同厂商也有不同的 JDK。而非 [Oracle](https://www.oracle.com/) 的 JDK 均源于「Open JDK」。
+不同的版本有不同的 JDK，不同厂商也有不同的 JDK。而非 [Oracle](https://www.oracle.com/) 的 JDK 均源于「OpenJDK」。
+
+### OpenJDK
+
+> [!info] 关于 OpenJDK
+> OpenJDK 是由 **OpenJDK Community 、Oracle、IBM** 领导，连同 Alibaba，Amazon，Ampere，Azul，BellSoft，Canonical，Fujitsu，Google，Huawei，Intel，Java Community，JetBrains，London Java Community，Microsoft，Red Hat，SAP，SouJava，SUSE，Tencent，Twitter ，VMWare 等第三方共同开发、维护的 Java SE 开源参考实现。
+
+[OpenJDK](https://openjdk.org) 与 Oracke JDK 区别：
+
+* Oracle JDK 只发布二进行版本；OpeanJDK 只发源码
+* Oracle JDK 包含了 OpenJDK 少量没有的功能
+* 从 Java SE7 开始往后的版本，所有 JDK 都源于 OpenJDK。所以从某种意义上讲，Oracle JDK 也是 OpenJDK 的一个发生版。
+* Oracle JDK 持有 Java 商标；其他 OpenJDK 不能使用 Java 商标。
+* 授权不同：OpeanJDK 允许免费商用，而 Oracle JDK 只能个人研究使用，商用收费（从 JDK8u211 这版本开始）
+
+广义上的「OpenJDK」指的是非 Oracle JDK 之外所有厂商源于 OpenJDK 源码自行定制编译发布的 OpenJDK 发行版。
+
+狭义上的「OpenJDK」专指 **Oracle OpenJDK**，所以 OpenJDK 官网指向可下载的二进制文件其实是 Oracle OpenJDK 地址，它其实就是 Oracle 版的 OpenJDK 发行版。也就是说，Oracle 除了原有的 JDK 版，还有一个 OpenJDK 版本 -- 情况跟 RHEL 与 CenterOS 关系一样。
+
+发行版的 OpenJDK 大部分都是可以 **免费商用** 的，商用付费的代表是 Oracle JDK 和 IBM、RedHat 的 OpenJDK。
+
+而不同的厂商会根据 OpenJDK 源自行定制编译自己的二进制发行版本。下面就介绍几个：
+
+#### Oracle OpenJDK
+
+上面已经说了，**狭义** 上的 OpenJDK 就是指「Oracle's OpeanJDK」。
+
+官网：[https://openjdk.org](https://openjdk.org)。
+
+各大版本：
+* [OpenJDK 11](https://jdk.java.net/java-se-ri/11)
+* [OpenJDK 17](https://jdk.java.net/java-se-ri/17)
+
+#### Eclipse Temurin 
+
+[Adopt JDK](https://adoptium.net) 原来是 OpenJDK 中社区 JDK 中比较重要的一个发行版。后来 **AdoptOpenJDK** 加入到了 [Eclipse](https://www.eclipse.org/org/) 基金会旗下的 [Adoptium](https://adoptium.net) 工作组（「Adoptium Working Group」），后更名为「Temurin JDK」。[Temurin](https://adoptium.net/temurin/) 是「Adoptium」其中一个项目（Project），专门提供生产环境的 JRE 或 JDK 及相关技术。
+
+官网也从 [https://adoptopenjdk.net](https://adoptopenjdk.net) 迁移到 [https://adoptium.net](https://adoptium.net)。
+
+Temurin JDK 清华镜像：[https://mirror.tuna.tsinghua.edu.cn/Adoptium/](https://mirror.tuna.tsinghua.edu.cn/Adoptium/)
+
+大部分 Open JDK 都能使用 [SDKMan](#SDKMan) 安装。
+
+#### 微软 OpenJDK
+
+没想到吧，微软也有发 OPenJDK。
+
+官网：[https://www.microsoft.com/openjdk](https://www.microsoft.com/openjdk)
+
+源码地址：[https://github.com/microsoft/openjdk](https://github.com/microsoft/openjdk)
+
+---
 
 ### JDK8 
 
@@ -46,6 +99,8 @@ modified: 2023-01-30, 9:15:30
 ### JDK11
 
 ### JDK17
+
+---
 
 ## <span id="java_config">Java 相关的配置</span>
 

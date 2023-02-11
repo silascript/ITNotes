@@ -79,8 +79,10 @@ tags:
  读取失败则会读取 `~/.bash_login` ；
 
  再次读取失败则读取 `~/.profile` 
+ > [!tip]
  > 这三个文件设定基本无差别，仅读取上有优先关系
-
+ 
+> [!tip] path 变量路径
 > 路径末尾不能以 **\/** 结尾，否则将导致整个 PATH 变量出错。
 
 ---
@@ -224,6 +226,52 @@ tar -Jcf xxx.tar.xz *.jpg
 # 解压
 tar -Jxf xxx.tar.xz
 
+```
+
+---
+
+#### <span id="linux_tarc_comptools_rar">rar</span>
+
+在 Linux 系统中压缩和解压 `.rar` 格式的压缩包，得使用专门的程序。
+
+在 Linux 系统 `.rar` 不是常用压缩格式，所以一般更多的是解压，而在 Linux 系统中解压 `.rar` 压缩包得选安装 [unrar](https://www.rarlab.com/download.htm) 程序。
+
+```shell
+
+# Ubuntu
+# 安装 rar
+sudo apt install rar
+
+# 安装 unrar
+sudo apt install unrar
+
+```
+
+```shell
+
+# ArchLinux、manjaro
+# 安装 rar
+pacman -S rar
+
+# 安装 unrar
+pacman -S unrar
+
+
+```
+> [!tip]
+> [ArchLinux_Note](ArchLinux_Note.md) 如果安装了 [AUR Helper](ArchLinux_Note.md#AUR%20Helper)，如 [yay](ArchLinux_Note.md#yay)，就能使用相应的 aur helper 来安装。
+
+unrar 简单示例：
+```shell
+
+# 不解压只查看压缩包中的信息
+# 简略模式
+unrar l task.rar
+# 详细模式
+unrar v task.rar
+
+# 解压
+unrar e a.rar
 ```
 
 ---

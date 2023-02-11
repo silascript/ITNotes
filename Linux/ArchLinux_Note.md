@@ -29,6 +29,32 @@ date created: 2022-11-08 11:32
 
 ---
 
+## <span id="archlinux_pacman">pacman</span>
+
+`pacman` 是 Archlinux 的包管理器。
+
+---
+
+## <span id="archlinux_aur">AUR</span>
+
+### AUR Helper
+
+使用 AUR 前先装 [AUR助手（AUR Helper）](https://wiki.archlinuxcn.org/wiki/AUR_%E5%8A%A9%E6%89%8B)。可以简单认为 [AUR Helper](#AUR%20Helper) 是增强型的 [pacman](#pacman)。
+
+#### yay
+在众多 [AUR Helper](#AUR%20Helper) 中，其中比较出名的是要属 [yay](https://aur.archlinux.org/packages/yay) [![yay Repo](https://img.shields.io/github/stars/Jguer/yay?style=social)](https://github.com/Jguer/yay)。
+
+yay 是用 [Go语言](../GoLang/GoLang_Note.md) 编写的。
+
+因为 `yay` 是对 [pacman](#pacman) 的封装，所以命令与 `pacman` 命令高度一致。
+
+#### paru
+新的 [AUR Helper](#AUR%20Helper)，[yay](#yay) 的「继任者」，当属 [paru](https://aur.archlinux.org/packages/paru) [![paru repo](https://img.shields.io/github/stars/morganamilo/paru?style=social)](https://github.com/morganamilo/paru)。
+
+paru 是使用 [Rust语言](../Rust/Rust_Note.md) 编写的。
+
+---
+
 ## <span id="archlinux_ime">输入法</span>
 
 ### <span id="archlinux_ime_ibus_rime">ibus-rime</span>

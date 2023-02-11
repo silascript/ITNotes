@@ -73,6 +73,12 @@ Temurin JDK 清华镜像：[https://mirror.tuna.tsinghua.edu.cn/Adoptium/](https
 
 没想到吧，微软也有发 OPenJDK。
 
+> [!inof] 微软与 [Eclipse](#Eclipse%20相关)
+> 2021 年 8 月，微软宣布将成为 Eclipse 基金会的战略成员，并且加入其董事会。
+> 
+> 早在 2016 年，微软就以解决方案成员的身份加入了 Eclipse 基金会，并在当时提供了一套开发工具和服务。
+> 可见微软的「魔爪」已经伸向 Java 系的领域。事实是 [Visual Studio](https://visualstudio.microsoft.com/) 在 「VS2015」版本时，在其安装选项中就有 JDK 选项，当时还是针对 [Android](https://developer.android.google.cn/)。但现在看来，微软的野心可不止这么窄。从 [dotnet core](https://dotnet.microsoft.com/) [![dotnet core Repo](https://img.shields.io/github/stars/dotnet/core?style=social)](https://github.com/dotnet/core) 到收购 [Github](https://github.com)，微软近年对于原来非微软传统领域，特别是开源领域的涉足越来越多。
+
 官网：[https://www.microsoft.com/openjdk](https://www.microsoft.com/openjdk)
 
 源码地址：[https://github.com/microsoft/openjdk](https://github.com/microsoft/openjdk)
@@ -175,6 +181,8 @@ SDKMane 语法 `sdk <command> [candidate] [version]`。
 
 ### <span id="java_eclipse">Eclipse 相关</span>
 
+[Eclipse](https://www.eclipse.org/) 最初是由 [IBM](https://www.ibm.com/) 开发的下一代 IDE，2001 年 11 月 IBM 将其贡献给开源社区，由 Eclipse 基金会管理。
+
 #### 一些概念
 
 ##### 视图
@@ -185,11 +193,25 @@ SDKMane 语法 `sdk <command> [candidate] [version]`。
 
 ##### 透视图
 
-透视图：Perspective 其实是 Eclipse UI 布局，不同工作流 UI 布局组件是不一样的。
+透视图：Perspective 其实是 Eclipse UI 布局，即按工作需求，将多个 [视图](#视图) 的不同组合形式。
 
 可以通过 Eclipse 右上角那个按钮「Open Perspective」 来查看各种透视图。
 
 ![Eclipse Perspective](./Java_Note.assets/Eclipse_Perspective.png)
+
+---
+
+#### Eclipse 目录结构
+
+##### <span id="java_eclipse_plugindirectory">插件目录</span>
+
+##### <span id="java_ecipse_workspace">工作空间</span>
+
+##### Linux 下的 Eclipse 公共目录
+
+[Linux_Note](../Linux/Linux_Note.md) 系统下，用户根下有一个 `.eclipse` 的目录，这是所有 eclipse 的共享目录。
+
+---
 
 #### <span id="java_eclipse_hotkeys">Eclipse 快捷键</span>
 
@@ -268,6 +290,8 @@ SDKMane 语法 `sdk <command> [candidate] [version]`。
 `Alt+Enter`：显示选中的当前项目或文件的属性
 
 `Ctrl+1`：快速修复，对于未导包的类处理时非常有用，它可以快速导入所有依赖项。
+
+`Ctrl+Shift+数字区的/`：折叠所有注释及代码
 
 ##### getter 和 setter 生成
 
@@ -363,6 +387,121 @@ SDKMane 语法 `sdk <command> [candidate] [version]`。
 * `gm`：Eclipse 「source」菜单
 
 Vrapper 更详细使用请参考 [Vrapper Documentation](https://vrapper.sourceforge.net/documentation/?topic=introduction)。
+
+---
+
+##### Data Tools Platform
+
+Data Tools Platform 是一套数据库管理插件组，能在 Eclipse 中进行数据库相关的操作。
+
+这套插件，应该说是插件系列，有多个插件可选，下面简单介绍各插件的大概的功能：
+
+###### Data Tools Platform Connectivity
+
+勾选「**Data Tools Platform Connectivity**」后，会根据依赖装两组插件：
+
+* **Data Tools Platform Connectivity**
+* **Data Tools Platform SQL Development Tools**
+
+![Data Tools Platform Connectivity](./Java_Note.assets/Eclipse_dtp_1.png)
+
+![Data Tools Platform Connectivity2](./Java_Note.assets/Eclipse_dtp_1_1.png)
+
+从图中可以看出，只装「Data Tools Platform Connectivity」就能实现数据库连接、SQL 等数据库管理的基础功能，其实对于只是「临时」连下数据库，作些简单的数据操作而言，这实际已经够用的了！不过，实际上，还是没法用的，因为连接这个功能，需要数据库的「连接驱动」，而只装「Connectivity」插件，只有通用 JDBC 可选，所以得安装相应数据库连接驱动的支持。
+
+###### Data Tools Platform Enablement
+
+Data Tools Platform Enablement 是一个对各大数据库连接支持的插件。
+
+勾选「Data Tools Platform Enablement for MySQL」后安装相应插件后，就会在新建链接时出现以下的选项：
+![Eclipse DTP Enablement 1](./Java_Note.assets/Eclipse_dtp_enablement_1.png)
+
+> [!tip] Enablement for MySQL
+> 在未装「Data Tools Platform Enablement for MySQL」时，只有「Generic JDBC」这个，装了这插件后就多了 MySQL 相关连接驱动可选。
+
+###### SQL Development Tools Data Functions
+
+「SQL Development Tools Data Functions」主要功能是在数据库 Model 及 DDL 相关的。
+
+![SQL Development Tools Data Functions](./Java_Note.assets/Eclipse_dtp_SQL_1.png)
+
+---
+
+#### Eclipse 各版本与 JDK 对应关系
+
+> [!info] Eclipse 版本代号
+> 从 2018 年 9 月开始，Eclipse 每 3 个月发布一个版本，并且版本僅不再延续天文星体名称，直接使用年份跟月份。
+
+| 版本代号 |     代号名称     |  平台版本  |      发行日期       | 需要 JDK 版本 | 其他信息 |
+|:--------:|:----------------:|:----------:|:-------------------:|:-------------:|:--------:|
+|    IO    |   木卫一，伊奥   |    3.1     | 2005 年 6 月 28 日  |      N/A      |   N/A    |
+| Callisto | 木卫四，卡里斯托 |    3.2     | 2006 年 6 月 26 日  |    JDK 1.4    |   N/A    |
+|  Europa  |  木卫二，欧罗巴  |    3.3     | 2007 年 6 月 27 日  |    JDK 1.5    |   N/A    |
+| Ganymed  | 木卫三，盖尼米得 |    3.4     | 2008 年 6 月 25 日  |    JDK 1.5    |   N/A    |
+| Galileo  |      伽利略      |    3.5     | 2009 年 6 月 24 日  |    JDK 1.5    |   N/A    |
+|  Helios  |      太阳神      |    3.6     | 2010 年 6 月 23 日  |    JDK 1.5    |   N/A    |
+|  Indigo  |       靛蓝       |    3.7     | 2011 年 6 月 22 日  |    JDK 1.5    |   N/A    |
+|   Juno   |       朱诺       | 3.8 及 4.2 | 2012 年 6 月 27 日  |    JDK 1.5    |   N/A    |
+|  Kepler  |      开普勒      |    4.3     | 2013 年 6 月 26 日  |    JDK 1.6    |   N/A    |
+
+勾选「Data Tools Platform Connectivity」
+会根据依赖装两组插件：
+Data Tools Platform Connectivity
+Data Tools Platform SQL Development Tools
+![Data Tools Platform Connectivity](./Java_Note.assets/Eclipse_dtp_1.png)
+
+![Data Tools Platform Connectivity2](./Java_Note.assets/Eclipse_dtp_1_1.png)
+
+###### SQL Parsers
+
+SQL Parsers 这是跟 Model 相关的，应该是模型转换器。
+
+![Eclise DTP SQL Parsers 1](./Java_Note.assets/Eclise_dtp_SQL_Parsers_1.png)
+
+---
+
+#### Eclipse 各版本与 JDK 对应关系
+
+> [!info] Eclipse 版本代号
+> 从 2018 年 9 月开始，Eclipse 每 3 个月发布一个版本，并且版本僅不再延续天文星体名称，直接使用年份跟月份。
+
+| 版本代号 |     代号名称     |  平台版本  |      发行日期       | 需要 JDK 版本 | 其他信息 |
+|:--------:|:----------------:|:----------:|:-------------------:|:-------------:|:--------:|
+|    IO    |   木卫一，伊奥   |    3.1     | 2005 年 6 月 28 日  |      N/A      |   N/A    |
+| Callisto | 木卫四，卡里斯托 |    3.2     | 2006 年 6 月 26 日  |    JDK 1.4    |   N/A    |
+|  Europa  |  木卫二，欧罗巴  |    3.3     | 2007 年 6 月 27 日  |    JDK 1.5    |   N/A    |
+| Ganymed  | 木卫三，盖尼米得 |    3.4     | 2008 年 6 月 25 日  |    JDK 1.5    |   N/A    |
+| Galileo  |      伽利略      |    3.5     | 2009 年 6 月 24 日  |    JDK 1.5    |   N/A    |
+|  Helios  |      太阳神      |    3.6     | 2010 年 6 月 23 日  |    JDK 1.5    |   N/A    |
+|  Indigo  |       靛蓝       |    3.7     | 2011 年 6 月 22 日  |    JDK 1.5    |   N/A    |
+|   Juno   |       朱诺       | 3.8 及 4.2 | 2012 年 6 月 27 日  |    JDK 1.5    |   N/A    |
+|  Kepler  |      开普勒      |    4.3     | 2013 年 6 月 26 日  |    JDK 1.6    |   N/A    |
+|   Luna   |       月神       |    4.4     | 2014 年 6 月 24 日  |    JDK 1.6    |   N/A    |
+|   Mars   |       火星       |    4.5     | 2015 年 6 月 24 日  |    JDK 1.7    |   N/A    |
+|   Neon   |      霓虹灯      |    4.6     | 2016 年 6 月 22 日  |    JDK 1.8    |   N/A    |
+|  Oxygen  |       氧气       |    4.7     | 2017 年 6 月 28 日  |    JDK 1.8    |   N/A    |
+|  Photon  |       光子       |    4.8     | 2018 年 6 月 27 日  |    JDK 1.8    |   N/A    |
+| 2018-09  |       N/A        |    4.9     | 2018 年 9 月 19 日  |    JDK 1.8    |   N/A    |
+| 2018-10  |       N/A        |    4.10    | 2018 年 12 月 19 日 |    JDK 1.8    |   N/A    |
+| 2019-03  |       N/A        |    4.11    | 2019 年 3 月 20 日  |    JDK 1.8    |   N/A    |
+| 2019-06  |       N/A        |    4.12    | 2019 年 6 月 19 日  |    JDK 1.8    |   N/A    |
+| 2019-09  |       N/A        |    4.13    | 2019 年 9 月 18 日  |    JDK 1.8    |   N/A    |
+| 2019-12  |       N/A        |    4.14    |    2019 年 12 月    |    JDK 1.8    |   N/A    |
+| 2020-03  |       N/A        |    4.15    | 2020 年 3 月 18 日  |    JDK 1.8    |   N/A    |
+| 2020-06  |       N/A        |    4.16    |    2020 年 6 月     |    JDK 1.8    |   N/A    |
+| 2020-09  |       N/A        |    4.17    | 2020 年 9 月 16 日  |    JDK 11     |   N/A    |
+| 2020-12  |       N/A        |    4.18    | 2020 年 12 月 16 日 |    JDK 11     |   N/A    |
+| 2021-03  |       N/A        |    4.19    | 2021 年 3 月 18 日 |    JDK 11     |   N/A    |
+| 2021-06  |       N/A        |    4.20    | 2021 年 6 月 16 日 |    JDK 11     |   N/A    |
+| 2021-09  |       N/A        |    4.21    | 2021 年 9 月 15 日 |    JDK 11     |   N/A    |
+| 2021-12  |       N/A        |    4.22    | 2021 年 12 月 8 日 |    JDK 11     |   N/A    |
+| 2022-03  |       N/A        |    4.23    | 2022 年 3 月 16 日 |    JDK 11     |   N/A    |
+| 2022-06  |       N/A        |    4.24    | 2022 年 6 月 15 日 |    JDK 11     |   N/A    | 
+| 2022-09  |       N/A        |    4.25    | 2022 年 9 月 14 日 |    JDK 11     |   N/A    | 
+| 2022-12  |       N/A        |    4.26    | 2022 年 12 月 7 日 |    JDK 11     |   N/A    | 
+
+> [!tip] 32 位与 64 位
+> Eclipse 必须与 JRE 相一致，32 位 JRE 只能装 32 位版本的 Eclipse，64 位 JRE 装 64 位 Eclipse。
 
 ---
 

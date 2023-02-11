@@ -6,6 +6,7 @@ tags:
   - java
   - jdk
   - Eclipse
+  - dbeaver
 created: 2023-01-13, 12:27:45
 modified: 2023-01-30, 9:15:30
 ---
@@ -71,7 +72,7 @@ Temurin JDK 清华镜像：[https://mirror.tuna.tsinghua.edu.cn/Adoptium/](https
 
 #### 微软 OpenJDK
 
-没想到吧，微软也有发 OPenJDK。
+没想到吧，微软也有发 OpenJDK。
 
 > [!inof] 微软与 [Eclipse](#Eclipse%20相关)
 > 2021 年 8 月，微软宣布将成为 Eclipse 基金会的战略成员，并且加入其董事会。
@@ -311,6 +312,12 @@ SDKMane 语法 `sdk <command> [candidate] [version]`。
 
 #### <span id="java_eclipse_plugins">Eclipse 常用插件</span>
 
+##### Marketplace
+
+Marketplace 是 Eclipse 的插件市场，通过它可以更方便地搜索和安装插件。
+
+---
+
 ##### jeeeyuls-eclipse-themes
 
 [jeeeyul_theme](https://marketplace.eclipse.org/content/jeeeyuls-eclipse-themes) 是一个 Eclipse 界面主题插件。
@@ -425,38 +432,47 @@ Data Tools Platform Enablement 是一个对各大数据库连接支持的插件�
 
 ![SQL Development Tools Data Functions](./Java_Note.assets/Eclipse_dtp_SQL_1.png)
 
----
+###### SQL Query Builder
 
-#### Eclipse 各版本与 JDK 对应关系
+「SQL Query Builder」 这个插件依赖 [SQL Parsers](#SQL%20Parsers) 插件，拟勾选「SQL Query Builder」时，会连 [SQL Parsers](#SQL%20Parsers) 插件也一起装了。
 
-> [!info] Eclipse 版本代号
-> 从 2018 年 9 月开始，Eclipse 每 3 个月发布一个版本，并且版本僅不再延续天文星体名称，直接使用年份跟月份。
-
-| 版本代号 |     代号名称     |  平台版本  |      发行日期       | 需要 JDK 版本 | 其他信息 |
-|:--------:|:----------------:|:----------:|:-------------------:|:-------------:|:--------:|
-|    IO    |   木卫一，伊奥   |    3.1     | 2005 年 6 月 28 日  |      N/A      |   N/A    |
-| Callisto | 木卫四，卡里斯托 |    3.2     | 2006 年 6 月 26 日  |    JDK 1.4    |   N/A    |
-|  Europa  |  木卫二，欧罗巴  |    3.3     | 2007 年 6 月 27 日  |    JDK 1.5    |   N/A    |
-| Ganymed  | 木卫三，盖尼米得 |    3.4     | 2008 年 6 月 25 日  |    JDK 1.5    |   N/A    |
-| Galileo  |      伽利略      |    3.5     | 2009 年 6 月 24 日  |    JDK 1.5    |   N/A    |
-|  Helios  |      太阳神      |    3.6     | 2010 年 6 月 23 日  |    JDK 1.5    |   N/A    |
-|  Indigo  |       靛蓝       |    3.7     | 2011 年 6 月 22 日  |    JDK 1.5    |   N/A    |
-|   Juno   |       朱诺       | 3.8 及 4.2 | 2012 年 6 月 27 日  |    JDK 1.5    |   N/A    |
-|  Kepler  |      开普勒      |    4.3     | 2013 年 6 月 26 日  |    JDK 1.6    |   N/A    |
-
-勾选「Data Tools Platform Connectivity」
-会根据依赖装两组插件：
-Data Tools Platform Connectivity
-Data Tools Platform SQL Development Tools
-![Data Tools Platform Connectivity](./Java_Note.assets/Eclipse_dtp_1.png)
-
-![Data Tools Platform Connectivity2](./Java_Note.assets/Eclipse_dtp_1_1.png)
+![Eclipse DTP SQL Builder 1](./Java_Note.assets/Eclipse_dtp_SQL_Builder_1.png)
 
 ###### SQL Parsers
 
 SQL Parsers 这是跟 Model 相关的，应该是模型转换器。
 
 ![Eclise DTP SQL Parsers 1](./Java_Note.assets/Eclise_dtp_SQL_Parsers_1.png)
+
+###### Open Data Access Designer
+
+「Open Data Access Designer」 依赖 「Open Data Access Designer Core」，而「Open Data Access Designer Core」又依赖「Open Data Access Designer Runtime」，所以只用勾选「Open Data Access Designer」就可以将其他两个一起装了。
+
+###### 对于 Eclipse 中使用数据库管理的总结
+
+因为 [Data Tools Platform](#Data%20Tools%20Platform) 这套插件有点多，如果不知道装哪些，可以装 [Dali Java Persistence Tools](#Dali%20Java%20Persistence%20Tools) 这个插件，此插件是一个「持久化」插件，其中一个功能可以将数据库的表生成 Java 类，非常的方便，而这插件依赖了 DTP 部分基础插件。
+
+实话 [Data Tools Platform](#Data%20Tools%20Platform) 这插件实在有点老，建议还是使用 [DBeaver](DataBase_Note.md#DBeaver) 的 [插件版](#DBeaver) 本来替代。
+
+---
+
+##### DBeaver
+
+DBeaver 插件版是 [DBeaver](DataBase_Note.md#DBeaver) 的插件形式。
+
+这比 [Data Tools Platform](#Data%20Tools%20Platform) 系列插件强太多，建议使用些插件替代 **DTP**。
+
+此插件安装地址：[https://dbeaver.io/update/latest/](https://dbeaver.io/update/latest/)，可以通过添加这个址安装，当然也可以通过 [Marketplace](#Marketplace) ：[https://marketplace.eclipse.org/content/dbeaver](https://marketplace.eclipse.org/content/dbeaver) 来安装。
+
+DBeaver 插件版也独立安装版功能一致，具体信息可以参考 [DBeaver 介绍](DataBase_Note.md#DBeaver)。
+
+---
+
+##### Dali Java Persistence Tools
+
+[Dali Java Persistence Tools](https://projects.eclipse.org/projects/webtools.dali) 这是一个持久化插件。同样是跟数据库相关的，所以装它时，会将 [Data Tools Platform](#Data%20Tools%20Platform) 相关的插件也一并装了。
+
+![Dali Java Persistence Tools 1](./Java_Note.assets/Eclipse_Dali_Persistence_1.png)
 
 ---
 

@@ -452,19 +452,19 @@ SQL Parsers 这是跟 Model 相关的，应该是模型转换器。
 
 因为 [Data Tools Platform](#Data%20Tools%20Platform) 这套插件有点多，如果不知道装哪些，可以装 [Dali Java Persistence Tools](#Dali%20Java%20Persistence%20Tools) 这个插件，此插件是一个「持久化」插件，其中一个功能可以将数据库的表生成 Java 类，非常的方便，而这插件依赖了 DTP 部分基础插件。
 
-实话 [Data Tools Platform](#Data%20Tools%20Platform) 这插件实在有点老，建议还是使用 [DBeaver](DataBase_Note.md#DBeaver) 的 [插件版](#DBeaver) 本来替代。
+实话 [Data Tools Platform](#Data%20Tools%20Platform) 这插件实在有点老，建议还是使用 [DBeaver](../DataBase/DataBase_Note.md#DBeaver) 的 [插件版](#DBeaver) 本来替代。
 
 ---
 
 ##### DBeaver
 
-DBeaver 插件版是 [DBeaver](DataBase_Note.md#DBeaver) 的插件形式。
+DBeaver 插件版是 [DBeaver](../DataBase/DataBase_Note.md#DBeaver) 的插件形式。
 
 这比 [Data Tools Platform](#Data%20Tools%20Platform) 系列插件强太多，建议使用些插件替代 **DTP**。
 
 此插件安装地址：[https://dbeaver.io/update/latest/](https://dbeaver.io/update/latest/)，可以通过添加这个址安装，当然也可以通过 [Marketplace](#Marketplace) ：[https://marketplace.eclipse.org/content/dbeaver](https://marketplace.eclipse.org/content/dbeaver) 来安装。
 
-DBeaver 插件版也独立安装版功能一致，具体信息可以参考 [DBeaver 介绍](DataBase_Note.md#DBeaver)。
+DBeaver 插件版也独立安装版功能一致，具体信息可以参考 [DBeaver 介绍](../DataBase/DataBase_Note.md#DBeaver)。
 
 ---
 

@@ -320,6 +320,30 @@ Obsidian 的插件分为 「核心插件」和「第三方插件」。
 
 ---
 
+##### <span id="obn_plugins_omnisearch">Omnisearch</span>
+
+[Omnisearch](https://github.com/scambier/obsidian-omnisearch) 是搜索增强插件。
+
+功能：
+* 支持搜索 PDF 文件
+* 能将搜索结果插入 `[[]]` 链接中
+* 支持 **vim** 方式的导航操作
+
+---
+
+##### <span id="obn_plugins_wordsplitting_ch">Word Splitting for Simplified Chinese</span>
+
+[cm-chs-path](https://github.com/aidenlx/cm-chs-patch) 这个插件是增强中文分词能力。
+
+> [!info] 官方描述
+> 增加 Obsidian 内置编辑器的 (简体) 中文分词支持，使得编辑模式的双击可以选中中文，以及在 Vim 模式下可以按中文分词移动光标。
+
+这插件支持 vim 模式。
+
+如果开启「使用结巴分词」选项，这插件可能用到 [结巴分词](../Python/Python_Note.md#结巴分词)。实话，用插件内置的分词引擎已经够用了，没必要再使用结巴分词引擎了。
+
+---
+
 ##### <span id="obn_plugins_quick-explorer">Quick Explorer</span>
 这个插件，是在界面标题栏中显示，当前路径，并且可以快速浏览文件。
 

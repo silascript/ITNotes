@@ -149,6 +149,16 @@ custom_channels:
 
 ---
 
+## <span id="python_packages">常用包</span>
+
+### <span id="python_packages_jieba">结巴分词</span>
+
+[结巴分词](https://github.com/fxsjy/jieba) 是一个 Python 的中文分词组件。
+
+Obsidan 中 [中文分词插件](../Obsidian/Obsidian_Note.md#obn_plugins_wordsplitting_ch) 就有可能用到这个组件。
+
+---
+
 ## <span id="python_course_videos">Python 教程视频</span>
 
 [Python 视频清单](Python_Videos.md)

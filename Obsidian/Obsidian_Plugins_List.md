@@ -18,6 +18,7 @@ modified: 2023-02-02 4:14:15
 * [Obsidian-floating-toc-plugin](./Obsidian_Note.md#obn_plugins_obsidian-floating-toc-plugin)
 * [Relative line Numbers](./Obsidian_Note.md#obn_plugins_relativelinenumbers)
 * [Better Word Count](./Obsidian_Note.md#obn_plugins_better_word_count)
+* [中文分词增强](./Obsidian_Note.md#obn_plugins_wordsplitting_ch)
 * [Queit Outline](./Obsidian_Note.md#obn_plugins_quiet_outline)
 * [Crease](./Obsidian_Note.md#obn_plugins_crease)
 * [Editing-toolbar](./Obsidian_Note.md#obn_plugins_editing-toolbar)

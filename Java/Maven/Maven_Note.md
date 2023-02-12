@@ -1,6 +1,10 @@
 ---
-aliases: 
-tags: java maven jdk
+aliases:
+  - 
+tags:
+  - java
+  - maven
+  - jdk
 created: 2023-01-13, 12:27:45
 modified: 2023-01-31, 9:50:15
 ---
@@ -13,7 +17,6 @@ modified: 2023-01-31, 9:50:15
 	* [本地仓库](mvn_settings_localRepo)
 * [Maven 项目](#mvn_project)
 	* [JDK 版本指定](#mvn_project_jdk_version)
-
 
 ---
 
@@ -28,6 +31,12 @@ Maven 配置主要有两块配置：
 ```xml
 <localRepository>D:/mvn_repository/</localRepository>
 ```
+
+### <span id="mvn_settings_remoteRepo">远程仓库</span>
+
+#### <span id="mvn_settings_remoteRepo_mvnrepository">中央仓库</span>
+
+中央仓库地址：[https://mvnrepository.com/](https://mvnrepository.com/)
 
 ---
 
@@ -112,12 +121,10 @@ Maven 配置主要有两块配置：
 
 ```
 
-
 检测配置是否成功：
 ```shell
 mvn help:system
 ```
-
 
 ---
 
@@ -161,7 +168,6 @@ ${basedir}
 * `src/assembly` 组件（Assembly） 描述符所在目录
 * `src/site` 站点文件
 
-
 ---
 
 ### <span id="mvn_project_settings_codeending">编码设置</span>
@@ -175,7 +181,6 @@ ${basedir}
 	<maven.compiler.encoding>UTF-8</maven.compiler.encoding>  
 </properties>
 ```
-
 
 ---
 
@@ -197,7 +202,6 @@ java11 指定
   </properties>
 </profile>
 ```
-
 
 项目 `pom.xml`：
 1. 
@@ -226,7 +230,4 @@ java11 指定
 ```
 
 ---
-
-
-
 

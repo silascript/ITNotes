@@ -1,10 +1,24 @@
 ---
-aliases: 
-tags: PL python pip conda
+aliases:
+  - 
+tags:
+  - PL
+  - python
+  - pip
+  - conda
 created: 2023-01-13, 12:27:46
 modified: 2023-01-30, 9:19:48
 ---
 # Python 笔记
+
+---
+
+## 目录
+
+* [安装和常用](#安装和常用)
+	* [更新](#更新)
+	* [pip 换源](#pip%20换源)
+* [Python 教程视频](#python_course_videos)
 
 ---
 
@@ -132,3 +146,10 @@ custom_channels:
   pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloudtext
 ```
+
+---
+
+## <span id="python_course_videos">Python 教程视频</span>
+
+[Python 视频清单](Python_Videos.md)
+

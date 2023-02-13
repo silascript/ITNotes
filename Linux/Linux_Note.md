@@ -45,6 +45,10 @@ tags:
   * [使用 desktop](#linux_soft_install_desktop)
 ---
 
+## <span id="linux_terminal">终端</span>
+
+---
+
 ## <span id="linux_configs">配置文件</span>
 
 * profile 文件

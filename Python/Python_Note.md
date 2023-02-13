@@ -22,7 +22,11 @@ modified: 2023-01-30, 9:19:48
 
 ---
 
-## 安装和常用
+## <span id="python_install">安装</span>
+
+---
+
+## <span id="python_pip">pip</span>
 
 ### 更新
 
@@ -117,6 +121,38 @@ wget -c -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
 更详细的 wget 的使用，可以参考 [wget 介绍](../Linux/Linux_Note.md#linux_network_command_downloader_wget)。
 
+使用 `sudo sh xxxxx.sh` 命令来安装 miniconda。
+> [!tip] sh 执行权限
+> 执行安装脚本时，最好还是加上 `sudo`，因为如果你要将 miniconda 安装在如 `/opt/miniconda` 目录下时，`miniconda` 这个自定义的 miniconda 安装目录如果不存在，安装脚本在安装到指定 [安装目录](#^774c11) 这一步骤时，会提示安装目录不存在，需要创建，这时就需要在 `opt` 下创建 `miniconda` 子目录。但 miniconda 安装脚本是不允许事先先建好个安装目录的，这个安装目录必须根据用户指定设置后，由脚本自行创建，如果指定了事先存在的安装目录，就会出现 `ERROR: File or directory already exists: '/opt/miniconda3'` 这样的提示，而由脚本自行创建，那就需要 root 权限，这同样也是为什么 miniconda 安装脚本默认安装路径是用户根下了，因为安装在用户根下不需要 root 权限就能创建安装目录，所以需要将 miniconda 安装到非用户目录下时，就得在执行安装脚本时使用 `sudo` 来执行。
+^1f5cab
+
+安装脚本执行过程： ^2156b8
+1. 看许可并同意
+2. 指定安装路径
+> [!tip] 默认路径及指定路径
+> 默认安装路径会是在 `/home/用户名/miniconda3`。可以自行指定路径。但如果想要将 miniconda 安装在非用户目录下，就需要在执行 miniconda 安装脚本时使用 `sudo`，以此来让安装脚本拥有 [root权限](#^1f5cab)，以便顺利创建 minconda 的安装目录。 ^774c11
+3. 初始化
+> [!info] 初始化做了什么
+> ```shell
+> Do you wish the installer to initialize Miniconda3
+> by running conda init? [yes|no]
+> [no] >>> yes
+> no change     /opt/miniconda3/condabin/conda
+> no change     /opt/miniconda3/bin/conda
+> no change     /opt/miniconda3/bin/conda-env
+> no change     /opt/miniconda3/bin/activate
+> no change     /opt/miniconda3/bin/deactivate
+> no change     /opt/miniconda3/etc/profile.d/conda.sh
+> no change     /opt/miniconda3/etc/fish/conf.d/conda.fish
+> no change     /opt/miniconda3/shell/condabin/Conda.psm1
+> no change     /opt/miniconda3/shell/condabin/conda-hook.ps1
+> no change     /opt/miniconda3/lib/python3.10/site-packages/xontrib/conda.xsh
+> no change     /opt/miniconda3/etc/profile.d/conda.csh
+> modified      /root/.bashrc
+>
+> ```
+> 其实就是装了些基础包及配置了下环境变量。
+
 ---
 
 ### <span id="python_conda_chsources">conda 换源</span>
@@ -146,6 +182,102 @@ custom_channels:
   pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloudtext
 ```
+
+---
+
+### <span id="python_conda_commands">常用命令</span>
+
+#### <span id="python_conda_commands_remove">删除</span>
+
+#### <span id="python_conda_commands_create">创建</span>
+
+#### <span id="python_conda_commands_list">List</span>
+
+`conda list` 命令默认是列表出当前环境中包。 ^b4c89c
+
+而如果什么环境都没有 [启动](#启动环境)，那就会列出默认的 [base 环境](#base%20环境) 中的包。
+
+#### <span id="python_conda_commands_env">env</span>
+
+`conda env` 是针对 [环境](#环境) 的命令。
+
+> [!tip] conda env list
+> `conda env list` 不能与 `conda list env` 混淆。
+> 
+> `conda env list` 是列出有哪些环境；而 `conda list env` 这种语法根本就是错误的，要 [列出某环境中的包](#环境包列表)，得使用 `conda list -n 环境名` 这样的命令。
+
+---
+
+### <span id="python_conda_environment">环境</span>
+
+#### base 环境
+
+[安装](#^2156b8) 完 conda 后，conda 就自带了一个叫「base」的环境，这下环境是装在 conda 安装目录下的 `env` 子目录中。
+
+#### <span id="python_conda_environment_create">创建环境</span>
+
+创建环境使用到了 [创建](#python_conda_commands_create) 命令：`conda create -n myenv`
+> [!info] 命令解释
+> 使用 `-n` 参数来创建环境，实参的值就是自行指定的「环境名称」
+> 
+> 创建的环境会保存在用户目录下的 `.conda/envs` 目录下的同名目录中，如示例中的 *myenv* 环境，就会放在 `.conda/envs/myenv` 中。
+> 
+> 创建环境时，如不指定 Python 的版本，默认安装最新的 Python 版本。
+
+创建时指定 Python 版本号及安装的包，其语法：`conda create -n your _env_name package_name python=X.X`
+
+示例：
+`conda create -n myenv numpy matplotlib python=3.8`
+
+只指定 Python 版本，在创建环境时，也连带 [pip](#pip) 等也一并安装了。
+
+#### <span id="python_conda_environment_removeqn">删除环境</span>
+
+删除环境使用到了 [删除](#python_conda_commands_remove) 命令：`conda remove -n 环境名称 --all`
+> [!info] 命令解释
+> `--all` 指的是删除这个环境中所有的包
+
+---
+
+#### <span id="python_conda_environment_activate">启动环境</span>
+
+启动环境：`conda activate 环境名`
+
+> [!tip] 指定 shell 类型
+> 第一次启动环境时，会有提示让你指定使用的 shell 类型：`conda init shell类型`。然后重启 Terminal，这时才会启动环境成功。而一次启动环境就不用再指定 Shell 类型了。
+
+^d508bb
+
+> [!tip] 关闭启动 base 环境
+> 默认情况，在 `init` 时 [指定shell类型](#^d508bb) 重启 [终端](../Linux/Linux_Note.md#终端) 后，每次启打开 [终端](../Linux/Linux_Note.md#终端)，都会自动启动 [base 环境](#base%20环境)，这会影响到正常的 Terminal 的使用，有点烦，所以为了解决这问题，就需要关闭自动启动 base 环境。可以使用以下这个命令实现：
+> 
+> `conda config --set auto_activate_base false`
+> 
+> 执行完全命令后，可以查看下 `.condarc` 文件，应该可以看到 `auto_activate_base: false` 这个配置项存在，这就证明关闭了自动启动 base 环境。
+
+---
+
+#### <span id="python_conda_environment_deactivate">退出环境</span>
+
+退出当前环境，使用：`conda deactivate` 命令。
+
+#### <span id="python_conda_environment_list">环境列表</span>
+
+要查看当前 conda 中有哪些环境，可以使用 `conda env list` 或 `conda info --env` 来查看。
+
+#### <span id="python_conda_environment_packagelist">环境包列表</span>
+
+每一个环境其实就是各种「Package」的集合，所以一个环境中根本需求会有不同的包。那查看当前环境都装了哪个包，就可以使用 `conda list -n 环境名`。
+
+如果在没有启动任何环境情况下，只输入 `conda list`，那 conda 会列出 [base 环境](#base%20环境) 下的包。
+> [!tip]
+> [base 环境](#base%20环境) 是 conda 的默认环境，即便它没有被启动，它也拥有相当的「特权」。
+> 
+> 在没有启动任何环境时，`conda list` 等效于 `conda list -n base`。
+> 
+> 即 `conda list -n 环境名`，这个语法能使用任何环境上，即便没有 [启动环境](#启动环境)，也能查看指定环境中安装了哪些包。
+
+conda 能装什么包，可以通过 [anaconda官网](https://anaconda.org/) 查询。
 
 ---
 

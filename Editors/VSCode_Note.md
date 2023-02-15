@@ -72,3 +72,11 @@ Profile 新功能还支持将配置「导入」和「导出」，非常适合将
 
 ---
 
+## 个人配置
+
+* [VSCode Profile Github Repo](https://github.com/silascript/VSCode_Settings)
+* [VSCode Settings Syncing Gist for Linux](https://gist.github.com/silascript/fd1d5111ce372d3f313eae6064c173c3)
+* [VSCode Settings Syncing Gist for Windows](https://gist.github.com/silascript/690b9a6eefe395a0f0f6cba397f06c3c)
+
+---
+

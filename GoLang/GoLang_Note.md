@@ -40,7 +40,7 @@ modified: 2023-01-31, 11:09:48
 
 ---
 
-### 配置 ^config
+### 配置
 
 下载、解压，最后配 `PATH` 环境变量。
 > 如果升级新版本，最后不要用新版直接覆盖旧版，这样容易在安装模块时出问题。最后先把旧版目录删除，新版的目录命令成一样的，复制到一样的路径下。这样升级，不用重新改 `PATH` 环境变量，也能使用 go。
@@ -130,5 +130,3 @@ go install golang.org/x/tools/gopls@latest
 
 [Go社区 Wiki](https://learnku.com/go/wikis)
 
-
-[配置](#^config)

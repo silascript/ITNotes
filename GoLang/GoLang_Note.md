@@ -50,6 +50,8 @@ modified: 2023-01-31, 11:09:48
 export PATH=$PATH:/opt/golang/bin
 export PATH=$PATH:$(go env GOPATH)/bin
 ```
+> [!tip] GOPATH
+> 旧的版本，即 1.11 之前的版本，环境变量还得设置 `GOPATH`，新的版本就不用理了。
 
 go 的环境配置是存放在 `~/.config/go/` 目录下的 `env` 文件，可以使用任何一个文本编辑器编辑。
 
@@ -67,6 +69,8 @@ go 的环境配置是存放在 `~/.config/go/` 目录下的 `env` 文件，可�
 GO111MODULE=on
 GOPROXY=https://proxy.golang.com.cn,direct
 ```
+> [!tip]
+> `GO111MODULE` 是指 Go 1.11 后的版本使用 Module 方式
 
 也可以使用命令进行配置：
 ```shell
@@ -104,9 +108,7 @@ go env -w GOPROXY=https://goproxy.cn,https://proxy.golang.com.cn,https://goproxy
 
 [GOPROXY](#golang_setup_proxy_goproxy) 下载压缩包后，还会调用 `GOSUMDB` 来对文件进行哈希校验。这是 Go Module 的安全机制。
 
-同样因为国内访问的问题，[sum.golang.org](https://sum.golang.org) 会连接越野，所以会导致下载流程无法完成。
-
-所以连 `GOSUMDB` 也得进行代理。
+同样因为国内访问的问题，[sum.golang.org](https://sum.golang.org) 会连接超时，这样会导致下载流程无法完成。所以 `GOSUMDB` 也得进行代理。
 
 [sum.golang.google.cn](https://sum.golang.google.cn) 这是国内的 GOSUMDB 代理网址。
 
@@ -122,6 +124,61 @@ go env -w GOSUMDB=sum.golang.google.cn
 示例：
 ```shell
 go install golang.org/x/tools/gopls@latest
+```
+
+---
+## Go 命令
+
+查看 go 版本：
+```shell
+go version
+```
+
+编译：
+```shell
+go build xxx.go
+```
+
+运行：
+```shell
+go run xxx.go
+```
+
+清除对象：
+```shell
+go clean
+```
+
+显示 go 相关环境属性：
+```shell
+go env
+```
+
+格式化：
+```shell
+fmt
+```
+
+下载包：
+```shell
+go get
+```
+
+安装包及其依赖：
+```shell
+go install 
+```
+
+列出包：
+```shell
+go list
+```
+
+### go mod 命令
+
+初始化：
+```shell
+go mod init 项目名
 ```
 
 ---

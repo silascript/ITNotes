@@ -24,6 +24,9 @@ modified: 2023-02-02 9:19:02
 *  [插件](#obn_plugin)
 	* [第三方插件](#obn_plugins_commp)
 		* [常用插件](#常用插件)
+			* [Batter Command Palette](#obn_plugins_better_command_palette) 
+			* [Quick Switcher++](#obn_plugins_quickswitcher_plus) 
+			* [Another Quick Switcher](#obn_plugins_another_quickswitcher) 
 			* [quick explorer](#obn_plugins_quick-explorer)
 			* [show current file path](#obn_plugins_show-current-file-path)
 			* [Better Word Count](#obn_plugins_better_word_count)
@@ -232,7 +235,7 @@ modified: 2023-02-02 9:19:02
 
 设置并使用「显示文件列表」快捷键，就能将焦点从比如编辑区跳转到侧边栏，对文件列表或搜索标签进行下一步的标签页切换操作。
 > [!tip] 焦点切回文件列表
-> 我个人将此快捷键设置为 `Ctrl+Shift+M`
+> 我个人将此快捷键设置为 `Ctrl+Shift+M` (`Ctrl+Shift+H` 有可能与 [osdlyrics](https://github.com/osdlyrics/osdlyrics) 这个音乐播放器歌词插件的快捷键冲突，我在 Linux 上使用到这货)
 
 #### 侧边栏的开关
 
@@ -317,6 +320,11 @@ Obsidian 的插件分为 「核心插件」和「第三方插件」。
 
 ###### 符号导航模式
 输入 `@` 来触发 符号导航。符号导航（「Symbol Navigation」）中的「符号」 包括标题、链接、Hashtag、[Callout](#obn_syntax_calloutblocks) 等。
+
+---
+##### <span id="obn_plugins_another_quickswitcher">Another Quick Switcher</span>
+
+[Another Quick Switcher](https://github.com/tadashi-aikawa/obsidian-another-quick-switcher) 与 [Quick Switcher plus](#Quick%20Switcher%20plus) 插件类似，都是对原生的 [快速切换](#快速切换) 功能的增强。这个相较于 [Quick Switcher plus](#Quick%20Switcher%20plus) 更偏向于「搜索」，连命令都叫「xx Search」。
 
 ---
 
@@ -511,9 +519,19 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 ##### <span id="obn_plugins_relativelinenumbers">Relative line Numbers</span>
 
+相对行号插件，有两个：
+
+###### Relative Line Numbers Plugin
+
 [obsidian-relative-line-numbers](https://github.com/nadavspi/obsidian-relative-line-numbers) 是一个显示相对行号的插件
 
 ![relative line numbers demo](https://github.com/nadavspi/obsidian-relative-line-numbers/raw/main/demo.gif)
+
+这插件使用时最好关闭原生行号功能，这样显示会合理些。
+
+###### relativenumber
+
+[relativenumber](https://github.com/thisdotrob/obsidian-relativenumber-plugin) 这个与上面的 [Relative Line Numbers](#Relative%20Line%20Numbers%20Plugin) 功能类似。从 github 上源码更新频率，这款没有上面那款勤。
 
 ---
 

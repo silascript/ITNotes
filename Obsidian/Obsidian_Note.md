@@ -165,6 +165,14 @@ modified: 2023-02-02 9:19:02
 
 ---
 
+### <span id="obn_themes_minimal">Minimal</span>
+
+[Minimal](https://github.com/kepano/obsidian-minimal) 是一款有点「朴素」的主题。
+
+它支持 [Style-Settings](obn_plugins_style-settings)，而且大部分设置都在 Style-Settings 中实现。但大部分设置都没有预设，得用户自己一个个设。所以有一款插件将这「缺陷」补上了：[Minimal Settings](#obn_plugins_minimal_settings)。
+
+---
+
 ## <span id="obn_basic">基础用法</span>
 
 ### <span id="obn_default_hotkeys">常用默认快捷键</span>
@@ -704,6 +712,14 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 ##### <span id="obn_plugins_tag_wrangler">Tag Wrangler</span>
 
 [Tag Wrangler](https://github.com/pjeby/tag-wrangler) tag 整理插件。
+
+---
+
+##### <span id="obn_plugins_minimal_settings">Minimal Settings</span>
+
+[Minimal Settings](https://github.com/kepano/obsidian-minimal-settings) 这是对 [Minimal](#Minimal) 主题的设置。
+
+其中预设了多种配色，这样用户不用在 [Style Settings](#Style%20Settings) 完全「DIY」了。
 
 ---
 

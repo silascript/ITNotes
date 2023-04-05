@@ -1,6 +1,8 @@
 ---
-aliases: 
-tags: font
+aliases:
+  - 
+tags:
+  - font
 created: 2023-01-13, 12:27:45
 modified: 2023-01-31, 11:10:44
 ---
@@ -17,8 +19,6 @@ modified: 2023-01-31, 11:10:44
 
 ---
 ## <span id="fonts_zh">中文字体</span>
-
-
 
 ### <span id="fonts_zh_notofont">思源字体</span>
 
@@ -40,13 +40,11 @@ modified: 2023-01-31, 11:10:44
 * .ttc Super OTC 所有五种语言和所有七种粗细，以及常规和粗体的 HW 版 ，45 合一字体。
 * .ttc OTC 五种语言合一，相比 Super OTC，按七种字重分成了 7 个字体文件，五种语言五合一字体
 
-
 思源分为「黑体」和「宋体」两种。
 
 Google 版黑体的叫 「Noto Sans CJK」，Adobe 版黑体叫「Source Han Sans」，字形两者完全一样，只是字体和字重的称呼不同而已。
 
 Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Serif」，与黑体一样，Google 版和 Adobe 版只是称呼不同。
-
 
 当然各地区的汉字标准是有区别的，所以思源字体也分地区不同，有不同的字型。
 
@@ -56,25 +54,19 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 
 ![noto fonts](./Fonts_Note.assets/noto_fonts.png)
 
-
 * [思源宋体](https://fonts.google.com/noto/fonts?noto.region=CN) [![source-han-serif repo](https://img.shields.io/github/stars/adobe-fonts/source-han-serif?style=social)](https://github.com/adobe-fonts/source-han-serif)
 
 各版思源宋体差异：
 
 ![noto song fonts](./Fonts_Note.assets/noto_song_fonts.png)
 
-
 ---
-
 
 #### <span id="fonts_zh_notofont_child">思源的各种衍生字体</span>
 
 因为思源字体是开源字体，所以出现了各式各样的衍生字体。
 
-
-
 ##### <span id="fonts_zh_notofont_genne">源音黑体</span>
-
 
 [源音黑体](https://github.com/MoneMizuno/Genne-Gothic) 是修改于思源黑体的字体。主要是将一些字型改为旧字形。
 
@@ -85,18 +77,13 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 [源样黑体](https://github.com/ButTaiwan/genyog-font) 是以思源韩版的字符为主，加配繁中置中标点而成的。
 > 韩版思源的字符都是旧字形。思源衍生字体如果是倾向旧字形，一般都从思源韩版中取字符。
 
-
-
 ##### <span id="fonts_zh_notofont_genseki">源石黑体</span>
 
 [genseki](https://github.com/ButTaiwan/genseki-font)
 
 源石与源样区别在笔画上，源石的笔画有「喇叭口」特征，看起来更传统。
 
-
-
 ---
-
 
 ##### <span id="fonts_zh_notofont_chiron">昭源字体</span>
 
@@ -107,7 +94,6 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 
 * 昭源宋体 [![chiron-sunng-hk repo](https://img.shields.io/github/stars/chiron-fonts/chiron-sung-hk?style=social)](https://github.com/chiron-fonts/chiron-sung-hk) 
 
-
 思源宋
 
 ![思源宋](https://chiron-fonts.github.io/technical-details/motivation/familiar-1.svg)
@@ -116,37 +102,32 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 
 ![昭源宋](https://chiron-fonts.github.io/technical-details/motivation/familiar-9.svg)
 
-
 ---
 
 ##### <span id="fonts_zh_notofont_nowar">有爱黑体</span>
 
 [有爱黑体](https://github.com/nowar-fonts/Nowar-Sans)
 
-
 ---
 ##### <span id="fonts_zh_notofont_genyo">源样明体</span>
 
 [源样明体](https://github.com/ButTaiwan/genyo-font)
-
 
 ---
 ##### <span id="fonts_zh_notofont_genryu">源流明体</span>
 
 [源流明体](https://github.com/ButTaiwan/genryu-font) 是将思源宋体宽度压缩了下，并对笔画作了细微处理。
 
-
 ---
 ##### <span id="fonts_zh_notofont_genwan">源云明体</span>
 
 [源云明体](https://github.com/ButTaiwan/genwan-font) 是将「源流明体」的笔画做了朦胧处理，使其有墨晕或过曝的效果。
 
-
-
 几种黑体及宋体衍生字体对比：
 
 ![noto child compare](./Fonts_Note.assets/noto_child_1.png)
 
+![noto child compare 2](./Fonts_Note.assets/noto_child_2.png)
 
 真服了，这些那几款有「泥古」倾向的字体，「配」和「妃」两字全「挂」了 -- 估计是思源韩国版的「配」和「妃」本就是「己」字，所以基于韩国版本而制作的追求复古的衍生字体，在这两字都不太「古」！
 
@@ -170,7 +151,6 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 
 <img src="./Fonts_Note.assets/27_914D.svg" width="100" height="100" />
 
-
 金文：
 
 西周早中期：
@@ -178,7 +158,6 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 西周晚期：
 <img src="./Fonts_Note.assets/34_EA8D.svg" width="100" height="100" />
 <img src="./Fonts_Note.assets/34_EA90.svg" width="100" height="100" />
-
 
 春秋：
 <img src="./Fonts_Note.assets/34_EA91.svg" width="100" height="100" />
@@ -208,11 +187,9 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 ![中原音韵 配](./Fonts_Note.assets/中原音韵_配.png)
 ![中原音韵 妃](./Fonts_Note.assets/中原音韵_妃.png)
 
-
 《洪武正韵》：
 
 ![洪武正韵 配](./Fonts_Note.assets/洪武正韵_配_妃.png)
-
 
 很明显古代字书、韵书，有取「己」有取「巳」，甚至有像《洪武正韵》的「长脖子」的「已」。
 >《洪武正韵》那个「配」和「妃」就有点搞笑了，说是「巳」，但没「闭口」，说是「已」，那竖弯勾的「脖子」有点长了。  
@@ -272,7 +249,6 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 | semibolditalic |	半粗斜体 |
 | bolditalic | 粗斜体 |
 
-
 更纱黑体各版差异：
 
 ![sarasa fonts](./Fonts_Note.assets/sarasa_fonts.png)
@@ -302,8 +278,6 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 
 [DejaVu](https://dejavu-fonts.github.io) [![DejaVu Repo](https://img.shields.io/github/stars/dejavu-fonts/dejavu-fonts?style=social)](https://github.com/dejavu-fonts/dejavu-fonts) 是一套改造自 Bitstream Vera 字体，扩展了 Unicode 所含的字符。
 
-
-
 ---
 
 ### <span id="fonts_program_mesol">Mesol</span>
@@ -320,7 +294,6 @@ Menlo 调整：
 * 「星号」的位置 
 
 DejaVu 的 「星号」是偏中上的，Menlo 将其改到居中位置。
-
 
 ![dejavu-menlo-colors](http://www.leancrew.com/all-this/images/dejavu-menlo-colors.png)
 
@@ -339,12 +312,10 @@ DejaVu 的 「星号」是偏中上的，Menlo 将其改到居中位置。
 
 这是思源字体 +[Iosevka](https://typeof.net/Iosevka/) [![Iosevka](https://img.shields.io/github/stars/be5invis/Iosevka?style=social)](https://github.com/be5invis/Iosevka) 而成的字体。
 
-
 ---
 ### <span id="fonts_program_firacode">FiraCode</span>
 
 [FiraCode](https://github.com/tonsky/FiraCode) 是 Mozilla 的开源字体，最大特点是支持「连字」。
-
 
 ---
 ### <span id="fonts_program_cascadia">Cascadia</span>
@@ -362,29 +333,24 @@ Cascadia Code 版本差异：
 | Cascadia Code PL | 是 | 是 |
 | Cascadia Mono PL  | 否 | 是 |
 
-
 ---
 ### <span id="fonts_program_source-code-pro">Source Code Pro</span> 
 
 [Source Code Pro](https://github.com/adobe-fonts/source-code-pro) 是 Adobe 打造的专门用于编程的开源字体。
-
 
 ---
 ### <span id="fonts_program_jetbrains-mono">JetBrains Mono</span>
 
 [JetBrains Mono](https://www.jetbrains.com/lp/mono/#how-to-install) [![JetBrains Mono Repo](https://img.shields.io/github/stars/JetBrains/JetBrainsMono?style=social)](https://github.com/JetBrains/JetBrainsMono) JetBrains 专门为编程打造的开源字体。
 
-
 ---
 ### <span id="fonts_program_plex">Plex Mono</span>
 
 [Plex Mono](https://github.com/IBM/plex) 是 IBM 开发的一款开源字体家族 Plex 中等宽字体。
-
 
 ---
 
 ### CodingFont
 
 [CodingFont](https://www.codingfont.com) 是一个在线预览编程字体的网站。
-
 

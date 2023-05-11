@@ -1,5 +1,6 @@
 ---
-aliases: []
+aliases:
+  - 
 tags:
   - docker
   - http
@@ -8,7 +9,7 @@ tags:
   - ubuntu
   - mysql
 created: 2023-01-13 12:27:45
-modified: 2023-02-02 10:12:18
+modified: 2023-05-12 2:55:30
 ---
 
 # Docker 笔记
@@ -58,7 +59,6 @@ modified: 2023-02-02 10:12:18
 传统方式是在硬件层面实现虚拟化，需要有额外的虚拟机管理应用和虚拟机操作系统层。  
 Docker 容器是在操作系统层面上实现虚拟化，直接复用本地主机的操作系统，因此更加轻量级。
 
-
 ---
 
 ## <span id="dk_arch">Docker 架构及概念</span>
@@ -76,14 +76,10 @@ Docker 大部分操作都围绕着三大核心概念：**镜像**、**容器** �
 	最大的公开仓库是官方提供的 [Docker Hub](https://hub.docker.com "hub.docker.com")。  
 	当然用户也可以创建只有自己可访问的本地网络的私有仓库。
 
-
 Docker 使用 C/S 架构模式，使用远程 API 来管理和创建 Docker 容器。
 Docker 容器通过 Docker 镜像来创建。
 
-
-
 ![Docker 各概念及基本架构](./Docker_Note.assets/docker1.png "Docker 架构")
-
 
 ---
 
@@ -122,7 +118,6 @@ sudo systemctl start docker
 > sudo systemctl restart docker
 > ```
 
-
 ### <span id="dk_install_win">Windows 下安装 Docker</span>
 1. 安装 Docker
 个人喜欢用 [Scoop]() 来安装软件，所以 Docker 也不例外。
@@ -150,7 +145,6 @@ Start-Service docker
 Windows 下 Docker 的数据目录路径是在 `C:\ProgramData\docker`。
 
 Windows 下 Docker 的 daemon.json 文件是放在 `C:\ProgramData\docker\config` 目录下。
-
 
 ---
 
@@ -183,11 +177,9 @@ Docker 镜像列表
 | Docker 中国区官方镜像 | https://registry.docker-cn.com     |
 | DaoCloud            | https://hub.daocloud.io            |
 
-
 ###  <span id="dk_image_bugs">镜像问题</span>
 
  docker 出现 `no matching manifest for windows/amd64 10.0.18363 in the manifest list entries` 错误。
-
 
 在 `daemon.json` 配置文件中添加：
 ```json
@@ -195,14 +187,12 @@ Docker 镜像列表
 ```
 然后重启服务。
 
-
 run 容器时出现 `Error response from daemon: failed to start service utility VM ` 错误。
 
 ```shell
 BCDEdit /set hypervisorlaunchtype auto
 ```
 重启电脑。
-
 
 ---
 
@@ -246,7 +236,6 @@ docker search xxx
 
 2. 到 [hub.docker](https://hub.docker.com) 上搜
 
-
 下载镜像：
 ```shell
 docker pull 镜像名[:tag]
@@ -263,10 +252,7 @@ docker images
 docker rmi 镜像名
 ```
 
-
-
 ---
-
 
 ## <span id="dk_container">容器操作</span>
 
@@ -279,14 +265,15 @@ docker rmi 镜像名
 ```shell
 docker create -it --name 自定义容器名 镜像名
 ```
+
 常用参数：
-* -i, --interactive=true|false：保持标准输入打开，默认为 false 
-* -t, --tty=true|false：是否分配一个伪终端，默认为 false
-* -p, --publish 端口
-* --name：指定容器的别名
-* -v|--volume [=Host-dir:]：挂载宿主机上的文件卷到容器内
-* --ip ：指定容器的 IPv4 地址
-* --link=[<name or id>:alias]：链接到其他容器
+* `-i, --interactive=true|false`：保持标准输入打开，默认为 false 
+* `-t, --tty=true|false`：是否分配一个伪终端，默认为 false
+* `-p, --publish`： 端口
+* `--name`：指定容器的别名
+* `-v|--volume [=Host-dir:]`：挂载宿主机上的文件卷到容器内
+* `--ip`：指定容器的 IPv4 地址
+* `--link=[<name or id>:alias]`：链接到其他容器
 
 2. <span id="dk_container_start">启动容器</span>
 
@@ -295,12 +282,12 @@ docker create -it --name 自定义容器名 镜像名
 ```
 docker start 容器名|容器ID
 ```
-> 相关命令：
-> `docker ps` 查看运行中的容器
-> `docker ps -a` 查看所有的容器，包括没有运行中的容器
-> `docker restart` 将正在运行的容器 [停止](#dk_container_stop) 然后再运行
 
-
+> [!info] 相关命令
+>
+> * `docker ps` 查看运行中的容器
+> * `docker ps -a` 查看所有的容器，包括没有运行中的容器
+> * `docker restart` 将正在运行的容器 [停止](#dk_container_stop) 然后再运行
 
 3. 新建并启动容器
 
@@ -309,7 +296,7 @@ docker start 容器名|容器ID
 `docker create` 命令的常用选项参数，在 `docker run` 命令都通用：如 `-i`、`-t`、`-p`、`-v` 等。
 
 `docker run` 独有的常用选项参数：
-* -d,detach：在后台运行容器并将打印出容器的 ID
+`-d,detach`：在后台运行容器并将打印出容器的 ID
 > 更多的时候，需要让 Docker 容器在后台以守护形式运行，这就要加上 `-d` 选项来实现，而 `-d` 其实就是 「Daemon」。
 
 ### <span id="dk_container_stop">停止容器</span>
@@ -326,7 +313,6 @@ docker stop 容器名|容器ID
 ```
 > 相关命令：  
 > [启动容器](#dk_container_start)
-
 
 ### <span id="dk_container_exec">进入容器</span>
 
@@ -370,7 +356,6 @@ docker stats [容器名|容器ID]
 
 -noe-stream：不持续输出，默认 `docker stats` 会自动更新持续实时结果。
 
-
 ### <span id="dk_container_cp">容器与宿主机间的文件拷贝</span>
 
 ```shell
@@ -380,8 +365,6 @@ docker cp .config/nvim/init.vim d_ubuntu21:/root/
 > 能拷文件也能拷文件。
 > 左侧是拷贝源，右侧是目的地。哪边有 `:` 的，哪边就是容器。
 
-
-
 ---
 
 ## <span id="dk_volume_mount">Volume 和挂载</span>
@@ -390,7 +373,6 @@ docker cp .config/nvim/init.vim d_ubuntu21:/root/
 在 Docker 中 **volume** 指的是，将容器中某些目录数据交由 Docker 「托管」。
 
 volume 是被设计用来持久化数据的，它的生命周期独立于容器，Docker 不会在容器被删除后自动删除 volume，并且也不存在垃圾回收这样的机制来处理没有任何容器引用的 volume。
-
 
 ### 常用命令
 
@@ -456,8 +438,6 @@ docker run -d --name d_apache_2.4 -p 8085:80 --mount destination=/usr/local/apac
 ```
 ![docker_mount_source_null](./Docker_Note.assets/docker_mount_source_null.png)
 
-
-
 ### volume 使用
 
 * 指定宿主绝对路径： 
@@ -507,7 +487,6 @@ docker run -d --name d_apache-2.4 -p 8085:80 -v html:/usr/local/apache2/htdocs h
 
 「**具名挂载**」和「**匿名挂载**」都是将挂载数据交由 Docker 来「托管」，所以只能指定托管的名称，不能指定数据存放的路径，默认存放在 docker 安装目录下的 volumes 子目录中（volumes 目录，顾名思义就是专门上用来管理 volume 的 ）。而这种托管，是将容器中的路径下的数据复制到 volumes 目录下，所以这种两种挂载，容器内容没有被「覆盖」。
 
-
 ---
 
 ## <span id="dk_network">网络</span>
@@ -540,9 +519,6 @@ Endpoint -."Leave()、Delete()".-> Network;
 
 删除操作正好相反，先把容器从接入口上卸载，然后删除接入口和网络即可。
 
-
-
-
 ### Docker 网络模式
 
 Docker 默认是拥有三种网络模式。
@@ -552,7 +528,6 @@ Docker 默认情况，容器使用的是「**桥接模式**」。
 **桥接模式**：bridge
 
 Docker 默认用 Linux 网桥和 IPtables 实现的单机网络。
-
 
 ```shell
 docker run -d -p [宿主机ip]:[宿主机端口]:[容器端口] --name [容器名字][镜像名称]
@@ -577,16 +552,13 @@ Host 模式下，Docker 容器的特点：
 * 容器中的服务的端口号有可能与宿主机上已经使用的端口号冲突
 * host 模式能够和其他模式共存
 
-
 **None 模式**：
 
 none 无指定网络，窗口内不指定局域网 ip host，不为 Docker 容器构造任何网络环境，不会为容器创建网络接口，
 一旦 Docker 容器采用了 none 网络模式，那么容器内部就只能使用 loopback 网络设备，不会再有其他的网络资源。
 容器只能使用 127.0.0.1 的宿主机网络。
 
-
 ---
-
 
 ### <span id="dk_network_vbridge">虚拟网桥</span>
 
@@ -595,7 +567,6 @@ none 无指定网络，窗口内不指定局域网 ip host，不为 Docker 容�
 > Docker 随机分配一个本地未占用的私有网段中的一个地址给 docker0 接口。  
 > 此后启动的容器内的网口也会自动分配一个同一网段的地址。  
 > docker0 网桥在内核层连通了其他物理或虚拟网卡，这就将所有容器和宿主机都放到同一个物理网络中。
-
 
 当创建一个 Docker 窗口时，同时会创建了一对 「veth pair」 接口（**v** 应该是 virtual；**eth** 是网络接口（ethernet）；**veth pair** 就是「虚拟网络接口对」）。
 这对接口一端在容器内，即 **eth0**；另一端在本地并被挂载到 docker0 网桥，名为称以 「veth」开头。
@@ -622,7 +593,6 @@ docker0		8000.0242d0f8c584	no
 
 由于 Docker 默认的网络不能固定 ip 地址，所以必须得创建自定义虚拟网桥，才能进行固定 ip 分配。
 对于网桥的操作，可以通过 `docker network` 命令完成，也可以通过 Linux 系统网络相关的工具完成。
-
 
 ##### 通过 非 Docker 命令来创建网桥
 1. 停止 docker 服务
@@ -671,7 +641,6 @@ echo 'DOCKER——OPTS="-b=网桥名"' >> /etc/default/docker
 sudo systemctl start docker
 ```
 
-
 ##### 通过 Docker network 命令来创建网桥
 
 ```shell
@@ -679,7 +648,6 @@ docker network create -d bridge 网桥名称
 ```
 > docker 允许创建 3 种类型的自定义网格：bridge、overlay、MACVLAN  
 > 通过 -d（--driver）设置网络类型，默认值为「bridge」。 实际就是「CNM 生命周期」中「驱动」。
-
 
 使用 `create -d bridge` 这种方式创建的网桥，Docker 会自动为其分配网关（Gateway）和子网（Subnet）。
 
@@ -724,11 +692,6 @@ docker network create --subnet 172.20.0.0/16 --gateway 172.20.0.1 -d bridge 网�
 docker network create --subnet 172.21.0.0/16 --gateway 172.21.0.1 -o com.docker.network.bridge.name=网桥名 -d bridge 网桥名 
 ```
 
-
-
-
-
-
 ---
 
 ### SNAT 与 DNAT
@@ -748,7 +711,6 @@ MASQUERADE  tcp  --  172.17.0.2           172.17.0.2           tcp dpt:3306
 
 ---
 
-
 ---
 
 ### <span id="dk_network_custom_ip">自定义固定 IP</span>
@@ -758,17 +720,13 @@ MASQUERADE  tcp  --  172.17.0.2           172.17.0.2           tcp dpt:3306
 docker: Error response from daemon: user specified IP address is supported on user defined networks only.
 ```
 
-
 ---
 
 ### <span id="dk_network_command">网络相关的常用命令</span>
 
 从 1.7 版本始， Docker 把网络与存储以插件化形式剥离。而剥离出来的网络项目为 libnetwork 项目。
 
-
-
 在 libnetwork 支持下，Docker 网络相关操作都作为 network 的子命令出现。
-
 
 * 网络列表：
 ```shell
@@ -788,7 +746,6 @@ docker network create -d overlay 网络名
 ```
 > bridge 只能指定一个子网。  
 > overlay 网络支持多个子网络，使用 `--subnet` 选项来创建子网。
-
 
 * 删除和清空无主网络：
 ```shell
@@ -813,12 +770,9 @@ docker network connect 网络名
 docker network disconnect 网络名
 ```
 
-
 ---
 
-
 #### docker inspect 查询网络相关信息的用法
-
 
 * 查询网络的详细信息：
 ```shell
@@ -826,15 +780,12 @@ docker network inspect 网络名
 ```
 > 如果使用 `docker network inspect 网桥` 查询网桥信息 ，会显示该网桥中哪些正在运行中的容器使用的 IP，这样可以在创建新容器时指定 IP 就不容易重复冲突了！所以使用自定义网桥创建容器前，先查询下该网桥网段中哪些 IP 已经被占用了。
 
-
 ##### 查询容器 IP
 
 查询所有容器名称及 IP,使用的是默认网桥:
 ```shell
 docker inspect --format='{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
 ```
-
-
 
 查询自定义网桥下已指定的 IP 有哪些,也就是全部容器占了哪些 IP.
 ```shell
@@ -847,7 +798,6 @@ docker inspect $(docker ps -aq) | grep IPv4Address
 "IPv4Address": "172.20.0.10"
 "IPv4Address": "172.20.0.9"
 ```
-
 
 使用 `docker inspect` 语法:
 ```shell
@@ -865,14 +815,11 @@ docker inspect -f '{{.Name}} - {{.NetworkSettings.Networks.vbridge01.IPAMConfig.
 
 可以将以上的代码写成个 shell 函数放到 `.bashrc` 或 `.bash_profile` 等配置文件中,方便随时调用查看 ip 占用的情况。
 
-
 `NetworkMode` 的值跟后面的 IP 地址查询相关，所以先了解这项值的意思：
 > `NetworkMode` 在 json 中的层级是：`HostConfig.NetworkMode`。所以查询 `NetworkMode` 得如下这么查：
 > ```shell
 >	docker inspect -f '{{.HostConfig.NetworkMode}}' 容器名
 > ```
-
-
 
 * `default` 用的是默认网桥，IP 所以得查 `NetworkSettings.Networks.bridge.IPAddress`
 	> 所以直接就是 bridge
@@ -913,13 +860,11 @@ function docker_ipv4_allcontainers(){
 同样的，如果是自定义网桥下取 端口，得查询 `HostConfig.PortBinddings` 节点的中的值，其子节点会列出，相关端口的映射关系：
 ![docker bingedports](./Docker_Note.assets/docker_bingedports.png)
 
-
 因为 `PortBinddings` 节点与 `HostPort` 节点间还有一个节点,那是容器内的端口,这个端口不同容器是不一样的,所以得用个变量取下,动态地指定,所以 `docker inspect` 的模板使用就如下:
 
 ```shell
 docker inspect --format='{{range $conf := .HostConfig.PortBindings}}{{(index $conf 0).HostPort}} {{end}}' 容器名
 ```
-
 
 查询所有窗口已用的端口:
 ```shell
@@ -940,18 +885,12 @@ function docker_ports_allcontainers(){
 }
 ```
 
-
-
 ---
-
-
 
 ### <span id="dk_dkf">Dockerfile 编写</span>
 
-
 **各基础镜像大小**
 ![各基础镜像大小](./Docker_Note.assets/base_image_size.png)
-
 
 简单示例：安装一个 vim
 ```dockerfile
@@ -983,7 +922,6 @@ CMD ["vim"]
 3. `dokcer build [-f] [指定 Dockerfile 文件] -t [镜像名]:[版本号] [Dockerfile 所在目录]`
 > 这是指定非默认名称的 Dockerfile 文件
 
-
 示例：
 ```shell
 docker build -f Dockerfile.debian -t mysql8:0.1 .
@@ -992,11 +930,9 @@ docker build -f Dockerfile.debian -t mysql8:0.1 .
 > **-t** 镜像名和 tag。镜像名必须是小写字母  
 > **.** 当前目录
 
-
 ---
 
 ## <span id="dk_softc_demo">各软件容器使用示例</span>
-
 
 ### 示例 1：安装及运行 Nginx:
 
@@ -1038,7 +974,6 @@ location ~ \.php$ {
 docker run --name d_nginx --network 网桥名 --ip 172.20.0.9 -d -p 8899:80 -v /home/silascript/Docker_Mount/nginx_m/etc/conf.d:/etc/nginx/conf.d -v /home/silascript/DevWorkSpace/PHPExercise:/usr/share/nginx/html -v /home/silascript/Docker_Mount/nginx_m/log:/var/log/ngixn nginx:stable
 ```
 
-
 ---
 
 ### <span id="dk_softc_demo_php">示例 2 ：PHP </span>
@@ -1054,7 +989,6 @@ docker inspect php81 |grep '"IPAddress"'
 
 ```
 
-
 检测 PHP-FPM 是否开启：
 使用 `docker exec` 命令进入 PHP 容器，执行以下命令：
 ```shell
@@ -1062,7 +996,6 @@ ps -ef|grep php
 ```
 
 > 如果没有 `ps` 命令，请安装 **procps**（以 Debian 系为例：`apt install procps`）
-
 
 指定自定义网桥和指定 ip 生成容器：
 ```shell
@@ -1074,7 +1007,6 @@ docker run --name php81 --network 网桥名 --ip x.x.x.x  -p 9000:9000 -v /home/
 docker run -d --name d_php81 --network vbridge01 --ip 172.20.0.8 -p 9000:9000 -p 2223:22 -v /home/silascript/DevWorkSpace/PHPExercise:/var/www/html php:8.1.5-fpm-bullseye
 ```
 > 映射两个端口，9000 是 fpm，映射 22 是为了开启 ssh 用的。
-
 
 案例：要将 php 执行文件映射到宿主机，让诸如 VSCode 等宿主机上的软件能调用（VSCode 有个插件 [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client) [![PHP Intelephense Repo](https://img.shields.io/github/stars/bmewburn/vscode-intelephense?style=social)](https://github.com/bmewburn/vscode-intelephense)，它就有个配置项 `php.validate.executablePath` 需要调用 php 的可执行文件）。
 
@@ -1092,7 +1024,6 @@ docker run -d --name d_php81 --network vbridge01 --ip 172.20.0.8 -p 9000:9000 -p
 如上面使用「具名挂载」方式，先使用 `docker volume ls` 命令查询刚挂载的 volume 是否存在。然后使用 `docker volume inspect volume名称` 来查询挂载信息，查出 volume 真实存放的路径，一般是 `/usr/lib/docker/volumes/voluem名称/_data` （如果是「匿名挂载」，volume 名称那个目录就是一串 docker 生成的字符串，所以由此可以认为「匿名挂载」是一种特殊的「具名挂载」），查到路径了，那就将路径目录中所有文件复制到未来要挂载的自定义目录中。
 > 如果是未挂载目录，那就只能使用 `docker cp` 命令来复制了。
 
-
 3. 再 run 一个容器：
 ```shell
 docker run -itd --name d_php81 --network vbridge01 --ip 172.20.0.8 -p 9000:9000 -p 2223:22 -v /home/silascript/DevWorkSpace/PHPExercise:/var/www/html -v /home/silascript/Docker_Mount/php81_m/php_bin:/usr/local/bin/ php:8.1.5-fpm-bullseye
@@ -1108,7 +1039,6 @@ ln -s ~/Docker_Mount/php81_m/php_bin/php /usr/local/bin/d_php81
 
 这种方式，避免了，「托管式」挂载权限问题。因为「托管」给 Docker，实际存放的路径是在 `/usr/lib/docker/volumes/` 这个目录下的，放在这里，访问调用是需要 root 权限的。而挂载到用户指定目录中，就避免了权限的问题 -- 因为权限问题，即使把 `/usr/lib/docker/volumes/...` 这个具体路径配置给 [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client) [![PHP Intelephense Repo](https://img.shields.io/github/stars/bmewburn/vscode-intelephense?style=social)](https://github.com/bmewburn/vscode-intelephense) 插件，这插件照样调用不了 php 可执行程序，原因就是权限问题。 
 
-
 ---
 
 #### 安装 xdebug
@@ -1123,8 +1053,6 @@ docker-php-ext-enable xdebug
 ```
 
 使用 `php -m` 命令查看是否安装成功。
-
-
 
 ---
 
@@ -1151,7 +1079,7 @@ docker run -d --name d_apache --network 网桥名 --ip x.x.x.x -p 8085:80 -v /ho
 
 ~~Apache 详细配置请参考：[Linux下安装配置Apache](../PHP/Linux下安装配置Apache.md)~~
 
-<span id="dk_apache_config">Apache 配置</span>
+#### <span id="dk_apache_config">Apache 配置</span>
 
 使用 PHP-FPM 方式调用 PHP 引擎解析 PHP 页面：
 
@@ -1229,13 +1157,12 @@ AddType application/x-httpd-php-source .phps
 	>  Include conf/extra/httpd-vhosts.conf 
 	> ```
 	> **为了 httpd.conf 这个主配置文件代码简洁，建议使用 httpd_vhosts.conf 文件来配置虚拟目录。** 
-
-	> **fcgi://xxx:9000** 这是 PHP-fpm 的 IP 和端口。这个 IP 和端口 是在 PHP 容器中 `/etc/php-fpm.d/www.conf` 文件中设置的 -- `listen = xxxx:9000`。  
-	> **/var/www/html/** 这个是 PHP 容器中页面发布目录（绝对路径）。不要配成 Apache 的页面发布路径，否则会发生 `File not found.` 错误。  
+	> 
+	> `fcgi://xxx:9000` 这是 PHP-fpm 的 IP 和端口。这个 IP 和端口 是在 PHP 容器中 `/etc/php-fpm.d/www.conf` 文件中设置的 -- `listen = xxxx:9000`。  
+	> `/var/www/html/` 这个是 PHP 容器中页面发布目录（绝对路径）。不要配成 Apache 的页面发布路径，否则会发生 `File not found.` 错误。  
     > `DocumentRoot "/usr/local/apache2/htdocs"` 这是指定的是 Apache 的页面发布目录的路径。千万不要填成 PHP 的。不然静态页面就会访问不到了。  
 	> **$1** 这里指的是前面 `(.*\.php)` 这个变量。这个变量可以不加。  
 	> 可以这么理解，VirtualHost 里配的页面发布目录就是 Apache 的，只是遇到了 php 文件时，通过调用 PHP-fpm 来处理这些 php 文件。而 **ProxyPassMatch** 可以看成是一个「**拦截器**」，拦截 **.php** 页面，然后交由 PHP-fpm 来解析。
-
 
 * ProxyPass 方式配置：
 
@@ -1252,12 +1179,12 @@ AddType application/x-httpd-php-source .phps
 	</VirtualHost>
 
 	```
-	> 跟 **ProxyPassMatch** 非常像，其实就是把 **ProxyPassMatch** 标签化成了 <LocationMatch> 而已。  
+ 
+    > [!tip]
+	> 跟 **ProxyPassMatch** 非常像，其实就是把 **ProxyPassMatch** 标签化成了 `<LocationMatch>` 而已。  
 	> 同样注意的是 **DocumentRoot** 的值千万不要填成 PHP 的。不然静态页面就访问不到了，就算 PHP 容器发布页面目录与 Apache 发布目录都挂载到同一个宿主机目录，也是访问出问题 -- 权限问题。  
 
-
 ---
-
 
 #### Apache 与 Nginx 共用文件目录及一个 PHP 引擎 方案
 
@@ -1268,7 +1195,6 @@ docker run -d --name d_php81 -p 9000:9000 -v /home/silascript/DevWorkSpace/PHPEx
 
 检查 PHP-fpm 的设置。如 php-fpm 的监听端口。
 > 在 `/etc/php-fpm.d/www.conf` 这个文件中，其中有 `listen xxx:9000` 代码，就是设置 php-fpm 的监听端口的。
-
 
 2. 创建 Nginx 容器
 ```shell
@@ -1304,10 +1230,7 @@ phpinfo();
 
 还是更 **推荐使用 Nginx**，而且使用 PHP-fpm 方式解析 PHP 页面。Apache 配置实在是太麻烦了！
 
-
-
 ---
-
 
 ### <span id="dk_softc_demo_mysql">示例 4：MySQL/Mariadb</span>
 
@@ -1321,15 +1244,13 @@ docker run --name mariadb10.8 -p 3366:3306 -v /home/silascript/Docker_Mount/mari
 
 ```
 
-mysql/mariadb 一些相关的目录、文件路径：
-
+> [!tip] mysql 相关相关的目录、文件路径
 > 配置文件目录：/etc/mysql
 >
 > 数据存放目录：/var/lib/mysql
 >
 > mariadb 的链接地址：
 > /usr/bin/mysql -> mariadb
-
 
 mysql 与其他镜像区别的是，mysql 的数据目录，使用了「**bing mount**」方式挂载，容器中的数据目录中数据会自动复制到指定的宿主机指定的目录中。可以看 mysql 的 Dockerfile 文件中有句代码，就知道为什么 MySQL 会有这个特殊点了：
 ![docker_mysql_df_volume](./Docker_Note.assets/docker_mysql_df_volume.png)
@@ -1345,7 +1266,6 @@ docker run -d --name d_mysql8 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql:8
 直接查看那个 **Mountpoint** 的那个目录存放着什么：
 ![docker_mysql_volume_data_ls](./Docker_Note.assets/docker_mysql_volume_data_ls.png)
 > 很明显，存放的就是 mysql 的数据文件。可见之前在 Dockerfile 文件中那一句 `VOLUME /var/lib/mysql` 代码就是让 mysql 容器创建后，将数据目录设为挂载点。
-
 
 Docker MySQL 挂载方案：
 因为 MySQL 的数据目录即便是「bind mount」类型的挂载，都会将容器数据复制到指定目录，所以这个目录可以直接指定。
@@ -1374,11 +1294,10 @@ docker run -d --name d_mysql8 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /hom
 > docker run -d --name d_mysql8 --network 网桥名 --ip x.x.x.x -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/mysql8_m/config:/etc/mysql -v /home/silascript/Docker_Mount/mysql8_m/data:/var/lib/mysql mysql:8.0.28-debian
 > ```
 
-
 #### MySQL 内存优化
 
-
 conf.d 目录下 **docker.cnf** 文件中 `[mysqld]` 下添加以下代码：
+
 ```conf
 [mysqld]
 performance_schema_max_table_instances=400
@@ -1398,27 +1317,29 @@ MySQL 其他设置及操作请参考：
 
 ---
 
-
 ### 示例 5：安装 CentOS
 
 创建 CentOS 容器：
+
 ```shell
 docker run -itd --name d_centos8 centos:centos8.4.2105
 ```
+> [!tip] -it 参数
 > 最简单的创建一个 CentOS 容器
-> **-it** 这参数得加上，如果只是像其他镜像那样只有 **-d** 创建容器是成功，但启动不了容器
+> `-it` 这参数得加上，如果只是像其他镜像那样只有 `-d` 创建容器是成功，但启动不了容器
 > 因为 CentOS 启动，需要开启一个伪终端
-
 
 CentOS 开启 SSH 服务
 
 * **run** 容器时加入 **--privileged=true** 参数
+    > [!tip]	
 	> 使用 --privileged=true 参数，可以使容器内的 root 用户真正拥有 root 权限。
 	> 没有此参数的容器内的 root 用户只是外部的一个普通用户权限。
 	> 以下代码使用在 CentOS 7
-	```shell
-	docker run --name d_centos7  --privileged=true -p 10022:22 -d centos:7 /usr/sbin/ini
-	```
+	> 
+	> ```shell
+	> docker run --name d_centos7  --privileged=true -p 10022:22 -d centos:7 /usr/sbin/ini
+	> ```
 	> 22 端口得映射，这是 ssh 访问的端口  
 	> 如果是 CentOS 8，得使用以下代码创建容器，**systemctl** 才能正常使用。 
 	> 如果 CentOS  8 没有使用以下代码开创建容器，可能会报以下这些错误信息 ：
@@ -1466,7 +1387,6 @@ CentOS 开启 SSH 服务
 	> 如果出现 `System has not been booted with systemd as init system (PID 1). Can't operate.
 	> Failed to connect to bus: Host is down` 这个错误信息，那就是“**run**”的时候没给权限（--privileged 参数）。
 
-
 > 迄今为止，systemctl 问题尚未解决！待更！
 
 ---
@@ -1478,6 +1398,9 @@ docker run -itd --name d_ubuntu21 --network vbridge01 --ip 172.20.0.20 -p 2225:2
 ```
 > 使用自定义网桥并为容器指派 ip，另外映射 22 接口，以便后续开启 `ssh` 功能。
 
+---
 
+## 相关链接
 
+* [Docker & K8s 视频清单](./Docker_Videos.md)
 

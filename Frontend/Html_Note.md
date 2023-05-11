@@ -1,3 +1,9 @@
+---
+aliases: 
+tags: 
+created: 2022-11-7 2:50:13
+modified: 2023-05-12 2:14:21
+---
 # Html 笔记
 
 ---
@@ -22,7 +28,6 @@
 
 1991 年 5 月 WWW 在 Internet 上首次露面，并成为了标准。
 
-
 ### HTML 版本时间线
 
 * 1995 年 11 月 24 日 HTML2
@@ -32,7 +37,6 @@
 * 1999 年 12 月 24 日 HTML 4.01 作为 [W3C](https://www.w3.org) 推荐标准发布。
 * 2014 年 10 月 28 日 HTML 5 作为 [W3C](https://www.w3.org) 推荐标准发布。
 
-
 ### <span id="html_introducton_xhtml">XHTML</span>
 
 **XHTML** 是 「3 种 HTML 4 文件根据 XML 1.0 标准重组」而成的。
@@ -41,18 +45,16 @@ HTML 语法比较的「自由奔放」，所以在不同的浏览器渲染出现
 
 XHTML 应用出现在 2005 年到 2012 年左右的「重构时代」。
 
-
 ### <span id="html_introducton_html5">HTML5</span>
 
 HTML 5 实质是 **WHATWG** 的，W3C 只是「发布者」。
 
 从 HTML 5 始，W3C 已经失去对 包括 HTML 及 DOM 在内的控制权。
-> 2018 年 W3C 的 DOM 4.1 标准被苹果、Mozilla、Google及微软四大浏览器厂商反对。  
+> 2018 年 W3C 的 DOM 4.1 标准被苹果、Mozilla、Google 及微软四大浏览器厂商反对。  
 > 2019 年 5 月 28 日，W3C 宣布 WHATWG 将是 HTML 和 DOM 标准的唯一发布者。
 
 **WHATWG** 背后「站着」的是浏览器厂商。
-> WHATWG （Web Hypertext Application Technology Working Group）是 2004 年苹果、Opera、Mozilla 组建的一个推动 HTML 标准为目的而成立的组织。后来随着Chrome 浏览器大行其道，Google 也加入其中。再后来连微软了加入的。
-
+> WHATWG （Web Hypertext Application Technology Working Group）是 2004 年苹果、Opera、Mozilla 组建的一个推动 HTML 标准为目的而成立的组织。后来随着 Chrome 浏览器大行其道，Google 也加入其中。再后来连微软了加入的。
 
 ---
 
@@ -66,22 +68,18 @@ HTML 本质上是文本，所以对 HTML 文件编辑可以使用「文本编辑
 
 Windows 自带的，最朴素的文本编辑器。
 
-
 ### <span id="html_editors_sublime">SublimeText</span>
 
-轻量级、顔值高的文本编辑器。最新版本是[SublimeText4](https://www.sublimetext.com)。
-
+轻量级、顔值高的文本编辑器。最新版本是 [SublimeText4](https://www.sublimetext.com)。
 
 ### <span id="html_editors_vim">vim</span>
 
 Linux 系统下最强大的编辑器。
 
-
 ### <span id="html_editors_vscode">VSCode</span>
 
 对于有更大项目管理需要的用户，可以使用 [VSCode](https://code.visualstudio.com) 。  
 虽然 vim 很强，但如果是做一些有点规模的项目时，VSCode 更优秀。
-
 
 ## 其他
 
@@ -89,15 +87,13 @@ Linux 系统下最强大的编辑器。
 
 还有什么 Adobe 的 [Brackets](https://brackets.io)、Github 的 [Atom](https://atom.io)、[Komodo edit](https://www.activestate.com/products/komodo-ide/downloads/edit/)。
 
-
 IDE：
 
 当然还有古老又笨重还收费的 Adobe Dreamweaver。  
 另外还有个装 X 货 [Hbuilder X](https://www.dcloud.io/hbuilderx.html)
 > Hbuilder 没有 Linux 版本，如果系统是 Linux 的，就略过了。
 
-当然，还有个重量级成员：[webstorm](https://www.jetbrains.com/webstorm/)。个人十分讨厌 [JetBrains](https://www.jetbrains.com) 全系的IDE，因为我非常讨厌 Swing。
-
+当然，还有个重量级成员：[webstorm](https://www.jetbrains.com/webstorm/)。个人十分讨厌 [JetBrains](https://www.jetbrains.com) 全系的 IDE，因为我非常讨厌 Swing。
 
 还有顺便提一句，**Notepad++** 这种**烂货**就不要用了！
 
@@ -107,7 +103,6 @@ IDE：
 
 **HTML** 不是一门编程语言，而是一种用于定义内容结构的标记语言。
 > html 是给页面搭「骨架」的。
-
 
 ### <span id="html_basic_concept_tag">标签</span>
 HTML 代码由不同的标签构成。
@@ -120,7 +115,6 @@ HTML 代码由不同的标签构成。
 标签和元素的关系：
 
 ![tag_element](https://mdn.mozillademos.org/files/16475/element.png)
-
 
 ### <span id="html_basic_concept_attribute">属性</span>
 
@@ -166,7 +160,6 @@ HTML 代码由不同的标签构成。
 
 `<!DOCTYPE html>` 这货建议使用大写形式，因为这货本质上不是标签，而是一个处理指令。
 
-
 * `<html>` 这是网页的根元素。该元素包含整个页面的内容。
 
 该标签有一个 **lang** 属性，表示网页内容默认的语言。
@@ -177,7 +170,7 @@ HTML 代码由不同的标签构成。
 * `<meta>` 设置网页元数据
 	`<meta>` 常用属性：
 	* `charset` 设置网页编码，如 `<meta charset="utf-8">`
-	* `name` 属性，`content` 属性，这两属性以 键-值对的方式给文档提供元数据。
+	* `name` 属性，`content` 属性，这两属性以 键 - 值对的方式给文档提供元数据。
 		`description` 网页内容的描述 
 
 		`keywords` 网页内容的关键字 
@@ -203,12 +196,9 @@ HTML 代码由不同的标签构成。
 * `<noscript>` 浏览器不支持脚本时，所要显示的内容
 * `<base>` 设置网页内部相对 URL 的计算基准
 
-
-
 ---
 ## 相关链接
 
+* [前端教程视频清单](./Front-end_Videos.md)
 * [Mozilla HTML 教程](https://developer.mozilla.org/zh-CN/docs/Web/HTML)
-
-
 

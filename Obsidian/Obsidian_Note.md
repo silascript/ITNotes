@@ -5,7 +5,7 @@ tags:
   - markdown
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2023-02-02 9:19:02
+modified: 2023-04-16 6:35:02
 ---
 # Obsidian 笔记
 
@@ -458,6 +458,14 @@ Linter 插件还可以配合 [Commander](#obn_plugins_obsidian-commander) 插件
 
 ---
 
+##### <span id="obn_plugins_obsidian_table_editor">Obsidian Table Editor</span>
+
+[Obsidian Table Editor](https://github.com/ganesshkumar/obsidian-table-editor) 是一个 Markdown 表格编辑器。
+
+这插件会给出一个编辑区面板，能方便输入数据及排版表格，等表格都编辑完成，直接复制到 Markdown 页面中即可。
+
+---
+
 ##### <span id="obn_plugins_obtabs">~~Obsidian tabs~~</span>
 [Obsidian tabs](https://github.com/gitobsidiantutorial/obsidian-tabs) 这插件能让多个面板变成单面板多标签的形态。
 
@@ -713,6 +721,8 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 [Tag Wrangler](https://github.com/pjeby/tag-wrangler) tag 整理插件。
 
+比较常用的功能就是对 Tag 进行「批量重命名」，这对于笔记比较多的的库非常的实用。
+
 ---
 
 ##### <span id="obn_plugins_minimal_settings">Minimal Settings</span>
@@ -720,6 +730,12 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 [Minimal Settings](https://github.com/kepano/obsidian-minimal-settings) 这是对 [Minimal](#Minimal) 主题的设置。
 
 其中预设了多种配色，这样用户不用在 [Style Settings](#Style%20Settings) 完全「DIY」了。
+
+---
+
+##### <span id="obn_plugins_mysnippets">MySnippets</span>
+
+[MySnippets](https://github.com/chetachiezikeuzor/MySnippets-Plugin) 这是一个 Obsidian 的 Snippets 的管理工具，他可以启用、关闭、新建 Snippet。
 
 ---
 
@@ -962,8 +978,9 @@ Callout Blocks 预置类型：
 
 ---
 
-##  相关资料
+##  Obsidian 相关资料
 * [awesome-obsidian](https://github.com/kmaasrud/awesome-obsidian)
 * [obsidian-snippets](https://github.com/deathau/obsidian-snippets)
+* [Obsidian文档咖啡豆版](https://coffeetea.top)
 * [Markdown 笔记](../Markdown/Markdown_Note.md)
 

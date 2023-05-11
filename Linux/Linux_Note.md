@@ -10,6 +10,8 @@ tags:
   - tar
   - shell
   - network
+created: 2022-11-7 2:50:13
+modified: 2023-04-19 11:59:07
 ---
 # Linux 笔记
 
@@ -45,11 +47,11 @@ tags:
   * [使用 desktop](#linux_soft_install_desktop)
 ---
 
-## <span id="linux_terminal">终端</span>
+## <span id="linux_terminal"> 终端 </span>
 
 ---
 
-## <span id="linux_configs">配置文件</span>
+## <span id="linux_configs"> 配置文件 </span>
 
 * profile 文件
 
@@ -91,11 +93,11 @@ tags:
 
 ---
 
-## <span id="linux_tarc">打包压缩</span>
+## <span id="linux_tarc"> 打包压缩 </span>
 
 Linux 下打包和压缩是分两部分的。
 
-### <span id="linux_tarc_tar">Tar 命令</span>
+### <span id="linux_tarc_tar">Tar 命令 </span>
 
 Linux 下最常用的打包程序就是 tar。
 
@@ -117,7 +119,7 @@ tar 常用选项和参数：
 
 ---
 
-### <span id="linux_tarc_comptools">压缩工具</span>
+### <span id="linux_tarc_comptools"> 压缩工具 </span>
 
 #### <span id="linux_tarc_comptools_gzip">gzip</span>
 
@@ -280,9 +282,9 @@ unrar e a.rar
 
 ---
 
-## <span id="linux_textprocessing">文本处理</span>
+## <span id="linux_textprocessing"> 文本处理 </span>
 
-### <span id="linux_textprocessing_commands">文本处理常用命令</span>
+### <span id="linux_textprocessing_commands"> 文本处理常用命令 </span>
 
 #### <span id="linux_textprocessing_commands_cat">cat</span>
 
@@ -356,6 +358,7 @@ nl -b a Ship_Note.md
 ```
 
 行号格式：
+
 | 参数 | 对齐方式 | 有无前导 0 |
 |:---: |:---: |:---: |
 | ln | 左对齐 | 无前导 0 |
@@ -423,7 +426,7 @@ more 命令一些按键操作：
 
 `stat` 命令用于查看文件的具体不住信息和埋单信息，格式为：`stat 文件名称`。
 
-### <span id="linux_textprocessing_regex">正则表达式</span>
+### <span id="linux_textprocessing_regex"> 正则表达式 </span>
 
 ### <span id="linux_textprocessing_grep">grep</span>
 grep 全称是 「global search regular expression and print out the line」，翻译过来就是 **全局搜索正则表达式并把行打印出来**。
@@ -438,7 +441,7 @@ Linux 中使用的 GNU 版本的 grep ，可以直接通过 `-G`、`-E` 和 `-F`
 
 ---
 
-## <span id="linux_font">字体</span>
+## <span id="linux_font"> 字体 </span>
 
 安装字体：
 1. 使用字体安装程序点击安装
@@ -459,9 +462,9 @@ fc-list :lang=zh
 
 ---
 
-## <span id="linux_network">网络</span>
+## <span id="linux_network"> 网络 </span>
 
-### <span id="linux_networkd">一些网络概念</span>
+### <span id="linux_networkd"> 一些网络概念 </span>
 
 相关笔记列表：
 
@@ -484,15 +487,15 @@ fc-list :lang=zh
 
 也就是因为有此原因，所以 Linux 系统中网络接口都使用 「eth」为名称。
 
-#### <span id="linux_network_bridge">网桥</span>
+#### <span id="linux_network_bridge"> 网桥 </span>
 
-简单说，网桥就是连通两个本来处于隔离的网络的一个「桥梁」。
+简单说，网桥就是连通两个本来处于隔离的网络的一个「桥梁」。 
 
 ---
 
-### <span id="linux_network_command">Linux 中网络相关命令和工具</span>
+### <span id="linux_network_command">Linux 中网络相关命令和工具 </span>
 
-#### <span id="linux_network_command_ip">IP 概念</span>
+#### <span id="linux_network_command_ip">IP 概念 </span>
 
 `ip` 命令 是用来查询或维护网络相关的工具。
 
@@ -506,7 +509,7 @@ fc-list :lang=zh
 * `ip link set 网络设备 up`：启用网络设备
 * `ip link set 网络设备 down`：禁用网络设备
 
-#### <span id="linux_network_command_downloader">命令下载工具</span>
+#### <span id="linux_network_command_downloader"> 命令下载工具 </span>
 
 ##### <span id="linux_network_command_downloader_curl">curl</span>
 
@@ -641,7 +644,7 @@ aria2 特点：
 * 支持 PRC 界面远程
 * 全面支持 BtiTorrent 协议
 
-##### <span id="linux_network_command_downloader_aria2_operate">aria2 常用操作</span>
+##### <span id="linux_network_command_downloader_aria2_operate">aria2 常用操作 </span>
 
 最简单的使用，就是什么参数或选项都不加：
 ```shell
@@ -708,7 +711,7 @@ aria2c -S **.torrent
 aria2c --enable-rpc --rpc-listen-all
 ```
 
-###### <span id="linux_network_command_downloader_aria2_config">Aria2 配置</span>
+###### <span id="linux_network_command_downloader_aria2_config">Aria2 配置 </span>
 
 默认用户配置文件放在：`~/.aria2/aria2.conf`
 也可以通过命令行 `aria2 --conf-path` 命令指定配置文件路径。
@@ -752,7 +755,7 @@ http-accept-gzip=true
 
 网上大神配置模板，可以参考着配：[https://github.com/P3TERX/aria2.conf/blob/master/aria2.conf](https://github.com/P3TERX/aria2.conf/blob/master/aria2.conf)
 
-###### <span id="linux_network_command_downloader_aria2_ui">Aria2 UI 工具</span>
+###### <span id="linux_network_command_downloader_aria2_ui">Aria2 UI 工具 </span>
 
 [aria2](#linux_network_command_downloader_aria2) 本身没有 UI ，这使得一些依赖图形界面的用户用起来不太方便，然后就出现各种基于 aria2 的带图形界面的下载器。 
 
@@ -783,7 +786,7 @@ IPtables 中可以做各种网络地址转换，网络地址转换主要有两�
 
 ## <span id="linux_ssh">SSH</span>
 
-### <span id="linux_ssh_insconf">安装和设置 SSH</span>
+### <span id="linux_ssh_insconf"> 安装和设置 SSH</span>
 
 以 debian 系为例
 
@@ -824,7 +827,7 @@ service ssh restart
 ssh 用户名@ip -p 端口
 ```
 
-### <span id="linux_ssh_bugs">SSH 各种问题</span>
+### <span id="linux_ssh_bugs">SSH 各种问题 </span>
 
 `Host key verification failed` 错误
 
@@ -840,7 +843,7 @@ ssh 用户名@ip -p 端口
 
 `StrictHostKeyChecking=yes` 是最安全级别。如果连接与 key 不匹配，就拒绝连接，不会提示详细信息。
 
-### <span id="linux_ssh_tools">SSH 工具</span>
+### <span id="linux_ssh_tools">SSH 工具 </span>
 
 #### <span id="linux_ssh_tools_putty">Putty</span>
 
@@ -882,17 +885,17 @@ ssh 用户名@ip -p 端口
 
 ---
 
-## <span id="linux_shell">Shell 相关</span>
+## <span id="linux_shell">Shell 相关 </span>
 
 具体请查看 [Shell 笔记](./Shell_Note.md)
 
 ---
 
-## <span id="linux_soft_installsetup">部分软件安装设置</span>
+## <span id="linux_soft_installsetup"> 部分软件安装设置 </span>
 
 ---
 
-### <span id="linux_soft_install_desktop">使用 desktop</span>
+### <span id="linux_soft_install_desktop"> 使用 desktop</span>
 
 1. 新建 `desktop` 文件
 在/usr/share/applications/目录中新建一个后缀名为 desktop 的文件
@@ -915,7 +918,7 @@ ssh 用户名@ip -p 端口
 
 ---
 
-### <span id="linux_soft_install_komodo">Komodo Edit 安装</span>
+### <span id="linux_soft_install_komodo">Komodo Edit 安装 </span>
 
 1. 下载
 ```shell

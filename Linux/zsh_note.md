@@ -1,3 +1,11 @@
+---
+aliases:
+  - 
+tags:
+  - 
+created: 2022-11-7 2:50:13
+modified: 2023-05-1 6:31:08
+---
 
 # zsh 笔记
 
@@ -23,7 +31,20 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 ## <span id="zsh_plugins">插件</span>
 
+---
+
 ### <span id="zsh_plugins_mgs">插件管理器</span>
+
+#### <span id="zsh_plugins_mgs_zinit">zinit</span>
+
+##### <span id="zsh_plugins_mgs_zinit_commands">zinit 常用命令</span>
+
+更新所有：
+```shell
+zinit update --all
+```
+
+---
 
 ### <span id="zsh_plugins_common">常用插件</span>
 
@@ -43,8 +64,7 @@ fast-theme -l
 fast-theme 配色方案名
 ```
 
-使用zinit安装:
-
+使用 zinit 安装:
 
 ```zsh
 zinit light zdharma-continuum/fast-syntax-highlighting
@@ -81,11 +101,10 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 
 [zsh-autosuggestion](https://github.com/zsh-users/zsh-autosuggestions)
 
-
-输入命令历史(浅色)提示
+输入命令历史 (浅色) 提示
 
 常用操作:
-按方向键->可补全。
+按方向键 ->可补全。
 
 #### <span id="zsh_plugins_zcompletions">zsh-completions</span>
 
@@ -93,3 +112,9 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 
 [![asciicast](https://asciinema.org/a/266997.svg)](https://asciinema.org/a/266997)
 
+---
+
+## 相关链接
+
+* [ZSH 插件管理器 zinit 介绍及使用](https://www.mivm.cn/zsh-zinit/)
+* [不用上 Github 也能用 zinit 管理 zsh 插件](https://www.bilibili.com/read/cv12765752/)

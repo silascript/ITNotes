@@ -4,8 +4,8 @@ aliases:
 tags:
   - git
   - github
-created: 2023-01-13, 12:27:45
-modified: 2023-01-30, 9:21:36
+created: 2023-01-30 11:19:11
+modified: 2023-04-21 1:33:54
 ---
 # Git 笔记
 
@@ -23,6 +23,7 @@ modified: 2023-01-30, 9:21:36
 		* [Github 镜像](#git_github_mirrors)
 	* [Gist](#git_github_gist)
 	* [Token](#git_github_token)
+ * [Git 相关资源](#git_resources)
 
 ---
 
@@ -511,6 +512,19 @@ clone 出现 `SSL certificate problem: certificate has expired` 错误。
  git config --global http.sslVerify false
 ```
 
+### gitignore 不生效问题
+
+```shell
+# 这步是关键，清缓存
+git rm -r --cached .
+
+# 添加
+git add .
+
+# 提交
+git commit -m 'update .gitignore'
+```
+
 ---
 
 ## <span id="git_github">GitHub 使用</span>
@@ -678,3 +692,10 @@ git config --global --unset url.https://github.com/.insteadof
 > 在新建 token 页面，选择 token 的生命周期 Expiration\
 > 勾选 使用范围（**Select scopes**）\
 > 点击 **Generate token** 按钮，这就生成一个新的 token
+
+---
+
+## <span id="git_resources">Git 相关资源</span>
+
+* [Git 教程资源笔记](./Git_Tutorial.md)
+

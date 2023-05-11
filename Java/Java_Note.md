@@ -7,8 +7,8 @@ tags:
   - jdk
   - Eclipse
   - dbeaver
-created: 2023-01-13, 12:27:45
-modified: 2023-01-30, 9:15:30
+created: 2023-01-30 11:19:11
+modified: 2023-05-11 4:50:35
 ---
 
 # Java 笔记
@@ -211,6 +211,32 @@ SDKMane 语法 `sdk <command> [candidate] [version]`。
 ##### Linux 下的 Eclipse 公共目录
 
 [Linux_Note](../Linux/Linux_Note.md) 系统下，用户根下有一个 `.eclipse` 的目录，这是所有 eclipse 的共享目录。
+
+#### 创建 Eclipse 桌面图标
+
+可以参考 [使用 desktop](../Linux/Linux_Note.md#linux_soft_install_desktop) 这个笔记来创建 Eclipse 的桌面图标。
+
+示例：
+
+```desktop
+[Desktop Entry]
+
+Name=Eclipse Committers 2023
+Comment=Eclipse Committers 2023
+Type=Application
+
+Exec=/opt/JavaIDE/eclipse_com_2023/eclipse
+Icon=/opt/JavaIDE/eclipse_com_2023/icon.xpm
+
+Categories=Development;IDE
+
+Terminal=false
+StartupNotify=true
+
+```
+
+> [!tip] desktop 文件存在位置
+> 可以在 `/usr/share/applications` 目录下创建，也可以在当前用户目录下的 `.local/share/applications` 目录下创建。
 
 ---
 

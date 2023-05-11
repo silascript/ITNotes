@@ -5,7 +5,7 @@ tags:
   - obsidian
   - plugin
 created: 2023-01-13 12:44:24
-modified: 2023-02-02 4:14:15
+modified: 2023-04-12 9:14:46
 ---
 # Obsidian 个人必装插件清单
 
@@ -28,6 +28,7 @@ modified: 2023-02-02 4:14:15
 * [Commander](./Obsidian_Note.md#obn_plugins_obsidian-commander)
 * [Table Generator](./Obsidian_Note.md#obn_plugins_table_generator)
 * [Advanced Tables](./Obsidian_Note.md#obn_plugins_advanced_tables) 
+* [Obsidian Table Editor](./Obsidian_Note.md#obn_plugins_obsidian_table_editor)
 * [Html Tags AutoComplete](./Obsidian_Note.md#obn_plugins_htmltags_autocomplete)
 * [Theme Picker](./Obsidian_Note.md#obn_plugins_theme-picker)
 * [Show Current File Path](./Obsidian_Note.md#obn_plugins_show-current-file-path)
@@ -42,6 +43,7 @@ modified: 2023-02-02 4:14:15
 * [Recent Files](./Obsidian_Note.md#obn_plugins_recent_files)
 * [Colorful Tag](./Obsidian_Note.md#obn_plugins_colorful_tag)
 * [Frontmatter Tag Suggest](./Obsidian_Note.md#obn_plugins_tagsuggest)
+* [Tag Wrangler](./Obsidian_Note.md#obn_plugins_tag_wrangler)
 * [Mermaid Tools](./Obsidian_Note.md#obn_plugins_mermaid_tools)
 
 更多的常用插件介绍，请参考 [Obsidian 笔记](./Obsidian_Note.md#obn_plugins_commp)

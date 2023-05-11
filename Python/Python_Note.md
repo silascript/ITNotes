@@ -6,8 +6,8 @@ tags:
   - python
   - pip
   - conda
-created: 2023-01-13, 12:27:46
-modified: 2023-01-30, 9:19:48
+created: 2023-01-30 11:19:11
+modified: 2023-05-12 12:36:53
 ---
 # Python 笔记
 
@@ -16,8 +16,14 @@ modified: 2023-01-30, 9:19:48
 ## 目录
 
 * [安装和常用](#安装和常用)
+* [pip](#python_pip)
 	* [更新](#更新)
 	* [pip 换源](#pip%20换源)
+* [conda](#python_conda)
+	* [conda 安装](#python_conda_install)
+	* [conda 换源](#python_conda_chsources)
+	* [conda 常用命令](#python_conda_commands)
+	 * [conda 环境](#python_conda_environment)
 * [Python 教程视频](#python_course_videos)
 
 ---
@@ -101,7 +107,7 @@ anaconda 是包含了一些常用包，并且有图形用户界面，属于比�
 
 [miniconda](https://docs.conda.io/en/latest/miniconda.html) 是 anaconda 的精简版本，仅包含 conda 主程序和基本包，没有用户界面。
 
-### <span id="python_conda_install">miniconda 安装</span>
+### <span id="python_conda_install">conda 安装</span>
 
 miniconda 对于一般需求而言装这个就够用了。
 
@@ -185,11 +191,13 @@ custom_channels:
 
 ---
 
-### <span id="python_conda_commands">常用命令</span>
+### <span id="python_conda_commands">conda 常用命令</span>
 
 #### <span id="python_conda_commands_remove">删除</span>
 
 #### <span id="python_conda_commands_create">创建</span>
+
+创建命令 `create` 用于 [创建环境](#python_conda_environment_create)。更详细参数或选项可以通过 `conda create -h` 来查看。
 
 #### <span id="python_conda_commands_list">List</span>
 
@@ -208,7 +216,7 @@ custom_channels:
 
 ---
 
-### <span id="python_conda_environment">环境</span>
+### <span id="python_conda_environment">conda 环境</span>
 
 #### base 环境
 
@@ -236,6 +244,18 @@ custom_channels:
 删除环境使用到了 [删除](#python_conda_commands_remove) 命令：`conda remove -n 环境名称 --all`
 > [!info] 命令解释
 > `--all` 指的是删除这个环境中所有的包
+
+#### <span id="python_conda_enviroment_copy">复制环境</span>
+
+复制环境语法：
+
+```shell
+conda create -n 新环境名 --clone 旧环境名
+```
+
+> [!tip] 复制环境
+> 复制环境实质还是一种 [创建环境](#创建环境) 的「变体」。所以同样使用到 [创建](#创建) 命令。
+> 	与普通创建环境不同，多了个 `--clone` 参数选项，用于指定复制自哪个已有的 [环境](#python_conda_environment)。
 
 ---
 

@@ -5,7 +5,7 @@ tags:
   - markdown
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2023-04-16 6:35:02
+modified: 2023-05-24 1:19:26
 ---
 # Obsidian 笔记
 
@@ -344,6 +344,14 @@ Obsidian 的插件分为 「核心插件」和「第三方插件」。
 * 支持搜索 PDF 文件
 * 能将搜索结果插入 `[[]]` 链接中
 * 支持 **vim** 方式的导航操作
+
+---
+
+##### <span id="obn_plugins_keyboard_analyzer">Keyboard-Analyzer</span>
+
+[Keyboard-Analyzer](https://github.com/cogscides/obsidian-keyboard-analyzer) 是一个以图谱方式查看快捷键设置的插件。
+
+通过这个插件的图谱，可以快速查看指定按键设置了哪个相关的快捷键。
 
 ---
 
@@ -979,6 +987,8 @@ Callout Blocks 预置类型：
 ---
 
 ##  Obsidian 相关资料
+
+* [Obsidian视频清单](./Obsidian_Videos.md)
 * [awesome-obsidian](https://github.com/kmaasrud/awesome-obsidian)
 * [obsidian-snippets](https://github.com/deathau/obsidian-snippets)
 * [Obsidian文档咖啡豆版](https://coffeetea.top)

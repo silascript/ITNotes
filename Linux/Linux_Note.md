@@ -11,7 +11,7 @@ tags:
   - shell
   - network
 created: 2022-11-7 2:50:13
-modified: 2023-04-19 11:59:07
+modified: 2023-05-18 12:50:49
 ---
 # Linux 笔记
 
@@ -45,6 +45,11 @@ modified: 2023-04-19 11:59:07
 
 * [部分软件安装设置](#linux_soft_installsetup)
   * [使用 desktop](#linux_soft_install_desktop)
+
+* [图形界面相关](#图形界面相关)
+	* [Xorg](#Xorg)
+	* [Wayland](#Wayland)
+
 ---
 
 ## <span id="linux_terminal"> 终端 </span>
@@ -952,10 +957,28 @@ sudo ln -s /opt/KomodoEdit/bin/komodo /usr/local/bin/komodo
 
 ---
 
+## 图形界面相关
+
+### 显示服务器
+
+#### Xorg
+
+#### Wayland
+
+#### 常见问题
+
+如果查询当前系统使用的是的 [Xorg](#Xorg) 还是 [Wayland](#Wayland)：
+
+```shell
+echo $XDG_SESSION_TYPE
+```
+
+---
+
 ## 其他 Linux 笔记
 
 * [ArchLinux_Note](ArchLinux_Note.md)
 * [CentOS_Note](CentOS_Note.md)
 * [Fedora_Note](Fedora_Note.md)
 * [Ubuntu_Note](Ubuntu_Note.md)
-
+* [Linux视频清单](./Linux_Videos.md)

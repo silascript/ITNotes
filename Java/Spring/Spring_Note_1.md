@@ -1,10 +1,22 @@
 ---
-aliases: 
-tags: java spring maven
-created: 2023-01-13, 12:27:45
-modified: 2023-01-31, 9:48:39
+aliases:
+  - 
+tags:
+  - java
+  - spring
+  - maven
+created: 2023-01-31 11:31:14
+modified: 2023-05-26 5:47:33
 ---
 # Spring 笔记 1
+
+---
+
+## 目录
+
+* [Spring jar 包及 maven 相关](#Spring%20jar%20包及%20maven%20相关) 
+
+---
 
 ## Spring jar 包及 maven 相关
 
@@ -20,7 +32,6 @@ modified: 2023-01-31, 9:48:39
 * spring-core
 * spring-beans
 * spring-context
-
 
 **Spring Beans 包的依赖：**
 * spring-core
@@ -44,7 +55,6 @@ modified: 2023-01-31, 9:48:39
 * spring-expression
 * spring-web
 
-
 **Spring JDBC 包的依赖：**
 * spring-core
 * spring-beans
@@ -54,7 +64,6 @@ modified: 2023-01-31, 9:48:39
 * spring-core
 * spring-beans
 
-
 ![spring 包依赖结构1](./Spring_Note_1.assets/sping_1.png)
 
 ![spring 包依赖结构2](./Spring_Note_1.assets/spring_2.png)
@@ -63,4 +72,9 @@ modified: 2023-01-31, 9:48:39
 
 如果使用 web 就多加个 web 包，如果是使用 **Spring MVC** 框架，那因为 **Spring MVC** 包已经包含了 **Spring Context** 及其依赖包，所以 maven 的 pom 文件只用添加一个 Spring MVC 依赖就可以。
 
+---
+
+## <span id="spring_aboutlinks">相关链接</span>
+
+* [Spring 视频清单](./Spring_Videos.md)
 

@@ -1,8 +1,11 @@
 ---
-aliases: 
-tags: javascript js
-created: 2023-01-13, 12:27:45
-modified: 2023-01-31, 11:08:37
+aliases:
+  - 
+tags:
+  - javascript
+  - js
+created: 2023-01-31 11:31:14
+modified: 2023-05-26 11:03:27
 ---
 # JavaScript 笔记
 
@@ -60,14 +63,12 @@ let b = 20;
 
 ![let erro 2](./JS_Note.assets/base_01_sc_02.png)
 
-
 3. **let** 声明的变量，不能被再次声明（**var** 可以重复声明相同的变量），即便其中一个声明是使用了 **var** 声明。
 4. **let** 与 **var** 不同还在于，使用 **let** 在全局作用域中声明的变量不会成为 **window** 对象的属性（**var** 声明的变量则会）。
 
 **const** 与 **let** 区别：
 
   **const** 的行为与 **let** 基本相同，唯一一个重要的区别是用它声明变量时必须同时初始化变量，且尝试修改 **const** 声明的变量会导致运行时错误。
-
 
 ECMAScript6 增加 **let** 和 **const** 从客观上为这门语言更精确地声明作用域和语义提供了更好的支持。
 
@@ -101,7 +102,6 @@ ECMAScript 变量可以包含两种不同类型的数据：原始值和引用值
 >
 > 建议保持声明变量时同时初始化变量的好习惯，这样即使使用 **typeof** 返回「undifined」，也能分辨出变量是未声明，而不是声明了未初始化。
 
-
 #### <span id="jsn_datatype_null">Null 类型</span>
 
 Null 类型只有一个值，即特殊值 **null**。
@@ -113,7 +113,6 @@ Null 类型只有一个值，即特殊值 **null**。
 但两者用途完全不一样。
 
 永远不要显式地将变量值设置为 **undefined**，但定义将来要保存对象值的变量时，可以使用 **null** 来初始化。这样可以保持 **null** 是空对象指针的语义，并进一步将其与 **undefined** 区分开来。
-
 
 #### <span id="jsn_datatype_boolean">Boolean 类型</span>
 
@@ -133,9 +132,7 @@ Boolean 类型有两个字面值： **true** 和 **false**。
 | Object | 任意对象 | null |
 | Undefined | N/A （不存在）| undefined |
 
-
 #### <span id="jsn_datatype_number">Number 类型</span>
-
 
 八进制字面量，必须是零（0）起头。
 
@@ -153,7 +150,6 @@ Boolean 类型有两个字面值： **true** 和 **false**。
 
 使用 **Number.NEGATIVE_INFINITY** 和 **Number_POSITIVE_INFINITY** 获取正、负 Infinity（这两个属性的值就是 -Infinity 和 Infinity）。
 
-
 确定一个数值是否在数值范围，即非 **Infinity**，可以使用 **isFinite()** 函数来检测。
 
 ##### <span id="jsn_datatype_number_NaN">NaN</span>
@@ -163,7 +159,11 @@ NaN 的意思是 "Not a Number"，「不是数值」。用来表示本来要返�
 ECMAScript 提供了 **isNaN()** 函数，用来判断传入的参数是否「不是数值」。<br>
 该函数会尝试把传入的参数转换为数值。如涌转换为数值的值都会导致这个函数返回 **true**。
 
-
 ### <span id="jsn_oop">面向对象</span>
 
+---
+
+## <span id="jsn_aboutlinks">相关链接</span>
+
+* [JS视频清单](./JS_Videos.md)
 

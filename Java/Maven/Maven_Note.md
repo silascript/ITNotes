@@ -5,8 +5,8 @@ tags:
   - java
   - maven
   - jdk
-created: 2023-01-13, 12:27:45
-modified: 2023-01-31, 9:50:15
+created: 2023-01-31 11:31:14
+modified: 2023-05-27 12:08:23
 ---
 # Maven 笔记
 
@@ -230,4 +230,18 @@ java11 指定
 ```
 
 ---
+
+## 小技巧
+
+### 排查版本依赖
+
+```shell
+mvn dependency:tree
+```
+
+---
+
+## <span id="mvn_aboutlinks">相关链接</span>
+
+* [maven 视频清单](./Maven_Videos.md)
 

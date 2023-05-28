@@ -6,8 +6,8 @@ tags:
   - javaweb
   - jdbc
   - http
-created: 2023-01-13, 12:27:45
-modified: 2023-01-31, 9:57:02
+created: 2023-01-31 11:31:14
+modified: 2023-05-26 5:55:21
 ---
 # Java Web 笔记
 
@@ -56,4 +56,10 @@ maven 依赖：
 [HikariCP](https://github.com/brettwooldridge/HikariCP) 是 [Spring_Note_1](Spring/Spring_Note_1.md) 默认使用的数据链接池。
 
 特点，就如其项目 [ReadMe](https://github.com/brettwooldridge/HikariCP#-hikaricpits-fasterhikari-hikal%C4%93-origin-japanese-light-ray) 中说的那样：「Fast, simple, reliable」。
+
+---
+
+## <span id="java_web_tools_frameworks">各种工具框架笔记</span>
+
+* [Spring 笔记 1](./Spring/Spring_Note_1.md) 
 

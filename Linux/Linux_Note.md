@@ -11,7 +11,7 @@ tags:
   - shell
   - network
 created: 2022-11-7 2:50:13
-modified: 2023-05-18 12:50:49
+modified: 2023-05-29 11:57:30
 ---
 # Linux 笔记
 
@@ -972,6 +972,24 @@ sudo ln -s /opt/KomodoEdit/bin/komodo /usr/local/bin/komodo
 ```shell
 echo $XDG_SESSION_TYPE
 ```
+
+---
+
+## 小工具
+
+### 彩色命令行
+
+#### lsd
+
+[lsd](https://github.com/lsd-rs/lsd) 是一个给 `ls` 命令美化的小工具。
+
+![lsd screen](https://raw.githubusercontent.com/Peltoche/lsd/assets/screen_lsd.png)
+
+#### exa
+
+[exa](https://github.com/ogham/exa) 与 [lsd](#lsd) 类似功能的小工具 -- 同样也是使用 [Rust](../Rust/Rust_Note.md) 语言编写的。
+
+![exa screen](https://github.com/ogham/exa/raw/master/screenshots.png)
 
 ---
 

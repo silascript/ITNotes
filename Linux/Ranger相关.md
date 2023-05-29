@@ -6,7 +6,7 @@ tags:
   - ranger
   - joshuto
 created: 2022-11-7 2:50:13
-modified: 2023-05-29 2:27:40
+modified: 2023-05-29 6:21:57
 ---
 # Ranger 相关
 
@@ -16,6 +16,8 @@ modified: 2023-05-29 2:27:40
 
 * [Ranger简介](#ranger_introduction)
 * [安装及基础配置](#ranger_install_settings)
+	* [安装](#安装)
+	* [配置](#配置)
 * [快捷键](#ranger_hotkey)
 * [Joshuto](#Joshuto) 
 
@@ -50,8 +52,28 @@ ranger --copy-config=all
 
 # 安装图标
 git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
-echo export RANGER_LOAD_DEFAULT_RC=FALSE >> ~/.bashrc
+
 ```
+
+```shell
+echo "default_linemode devicons" >> $HOME/.config/ranger/rc.conf
+```
+
+> [!tip] RANGER_LOAD_DEFAULT_RC
+> 如果要使用 `~/.config/ranger` 目录下的配置生效，需要把 `RANGER_LOAD_DEFAULT_RC` 变量设置为 `false`：
+>
+> ```shell
+>
+> # bash
+> echo export RANGER_LOAD_DEFAULT_RC=FALSE >> ~/.bashrc
+>
+> # zsh
+> echo "export RANGER_LOAD_DEFAULT_RC=false">>~/.zshrc
+> 
+> ```
+
+> [!tip]
+> 其实如果 bash 或 zsh 使用了 [lsd](Linux_Note.md#lsd) 或 [exa](Linux_Note.md#exa)，那就会自带图标，不用在 ranger 里另设了。
 
 #### 预览
 
@@ -84,6 +106,7 @@ Ranger 的操作与 [Vim](../vim/Vim_Note.md) 操作相近，用了很多的 vim
 |        G        |           跳到底端           |
 |        /        |             搜索             |
 |        g        |         快速进入目录         |
+|       gh        |        跳回 home 目录        |
 |        S        | 切换到 ranger 最后浏览的目录 |
 |        q        |       退出 ranger 模式       |
 |       ZZ        |             同上             |
@@ -98,6 +121,7 @@ Ranger 的操作与 [Vim](../vim/Vim_Note.md) 操作相近，用了很多的 vim
 |     空格键      |      选择或取消选择文件      |
 |       dd        |             剪切             |
 |       pp        |             粘贴             |
+|       yy        |             复制             |
 |                 |                              |
 |                 |                              |
 |                 |                              |

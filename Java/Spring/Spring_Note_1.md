@@ -6,7 +6,7 @@ tags:
   - spring
   - maven
 created: 2023-01-31 11:31:14
-modified: 2023-05-26 5:47:33
+modified: 2023-05-30 10:36:27
 ---
 # Spring 笔记 1
 
@@ -77,4 +77,4 @@ modified: 2023-05-26 5:47:33
 ## <span id="spring_aboutlinks">相关链接</span>
 
 * [Spring 视频清单](./Spring_Videos.md)
-
+* [Spring中文文档](https://springdoc.cn/spring-boot/)

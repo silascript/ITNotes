@@ -5,7 +5,7 @@ tags:
   - git
   - github
 created: 2023-01-30 11:19:11
-modified: 2023-04-21 1:33:54
+modified: 2023-05-31 5:22:16
 ---
 # Git 笔记
 
@@ -654,7 +654,8 @@ git config --global --unset url.https://github.com/.insteadof
 * ~~[hub.おうか.tw](https://hub.xn--p8jhe.tw)~~
 * ~~[hub.連接.台灣](https://hub.xn--gzu630h.xn--kpry57d)~~
 * [nuaa](https://hub.nuaa.cf/)
-* [gitslow](https://hub.gitslow.tk/)
+* ~~[gitslow](https://hub.gitslow.tk/)~~
+* [kgithub](https://kgithub.com/)
 
 ---
 

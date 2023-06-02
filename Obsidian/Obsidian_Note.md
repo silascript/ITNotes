@@ -5,7 +5,7 @@ tags:
   - markdown
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2023-05-26 6:00:51
+modified: 2023-06-2 7:02:33
 ---
 # Obsidian 笔记
 
@@ -508,6 +508,14 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 ##### <span id="obn_plugins_codeblock_enhancer">Code Block Enhancer</span>
 
 [Code Block Enhancer](https://github.com/nyable/obsidian-code-block-enhancer) 跟 [Copy Button for code blocks](#obn_plugins_cp_btn_codeblocks) 相似，都是对代码块的增强。
+
+---
+
+##### <span id="obn_plugins_beetter_codeblock"> Better CodeBlock</span>
+
+[Better CodeBlock](https://github.com/stargrey/obsidian-better-codeblock) 类似与 [Copy Button for code blocks](#Copy%20Button%20for%20code%20blocks) 和 [Code Block Enhancer](#Code%20Block%20Enhancer) 类似，都是对代码框显示增强型插件。但它与主题兼容性好像更好一些，在 [Code Block Enhancer](#Code%20Block%20Enhancer) 中有时使用 [Callout Blocks](#Callout%20Blocks) 功能时，会使得部分代码被行数列遮挡。而这个插件默认将代码的语言名放在代码框右侧或底部，就避免了代码框显示「变形」的问题 -- 更重要的是，如行数列及代码语言名称，是否显示都能自行设定，另外还有字体颜色及高亮设置，这就非常人性化了。
+
+![Better CodeBlock screen 1](https://github.com/stargrey/obsidian-better-codeblock/raw/main/screenshots/image20220606011534.png)
 
 ---
 

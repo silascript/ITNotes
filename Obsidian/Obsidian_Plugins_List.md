@@ -5,7 +5,7 @@ tags:
   - obsidian
   - plugin
 created: 2023-01-13 12:44:24
-modified: 2023-05-24 1:22:05
+modified: 2023-06-2 7:05:43
 ---
 # Obsidian 个人必装插件清单
 
@@ -37,7 +37,8 @@ modified: 2023-05-24 1:22:05
 * [Icon-Folder](./Obsidian_Note.md#obn_plugins_folder_icon)
 * [File Color](./Obsidian_Note.md#obn_plugins_file_color)
 * [Lapel](./Obsidian_Note.md#obn_plugins_lapel)
-* [Code Block Enhancer](./Obsidian_Note.md#obn_plugins_codeblock_enhancer)
+* ~~[Code Block Enhancer](./Obsidian_Note.md#obn_plugins_codeblock_enhancer)~~
+* [Better CodeBlock](./Obsidian_Note.md#obn_plugins_beetter_codeblock)
 * [Jump To Link](./Obsidian_Note.md#obn_plugins_jumptolink)
 * [Better File Link](./Obsidian_Note.md#obn_plugins_better_file_link) 
 * [File Info Panel](./Obsidian_Note.md#obn_plugins_file_info_panel)

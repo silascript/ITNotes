@@ -2,12 +2,20 @@
 aliases:
   - 
 tags:
-  - docker
-  - http
-  - network
-  - linux
-  - ubuntu
-  - mysql
+  - 
+created: 2023-02-2 11:25:59
+modified: 2023-06-2 6:09:28
+---
+c
+aliases:
+  - 
+tags:
+  * docker
+  * http
+  * network
+  * linux
+  * ubuntu
+  * mysql
 created: 2023-01-13 12:27:45
 modified: 2023-06-2 2:44:41
 ---
@@ -263,6 +271,82 @@ docker search ubuntu --filter is-official=true
 docker search ubuntu --filter "is-official=true"
 # 限制搜索结果
 docker search busybox --limit=10
+```
+
+##### 搜索镜像时列出该镜像的 TAG
+
+ 以下 [Shell](../Linux/Shell_Note.md) 脚本实现了列出镜像 tag 的功能：
+
+```shell
+#!/bin/bash
+function usage() {
+cat << HELP
+
+dockertags  --  list all tags for a Docker image on a remote registry.
+
+EXAMPLE: 
+    - list all tags for ubuntu:
+       dockertags ubuntu
+
+    - list all php tags containing apache:
+       dockertags php apache
+
+HELP
+}
+
+
+
+if [ $# -lt 1 ]; then
+    usage
+    exit
+fi
+
+image="$1"
+tags=`wget -q https://registry.hub.docker.com/v1/repositories/${image}/tags -O -  | sed -e 's/[][]//g' -e 's/"//g' -e 's/ //g' | tr '}' '\n'  | awk -F: '{print $3}'`
+
+if [ -n "$2" ]; then
+    tags=` echo "${tags}" | grep "$2" `
+fi
+echo "${tags}"
+```
+
+> [!info] 此脚本应用在国内镜像上
+> 上述脚本中，其中 **tags=`wget -q https://registry.hub.docker.com/v1/repositories/${image}/tags` **，如果使用了国内镜像，就应该相应改成国内镜像的网址。
+> 
+> 如网易：http://hub-mirror.c.163.com/v2/library/${image}/tags/list
+
+下面就是使用网易镜像源获取指定镜像 TAG 值的脚本：
+```shell
+#!/bin/bash
+function usage() {
+cat << HELP
+
+dockertags  --  list all tags for a Docker image on a remote registry.
+
+EXAMPLE: 
+    - list all tags for ubuntu:
+       dockertags ubuntu
+
+    - list all php tags containing apache:
+       dockertags php apache
+
+HELP
+}
+
+
+
+if [ $# -lt 1 ]; then
+    usage
+    exit
+fi
+
+image="$1"
+tags=`curl http://hub-mirror.c.163.com/v2/library/${image}/tags/list | sed -e 's/.*\[//g' -e 's/"//g' -e 's/\]\}$//g' -e 's/,/\n/g'`
+
+if [ -n "$2" ]; then
+    tags=` echo "${tags}" | grep "$2" `
+fi
+echo "${tags}"
 ```
 
 #### <span id="dk_image_search_hub">Docker Hub</span>

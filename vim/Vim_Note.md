@@ -8,7 +8,7 @@ tags:
   - neovim
   - lsp
 created: 2023-02-4 4:35:40
-modified: 2023-04-14 5:50:23
+modified: 2023-06-1 9:07:03
 ---
 
 # Vim 笔记
@@ -16,6 +16,8 @@ modified: 2023-04-14 5:50:23
 ---
 
 ## 目录
+
+* [相关笔记](#vim_about_notes)
 
 ---
 

@@ -5,7 +5,7 @@ tags:
   - git
   - github
 created: 2023-01-30 11:19:11
-modified: 2023-05-31 5:22:16
+modified: 2023-06-2 10:43:21
 ---
 # Git 笔记
 
@@ -611,10 +611,8 @@ Github 访问慢可以使用重设 Host 映射解决。
 1. github hosts ip 映射库: [GitHub520](https://github.com/521xueweihan/GitHub520)
 
 2. hosts 管理小工具: [SwitchHosts](https://github.com/oldj/SwitchHosts)
-
-```
-SwitchHosts与GitHub520配合使用，能够方便快速使用最新的ip映射github相关的网址s
-```
+> [!tip]
+> SwitchHosts 与 GitHub520 配合使用，能够方便快速使用最新的 ip 映射 github 相关的网址 s
 
 ###### 相关 host 地址
 
@@ -693,6 +691,41 @@ git config --global --unset url.https://github.com/.insteadof
 > 在新建 token 页面，选择 token 的生命周期 Expiration\
 > 勾选 使用范围（**Select scopes**）\
 > 点击 **Generate token** 按钮，这就生成一个新的 token
+
+---
+
+## <span id="git_tools">Git 工具</span>
+
+### 图形界面工具
+
+#### Rabbitvcs
+
+[Rabbitvcs](https://github.com/rabbitvcs/rabbitvcs) 原来是一个 svn 的图形工具，不过版本更新，现在也支持 Git 了。这个工具可以在 Linux Gnome 界面下显示 Git 目录的各种状态。
+
+![Rabbitvcs screen](./Git_Note.assets/Rabbitvcs_screen.png)
+
+只要安装 rabbitvcs-nautilus 这个工具就能实现相应的效果了：
+```shell
+# 这是 manjaro 上安装示例
+yay -S community/rabbitvcs-nautilus
+```
+
+[rabbitvcs 介绍视频](https://www.bilibili.com/video/BV1Fh4y1d7Qe)
+
+> [!bug] 介绍视频中的错误
+> 实际上，在装 rabbitvcs-nautilus 时，就已经将相关的依赖都一并装上了（包括了 svn 及依赖的 [Python](../Python/Python_Note.md) 的各种包也一并装上了），不用再 clone [Rabbitvcs](https://github.com/rabbitvcs/rabbitvcs) 仓库下来手动安装了。
+> 
+> ```shell
+> yay -S community/rabbitvcs-nautilus
+>Sync Explicit (1): rabbitvcs-nautilus
+> 正在解析依赖关系...
+> 正在查找软件包冲突...
+>
+>软件包 (8) libutf8proc-2.8.0-1  python-dulwich-0.21.3-1  python-pysvn-1.9.20-1
+>         python-simplejson-3.18.0-1  rabbitvcs-1:0.18+70+g3c8db72-1  serf-1.3.9-8  subversion-1.14.2-6
+>         rabbitvcs-nautilus-1:0.18+70+g3c8db72-1
+>
+> ```
 
 ---
 

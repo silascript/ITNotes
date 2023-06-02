@@ -9,7 +9,7 @@ tags:
   - ubuntu
   - mysql
 created: 2023-01-13 12:27:45
-modified: 2023-05-31 1:05:28
+modified: 2023-06-2 2:44:41
 ---
 
 # Docker 笔记
@@ -23,6 +23,7 @@ modified: 2023-05-31 1:05:28
 * [安装与设置](#dk_insetup)
 * [修改镜像源](#dk_mirror)
 * [常用服务操作](#dk_comm_commands)
+* [镜像操作](#dk_image)
 * [容器操作](#dk_container)
 	* [创建容器](#dk_container_create)
 	* [停止容器](#dk_container_stop)
@@ -94,33 +95,33 @@ pacman -S docker
 
 docker 安装完成后，docker 会自动新增一个 docker 用户组。  
 为了方便，主要是为了避免权限问题，当前用户如果是非 root 用户，最好将当前用户加入这个用户组中。
-```sh
+```shell
 sudo gpasswd -a ${USER} docker
 ```
 
 > **查看** 有没有 docker 组：
-> ```sh
+> ```shell
 > sudo cat /etc/group | grep docker
 > ```
 
 > 如果没有 docker 组，**添加**：
-> ```sh
+> ```shell
 > sudo groupadd docker
 > ```
 
 3. 启动服务
-```sh
+```shell
 sudo systemctl start docker
 ```
 
-> 重启：
-> ```sh
+> [!tip] 重启
+> ```shell
 > sudo systemctl restart docker
 > ```
 
 ### <span id="dk_install_win">Windows 下安装 Docker</span>
 1. 安装 Docker
-个人喜欢用 [Scoop]() 来安装软件，所以 Docker 也不例外。
+个人喜欢用 [Scoop](../Scoop/Scoop_Note.md) 来安装软件，所以 Docker 也不例外。
 
 2. 注册服务
 ```shell
@@ -149,14 +150,15 @@ Windows 下 Docker 的 daemon.json 文件是放在 `C:\ProgramData\docker\config
 ---
 
 ## <span id="dk_mirror">修改镜像源</span>
+
 使用命令来指定镜像并启动 docker
-```sh
+```shell
 docker --registry-mirror=https://registry.docker-cn.com daemon
 ```
 
 通过配置文件添加镜像源：
-修改 **/etc/docker/daemon.json** 文件：
-```sh
+修改 `/etc/docker/daemon.json` 文件：
+```shell
 {
 	"registry-mirror":[
 	"https://registry.docker-cn.com",
@@ -165,19 +167,33 @@ docker --registry-mirror=https://registry.docker-cn.com daemon
 }
 
 ```
+
+> [!tip]
 > 如果 /etc/docker/ 目录下没有 daemon.json，可自行添加。
 > 
 > 配置文件可以添加多个镜像。
 
 Docker 镜像列表
-| 镜像名                | 镜像地址                           |
-| --------------------- | ---------------------------------- |
-| 科大镜像              | https://docker.mirrors.ustc.edu.cn |
-| 网易镜像              | https://hub-mirror.c.163.com       |
-| Docker 中国区官方镜像 | https://registry.docker-cn.com     |
-| DaoCloud            | https://hub.daocloud.io            |
 
-###  <span id="dk_image_bugs">镜像问题</span>
+|        镜像名         |                  镜像地址                  |
+|:---------------------:|:------------------------------------------:|
+|       科大镜像        |     https://docker.mirrors.ustc.edu.cn     |
+|       网易镜像        |        https://hub-mirror.c.163.com        |
+| Docker 中国区官方镜像 |       https://registry.docker-cn.com       |
+|       DaoCloud        |          https://hub.daocloud.io           |
+|       上海交大        |  https://docker.mirrors.sjtug.sjtu.edu.cn  |
+|       阿里 - 广州       | https://registry.cn-guangzhou.aliyuncs.com |
+|       阿里 - 上海       | https://registry.cn-shanghai.aliyuncs.com  |
+|       阿里 - 杭州       | https://registry.cn-hangzhou.aliyuncs.com  |
+|       阿里 - 北京       |  https://registry.cn-beijing.aliyuncs.com  |
+|       阿里 - 深圳       | https://registry.cn-shenzhen.aliyuncs.com  |
+|       阿里 - 成都       |  https://registry.cn-chengdu.aliyuncs.com  |
+
+#### <span id="dk_mirror_proxy">其他 docker 代理</span>
+
+* [dockerproxy](https://dockerproxy.com/)
+
+###  <span id="dk_mirror_bugs">镜像问题</span>
 
  docker 出现 `no matching manifest for windows/amd64 10.0.18363 in the manifest list entries` 错误。
 
@@ -193,6 +209,10 @@ run 容器时出现 `Error response from daemon: failed to start service utility
 BCDEdit /set hypervisorlaunchtype auto
 ```
 重启电脑。
+
+### <span id="dk_mirror_magic">镜像网站相关的魔法</span>
+
+[hub-mirror](https://github.com/togettoyou/hub-mirror) 这个仓库中介绍了几种「魔法」。
 
 ---
 
@@ -224,23 +244,39 @@ docker info
 
 ## <span id="dk_image">镜像操作</span>
 
-搜索镜像：
+### <span id="dk_image_search">搜索镜像</span>
 
-搜索方式有 2 种
+Docker 搜索镜像的方式大概有 以下 2 种。
 
-1. 使用命令搜
+#### <span id="dk_image_search_command">使用命令</span>
 
 ```shell
 docker search xxx
 ```
 
-2. 到 [hub.docker](https://hub.docker.com) 上搜
+指定搜索过滤条件
+
+```shell
+# 指定只搜索官方版本的镜像
+docker search ubuntu --filter is-official=true
+# 或者这样 filter的值用双引号括起来
+docker search ubuntu --filter "is-official=true"
+# 限制搜索结果
+docker search busybox --limit=10
+```
+
+#### <span id="dk_image_search_hub">Docker Hub</span>
+
+ [hub.docker](https://hub.docker.com) 上搜
 
 下载镜像：
 ```shell
 docker pull 镜像名[:tag]
 ```
+> [!tip]
 > 跟 git 的类似
+
+### 镜像其他操作
 
 查看已存在的镜像：
 ```shell

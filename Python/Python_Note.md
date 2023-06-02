@@ -7,7 +7,7 @@ tags:
   - pip
   - conda
 created: 2023-01-30 11:19:11
-modified: 2023-05-12 12:36:53
+modified: 2023-06-2 3:17:18
 ---
 # Python 笔记
 
@@ -95,6 +95,19 @@ pip 的配置文件是放在.pip 目录下的 pip.conf 文件中 (windows 是 pi
 ```config
 [global]
 index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
+### pip 搜索
+
+由于 `pip search` 命令不能用，所以使用「pip-search」这个包来实现搜索功能。
+```shell
+# 安装 pip-search
+pip install pip-search
+
+# 使用 pip-search
+# 使用这货时，得敲 pip_search 命令，而不是 pip-search
+pip_search 要搜索的包
+
 ```
 
 ---

@@ -11,7 +11,7 @@ tags:
   - shell
   - network
 created: 2022-11-7 2:50:13
-modified: 2023-05-29 11:57:30
+modified: 2023-06-2 8:27:50
 ---
 # Linux 笔记
 
@@ -53,6 +53,68 @@ modified: 2023-05-29 11:57:30
 ---
 
 ## <span id="linux_terminal"> 终端 </span>
+
+---
+
+## <span id="linux_versions">版本</span>
+
+### <span id="linux_versions_query">查询系统版本</span>
+
+#### cat 方式
+
+```shell
+cat /proc/version
+```
+
+#### uname
+
+```shell
+# 查询版本所有信息
+uname -a
+
+# 查询linux内核版本信息
+uname -r
+
+```
+
+##### uname 选项
+
+```shell
+-a, --all                按如下次序输出所有信息，其中若 -p 和 -i 的
+                             探测结果为未知，则省略：
+-s, --kernel-name        输出内核名称
+-n, --nodename           输出网络节点的主机名
+-r, --kernel-release     输出内核发行号
+-v, --kernel-version     输出内核版本号
+-m, --machine            输出主机的硬件架构名称
+-p, --processor          输出处理器类型（不可移植）
+-i, --hardware-platform  输出硬件平台（不可移植）
+-o, --operating-system   输出操作系统名称
+    --help        显示此帮助信息并退出
+    --version     显示版本信息并退出
+
+```
+
+#### lsb_release
+
+LSB 是 **Linux Standard Base**（Linux 标准库）的缩写， `lsb_release` 命令 用来与具体 Linux 发行版相关的 Linux 标准库信息。
+
+> [!info] LSB 译法
+> LSB 的译法有 Linux 标准库，Linux 标准规范
+
+显示所有版本信息：
+
+```shell
+lsb_release -a
+```
+
+lsb 其他选项和参数：
+
+* `-r`：发行版版本号
+* `-c`：发行版代号
+* `-d`：发行版描述信息
+* `-i`：发行商名称 ID
+* `-v`：lsb 版本信息
 
 ---
 

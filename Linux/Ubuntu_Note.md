@@ -5,6 +5,8 @@ tags:
   - linux
   - ubuntu
   - vim
+created: 2022-11-7 2:50:13
+modified: 2023-06-2 10:49:18
 ---
 # Ubuntu 笔记
 
@@ -27,6 +29,35 @@ Ubuntu 换源，其实就是是把 `/etc/apt/sources.list` 这个文件中的路
 [网易镜像](http://mirrors.163.com) 速度也挺不错的，就是版本有点旧，连 20.04 都没有。关于 Ubuntu 换源，请参考 [Ubuntu 镜像使用帮助](http://mirrors.163.com/.help/ubuntu.html)。
 
 换完源， `apt-get update` 下！
+
+---
+
+## <span id="ubuntu_versions">Ubuntu 版本</span>
+
+[查询系统版本](Linux_Note.md#查询系统版本)
+
+Ubuntu 每六个月发布一个非 LTS 版本，每两年发布一个 LTS 版本，每个 LTS 有 5 年的维护时间。
+
+* 主版本号为单数则表明此版本为短期支持版本，主要是为了测试一些新特性，测试 bug 等
+* 主版本号为双数时表明此版本为长期支持板，一般有五年的维护时间。
+
+> [!info] LTS
+> LTS：Long Term Support
+
+### ubuntu 历史各 LTS 版本清单
+
+|       版本号       |       代号       |  发布时间  |
+|:------------------:|:----------------:|:----------:|
+|       22.04        | Jammy Jellyfish  | 2022-04-22 |
+|     20.04 LTS      |   Focal Fossa    | 2020-04-23 |
+|     18.04 LTS      |  Bionic Beaver   | 2018-04-26 |
+|     16.04 LTS      |   Xenial Xerus   | 2016-04-21 |
+|     14.04 LTS      |   Trusty Tahr    | 2014-04-18 |
+|     12.04 LTS      | Precise Pangolin | 2012-04-26 |
+| 11.04（Unity 桌面） |  Natty Narwhal   | 2011-04-28 |
+|     10.04 LTS      |    Lucid Lynx    | 2010-04-29 |
+|      8.04 LTS      |   Hardy Heron    | 2008-04-24 |
+|      6.06 LTS      |   Dapper Drake   | 2006-06-01 |
 
 ---
 

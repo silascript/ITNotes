@@ -1,8 +1,15 @@
 ---
-aliases: 
-tags: editor vim plugin lsp markdown plugin  
-created: 2023-01-13, 12:27:46
-modified: 2023-01-30, 7:51:37
+aliases:
+  - 
+tags:
+  - editor
+  - vim
+  - plugin
+  - lsp
+  - markdown
+  - plugin
+created: 2023-01-30 11:19:11
+modified: 2023-06-3 1:06:43
 ---
 # vim 常用插件
 
@@ -42,7 +49,6 @@ modified: 2023-01-30, 7:51:37
    * [markdowntable](#plugin_md_table_2)
 * [关于LSP及补全](#lsp_complete)
 
-
 ### <span id="vimplugin_plug">Plug 插件</span>
 
 windows 下装 [Plug 插件](https://github.com/junegunn/vim-plug)
@@ -72,7 +78,6 @@ Linux neovim：
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
-
 
 #### vim-plug 插件配置
 
@@ -206,7 +211,6 @@ vim-codefmt 插件在 vim 中使用，就两个主要命令:
 
 [nerdcommenter](https://github.com/preservim/nerdcommenter)
 
-
 简单配置：
 
 ```vim
@@ -222,14 +226,14 @@ let g:NERDCustomDelimiters ={'c':{'left':'//'}}
 
 nerdcommentor 默认快捷键:
 
-注释: <Leader>cc
+注释： `<Leader>cc`
 
-取消注释:<Leader>cu
+取消注释：``<Leader>cu`
 
-Leader 默认为**\\**
+`<Leader>` 默认为 `\`
 
+> [!tip] nerdcommenter 地址更换
 > 注意 此插件原来的 github 的地址为 **scrooloose/nerdcommenter**，如果原来装有的，得改下 Plug 后的字符串值为 **preservim/nerdcommenter**，然后 Clean 下再 Install。
-
 
 ### <span id="plugin_statusline">状态栏插件</span>
 
@@ -305,7 +309,7 @@ let g:vim_markdown_folding_level = 6 //折叠级别 未设置默认为1
 
 [vim-surround](https://github.com/tpope/vim-surround)
 
-```vimscript
+```vim
 " ---------------------------------------------------------
 "       surround使用
 " ---------------------------------------------------------
@@ -324,58 +328,39 @@ let g:vim_markdown_folding_level = 6 //折叠级别 未设置默认为1
 " ---------------------------------------------------------
 ```
 
-正常模式
+##### 常用命令
 
-\-----------
+###### normal 模式
 
-ds ：  删除包围
+* `ds` ：  删除包围
+* `cs` ：  修改包围
+* `ys` ：  添加包围
+* `yS` ：  添加包围并替换包围文本
+* `yss` ：  添加一行包围
+* `ySs` ：  添加包围内容独成一行
+* `ySS` ：  添加包围内容独成一行
+* `ysiw"` ：  单词周围加双引号
+* `ysiw(` ：  单词周围加圆括号，左括号是带空格的
+* `ysiw]` ： 单词周围加方括号，右括号不带空格
+* `ysnw` ：  在 **n** 个单词周围加要加的符号或文本
+	> [!tip]
+    > 如上面的 `ysiw` 类似，`ysiw` 只是 `ysnw` 的特例，是对当前单词加东西
+* `ysiWb` ：  以空格为分界加圆括号，这是不带空格的括号，大 `B` 代表不带空格的花括号
+* `ysfn` ： 从光标位置到字母 **n** 加 `<span>`
+* `ystn"` ： 从光标位置到字母 **n** 加 **"**
 
-cs ：  修改包围
-
-ys ：  添加包围
-
-yS ：  添加包围并替换包围文本
-
-yss ：  添加一行包围
-
-ySs ：  添加包围内容独成一行
-
-ySS ：  添加包围内容独成一行
-
-ysiw" ：  单词周围加双引号
-
-ysiw( ：  单词周围加圆括号，左括号是带空格的
-
-ysiw] ： 单词周围加方括号，右括号不带空格
-
-ysnw：  在 **n** 个单词周围加要加的符号或文本
-        > 如上面的 `ysiw` 类似，`ysiw` 只是 `ysnw` 的特例，是对当前单词加东西
-
-ysiWb ：  以空格为分界加圆括号，这是不带空格的括号，大 `B` 代表不带空格的花括号
-
-ysfn ： 从光标位置到字母 **n** 加 `<span>`
-
-ystn" ： 从光标位置到字母 **n** 加 **"**
-
-可视模式
-
-\-----------
+###### 可视模式
 
 s  ： 给选中内容添加包围
 
 S  ： 选中内容添加包围并独成一行
 
-插入模式
+###### 插入模式
 
-\-----------
-
-<CTRL-s> ： 添加一个包围
-
-<CTRL-s><CTRL-s> ： 添加包围内容独成一行
-
-<CTRL-g>s ： 添加一个包围
-
-<CTRL-g>S ： 添加包围内容独成一行
+* `<CTRL-s>` ： 添加一个包围
+* `<CTRL-s><CTRL-s>` ： 添加包围内容独成一行
+* `<CTRL-g>s` ： 添加一个包围
+* `<CTRL-g>S` ： 添加包围内容独成一行
 
 ---
 
@@ -387,29 +372,29 @@ S  ： 选中内容添加包围并独成一行
 
 [vim-easymotion](https://github.com/easymotion/vim-easymotion)
 
-常用操作:
+#### 常用操作
 
 (1)  **跳转到当前光标前后的位置**
 
-<leader><leader>w
+`<leader><leader>w`
 
-<leader><leader>b
+`<leader><leader>b`
 
 (2) **搜索**
 
-<leader><leader>s
+`<leader><leader>s`
 
 (3) **行级跳转**
 
-<leader><leader>j
+`<leader><leader>j`
 
-<leader><leader>k
+`<leader><leader>k`
 
 (4) **行内跳转**
 
-<leader><leader>h
+`<leader><leader>h`
 
-<leader><leader>l
+`<leader><leader>l`
 
 ### undo tree
 
@@ -425,7 +410,6 @@ nnoremap <leader>udt :UndotreeToggle <CR>
 set undofile
 set undodir=~/.local/share/nvim/.undodir
 ```
-
 
 ### vim-gitgutter
 
@@ -444,9 +428,9 @@ let g:gitgutter_enabled = 1
 
 vim-gigutter 各种常用命令:
 
- **:GitGutterToggle** 开启关闭 gutter
+ `:GitGutterToggle`： 开启关闭 gutter
 
- **:GitGutterLineHighlightsToggle** 开启关闭高亮相关行
+ `:GitGutterLineHighlightsToggle`： 开启关闭高亮相关行
 
 ### vim-fugitive
 
@@ -504,7 +488,6 @@ Plug 'shime/vim-livedown',{'on':['LivedownPreview','LivedownToggle','LivedownKil
 
 ### <span id="plugin_tools">小工具</span>
 
-
 #### <span id="plugin_tools_startuptime">Startuptime</span>
 
 [Startuptime](https://github.com/dstein64/vim-startuptime)
@@ -517,7 +500,7 @@ Plug 'shime/vim-livedown',{'on':['LivedownPreview','LivedownToggle','LivedownKil
 
 #### vim-startify
 
-[]() 是一个 vim/neovim 启动页面的插件。
+[vim-startify](https://github.com/mhinz/vim-startify) 是一个 vim/neovim 启动页面的插件。
 
  可以手动配启动页面显示的图案
 ```vimscript
@@ -534,11 +517,13 @@ let g:startify_custom_header =[
 
 ```
 
-也可以使用系统的 [figlet](http://www.figlet.org) 工具生成：
+也可以使用系统的 [figlet](http://www.figlet.org) 工具生成。
+
 安装 figlet：
 ```shell
 pacman -S figlet
 ```
+> [!info] 类似工具
 > 与 figlet 类似的小工具，还有 `banner`、 `toilet`，哈哈，这名字有点脏，用法大同小异。
 
 figlet 常用参数：
@@ -556,13 +541,12 @@ figlet -w 数字 要输出的文字
 ```
 
 在 startify 的配置中可以调用 figlet 来生成 vim 启动页面那个图案。
+
 直接贴出 github 上的示例：
 ```vimscript
 let g:startify_custom_header =
        \ startify#pad(split(system('figlet -w 100 VIM2020'), '\n'))
 ```
-
-
 
 ---
 
@@ -586,10 +570,10 @@ let g:startify_custom_header =
 #### <span id="plugin_hightlight">高亮</span>
 
 ##### <span id="plugin_hlyank">高亮复制</span> 
-[vim-highlightedyank](https://github.com/machakann/vim-highlightedyank)
-复制操作时，高亮一下刚复制的文本。
 
-安装:
+[vim-highlightedyank](https://github.com/machakann/vim-highlightedyank) 是一个实现了在复制操作时，高亮一下刚复制的文本功能的插件。
+
+安装：
 ```vim
 	" vim 8.0+
 	Plug 'machakann/vim-highlightedyank'
@@ -599,21 +583,20 @@ let g:startify_custom_header =
 		map y <Plug>(highlightedyank)
 	endif
 ```
-高亮持续时间:
+
+高亮持续时间：
 ```vim
 	" 默认是亮了一秒
 	" 单位是毫秒
 	let g:highlightedyank_highlight_duration = 1000
 ```
 
-
-还能设置高亮的颜色:
+还能设置高亮的颜色：
 ```vim
-	
 	highlight HighlightedyankRegion cterm=reverse gui=reverse
 ```
-高亮颜色设置要放在 colortheme 设置之后。
-
+> [!tip]
+> 高亮颜色设置要放在 colortheme 设置之后。
 
 #### <span id="plugin_mark">mark 相关</span>
 ##### <span id="plugin_mk_signature">signature</span>
@@ -629,14 +612,13 @@ let g:startify_custom_header =
 | dmx | 移除当前行某个 mark x 是添加时的名称 |
 | m- | 移除当前行所有 mark |
 
-
-
 ### vimspector
 
 [vimspector](https://github.com/puremourning/vimspector)
 
 这是一个 vim 下多语言图形界面 debug 插件!
->A multi language graphical debugger for Vim
+> [!quote]
+> A multi language graphical debugger for Vim
 
 安装:
 
@@ -659,24 +641,19 @@ Plugin 'puremourning/vimspector'
 
 ![open-browser_2](./vim_plugin.assets/vim_plugin_open-browser2.png)
 
-
 ##### <span id="plugin_browser_github">open-browser-github</span>
 
 快速打开 github。
 
 [browser_github](https://github.com/tyru/open-browser-github.vim)
 
-
 全部命令如下图：
 
 ![](./vim_plugin.assets/vim_plugin_open-github.png)
 
-
 ---
 
 ### <span id="plugin_markdown">Markdown 相关插件</span>
-
-
 
 #### [vim-markdown-folding](https://github.com/masukomi/vim-markdown-folding)
 
@@ -690,8 +667,6 @@ Plugin 'puremourning/vimspector'
 
 * **:set foldlevel=数字**: 设置折叠级别
 * **zM**: 相当于 set foldlevel=0
-
-
 
 #### <span id="plugin_md_privew_1">Markdown 预览插件</span>
 
@@ -726,12 +701,11 @@ Markdown 预览插件原理大同小异，都是通过启动一个小型［服�
 
 #### <span id="plugin_md_table">Markdown 表格相关的插件</span>
 
-
 ##### <span id="plugin_md_table_1">VIM Table Mode</span>
 
 [VIM Table Mode](https://github.com/dhruvasagar/vim-table-mode) 这个插件能够简化绘制表格操作。
 
-使用 **:TableModeToggle** 命令 或 **<Leader>tm** 快捷命令启动 Table 模式。
+使用 **:TableModeToggle** 命令 或 `<Leader>tm` 快捷命令启动 Table 模式。
 使用 **:TableModeDisable** 命令就能退出 Table 模式。
 
 使用小技巧:
@@ -753,6 +727,7 @@ markdown 表格的对齐方式那个行的输入。
 :TableMake 行数 列数
 ```
 
+---
 
 ### <span id="lsp_complete">关于 LSP 及补全</span>
 

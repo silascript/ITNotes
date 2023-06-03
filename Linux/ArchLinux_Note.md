@@ -8,6 +8,8 @@ tags:
   - rime
   - ime
 date created: 2022-11-08 11:32
+created: 2022-11-8 11:21:08
+modified: 2023-06-3 11:14:02
 ---
 
 # ArchLinux 笔记
@@ -26,6 +28,49 @@ date created: 2022-11-08 11:32
 ## <span id="archlinux_configs">配置</span>
 
 ### <span id="archlinux_configs_chsources">换源</span>
+
+可以使用以下命令快速探测出速度较快的国内镜像源：
+```shell
+sudo pacman-mirrors -i -c China -m rank
+```
+
+出现选项列表勾选所需的源。这些源配置就会出现在 `/etc/pacman.d/mirrorlist` 这个文件中，如果想进一步手动配置，可以使用 [Vim](../vim/Vim_Note.md) 等编辑器来手动配置。
+> [!tip]
+> 其实需要手动，主要是 `pacman-mirrors -i -c China -m rank` 这命令并不太靠谱，有时会选上海交大或华为的源，这俩货，要么速度有时会慢，要么直接挂了，非常不稳定。而且有时只能「刷」出一个国内源可勾选，所以建议还是手动添加多个国内源更保险。
+
+#### archlinuxcn 源
+
+> [!quote] 
+> Arch Linux 中文社区仓库 是由 Arch Linux 中文社区驱动的非官方用户仓库。包含中文用户常用软件、工具、字体/美化包等。
+
+在 `/etc/pacman.conf` 这个文件中添加以下类似的配置：
+
+```conf
+[archlinuxcn]
+#SigLevel = Optional TrustedOnly
+Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
+```
+
+> [!tip]
+> archlinuxcn 只能另一个。
+
+> [!tip] pacman.conf 其他配置
+> `/etc/pacman.conf` 这个配置中，还有一些常用配置项。如颜色高亮，可以将 `Color` 这个选项的注释去掉。
+
+开源镜像源可在 [开源镜像网址清单](Mirror_Address.md) 中查询。
+
+#### 更新
+
+做完以上的操作后，就需要更新系统数据库：
+```shell
+sudo pacman -Syyu
+```
+
+更新系统 签名：
+```shell
+sudo pacman -S archlinuxcn-keyring
+sudo pacman -S antergos-keyring
+```
 
 ---
 

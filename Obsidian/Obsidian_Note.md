@@ -5,7 +5,7 @@ tags:
   - markdown
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2023-06-2 7:09:45
+modified: 2023-06-3 1:13:11
 ---
 # Obsidian 笔记
 
@@ -110,6 +110,9 @@ modified: 2023-06-2 7:09:45
 2. 在 obsidian 的 「外观」（Appearance）设置选项中，「CSS 代码片段」（CSS Snippets）选项，点下刷新，就能加载出可用的 Css
  Snippets ，根据需要启用相应的 CSS Snippet，该 Snippet 的功能就能生效了。
 
+> [!tip] Mysnippet
+> snippet 可以与插件 [MySnippets](#MySnippets) 配合使用。
+
 ### 常用的 Snippet：
 
 #### Clutter-Free Headings
@@ -119,6 +122,10 @@ modified: 2023-06-2 7:09:45
 #### Bigger Link Popup Preview
 
 [Bigger Link Popup Preview](https://github.com/kmaasrud/awesome-obsidian/blob/master/code/css-snippets/bigger-link-popup-preview.css) 这个 Snippet 可以加大预览窗口大小。
+
+#### minimal-theme-css-snippets
+
+[minimal-theme-css-snippets](https://github.com/replete/obsidian-minimal-theme-css-snippets) 这是一个与 [Minimal](#Minimal) 主题相关的 CSS Snippet 集合。
 
 ---
 

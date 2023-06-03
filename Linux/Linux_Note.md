@@ -11,7 +11,7 @@ tags:
   - shell
   - network
 created: 2022-11-7 2:50:13
-modified: 2023-06-2 8:27:50
+modified: 2023-06-3 8:20:17
 ---
 # Linux 笔记
 
@@ -163,6 +163,14 @@ lsb 其他选项和参数：
 ## <span id="linux_tarc"> 打包压缩 </span>
 
 Linux 下打包和压缩是分两部分的。
+
+打包用的是 [Tar 命令](#Tar%20命令)。
+
+[压缩工具](#压缩工具) 在 Linux 上常用的主要有以下四种：
+* [gzip](#gzip)
+* [bzip2](#bzip2)
+* [compress](#compress)
+* [XZ Utils](#XZ%20Utils)
 
 ### <span id="linux_tarc_tar">Tar 命令 </span>
 
@@ -496,7 +504,7 @@ more 命令一些按键操作：
 ### <span id="linux_textprocessing_regex"> 正则表达式 </span>
 
 ### <span id="linux_textprocessing_grep">grep</span>
-grep 全称是 「global search regular expression and print out the line」，翻译过来就是 **全局搜索正则表达式并把行打印出来**。
+grep 全称是 「**global search regular expression and print out the line**」，翻译过来就是 **全局搜索正则表达式并把行打印出来**。
 
 grep 是一个程序族，包括了 **grep**、**egrep** 和 **fgrep**。
 
@@ -1057,8 +1065,9 @@ echo $XDG_SESSION_TYPE
 
 ## 其他 Linux 笔记
 
-* [ArchLinux_Note](ArchLinux_Note.md)
-* [CentOS_Note](CentOS_Note.md)
-* [Fedora_Note](Fedora_Note.md)
-* [Ubuntu_Note](Ubuntu_Note.md)
+* [ArchLinux笔记](ArchLinux_Note.md)
+* [CentOS笔记](CentOS_Note.md)
+* [Fedora笔记](Fedora_Note.md)
+* [Ubuntu笔记](Ubuntu_Note.md)
+* [Debian笔记](Debian_Note.md)
 * [Linux视频清单](./Linux_Videos.md)

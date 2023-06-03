@@ -9,7 +9,7 @@ tags:
   - markdown
   - plugin
 created: 2023-01-30 11:19:11
-modified: 2023-06-3 1:06:43
+modified: 2023-06-4 2:25:03
 ---
 # vim 常用插件
 
@@ -124,6 +124,10 @@ Plug 'jiangmiao/auto-pairs'
 
 ### <span id="plugin_snippets">snippets 插件</span>
 
+#### <span id="plugin_snippets_ultisnips">Ultisnips</span>
+
+[Ultisnips](https://github.com/SirVer/ultisnips) 是一个 snippet 引擎插件。
+
 ```shell
 " snippet相关
 " snippet调用引擎
@@ -132,7 +136,10 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 ```
 
->ultisnips 这个插件依赖 python,而且是特定版本，特别恶心,所以慎用！
+> [!tip]
+> Ultisnips 这个插件依赖 python,而且是特定版本，特别恶心,所以慎用！
+
+#### <span id="plugin_snippets_snipmate">SnipMate</span>
 
 使用另一个 snippet 引擎：**SnipMate**
 
@@ -145,7 +152,15 @@ Plug 'garbas/vim-snipmate'
 
 ```
 
-自定义 snippets 文件
+#### <span id="plugin_snippets_neosnippet">Neosnippet</span>
+
+[neosnippet](https://github.com/Shougo/neosnippet.vim) 看名字就知道是 Shougo 的作品。
+
+#### <span id="plugin_snippets_vimsnippets">vim-snippets</span>
+
+ [vim-snippets](https://github.com/honza/vim-snippets) 是一个 snippet 仓库，它预存储了大量的不同语言的 snippet 文件。为 snippet 引擎，如 [Ultisnips](#Ultisnips) 或 [SnipMate](#SnipMate) 提供「弹药」。
+
+vim-snippets 除了可以使用预制的 snippet 外，还能自定义 snippets 文件。
 
 在~/.vim/目录新建一个目录 **snippets** 目录，用来存在自定义的 snippets 文件。
 

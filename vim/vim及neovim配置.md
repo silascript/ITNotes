@@ -1,16 +1,20 @@
 ---
-aliases: 
-tags: editor vim neovim config setting
-created: 2023-01-13, 12:27:46
-modified: 2023-01-30, 7:54:24
+aliases:
+  - 
+tags:
+  - editor
+  - vim
+  - neovim
+  - config
+  - setting
+created: 2023-01-30 11:19:11
+modified: 2023-06-4 1:34:10
 ---
 # VIM 及 NeoVIM 配置
 
 ## neovim 配置
 
 ### init.vim 配置文件
-
-
 
 ## 设置
 
@@ -108,9 +112,6 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 > 有一些配置 vim 没有，但 neovim 已经出厂配好了的，所以先查询 neovim 哪些已配过的，以免重复配置。
 > 禁止注释行回国自动添加注释，这个设置要放在 `filetype on` 这些文件类型侦测之后，才能生效。
 
-
-
-
 windows 版设置有差异：
 ```vimscript
 set t_Co=256
@@ -121,7 +122,6 @@ Windows 下引入配置：
 ```vimscript
 source ~\AppData\Local\nvim\xxx.vim
 ```
-
 
 ### 特别设置
 
@@ -136,8 +136,6 @@ autocmd ColorScheme * call s:transparent_background()
 ```
 
 >**注意: 透明背景设置必须放在 colortheme 设置之后!**
-
-
 
 #### python 相关
 
@@ -164,4 +162,18 @@ set pythonthreedll=I:/Scoop/apps/python-beta/current/python38.dll
 pip3 install --user --upgrade pynvim
 ```
 
+---
 
+## vim 集成套件
+
+### SpaceVim
+
+[SpaceVim](https://spacevim.org/)[![SpaceVim Repo](https://img.shields.io/github/stars/SpaceVim/SpaceVim?style=social)](https://github.com/SpaceVim/SpaceVim)
+
+![SpaceVim preview](https://user-images.githubusercontent.com/13142418/228742293-1ca7c173-84a6-461a-9fb5-656d23953e12.png)
+
+### LuanVim
+
+[LunarVim](https://www.lunarvim.org/)[![LunarVim Repo](https://img.shields.io/github/stars/LunarVim/LunarVim?style=social)](https://github.com/LunarVim/LunarVim)
+
+![Lunarvim preview](https://www.lunarvim.org/img/lunarvim_preview.png)

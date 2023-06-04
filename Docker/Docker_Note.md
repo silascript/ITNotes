@@ -4,7 +4,7 @@ aliases:
 tags:
   - 
 created: 2023-02-2 11:25:59
-modified: 2023-06-2 6:09:28
+modified: 2023-06-4 12:39:41
 ---
 c
 aliases:
@@ -1517,6 +1517,54 @@ CentOS 开启 SSH 服务
 docker run -itd --name d_ubuntu21 --network vbridge01 --ip 172.20.0.20 -p 2225:22 ubuntu:jammy
 ```
 > 使用自定义网桥并为容器指派 ip，另外映射 22 接口，以便后续开启 `ssh` 功能。
+
+---
+
+## 问题与解决方案
+
+### 时区问题
+
+因为时区没设置正确，可能在某些操作中出现以下错误提示：
+
+#### 不存在 zoneinfo
+
+执行 `ls -l` 命令时，可能出现以下提示：
+
+```shell
+Unable to determine time zone: No such file or directory (os error 2)
+```
+
+> [!tip] 解决方案
+> 原因是缺少 `tzdata` 包，所以只要安装上 tzdata 包就可以了！
+> 
+> `apt install tzdata`
+> 
+> 在安装 tzdata 时，会出现让你选择地区，如下：
+> 
+> 先选择哪个洲：
+> ```shell
+> Please select the geographic area in which you live. Subsequent configuration questions will narrow this down by presenting a list of cities, representing the time zones in which they are located.
+>
+ > 1. Africa   3. Antarctica  5. Arctic  7. Atlantic  9. Indian    11. US
+> 2. America  4. Australia   6. Asia    8. Europe    10. Pacific  12. Etc
+>
+> ```
+> 
+> 再选择哪个城市：
+> 
+> ```shell
+> Please select the city or region corresponding to your time zone.
+>
+> 1. Aden      16. Brunei       31. Hong_Kong    46. Kuala_Lumpur  61. Pyongyang      76. Tehran
+> 2. Almaty    17. Chita        32. Hovd         47. Kuching       62. Qatar          77. Tel_Aviv
+> 
+> ```
+> >[!tip]
+> > 中国的话，就选择 `Shanghai` 就行了。
+>
+> 只要根据步骤走就行了。
+
+最后用 `date` 命令测试下，出现 `CST` 字样（China Standard Time）就证明切换到中国时区成功了。
 
 ---
 

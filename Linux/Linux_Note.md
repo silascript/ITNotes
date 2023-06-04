@@ -11,7 +11,7 @@ tags:
   - shell
   - network
 created: 2022-11-7 2:50:13
-modified: 2023-06-3 8:20:17
+modified: 2023-06-4 12:44:37
 ---
 # Linux 笔记
 
@@ -1060,6 +1060,31 @@ echo $XDG_SESSION_TYPE
 [exa](https://github.com/ogham/exa) 与 [lsd](#lsd) 类似功能的小工具 -- 同样也是使用 [Rust](../Rust/Rust_Note.md) 语言编写的。
 
 ![exa screen](https://github.com/ogham/exa/raw/master/screenshots.png)
+
+exa 可以设置各种显示样式，像什么树型目录，git 标识等。
+
+示例：
+```bash
+alias ll='exa -a --long --header --group --tree --level=2 --icons --time-style=long-iso'
+```
+> [!info]
+> `-a`：显示所有文件包括隐藏文件
+> 
+> `--long`：完整路径
+>
+> `--icons`：显示目录及文件图标
+> 
+> `--header`：显示各列的名称
+> 
+> `--group`：显示用户组（默认只显示用户）
+> 
+> `--tree`：以树型结构显示目录结构
+> 
+> `--level=2`：显示子目录的层数
+> 
+> `--time-style=long-iso`：这是将时间样式设置成 `2023-05-31 01:37` 样式。
+
+更详细设置请参考：[exa 文档](https://the.exa.website/features)
 
 ---
 

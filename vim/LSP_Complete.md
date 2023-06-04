@@ -4,7 +4,7 @@ aliases:
 tags:
   - 
 created: 2022-11-7 2:50:13
-modified: 2023-06-4 2:37:58
+modified: 2023-06-5 3:11:32
 ---
 
 # LSP 及补全相关
@@ -29,8 +29,9 @@ modified: 2023-06-4 2:37:58
 	* [easycomplete](#vp_complete_easycomplete)
 
 ## <span id="about_lsp">关于 LSP</span>
-官方定义:
->The Language Server Protocol (LSP) defines the protocol used between an editor or IDE and a language server that provides language features like auto complete, go to definition, find all references etc.
+
+> [!quote] 官方定义
+> The Language Server Protocol (LSP) defines the protocol used between an editor or IDE and a language server that provides language features like auto complete, go to definition, find all references etc.
 
 一种用于为编辑器或 IDE 提供，诸如自动补全、定义跳转、查找关联等语言功能的编程语言服务协议。
 
@@ -246,6 +247,25 @@ LanguageClient 为补全框架提供源的名称是**LanguageClient**。
 
 ## <span id="vp_complete">Vim 补全插件</span>
 
+### <span id="vp_complete_vim_auto_popmenu">vim-auto-popmenu</span>
+
+[vim-auto-popmenu](https://github.com/skywind3000/vim-auto-popmenu) 这个插件实现了基本的补全功能。
+
+这个插件用到的数据源来自 buffer, dict, tags。可以说这个插件是为了那些不需要装 [LSP](#about_lsp)，又想有基础的补全功能的场景使用而出的极轻量补全插件。
+
+这插件作者还非常「贴心」地另外制作了一个词典插件：[GitHub - skywind3000/vim-dict: 没办法，被逼的，重新整理一个词典补全的数据库](https://github.com/skywind3000/vim-dict)，以弥补补全源数据过于「朴素」。这词典包括了 c、c++、java、python、go、javascript 等语言常用的词汇。
+
+这个插件，在选定候选项，回车确认，默认情况会发生不但确认了而且自动换行的行为；这明显不是大部分人所需要的（这种需求，估计是写 [Python](../Python/Python_Note.md) 的），所以为了禁止确认后自动换行的行为发生，可以在设置里添加以下代码：
+```vim
+" 1：确认不换行
+" 0：确认并换行
+let g:apc_cr_confirm = 1
+```
+> [!quote] 换行的 issue
+> [let <CR> confirm select other than create new line · Issue #4 · skywind3000/vim-auto-popmenu · GitHub](https://github.com/skywind3000/vim-auto-popmenu/issues/4) 
+
+---
+
 ### <span id="vp_complete_neocomplete">neocomplete.vim</span> 
 
 [neocomplete](https://github.com/Shougo/neocomplete.vim)
@@ -255,6 +275,8 @@ neocomplete 不兼容 vim8.2。而已没再来更新新功能，只有修 bug。
 这插件必须是 vim7.3.855 以上 vim8 以下的版本，而且是拥有 lua 特性的版本使用。
 
 这个插件现在基本可以忽略。
+
+---
 
 ### <span id="vp_complete_deoplete">deoplete</span>
 
@@ -466,6 +488,8 @@ deoplete 其他“有趣”的补全源插件:
 
 这插件要求 vim 的版本是 **8.2.0662+**，可见这插件是够新的（deoplete 需要的 vim 版本是 8.1）。
 
+这插件依赖一个插件：[denops.vim](https://github.com/vim-denops/denops.vim)。而 denops.vim 又依赖 [Deno](https://deno.com/runtime)。而 Deno 是一个「JavaScript runtime」，这跟 [Node](../Node/NodeJS_Note.md) 是类似的东西。哈哈！ddc 这个插件看来是走了 [coc](#coc) 相似的路线。
+
 ---
 
 ### <span id="vp_complete_ncm">ncm/ncm2</span>
@@ -545,8 +569,10 @@ ncm/ncm2 只是补全框架，而补全数据得从外部而来。如上面的�
 [asyncomplete](https://github.com/prabirshrestha/asyncomplete.vim)
 
 asyncomplete 这个补全框架是完全用 vimscript 写的，所以不需要像 deoplete ncm2 依赖 Python,coc 依赖 nodejs。
-	asyncomplete 这补全框架源可以用自己那堆针对某语言的 LSC，也可以用如 [vim-lsp](https://github.com/prabirshrestha/vim-lsp) 这样多语言的 LSC。
-	多语言 LSC 插件，官方推荐是 [vim-lsp](https://github.com/prabirshrestha/vim-lsp),为此官方还写了个“适配器”：[asyncomplete-lsp](https://github.com/prabirshrestha/asyncomplete-lsp.vim)。
+
+asyncomplete 这补全框架源可以用自己那堆针对某语言的 LSC，也可以用如 [vim-lsp](https://github.com/prabirshrestha/vim-lsp) 这样多语言的 LSC。
+
+多语言 LSC 插件，官方推荐是 [vim-lsp](https://github.com/prabirshrestha/vim-lsp),为此官方还写了个“适配器”：[asyncomplete-lsp](https://github.com/prabirshrestha/asyncomplete-lsp.vim)。
 
 asyncomplete 常用的功能插件：
 

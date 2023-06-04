@@ -4,7 +4,7 @@ aliases:
 tags:
   - 
 created: 2023-02-2 11:25:59
-modified: 2023-06-4 12:39:41
+modified: 2023-06-4 11:25:52
 ---
 c
 aliases:
@@ -481,8 +481,9 @@ docker stats [容器名|容器ID]
 ```shell
 docker cp .config/nvim/configs d_ubuntu21:/root/.vim/
 docker cp .config/nvim/init.vim d_ubuntu21:/root/
+docker cp d_ubuntu21:/root/.vim/configs ~/mysoft/vims/custumvimconfig/linux/vim/
 ```
-> 能拷文件也能拷文件。
+> [!tip]
 > 左侧是拷贝源，右侧是目的地。哪边有 `:` 的，哪边就是容器。
 
 ---

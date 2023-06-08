@@ -9,7 +9,7 @@ tags:
   - markdown
   - plugin
 created: 2023-01-30 11:19:11
-modified: 2023-06-4 2:25:03
+modified: 2023-06-7 11:37:31
 ---
 # vim 常用插件
 
@@ -138,6 +138,10 @@ Plug 'honza/vim-snippets'
 
 > [!tip]
 > Ultisnips 这个插件依赖 python,而且是特定版本，特别恶心,所以慎用！
+> 
+> 连 [vim-snippets](#plugin_snippets_vimsnippets) 都在文档中表示：「Some people want to use snippets without having to install Vim with Python support. Yes - this sucks.」
+
+[ultisnips的非官方中文文档](https://github.com/Linfee/ultisnips-zh-doc)
 
 #### <span id="plugin_snippets_snipmate">SnipMate</span>
 
@@ -154,7 +158,40 @@ Plug 'garbas/vim-snipmate'
 
 #### <span id="plugin_snippets_neosnippet">Neosnippet</span>
 
-[neosnippet](https://github.com/Shougo/neosnippet.vim) 看名字就知道是 Shougo 的作品。
+[neosnippet](https://github.com/Shougo/neosnippet.vim) 看名字就知道是 Shougo 的作品，这是一个 snippet 引擎，定位跟 [snipmate](#plugin_snippets_snipmate) 或 [ultisnips](#plugin_snippets_ultisnips) 相同。默认使用 [neosnippet-snippets](#plugin_snippets_neosnippet_snippets) 作为 snippet 仓库。
+
+---
+
+#### <span id="plugin_snippets_neosnippet_snippets">neosnippet-snippets</span>
+
+ [neosnippet-snippets](https://github.com/Shougo/neosnippet-snippets) 这是为 [Neosnippet](#plugin_snippets_neosnippet) 引擎而设的 snippet 仓库，跟 [vim-snippets](#plugin_snippets_vimsnippets) 类似。
+
+配置：
+```vim
+" 使用 neosnippet-snippets 作为snippet仓库
+let g:neosnippet#snippets_directory = '~/.vim/plugged/neosnippet-snippets/neosnippets'
+
+" 把标记隐藏
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+```
+
+> [!info] neosnippet 指定 snippets 仓库
+> neosnippet 最主要配置就是指定 snippet 仓库的路径。
+> 
+>neosnippet 除了可以指定默认的 neosnippet-snippets 仓库外，还能指定 [vim-snippets](#plugin_snippets_vimsnippets) 为其 snippets 仓库。
+
+```vim
+" 使用Ctrl+k 触发
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+```
 
 #### <span id="plugin_snippets_vimsnippets">vim-snippets</span>
 
@@ -171,6 +208,8 @@ vim-snippets 除了可以使用预制的 snippet 外，还能自定义 snippets 
 例如，xml 的 snippets，就新建 **xml.snippets** 文件。
 
 snippets 语法格式请参考 [vim-snippets](https://github.com/honza/vim-snippets)
+
+---
 
 ### <span id="plugin_format">格式化插件</span>
 
@@ -281,6 +320,12 @@ let g:airline_powerline_fonts=1
 let g:airline_theme='dark'
 
 ```
+
+#### <span id="plugin_sl_lightline">lightline</span>
+
+[lightline](https://github.com/itchyny/lightline.vim) 是一个跟 [airline](#airline) 类似的状态栏插件，但它比 airline 更轻量。
+
+---
 
 ### <span id="plugin_filetype_icon">文件类型图标</span>
 

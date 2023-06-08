@@ -4,7 +4,7 @@ aliases:
 tags:
   - 
 created: 2022-11-7 2:50:13
-modified: 2023-06-5 3:11:32
+modified: 2023-06-8 8:42:20
 ---
 
 # LSP 及补全相关
@@ -17,6 +17,7 @@ modified: 2023-06-5 3:11:32
 	* [LanguageClient-neovim](#vp_lcn)
 
 * [Vim 补全插件](#vp_complete)
+	* [vim-auto-popmenu](#vp_complete_vim_auto_popmenu)
 	* [neocomplete](#vp_complete_neocomplete)
 	* [deoplete](#vp_complete_deoplete)
 		* [使用vim-lsc为LSC](#vp_deoplete_lsc)
@@ -76,9 +77,13 @@ python lsp 实现：
 
 [pyright](https://github.com/microsoft/pyright) 是微软新推出的 LSP，上面那个要被微软废弃了！
 
+#### jedi 
+
+[jedi](https://github.com/davidhalter/jedi) 这是 Python 界大名鼎鼎的 LSP，很多后来的 Python LSP 都是它的子孙。
+
 #### python-language-server
 
-[python-language-server](https://github.com/palantir/python-language-server) 这款 LSP 是基于 [jedi](https://github.com/davidhalter/jedi) 。 这款 LSP 需要 Python 版本是 **3.5+**。 这款 LSP 是 [vim-lsp](https://github.com/prabirshrestha/vim-lsp) 示例配置中 Python 的 LSP。 这款 LSP 依赖的 [jedi] 版本相对「保守」点。
+[python-language-server](https://github.com/palantir/python-language-server) 这款 LSP 是基于 [jedi](#jedi) 。 这款 LSP 需要 Python 版本是 **3.5+**。 这款 LSP 是 [vim-lsp](https://github.com/prabirshrestha/vim-lsp) 示例配置中 Python 的 LSP。 这款 LSP 依赖的 [jedi] 版本相对「保守」点。
 
 python-language-server 安装：
 ```shell
@@ -92,6 +97,8 @@ pip install -U setuptools
 ```
 
 测试 python-language-server 是否安装成功：`pyls --help`。
+
+这个 LSP 已经是「**unmaintained**」,所以建议别用了！
 
 #### jedi-language-server
 
@@ -108,7 +115,7 @@ pip install -U jedi-language-server
 
 #### python-lsp-server
 
-[python-lsp-server](https://github.com/python-lsp/python-lsp-server) 是一款基于 [jedi](https://github.com/davidhalter/jedi)，由 Spyder IDE 的团队在维护的 Python LSP。Spyder IDE 用的也是这个 LSP 实现。这个 LSP 是要求 Python 的版本是  **3.7+** 。
+[python-lsp-server](https://github.com/python-lsp/python-lsp-server) 同样是一款基于 [jedi](#jedi)，由 Spyder IDE 的团队在维护的 Python LSP。Spyder IDE 用的也是这个 LSP 实现。这个 LSP 是要求 Python 的版本是  **3.7+** 。
 
 python-lsp-server 安装：
 ```shell
@@ -116,12 +123,15 @@ pip install "python-lsp-server[yapf]"
 # 或者
 pip install "python-lsp-server[all]"
 ```
+
 安装出现 `'install_requires' must be a string or list of strings` 类似的错误，请执行以下代码：
 ```shell
 pip install -U setuptools
 ```
 
 测试是否安装成功：`pylsp -V`。
+
+这个 Python LSP 应该是当下主流使用的，毕竟至今还在更新。
 
 ---
 
@@ -212,6 +222,14 @@ LSC 只是提供与 LSP 对接，并将 LSP 传来的语言服务获取补全数
 
 [SpaceVim](vim及neovim配置.md#SpaceVim) 默认用的就是 vim-lsp。
 
+#### <span id="vp_vim-lsp_vim-lsp-neosnippet">vim-lsp-neosnippet</span>
+
+[vim-lsp-neosnippet](https://github.com/thomasfaingnaert/vim-lsp-neosnippet) 是一个将 [vim-lsp](#vim-lsp) 整合 [Neosnippet](vim_plugin.md#plugin_snippets_neosnippet) 的插件。
+
+#### <span id="vp_vim-lsp-ultisnips">vim-lsp-ultisnips</span>
+
+[vim-lsp-ultisnips](https://github.com/thomasfaingnaert/vim-lsp-ultisnips) 是一个将 [vim-lsp](#vim-lsp) 整合 [Ultisnips](vim_plugin.md#Ultisnips) 的插件。
+
 ---
 
 ### <span id="vp_lcn">LanguageClient-neovim</span>
@@ -262,7 +280,7 @@ LanguageClient 为补全框架提供源的名称是**LanguageClient**。
 let g:apc_cr_confirm = 1
 ```
 > [!quote] 换行的 issue
-> [let <CR> confirm select other than create new line · Issue #4 · skywind3000/vim-auto-popmenu · GitHub](https://github.com/skywind3000/vim-auto-popmenu/issues/4) 
+> [let \<CR\> confirm select other than create new line · Issue #4 · skywind3000/vim-auto-popmenu · GitHub](https://github.com/skywind3000/vim-auto-popmenu/issues/4) 
 
 ---
 
@@ -285,18 +303,22 @@ neocomplete 不兼容 vim8.2。而已没再来更新新功能，只有修 bug。
 虽然叫补全框架，但实际框架需要与 Language Server Client 插件通信，拿到补全数据，才能将数据展示出来。
 所以这就涉及到也 LSC 插件的配置。有的补全框架，自己给了部分语言的 LSC 实现，有的是通过支持第三方 LSC 插件来实现。deoplete 既有自己的 LSC，也支持多种 LSC 插件。
 
-deoplete 安装：
+#### <span id="vp_complete_deoplete_install">deoplete 安装</span>
+
 deoplete 安装有两个前置条件:
+
 1. vim8 或者 neovim 而且是拥有 python3 特性
   在 vim 中用以下命令检测当前 vim 是否拥有 python3 特性
   ```vim
 		:echo has("python3")
   ```
 2. pynvim
- 安装 pynvim
- ```shell
-	pip3 install pynvim
- ```
+```shell
+pip3 install pynvim
+```
+> [!tip] pynvim
+> 如果没装 pynvim，会引发 `pythonx import [pynvim|neovim]command to work` 的错误提示。
+
 如果以上两个条件满足，就可以安装 deoplete 插件：
 ```vim
 	if has('nvim')
@@ -307,6 +329,7 @@ deoplete 安装有两个前置条件:
 	  Plug 'roxma/vim-hug-neovim-rpc'
 	endif
 ```
+
 deoplete 配置:
 ```vim
 	" 启动deoplete
@@ -316,6 +339,7 @@ deoplete 配置:
 
 
 ```
+
 deoplete 快捷捷映射配置:
 ```vim
 	" 补全菜单选择映射为用Tab键(默认是Ctrl-n和Ctrl-p)
@@ -324,6 +348,7 @@ deoplete 快捷捷映射配置:
 	inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"	
 
 ```
+
 最关键一步到了，就是配置补全源。
 补全源，大体有两个，一个来自 snippet，另一个就是来自 LSC 接口/插件的。
 
@@ -473,12 +498,96 @@ deoplete 其他“有趣”的补全源插件:
 
 ### <span id="vp_complete_completor">Completor</span>
 
-[Completor](https://github.com/maralla/completor.vim) 是用 Python 写的异步补全框架。
+[Completor](https://github.com/maralla/completor.vim) 是用 Python 写的异步补全框架。**有点愚蠢的插件**，不建议使用。
+
+这插件内置了路径补全功能。
+
+这个补全插件支持 [Ultisnips](vim_plugin.md#Ultisnips) and [Neosnippet](vim_plugin.md#Neosnippet) 两个 snippet 引擎。默认使用 [Ultisnips](vim_plugin.md#Ultisnips)。如果使用 [Neosnippet](vim_plugin.md#Neosnippet)，得再装个接口插件 [completor-neosnippet](https://github.com/maralla/completor-neosnippet)。
 
 安装:
 ```vim
 	Plug 'maralla/completor.vim'
 ```
+
+#### 各语言补全支持
+
+##### c
+
+使用 clangd 来补全。
+
+配置 clang：
+```vim
+let g:completor_clang_binary = '/path/to/clang'
+```
+
+或指定 LSP：
+```vim
+let g:completor_filetype_map.c = {'ft': 'lsp', 'cmd': 'clangd-14'}
+```
+> [!tip] clangd
+> `clangd-14` 后面的数字是版本号，具体得查看当前 clangd 在 `/usr/bin` 目录中的可执行文件叫什么。
+
+>[!bug]
+> 设置了 `g:completor_clang_binary = '/path/to/clang'` 这后，如果设 `g:completor_filetype_map.c = {'ft': 'lsp', 'cmd': 'clangd-14'}`，补全会失效。可见此补全插件是非常愚蠢的！
+
+##### python
+
+使用 [jedi](#jedi) 来补全。
+
+##### vim script
+
+对 vimscript 语言补全，是使用了 Shougo 大神的 [neco-vim](https://github.com/Shougo/neco-vim) 的插件。为了对接此插件，completor 必须装 [completor-necovim](https://github.com/kyouryuukunn/completor-necovim) 这个接口插件。
+
+```vim
+Plug 'kyouryuukunn/completor-necovim'
+Plug 'Shougo/neco-vim'
+```
+
+##### javascipt
+
+使用 [NodeJS_Note](../Node/NodeJS_Note.md) 的模块 [tern](https://github.com/ternjs/tern) 来实现 [JS_Note](../JS/JS_Note.md) 补全。
+
+```vim
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+Plug 'maralla/completor.vim', { 'do': 'make js' }
+```
+
+##### typerscript
+
+使用 [completor-typescript](https://github.com/maralla/completor-typescript) 这个插件，可以也 `tsserver` 进行对接，以实现补全功能。
+
+##### golang
+
+可以使用 ~~[gocode](https://github.com/nsf/gocode)~~ 来补全，但这个项目已经不维护了，官方建议使用 [gopls](https://pkg.go.dev/golang.org/x/tools/gopls)。
+
+也可以使用 gopls 来补全：
+```vim
+let g:completor_filetype_map.go = {'ft': 'lsp', 'cmd': 'gopls'}
+```
+
+#### ruby
+
+ruby 补全可以使用这个插件：[vim-ruby-autocomplete](https://github.com/Shadowsith/vim-ruby-autocomplete)
+
+##### rust
+
+大致在两种方式进行补全
+
+###### 直接指定 racer 安装路径
+
+```vim
+let g:completor_racer_binary = '/path/to/racer'
+```
+
+###### 使用 LSP 来补全
+
+```vim
+let g:completor_filetype_map.rust = {'ft': 'lsp', 'cmd': 'rls'}
+```
+
+#### 总结
+
+completor 这补全插件，在 [LSP](#关于%20LSP) 的配置上根本不太行。垃圾！
 
 ---
 
@@ -601,7 +710,7 @@ asyncomplete 常用的功能插件：
 snip 方面，依赖 [ultisnips](https://github.com/SirVer/ultisnips) 这个 snip 引擎及 [vim-snippets](https://github.com/honza/vim-snippets) 这个 snip 库。
 
 ultisnips 外部依赖 Python,这有点违反 easycomplete 这个框架的「极简」精神：“纯 VimL 实现”。
-不过应该也是没办法，很多补全框架对 snipmate 的支持也不太好，估计是这个 snip 插件虽然是线 vimscript 写的，得太「老」了。所以现在 snip 引擎是 ultisnips 最为流行。不过 easycomplete 解决了其他补全框架与 ultisnips 整合时，常出现的快捷键问题，即 tab 补全失效 (一般补全框架都倾向使用 tab 去替代 Ctrl-n/Ctrl-p 这组快捷键，但 ultisnips 也是默认使用 tab 进行触发，所以就容易冲突，一般是将 ultisnips 触发快捷键另设,如设成 Ctrl-j,才能解决这个整合小问题)
+不过应该也是没办法，很多补全框架对 snipmate 的支持也不太好，估计是这个 snip 插件虽然是线 vimscript 写的，得太「老」了。所以现在 snip 引擎是 ultisnips 最为流行。不过 easycomplete 解决了其他补全框架与 ultisnips 整合时，常出现的快捷键问题，即 tab 补全失效 (一般补全框架都倾向使用 tab 去替代 `Ctrl-n`/`Ctrl-p` 这组快捷键，但 ultisnips 也是默认使用 tab 进行触发，所以就容易冲突，一般是将 ultisnips 触发快捷键另设,如设成 `Ctrl-j`,才能解决这个整合小问题)
 
 这框架可以说是开籍即用，几乎零配置。只要你系统装了相应的 LSP,如 pyls,就能直接使用的了 -- 框架应该是内置了相应的 LSC 对与系统的 LSP「对接」。
 

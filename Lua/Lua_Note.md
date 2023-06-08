@@ -1,10 +1,15 @@
 ---
-aliases: 
-tags: PL lua
-created: 2023-01-13, 12:27:45
-modified: 2023-01-31, 11:11:22
+aliases:
+  - 
+tags:
+  - PL
+  - lua
+created: 2023-01-31 11:31:14
+modified: 2023-06-9 2:15:30
 ---
 # Lua 笔记
+
+---
 
 ## 变量
 
@@ -16,4 +21,9 @@ modified: 2023-01-31, 11:11:22
 
 ## 函数
 
+---
+
+## 其他链接
+
+[Lua视频清单](Lua_Videos.md.md)
 

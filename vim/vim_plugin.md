@@ -9,7 +9,7 @@ tags:
   - markdown
   - plugin
 created: 2023-01-30 11:19:11
-modified: 2023-06-7 11:37:31
+modified: 2023-06-9 6:20:20
 ---
 # vim 常用插件
 
@@ -141,7 +141,12 @@ Plug 'honza/vim-snippets'
 > 
 > 连 [vim-snippets](#plugin_snippets_vimsnippets) 都在文档中表示：「Some people want to use snippets without having to install Vim with Python support. Yes - this sucks.」
 
-[ultisnips的非官方中文文档](https://github.com/Linfee/ultisnips-zh-doc)
+##### ultisnips 文档
+
+* [ultisnips的非官方中文文档](https://github.com/Linfee/ultisnips-zh-doc)
+* [ultisnips-zh-doc](https://github.com/Linfee/ultisnips-zh-doc/blob/master/doc/UltiSnips_zh.txt)
+
+---
 
 #### <span id="plugin_snippets_snipmate">SnipMate</span>
 

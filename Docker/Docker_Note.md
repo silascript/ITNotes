@@ -2,22 +2,14 @@
 aliases:
   - 
 tags:
-  - 
+  - docker
+  - http
+  - network
+  - linux
+  - ubuntu
+  - mysql
 created: 2023-02-2 11:25:59
-modified: 2023-06-4 11:25:52
----
-c
-aliases:
-  - 
-tags:
-  * docker
-  * http
-  * network
-  * linux
-  * ubuntu
-  * mysql
-created: 2023-01-13 12:27:45
-modified: 2023-06-2 2:44:41
+modified: 2023-06-10 2:14:06
 ---
 
 # Docker 笔记

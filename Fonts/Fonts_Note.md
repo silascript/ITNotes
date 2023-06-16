@@ -3,8 +3,8 @@ aliases:
   - 
 tags:
   - font
-created: 2023-01-13, 12:27:45
-modified: 2023-01-31, 11:10:44
+created: 2023-01-31 11:31:14
+modified: 2023-06-16 1:17:03
 ---
 # 字体笔记
 
@@ -254,6 +254,23 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 ![sarasa fonts](./Fonts_Note.assets/sarasa_fonts.png)
 
 ---
+
+##### <span id="fonts_zh_dream-han">梦源字体</span>
+
+[梦源字体](https://github.com/Pal3love/dream-han-cjk)
+
+![ dream-han preview](https://github.com/Pal3love/dream-han-cjk/raw/main/image/png/weight_white.png#gh-dark-mode-only)
+
+
+---
+
+##### <span id="fonts_zh_glow-sans">未来荧黑</span>
+
+[未来荧黑](https://github.com/welai/glow-sans)
+
+
+
+---
 ## <span id="fonts_program">编程字体</span>
 
 常用的编程字体：
@@ -353,4 +370,10 @@ Cascadia Code 版本差异：
 ### CodingFont
 
 [CodingFont](https://www.codingfont.com) 是一个在线预览编程字体的网站。
+
+---
+
+## 各种字体工具
+
+[字体汉字计数软件](https://github.com/NightFurySL2001/CJK-character-count)
 

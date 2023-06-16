@@ -4,7 +4,7 @@ aliases:
 tags:
   - 
 created: 2022-11-7 2:50:13
-modified: 2023-06-8 8:42:20
+modified: 2023-06-11 2:04:15
 ---
 
 # LSP 及补全相关
@@ -236,9 +236,10 @@ LSC 只是提供与 LSP 对接，并将 LSP 传来的语言服务获取补全数
 
 [LanguageClient-neovim](https://github.com/autozimu/LanguageClient-neovim) 是用 Rust 语言写的一个 LSC 插件。
 这个 LSC 可以为 [deoplete](#vp_complete_deoplete) 及 [ncm2](#vp_complete_ncm) 补全框架提供补全数据源。
-LanguageClient 为补全框架提供源的名称是**LanguageClient**。
 
-安装:
+LanguageClient 为补全框架提供源的名称是 `LanguageClient`。
+
+安装：
 ```Vim
 	Plug 'autozimu/LanguageClient-neovim', {
 	\ 'branch': 'next',
@@ -247,7 +248,7 @@ LanguageClient 为补全框架提供源的名称是**LanguageClient**。
 	
 ```
 
-配置:
+配置：
 ```vim
 	" 为各语言指定LSP	
 	let g:LanguageClient_serverCommands = {
@@ -448,8 +449,9 @@ deoplete 使用 vim-lsp 为补全源的配置如下：
 
 #### <span id="vp_deoplete_lcn">使用 [LanguageClient-neovim为LSC](#vp_lcn) 为 LSC</span>
 
-LanguageClient 作为 deoplete 的 LSC 跟使用 [vim-lsc](#) 与 [vim-lsp](#) 类似。
+[LanguageClient](#vp_lcn) 作为 deoplete 的 LSC 跟使用 [vim-lsc](#vp_vim-lsc) 与 [vim-lsp](#vp_vim-lsp) 类似。
 给 deoplete 的 source 名称为**LanguageClient**。
+
 配置如下：
 ```vim
 	

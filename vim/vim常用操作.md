@@ -4,7 +4,7 @@ aliases:
 tags:
   - 
 created: 2022-11-7 2:50:13
-modified: 2023-06-6 9:54:27
+modified: 2023-06-14 1:32:33
 ---
 # VIM 常用操作
 
@@ -712,4 +712,10 @@ endtry
 ## 常用插件使用
 
 [vim插件相关介绍](./vim_plugin.md)
+
+---
+
+## 相关连接
+
+* [Vim Cheat Sheet](https://vim.rtorr.com/lang/zh_cn)
 

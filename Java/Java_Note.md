@@ -8,7 +8,7 @@ tags:
   - Eclipse
   - dbeaver
 created: 2023-01-30 11:19:11
-modified: 2023-05-11 4:50:35
+modified: 2023-06-24 1:10:02
 ---
 
 # Java 笔记
@@ -723,4 +723,10 @@ Constant pool:
 SourceFile: "Test05.java"
 
 ```
+
+---
+
+## 相关链接
+
+* [Java视频清单](./Java_Videos.md)
 

@@ -5,7 +5,7 @@ tags:
   - markdown
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2023-06-3 1:13:11
+modified: 2023-06-26 5:07:50
 ---
 # Obsidian 笔记
 
@@ -732,6 +732,12 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 原始 Obsidian 在填写 tags 时，是先输入一个**#** 符号，然后软件就会列出 tag 候选列表让你选择，你选好了后，最终得到的是结果是：第一个 tag 前都加了一个**#**符号，而这个**#**符号在 YAML 语法中是注释标识符，所以是不符合规范的。解决方案有两个：一个是使用 [Linter](#obn_plugins_linter) 插件，通过插件设置选项，可以在格式化文档时去除**#**符号；另一个方案就是使用这个插件，使用了这个插件后，只要是在 `tags:` 后输入就不用敲**#**也能有 tag 候选提示，这样最终结果就已经没有**#**符号。
 
 装了这插件后，[Linter](#obn_plugins_linter) 插件中的去除**#**就成了一个备用设置，可设可不设了！
+
+---
+
+##### <span id="obn_plugins_metaedit">MetaEdit</span>
+
+[GitHub - chhoumann/MetaEdit: MetaEdit for Obsidian](https://github.com/chhoumann/MetaEdit) 是一个 [meta](#obn_advanced_frontmatter) 编辑器。如果说 [Tag Suggest](#obn_plugins_tagsuggest) 插件只是对 Meta 中的 Tab 进行操作，那 MetaEdit 就是对整个 meta 区的编辑管理。
 
 ---
 

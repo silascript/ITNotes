@@ -7,7 +7,7 @@ tags:
   - pip
   - conda
 created: 2023-01-30 11:19:11
-modified: 2023-06-2 3:17:18
+modified: 2023-06-24 6:39:03
 ---
 # Python 笔记
 
@@ -24,6 +24,7 @@ modified: 2023-06-2 3:17:18
 	* [conda 换源](#python_conda_chsources)
 	* [conda 常用命令](#python_conda_commands)
 	 * [conda 环境](#python_conda_environment)
+* [文档](#python_docs)
 * [Python 教程视频](#python_course_videos)
 
 ---
@@ -321,6 +322,12 @@ conda 能装什么包，可以通过 [anaconda官网](https://anaconda.org/) 查
 [结巴分词](https://github.com/fxsjy/jieba) 是一个 Python 的中文分词组件。
 
 Obsidan 中 [中文分词插件](../Obsidian/Obsidian_Note.md#obn_plugins_wordsplitting_ch) 就有可能用到这个组件。
+
+---
+
+## <span id="python_docs">文档资源链接</span>
+
+* [Python3.x 官方中文文档](https://docs.python.org/zh-cn/3/)
 
 ---
 

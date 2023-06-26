@@ -1,8 +1,11 @@
 ---
-aliases: 
-tags: database mysql
-created: 2023-01-13, 12:27:46
-modified: 2023-01-30, 9:24:06
+aliases:
+  - 
+tags:
+  - database
+  - mysql
+created: 2023-01-30 11:19:11
+modified: 2023-06-22 7:58:12
 ---
 # MySQL 笔记
 
@@ -12,7 +15,6 @@ modified: 2023-01-30, 9:24:06
 
 * [客户端工具](#mysqln_client_tools)
 ---
-
 
 ## <span id="mysqln_client_tools">客户端工具</span>
 
@@ -26,7 +28,6 @@ mycli 有语法高亮、代码提示、分页显示等非常实用的功能。
 
 ![mycli columns](https://www.mycli.net/images/columns.png)
 
-
 配置：
 `~/.myclirc` 是配置文件。
 
@@ -35,16 +36,14 @@ mycli 有语法高亮、代码提示、分页显示等非常实用的功能。
 `syntax_style` 配置语法配色，值就里配色方案的名称。
 > 官方提供了几个 [配色](https://www.mycli.net/syntax)。
 
-
 ### 连接问题
 如果在连接 MySQL 8.x 时，出现 `Public Key Retrieval is not allowed` 错误，请开启相应的权限。 
 
 ---
-
-
 
 ## 相关内容
 
 * [Linux 下安装 MySQL](./linux下安装mysql.md)
 * [MySQL常用操作](./MySQL常用操作.md)
 * [Docker 安装 MySQL](../Docker/Docker_Note.md#dk_softc_demo_mysql)
+* [MySQL 视频清单](./MySQL_Videos.md)

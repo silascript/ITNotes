@@ -9,7 +9,7 @@ tags:
   - markdown
   - plugin
 created: 2023-01-30 11:19:11
-modified: 2023-06-9 6:20:20
+modified: 2023-06-22 11:31:48
 ---
 # vim 常用插件
 
@@ -664,15 +664,18 @@ let g:startify_custom_header =
 > 高亮颜色设置要放在 colortheme 设置之后。
 
 #### <span id="plugin_mark">mark 相关</span>
+
 ##### <span id="plugin_mk_signature">signature</span>
+
 [vim-signature](https://github.com/kshenoy/vim-signature) 是一个 mark 显示插件。
 在侧边栏显示 mark 标记。
 
 ![](vim_plugin.assets/2021-04-29 20-03-01 的屏幕截图.png)
 
-常用操作:
-|命令|说明|
-| :---: | --- |
+常用操作：
+
+| 命令 | 说明 |
+| :---: | :---: |
 | mx | 添加 mark x 是该 mark 的名称 可以是大小写字母 |
 | dmx | 移除当前行某个 mark x 是添加时的名称 |
 | m- | 移除当前行所有 mark |

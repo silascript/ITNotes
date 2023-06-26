@@ -5,7 +5,7 @@ tags:
   - obsidian
   - plugin
 created: 2023-01-13 12:44:24
-modified: 2023-06-2 7:05:43
+modified: 2023-06-26 5:09:26
 ---
 # Obsidian 个人必装插件清单
 
@@ -45,6 +45,7 @@ modified: 2023-06-2 7:05:43
 * [Recent Files](./Obsidian_Note.md#obn_plugins_recent_files)
 * [Colorful Tag](./Obsidian_Note.md#obn_plugins_colorful_tag)
 * [Frontmatter Tag Suggest](./Obsidian_Note.md#obn_plugins_tagsuggest)
+* [MetaEdit](./Obsidian_Note.md#obn_plugins_metaedit)
 * [Tag Wrangler](./Obsidian_Note.md#obn_plugins_tag_wrangler)
 * [Mermaid Tools](./Obsidian_Note.md#obn_plugins_mermaid_tools)
 

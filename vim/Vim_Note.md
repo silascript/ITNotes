@@ -8,7 +8,7 @@ tags:
   - neovim
   - lsp
 created: 2023-02-4 4:35:40
-modified: 2023-06-6 11:38:16
+modified: 2023-06-24 2:12:30
 ---
 
 # Vim 笔记
@@ -101,4 +101,4 @@ modified: 2023-06-6 11:38:16
 * [vim常用操作](./vim常用操作.md)
 * [vim 插件](./vim_plugin.md)
 * [vim配置](./vim及neovim配置.md)
-
+* [vim视频清单](./Vim_Videos.md)

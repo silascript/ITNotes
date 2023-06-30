@@ -4,8 +4,9 @@ aliases:
 tags:
   - git
   - tutorial
+  - video
 created: 2023-04-17 11:33:37
-modified: 2023-04-18 1:47:21
+modified: 2023-06-28 12:14:15
 ---
 # Git 教程相关
 
@@ -15,6 +16,7 @@ modified: 2023-04-18 1:47:21
 
 * [全方位入门git](https://www.imooc.com/learn/1278)
 * [尚硅谷Git快速入门](https://www.bilibili.com/video/BV1wm4y1z7Dg)
+* [Git自学教程](https://www.bilibili.com/video/BV1BP411v7U2)
 
 ---
 

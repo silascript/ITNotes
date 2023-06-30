@@ -36,5 +36,5 @@ modified: 2023-06-24 7:43:05
 
 ## 其他链接
 
-[Lua视频清单](Lua_Videos.md.md)
+[Lua视频清单](Lua_Videos.md)
 

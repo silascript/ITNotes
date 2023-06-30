@@ -4,7 +4,7 @@ aliases:
 tags:
   - mirror
 created: 2023-06-3 10:16:26
-modified: 2023-06-3 11:16:14
+modified: 2023-06-30 11:13:37
 ---
 # 开源镜像网址清单
 
@@ -33,4 +33,10 @@ modified: 2023-06-3 11:16:14
 ### 国外源
 
 * [xTom Open Source Software Mirror](https://mirror.xtom.nl/)
+
+---
+
+## 其他汇总链接
+
+[国内开源镜像站点汇总 - Micky233 - 博客园](https://www.cnblogs.com/geek233/p/16160091.html)
 

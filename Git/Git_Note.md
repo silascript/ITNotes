@@ -5,7 +5,7 @@ tags:
   - git
   - github
 created: 2023-01-30 11:19:11
-modified: 2023-06-2 10:43:21
+modified: 2023-06-29 11:26:26
 ---
 # Git 笔记
 
@@ -613,6 +613,41 @@ Github 访问慢可以使用重设 Host 映射解决。
 2. hosts 管理小工具: [SwitchHosts](https://github.com/oldj/SwitchHosts)
 > [!tip]
 > SwitchHosts 与 GitHub520 配合使用，能够方便快速使用最新的 ip 映射 github 相关的网址 s
+
+###### <span id="git_github_host_tools_switchhosts">Switchhosts</span>
+
+在 linux 下，如果是 ArcLinux 系的推荐安装 `switchhost-bin`。或者到 github 上下载 deb 包，通过 `debtap` 方式安装。
+
+如果还觉得不够「绿色」，也可以使用 `switchhosts-appimage`。
+
+> [!info]
+> 因为 switchhosts 这个工具是依赖 [NodeJS](../Node/NodeJS_Note.md)，所以像 arhlinux 系统包管理器安装时，会无视系统已存在的 nodejs，再次要求安装 nodejs 及其各种模块。
+> 
+> 所以如果安装时有提示要装 nodejs 依赖，最后中断安装，换个安装方式。比如使用 switchhosts-appimage
+
+无论是通过系统包管理器安装，还是通过 debtap 转换 deb 包的方式安装，默认都会装在 `/opt/SwitchHosts` 这个目录下。
+
+> [!tip]
+> 如果 `/opt/SwitchHosts` 目录中已存在文件，那这时候通过系统包管理器安装，或 debtap 方式安装，可能会安装失败，会报 `switchhosts: 文件系统中存在 /usr/share/applications/switchhosts.desktop （由 switchhosts-bin 所有）` 诸如此类的错误。
+>
+> 如果出现这种情况，就应该使用包管理器卸载已经安装的 switchhosts，然后再进行新版本安装。
+
+通过 debtap 方式安装示例：
+
+1. 转换 deb 包
+```shell
+sudo debtap -Q SwitchHosts_linux_amd64_4.1.2.6086.deb
+```
+
+> [!info]
+> `-Q` 选项是忽略各种设置直接转换
+
+deb 包转换完，在同级目录中会产生一个 `pkg.tar.zst` 文件
+
+2. 安装 zst 文件
+```shell
+sudo pacman -U switchhosts-4.1.2-1-x86_64.pkg.tar.zst
+```
 
 ###### 相关 host 地址
 

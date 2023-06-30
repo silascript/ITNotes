@@ -5,6 +5,8 @@ tags:
   - linux
   - fedora
   - centos
+created: 2022-11-7 2:50:13
+modified: 2023-07-1 1:08:39
 ---
 # Fedora 笔记
 
@@ -36,6 +38,24 @@ Fedora 换源核心操作就是修改以下 4 个文件：
 * [中科大镜像网站](https://mirrors.ustc.edu.cn)
 
 具体使用请参考：[Fedora 源使用帮助](https://mirrors.ustc.edu.cn/help/fedora.html)
+
+### 包管理器
+
+#### YUM
+
+#### DNF
+
+#### Microdnf
+
+> [!quot] 关于 Microdnf
+> **Microdnf 最初是作为 [DNF](#DNF) 的简化版本开发的** 用于不需要安装 Python 的 Docker 容器。
+> 
+> **Microdnf 基于 libdnf5 库，** 作为 [DNF 5](#DNF 5) 项目的一部分开发。DNF 5 旨在统一现有的低级库，用 C++ 重写剩余的 Python 包管理操作，并将核心功能移动到单独的库中，并围绕该库创建绑定以保留 Python API。
+>
+
+#### DNF 5
+
+Fedora 39 将使用 DNF 5 来取代 [Microdnf](#Microdnf)，彻底统一包管理器。
 
 ---
 

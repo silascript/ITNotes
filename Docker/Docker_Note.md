@@ -9,7 +9,7 @@ tags:
   - ubuntu
   - mysql
 created: 2023-02-2 11:25:59
-modified: 2023-06-10 2:14:06
+modified: 2023-07-1 1:05:31
 ---
 
 # Docker 笔记
@@ -66,13 +66,21 @@ Docker 容器是在操作系统层面上实现虚拟化，直接复用本地主�
 
 Docker 大部分操作都围绕着三大核心概念：**镜像**、**容器** 和 **仓库**
 
-* **镜像**（Image）：Docker **镜像**（Image）,就相当于是一个 root 文件系统。  
+### 镜像
+
+ **镜像**（Image）：Docker **镜像**（Image）,就相当于是一个 root 文件系统。  
 	镜像类似虚拟机镜像，可以将它理解为一个只读的模板。  
 	镜像是创建 Docker 容器的基础。
-* **容器**（Container）：**镜像** 和 **容器** 的关系，就如 **类** 和 **实例** 一样，又如 **程序** 和 **进程**。  
+
+### 容器
+
+ **容器**（Container）：**镜像** 和 **容器** 的关系，就如 **类** 和 **实例** 一样，又如 **程序** 和 **进程**。  
 	镜像是静态的定义，容器是镜像运行时的实体。容器可以初创建、启动、停止、删除、暂停等。  
 	容器可以被看作是一个简易版的 Linux 系统以及运行在其中的应用程序打包而成的盒子。
-* **仓库**（Repository）：仓库可看成一个代码控制中心，用来保存镜像。  
+
+### 仓库
+
+**仓库**（Repository）：仓库可看成一个代码控制中心，用来保存镜像。  
 	仓库分为 **公开仓库** 和 **私有仓库**。  
 	最大的公开仓库是官方提供的 [Docker Hub](https://hub.docker.com "hub.docker.com")。  
 	当然用户也可以创建只有自己可访问的本地网络的私有仓库。
@@ -511,12 +519,15 @@ docker volume inspect volume名
 > 可以见到，volume 名实际是在 volumes 这个 存放 volume 的根目录下，建立了同名的目录用来存放些名的 volume。
 
 #### 删除一个 volume
+
 ```shell
 docker volume rm volume名
 ```
+> [!tip]
 > volume 的名称可以通过	`dokcer volumes ls` 命令查询。
 
 #### 清理无主 volume
+
 ```shell
 docker volume prune
 ```
@@ -1045,9 +1056,25 @@ docker build -f Dockerfile.debian -t mysql8:0.1 .
 
 ---
 
+## Docker 各种状态数据查询
+
+### 查询 [镜像](#镜像) 及 [容器](#容器) 占用多少硬盘空间
+
+```shell
+docker system df -v
+```
+
+### 查询指定 [容器](#容器) CPU 及内存占用情况
+
+```shell
+docker stats 容器ID
+```
+
+---
+
 ## <span id="dk_softc_demo">各软件容器使用示例</span>
 
-### 示例 1：安装及运行 Nginx:
+### 示例 1：安装及运行 Nginx
 
 ```sh
 docker run -d --name d_nginx -p 8899:80 nginx:stable
@@ -1056,16 +1083,17 @@ docker run -d --name d_nginx -p 8899:80 nginx:stable
 将宿主机的目录挂载到容器内:
 > 在执行以下操作前，应先 run 一个没有挂载目录的 nginx，然后将 default.conf 和 nginx.conf 这两个配置文件复制到宿主机目录中。  
 > 复制容器中的文件使用 **cp** 命令，语法：**docker cp 容器名称: 容器中文件路径 宿主机存放路径**  
-> 示例：
-> ```shell
-> docker cp d_nginx:/etc/nginx/conf.d/default.conf Docker_Mount/nginx_m/conf.d
-> docker cp d_nginx:/etc/nginx/nginx.conf Docker_Mount/nginx_m/conf/
-> ```
-```shell
+>> [!Example] 示例：
+>> ```shell
+>> docker cp d_nginx:/etc/nginx/conf.d/default.conf Docker_Mount/nginx_m/conf.d
+>> docker cp d_nginx:/etc/nginx/nginx.conf Docker_Mount/nginx_m/conf/
+>>
+>>```shell
 docker run --name d_nginx -d -p 8899:80 -v /home/silascript/Docker_Mount/nginx_m/etc/conf.d:/etc/nginx/conf.d -v /home/silascript/Docker_Mount/nginx_m/html:/usr/share/nginx/html -v /home/silascript/Docker_Mount/nginx_m/log:/var/log/ngixn nginx:stable
-```
+>> ```
 
-<span id="dk_nginx_config">nginx 配置文件：</span>  
+#### <span id="dk_nginx_config">nginx 配置文件</span>  
+
 在 con.d 目录中的配置文件，default.conf 优先级更高。  
 如果要自定义配置文件，可能会不生效，最好把 default.con “backup”下。
 
@@ -1090,6 +1118,7 @@ docker run --name d_nginx --network 网桥名 --ip 172.20.0.9 -d -p 8899:80 -v /
 ---
 
 ### <span id="dk_softc_demo_php">示例 2 ：PHP </span>
+
 ```shell
 docker run --name php81 -p 9000:9000 -v /home/silascript/Docker_Mount/nginx_m/html:/var/www/html -d php:8.1.5-fpm-bullseye
 ```
@@ -1129,6 +1158,7 @@ docker run -d --name d_php81 --network vbridge01 --ip 172.20.0.8 -p 9000:9000 -p
 ```shell
 docker run -d --name d_php81 --network vbridge01 --ip 172.20.0.8 -p 9000:9000 -p 2223:22 -v /home/silascript/DevWorkSpace/PHPExercise:/var/www/html -v php_bin:/usr/local/bin/ php:8.1.5-fpm-bullseye
 ```
+> [!info]
 > 其中 `-v php_bin:/usr/local/bin/` 这个设置，就是将容器中 `/usr/local/bin` 目录「托管」给 Docker。  
 > 其实 连 **php_bin** 这个名字都可以不用，不过给个名字方便查询存放数据目录信息。详情请查看 [具名挂载](#docker_volume_namedvolume) 和 [匿名挂载](#docker_volume_anonvolume)。  
 > 当然，更懒的，连 `-v php_bin:/usr/local/bin/` 这个选项都可以省。那到复制时，就使用 `docker cp` 命令来复制。
@@ -1491,6 +1521,7 @@ CentOS 开启 SSH 服务
 * 创建 Debian 容器
 
 * **exec** 进入系统。
+	> [!info]
 	> 还是先确认 **systemctl** 能不能用！
 	> 如果出现 `bash: systemctl: command not found` 这个错误，就得重装 **systemd**。  
 	> 重装 **systemd**：
@@ -1500,6 +1531,7 @@ CentOS 开启 SSH 服务
 	> 如果出现 `System has not been booted with systemd as init system (PID 1). Can't operate.
 	> Failed to connect to bus: Host is down` 这个错误信息，那就是“**run**”的时候没给权限（--privileged 参数）。
 
+> [!tip]
 > 迄今为止，systemctl 问题尚未解决！待更！
 
 ---
@@ -1509,7 +1541,16 @@ CentOS 开启 SSH 服务
 ```shell
 docker run -itd --name d_ubuntu21 --network vbridge01 --ip 172.20.0.20 -p 2225:22 ubuntu:jammy
 ```
+> [!tip]
 > 使用自定义网桥并为容器指派 ip，另外映射 22 接口，以便后续开启 `ssh` 功能。
+
+---
+
+### 示例 8：安装 AlmaLinux
+
+```shell
+docker run -itd --name d_almalinux92 --network vbridge01 --ip 172.20.0.23 almalinux:9.2-minimal
+```
 
 ---
 

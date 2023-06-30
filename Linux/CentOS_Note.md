@@ -6,6 +6,8 @@ tags:
   - centos
   - ssh
   - yum
+created: 2022-11-7 2:50:13
+modified: 2023-07-1 1:10:31
 ---
 
 # CentOS 笔记
@@ -231,6 +233,59 @@ tags:
   ```shell
     ps -e | grep sshd
   ```
+
+---
+
+## CentOS 相关 Linux 发行版
+
+### AlmaLinux
+
+[AlmaLinux OS](https://almalinux.org/) 是一个由社区驱动的 Linux 发行版。它是由 RHEL&reg; 的 1:1 二进制兼容克隆。
+
+> [!info]
+> 因为红帽修改许可证规则，未来 AlmaLinux 很难做到「1:1」克隆了！
+
+AlmaLinux 有四种变体:Minimal、Base、Micro 和 Init。
+
+Minimal： 一个最小的压缩镜像,包含有限的包集,并使用 microdnf 包管理器作为 DNF 的替代品。 ^f76f86
+
+Base：一个镜像,旨在成为您的容器化应用程序、中间件和实用程序的基础。基本映像包括一些有用的操作系统工具,如 find、[Tar 命令](Linux_Note.md#Tar%20命令)、[Vi](../vim/Vim_Note.md) 等,以及完整的 DNF 堆栈。 
+
+Micro：一个更加最小化的图像。它在没有任何包管理器的情况下分发。 Micro 镜像使用底层主机上的包管理器来安装包,通常使用 Buildah 或带有 Podman 的多阶段构建。 Micro 图像比 Base 图像小 82%,比 Minimal 图像小 68%。
+
+Init：用于使用 init 系统运行多个应用程序。默认情况下，启用 systemd 以供使用。
+
+[AlmaLinux 镜像查询](https://quay.io/organization/almalinuxorg) 
+
+#### AlmaLinux 源
+
+* [上海交大 almalinux 源](https://mirror.sjtu.edu.cn/almalinux/)
+* [almalinux 阿里源](https://mirrors.aliyun.com/almalinux/)
+
+#### Minimal 版本使用 
+
+如果使用 [Minimal](#^f76f86) 这版本，默认只装了 [Microdnf](Fedora_Note.md#Microdnf)，所以其他软件都得通过 `microdnf` 来安装。
+
+1. 更新
+```shell
+microdnf update 
+```
+
+2. 安装常用基础软件
+```shell
+microdnf install net-tools -y    # ifconfig
+microdnf install sysstat -y      # iostat 
+microdnf install tar -y          # tar
+microdnf install vim -y          # vim
+```
+
+### RockyLinux
+
+[Rocky Linux](https://rockylinux.org/) 是由 CentOS 项目创始人 Gregory Kurtzer 领导的一个社区企业 Linux 发行版。
+
+### Oracle Linux
+
+### Springdale Linux
 
 ---
 

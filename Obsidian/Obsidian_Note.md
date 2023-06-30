@@ -5,7 +5,7 @@ tags:
   - markdown
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2023-06-26 5:07:50
+modified: 2023-06-28 5:18:10
 ---
 # Obsidian 笔记
 
@@ -1009,6 +1009,8 @@ Callout Blocks 预置类型：
 
 ##  Obsidian 相关资料
 
+* [Obsidian 部分插件笔记](Obsidian_Plugins_Note.md)
+* [Obsidian 常用插件清单](Obsidian_Plugins_List.md)
 * [Obsidian视频清单](./Obsidian_Videos.md)
 * [awesome-obsidian](https://github.com/kmaasrud/awesome-obsidian)
 * [obsidian-snippets](https://github.com/deathau/obsidian-snippets)

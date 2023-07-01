@@ -5,7 +5,7 @@ tags:
   - git
   - github
 created: 2023-01-30 11:19:11
-modified: 2023-06-29 11:26:26
+modified: 2023-07-2 1:46:40
 ---
 # Git 笔记
 
@@ -666,7 +666,8 @@ sudo pacman -U switchhosts-4.1.2-1-x86_64.pkg.tar.zst
 git config --global url."https://hub.fastgit.xyz/".insteadOf https://github.com/
 ```
 
-注意：地址一定不能省略最后的**"/"**
+> [!tip]
+> 注意：地址一定不能省略最后的**"/"**
 
 取消设置:
 
@@ -674,21 +675,33 @@ git config --global url."https://hub.fastgit.xyz/".insteadOf https://github.com/
 git config --global --unset url.https://github.com/.insteadof
 ```
 
-国内镜像：
-
-> 所有的镜像都是暂时性的，你不知道哪天就挂了！
+##### 可 「insteadOf 」的镜像
 
 * ~~[github.com.cnpmjs.org](https://github.com.cnpmjs.org/)~~
 * ~~[hub.fastgit.org](https://hub.fastgit.org)~~
-* [hub.fastgit.xyz](https://hub.fastgit.xyz)
+* ~~[hub.fastgit.xyz](https://hub.fastgit.xyz)~~
 	* [fastgit文档](https://doc.fastgit.org)
-* [gitclone.com](https://gitclone.com)
 * ~~[hub.gitfast.tk](https://hub.gitfast.tk)~~
 * ~~[hub.おうか.tw](https://hub.xn--p8jhe.tw)~~
 * ~~[hub.連接.台灣](https://hub.xn--gzu630h.xn--kpry57d)~~
 * [nuaa](https://hub.nuaa.cf/)
 * ~~[gitslow](https://hub.gitslow.tk/)~~
-* [kgithub](https://kgithub.com/)
+* ~~[kgithub](https://kgithub.com/)~~
+* [njuu.cf](https://hub.njuu.cf/)
+* [yzuu.cf](https://hub.yzuu.cf/)
+* [fgit.ml](https://hub.fgit.ml/)
+
+> [!tip] 镜像不是永久的
+> 所有的镜像都是暂时性的，你不知道哪天就挂了！
+
+##### 下载加速
+
+* [gitclone.com](https://gitclone.com)
+
+##### 其他相关的链接
+
+> [!info] 自动检测镜像网站是否可用的网站
+> [github镜像及加速](http://lib.zuotiyi.cn/tool/github.html)
 
 ---
 
@@ -704,11 +717,9 @@ git config --global --unset url.https://github.com/.insteadof
 
 ---
 
----
-
 ### <span id="git_github_gist">Gist</span>
 
-新建 gist：
+#### 新建 gist
 
 1. 点击 **Your gists** 进入 gist 页面
 2. 点 **+** 添加
@@ -716,14 +727,15 @@ git config --global --unset url.https://github.com/.insteadof
 
 ### <span id="git_github_token">Token</span>
 
-新建一个 token：
+#### 新建一个 token
 
 1. settings
 2. Developer settings
 3. Personal access tokens
 4. Generate new token
 
-> 在新建 token 页面，选择 token 的生命周期 Expiration\
+> [!info]
+> 在新建 token 页面，选择 token 的生命周期 Expiration \
 > 勾选 使用范围（**Select scopes**）\
 > 点击 **Generate token** 按钮，这就生成一个新的 token
 
@@ -752,7 +764,7 @@ yay -S community/rabbitvcs-nautilus
 > 
 > ```shell
 > yay -S community/rabbitvcs-nautilus
->Sync Explicit (1): rabbitvcs-nautilus
+> Sync Explicit (1): rabbitvcs-nautilus
 > 正在解析依赖关系...
 > 正在查找软件包冲突...
 >

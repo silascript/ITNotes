@@ -4,8 +4,9 @@ aliases:
 tags:
   - obsidian
   - video
+  - list
 created: 2023-05-19 8:49:18
-modified: 2023-05-24 1:34:45
+modified: 2023-07-2 4:26:09
 ---
 
 # Obsidian 视频清单

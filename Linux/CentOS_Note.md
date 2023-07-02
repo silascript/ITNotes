@@ -7,7 +7,7 @@ tags:
   - ssh
   - yum
 created: 2022-11-7 2:50:13
-modified: 2023-07-1 1:10:31
+modified: 2023-07-3 2:29:11
 ---
 
 # CentOS 笔记
@@ -114,6 +114,8 @@ modified: 2023-07-1 1:10:31
 * EPEL 源:  
     EPEL 即 **Extra Packages for Enterprise Linux**，提供了 1W+ 的软件包。
 * ~~RPMforge~~
+> [!info]
+> 
 > RPMForge 是被 CentOS 社区认为是最安全也是最稳定的一个软件仓库。
 > RPMForge 的源需要下载相应的 rpm 包来安装。
 > RPMForge [官网](http://repoforge.org) 显示这个源很久没更，算是“废”了。
@@ -122,26 +124,31 @@ modified: 2023-07-1 1:10:31
   这个源的安装是通过 RPM 包来安装。  
   [中科大](http://mirrors.ustc.edu.cn/help/rpmfusion.html)、[清华](https://mirror.tuna.tsinghua.edu.cn/help/rpmfusion/) 等国内镜像都提供这个源 RPM 包。  
   具体安装请参考各 RPM 包提供方的安装说明。  
+  > [!info]
+  > 
   > 在 RHEL 或兼容发行版（如 CentOS ）上，您需要先启用 EPEL 源。-- 中科大 RPMFusion 安装备注。
 * [Remi源](http://rpms.remirepo.net)：  
  这个源的包是 **最新稳定版**，都是 Linux 骨灰级玩家编译，所以稳定性是有保证的。 
 
-无论是安哪个第三方源，安装前先查看下系统已有的源
-> ```shell
->   yum repolist
-> ```
+无论是安哪个第三方源，安装前先查看下系统已有的源：
+```shell
+yum repolist
+```
 
 ##### 安装 EPEL
+
 ```shell
   yum install epel-release
 ```
 
+> [!tip] 更新缓存
 > 安装完第三方源，同样需要更新下缓存
 > ```shell
 >   yum makecache
 > ```
 
 ##### 安装 Remi
+
 ```shell
   # 下载 Remi 对应版本的 rpm 包
   wget http://rpms.remirepo.net/enterprise/remi-release-7.rpm
@@ -162,10 +169,11 @@ modified: 2023-07-1 1:10:31
 
 #### yum 小工具
 
-* yum-utils：  
-  yum-utils 这个工具中，包含了一个非常实用的命令： **yum-config-manager**。
+##### yum-utils  
 
-##### yum-config-manager 使用
+`yum-utils` 这个工具中，包含了一个非常实用的命令： [yum-config-manager](#yum-config-manager)。
+
+###### yum-config-manager
 
 ```shell
   # 启用仓库：
@@ -193,18 +201,24 @@ modified: 2023-07-1 1:10:31
   如果什么信息都不显示表示没有安装 openssh
   yum list installed | grep openssh-server
   
-  安装
-  yum install openssh-server
-  yum install openssh-clients
-  > server 和 clients 都得装
-  > 要想知道 openssh 是否装好，可以用以下命令测试：
-  > ```shell
-  >   ssh -V
-  > ```
-  > 如果没有出现 openssh 版本信息，就说明没有装 openssh-clients。
+#### 安装
 
-  配置 ssh
-  * 在 **/etc/ssh/** 目录下有 **sshd_config** 配置文件
+```shell
+yum install openssh-server
+yum install openssh-clients
+```
+
+ > [!tip]
+ > server 和 clients 都得装
+ > 要想知道 openssh 是否装好，可以用以下命令测试：
+ > ```shell
+ >   ssh -V
+ > ```
+ > 如果没有出现 openssh 版本信息，就说明没有装 openssh-clients。
+
+#### 配置 SSH
+
+  * 在 `/etc/ssh/` 目录下有 **sshd_config** 配置文件
   * 将端口号和访问 IP 地址的注释去掉
       ![centos_ssh_ip_port](./CentOS_Note.assets/centos_ssh_ip_port.png)
   * 允许 root 用户登录  
@@ -224,6 +238,7 @@ modified: 2023-07-1 1:10:31
   ```shell
     sudo service sshd start
   ```
+  
    或重启 ssh 服务： 
   ```shell
   service ssh restart
@@ -243,15 +258,16 @@ modified: 2023-07-1 1:10:31
 [AlmaLinux OS](https://almalinux.org/) 是一个由社区驱动的 Linux 发行版。它是由 RHEL&reg; 的 1:1 二进制兼容克隆。
 
 > [!info]
+> 
 > 因为红帽修改许可证规则，未来 AlmaLinux 很难做到「1:1」克隆了！
 
 AlmaLinux 有四种变体:Minimal、Base、Micro 和 Init。
 
-Minimal： 一个最小的压缩镜像,包含有限的包集,并使用 microdnf 包管理器作为 DNF 的替代品。 ^f76f86
+<a name="minimal">Minimal</a>： 一个最小的压缩镜像,包含有限的包集,并使用 microdnf 包管理器作为 DNF 的替代品。
 
 Base：一个镜像,旨在成为您的容器化应用程序、中间件和实用程序的基础。基本映像包括一些有用的操作系统工具,如 find、[Tar 命令](Linux_Note.md#Tar%20命令)、[Vi](../vim/Vim_Note.md) 等,以及完整的 DNF 堆栈。 
 
-Micro：一个更加最小化的图像。它在没有任何包管理器的情况下分发。 Micro 镜像使用底层主机上的包管理器来安装包,通常使用 Buildah 或带有 Podman 的多阶段构建。 Micro 图像比 Base 图像小 82%,比 Minimal 图像小 68%。
+Micro：一个更加最小化的镜像。它在没有任何包管理器的情况下分发。 Micro 镜像使用底层主机上的包管理器来安装包,通常使用 `Buildah` 或带有 `Podman` 的多阶段构建。 Micro 图像比 Base 图像小 82%,比 [Minimal](#minimal) 图像小 68%。
 
 Init：用于使用 init 系统运行多个应用程序。默认情况下，启用 systemd 以供使用。
 

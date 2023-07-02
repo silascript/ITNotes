@@ -1,8 +1,12 @@
 ---
-aliases: 
-tags: 
+aliases:
+  - 
+tags:
+  - shell
+  - linux
+  - list
 created: 2022-11-7 2:50:13
-modified: 2023-06-25 10:53:13
+modified: 2023-07-2 4:32:07
 ---
 # Shell 笔记
 

@@ -5,8 +5,9 @@ tags:
   - docker
   - k8s
   - video
+  - list
 created: 2023-05-12 2:28:50
-modified: 2023-05-12 3:17:15
+modified: 2023-07-2 4:27:32
 ---
 # Docker & K8s 视频清单
 

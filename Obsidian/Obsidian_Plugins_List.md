@@ -4,8 +4,9 @@ aliases:
 tags:
   - obsidian
   - plugin
+  - list
 created: 2023-01-13 12:44:24
-modified: 2023-06-26 5:09:26
+modified: 2023-07-2 10:20:26
 ---
 # Obsidian 个人必装插件清单
 
@@ -17,6 +18,7 @@ modified: 2023-06-26 5:09:26
 * [Style Settings](./Obsidian_Note.md#obn_plugins_style-settings)
 * [Obsidian-floating-toc-plugin](./Obsidian_Note.md#obn_plugins_obsidian-floating-toc-plugin)
 * [Relative line Numbers](./Obsidian_Note.md#obn_plugins_relativelinenumbers)
+* [Cursor Location](./Obsidian_Note.md#obn_plugins_cursorlocation)
 * [Better Word Count](./Obsidian_Note.md#obn_plugins_better_word_count)
 * [Keyboard-Analyzer](./Obsidian_Note.md#obn_plugins_keyboard_analyzer)
 * [中文分词增强](./Obsidian_Note.md#obn_plugins_wordsplitting_ch)

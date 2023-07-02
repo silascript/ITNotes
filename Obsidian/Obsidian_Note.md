@@ -5,7 +5,7 @@ tags:
   - markdown
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2023-06-28 5:18:10
+modified: 2023-07-2 10:18:39
 ---
 # Obsidian 笔记
 
@@ -571,6 +571,15 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 ###### relativenumber
 
 [relativenumber](https://github.com/thisdotrob/obsidian-relativenumber-plugin) 这个与上面的 [Relative Line Numbers](#Relative%20Line%20Numbers%20Plugin) 功能类似。从 github 上源码更新频率，这款没有上面那款勤。
+
+---
+
+##### <span id="obn_plugins_cursorlocation">cursor-location</span>
+
+[obsidian-cursor-location-plugin](https://github.com/spslater/obsidian-cursor-location-plugin) 这个插件能够在状态栏显示当前光标所在行的**行号**。
+
+> [!tip]
+> 此插件只能编辑模式下才能生效。
 
 ---
 

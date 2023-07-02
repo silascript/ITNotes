@@ -5,7 +5,7 @@ tags:
   - PL
   - golang
 created: 2023-01-31 11:31:14
-modified: 2023-06-28 10:55:19
+modified: 2023-07-2 4:34:54
 ---
 # Go 语言笔记
 
@@ -185,6 +185,7 @@ go mod init 项目名
 
 ## Go 相关的资料
 
+* [golang 官网](https://go.dev/)
 * [Go社区 Wiki](https://learnku.com/go/wikis)
 * [GoLang视频清单](GoLang_Videos.md)
 

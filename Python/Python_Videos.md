@@ -6,14 +6,16 @@ tags:
   - video
   - course
   - tutorial
+  - list
 created: 2023-02-12 11:23:37
-modified: 2023-06-30 7:42:51
+modified: 2023-07-2 4:25:43
 ---
 
 # Python 视频清单
 
 ---
 
+* [Alex 8天 Python](https://www.bilibili.com/video/BV1hk4y1H7Q1)
 * [漫画Python](https://www.bilibili.com/video/BV1sA411674Q)
 * [常用模块](https://www.bilibili.com/video/BV12m4y1m7aL)
 * [100道练习题](https://www.bilibili.com/video/BV1P14y1L7kP)
@@ -23,3 +25,4 @@ modified: 2023-06-30 7:42:51
 * [谷歌首席讲师花费198小时讲完的Python课程](https://www.bilibili.com/video/BV1t14y127Dp/)
 * [Python 数据分析 - 数据挖掘教程](https://www.bilibili.com/video/BV1za4y1w7fb)
 * [两小时python速成课程](https://www.bilibili.com/video/BV16A411i7W7)
+* [黑马8天python从入门到精通](https://www.bilibili.com/video/BV1qW4y1a7fU)

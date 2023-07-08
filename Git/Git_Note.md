@@ -5,7 +5,7 @@ tags:
   - git
   - github
 created: 2023-01-30 11:19:11
-modified: 2023-07-2 1:46:40
+modified: 2023-07-4 9:31:02
 ---
 # Git 笔记
 
@@ -285,7 +285,7 @@ git branch -M 名称
 git status
 ```
 
-![](Git_Note.assets/2020-12-06 10-24-40 屏幕截图.png)
+![git status screenshot](./Git_Note.assets/screenshot_git_status.png)
 
 #### 查看提交日志
 
@@ -293,7 +293,12 @@ git status
 git log
 ```
 
-![](Git_Note.assets/2020-12-06 10-26-02 屏幕截图.png)
+![git log screenshot](Git_Note.assets/screenshot_git_log.png)
+
+查看提交日志，以一行显示：
+```shell
+git log --pretty=oneline
+```
 
 #### 查看当前分支
 
@@ -301,7 +306,7 @@ git log
 git branch
 ```
 
-![](Git 笔记.assets/2020-12-06 10-26-57 屏幕截图.png)
+![git branch screenshot](Git_Note.assets/screenshot_git_branch.png)
 
 更多的分支操作请参考：[分支操作](#git_branch)
 
@@ -311,7 +316,7 @@ git branch
 git ls-files -s
 ```
 
-![](Git_Note.assets/2020-12-06 10-28-33 屏幕截图.png)
+![git ls files screenshot](Git_Note.assets/screenshot_git_ls_files.png)
 
 ---
 
@@ -686,7 +691,7 @@ git config --global --unset url.https://github.com/.insteadof
 * ~~[hub.連接.台灣](https://hub.xn--gzu630h.xn--kpry57d)~~
 * [nuaa](https://hub.nuaa.cf/)
 * ~~[gitslow](https://hub.gitslow.tk/)~~
-* ~~[kgithub](https://kgithub.com/)~~
+* [kgithub](https://kgithub.com/)
 * [njuu.cf](https://hub.njuu.cf/)
 * [yzuu.cf](https://hub.yzuu.cf/)
 * [fgit.ml](https://hub.fgit.ml/)

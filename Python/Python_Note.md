@@ -7,7 +7,7 @@ tags:
   - pip
   - conda
 created: 2023-01-30 11:19:11
-modified: 2023-06-24 6:39:03
+modified: 2023-07-6 2:12:35
 ---
 # Python 笔记
 
@@ -23,8 +23,14 @@ modified: 2023-06-24 6:39:03
 	* [conda 安装](#python_conda_install)
 	* [conda 换源](#python_conda_chsources)
 	* [conda 常用命令](#python_conda_commands)
-	 * [conda 环境](#python_conda_environment)
-* [文档](#python_docs)
+	* [conda 环境](#python_conda_environment)
+* [基础语法](#python_syntax_basic)
+	* [变量和表达式](#python_syntax_basic_varexp)
+* [进阶语法](#python_syntax_advanced)
+* [风格规范](#python_style)
+* [文档](#python_resource)
+	* [相关文档](#python_resource_doc)
+	* [相关网站](#python_resource_links)
 * [Python 教程视频](#python_course_videos)
 
 ---
@@ -325,9 +331,83 @@ Obsidan 中 [中文分词插件](../Obsidian/Obsidian_Note.md#obn_plugins_wordsp
 
 ---
 
-## <span id="python_docs">文档资源链接</span>
+## <span id="python_syntax_basic">基础语法</span>
+
+### <span id="python_syntax_basic_varexp">变量表达式</span>
+
+#### 变量名规则
+
+* 变量名只能包含字母、数字和下划线。不能以数字开头。
+* 不能包含空格
+* 不要用 Python 关键字和函数名或保留字作变量名
+
+> [!tip] 
+>
+>慎用小写字母**l**和大写字母**O**，因为可能与数字**1**和**0**混淆。
+
+### <span id="python_syntax_basic_type">简单数据类型</span>
+
+#### <span id="python_syntax_basic_">数值类型</span>
+
+##### <span id="python_syntax_basic_int">整型</span>
+
+##### <span id="python_syntax_basic_float">浮点型</span>
+
+##### <span id="python_syntax_basic_complex">复数</span>
+
+#### <span id="python_syntax_basic_">字符串</span>
+
+### 字典和集合
+
+### 函数
+
+### 类
+
+### 文件
+
+---
+
+## <span id="python_syntax_advanced">进阶语法</span>
+
+### 多任务
+
+### 网络
+
+### 图形界面
+
+---
+
+## <span id="python_style">风格规范</span>
+
+### <span id="python_style_pep8">PEP8</span>
+
+#### PEP8 相关链接
+
+* [PEP 8 – Style Guide for Python Code](https://peps.python.org/pep-0008/)
+* [PEP 8 中文](https://blog.csdn.net/ratsniper/article/details/78954852)
+* [PEP 257 – Docstring Conventions | peps.python.org](https://peps.python.org/pep-0257/)
+
+### <span id="python_style_google">Google 规范风格</span>
+
+#### Google 规范相关链接
+
+* [Google Python 风格指南](https://zh-google-styleguide.readthedocs.io/en/latest/google-python-styleguide/contents/)
+* [Google Python 编码规范 中文版](https://www.runoob.com/w3cnote/google-python-styleguide.html)
+* [Google Python 编码规范 英文版](https://google.github.io/styleguide/pyguide.html)
+
+---
+
+## <span id="python_resource">资源链接</span>
+
+### <span id="python_resource_doc">相关文档</span>
 
 * [Python3.x 官方中文文档](https://docs.python.org/zh-cn/3/)
+
+### <span id="python_resource_links">相关网站</span>
+
+* [Python中文网](https://www.cnpython.com/)
+
+---
 
 ---
 

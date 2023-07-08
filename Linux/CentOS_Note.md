@@ -7,7 +7,7 @@ tags:
   - ssh
   - yum
 created: 2022-11-7 2:50:13
-modified: 2023-07-3 2:29:11
+modified: 2023-07-3 3:05:55
 ---
 
 # CentOS 笔记
@@ -261,13 +261,13 @@ yum install openssh-clients
 > 
 > 因为红帽修改许可证规则，未来 AlmaLinux 很难做到「1:1」克隆了！
 
-AlmaLinux 有四种变体:Minimal、Base、Micro 和 Init。
+AlmaLinux 有四种变体：Minimal、Base、Micro 和 Init。
 
-<a name="minimal">Minimal</a>： 一个最小的压缩镜像,包含有限的包集,并使用 microdnf 包管理器作为 DNF 的替代品。
+Minimal：  一个最小的压缩镜像,包含有限的包集,并使用 `microdnf` 包管理器作为 `DNF:` 的替代品。 ^minimal
 
 Base：一个镜像,旨在成为您的容器化应用程序、中间件和实用程序的基础。基本映像包括一些有用的操作系统工具,如 find、[Tar 命令](Linux_Note.md#Tar%20命令)、[Vi](../vim/Vim_Note.md) 等,以及完整的 DNF 堆栈。 
 
-Micro：一个更加最小化的镜像。它在没有任何包管理器的情况下分发。 Micro 镜像使用底层主机上的包管理器来安装包,通常使用 `Buildah` 或带有 `Podman` 的多阶段构建。 Micro 图像比 Base 图像小 82%,比 [Minimal](#minimal) 图像小 68%。
+Micro：一个更加最小化的镜像。它在没有任何包管理器的情况下分发。 Micro 镜像使用底层主机上的包管理器来安装包,通常使用 `Buildah` 或带有 `Podman` 的多阶段构建。 Micro 图像比 Base 图像小 82%,比 [Minimal](#^minimal) 图像小 68%。
 
 Init：用于使用 init 系统运行多个应用程序。默认情况下，启用 systemd 以供使用。
 

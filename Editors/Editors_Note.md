@@ -6,9 +6,10 @@ tags:
   - sublime
   - vscode
   - vim
+  - scite
   - lsp
-created: 2023-01-13, 12:27:45
-modified: 2023-01-30, 7:48:25
+created: 2023-01-30 11:19:11
+modified: 2023-07-6 9:03:28
 ---
 
 # 编辑器笔记
@@ -580,4 +581,120 @@ VSCode 已经内置了大名鼎鼎的 [Emmet](https://emmet.io) （[Emmet Wiki](
 * [Vim Plugin](../vim/vim_plugin.md)
 * [Vimscript 笔记](../vim/vimscript_note.md)
 * [LSP_Complete](../vim/LSP_Complete.md)
+
+---
+
+## <span id="editors_scite">SciTE</span>
+
+[SciTE](https://scintilla.org/) 是一个简单而强大的文本编辑器。这款编辑器，原来只是用来作为 [Scintilla](https://www.scintilla.org/) 示例软件用的。所以这编辑器只能算个「半成品」。界面古老，配置麻烦 -- 相对于 [SublimeText](#SublimeText)、[Vim](#Vim) 或 [VSCode](#VSCode) 等而言。
+> [!info]
+> 像配置配色，它甚至没有给出具有语义性的配置项。
+>
+> 如下面：
+> ```properties
+> style.*.32 # 背景或前景色
+> style.*.34 # 括号匹配
+> style.*.35 # 括号不匹配
+> ```
+> 竟然用数字来区别各模块的样式，窥一斑而见全豹，可见这编辑器之简陋。
+
+### 配置
+
+示例：
+```properties
+code.page=65001
+output.code.page=65001
+
+
+# 字体设置
+#font.base=font:cascadia mono pl,size:20
+#font.small=font:cascadia mono pl,size:18
+#font.comment=font:cascadia mono pl,size:16
+
+font.base=font:Meslo LG S,size:20
+font.small=font:Meslo LG S,size:18
+font.comment=font:Meslo LG S,size:16
+
+
+# font.monospace=font:Meslo LG S,size:20
+# font.monospace=font:cascadia mono pl,size:20
+# font.monospace=font:DejaVu Sans Code Book,size:18
+
+font.code.comment.box=$(font.comment)
+font.code.comment.line=$(font.comment)
+font.code.comment.doc=$(font.comment)
+font.code.comment.nested=$(font.comment)
+
+# font.text=font:Meslo LG S Regular,size:18
+
+# 关闭时，提示保存
+are.you.sure=1
+
+# minimize.to.tray=1
+
+# 显示工具栏
+toolbar.visible=1
+# 工具栏图标
+toolbar.usestockicons=1
+
+line.margin.visible=1
+# 行号列宽度
+line.margin.width=3+
+# 显示状态栏
+statusbar.visible=1
+
+# 标题栏显示信息
+# 0:文件名 1:全路径 2:文件名和目录名
+title.full.path=2
+
+# tab宽度
+tabsize=4
+# 缩进宽度
+indent.size=4
+
+# 缩进线
+view.indentation.guides=1
+# 高亮缩进线
+highlight.indentation.guides=1
+
+# 括号检查
+braces.check=1
+braces.sloppy=1
+
+# 高亮
+# 当前单词高亮
+highlight.current.word=1
+highlight.current.word.indicator=style:compositionthin,colour:#fe8019
+
+# 光标
+caret.width=2
+# 光标所在行背景色
+caret.line.back=#d4d8df
+
+
+# 自动补全
+autocompleteword.automatic=1
+
+
+# 配色
+#black=#ebeef3
+
+style.*.32=$(font.base),fore:#353e46
+style.*.32=$(font.base),back:#ebeef3
+
+# 括号匹配
+style.*.34=fore:#6eb87b,bold,back:#ebeef3
+# 括号不匹配
+style.*.35=italics,back:#ebeef3
+```
+
+---
+
+## <span id="editors_geany">Geany</span>
+
+[Geany](https://www.geany.org/) 是一个挺强大的文本编辑器，可以视它为一个轻量级「IDE」。
+
+### Geany 插件
+
+Geany 支持很多插件：[https://plugins.geany.org/](https://plugins.geany.org/)
 

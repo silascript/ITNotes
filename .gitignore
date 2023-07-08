@@ -1,1 +1,5 @@
+# 忽略 obsidian 相关
 .obsidian
+# 忽略 vnote 相关
+vx.json
+vx_notebook/

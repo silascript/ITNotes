@@ -11,7 +11,7 @@ tags:
   - shell
   - network
 created: 2022-11-7 2:50:13
-modified: 2023-06-4 12:44:37
+modified: 2023-07-6 6:47:44
 ---
 # Linux 笔记
 
@@ -49,7 +49,8 @@ modified: 2023-06-4 12:44:37
 * [图形界面相关](#图形界面相关)
 	* [Xorg](#Xorg)
 	* [Wayland](#Wayland)
-
+* [其他Linux笔记](#linux_notes)
+* [相关资源链接](#linux_resource_links)
 ---
 
 ## <span id="linux_terminal"> 终端 </span>
@@ -1088,7 +1089,7 @@ alias ll='exa -a --long --header --group --tree --level=2 --icons --time-style=l
 
 ---
 
-## 其他 Linux 笔记
+## <span id="linux_notes">其他 Linux 笔记</span>
 
 * [ArchLinux笔记](ArchLinux_Note.md)
 * [CentOS笔记](CentOS_Note.md)
@@ -1096,3 +1097,10 @@ alias ll='exa -a --long --header --group --tree --level=2 --icons --time-style=l
 * [Ubuntu笔记](Ubuntu_Note.md)
 * [Debian笔记](Debian_Note.md)
 * [Linux视频清单](./Linux_Videos.md)
+
+---
+
+## <span id="linux_resource_links">相关资源链接</span>
+
+* [Linux迷](https://www.linuxmi.com/)
+

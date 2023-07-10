@@ -9,7 +9,7 @@ tags:
   - scite
   - lsp
 created: 2023-01-30 11:19:11
-modified: 2023-07-6 9:03:28
+modified: 2023-07-10 6:14:53
 ---
 
 # 编辑器笔记
@@ -105,6 +105,23 @@ SublimeText 基本设置：
 
 ],
 ```
+
+### <span id="editors_sublime_errors">Sublime 问题解决</span>
+
+在 [Linux](../Linux/Linux_Note.md) 下，默认 Sublime 会显示多一行「标题栏」，如下：
+![sublime titles](./Editors_Note.assets/sublime_titles.png)
+
+如想隐藏掉这多出的一栏，得在配置中加上如下代码：
+```json
+"gtk_client_side_window_decorations": false
+```
+
+重启 Sublime。效果如下：
+![sublime titles 2](./Editors_Note.assets/sublime_titles_2.png)
+
+> [!info] 此问题相关链接
+> 
+> * [sublimetext - Sublime Text 4 隐藏标题栏 - IT工具网](https://www.coder.work/article/7752096)
 
 ---
 

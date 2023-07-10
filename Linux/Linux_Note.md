@@ -11,7 +11,7 @@ tags:
   - shell
   - network
 created: 2022-11-7 2:50:13
-modified: 2023-07-6 6:47:44
+modified: 2023-07-10 12:11:36
 ---
 # Linux 笔记
 
@@ -355,6 +355,52 @@ unrar v task.rar
 # 解压
 unrar e a.rar
 ```
+
+#### 其他压缩小技巧
+
+###### zip 包分包及并包
+
+分包
+```shell
+# 先压成zip包
+zip -r temp.zip data/
+# 然后对这个zip包进行分包操作
+zip -s 10m temp.zip --out data.zip
+```
+
+> [!tip] `zip` 命令
+> 
+> `-s` 是指定分包的大小。`10m`、`10g` 等
+> 
+> `--out` 指定分包的包名
+
+将分包合并再解压：
+
+方法 1：
+```shell
+# 先将分包合并成一个包
+cat data.* > tounzip.zip
+# 然后再解压
+unzip tounzip.zip
+```
+
+> [!tip]
+> 并包时使用到了 `>` 这个重定向符
+> 此方法我试过，并包存在错误。
+
+方法 2：
+```shell
+zip -F 烤肉500.zip --out 500.zip
+```
+> [!tip]
+> `-F` 是修复压缩包
+> 
+> 这种方式就是通过修复包的方式合并压缩包。进过测试，这方法是有效的。
+> 
+
+相关连接：
+* [Linux zip分卷压缩解压-CSDN博客](https://blog.csdn.net/qq_19320227/article/details/127967543)
+* [linux zip分卷压缩和解压缩 - 知乎](https://zhuanlan.zhihu.com/p/634435955)
 
 ---
 

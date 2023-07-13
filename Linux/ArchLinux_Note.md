@@ -9,7 +9,7 @@ tags:
   - ime
 date created: 2022-11-08 11:32
 created: 2022-11-8 11:21:08
-modified: 2023-06-3 11:14:02
+modified: 2023-07-12 17:16:58
 ---
 
 # ArchLinux 笔记
@@ -145,3 +145,36 @@ ibus-daemon -d -x
 * [ibus arch wiki](https://wiki.archlinuxcn.org/wiki/IBus?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DIBus_%28%25E7%25AE%2580%25E4%25BD%2593%25E4%25B8%25AD%25E6%2596%2587%29%26redirect%3Dno#GNOME)
 
 ---
+
+## 其他安装包安装
+
+### deb 包安装
+
+1. 安装 `debtap`
+> [!info] 更新 debtap
+> 如果已经安装了 `debtap`，就更新下：
+> 
+> ```shell
+> sudo debtap -u
+> ``` 
+
+2. 使用 `debtap` 转换 deb 包
+```shell
+debtap xxx.deb
+```
+> [!tip] 转换过程
+> 在转换过程会问此问题，如果觉得烦，可以使用 `-q` 或 `-Q` 略过。
+> ```shell
+>  debtap -Q xxx.deb
+> ```
+
+3. 安装
+```shell
+sudo pacman -U xxx.pkg.tar.zst
+```
+> [!tip]
+> 在使用 `debtap` 转换 deb 包后，会在本地生成一个 `.pkg.tar.zst` 包，这就是最终的安装包。
+
+#### 参考资料
+
+* [Arch/Manjaro安装deb安装包  - 博客园](https://www.cnblogs.com/marklove/p/14047339.html)

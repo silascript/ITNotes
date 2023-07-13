@@ -5,7 +5,7 @@ tags:
   - javascript
   - js
 created: 2023-01-31 11:31:14
-modified: 2023-05-26 11:03:27
+modified: 2023-07-12 21:02:56
 ---
 # JavaScript 笔记
 
@@ -161,9 +161,19 @@ ECMAScript 提供了 **isNaN()** 函数，用来判断传入的参数是否「�
 
 ### <span id="jsn_oop">面向对象</span>
 
+### <span id="jsn_oop_internalo">内置对象</span>
+
+#### <span id="jsn_oop_internalo_array">数组</span>
+
+> [!info] 关于数组索引
+>  JavaScript 数组的索引从 0 开始：数组的第一个元素在索引 0 处，第二个在索引 1 处，以此类推，最后一个元素是数组的 length 属性减去 1 的值
+> 
+>  参考：[Array - JavaScript | MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array)
+
 ---
 
 ## <span id="jsn_aboutlinks">相关链接</span>
 
+* [JavaScript 文档 - MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)
 * [JS视频清单](./JS_Videos.md)
 

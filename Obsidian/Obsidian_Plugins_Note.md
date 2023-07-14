@@ -5,7 +5,7 @@ tags:
   - obsidian
   - plugin
 created: 2023-06-28 17:02:25
-modified: 2023-07-12 02:12:07
+modified: 2023-07-15 01:38:50
 ---
 # Obsidian 部分插件笔记
 
@@ -68,6 +68,39 @@ General Settings 中有个设置「Template folder location」，这个是设置
 要调用 [Javascript](../JS/JS_Note.md) 函数时，使用 `<%* %>`。
 
 如果以 `%>` 结束代码块，会在生成文件时，多加一个空行。如果不想多个空行，就使用 `-%>` 来结束代码块。
+
+#### 内置函数
+
+##### 日期
+
+##### 文件
+
+###### 查询模板
+
+```javascript
+tp.file.find_tfile(模板名称)
+```
+
+###### 新建文件
+
+```javascript
+tp.file.create_new(template: TFile ⎮ string, filename?: string, open_new: boolean = false, folder?: TFolder)
+```
+
+> [!info] 参数详解
+> `template`：模板。可以是 TFile 类型，也可以是字符串
+> 如果使用 `TFile` 模型，就得使用 [查询模板](#查询模板) 函数。
+> 
+> `open_new`：创建完新文件是否打开新文件，默认是不打开
+> 
+> `folder`：新文件存放的目录，`TFile` 类型，使用 [查询模板](#查询模板) 函数获取。
+
+##### 系统
+
+### 相关链接
+
+* [Obsidian API](https://github.com/obsidianmd/obsidian-api)
+* [Templater Snippets - shabeblog](https://shbgm.ca/blog/obsidian/Templater+Snippets)
 
 ---
 

@@ -18,6 +18,9 @@ modified: <% createTime %>
 
 ---
 
+[[<% tp.date.now("YYYY-MM-DD",-1) %> | 昨天]] | [[<% tp.date.now("YYYY-MM-DD",1) %> | 明天]]
+
+
 今天：<% today %>
 
 <%*
@@ -30,6 +33,7 @@ let inputFileName = ( tp.file.title.includes("未命名") || tp.file.title.toLow
 
 // 重新组装文件路径
 let fileFullPath = "Daily/"+inputFileName
+
 
 // 并移动文件到 Daily 目录
 // 如果遇到同名将加时间戳以示区分

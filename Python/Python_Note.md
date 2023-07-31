@@ -7,7 +7,7 @@ tags:
   - pip
   - conda
 created: 2023-01-30 11:19:11
-modified: 2023-07-6 2:12:35
+modified: 2023-07-18 10:49:58
 ---
 # Python 笔记
 
@@ -116,6 +116,14 @@ pip install pip-search
 pip_search 要搜索的包
 
 ```
+
+### pip 问题
+
+#### 虚拟环境外使用 pip
+
+新版本的 linux 发生版，避免 Python 包管理器与系统底层冲突，所以禁止 `pip install`。只能在「虚拟环境」中使用 `pip`。如果执行 `pip install xxx`，会报 `externally managed environment` 错误提示。
+
+当然不怕死的，可以使用 `--break-system-packages` 这个选项，硬装。
 
 ---
 

@@ -1,28 +1,62 @@
 ---
-aliases: 
-tags: chrome browser google plugin
-created: 2023-01-29, 6:47:52
-modified: 2023-01-29, 8:34:57
+aliases:
+  - 
+tags:
+  - chrome
+  - browser
+  - google
+  - plugin
+created: 2023-01-29 09:21:20
+modified: 2023-08-1 02:21:26
 ---
 
 # Chrome 浏览器笔记
 
 ---
 
+## 相关配置
 
+### Cookie
+
+#### 存放位置
+
+Linux 下 Chrome 浏览器 Cookies 文件是存放在：`.config/xxx/Default/Cookies`
+> [!tip] 不同 chrome 浏览器具体位置
+> 
+> 如果是 chrome 浏览器 `xxx` 就是 `chrome`，而如果是微软的 edge 浏览器，则变为 `microsoft-edge`
+>
+> * `.config/chrome/Default/Cookies`
+> * `.config/microsoft-edge/Default/Cookies`
+> * `.config/chromium/Default/Cookies`
 
 ## <span id="chrome_plugins">插件</span>
 
+### 常用插件
 
+#### EditThisCookie
+
+EditThisCookie 这个插件是可以编辑导入导出 Cookies。
+
+##### 导出
+
+导出格式也可以根据需求设置，如像 [lux](https://github.com/iawia002/lux) 下载视频时，需要指定 Cookies 文件，它就需要使用「Netscape HTTP Cookie」格式，所以就在导出前设置下相应的导出格式。
+
+> [!tip] 
+> 
+> 这插件所谓导出，其实就是将 Cookie 内容复制到临时「粘贴板」上，所以需要「导出」Cookie 文件，其实是得自己新建文件，然后将「粘贴板」上的 Cookie 数据复制到新建的文件中。
+
+### 插件相关网站
+
+* [极简插件](https://chrome.zzzmh.cn/)
+
+---
 ### <span id="chrome_plugins_issue">插件相关问题</span>
-
 
 #### <span id="chrome_plugins_issue_relocation">插件迁移</span>
 
 Chrome 的插件能用在 Chrome 系浏览器上，但如果反过来，[Edge] 中有一些好用的插件，而这些插件是 Edge 「特供」的，想要迁移到 Chrome 或 Chrome 系其他浏览器上，又如何实现？
 
 这是件有趣的事情。因为最近发现 Edge 上有多款「梯子」软件非常好用，而 Edge 是有自己的扩展库的，所以国人是能装上插件，而如果使用原版 Chrome 或 Chrome 系其他没有本地化插件库的浏览器时，安装插件就变得非常麻烦的事情。其他常用插件还能通过国内各大 Chrome 插件网站进行安装，虽然版本有可能旧点，但毕竟还是能装上用的，但像「梯子」插件这种极度敏感的插件，那些插件网站根本不敢摆出来，而 Edge 的扩展库偏偏就有几款，而且还是能用的那种，虽然碰到「特殊节日」一样被「封印」，但大多数情况还是可能使用的，那这些好用的「梯子」只能「困」在 Edge 这池子里，显然是「屈才」了，我就想将它们弄到 Chrome 及 Chrome 系其他浏览器上，所以就研究了一下，大概总结出一个大致的迁移方法。
-
 
 ##### 获取插件目录路径
 
@@ -86,7 +120,6 @@ Chrome 的插件能用在 Chrome 系浏览器上，但如果反过来，[Edge] �
 1. 要「迁移」某插件时，得把那个插件 ID 为目录名的目录拷到目录浏览器 `Extensions` 目录下
 2. 在「目标浏览器」安装目录时，指定的插件得指定到版本号那个目录
 
-
 ##### 查看插件 ID
 
 通过上面插件目录结构的查询，可以知道，要迁移插件，得知道插件具体的 ID。
@@ -106,13 +139,8 @@ Chrome 的插件能用在 Chrome 系浏览器上，但如果反过来，[Edge] �
 
 吐槽下，PowerShell 真难用，命令恶心了！
 
-
 ###### 安装插件
 
 复制成功后，就到了安装插件的环节了。要想安装 `Extensions` 目录中的插件，也得打开 `开发者模式`，这时，会看到扩展页面多出一个「加载已解压的扩展程序」的按钮，点击这按钮，进入目录插件的目录中，如果复制成功，应该看到还有版本号作目录名的子目录，再选择一个版本目录 -- 自然选最新的，最后点击「选择文件夹」按钮确定，正常情况就会加载进扩展页面，这就安装成功了！
-
-
-
-
 
 ---

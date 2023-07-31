@@ -1,3 +1,11 @@
+---
+aliases:
+  - 
+tags:
+  - 
+created: 2022-11-7 02:50:13
+modified: 2023-08-1 02:21:14
+---
 
 # 常用小工具笔记
 
@@ -14,12 +22,11 @@
 常用的视频下载工具有：
 * [lux](#tools_vdowners_lux)
 
-
 ---
 
 ### <span id="tools_vdowners_lux">lux</span>
 
-[lux](https://github.com/iawia002/lux) 原名叫「annie」，是一款命令行视频下载工具，用来下载 B站等视频网站的视频是挺爽的。
+[lux](https://github.com/iawia002/lux) 原名叫「annie」，是一款命令行视频下载工具，用来下载 B 站等视频网站的视频是挺爽的。
 
 ---
 
@@ -38,7 +45,6 @@ lux -i 网址
 ```
 这条命令会出现诸如该视频的信息，如有多少种分辨率可下载，每种分辨率的体积大小。
 
-
 ##### 下载单个视频
 
 下载视频，需要指定要下载的分辨率，`-f` 这个参数的值是分辨率的标识符，可以通过上面的 `lux -i` 命令查询出来。
@@ -48,7 +54,6 @@ lux -i 网址
 lux -f 64-12 "https://www.bilibili.com/video/BV18p4y167Md?p=1"
 ```
 
-
 ##### 批量下载
 
 下载专辑所有视频。
@@ -57,13 +62,13 @@ lux -f 64-12 "https://www.bilibili.com/video/BV18p4y167Md?p=1"
 lux -p -f 64-12 https://github.com/iawia002/lux
 ```
 
-如果专辑中的「分p」太多，防止下载中途出问题，一般习惯将其分多次下载，那每次就可以指定下载连续的多个视频。所以在 `-p` 参数后再增加 `--start` 和 `--end` 两个选项用来指定列表分段起始及结束点。
+如果专辑中的「分 p」太多，防止下载中途出问题，一般习惯将其分多次下载，那每次就可以指定下载连续的多个视频。所以在 `-p` 参数后再增加 `--start` 和 `--end` 两个选项用来指定列表分段起始及结束点。
 示例：
 ```shell
 lux -p --start 1 --end 10 -f 64-12 https://www.bilibili.com/video/BV18p4y167Md
 ```
 
-如果下载多个视频不是连续的，可以使用 `--items` 指定要下载哪几个视频，这个选项值为「分p」的数字值，各数字间使用英文的「,」分隔。
+如果下载多个视频不是连续的，可以使用 `--items` 指定要下载哪几个视频，这个选项值为「分 p」的数字值，各数字间使用英文的「,」分隔。
 示例：
 ```shell
 lux -f 64-12 -p --items 91,93,95 https://www.bilibili.com/video/BV18p4y167Md
@@ -80,19 +85,35 @@ lux -f 64-12 -p --items 91,93,95 https://www.bilibili.com/video/BV18p4y167Md
 lux -F /path/to/links.txt
 ```
 
+##### 指定 Cookies
+
+有些网站下载视频，特别是下载 720 或 1080 等高清视频时，可以需要账号已登录，如「B 站」，这时就需要从 Cookie 中读取已登录账号的状态的。所以得在指定相应的 Cookies 文件。
+
+> [!example] 示例
+> `lux -i -c ~/mysoft/NetBrower/edge_cookies.txt "xxxx"`
+> 
+> `-c` 后就是 Cookies 文件路径
+
+###### 如果导出 Cookies
+
+使用 [EditThisCookie](../Browsers/Chrome_Note.md#EditThisCookie) 这个插件就能快速「导出」Cookies 文件。
+
+> [!tip] Cookies 文件内容格式
+> lux 指定的 cookies 文件的后缀名可以是任意，但内容必须是 「Netscape」的，所以得在设置里设置导出的格式为「Netscape HTTP Cookie」。
+> 
+> 相关链接：
+> 
+> [请求指导cookie.txt详细的使用方法 · Issue #739](https://github.com/iawia002/lux/issues/739)
+
 ---
 
-
 ## <span id="tools_rename">批量重命名</span>
-
 
 ---
 
 ### <span id="tools_rename_f2">F2</span>
 
-
 [f2](https://github.com/ayoisaiah/f2) 是一款在命令行下可以批量重命名的小工具。
-
 
 #### <span id="tools_rename_f2_install">F2 安装</span>
 
@@ -114,15 +135,11 @@ scoop bucket add ayoisaiah-scoop-bucket https://github.com/ayoisaiah/scoop-bucke
 scoop install f2
 ```
 
-
 更多安装方式请参考 [f2 wiki](https://github.com/ayoisaiah/f2/wiki/Installation)。
-
 
 ---
 
-
 #### <span id="tools_rename_f2_commands">F2 常用命令</span>
-
 
 `f2` 这是 f2 的主命令
 `-f` 查找要修改的部分
@@ -134,8 +151,6 @@ scoop install f2
 f2 -f '' -r ''
 ```
 如果不加 `-x`，那就不会执行重命名操作，只是显示预览效果。
-
-
 
 删除原名称中部分字符，如下示例中，要删除 **test ** 这几个字符：
 ```shell
@@ -153,10 +168,7 @@ f2 内置了一些变量，能够快速实现常用功能：
 `{{tr.up}}` 将字符转换成大写
 `{{tr.lw}}` 将字符转换成小写
 
-
-
-更多的 f2 的使用说明，请参考[f2 wiki](https://github.com/ayoisaiah/f2/wiki) 文档。
-
+更多的 f2 的使用说明，请参考 [f2 wiki](https://github.com/ayoisaiah/f2/wiki) 文档。
 
 ---
 

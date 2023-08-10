@@ -5,7 +5,7 @@ tags:
   - git
   - github
 created: 2023-01-30 11:19:11
-modified: 2023-07-4 9:31:02
+modified: 2023-08-3 12:57:45
 ---
 # Git 笔记
 
@@ -255,6 +255,12 @@ git branch --all
 
 ```shell
 git branch --remotes
+```
+
+##### <span id="git_branch_local_remote">查看本地分支与远程分支对应关系</span>
+
+```shell
+git branch -vv
 ```
 
 #### <span id="git_branch_chockout">切换分支</span>

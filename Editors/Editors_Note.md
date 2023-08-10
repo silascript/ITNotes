@@ -9,7 +9,7 @@ tags:
   - scite
   - lsp
 created: 2023-01-30 11:19:11
-modified: 2023-07-10 6:14:53
+modified: 2023-08-10 14:52:46
 ---
 
 # 编辑器笔记
@@ -185,6 +185,103 @@ VSCodium：
 3. 先不要启动 VSCode，在 VSCode 根目录下手动新建 `data` 目录，这个目录是存在用户数据及插件安装目录。如果想临时文件也放在这个目录中，所以在 `data` 目录下再新建一个 `tmp` 目录，用于存放临时文件。
 4. 启动 VSCode，这样 VSCode 就会将用户数据、插件等放到 `data` 目录中了，这样文件将 VSCode 作成「便携包」。
 
+### <span id="editors_vscode_config">设置及配置</span>
+
+#### <span id="editors_vscode_config_settings">Settings</span>
+
+VSCode 的 Settings 显示模式分为 图形界面的**UI** 和 **Json**两种。一般设置时可以使用图形界面的 UI，而复杂的设置，就建议切换成 Json 模式。
+
+VSCode 中的 Settings 是分为 [全局 Settings](#editors_vscode_config_settings_applicationsettings) 的和自定义 [Profile](#Profile) 的 Settings。
+
+##### <span id="editors_vscode_config_settings_applicationsettings">全局 Settings</span>
+
+这里「全局 settings」，也称为「**Application Settings**」或称为「**User Settings**」，「全局用户 Settings」。
+
+如下图可见，在 `~/.config/Code/User/` 目录下的那个 settings 是「全局」settings，同时这个 settings 也是 [默认Profile](#editors_vscode_config_profile_default) 的 settings。
+
+![VSCode Settings](./Editors_Note.assets/vscode_settings.png)
+
+###### <span id="editors_vscode_config_settings_applicationsettings_open">打开全局 Settings</span>
+
+打开这个 Settings，也是有点「技巧」的。
+
+这里有两种情况：
+
+1. 当前的 Prfile 是 [默认 Profile](#editors_vscode_config_profile_default)
+
+	如果**当前 Profile** 为 [默认 Profile](#editors_vscode_config_profile_default) 时，不用想直接点击「设置」（Settings），或者使用 `Ctrl+Shift+P` 命令面板，敲入 `Open User Settings(UI)` 或 `Open User Settings(Json)`，就能呼出这个 Settings。
+	> [!tip] User Settings
+	> 
+	> 请注意是「User Settings」不是「Default Settings」。因为这里说的「全局」指的都是「用户 Settings」，而非「Default Settings」是「只读」，不能修改，它只相当于一个 Settings 的「模板」或「指南」存在，其他 Settings 都参考这个默认 Settings 来配置。
+	> 
+	> 还要注意点击「设置」（Settings）或使用 `Open User Settings` 打开的 Settings 不一定就是全局 Settings，因为如果当前 Profile 不是 [默认Profile](#editors_vscode_config_profile_default)，这个操作，就会打开当前 Profile 的 Settings。
+	>
+	>> [!tip] 如何确定当前 Settings
+	>> 如果确定是不是全局 Settings，应切换为 Json 模式，这样就能显示出这个 Settings 的具体存储位置。如果是在 `~/.config/Code/User` 下的，那就是全局的，如果是在 `~/.config/Code/User/profiles/xxx/` 下的，那就是某个自定义的 Profile 的 Settings。
+2. 当前 Profile **非默认 Profile**
+
+	如果当前 Profile 处于非 [默认 Profile](#editors_vscode_config_profile_default) 时，那点击「设置」或者使用 `Open User Settings` 命令呼出的 Settings 其实是当前 Profile 的 Settings。这时就得使用 `Open Application Settings` 命令来呼出 [默认 Profile](#editors_vscode_config_profile_default) 下的全局 Settings。
+ > [!tip] 
+ > 
+ > 当然不嫌麻烦的话，可以已打开的自定义 Profile 的 Setting （Json 模式）时，使用「面包屑导航」找到 `~/.config/Code/User/` 下的全局 Settings 并打开。
+
+###### <span></span>
+
+#### <span id="editors_vscode_config_profile">Profile</span>
+
+Profile 是包括了 [Settings](#editors_vscode_config_settings)、插件、snippet 等部分的配置。
+
+![VSCode Profile](./Editors_Note.assets/vscode_profile.png)
+
+##### <span id="editors_vscode_config_profile_default">默认 Profile</span>
+
+在没有创建任何 Profile 时，默认使用的是「默认 Profile」，这个 Profile 使用的是 [全局Settings](#editors_vscode_config_settings_applicationsettings)。
+
+「默认 Profile」与其他 Profile 一样可以导出，但不出导入。从外部导入一个 Profile，试图「覆盖」这个「默认认 Profile」是不允许的。
+> [!tip] Default Profile 导入
+> 
+> 在导入 Profile 时，在「创建 Profile」（Create Profile）时，会让你给导入后 Profile 起外名，这个名字不能是「**Default**」，因为「默认 Profile」就是这个名字，而「默认 Profile」是不支持被导入的 Profile 「覆盖」和替换的。
+> 
+> ![VSCode Default Profile Import Error](./Editors_Note.assets/vscode_default_import_error.png)
+> 
+
+因为「默认 Profile」不支持外部导入「覆盖」，可以使用 [Syncing](#Syncing（VSCode%20同步配置插件）) 这个同步插件保存「默认 Profile」的 Settings。
+> [!info] 手动「同步」Default Profile
+> 
+> 如果不使用同步插件同步「默认 Profile」，那「手动」设置。
+> 
+> 先「导入」外部 Profile，当然不能命名成「Defualt」，那就另起一个名。然后打开这个 Profile 的 Settings-- 用 Json 模式打开，复制其中的内容，然后
+
+##### <span id="editors_vscode_config_profile_create">创建 Profile</span>
+
+创建 Profile 可以在别的 Profile 基础上创建。如在内置的那几个 Profile 上创建。也可以通过已存在的自定义 Profile 上创建。
+
+> [!bug] 通过非内置 Profile 创建 Profile
+> 
+> 发现这种方式创建时，存在一个小 bug，就是选择了基础 Profile 点击创建新的 Profile 后，新的 Profile 使用的是当前 Profile 为模板创建，而不是选择的那个 Profile 创建。
+> 
+> 也就是说，在当前 VSCode 版本 (1.81.0) 下，要通过选择已有的非内置 Profile 创建新的 Profile，只能在当前正在使用的 Profile 为模板创建。估计之后的版本会修正这个小 bug。
+
+##### <span id="editors_vscode_config_profile_import">导入 Profile</span>
+
+导入 Profile 其实是一种变相的 [创建Profile](#editors_vscode_config_profile_create)，因为在导入 Profile 时，最后步就是创建。
+
+> [!tip] 不能创建 Default Profile
+> 
+> 之前已经提过了，不能创建 Default Profile!所以在导入时，给新创建的 Profile 命名时不能使用「**Default**」这个名称。
+
+##### <span id="editors_vscode_config_profile_export">导出 Profile</span>
+
+所有的 Profile，包括 [默认Profile](#editors_vscode_config_profile_default)，是可以导出的。
+
+> [!info] 备份 Profile
+> 
+> 导出的 Profile 建议使用 [Git](../Git/Git_Note.md) 及 [Github](../Git/Git_Note.md#git_github) 来对这些 Profile 管理和备份。
+
+##### <span>关于 Profile 的其他资料</span>
+
+* [Profiles in Visual Studio Code](https://code.visualstudio.com/docs/editor/profiles)
+
 ---
 
 ### <span id="editors_vscode_extensions">常用插件</span>
@@ -341,9 +438,25 @@ VSCode 有很多漂亮的 Theme 和 icon，可以根据自己喜好添加。
 
 VSCode 除了能添加主题外，还能添加 Icon，这个图标一般应用在 SideBar 中文件或目录显示，也应用在打开的页面其标签的 title 中，还能应用在文件「面包屑导航」（Breadcrumbs）中。
 
+###### <span id="editors_vscode_extensions_theme_icon_material">Material-icon</span>
+
 个人喜欢 [material-icon-theme](https://open-vsx.org/extension/PKief/material-icon-theme) [![material-icon-theme Repo](https://img.shields.io/github/stars/PKief/vscode-material-icon-theme?style=social)](https://github.com/PKief/vscode-material-icon-theme) 这个 icon 包。
 
 ![material-icon-theme fileIcons](https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/fileIcons.png)
+
+###### <span id="editors_vscode_extensions_theme_icon_catppuccin">Catppuccin icons</span>
+
+[Catppuccin icons](https://marketplace.visualstudio.com/items?itemName=Catppuccin.catppuccin-vsc-icons) [![Catppuccin icons Repo](https://img.shields.io/github/stars/catppuccin/vscode-icons?style=social
+)](https://github.com/catppuccin/vscode-icons) 这是配合 [Catppuccin 主题]() 使用的图标套件。
+
+![Catppuccin icons shotcut](https://raw.github.com/catppuccin/vscode-icons/main/assets/previews/mocha.png)
+
+###### <span id="editors_vscode_extensions_theme_icon_catppuccin_perfect">Catppuccin Perfect icons</span>
+
+[Catppuccin Perfect icons](https://marketplace.visualstudio.com/items?itemName=thang-nm.catppuccin-perfect-icons) [![Catppuccin Perfect icons Repo](https://img.shields.io/github/stars/thang-nm/Catppuccin-Perfect-Icons?style=social
+)](https://github.com/thang-nm/Catppuccin-Perfect-Icons) 是 [Catppuccin icons](#editors_vscode_extensions_theme_icon_catppuccin) 的衍生品。
+
+![Catppuccin Perfect icons shotcut](https://raw.githubusercontent.com/thang-nm/Catppuccin-Perfect-Icons/main/assets/previews/mocha-icons@2x.png)
 
 ---
 
@@ -361,7 +474,7 @@ vim 插件除了「模拟」了 vim 的基本功能外，还「模拟」了部�
 
 ![easymotion](https://camo.githubusercontent.com/a7ba9f1318ef3a014b52c3fcdc7406c74b6f4d9834d1391342783371a83e4a72/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f333739373036322f323033393335392f61386539333864362d383939662d313165332d383738392d3630303235656138333635362e676966)
 
-easymotion 更出名此，就大致说下常用的使用技巧。
+easymotion 更出名，因为就 easymotion 功能就大致说下常用的使用技巧。
 
 默认情况下，easymotion 快揵键都是 \<leader> 起头的，而默认 \<leader> 是 **\\**。而配合 vim 本身的 `j`、`k`、`h``l` 等就能实现行级、行内等方式跳转，这是对原生的 vim 移动的重要补充。
 
@@ -579,6 +692,17 @@ VSCode 已经内置了大名鼎鼎的 [Emmet](https://emmet.io) （[Emmet Wiki](
 > 关于 [LSP](../vim/LSP_Complete.md#about_lsp)
 
 * vti  Terminal 接口
+
+---
+
+#### <span id="editors_vscode_extensions_error">错误检测</span>
+
+##### <span id="editors_vscode_extensions_error_errorlens">ErrorLens</span>
+
+[ErrorLens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) [![erroslens Repo](https://img.shields.io/github/stars/usernamehw/vscode-error-lens?style=social
+)](https://github.com/usernamehw/vscode-error-lens) 是一个实时检测语法错误的小插件。
+
+![errolens shotcut](https://raw.githubusercontent.com/usernamehw/vscode-error-lens/master/img/demo.png)
 
 ---
 

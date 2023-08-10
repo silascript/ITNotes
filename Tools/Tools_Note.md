@@ -4,7 +4,7 @@ aliases:
 tags:
   - 
 created: 2022-11-7 02:50:13
-modified: 2023-08-1 02:21:14
+modified: 2023-08-1 14:38:12
 ---
 
 # 常用小工具笔记
@@ -89,10 +89,13 @@ lux -F /path/to/links.txt
 
 有些网站下载视频，特别是下载 720 或 1080 等高清视频时，可以需要账号已登录，如「B 站」，这时就需要从 Cookie 中读取已登录账号的状态的。所以得在指定相应的 Cookies 文件。
 
-> [!example] 示例
+> [!example] 语法格式 
 > `lux -i -c ~/mysoft/NetBrower/edge_cookies.txt "xxxx"`
 > 
 > `-c` 后就是 Cookies 文件路径
+
+> [!example] 示例
+> `lux -p -c ~/mysoft/NetBrower/edge_cookies.txt -f 80-7 https://www.bilibili.com/video/xxxxx`
 
 ###### 如果导出 Cookies
 

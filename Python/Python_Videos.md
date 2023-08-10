@@ -8,7 +8,7 @@ tags:
   - tutorial
   - list
 created: 2023-02-12 11:23:37
-modified: 2023-07-18 22:32:24
+modified: 2023-08-1 14:40:28
 ---
 
 # Python 视频清单
@@ -25,5 +25,6 @@ modified: 2023-07-18 22:32:24
 * [谷歌首席讲师花费198小时讲完的Python课程](https://www.bilibili.com/video/BV1t14y127Dp/)
 * [Python 数据分析 - 数据挖掘教程](https://www.bilibili.com/video/BV1za4y1w7fb)
 * [两小时python速成课程](https://www.bilibili.com/video/BV16A411i7W7)
+* [超超超基础Python课程，3小时快速入门](https://www.bilibili.com/video/BV1944y1x7SW)
 * [黑马8天python从入门到精通](https://www.bilibili.com/video/BV1qW4y1a7fU)
 * [【清华大学计算机系科协暑培 2023】Python 基础](https://www.bilibili.com/video/BV1kF411Q71M)

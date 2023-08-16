@@ -7,7 +7,7 @@ tags:
   - pip
   - conda
 created: 2023-01-30 11:19:11
-modified: 2023-07-18 10:49:58
+modified: 2023-08-16 23:32:47
 ---
 # Python 笔记
 
@@ -124,6 +124,24 @@ pip_search 要搜索的包
 新版本的 linux 发生版，避免 Python 包管理器与系统底层冲突，所以禁止 `pip install`。只能在「虚拟环境」中使用 `pip`。如果执行 `pip install xxx`，会报 `externally managed environment` 错误提示。
 
 当然不怕死的，可以使用 `--break-system-packages` 这个选项，硬装。
+
+### pip 小工具
+
+#### pipdeptree
+
+`pipdeptree` 这个工具可以显示 pip 中各模块依赖「关系树」。有了这工具，删除模块时就可以更有「自信」了。
+
+```shell
+pip install pipdeptree
+```
+
+#### pip-autoremove
+
+`pip-autoremove` 这工具在删除某模块时，把依赖的模块也一起「清理」了！
+
+```shell
+pip install pip-autoremove
+```
 
 ---
 
@@ -326,6 +344,121 @@ conda create -n 新环境名 --clone 旧环境名
 > 即 `conda list -n 环境名`，这个语法能使用任何环境上，即便没有 [启动环境](#启动环境)，也能查看指定环境中安装了哪些包。
 
 conda 能装什么包，可以通过 [anaconda官网](https://anaconda.org/) 查询。
+
+---
+
+## <span id="python_pipx">pipx</span>
+
+[Site Unreachable](https://github.com/pypa/pipx) 是一个自动建立虚拟环境来使用 Python 应用的工具。
+
+> [!info] pipx 安装条件
+> 
+> pipx 需要 Python 3.6+ 才可以使用
+
+`pipx --help`，可查看 pipx 相关信息：
+
+```shell
+Virtual Environment location is /home/silascript/.local/pipx/venvs.
+Symlinks to apps are placed in /home/silascript/.local/bin.
+
+optional environment variables:
+  PIPX_HOME             Overrides default pipx location. Virtual Environments will be installed to
+                        $PIPX_HOME/venvs.
+  PIPX_BIN_DIR          Overrides location of app installations. Apps are symlinked or copied here.
+  PIPX_DEFAULT_PYTHON   Overrides default python used for commands.
+  USE_EMOJI             Overrides emoji behavior. Default value varies based on platform.
+
+```
+
+> [!info] 关于 pipx 两个重要的目录
+> 
+> 一个是 pipx 的为应用建立的虚拟环境目录，默认是在 `~/.local/pipx/venvs`
+> 
+> 另一个是 pipx 中应用执行的 `bin` 文件所在的目录，默认是在 `~/.local/bin` 下，这其实是跟 pip 一样的。
+
+### 安装模块
+
+[pip](#pip) 和 `pipx` 默认都是从 [pypi](https://pypi.org/) 上安装包。
+
+使用 pipx 安装模块或应用，跟 [pip](#pip) 差不多。
+
+```shell
+pipx install 应用名
+```
+
+使用 github 源码安装：
+
+> [!example] 示例
+> 
+> ```shell
+> pipx install git+https://github.com/psf/black.git
+> ```
+
+安装指定版本的模块：
+
+```shell
+pipx install package==version
+```
+
+#### PypiSearch
+
+如果想要搜索模块，可以安装 [pypisearch](https://github.com/shidenko97/pypisearch)：
+
+```shell
+pipx install pypisearch
+```
+
+安装完 [pypisearch](https://github.com/shidenko97/pypisearch) 后，就可以使用其搜索模块：
+
+```shell
+pypisearch 模块名
+```
+
+### 查询模块信息
+
+列出已安装的所有模块：
+
+```shell
+pipx list
+```
+
+查看某模块的虚拟环境用了哪些包：
+
+```shell
+pipx runpip 模块名 list
+```
+
+### 运行
+
+```shell
+pipx run 模块名
+```
+
+### 升级
+
+```shell
+pipx upgrade 模块名
+```
+
+升级所有模块：
+
+```shell
+pipx upgrade-all
+```
+
+### 卸载
+
+卸载域模块：
+
+```shell
+pipx uninstall 模块
+```
+
+卸载所有模块：
+
+```shell
+pipx uninstall-all
+```
 
 ---
 

@@ -9,7 +9,7 @@ tags:
   - ubuntu
   - mysql
 created: 2023-02-2 11:25:59
-modified: 2023-07-1 1:05:31
+modified: 2023-08-16 16:56:04
 ---
 
 # Docker 笔记
@@ -501,28 +501,34 @@ volume 是被设计用来持久化数据的，它的生命周期独立于容器�
 ```shell
 docker volume ls
 ```
+
 ![docker_volume_ls](./Docker_Note.assets/docker_volume_ls.png)
 
 #### 创建一个 volume
+
 ```shell
 docker volume create volume名
 ```
-> 创建出来的 volume 实际是被存放在 **/var/lib/docker/volumes/** 目录下。
-> **/var/lib/docker** 这个目录其实就是 Docker 安装目录。 
+
+> [!info] volume
+> 创建出来的 volume 实际是被存放在 `/var/lib/docker/volumes/` 目录下。
+> `/var/lib/docker` 这个目录其实就是 Docker 安装目录。 
 
 #### 查看指定 volume 的详细信息：
 ```shell
 docker volume inspect volume名
 ```
-示例：
-![docker_volume_inspect](./Docker_Note.assets/docker_volume_inspect.png)
-> 可以见到，volume 名实际是在 volumes 这个 存放 volume 的根目录下，建立了同名的目录用来存放些名的 volume。
+
+> [!example] 示例
+> ![docker_volume_inspect](./Docker_Note.assets/docker_volume_inspect.png)
+> 可以见到，volume 名实际是在 volumes 这个 存放 volume 的根目录下，建立了同名的目录用来存放同名的 volume。
 
 #### 删除一个 volume
 
 ```shell
 docker volume rm volume名
 ```
+
 > [!tip]
 > volume 的名称可以通过	`dokcer volumes ls` 命令查询。
 
@@ -531,6 +537,8 @@ docker volume rm volume名
 ```shell
 docker volume prune
 ```
+
+> [!info] 清理 volume 条件 
 > 删除或清理 volume ，必须相关的容器不存在，也就是说没有容器再使用这些 volume，不然是清理不成功的。  
 > 所以要清理 volume 前得先 `docker rm 容器`，只是 `docker stop` 还不行，必须先删除容器，才能清理 volume。
 
@@ -539,9 +547,11 @@ docker volume prune
 ### mount 使用
 
 `run` 时使用 `--mount` 参数创建 volume：
+
 ```shell
 docker run -d --name d_apache-2.4 -p 8085:80 --mount source=html,destination=/usr/local/apache2/htdocs httpd:2.4.52-bullseye
 ```
+
 > [!tip] mount 详解 
 > **--mount** 选项中 所以有参数有仅只能使用「**,**」分隔，不能有其他，连空格都不能有。  
 > 因为 **--mount** 后面那一串全面都是 --mount 这个「key-value」对，是用「**,**」来区分的，如果混入其他字符，会使「**键值对**」分割取值赋值时发生异常。  
@@ -551,21 +561,28 @@ docker run -d --name d_apache-2.4 -p 8085:80 --mount source=html,destination=/us
 > **type=volume** 实际 **挂载** 目录路径是 docker 安装目录下 **volumes** 目录下。
 
 如果 --mount 的 **type=bind**，那么 **source** 的值就能指定路径，如下例：
+
 ```shell
 docker run -d --name d_apache-2.4 -p 8085:80 --mount type=bind,source=$(pwd)/html,destination=/usr/local/apache2/htdocs httpd:2.4.52-bullseye
 ```
+
+> [!tip]
 > type=bind，source 指定路径后，destination 中的容器被「映射」的路径中的内容就会被「覆盖」或称为「隐藏」了。
 
 如果 **source** 为空，那 docker 会自动随机生成一个字符串作为这个 volume 的名称：
+
 ```shell
 docker run -d --name d_apache_2.4 -p 8085:80 --mount destination=/usr/local/apache2/htdocs httpd:2.4.52-bullseye
 ```
+
 ![docker_mount_source_null](./Docker_Note.assets/docker_mount_source_null.png)
 
 ### volume 使用
 
-* 指定宿主绝对路径： 
-> 语法：`-v 宿主绝对路径:容器路径` 方式进行 「挂载」
+#### 指定宿主绝对路径
+
+**语法**：`-v 宿主绝对路径:容器路径` 方式进行 「挂载」
+
 ```shell
 docker run -d --name d_apache-2.4 -p 8085:80 -v $(pwd)/html:/usr/local/apache2/htdocs httpd:2.4.52-bullseye
 ```
@@ -579,15 +596,20 @@ docker run -d --name d_apache-2.4 -p 8085:80 -v $(pwd)/html:/usr/local/apache2/h
 
 ---
 
-* 指定宿主相对路径：
+#### 指定宿主相对路径
+
 ```shell
 docker run -d --name d_apache-2.4 -p 8085:80 -v html:/usr/local/apache2/htdocs httpd:2.4.52-bullseye
 ```
+
+> [!info]
 > -v 中宿主机路径如果用的是相对路径，则不会指定为自定义路径，而是在 docker 安装目录下 **volumes** 目录下创建相应的目录。
 > ![docker_volume_relativepath](./Docker_Note.assets/docker_volume_relativepath.png)
 > 这与 --mount type=volume 使用完全一样。
 
-* 宿主机不给名称或路径：
+#### 宿主机不给名称或路径
+
+> [!info]
 > **冒号** 左边不给出任何值，docker 将会在 **volumes** 目录下随机创建一个目录，目录名也是随机生成的一个字符串，如下：
 > ![docker_volume_random](./Docker_Note.assets/docker_volume_random.png)
 
@@ -601,15 +623,15 @@ docker run -d --name d_apache-2.4 -p 8085:80 -v html:/usr/local/apache2/htdocs h
 > 就是因为这句代码，使用得挂载 MySQL 的数据目录时，会自动将容器内的数据复制到指定要挂载的目录中。
 > 除了像 MySQL 数据目录这种情况外，指定路径的挂载，容器内的数据都会被「覆盖」，且不会在覆盖前复制到宿主机中，所以得手动复制。
 
-<span id="docker_volume_namedvolume">**具名挂载**</span>
+##### <span id="docker_volume_namedvolume">具名挂载</span>
 
 无论是使用 **--mount** 还是 **-volume**，只要是宿主机路径如果是相对路径，就是在 docker 安装目录下的子目录 **volumes** 中创建相应的挂载目录。 此类挂载被称为「**具名挂载**」。
 
-<span id="docker_volume_anonvolume">**匿名挂载**</span>
+##### <span id="docker_volume_anonvolume">匿名挂载</span>
 
-无论是使用 **--mount** 还是 **-volume**，只要宿主机的参数（--mount source 不指定或 -v 的冒号左边值）缺失，那 Docker 会自动生成一个随机字符串来作为此 volume 的名称，这被称为「**匿名挂载**」。
+无论是使用 `--mount` 还是 `-volume`，只要宿主机的参数（--mount source 不指定或 -v 的冒号左边值）缺失，那 Docker 会自动生成一个随机字符串来作为此 volume 的名称，这被称为「**匿名挂载**」。
 
-「**具名挂载**」和「**匿名挂载**」都是将挂载数据交由 Docker 来「托管」，所以只能指定托管的名称，不能指定数据存放的路径，默认存放在 docker 安装目录下的 volumes 子目录中（volumes 目录，顾名思义就是专门上用来管理 volume 的 ）。而这种托管，是将容器中的路径下的数据复制到 volumes 目录下，所以这种两种挂载，容器内容没有被「覆盖」。
+[具名挂载](#docker_volume_namedvolume) 和 [匿名挂载](#docker_volume_anonvolume) 都是将挂载数据交由 Docker 来「托管」，所以只能指定托管的名称，不能指定数据存放的路径，默认存放在 docker 安装目录下的 volumes 子目录中（volumes 目录，顾名思义就是专门上用来管理 volume 的 ）。而这种托管，是将容器中的路径下的数据复制到 volumes 目录下，所以这种两种挂载，容器内容没有被「覆盖」。
 
 ---
 
@@ -623,7 +645,8 @@ libnetwork 中容器网络模型（Container Networking Model，CNM），可以�
 * 接入点（Endpoint）：代表网络上可以挂载容器的接口，会分配 IP 地址。
 * 网络（Network）：可以连通多个接入点的一个子网。
 
-**CNM 生命周期**：
+###### CNM 生命周期
+
 ```mermaid
 flowchart TB
 
@@ -635,6 +658,7 @@ Network --> Endpoint((Endpoint));
 Endpoint -."Leave()、Delete()".-> Network;
 
 ```
+
 如图所示：
 1. 注册驱动到网络控制器
 2. 网络控制器创建网络
@@ -656,10 +680,13 @@ Docker 默认用 Linux 网桥和 IPtables 实现的单机网络。
 ```shell
 docker run -d -p [宿主机ip]:[宿主机端口]:[容器端口] --name [容器名字][镜像名称]
 ```
+
+> [!tip]
 > 如果不指定宿主机 ip 的话，默认使用 0.0.0.0。  
 > 如果连宿主机的端口也省略，就表明宿主机的端口与容器端口一致
 
 还可以进行多端口映射：
+
 ```shell
 docker run -d -p [宿主机端口1]:[容器端口1] -p [宿主机端口2]:[容器端口2] --name [容器名
 称][镜像名称]

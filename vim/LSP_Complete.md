@@ -4,7 +4,7 @@ aliases:
 tags:
   - 
 created: 2023-06-4 17:55:40
-modified: 2023-08-16 12:55:02
+modified: 2023-08-16 23:15:51
 ---
 
 # LSP 及补全相关
@@ -104,7 +104,11 @@ pip install -U setuptools
 
 #### jedi-language-server
 
-[jedi-language-server](https://github.com/pappasam/jedi-language-server) 灵感源于上面那款。 这款 LSP 要求 Python 的版本是 **3.7+**。 这款 LSP 是比较新的，在 vim 下 使用效果挺不错的。这也是几个 python 版本 lsp 在 [deoplete](#deoplete)+[vim-lsp](#vim-lsp)，能正常代码提示的 LSP。
+[jedi-language-server](https://github.com/pappasam/jedi-language-server) 灵感源于上面那款。 这款 LSP 要求 Python 的版本是 **3.7+**。 这款 LSP 是比较新的，在 vim 下 使用效果挺不错的。~~这也是几个 python 版本 lsp 在 [deoplete](#deoplete)+[vim-lsp](#vim-lsp)，能正常代码提示的 LSP。~~
+
+> [!tip] 
+> 
+> 其他 python 的 LSP 代码提示不正常，有可能是依赖的 jedi 等模块版本发生冲突，这大概是直接在 pip 中安装多个 python 的 LSP 所致。所以建议，如果想换着 LSP 来「玩」，可以使用 [pipx](../Python/Python_Note.md#pipx) 来装，这样每个 LSP 都有各自的虚拟环境，互不干扰。
 
 jedi-language-server 安装：
 
@@ -137,6 +141,10 @@ pip install -U setuptools
 测试是否安装成功：`pylsp -V`。
 
 这个 Python LSP 应该是当下主流使用的，毕竟至今还在更新。
+
+> [!tip] 注意
+> 
+> pylsp 这个 LSP 用的 [jedi](https://github.com/davidhalter/jedi) 模块的版本可能与 [jedi-language-server](#jedi-language-server) 存在差异，如果使用 [pip](../Python/Python_Note.md#pip) 直接安装，可能造成不必要的冲突，建议使用 [pipx](../Python/Python_Note.md#pipx) 来装，这样两个 LSP 都在各自的虚拟环境中运行，互不干扰。
 
 ---
 
@@ -273,11 +281,13 @@ npm install vls -g
 ## <span id="vp_lsp_client">vim LSP Client 插件</span>
 
 LSP Language Server Protocol 为语言提供语言服务，有 Server 肯定就要有 Client。
-vim 也需要一个 Client 去与 LSP“对接”。这就是 LSC--Language Server Client。
+
+vim 也需要一个 Client 去与 LSP「对接」。这就是 LSC--Language Server Client。
+
 vim 本身没有提供 LSC(据说未来版本会逐步增加这块),所以得通过插件来实现。
 
 LSC 只是提供与 LSP 对接，并将 LSP 传来的语言服务获取补全数据。
-而补全数据需要“展示”出来，如果不装补全插件，那这些数据是传给 vim，使用 vim 本身的补全来将数据“展示”。
+而补全数据需要「展示」出来，如果不装补全插件，那这些数据是传给 vim，使用 vim 本身的补全来将数据「展示」。
 
 常用 LSC 插件
 

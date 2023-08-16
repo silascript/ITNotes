@@ -8,7 +8,7 @@ tags:
   - config
   - setting
 created: 2023-01-30 11:19:11
-modified: 2023-06-4 1:34:10
+modified: 2023-08-14 02:52:12
 ---
 # VIM 及 NeoVIM 配置
 
@@ -172,7 +172,7 @@ pip3 install --user --upgrade pynvim
 
 ![SpaceVim preview](https://user-images.githubusercontent.com/13142418/228742293-1ca7c173-84a6-461a-9fb5-656d23953e12.png)
 
-### LuanVim
+### LunarVim
 
 [LunarVim](https://www.lunarvim.org/)[![LunarVim Repo](https://img.shields.io/github/stars/LunarVim/LunarVim?style=social)](https://github.com/LunarVim/LunarVim)
 

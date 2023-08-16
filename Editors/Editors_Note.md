@@ -9,7 +9,7 @@ tags:
   - scite
   - lsp
 created: 2023-01-30 11:19:11
-modified: 2023-08-10 14:52:46
+modified: 2023-08-14 00:46:18
 ---
 
 # 编辑器笔记
@@ -25,7 +25,6 @@ modified: 2023-08-10 14:52:46
       * [LSP相关](#lsp相关)
     * [Sublime 相关连接](#sublime-相关连接)
   * [VSCode](#vscode)
-    * [VSCode 目录结构](#vscode-目录结构)
     * [常用插件](#常用插件)
       * [本地化插件](#本地化插件)
       * [Syncing（VSCode 同步配置插件）](#syncingvscode-同步配置插件)
@@ -98,6 +97,7 @@ SublimeText 基本设置：
 > 插件库默认地址：https://packagecontrol.io/channel_v3.json
 
 通过编辑 `Package Control.sublime-settings` 文件，就能自定义插件库地址：
+
 ```json
 "channels": [
     "https://packagecontrol.io/channel_v3.json",
@@ -105,6 +105,296 @@ SublimeText 基本设置：
 
 ],
 ```
+
+---
+
+#### <span id="editors_sublime_plugins_syncing">同步</span>
+
+##### <span id="editors_sublime_plugins_syncing_syncingsettings">Syncing Settings</span>
+
+[Syncing Settings](https://packagecontrol.io/packages/Sync%20Settings) [![Syncing Settings Repo](https://img.shields.io/github/stars/mfuentesg/SyncSettings?style=social
+)](https://github.com/mfuentesg/SyncSettings) 是一个同步 Sublime 设置数据的小插件。它是通过 [Gist]() 来同步设置数据的！非常遗憾，这个插件已经停止维护了，不过还是可以用的。
+
+设置非常简单，只用设置 Gist 的 ID 及 Token 就可以同步设置数据了：
+
+```json
+"gist_id":"",
+"access_token":""	
+```
+
+---
+
+#### <span id="editors_sublime_plugins_beautify">美化</span>
+
+##### <span id="editors_sublime_plugins_beautify_afileicon">A File Icon</span>
+
+[A File Icon](https://packagecontrol.io/packages/A%20File%20Icon) [![A File Repo](https://img.shields.io/github/stars/SublimeText/AFileIcon?style=social
+)](https://github.com/SublimeText/AFileIcon) 是一个添加文件类型图标的小插件。
+
+![A File Icon Shotcut](https://github.com/SublimeText/AFileIcon/raw/master/media/logo.png)
+
+##### <span id="editors_sublime_plugins_beautify_fileicons">FileIcons</span>
+
+[FileIcons](https://packagecontrol.io/packages/FileIcons) [![FileIcons Repo](https://img.shields.io/github/stars/braver/FileIcons?style=social
+)](https://github.com/braver/FileIcons/) 是 [A File Icon](#editors_sublime_plugins_beautify_afileicon) 的简化版。
+
+![FileIcons Shotcut](https://raw.githubusercontent.com/braver/FileIcons/master/icons.png)
+
+##### <span id="editors_sublime_plugins_beautify_theme">Theme</span>
+
+###### <span id="editors_sublime_plugins_beautify_theme_gruvbox">Gruvbox</span>
+
+[Gruvbox](https://packagecontrol.io/packages/gruvbox) [![Gruvbox theme Repo](https://img.shields.io/github/stars/morhetz/gruvbox?style=social
+)](https://github.com/morhetz/gruvbox) 是一个带有护眼配色的 Theme。这货之前是来自 [Vim](../vim/Vim_Note.md) 或 Emac 的。
+
+![Gruvbox Shotcut 1](https://camo.githubusercontent.com/a05028ef4dae5865098c508fc9f686b211f510198f07e6a5636734dbac618b30/687474703a2f2f692e696d6775722e636f6d2f476b496c38466e2e706e67)
+
+这个 Theme 特点：
+
+* 好看，而且耐看，而且因为主色调是暗黄色，所以看起来对眼睛很友好
+* 能调整 Tab、Statusbar 和 Sidebar 的字体大小
+
+部分配置：
+
+```json
+// sidebar
+"gruvbox_sidebar_font_size_10": true,  //  v  10
+                                         //  |  11 (Default)
+"gruvbox_sidebar_font_size_12": true,  //  |  12
+"gruvbox_sidebar_font_size_13": true,  //  |  13
+"gruvbox_sidebar_font_size_14": true,  //  |  14
+"gruvbox_sidebar_font_size_15": true,  //  |  15
+"gruvbox_sidebar_font_size_16": true,  //  v  16
+
+// statusbar
+
+"gruvbox_statusbar_xxs": true,  //  v  20
+"gruvbox_statusbar_xs": true,   //  |  25
+"gruvbox_statusbar_s": true,    //  |  30
+                                  //  |  35 (Default)
+"gruvbox_statusbar_l": true,    //  |  40
+"gruvbox_statusbar_xl": true,   //  |  45
+"gruvbox_statusbar_xxl": true,  //  v  50
+
+"gruvbox_statusbar_font_size_10": true,  //  v  10
+                                           //  |  11 (Default)
+"gruvbox_statusbar_font_size_12": true,  //  |  12
+"gruvbox_statusbar_font_size_13": true,  //  |  13
+"gruvbox_statusbar_font_size_14": true,  //  |  14
+"gruvbox_statusbar_font_size_15": true,  //  |  15
+"gruvbox_statusbar_font_size_16": true,  //  v  16
+
+
+// Tab 
+"gruvbox_tabs_xxs": true,  //  v  33
+"gruvbox_tabs_xs": true,   //  |  39
+"gruvbox_tabs_s": true,    //  |  45
+                             //  |  51 (Default)
+"gruvbox_tabs_l": true,    //  |  57
+"gruvbox_tabs_xl": true,   //  |  63
+"gruvbox_tabs_xxl": true,  //  v  69
+
+"gruvbox_tabs_font_size_7": true,   //  v  7
+"gruvbox_tabs_font_size_8": true,   //  |  8
+"gruvbox_tabs_font_size_9": true,   //  |  9
+"gruvbox_tabs_font_size_10": true,  //  |  10
+                                      //  |  11 (Default)
+"gruvbox_tabs_font_size_12": true,  //  |  12
+"gruvbox_tabs_font_size_13": true,  //  |  13
+"gruvbox_tabs_font_size_14": true,  //  |  14
+"gruvbox_tabs_font_size_15": true,  //  v  15
+
+
+
+```
+
+###### <span id="editors_sublime_plugins_beautify_theme_gruvboxmaterial">Gruvbox Material Theme</span>
+
+[Gruvbox Material Theme](https://packagecontrol.io/packages/Gruvbox%20Material%20Theme) [![GruvBox Material Repo](https://img.shields.io/github/stars/karimlevallois/gruvbox-material-sublime-text?style=social
+)](https://github.com/karimlevallois/gruvbox-material-sublime-text) 是 [Gruvbox](#editors_sublime_plugins_beautify_theme_gruvbox) 的修改版。据说更护眼。但这货已经 2 年没更新了 -- 当然 [Gruvbox](#editors_sublime_plugins_beautify_theme_gruvbox) 已经 4 年没更新了，哈哈！而且这货直到现在都只有「Dark」版，「Light」版本一直没出现。估计这货离弃不远了！
+
+![Gruvbox Material Shotcut](https://github.com/karimlevallois/gruvbox-material-sublime-text/raw/main/gruvbox-material-sublime-text.png)
+
+###### <span id="editors_sublime_plugins_beautify_theme_one">One</span>
+
+[Theme - One](https://packagecontrol.io/packages/Theme%20-%20One)  [![One Repo](https://img.shields.io/github/stars/AmjadHD/sublime_one_theme?style=social
+)](https://github.com/AmjadHD/sublime_one_theme) 这算是比较新的 Theme 了 -- 毕竟介绍里写着支持 Sublime 4，可见其新鲜程度。
+
+![Theme One Shotcut](https://github.com/AmjadHD/sublime_one_theme/blob/main/one.png)
+
+---
+
+#### <span id="editors_sublime_plugins_frontend">前端相关</span> 
+
+##### Emmet2
+
+[Emmet 2](https://packagecontrol.io/packages/Emmet)  [![Emmet Plugin Repo](https://img.shields.io/github/stars/emmetio/sublime-text-plugin?style=social
+)](https://github.com/emmetio/sublime-text-plugin) 这应该是必装的。当然这是新版的 Emmet 插件（[老版Emmet插件](https://github.com/sergeche/emmet-sublime) 已经不维护了），所以叫「Emmet 2」。
+
+装完，如果有需要可以改下快捷键：
+
+```json
+"keys": ["ctrl+e"],
+"command": "emmet_expand_abbreviation"
+```
+
+> [!tip] emmet 快捷键
+> 
+> 如果不改快捷键，默认使用 `Tab` 或 `Enter` 来「展开」代码。
+
+---
+
+---
+
+#### <span id="editors_sublime_plugins_lsp">LSP 相关</span>
+
+[关于LSP](../vim/LSP_Complete.md#about_lsp)
+
+Sublime 中装的 LSP 插件其实是 LSP 的 **Client**。而 **Server** 得根据需求在 Sublime 外的系统中安装。
+
+如 vue lsp ，你得使用 `npm install -g vue-language-server` 安装 vue-language-server ，sublime 中的 `LSP-vue` 插件才能去调用这个 Server 以实现编程语言的诸如提示、分析等功能。
+
+LSP 常用插件：
+
+##### 通用 LSP
+
+[通用 LSP](https://packagecontrol.io/packages/LSP)
+
+这个插件不针对特定语言，属于基本 LSP 插件。其他特定语言 lsp 插件都在这插件之上建立的，所以如果要使用 LSP，这个插件必装。
+
+具体语言的 LSP 得再装特定的 LSP 插件。-- 这个相当于 LSP 通用 Client，但有些语言得用特定 Client 才能调 LSP，所以这些语言对再装定的语言 LSP 插件。具体使用还得参考 [LSP配置说明](https://lsp.sublimetext.io/language_servers)。
+
+sublime 的 LSP 的本地 Server 是装在 `~/.cache/sublime-text/Package Storage` 下。
+
+##### 常用 LSP 插件列表
+
+* [LSP-json](https://github.com/sublimelsp/LSP-json) 这个插件是必装的，因为 Sublime 本身的配置文件就是 json
+* [LSP-html](https://github.com/sublimelsp/LSP-html)
+* [LSP-CSS](https://github.com/sublimelsp/LSP-css)
+* [LSP-eslint](https://github.com/sublimelsp/LSP-eslint)
+* [LSP-typescript](https://github.com/sublimelsp/LSP-typescript)
+* [LSP-rust-analyzer](https://github.com/sublimelsp/LSP-rust-analyzer) ^66e1d9
+* [LSP-lemminx: XML support for Sublime's LSP plugin](https://github.com/sublimelsp/LSP-lemminx)
+* [LSP-bas](https://github.com/sublimelsp/LSP-bash)
+
+##### 部分 LSP 插件介绍
+
+###### Python 相关
+
+LSP-pylsp 配置：
+
+```json
+"settings": {
+	// 使用ruff作linter
+	"pylsp.plugins.ruff.enabled":true,
+	// 更换black风格
+	"pylsp.plugins.pycodestyle.enabled":false,	
+	"pylsp.plugins.pylsp_black.enabled":true,
+	},
+
+
+```
+
+###### LSP-CSS
+
+[LSP-CSS](https://github.com/sublimelsp/LSP-css) 配置：
+
+打开一个 CSS 文件，然后打开 `Settings - Syntax Specific` 设置，在右边窗口添加以下代码：
+
+```json
+{
+	// 禁止Sublime内置CSS补全功能
+	"disable_default_completions": true
+}
+```
+
+> [!info]
+> 
+> 这句代码，同样适用于其他语言（比如 html），只要出现 LSP 补全与 Sublime 内置补全的情况出现，就可以先打开相关文件，然后在 `Syntax Specific` 设置里禁掉这个语言的内置补全。
+>
+
+##### LSP-bash
+
+[LSP-bash](https://packagecontrol.io/packages/LSP-bash) [![LSP-bash Repo](https://img.shields.io/github/stars/sublimelsp/LSP-bash?style=social
+)](https://github.com/sublimelsp/LSP-bash) 是写 bash shell 很好的 lsp。这插件使用到 [bash-language-server](https://github.com/bash-lsp/bash-language-server)，所以得安装下：`npm i -g bash-language-server`。
+
+##### Markdown
+
+###### markmark
+
+Sublime 要使用 markmark 这个 LSP，是没有对应的特定 LSClient，而是使用 [通用LSP](#通用LSP) 这个插件与 [markmark](https://github.com/nikku/markmark) 这个 LSP 来实现。
+
+安装 markmark：
+
+```shell
+npm install -g markmark
+```
+
+###### LSP-marksman
+
+[LSP-marksman](https://github.com/sublimelsp/LSP-marksman)  [![LSP-marksman Repo](https://img.shields.io/github/stars/sublimelsp/LSP-marksman?style=social
+)](https://github.com/sublimelsp/LSP-marksman) 这插件不用自己配置 Client 了。
+
+---
+
+### <span id="editors_sublime_plugins_terminal">终端插件</span>
+
+#### Terminus
+
+[Terminus](https://packagecontrol.io/packages/Terminus) [![Terminus Repo](https://img.shields.io/github/stars/randy3k/Terminus?style=social
+)](https://github.com/randy3k/Terminus) 是一个终端插件。这个终端插件，是在编辑区开启一个终端视图。非常方便使用终端进行代码运行测试。而有一些 lsp 插件提供的运行代码功能，也是依赖此插件，如 [lsp-rust-analyzer](#^66e1d9)。
+
+这插件还有内置一堆的 Theme，真是很细腻啊！
+
+配置示例：
+
+```json
+{
+	"256color": true,
+	"theme": "ayu-mirage"
+}
+```
+
+> [!tip]
+> 
+> 如果要使用那些 Theme，最好把 256 色开启，不然有可能有部分 Theme 中的一些字符因为颜色显示出问题。
+
+#### Terminal
+
+[Terminal](https://packagecontrol.io/packages/Terminal)  [![Terminal Repo](https://img.shields.io/github/stars/SublimeText/Terminal?style=social
+)](https://github.com/SublimeText/Terminal) 这也是一个终端插件，与 [Terminus](#Terminus) 不同的是，另开一个窗口调出当前操作系统默认终端。可以说这两个终端插件各有千秋。
+
+---
+
+### <span id="editors_sublime_plugins_vim">vim 相关插件</span>
+
+虽然 Sublime 原生有 vim 功能，但与原生的 vim 相比，还是弱了点，所以得上点插件增强 vim 功能。
+
+#### NeoVintageous
+
+[NeoVintageous](https://github.com/NeoVintageous/NeoVintageous) 模拟了 vim 大部分功能，比 sublime 原生的 vim 功能更强。
+
+所以在对 sublime 配置时，可以将 sublime 原生 vim 及以前那些 vim 增强插件屏蔽掉，因为这完全可以使用这个插件替代了 ([VintageES](https://packagecontrol.io/packages/VintageES) 这个算是比较出名的 vi 插件，也在其介绍中也推荐了 NeoVintageous)：
+
+```json
+"ignored_packages": [
+	"Six",
+	"Vintage",
+	"Vintageous",
+],
+```
+
+> [!info]
+> `Vintage` 这个是 Sublime 原生的模拟 vi 功能模块。
+> 
+> [Six](https://github.com/guillermooo/Six) [![Six Repo](https://img.shields.io/github/stars/guillermooo/Six?style=social
+)](https://github.com/guillermooo/Six)（Six 是 Vintageous 的继承者）。
+> 
+> [Vintageous](https://packagecontrol.io/packages/Vintageous) 是之前非常常用的 vi 增强插件。 
+
+**NeoVintageous** 这插件最牛的还在于，它模拟了不少 vim 经典插件，如 [Surround](../vim/vim_plugin.md#Surround)、sneak、Highlighted Yank 等，这有点像 [VSCode](VSCode_Note.md) 的内置 vim 功能的设计了！
+
+---
 
 ### <span id="editors_sublime_errors">Sublime 问题解决</span>
 
@@ -125,24 +415,6 @@ SublimeText 基本设置：
 
 ---
 
-#### <span id="editors_sublime_plugins_lsp">LSP 相关</span>
-
-[关于LSP](../vim/LSP_Complete.md#about_lsp)
-
-Sublime 中装的 LSP 插件其实是 LSP 的 **Client**。而 **Server** 得根据需求在 Sublime 外的系统中安装。
-
-如 vue lsp ，你得使用 `npm install -g vue-language-server` 安装 vue-language-server ，sublime 中的 `LSP-vue` 插件才能去调用这个 Server 以实现编程语言的诸如提示、分析等功能。
-
-LSP 常用插件：
-
-[通用 LSP](https://packagecontrol.io/packages/LSP)
-
-这个插件不针对特定语言，属于基本 LSP 插件。其他特定语言 lsp 插件都在这插件之上建立的，所以如果要使用 LSP，这个插件必装。
-
-具体语言的 LSP 得再装特定的 LSP 插件。-- 这个相当于 LSP 通用 Client，但有些语言得用特定 Client 才能调 LSP，所以这些语言对再装定的语言 LSP 插件。具体使用还得参考 [LSP配置说明](https://lsp.sublimetext.io/language_servers)。
-
----
-
 ### <span id="editors_sublime_links">Sublime 相关连接</span>
 
 * [Crack](https://gist.github.com/maboloshi/feaa63c35f4c2baab24c9aaf9b3f4e47)
@@ -159,550 +431,10 @@ VSCode 主要有几个版本：
 
 > Open-VSX 与 VSCode Market 区别是，VSCode Market 有部分扩展是专有的，而 Open-VSX 则是完全开源的。
 
----
+### <span id="editors_vscode_notes">VSCode 相关笔记</span>
 
-### <span id="editors_vscode_directory">VSCode 目录结构</span>
-
-VSCode：
-
-`~/.config/Code` 设置目录
-
-`~/.vscode` 插件存放目录
-
-VSCodium：
-
-`~/.config/VSCodium` 设置目录
-
-`~/.vscode-oss/vscodium` 插件存放目录
-
-> 如果要重置 VSCode 或 VSCodium，就需要清理这两个目录。
->
-> 如果只清 `~/.config/Code` 或 `~/.config/VSCodium` 这个设置目录，启动 VSCode 或 VSCodium ，插件还是存在的。
-
-如果想让插件什么都放在 VSCode 根目录下，所以作以下操作：
-1. 从官网下载安装包，解压就能用的那个
-2. 解压到想要安装的路径下。
-3. 先不要启动 VSCode，在 VSCode 根目录下手动新建 `data` 目录，这个目录是存在用户数据及插件安装目录。如果想临时文件也放在这个目录中，所以在 `data` 目录下再新建一个 `tmp` 目录，用于存放临时文件。
-4. 启动 VSCode，这样 VSCode 就会将用户数据、插件等放到 `data` 目录中了，这样文件将 VSCode 作成「便携包」。
-
-### <span id="editors_vscode_config">设置及配置</span>
-
-#### <span id="editors_vscode_config_settings">Settings</span>
-
-VSCode 的 Settings 显示模式分为 图形界面的**UI** 和 **Json**两种。一般设置时可以使用图形界面的 UI，而复杂的设置，就建议切换成 Json 模式。
-
-VSCode 中的 Settings 是分为 [全局 Settings](#editors_vscode_config_settings_applicationsettings) 的和自定义 [Profile](#Profile) 的 Settings。
-
-##### <span id="editors_vscode_config_settings_applicationsettings">全局 Settings</span>
-
-这里「全局 settings」，也称为「**Application Settings**」或称为「**User Settings**」，「全局用户 Settings」。
-
-如下图可见，在 `~/.config/Code/User/` 目录下的那个 settings 是「全局」settings，同时这个 settings 也是 [默认Profile](#editors_vscode_config_profile_default) 的 settings。
-
-![VSCode Settings](./Editors_Note.assets/vscode_settings.png)
-
-###### <span id="editors_vscode_config_settings_applicationsettings_open">打开全局 Settings</span>
-
-打开这个 Settings，也是有点「技巧」的。
-
-这里有两种情况：
-
-1. 当前的 Prfile 是 [默认 Profile](#editors_vscode_config_profile_default)
-
-	如果**当前 Profile** 为 [默认 Profile](#editors_vscode_config_profile_default) 时，不用想直接点击「设置」（Settings），或者使用 `Ctrl+Shift+P` 命令面板，敲入 `Open User Settings(UI)` 或 `Open User Settings(Json)`，就能呼出这个 Settings。
-	> [!tip] User Settings
-	> 
-	> 请注意是「User Settings」不是「Default Settings」。因为这里说的「全局」指的都是「用户 Settings」，而非「Default Settings」是「只读」，不能修改，它只相当于一个 Settings 的「模板」或「指南」存在，其他 Settings 都参考这个默认 Settings 来配置。
-	> 
-	> 还要注意点击「设置」（Settings）或使用 `Open User Settings` 打开的 Settings 不一定就是全局 Settings，因为如果当前 Profile 不是 [默认Profile](#editors_vscode_config_profile_default)，这个操作，就会打开当前 Profile 的 Settings。
-	>
-	>> [!tip] 如何确定当前 Settings
-	>> 如果确定是不是全局 Settings，应切换为 Json 模式，这样就能显示出这个 Settings 的具体存储位置。如果是在 `~/.config/Code/User` 下的，那就是全局的，如果是在 `~/.config/Code/User/profiles/xxx/` 下的，那就是某个自定义的 Profile 的 Settings。
-2. 当前 Profile **非默认 Profile**
-
-	如果当前 Profile 处于非 [默认 Profile](#editors_vscode_config_profile_default) 时，那点击「设置」或者使用 `Open User Settings` 命令呼出的 Settings 其实是当前 Profile 的 Settings。这时就得使用 `Open Application Settings` 命令来呼出 [默认 Profile](#editors_vscode_config_profile_default) 下的全局 Settings。
- > [!tip] 
- > 
- > 当然不嫌麻烦的话，可以已打开的自定义 Profile 的 Setting （Json 模式）时，使用「面包屑导航」找到 `~/.config/Code/User/` 下的全局 Settings 并打开。
-
-###### <span></span>
-
-#### <span id="editors_vscode_config_profile">Profile</span>
-
-Profile 是包括了 [Settings](#editors_vscode_config_settings)、插件、snippet 等部分的配置。
-
-![VSCode Profile](./Editors_Note.assets/vscode_profile.png)
-
-##### <span id="editors_vscode_config_profile_default">默认 Profile</span>
-
-在没有创建任何 Profile 时，默认使用的是「默认 Profile」，这个 Profile 使用的是 [全局Settings](#editors_vscode_config_settings_applicationsettings)。
-
-「默认 Profile」与其他 Profile 一样可以导出，但不出导入。从外部导入一个 Profile，试图「覆盖」这个「默认认 Profile」是不允许的。
-> [!tip] Default Profile 导入
-> 
-> 在导入 Profile 时，在「创建 Profile」（Create Profile）时，会让你给导入后 Profile 起外名，这个名字不能是「**Default**」，因为「默认 Profile」就是这个名字，而「默认 Profile」是不支持被导入的 Profile 「覆盖」和替换的。
-> 
-> ![VSCode Default Profile Import Error](./Editors_Note.assets/vscode_default_import_error.png)
-> 
-
-因为「默认 Profile」不支持外部导入「覆盖」，可以使用 [Syncing](#Syncing（VSCode%20同步配置插件）) 这个同步插件保存「默认 Profile」的 Settings。
-> [!info] 手动「同步」Default Profile
-> 
-> 如果不使用同步插件同步「默认 Profile」，那「手动」设置。
-> 
-> 先「导入」外部 Profile，当然不能命名成「Defualt」，那就另起一个名。然后打开这个 Profile 的 Settings-- 用 Json 模式打开，复制其中的内容，然后
-
-##### <span id="editors_vscode_config_profile_create">创建 Profile</span>
-
-创建 Profile 可以在别的 Profile 基础上创建。如在内置的那几个 Profile 上创建。也可以通过已存在的自定义 Profile 上创建。
-
-> [!bug] 通过非内置 Profile 创建 Profile
-> 
-> 发现这种方式创建时，存在一个小 bug，就是选择了基础 Profile 点击创建新的 Profile 后，新的 Profile 使用的是当前 Profile 为模板创建，而不是选择的那个 Profile 创建。
-> 
-> 也就是说，在当前 VSCode 版本 (1.81.0) 下，要通过选择已有的非内置 Profile 创建新的 Profile，只能在当前正在使用的 Profile 为模板创建。估计之后的版本会修正这个小 bug。
-
-##### <span id="editors_vscode_config_profile_import">导入 Profile</span>
-
-导入 Profile 其实是一种变相的 [创建Profile](#editors_vscode_config_profile_create)，因为在导入 Profile 时，最后步就是创建。
-
-> [!tip] 不能创建 Default Profile
-> 
-> 之前已经提过了，不能创建 Default Profile!所以在导入时，给新创建的 Profile 命名时不能使用「**Default**」这个名称。
-
-##### <span id="editors_vscode_config_profile_export">导出 Profile</span>
-
-所有的 Profile，包括 [默认Profile](#editors_vscode_config_profile_default)，是可以导出的。
-
-> [!info] 备份 Profile
-> 
-> 导出的 Profile 建议使用 [Git](../Git/Git_Note.md) 及 [Github](../Git/Git_Note.md#git_github) 来对这些 Profile 管理和备份。
-
-##### <span>关于 Profile 的其他资料</span>
-
-* [Profiles in Visual Studio Code](https://code.visualstudio.com/docs/editor/profiles)
-
----
-
-### <span id="editors_vscode_extensions">常用插件</span>
-
-以下插件都以 [Open-VSX](https://open-vsx.org) 市场的插件为例，微软那个 [Marketplace](https://marketplace.visualstudio.com/vscode) 的一样。
-
-VSCode 或 VSCodium 新版本内置的功能已实现部分插件功能，所以网上部分插件推荐应该已经过时了。
-
-#### <span id="editors_vscode_extensions_local">本地化插件</span>
-VSCode 的语言包。
-
-[vscode-language-pack-zh-hans](https://open-vsx.org/extension/MS-CEINTL/vscode-language-pack-zh-hans)
-
----
-
-#### <span id="editors_vscode_extensions_syncing">Syncing（VSCode 同步配置插件）</span> 
-
-[Syncing](https://open-vsx.org/extension/nonoroazoro/syncing) [![](https://img.shields.io/github/stars/nonoroazoro/vscode-syncing?style=social)](https://github.com/nonoroazoro/vscode-syncing
-) 这是一个款同步 VSCode 配置的插件。
-
-这个插件是使用到 [Gist](https://gist.github.com) 来存放 VSCode 的配置文件。
-
-使用这个插件，得先新建一个 gist 和 一个 token。
-
-* 新建一个 gist
-> [gist 具体操作](../Git/Git_Note.md#git_github_gist)
-
-* 生成 token
-生成一个 token，在生成 token 时，勾选 **scopes** 为 **gist**，如果不想麻烦，就把 token 的生命周期为 **No Expiration**。（[token 具体操作](../Git/Git_Note.md#git_github_token)）
-
-* syncing 设置
-
-`ctrl+shift+p` 唤出 Syncing 配置文件：
-```json
-{
-    "id": "", 
-    "token": "", 
-    "http_proxy": "",
-    "auto_sync": false
-}
-```
-`id` gist 的 id；`token` 刚新建的 token
-
-设置完全 `id` 和 `token`，就能同步配置了。
-
----
-
-#### <span id="editors_vscode_extensions_bookmarks">Bookmarks</span>
-
-[Bookmarks](https://open-vsx.org/extension/alefragnani/Bookmarks) [![bookmarks](https://img.shields.io/github/stars/alefragnani/vscode-bookmarks?style=social)](https://github.com/alefragnani/vscode-bookmarks) 是在代码某一行做标记的插件。
-
-Bookmarks 快捷键：
-| 快捷键 | 功能 |
-| :---: | :---: |
-| Ctrl+Alt+K | 创建或消除书签 |
-| Ctrl+Alt+J | 跳转到前一个书签|
-| Ctrl+Alt+L | 跳转到后一个书签 |
-
----
-
-#### <span id="editors_vscode_extensions_bettercomments">Better Comments</span>
-
-[Better Comments](https://open-vsx.org/extension/aaron-bond/better-comments) [![Better Comments Repo](https://img.shields.io/github/stars/aaron-bond/better-comments?style=social)](https://github.com/aaron-bond/better-comments)
-
-有 6 种增强的注释样式：
-
-![bettercomments_demo](./Editors_Note.assets/bettercomments_demo.png)
-
----
-
-#### <span id="editors_vscode_extensions_mintlify_doc_writer">Mintlify Doc Writer</span>
-
-[Mintlify Doc Writer](https://marketplace.visualstudio.com/items?itemName=mintlify.document) [![Mintlify Doc Writer Ripo](https://img.shields.io/github/stars/mintlify/writer?style=social)](https://github.com/mintlify/writer) 是一个自动生成文档注释的插件。
-
-![Mintlify Doc Writer demo](https://pic2.zhimg.com/v2-8e126645c01b0a1d7bd22173bf9e0915_b.webp)
-
-这插件不能能生成英文文档注释，还能通过设置，生成中文文档注释，真的很香的插件。
-
----
-
-#### <span id="editors_vscode_extensions_snippetsranger">Snippets Ranger</span>
-
-[Snippets Ranger](https://open-vsx.org/extension/robole/snippets-ranger) [![Snippets Ranger Repo](https://img.shields.io/github/stars/robole/vscode-snippets-ranger?style=social)](https://github.com/robole/vscode-snippets-ranger) 这是一个 snippet 管理插件。
-
-这个插件除了新建添加自己的 snippet 这个常规功能外，最最重要的是它能用一种更直观的方式查看当前 vscode/vscodium 中已经存在的哪些 snippet。
-
-而且它将这些 snippet 分了两大类，一类是内置的，另一类是插件提供的，如下图：
-
-![vscode_snippetranger_1](./Editors_Note.assets/vscode_snippetranger_1.png)
-
-点击各项还能查看具体 snippet 有哪些功能：
-
-![vscode_snippetsranger_2](./Editors_Note.assets/vscode_snippetsranger_2.png)
-
----
-
-#### <span id="editors_vscode_extensions_git">Git 相关插件</span>
-
-##### <span id="editors_vscode_extensions_git_gitlens">GitLens</span>
-![gitlens logo](https://gitlens.amod.io/assets/gitlens-logo.png)
-
-[GitLens](https://gitlens.amod.io/) 是 VSCode 重要的 Git 插件，增强了 VSCode 的 Git 的功能 --VSCode 自带的 git 功能非常基础。而这个插件能让 VSCode 显示每一行代码的作者以及提交时间。
-
-##### <span id="editors_vscode_extensions_git_githistory">Git History</span>
-
-[Git History](https://open-vsx.org/extension/donjayamanne/githistory) [![Git History Repository](https://img.shields.io/github/stars/DonJayamanne/gitHistoryVSCode?style=social)](https://github.com/DonJayamanne/gitHistoryVSCode) Git 历史插件。
-
-此插件能查看提交历史。
-
-##### <span id="editors_vscode_extensions_git_gitgraph">Git Graph</span>
-
-[Git-Graph](https://open-vsx.org/extension/mhutchie/git-graph) [![git graph Repository](https://img.shields.io/github/stars/mhutchie/vscode-git-graph?style=social)](https://github.com/mhutchie/vscode-git-graph.git) Git 提交记录图形化插件。
-
----
-
-#### <span id="editors_vscode_extensions_theme">主题和文件图标</span>
-
-VSCode 有很多漂亮的 Theme 和 icon，可以根据自己喜好添加。
-
-##### <span id="editors_vscode_extensions_theme_gruvbox">Gruvbox</span>
-个人喜欢 Gruvbox 系列的。
-
-[gruvbox-material](https://open-vsx.org/extension/sainnhe/gruvbox-material)  [![Gruvbox-Material Repo](https://img.shields.io/github/stars/sainnhe/gruvbox-material-vscode?style=social)](https://github.com/sainnhe/gruvbox-material-vscode) 这个 Theme 挺不错的，是融合 Gruvbox 和 Material 风格的主题。
-
-![gm-vsc-dark-hard-flat](https://gitlab.com/sainnhe/img/-/raw/master/gm-vsc-dark-hard-flat.png)
-
----
-
-##### <span id="editors_vscode_extensions_theme_obsidian">Obsidian Dark</span>
-
-[Obsidian-Dark](https://open-vsx.org/extension/Hamza-Aziane/obsidian-dark) [![Obsidian Dark Theme Repo](https://img.shields.io/github/stars/Hamza-Aziane/obsidian-dark?style=social)](https://github.com/Hamza-Aziane/obsidian-dark) 这个主题，个人觉得也挺不错的。
-
-![obsidian-dark-theme](https://raw.githubusercontent.com/Hamza-Aziane/obsidian-dark/main/images/obsidian-dark-theme.png)
-
----
-
-##### <span id="editors_vscode_extensions_theme_rainglow">Rainglow</span>
-
-[Rainglow](https://open-vsx.org/extension/daylerees/rainglow) [![Rainglow Repo](https://img.shields.io/github/stars/rainglow/vscode?style=social)](https://github.com/rainglow/vscode) 这是一个 theme 集合，包含了 300 多个语法本色和 主题。 喜欢没事换 theme 的人可以用下这个主题包。
-
-如果想修改状态栏样式可以参考以下代码：
-```json
-"workbench.colorCustomizations": {
-    "statusBar.background": "#333",
-    "statusBar.foreground": "#fff",
-    "statusBar.noFolderBackground": "#333",
-    "statusBar.noFolderForeground": "#fff"
-}
-```
-
----
-
-##### <span id="editors_vscode_extensions_theme_icon">图标</span>
-
-VSCode 除了能添加主题外，还能添加 Icon，这个图标一般应用在 SideBar 中文件或目录显示，也应用在打开的页面其标签的 title 中，还能应用在文件「面包屑导航」（Breadcrumbs）中。
-
-###### <span id="editors_vscode_extensions_theme_icon_material">Material-icon</span>
-
-个人喜欢 [material-icon-theme](https://open-vsx.org/extension/PKief/material-icon-theme) [![material-icon-theme Repo](https://img.shields.io/github/stars/PKief/vscode-material-icon-theme?style=social)](https://github.com/PKief/vscode-material-icon-theme) 这个 icon 包。
-
-![material-icon-theme fileIcons](https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/fileIcons.png)
-
-###### <span id="editors_vscode_extensions_theme_icon_catppuccin">Catppuccin icons</span>
-
-[Catppuccin icons](https://marketplace.visualstudio.com/items?itemName=Catppuccin.catppuccin-vsc-icons) [![Catppuccin icons Repo](https://img.shields.io/github/stars/catppuccin/vscode-icons?style=social
-)](https://github.com/catppuccin/vscode-icons) 这是配合 [Catppuccin 主题]() 使用的图标套件。
-
-![Catppuccin icons shotcut](https://raw.github.com/catppuccin/vscode-icons/main/assets/previews/mocha.png)
-
-###### <span id="editors_vscode_extensions_theme_icon_catppuccin_perfect">Catppuccin Perfect icons</span>
-
-[Catppuccin Perfect icons](https://marketplace.visualstudio.com/items?itemName=thang-nm.catppuccin-perfect-icons) [![Catppuccin Perfect icons Repo](https://img.shields.io/github/stars/thang-nm/Catppuccin-Perfect-Icons?style=social
-)](https://github.com/thang-nm/Catppuccin-Perfect-Icons) 是 [Catppuccin icons](#editors_vscode_extensions_theme_icon_catppuccin) 的衍生品。
-
-![Catppuccin Perfect icons shotcut](https://raw.githubusercontent.com/thang-nm/Catppuccin-Perfect-Icons/main/assets/previews/mocha-icons@2x.png)
-
----
-
-####  <span id="editors_vscode_extensions_vim">模拟 vim 插件</span>
-
-VSCode 中可以通过安装 vim 插件来进行 vim 类似的操作。
-
-模拟 vim 插件有很多，我个人使用的是以下这款 [VSCodeVim](https://open-vsx.org/extension/vscodevim/vim) [![VSCodeVim Repo](https://img.shields.io/github/stars/VSCodeVim/Vim?style=social)](https://github.com/VSCodeVim/Vim) 插件。
-
-vim 插件功能
-
-vim 插件除了「模拟」了 vim 的基本功能外，还「模拟」了部分 vim 常用插件的功能。主要有 [easymotion](https://github.com/easymotion/vim-easymotion)、[surround]() 和 [Sneak](https://github.com/justinmk/vim-sneak) 三个 vim 插件功能。
-
-**easymotion** 与 **sneak** 功能类似，就是可以让使用者在页面「跳来跳去」，就像下图演示的那样，所以其他文本编辑器对于这个功能插件模仿者，除了叫 「\*\*motion」外，就是叫「\*\*jump」。
-
-![easymotion](https://camo.githubusercontent.com/a7ba9f1318ef3a014b52c3fcdc7406c74b6f4d9834d1391342783371a83e4a72/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f333739373036322f323033393335392f61386539333864362d383939662d313165332d383738392d3630303235656138333635362e676966)
-
-easymotion 更出名，因为就 easymotion 功能就大致说下常用的使用技巧。
-
-默认情况下，easymotion 快揵键都是 \<leader> 起头的，而默认 \<leader> 是 **\\**。而配合 vim 本身的 `j`、`k`、`h``l` 等就能实现行级、行内等方式跳转，这是对原生的 vim 移动的重要补充。
-
-easymotion 常用功能列表：
-
-| 功能  |  快捷键  |
-|:---:| :---: |
-| 行级向上跳转 | \<leader>\<leader> k |
-| 行级向下跳转  | \<leader>\<leader> j |
-| 行内向前  | \<leader>\<leader> h |
-| 行内向后 | \<leader> \<leader> l |
-| 按单词向后跳 | \<leader>\<leader> w |
-| 按单词向前跳 | \<leader>\<leader> b|
-| 搜索式跳 | \<leader>\<leader> s 输入要搜索的字符|
-
-###### vim 插件的问题
-
-卡顿
-
-在 Widndows 下的 VSCodium 下装了 vim 插件，在使用过程中出现卡顿的情况。
-
-这其实不单是 vim 插件的问题，是 Windows 版本的 VSCodium 的问题，即使不用此插件，在保存文件时，Windows 版本的 VSCodium 也是存在卡顿的现象。
-
-在 Windows 下，VSCode 却没有出现这种情况。同样的，在 Linux 下使用 VSCodium 也没有出现卡顿的情况。
-
-可见在 Windows 下 VSCodium 可以暂时是「废」了，还是用「亲儿子」VSCode 吧。
-
-vim 插件，使用时的卡顿，一般出现在编辑完文件，保存后，「Normal」模式与「Insert」模式切换的时候。估计这是由保存诱发的多原因造成的卡顿。
-
-VSCode/VSCodium 默认开启了 `occurrences Highlight` 这个功能时候，这个功能是光标停在当前单词上，编辑器就会将本页面所有该单词全部高亮。这个功能没什么用，至少不应该做为常用选项开启，即便是不卡的 VSCode 及 Linux 版本的 VSCodium 下，开启此功能，会使页面一直「重绘」，发生「页面」跳动的现象，对于使用体验来讲也不是很好，再说这功能会诱使 Windows 下 VSCodium 原本卡顿的现象更为明显，所以建议最好关闭此功能。
-
-另外，`easymotion` 这个功能也有可能造成 vim 插件卡，所以没办法只能关闭。
-
-还有 [GitLens](#editors_vscode_extensions_git_gitlens) 插件中的 `Current Line` 功能（就是在编辑区行行代码后显示 git 信息），同样可能引发 vim 插件卡顿，所以这也得关闭。
-
-总而言之，只有是编辑区图形重绘功能的插件，都有可能引起 vim 插件卡。
-
----
-
-#### <span id="editors_vscode_extensions_Path-Intellisense">Path Intellisense</span>
-
-[Path Intellisense](https://open-vsx.org/extension/christian-kohler/path-intellisense) [![Path Intellisense Repo](https://img.shields.io/github/stars/ChristianKohler/PathIntellisense?style=social)](https://github.com/ChristianKohler/PathIntellisense) 是个自动识别文件路径的插件。
-
----
-
-#### <span id="editors_vscode_extensions_projectm">Project Manager</span>
-
-[Project Manager](https://open-vsx.org/extension/alefragnani/project-manager) [![Project Manager Repo](https://img.shields.io/github/stars/alefragnani/vscode-project-manager?style=social)](https://github.com/alefragnani/vscode-project-manager) 项目管理插件。
-
----
-
-#### <span id="editors_vscode_extensions_indentrainbow">Indent Rainbow</span> 
-
-[Indent Rainbow](https://open-vsx.org/extension/oderwat/indent-rainbow) [![Indent Rainbow Repo](https://img.shields.io/github/stars/oderwat/vscode-indent-rainbow?style=social)](https://github.com/oderwat/vscode-indent-rainbow) 彩色缩进线。
-
-![indent rainbow example](https://raw.githubusercontent.com/oderwat/vscode-indent-rainbow/master/assets/example.png)
-
-`light` 模式，缩进不是默认 `块式`（上图右），而是线的（上图左）。
-
-```json
-"indentRainbow.indicatorStyle": "light",
-  // we use a simple 1 pixel wide line
-  "indentRainbow.lightIndicatorStyleLineWidth": 1,
-  // the same colors as above but more visible
-  "indentRainbow.colors": [
-    "rgba(255,255,64,0.3)",
-    "rgba(127,255,127,0.3)",
-    "rgba(255,127,255,0.3)",
-    "rgba(79,236,236,0.3)"
-  ],
-
-```
-
----
-
-#### <span id="editors_vscode_extensions_svg">SVG 插件</span>
-
-[SVG](https://open-vsx.org/extension/jock/svg) [![SVG Repo](https://img.shields.io/github/stars/lishu/vscode-svg2?style=social)](https://github.com/lishu/vscode-svg2) 插件，有自动完成 SVG 代码、能预览 SVG 图片、快速取色等功能。
-
----
-
-#### <span id="editors_vscode_extensions_markdown">Markdown 插件</span>
-
-markdown 插件有很多，而 VSCode、VSCodiume 本身内置了 markdown 基础功能。
-
-所以需要自行安装的插件就基于几种功能：表格辅助、预览等。
-
-以下两个插件就可以满足了 Markdown 大部分功能需求了。
-
-##### <span id="editors_vscode_extensions_markdown-all-in-one">markdown-all-in-one</span>
-
-[Markdown-All-in-One](https://open-vsx.org/extension/yzhang/markdown-all-in-one) [![Markdown-All-One Repo](https://img.shields.io/github/stars/yzhang-gh/vscode-markdown?style=social)](https://github.com/yzhang-gh/vscode-markdown) 是一个强大的 Markdown 插件。 编写 Markdown 该有的功能都有了！
-
-![table-formatter](https://github.com/yzhang-gh/vscode-markdown/raw/master/images/gifs/table-formatter.gif)
-
-![section-numbers](https://github.com/yzhang-gh/vscode-markdown/raw/master/images/gifs/section-numbers.gif)
-
-##### <span id="editors_vscode_extensions_markdown-preview-enhanced">Markdown Preview Enhanced</span>
-
-[Markdown Preview Enhanced](https://open-vsx.org/extension/shd101wyy/markdown-preview-enhanced) [![Markdown Preview Enhanced Repo](https://img.shields.io/github/stars/shd101wyy/vscode-markdown-preview-enhanced?style=social)](https://github.com/shd101wyy/vscode-markdown-preview-enhanced) 是一个 Markdown 预览插件。
-
-常用操作：
-* `ctrl+k v`：在侧边显示预览
-* `ctrl+shift-v`：预览
-> 侧边预览的快捷键与 vim 插件冲突
-
-> [!bug] 预览插件存在的问题
-> 
-> 这个预览插件，对于「锚点」跳转存在一定的问题，主是问题发生在中英混排标题时，特别是存在空格及英文大写字母情况下，问题详解请参考 [关于锚点](../Markdown/Markdown_Note.md#关于锚点)。
-
----
-
-#### <span id="editors_vscode_extensions_note">笔记插件</span>
-
-##### <span id="editors_vscode_extensions_note_foam">Foam</span>
-
-[Foam](https://open-vsx.org/extension/foam/foam-vscode)[![Foam Repo](https://img.shields.io/github/stars/foambubble/foam?style=social)](https://github.com/foambubble/foam) 是一个支持双向链接的笔记插件。
-
-Foam 常用功能及命令
-
-* Foam: Show Graph：打开知识图谱页面
-![Foam Show Graph](./Editors_Note.assets/vscode_extensions_note_foam_1.png)
-
----
-
-#### <span id="editors_vscode_extensions_python">Python</span>
-
-VSCodium 原装只内置了 `Python Language Basics`，这个内置插件只有语法高亮等基础功能。想要更强的功能推荐装 [Python](https://open-vsx.org/extension/ms-python/python) [![](https://img.shields.io/github/stars/Microsoft/vscode-python?style=social)](https://github.com/Microsoft/vscode-python) 这个插件。
-
-装此插件时，同时装了三个插件：
-* [jupyter](https://open-vsx.org/extension/ms-toolsai/jupyter) 
-* [jupyter-keymap](https://open-vsx.org/extension/ms-toolsai/jupyter-keymap) 
-* [jupyter-renderers](https://open-vsx.org/extension/ms-toolsai/jupyter-renderers)
-
----
-
-#### <span id="editors_vscode_cpp_devenv">VSCode 配置 C、C++ 开发环境</span>
-
-操作系统得先安装 LLVM、Clang 等工具。
-
-Arch 系：
-```shell
-sudo pacman -S llvm clang lld lldb libc++
-```
-> 其他 Linux 系统可使用自已的包管理器安装 **llvm**、**clang**、**lld**、**lldb** 及 **libc++** 程序及组件。
-
-装完那些程序后，检测下是不是安装成功：
-
-* 检测 LLVM
-```shell
-llvm-dis --version
-```
-* 检测 lld
-```shell
-lld --version
-```
-* 检测 lldb
-```shell
-lldb --version
-```
-* 检测 clang
-```shell
-clang --version
-```
-* 检测 clang++
-```shell
-clang++ --version
-```
-* 检测 clangd
-```shell
-clangd --version
-```
-
-安装 VSCode 相关插件：
-
-* [clangd](https://open-vsx.org/extension/llvm-vs-code-extensions/vscode-clangd) [![Clangd Repo](https://img.shields.io/github/stars/clangd/vscode-clangd?style=social)](https://github.com/clangd/vscode-clangd) 如果要使用 Clang 来作语言服务，这个插件是必装的。
-
-* [code runner](https://open-vsx.org/extension/formulahendry/code-runner) [![Code Runner Repo](https://img.shields.io/github/stars/formulahendry/vscode-code-runner?style=social)](https://github.com/formulahendry/vscode-code-runner) 这个是代码运行插件，能跑 C、C++、Java、Python 等众多语言。
-
----
-
-#### <span id="editors_vscode_extensions_frontend">前端插件</span>
-
-VSCode 最初出来的时候，主要是用在前端开发的，所以 VSCode 积累了大量的前端开发的插件。
-
-而这些前端插件主要是围绕着 Html、CSS、Javascript 及各种前端框架的补全、检测、调试、格式化等功能而设的。
-
-VSCode 已经内置了大名鼎鼎的 [Emmet](https://emmet.io) （[Emmet Wiki](https://zh.wikipedia.org/wiki/Emmet)），有了这货，很多前端插件都可以省了。
-
----
-
-##### <span id="editors_vscode_extensions_frontend_LiveServer">LiveServer</span> 
-
-[LiveServer](https://open-vsx.org/extension/ritwickdey/LiveServer) [![LiveServer Repo](https://img.shields.io/github/stars/ritwickdey/vscode-live-server?style=social)](https://github.com/ritwickdey/vscode-live-server) 是让 VSCode 开启一个静态服务器，用于测试前端页面。
-
-![LiveServer demo](https://github.com/ritwickdey/vscode-live-server/blob/master/images/Screenshot/vscode-live-server-explorer-menu-demo-1.gif)
-
-此插件在状态栏显示状态：
-![LiveServer Statusbar](https://github.com/ritwickdey/vscode-live-server/blob/master/images/Screenshot/vscode-live-server-statusbar-3.jpg)
-
----
-
-##### <span id="editors_vscode_extensions_frontend_vetur">Vetur</span>
-
-[Vetur](https://open-vsx.org/extension/octref/vetur) [![Vetur Repo](https://img.shields.io/github/stars/vuejs/vetur?style=social)](https://github.com/vuejs/vetur) 是 Vue 的插件。
-
-这插件包含两个组件：
-
-* [Vue LSP](https://github.com/vuejs/vetur/tree/master/server)
- VSCode 中的 只是 VLS 的 client，要想使用 语言服务，得安装 Vue LSP。
- ```shell
- npm install vls -g
- ```
-> Vue LSP 但能在 VSCode 使用，也能让其他编辑器使用，如 vim 等。  
-> 关于 [LSP](../vim/LSP_Complete.md#about_lsp)
-
-* vti  Terminal 接口
-
----
-
-#### <span id="editors_vscode_extensions_error">错误检测</span>
-
-##### <span id="editors_vscode_extensions_error_errorlens">ErrorLens</span>
-
-[ErrorLens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) [![erroslens Repo](https://img.shields.io/github/stars/usernamehw/vscode-error-lens?style=social
-)](https://github.com/usernamehw/vscode-error-lens) 是一个实时检测语法错误的小插件。
-
-![errolens shotcut](https://raw.githubusercontent.com/usernamehw/vscode-error-lens/master/img/demo.png)
+* [VSCode 笔记](VSCode_Note.md)
+* [VSCode 插件笔记](VSCode_Extensions_Note.md)
 
 ---
 

@@ -3,8 +3,8 @@ aliases:
   - 
 tags:
   - 
-created: 2022-11-7 2:50:13
-modified: 2023-06-11 2:04:15
+created: 2023-06-4 17:55:40
+modified: 2023-08-16 12:55:02
 ---
 
 # LSP 及补全相关
@@ -12,9 +12,10 @@ modified: 2023-06-11 2:04:15
 * [关于LSP](#about_lsp)
 
 * [Vim LSP Client插件](#vp_lsp_client)
-	* [vim-lsc](#vp_vim-lsc)
-	* [vim-lsp](#vp_vim-lsp)
-	* [LanguageClient-neovim](#vp_lcn)
+	* [vim-lsc](#vp_lsp_client_vim-lsc)
+	* [vim-lsp](#vp_lsp_client_vim-lsp)
+	* [LanguageClient-neovim](#vp_lsp_client_lcn)
+	* [Yegappan](#vp_lsp_client_yegappan)
 
 * [Vim 补全插件](#vp_complete)
 	* [vim-auto-popmenu](#vp_complete_vim_auto_popmenu)
@@ -75,7 +76,7 @@ python lsp 实现：
 
 #### pyright
 
-[pyright](https://github.com/microsoft/pyright) 是微软新推出的 LSP，上面那个要被微软废弃了！
+[pyright](https://github.com/microsoft/pyright) 是微软新推出的 LSP，上面那个要被微软废弃了！因为微软 [VSCode](../Editors/VSCode_Note.md) 自己用的是 Pylance，所以开源的 Pyright 估计会被微软阉割，所以下场也不会太好！
 
 #### jedi 
 
@@ -86,6 +87,7 @@ python lsp 实现：
 [python-language-server](https://github.com/palantir/python-language-server) 这款 LSP 是基于 [jedi](#jedi) 。 这款 LSP 需要 Python 版本是 **3.5+**。 这款 LSP 是 [vim-lsp](https://github.com/prabirshrestha/vim-lsp) 示例配置中 Python 的 LSP。 这款 LSP 依赖的 [jedi] 版本相对「保守」点。
 
 python-language-server 安装：
+
 ```shell
 pip install 'python-language-server[yapf]'
 # 或者
@@ -102,9 +104,10 @@ pip install -U setuptools
 
 #### jedi-language-server
 
-[jedi-language-server](https://github.com/pappasam/jedi-language-server) 灵感源于上面那款。 这款 LSP 要求 Python 的版本是 **3.7+**。 这款 LSP 是比较新的，在 vim 下 使用效果挺不错的。
+[jedi-language-server](https://github.com/pappasam/jedi-language-server) 灵感源于上面那款。 这款 LSP 要求 Python 的版本是 **3.7+**。 这款 LSP 是比较新的，在 vim 下 使用效果挺不错的。这也是几个 python 版本 lsp 在 [deoplete](#deoplete)+[vim-lsp](#vim-lsp)，能正常代码提示的 LSP。
 
 jedi-language-server 安装：
+
 ```shell
 pip install -U jedi-language-server
 ```
@@ -118,6 +121,7 @@ pip install -U jedi-language-server
 [python-lsp-server](https://github.com/python-lsp/python-lsp-server) 同样是一款基于 [jedi](#jedi)，由 Spyder IDE 的团队在维护的 Python LSP。Spyder IDE 用的也是这个 LSP 实现。这个 LSP 是要求 Python 的版本是  **3.7+** 。
 
 python-lsp-server 安装：
+
 ```shell
 pip install "python-lsp-server[yapf]"
 # 或者
@@ -125,6 +129,7 @@ pip install "python-lsp-server[all]"
 ```
 
 安装出现 `'install_requires' must be a string or list of strings` 类似的错误，请执行以下代码：
+
 ```shell
 pip install -U setuptools
 ```
@@ -132,6 +137,128 @@ pip install -U setuptools
 测试是否安装成功：`pylsp -V`。
 
 这个 Python LSP 应该是当下主流使用的，毕竟至今还在更新。
+
+---
+
+### <span id="lang_lsps_lua">Lua LSP</span>
+
+#### <span id="lang_lsps_lua_lualsp">lua-lsp</span>
+
+[lua-lsp](https://github.com/Alloyed/lua-lsp) 这个 LSP 只支持 lua 版本到 5.3。
+
+#### <span id="lang_lsps_lua_lua-language-server">lua-language-server</span>
+
+[lua-language-server](https://github.com/LuaLS/lua-language-server)
+
+---
+
+### <span id="lang_lsps_ruby">Ruby LSP</span>
+
+#### <span id="lang_lsps_ruby_rubylanguageserver">ruby_language_server</span>
+
+[ruby_language_server](https://github.com/kwerle/ruby_language_server)
+
+#### <span id="lang_lsps_ruby_rubylsp">Ruby LSP</span>
+
+[ruby-lsp](https://github.com/Shopify/ruby-lsp)
+
+安装：
+
+```shell
+gem install ruby-lsp
+```
+
+#### <span id="lang_lsps_ruby_solargraph">Solargraph</span>
+
+[Solargraph: A Ruby language server.](https://github.com/castwide/solargraph)
+
+安装：
+
+```shell
+gem install solargraph
+```
+
+---
+
+### <span id="lang_lsps_yaml">YAML LSP</span>
+
+#### <span id="lang_lsps_yaml_yaml-language-server">yaml-language-server</span>
+
+[yaml-language-server](https://github.com/redhat-developer/yaml-language-server) 这个是 RedHat 提供的 yaml 的 LSP。
+
+安装：
+
+```shell
+npm install yaml-language-server -g
+```
+
+---
+
+### <span id="lang_lsps_vim">Vim LSP</span>
+
+#### <span id="lang_lsps_vim_vim-language-server">vim language server</span>
+
+[vim language server](https://github.com/iamcco/vim-language-server)
+
+安装：
+
+```shell
+npm install -g vim-language-server
+```
+
+---
+
+### <span id="lang_lsps_html">HTML LSP</span>
+
+html 的 LSP 就没什么可选的，因为这东西编辑器本身就能实现代码提示，所以 LSP 大概就只有微软的：[html-language-server](https://github.com/microsoft/vscode/blob/main/extensions/html-language-features/)。
+
+这个 LSP 运行程序名是：`vscode-html-languageservice`。
+
+---
+
+### <span id="lang_lsps_css">CSS LSP</span>
+
+#### <span id="lang_lsps_css_css-language-server">css-language-server</span>
+
+[css-language-server](https://github.com/Microsoft/vscode/tree/main/extensions/css-language-features/server)
+
+安装：
+
+```shell
+npm install css-language-server -g
+```
+
+css-language-server 的程序名：`css-languageserver`
+
+---
+
+### <span id="lang_lsps_typescript">TypeScript LSP</span>
+
+#### <span id="lang_lsps_typescript_tls"># typescript-language-server</span>
+
+~~[typescript-language-server](https://github.com/prabirshrestha/typescript-language-server)~~ 这个 LSP 已过时。
+
+#### <span id="lang_lsps_typescript_tsserver">Typescript language server</span>
+
+名字完全一样。这个 [typescript-language-server](https://github.com/typescript-language-server/typescript-language-server) 是上面那款的「继任者」。
+
+这个 LSP 程序名：`tsserver`
+
+安装：
+
+```shell
+npm install -g typescript-language-server typescript
+```
+
+> [!info]
+> 
+> 如果 `typescript` 已经安装，可以省略：`npm install -g typescript-language-server`
+
+运行：
+
+```shell
+typescript-language-server --stdio
+```
 
 ---
 
@@ -154,7 +281,7 @@ LSC 只是提供与 LSP 对接，并将 LSP 传来的语言服务获取补全数
 
 常用 LSC 插件
 
-### <span id="vp_vim-lsc">vim-lsc</span>
+### <span id="vp_lsp_client_vim-lsc">vim-lsc</span>
 
 [vim-lsc](https://github.com/natebosch/vim-lsc)
 
@@ -192,7 +319,7 @@ LSC 只是提供与 LSP 对接，并将 LSP 传来的语言服务获取补全数
 
 ---
 
-### <span id="vp_vim-lsp">vim-lsp</span>
+### <span id="vp_lsp_client_vim-lsp">vim-lsp</span>
 
 [vim-lsp](https://github.com/prabirshrestha/vim-lsp)
 
@@ -222,6 +349,10 @@ LSC 只是提供与 LSP 对接，并将 LSP 传来的语言服务获取补全数
 
 [SpaceVim](vim及neovim配置.md#SpaceVim) 默认用的就是 vim-lsp。
 
+vim-lsp 的一堆命令，都是以 `Lsp` 打头的：
+
+* `LspStatus`：这个非常常用，可以查看 LSP 运行状态，看配置是否成功。
+
 #### <span id="vp_vim-lsp_vim-lsp-neosnippet">vim-lsp-neosnippet</span>
 
 [vim-lsp-neosnippet](https://github.com/thomasfaingnaert/vim-lsp-neosnippet) 是一个将 [vim-lsp](#vim-lsp) 整合 [Neosnippet](vim_plugin.md#plugin_snippets_neosnippet) 的插件。
@@ -232,14 +363,16 @@ LSC 只是提供与 LSP 对接，并将 LSP 传来的语言服务获取补全数
 
 ---
 
-### <span id="vp_lcn">LanguageClient-neovim</span>
+### <span id="vp_lsp_client_lcn">LanguageClient-neovim</span>
 
 [LanguageClient-neovim](https://github.com/autozimu/LanguageClient-neovim) 是用 Rust 语言写的一个 LSC 插件。
+
 这个 LSC 可以为 [deoplete](#vp_complete_deoplete) 及 [ncm2](#vp_complete_ncm) 补全框架提供补全数据源。
 
 LanguageClient 为补全框架提供源的名称是 `LanguageClient`。
 
 安装：
+
 ```Vim
 	Plug 'autozimu/LanguageClient-neovim', {
 	\ 'branch': 'next',
@@ -249,6 +382,7 @@ LanguageClient 为补全框架提供源的名称是 `LanguageClient`。
 ```
 
 配置：
+
 ```vim
 	" 为各语言指定LSP	
 	let g:LanguageClient_serverCommands = {
@@ -261,6 +395,12 @@ LanguageClient 为补全框架提供源的名称是 `LanguageClient`。
 
 
 ```
+
+---
+
+### <span id="vp_lsp_client_yegappan">Yegappan</span>
+
+[GitHub - yegappan](https://github.com/yegappan/lsp) 这个 LSC 只支持 vim 9.0 。
 
 ---
 
@@ -367,9 +507,8 @@ Shougo 大神为 deoplete 提供了一些语言的 LSC，比如 c/c++ 的 [clang
 下面以 clangx 为例:
 1. 安装 clangd clangx 插件是要调 clangd，所以再使用这些 LSC,得把**server**先装好。
 2. 安装 clangx 插件
-```
+```vim
 	PLug 'Shougo/deoplete-clangx'
-
 ```
 3. 为 deoplete 配置补全源
 
@@ -382,7 +521,7 @@ deoplete 也给出了 source 的支持列表:
 
 如果不用 deoplete“推荐”的补全源，用其他补全源如 vim-lsc 或 vim-lsp,就得为对 deoplete 指定补全源。
 
-#### <span id="vp_deoplete_lsc">使用 [vim-lsc](#vp_vim-lsc) 为 LSC</span>
+#### <span id="vp_deoplete_lsc">使用 [vim-lsc](#vp_lsp_client_vim-lsc) 为 LSC</span>
 
 要连接多语言 LSC 得通过再加个“管道”，即装个与这个 LSC 适配的“适配器”插件。
 如“适配”deoplete 与 vim-lsc，就需要 [deoplete-vim-lsc](https://github.com/hrsh7th/deoplete-vim-lsc)。
@@ -392,7 +531,8 @@ deoplete-vim-lsc 的源码:
 可以看到 vim-lsc 的名称是**lsc**,所以上面 deoplete 配补全源为什么用**lsc**
 与 clangx 这种“亲儿子”的 LSC 不同，使用适配器适配的多语言 LSC，在 deoplete 配置源时，得指定把 LSC 的 name 值 -- 这是 LSC 唯一标识,通过这个名称的配置，补全框架 deoplete 就与这个 LSC 整合在一起了。
 
-使用 vim-lsc 时，为 deoplete 配补全源:
+使用 vim-lsc 时，为 deoplete 配补全源：
+
 ```vim
 	
 	" lsc就是vim-lsc的唯一标识
@@ -419,12 +559,13 @@ deoplete-vim-lsc 的源码:
 而 vim-lsc 那里也需要配置:
 [vim-lsc配置](#vp_vim-lsc)
 
-#### <span id="vp_deoplete_lsp">使用 [vim-lsp](#vp_vim-lsp) 为 LSC</span>
+#### <span id="vp_deoplete_lsp">使用 [vim-lsp](#vp_lsp_client_vim-lsp) 为 LSC</span>
 
 如果是 deoplete 使用的是 vim-lsp，也是类似。需要装 [vim-lsp](#vp_vim-lsp) 和 [deoplete-vim-lsp](https://github.com/lighttiger2505/deoplete-vim-lsp)
 **vim-lsp** 配置 LSC，可查看以上章节： [vim-lsp](#vp_vim-lsp)
 
 deoplete 使用 vim-lsp 为补全源的配置如下：
+
 ```vim
 	
 	" 设置最少多少个字符触发补全菜单
@@ -445,14 +586,16 @@ deoplete 使用 vim-lsp 为补全源的配置如下：
 
 
 ```
-跟 [vim-lsc](#vp_vim-lsc) 几乎一样，就是 lsc 的名称换成了**lsp**
 
-#### <span id="vp_deoplete_lcn">使用 [LanguageClient-neovim为LSC](#vp_lcn) 为 LSC</span>
+跟 [vim-lsc](#vp_vim-lsc) 几乎一样，就是 lsc 的名称换成了**lsp**。
+
+#### <span id="vp_deoplete_lcn">使用 [LanguageClient-neovim为LSC](#vp_lsp_client_lcn) 为 LSC</span>
 
 [LanguageClient](#vp_lcn) 作为 deoplete 的 LSC 跟使用 [vim-lsc](#vp_vim-lsc) 与 [vim-lsp](#vp_vim-lsp) 类似。
 给 deoplete 的 source 名称为**LanguageClient**。
 
 配置如下：
+
 ```vim
 	
 	" 设置最少多少个字符触发补全
@@ -477,7 +620,8 @@ deoplete 使用 vim-lsp 为补全源的配置如下：
 
 #### deoplete 相关插件
 
-deoplete 提供的特定语言 LSC 插件:
+deoplete 提供的特定语言 LSC 插件：
+
 * [deoplete-go](https://github.com/deoplete-plugins/deoplete-go)
 * [deoplete-jedi](https://github.com/deoplete-plugins/deoplete-jedi)
 * [deoplete-julia](https://github.com/JuliaEditorSupport/deoplete-julia)
@@ -485,14 +629,14 @@ deoplete 提供的特定语言 LSC 插件:
 * [neco-vim](https://github.com/Shougo/neco-vim)
 * [deoplete-go](https://github.com/deoplete-plugins/deoplete-go)
 
-deoplete 多语言 LSC 插件
+deoplete 多语言 LSC 插件：
+
 * [deoplete-vim-lsp](https://github.com/lighttiger2505/deoplete-vim-lsp)
 * [deoplete-vim-lsc](https://github.com/hrsh7th/deoplete-vim-lsc)
 * [LanguageClient-neovim](https://github.com/autozimu/LanguageClient-neovim)
-* []()
-* []()
 
-deoplete 其他“有趣”的补全源插件:
+deoplete 其他“有趣”的补全源插件：
+
 * [dictionary](https://github.com/deoplete-plugins/deoplete-dictionary)
 * [deoplete-tag](https://github.com/deoplete-plugins/deoplete-tag)
 
@@ -683,7 +827,7 @@ asyncomplete 这个补全框架是完全用 vimscript 写的，所以不需要�
 
 asyncomplete 这补全框架源可以用自己那堆针对某语言的 LSC，也可以用如 [vim-lsp](https://github.com/prabirshrestha/vim-lsp) 这样多语言的 LSC。
 
-多语言 LSC 插件，官方推荐是 [vim-lsp](https://github.com/prabirshrestha/vim-lsp),为此官方还写了个“适配器”：[asyncomplete-lsp](https://github.com/prabirshrestha/asyncomplete-lsp.vim)。
+多语言 LSC 插件，官方推荐是 [vim-lsp](https://github.com/prabirshrestha/vim-lsp),为此官方还写了个「适配器」：[asyncomplete-lsp](https://github.com/prabirshrestha/asyncomplete-lsp.vim)。
 
 asyncomplete 常用的功能插件：
 

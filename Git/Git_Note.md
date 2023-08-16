@@ -5,7 +5,7 @@ tags:
   - git
   - github
 created: 2023-01-30 11:19:11
-modified: 2023-08-3 12:57:45
+modified: 2023-08-11 21:58:05
 ---
 # Git 笔记
 
@@ -48,6 +48,9 @@ modified: 2023-08-3 12:57:45
 ```shell
 git config --global user.name "用户名"
 git config --global user.email "邮箱"
+
+# 设置默认分支为 main
+git config --global init.defaultBranch main
 
 ```
 
@@ -293,6 +296,10 @@ git status
 
 ![git status screenshot](./Git_Note.assets/screenshot_git_status.png)
 
+> [!tip] 空目录
+> 
+> git 的设计是不会识别**空目录**。所以一个目录中没有任何文件，使用 `git status` 是识别不出来的 -- 即便这个目录不在 [ignore](#ignore) 列表中。
+
 #### 查看提交日志
 
 ```shell
@@ -429,6 +436,10 @@ git pull --rebase origin main
 第三种最常用，`git rebase --continue` 就可以线性的连接本地分支与远程分支，无误之后就回退出，回到主分支上。
 
 执行完 `git rebase --continue` 后，如果未解决冲突它会提示你要先解决冲突，然后执行 `git add` 操作，再次 `commit` 个版本，当 `commit` 后（这其实就是将本地版本与刚 `git pull--rebase` 下来的版本「合并」成新的版本），「工作区」就又「干净」了，这时执行 `git rebase --continue` 操作，就会显示 `成功变基并更新 refs/heads/main` 这样的提示，证明 `rebase` 操作成功完成。完成「变基」操作后，这样 `git push -u origin main` 就能正常了，这时本地仓库就与远程仓库正常「关联」起来了。
+
+---
+
+## <span id="git_ignore">ignore</span>
 
 ---
 
@@ -749,6 +760,19 @@ git config --global --unset url.https://github.com/.insteadof
 > 在新建 token 页面，选择 token 的生命周期 Expiration \
 > 勾选 使用范围（**Select scopes**）\
 > 点击 **Generate token** 按钮，这就生成一个新的 token
+
+---
+
+### <span id="git_github_authentication">GitHub 权限问题</span>
+
+如果 `git push` 出现什么 `鉴权失败`，不想折腾的，可以在 `.gitconfig` 文件中添加以下代码：
+
+```config
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+
+```
 
 ---
 

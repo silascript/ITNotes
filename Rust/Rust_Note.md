@@ -1,8 +1,11 @@
 ---
-aliases: 
-tags: PL rust
-created: 2023-01-13, 12:27:46
-modified: 2023-01-30, 9:17:13
+aliases:
+  - 
+tags:
+  - PL
+  - rust
+created: 2023-01-30 11:19:11
+modified: 2023-08-14 18:10:38
 ---
 # Rust 笔记
 
@@ -54,7 +57,6 @@ Current installation options:
 
 3：取消安装
 
-
 除非必要，一路默认！
 
 安装成功，会显示以下信息：
@@ -91,11 +93,9 @@ scoop install rustup
 
 使用 scoop 安装的 rust，`.rustup` 和 `.cargo` 两目录是被放在 `persist` 目录下，也就是说就算重装 windows 系统，之前下载装的 rust 的工具仍在。
 
-
 ---
 
 ### <span id="rust_rustup">Rustup</span>
-
 
 #### <span id="rust_rustup_about">Rustup 是什么</span>
 
@@ -166,16 +166,13 @@ rustup component add 组件名
 rustup componet list
 ```
 
-
 具体查询 [Rustup 文档](https://github.com/rust-lang/rustup/blob/master/README.md) （[Rustup Book](https://rust-lang.github.io/rustup/)）
-
 
 ---
 
 #### <span id="rust_about_cargo">Cargo 包管理器</span>
 
 [Cargo](https://github.com/rust-lang/cargo) 是 Rust 的包管理器和构建系统工具。
-
 
 ##### <span id="rust_cargo_commands">Cargo 命令</span>
 
@@ -197,22 +194,28 @@ rustup componet list
 
 Rust 官方语言服务是 [RLS](https://github.com/rust-lang/rls) （Rust Language Server）。
 
-
 后来社区版的 [rust-analyzer](https://github.com/rust-lang/rust-analyzer) 被 Rust 「招安」成功，成为官方项目。
 
 未来 原来的 RLS 会「退役」，而 rust-analyzer 将会成为官方的语言服务 --「rls-2.0」。
 
+安装 rust-analyzer：
+
+```shell
+rustup update
+rustup component add rust-analyzer
+```
+
 rust-analyzer 需要标准库的源码，所以得把源码装上：
+
 ```shell
 rustup component add rust-src
 ```
 
 理论上装上 rust-analyzer 就能使用这个 Rust 语言服务了。而装 rust-analyzer 可以通过操作系统软件包管理器装，也能通过 VSCode 的插件「顺道」安装。
 
-
 ### <span id="rust_lsp_links">Rust LSP 相关链接</span>
-[rust-analyzer 安装文档](https://rust-analyzer.github.io/manual.html#installation)
 
+* [rust-analyzer 安装文档](https://rust-analyzer.github.io/manual.html#installation)
 
 ---
 

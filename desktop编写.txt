@@ -17,6 +17,12 @@ Categories=程序的分类标签，多个标签使用;号分隔(Application;IDE;
 Terminal=false 是否使用启用终端
 StartupNotify=true
 
+刷新桌面图标：
+update-desktop-database ~/.local/share/applications
+
+
+https://wiki.archlinuxcn.org/wiki/%E6%A1%8C%E9%9D%A2%E9%A1%B9
+
 
 
 

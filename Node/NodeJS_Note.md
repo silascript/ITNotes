@@ -27,3 +27,20 @@ Windows 下安装，可以下安装包，也可以下压缩包，解压后，手
 
 ### <span id="node_settings">配置</span>
 
+
+#### eclectron配置
+
+在`.bashrc`或`.bash_profile`或`.profile`文件中添加相应的环境变量：
+
+`export ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/`
+
+参考资料：
+
+* [正确设置 ELECTRON_MIRROR](https://newsn.net/say/electron-mirror.html)
+
+
+
+
+
+
+

@@ -1,8 +1,8 @@
 
 
-在/usr/share/applications/目录中新建一个后缀名为desktop的文件
+在`/usr/share/applications/`目录中新建一个后缀名为`desktop`的文件
 
-
+```desktop
 [Desktop Entry] (这里大小写敏感，写错一个就不会显示)
 Type=Application 类型
 Name=名称
@@ -16,12 +16,24 @@ Exec=可执行文件的路径
 Categories=程序的分类标签，多个标签使用;号分隔(Application;IDE;Development;Editor)
 Terminal=false 是否使用启用终端
 StartupNotify=true
+```
+
 
 刷新桌面图标：
+
+刷用户目录下的：
+
+```shell
 update-desktop-database ~/.local/share/applications
+```
 
+刷是根下的：
 
-https://wiki.archlinuxcn.org/wiki/%E6%A1%8C%E9%9D%A2%E9%A1%B9
+```shell
+sudo update-desktop-database /usr/share/applications
+```
+
+[arch 相关wiki](https://wiki.archlinuxcn.org/wiki/%E6%A1%8C%E9%9D%A2%E9%A1%B9)
 
 
 

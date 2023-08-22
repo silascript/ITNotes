@@ -50,10 +50,25 @@ modified: 2023-07-2 4:34:54
 export PATH=$PATH:/opt/golang/bin
 export PATH=$PATH:$(go env GOPATH)/bin
 ```
+
 > [!tip] GOPATH
+> 
 > 旧的版本，即 1.11 之前的版本，环境变量还得设置 `GOPATH`，新的版本就不用理了。
+> 
+> `GOPATH` 是在`~/home/用户名/go`这个目录。
 
 go 的环境配置是存放在 `~/.config/go/` 目录下的 `env` 文件，可以使用任何一个文本编辑器编辑。
+
+> [!example] 配置示例
+> 
+> ```profle
+> export GOROOT=/opt/golang
+> export PATH=$PATH:$GOROOT/bin
+> export PATH=$PATH:$(go env GOPATH)/bin
+> ```
+> 
+> 
+
 
 ---
 
@@ -86,6 +101,7 @@ go env -w GOPROXY=https://goproxy.cn,https://proxy.golang.com.cn,https://goproxy
 配置完了，可以使用 `go env` 命令查看环境变量，查询代理是否配置上了。
 
 国内 Go 代理：
+
 * [Goproxy 中国](https://goproxy.cn/) [![goproxy.cn Repo](https://img.shields.io/github/stars/goproxy/goproxy.cn?style=social)](https://github.com/goproxy/goproxy.cn)
 > Goproxy.cn 是布置在 [七牛云](https://www.qiniu.com/) 上，所以稳定性应该可以保证。
 * [GoProxy.io](https://goproxy.io/) [![goproxy.io Repo](https://img.shields.io/github/stars/goproxyio/goproxy?style=social)](https://github.com/goproxyio/goproxy)

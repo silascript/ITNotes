@@ -5,7 +5,7 @@ tags:
   - markdown
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2023-07-11 11:17:21
+modified: 2023-08-21 22:39:55
 ---
 # Obsidian 笔记
 
@@ -21,7 +21,7 @@ modified: 2023-07-11 11:17:21
 * [主题](#obn_themes)
 * [基本用法](#obn_basic)
 	* [常用默认快捷键](#obn_default_hotkeys)
-*  [插件](#obn_plugin)
+* [插件](#obn_plugin)
 	* [第三方插件](#obn_plugins_commp)
 		* [常用插件](#常用插件)
 			* [Batter Command Palette](#obn_plugins_commp_better_command_palette) 
@@ -145,7 +145,7 @@ modified: 2023-07-11 11:17:21
 
 这主题一些特色的功能：
 * 「Rainbow folder」彩虹目录
-*  「File Browser」中有个「Enable folder icons for collapse indicators」选项，可以给目录添加有颜色的目录图标
+* 「File Browser」中有个「Enable folder icons for collapse indicators」选项，可以给目录添加有颜色的目录图标
 * 「Active line highlight」 高亮当前行
 * 「Callouts」能对 Callout 样式做更细致的美化设置
 * 「Headings」 标题颜色进行设置 
@@ -489,13 +489,14 @@ Obsidian 的插件分为 [核心插件](#obn_plugins_core) 和 [第三方插件]
 
 「YAML」 选项卡：
 1. 「Format Tags in YAML」格式化 [tag][#obn_advanced_frontmatter_tag]，将 [YAML front matter](#obn_advanced_frontmatter) 中的 **#**符号去除。 如果不想设置这个设置，可以安装 [Frontmatter Tag Suggest](#obn_plugins_tagsuggest) 插件，在输入并选定 tag 候选项时就直接去除**#**符号了。
-2.  「Insert YAML attributes」添加缺少的属性，可以在属性文本框中加入属性，方便格式化时添加。
+2. 「Insert YAML attributes」添加缺少的属性，可以在属性文本框中加入属性，方便格式化时添加。
 3. 「YAML Timestamp」 这是添加时间戳的，可以添加建档时间及修改时间，时间格式也可自行设定。
 
 	> [!tip] 时间戳格式
 	> 
 	> `YYYY-MM-D HH:mm:ss` 或 `YYYY-MM-D h:mm:ss`
 	> 
+	> `D`：月中天数，01~31
 	> `H`：24 小时制；`h`：12 小时制；
 	> 
 	> `HH`：两位显示，不足两位数前补零；`hh`：同样两位显示；

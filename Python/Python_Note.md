@@ -6,8 +6,8 @@ tags:
   - python
   - pip
   - conda
-created: 2023-01-30 11:19:11
-modified: 2023-08-16 23:32:47
+created: 2023-08-18 19:44:52
+modified: 2023-08-22 12:41:38
 ---
 # Python 笔记
 
@@ -80,8 +80,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple 包名
 
 1. 第一种方式：
 
-```python
-
+```shell
 # 清华源
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 # 阿里源
@@ -96,13 +95,19 @@ pip config set global.index-url http://pypi.douban.com/simple/
 2. 第二种方式：
 
 直接修改 pip 配置文件
-pip 的配置文件是放在.pip 目录下的 pip.conf 文件中 (windows 是 pip.ini 文件)
+pip 的配置文件是放在 `.pip` 目录下的 pip.conf 文件中 (windows 是 pip.ini 文件)
+
 示例：
 
 ```config
 [global]
 index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 ```
+
+> [!tip]
+> 
+> 现在的 pip，配置文件是放在 `~/.config/pip/` 目录中。在 [conda](#python_conda) 中配置 pip 也是放在这个目录中。
+> 
 
 ### pip 搜索
 
@@ -213,12 +218,18 @@ wget -c -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
 以清华源为例：
 
+刚装完的 conda，是没有 `.condarc` 配置文件的，可以执行以下命令，生成 `.condarc` 文件：
 ```shell
-conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
-conda config --set show_channel_urls yes # 生成".condarc"文件
+conda config --set show_channel_urls yes
 ```
 
-在生成的 `.condarc` 文件中追加以下配置：
+使用命令方式添加源：
+
+```shell
+conda config --add https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+```
+
+在生成的 `.condarc` 文件中手动追加以下配置：
 
 ```
 default_channels:
@@ -234,6 +245,12 @@ custom_channels:
   pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloudtext
 ```
+
+> [!tip]
+> 
+> 最好把配置文件中 `default_channels` 项中的 `default` 去掉，不然在每次安装软件时，都会到默认的镜像源里找。
+> 
+> 还有，网上一些教程，那些主 channel，是 `free` 的，这个 channel 的 python 太老了，不要用了，换成 `main`。
 
 ---
 
@@ -331,6 +348,14 @@ conda create -n 新环境名 --clone 旧环境名
 
 要查看当前 conda 中有哪些环境，可以使用 `conda env list` 或 `conda info --env` 来查看。
 
+另外也可以通过以下命令查看所有的虚拟环境：
+
+```shell
+conda info --envs
+#也可以用缩写形式：
+conda info -e
+```
+
 #### <span id="python_conda_environment_packagelist">环境包列表</span>
 
 每一个环境其实就是各种「Package」的集合，所以一个环境中根本需求会有不同的包。那查看当前环境都装了哪个包，就可以使用 `conda list -n 环境名`。
@@ -345,11 +370,51 @@ conda create -n 新环境名 --clone 旧环境名
 
 conda 能装什么包，可以通过 [anaconda官网](https://anaconda.org/) 查询。
 
+#### <span id="python_conda_environment_export">导入导出环境</span>
+
+导出环境：
+
+```shell
+conda env export > environment.yml
+```
+
+使用 `yml` 创建环境：
+
+```shel
+conda env create -n env_name -f environment.yml
+```
+
+#### <span id="python_conda_environment_package">conda 中的包</span>
+
+安装包：
+
+`conda install 包名`
+
+### <span id="python_conda_pip">conda 中的 pip</span>
+
+先使用 `which pip` 来确认现在用的是哪个哪个环境的 pip。如果当前虚拟环境没装，就使用 `conda install pip` 装下。
+
+使用当前环境中的 pip 配置国内源，跟非虚拟环境一样：
+
+```shell
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
+最后配置文件都是 `~/.config/pip/pip.conf`，也就是说 conda 中的 pip 配置是同用的。
+
+> [!tip] 关于模块安装路径
+> 
+> 在 conda 中使用 pip 安装模块，其模块是安装在 `~/minicoda/envs/虚拟环境/bin/` 目录下的，所以只在 `activate` 此环境才能使用。
+> 
+> 而且这里的优先级高于 `.local/bin` 下，即高于非 conda 环境下或使用 [pipx](#python_pipx) 安装的同名模块。
+
 ---
 
 ## <span id="python_pipx">pipx</span>
 
 [Site Unreachable](https://github.com/pypa/pipx) 是一个自动建立虚拟环境来使用 Python 应用的工具。
+
+pipx 与其他相近工具的比较：[pipx comparisons](https://pypa.github.io/pipx/comparisons/)
 
 > [!info] pipx 安装条件
 > 
@@ -372,9 +437,26 @@ optional environment variables:
 
 > [!info] 关于 pipx 两个重要的目录
 > 
-> 一个是 pipx 的为应用建立的虚拟环境目录，默认是在 `~/.local/pipx/venvs`
+> 一个是 pipx 的为应用建立的虚拟环境目录，默认是在 `~/.local/pipx/venvs`。
 > 
-> 另一个是 pipx 中应用执行的 `bin` 文件所在的目录，默认是在 `~/.local/bin` 下，这其实是跟 pip 一样的。
+> 就算是在 [conda](#python_conda) 中使用其虚拟环境的 pip 安装的 pipx，这个 pipx 所装的模块，仍是存放在 `~/.local/pipx/venvs/` 目录下。
+> 
+> 另一个是 pipx 中应用执行的 `bin` 文件「链接文件」所在的目录，默认是在 `~/.local/bin` 下，这其实是跟 pip 一样的。
+> 
+> 同样的，在 [conda](#python_conda) 的虚拟环境中使用的 pipx 装的模块的可执行程序，同样也是放在 `~/.local/bin/`。而这个程序只是一个 `link` 文件。
+> 
+> 也就说，在 [conda](#python_conda) 中各虚拟环境用 pipx 装的相同模块，其可执行程序会出现同名冲突，会报：「already seems to be installed. 」的揭示，因为这个可执行程序是个 Link 文件，它可以指向不同虚拟环境，如果不同虚拟环境下装相同的模块，后来生成的这个模拟可执行的 Link 文件就会覆盖之前装的。
+> 
+> 同样的也就意味着，不同虚拟环境下使用 pipx 装的模块，只要有一个虚拟环境装了，就可以在其他虚拟环境中使用，除非，这个在虚拟环境将此模块删除，或此虚拟环境本身就被删除。
+> 
+> 
+> 所以得出一个重要的结论：pipx 装的模块在当前用户下，「全局性」更强，适合安装一些跨虚拟环境的模拟，如各种 [LSP](../vim/LSP_Complete.md)。
+> 
+> 同时，因为 pipx 这种「穿透性」，也就意味着 pipx 没太大必要在 [conda](#python_conda) 的虚拟环境中安装那些非「全局性」的模块。
+
+> [!tip] pipx 安装模块要求
+> 
+> pipx 只能装那些有「cli」的模块，对于那些纯库类型的模块，像 pynvim，就不能装。
 
 ### 安装模块
 

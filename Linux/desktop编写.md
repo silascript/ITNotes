@@ -18,6 +18,20 @@ Terminal=false 是否使用启用终端
 StartupNotify=true
 ```
 
+> [!example] 示例
+> 
+> ```desktop
+> [Desktop Entry]
+> Name=Obsidian
+> Exec=/opt/appimages/Obsidian.AppImage --no-sandbox %U
+> Terminal=false
+> Type=Application
+> Icon=obsidian
+> Categories=Utility;
+> 
+> ```
+
+
 
 刷新桌面图标：
 

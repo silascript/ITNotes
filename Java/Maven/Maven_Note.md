@@ -6,7 +6,7 @@ tags:
   - maven
   - jdk
 created: 2023-01-31 11:31:14
-modified: 2023-05-27 12:08:23
+modified: 2023-08-24 03:25:02
 ---
 # Maven 笔记
 
@@ -26,11 +26,40 @@ Maven 配置主要有两块配置：
 1. 配置本地仓库存储位置
 2. 镜像配置
 
+配置文件按官方文档分成两级：
+
+1. 用户级（User Level）
+	`~/.m2/` 目录下的 `settings.xml`。
+2. 全局（Global Level）
+	这个全局的配置文件就是放在 maven 安装根目录中的那个 `settings.xml` 文件。
+
+如果没有 `.m2` 目录，可以运行以下命令：
+
+```shell
+mvn help:system
+```
+
+> [!info] `.m2` 目录
+> 
+> 生成的 `.m2` 目录，默认在其中生成 `repository` 目录，这是默认的 [本地仓库](#mvn_setttings_localRepo)，可以在 settings.xml 配置中重新自定义别的路径。
+
+生成完全 `.m2` 目录，可以将 maven 安装根目录中那个「全局」配置文件 `settings.xml` 复制到 `.m2` 下，作为「用户级」配置文件，然后再对其进行下一步配置。
+
 ### <span id="mvn_settings_localRepo">本地仓库</span>
 
-```xml
-<localRepository>D:/mvn_repository/</localRepository>
-```
+> [!example] 配置示例
+>
+> Windows：
+> 
+>```xml
+> <localRepository>D:/mvn_repository/</localRepository>
+> ```
+>
+> Linux：
+>
+>```xml
+> <localRepository>${user.home}/mvn_repository</localRepository>
+> ```
 
 ### <span id="mvn_settings_remoteRepo">远程仓库</span>
 

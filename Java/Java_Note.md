@@ -8,7 +8,7 @@ tags:
   - Eclipse
   - dbeaver
 created: 2023-01-30 11:19:11
-modified: 2023-07-8 12:19:10
+modified: 2023-08-23 18:57:13
 ---
 
 # Java 笔记
@@ -107,6 +107,10 @@ Temurin JDK 清华镜像：[https://mirror.tuna.tsinghua.edu.cn/Adoptium/](https
 
 ### JDK17
 
+### 相关资料
+
+* [JDK 集合](https://www.injdk.cn/)
+
 ---
 
 ## <span id="java_config">Java 相关的配置</span>
@@ -138,9 +142,39 @@ sudo ./bin/jlink --module-path jmods --add-modules java.desktop --output jre
 ### SDKMan 安装
 
 执行以下命令：
+
 ```shell
 curl -s "https://get.sdkman.io" | bash
 ```
+
+sdkman 安装目录是在 `~/.sdkman/` 下，装完云看到 `.sdkman` 下有没有 `bin` 目录，因为国外网站的关系，有可能在安装过程，因为网络环境而事实上没真正安装成功，如果是这样，在 `.sdkman` 目录上是缺少 bin 目录的。
+
+### 配置环境变量
+
+往 `.bashrc` 或 `.bash_profile` 或 `.profile` 文件，把 sdkman 的路径加进去：
+
+```config
+export SDKMAN_DIR="/home/silascript/.sdkman"
+```
+
+或者：
+
+```shell
+source "/Users/sky/.sdkman/bin/sdkman-init.sh"
+```
+
+这会自动将相关的配置加入到相应的配置文件，有可能是 `.bashrc`，也有可能是 `.zshrc`（如果用 zsh）。反正去看下吧，大概是以下这一段代码：
+
+```config
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+```
+
+> [!tip] 配置文件经验
+> 
+> 反正这段代码根据你自己习惯，可以移动到适合的 rc 或 profile 文件中。
+> 
+> 我个人是放在 `.profle` 中，所有语言的环境变量配置我都放在 `.profile` 中，然后我又用 zsh，我就在 `.zshrc` 中 `source` 下 `.profile`，这样能保持 `.zhsrc` 文件不至于太多非 zsh 的配置信息，而且集中放在 `.profile` 中也能集中管理。
 
 ### SDKman 使用
 

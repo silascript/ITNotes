@@ -10,8 +10,8 @@ tags:
   - tar
   - shell
   - network
-created: 2022-11-7 2:50:13
-modified: 2023-07-10 12:11:36
+created: 2023-08-18 19:44:52
+modified: 2023-08-23 17:01:09
 ---
 # Linux 笔记
 
@@ -206,6 +206,7 @@ gzip 是 GNU 组织开发的一个压缩程序，后缀名为 **.gz** 。
 与 tar 配合使用，通过 **-z** 参数来调用。
 
 使用示例：
+
 ```shell
 # 打包并使用 gzip 压缩
 tar -czvf xxx.tar.gz *.jpg
@@ -231,6 +232,7 @@ tar -xzvf xxx.tar.gz
 与 tar 配合使用，通过 **-j** 参数来调用。
 
 使用示例：
+
 ```shell
 tar -cjf xxx.tar.bz2 *.jpg
 
@@ -251,6 +253,7 @@ tar -xjvf xxx.tar.gz
 与 tar 配合使用，通过 **-Z** 参数来调用。
 
 使用示例：
+
 ```shell
 tar -cZf xxx.tar.Z *.jpg
 
@@ -301,6 +304,7 @@ tar -xvf xxx.tar
 > 低版本的 tar 不支持，就得先 tar 再使用
 
 示例：
+
 ```shell
 # 压缩
 tar -Jcf xxx.tar.xz *.jpg
@@ -340,6 +344,7 @@ pacman -S unrar
 
 
 ```
+
 > [!tip]
 > [ArchLinux_Note](ArchLinux_Note.md) 如果安装了 [AUR Helper](ArchLinux_Note.md#AUR%20Helper)，如 [yay](ArchLinux_Note.md#yay)，就能使用相应的 aur helper 来安装。
 

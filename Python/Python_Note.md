@@ -7,7 +7,7 @@ tags:
   - pip
   - conda
 created: 2023-08-18 19:44:52
-modified: 2023-08-22 12:41:38
+modified: 2023-08-22 17:31:26
 ---
 # Python 笔记
 
@@ -209,6 +209,28 @@ wget -c -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 >
 > ```
 > 其实就是装了些基础包及配置了下环境变量。
+
+#### <span id="python_conda_install_path">关于环境变量</span>
+
+```config
+__conda_setup="$('/home/silascript/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/silascript/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/silascript/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/silascript/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+```
+
+在 `.profile` 或指定 shell 配置文件，如 zsh 的 `.zshrc` 中，加入以上配置，那终端启动一个 shell，这时就自动处于 conda 的一个虚拟环境中 -- 默认是处于 Base 环境。
+
+> [!info]
+> 
+> 这不是单纯的像 `export PATH=$PATH:"$HOME/miniconda3/bin"`，这样将 bin 目录加入 Path 路径，这种添加环境变量的方式，不能进行 `activate` 激活切换环境。
 
 ---
 

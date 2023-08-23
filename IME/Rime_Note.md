@@ -5,6 +5,8 @@ tags:
   - rime
   - yaml
   - ime
+created: 2023-08-18 19:44:52
+modified: 2023-08-23 11:51:03
 ---
 # Rime 笔记
 
@@ -91,6 +93,29 @@ app_opsions:
 > [ibus-rime不支持 `app_options`](https://github.com/rime/ibus-rime/issues/96)！所以在 linux 下使用的 rime「无缘」这个配置功能了。真是悲剧！
 
 ---
+
+## 输入法列表
+
+### 汉语输入法
+
+* [rime-wubi98](https://github.com/lotem/rime-wubi98 "五筆98版 Rime 輸入方案")
+* [arzyu/rime-wubi98](https://github.com/arzyu/rime-wubi98)
+* [shrekuu/rime-wubi98](https://github.com/shrekuu/rime-wubi98)
+* [ThreeDefenders/my-wubi-98](https://github.com/ThreeDefenders/my-wubi-98 "在lotem/rime-wubi98基础上修改的")
+
+### 日语输入法
+
+* [日语输入法](https://github.com/gkovacs/rime-japanese)
+* [Rime-KappaJP](https://github.com/momijineko/Rime-KappaJP "Rime 河童日本語五筆字型入力方法")
+
+### 音标
+
+* [rime英语音标输入方案。](https://github.com/mapleafly/rime-ipa-english)
+* [IPA / 國際音標輸入方案](https://github.com/rime/rime-ipa)
+* 
+
+---
+
 ## 相关联接
 
 * [官方说明书](https://github.com/rime/home/wiki/UserGuide)

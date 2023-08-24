@@ -6,7 +6,7 @@ tags:
   - maven
   - jdk
 created: 2023-01-31 11:31:14
-modified: 2023-08-24 03:25:02
+modified: 2023-08-24 11:11:08
 ---
 # Maven 笔记
 
@@ -150,6 +150,11 @@ mvn help:system
 
 ```
 
+> [!tip] 3.8.1 新增标签
+> 
+> Maven 3.8.1 禁止了 http 协议，所以增加了 `maven-default-http-blocker` 这组标签用来拦截 `http` 请求。
+> 
+
 检测配置是否成功：
 ```shell
 mvn help:system
@@ -202,13 +207,15 @@ ${basedir}
 ### <span id="mvn_project_settings_codeending">编码设置</span>
 
 ```xml
-<properties>  
-	<!-- 文件拷贝时的编码 -->  
-	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
-	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>  
-	<!-- 编译时的编码 -->  
-	<maven.compiler.encoding>UTF-8</maven.compiler.encoding>  
-</properties>
+<profile>
+    <properties>
+        <!-- 文件拷贝时的编码 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- 编译时的编码 -->
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+	</properties>
+</profile>
 ```
 
 ---

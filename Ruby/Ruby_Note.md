@@ -2,7 +2,7 @@
 aliases: 
 tags: PL ruby
 created: 2023-08-18 19:44:52
-modified: 2023-08-23 11:27:02
+modified: 2023-08-25 10:44:43
 ---
 # Ruby 笔记
 
@@ -138,15 +138,163 @@ source /usr/share/chruby/chruby.sh
 chruby ruby-3.2.2
 ```
 
+如果不带参数，`chruby` 会找当前目录中的 `.ruby-version` 文件中的版本号。
+
+> [!tip]
+> 
+> `echo "3.2.2" > ./.ruby-version`
+> 
+> 或者 `echo "ruby-3.2.2" > ./.ruby-version`
+> 
+
+而 chruby 是没有「默认」版本的，只有使用到时，才敲下 `chruby` 切下。如果想要 shell 终端一启动就自动激活或者叫切换某 ruby 版本，那就把 `chruby` 写到配置文件（`.bashrc`、`.bash_profile` 或 `.profile`、`.zshrc` 等）中。
+
 ---
 
 ### rbenv
 
 [rbenv](https://github.com/rbenv/rbenv) 是一款 ruby 版本管理工具。
 
+#### 安装
+
+`yay -S rben`
+
+#### 配置
+
+装完后，执行下 `rbenv init`。会有以下揭示：
+
+```shell
+# Load rbenv automatically by appending
+# the following to ~/.zshrc:
+eval "$(rbenv init - zsh)"
+```
+
+```shell
+# Load rbenv automatically by appending
+# the following to ~/.bash_profile:
+eval "$(rbenv init - bash)"
+```
+
+`rbenv init` 执行后，重启终端，会在 `~` 下多了一个 `.rbenv` 目录，这就是 rbenv 的根。默认这个目录下有两个子目录：`shims` 和 `versions`。
+
+> [!info] 
+> 
+> `.rbenv` 下除了 `shims` 和 `versions` 两个目录，还存在一个默认情况下没有的目录，那就是 [plugins](#以%20[rbenv](%20rbenv)%20的插件方式安装) 目录，这个目录是用来装 `rbenv` 插件的。而 `rbenv` 最重要的一个插件就是 [ruby-build](#ruby-build)，没这个插件 `rbenv` 连下载 ruby 安装包都下不了。
+> 
+> 因为 `rbenv` 实质只是一个 ruby 版本切换器，本身不具备下载安装的功能，下载及安装功能都得通过别的工具实现，而其默认选项就是 `ruby-build`。
+
+其中 `versions` 就是存放各个版本的 ruby。
+
+这就是不同 shell 下添加不同的初始化代码。
+
+#### 常用命令
+
+* `rbenv commands`：列出 `rbenv` 所有命令
+* `rbenv version`：显示当前使用的 ruby 的版本
+* `rbenv versions`：显示已安装 ruby 的所有版本，前面带星号的，就是当前正在使用的版本。
+
+要使用 `rbenv` 安装 ruby，如使用 `rbenv install -l ` 这个命令，显示下可以装哪些版本的 ruby，就必须安装 [ruby-build](#ruby-build) 这个插件。
+
+* `rbenv install --list` 或 `rbenv install -l`：列出所有（全局）（global），或者称为「默认」可用的 ruby 版本。
+* `rbenv install --list-all` 或 `rbenv install -L`：列出当前目录（`local`）所有已安装的 ruby 版本。
+* `rbenv install 版本号`：安装指定的版本的 ruby。
+
+ * `rbenv rehash` ：每当切换 ruby 版本和执行 bundle install 之后必须执行这个命令 
+ * `rbenv which irb` ： 列出 irb 这个命令的完整路径 
+ * `rbenv whence irb` ： 列出包含 irb 这个命令的版本
+
+  * `rbenv global [版本号]`：显示或切换默认 ruby 版本
+  * 
+	  > [!tip]
+	  > 
+	  > 在使用 [ruby-build](#ruby-build) 安装完一个 ruby 后，就会有提示信息，如 `NOTE: to activate this Ruby version as the new default, run: rbenv global 3.2.2`，让你激活一个版本为默认的 ruby 版本。
+	  > 
+	  > 此命令版本号可选，如果此命令没有给出版本号，即为显示当前的默认版本。
+
+#### 安装位置
+
+`~/.rbenv/versions/` 这个目录下存各版本的 ruby，以 ruby 的版本号为子目录存放，如 `~/.rbenv/versions/3.2.2`，就是 `3.2.2` 这个版本的存放路径。
+
 #### ruby-build
 
 [rbenv](https://github.com/rbenv/ruby-build) 是 [rbenv](#rbenv) 的一个插件，专门用来下载安装 ruby 的。
+
+##### 安装
+
+安装 `ruby-build` 有两种方式：
+
+###### 使用系统包管理器安装
+
+使用系统的包管理器安装，如 `yay -S ruby-build`。
+
+###### 以 [rbenv](#rbenv) 的插件方式安装
+
+ [rbenv](#rbenv) 的插件方式安装：
+
+```shell
+git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+```
+
+> [!info]
+> 
+> 很简单，就是把 `ruby-build` 的东西下载到 `rbenv` 的插件目录中。
+> 
+> `rbenv root` 这个变量，默认是 `~/.rbenv`，也就是 rbenv 相关的东西都放在「根目录」。
+> 
+> 而 `rbenv root` 下的子目录 `plugins` 就是 rbenv 的插件存放目录。
+
+安装完 `ruby-build`，就能使用诸如 `rbenv install -l ` 这类的的安装 ruby 的命令。
+
+##### 配置
+
+为了下载快点，所以得对 `ruby-build` 的镜像源进行一点配置。
+
+在 `.bashrc` 或 `.bash_profile` 或 `.zshr` 或 `.profile` 文件中加入以下代码：
+
+```config
+export RUBY_BUILD_MIRROR_URL=https://cache.ruby-china.com
+```
+
+> [!tip] ruby-builder 的配置项
+> [官方文档](https://github.com/rbenv/ruby-build#readme) Custom Build Configuration 一栏中就有列出 `ruby-build` 的配置项。
+>
+> ``
+> 像 `RUBY_BUILD_HTTP_CLIENT`，这个配置选项还能配置使用什么下载工具下载 ruby，在 [aria2](../Linux/Linux_Note.md#inux_network_command_downloader_aria2)、[curl](../Linux/Linux_Note.md#curl%20常用操作) 和 [wget](../Linux/Linux_Note.md#wget%20主要操作) 三选一，这好像比 [Ruby-Install](#Ruby-Install) 牛一点。
+
+##### 镜像插件
+
+使用国内镜像插件来提速：[rbenv-china-mirror](https://github.com/AndorChen/rbenv-china-mirror)。
+
+安装插件：
+
+```shell
+git clone https://github.com/andorchen/rbenv-china-mirror.git "$(rbenv root)"/plugins/rbenv-china-mirror
+```
+
+> [!tip]
+> 
+> 跟安装 [ruby-build](#ruby-build) 插件类似。
+> 
+> 而升级这看插件方式，跟升级普通 [Git](../Git/Git_Note.md) 项目一样，进到目录中 `git pull` 下就好了。
+>
+>```shell
+> cd ~/.rbenv/plugins/rbenv-china-mirror
+> git pull
+> ```
+
+但这个插件使用 [aria2](../Linux/Linux_Note.md#linux_network_command_downloader_aria2) 存在问题，所以换其他下载器。
+
+在 `.bashrc` 或其他配置文件中加入以下代码：
+
+```config
+export RUBY_BUILD_HTTP_CLIENT=wget
+```
+
+> [!info] rbenv 下载器可先项
+> 
+> `RUBY_BUILD_HTTP_CLIENT` 这个选项参数有三个可选：`aria2c`、`curl` 和 `wget`。
+> 
+> 并且对应的，还有 `RUBY_BUILD_ARIA2_OPTS`、`RUBY_BUILD_CURL_OPTS` 和 `RUBY_BUILD_WGET_OPTS`，三个选项可以让用户使用各下载器的选项参数。
 
 #### rbenv 相关文档
 

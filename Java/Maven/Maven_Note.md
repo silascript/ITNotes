@@ -6,7 +6,7 @@ tags:
   - maven
   - jdk
 created: 2023-01-31 11:31:14
-modified: 2023-08-24 11:11:08
+modified: 2023-08-24 11:42:04
 ---
 # Maven 笔记
 
@@ -19,6 +19,14 @@ modified: 2023-08-24 11:11:08
 	* [JDK 版本指定](#mvn_project_jdk_version)
 
 ---
+
+## <span>Maven 版本的 JDK 版本要求</span>
+
+maven 版本与 JDK 版本对应请参考：[Maven – Maven Releases History](https://maven.apache.org/docs/history.html)
+
+> [!tip]
+> 
+> **3.9.4**开始最低都是 Java8。
 
 ## <span id="mvn_settings">配置</span>
 
@@ -222,8 +230,8 @@ ${basedir}
 
 ### <span id="mvn_project_jdk_version">JDK 版本指定</span>
 
-java11 指定
-`settings` 文件配置：
+java11 指定 `settings` 文件配置：
+
 ```xml
 <profile>
   <id>jdk-11</id>    
@@ -235,6 +243,23 @@ java11 指定
     <maven.compiler.source>11</maven.compiler.source>    
     <maven.compiler.target>11</maven.compiler.target>    
     <maven.compiler.compilerVersion>11</maven.compiler.compilerVersion>    
+  </properties>
+</profile>
+```
+
+java17：
+
+```xml
+<profile>
+  <id>jdk-17</id>    
+    <activation>    
+		<activeByDefault>true</activeByDefault>    
+		<jdk>17</jdk>    
+	</activation>    
+  <properties>    
+    <maven.compiler.source>17</maven.compiler.source>    
+    <maven.compiler.target>17</maven.compiler.target>    
+    <maven.compiler.compilerVersion>17</maven.compiler.compilerVersion>    
   </properties>
 </profile>
 ```
@@ -264,6 +289,14 @@ java11 指定
 	</plugins>
 </build>
 ```
+
+---
+
+## <span id="mvn_plugins">Maven 插件</span>
+
+maven 接口依赖关系图：
+
+![maven deps shotcut](https://maven.apache.org/ref/3.9.4/images/maven-deps.png)
 
 ---
 

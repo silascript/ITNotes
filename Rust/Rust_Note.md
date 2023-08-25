@@ -5,7 +5,7 @@ tags:
   - PL
   - rust
 created: 2023-01-30 11:19:11
-modified: 2023-08-14 18:10:38
+modified: 2023-08-25 20:57:22
 ---
 # Rust 笔记
 
@@ -152,16 +152,25 @@ SUBCOMMANDS:
 #### <span id="rustup_commands">rustup 常用命令</span>
 
 rustup 自我升级：
+
 ```shell
 rustup self update
 ```
 
+升级组件：
+
+```shell
+rustup update
+```
+
 安装组件：
+
 ```shell
 rustup component add 组件名
 ```
 
 组件列表：
+
 ```shell
 rustup componet list
 ```
@@ -172,7 +181,11 @@ rustup componet list
 
 #### <span id="rust_about_cargo">Cargo 包管理器</span>
 
-[Cargo](https://github.com/rust-lang/cargo) 是 Rust 的包管理器和构建系统工具。
+[Cargo](https://github.com/rust-lang/cargo) 是 Rust 的构建和包管理器工具。
+
+Cargo cli 工具负责运行构建、运行测试和准备项目以供发布。Rust 中的包被称为「**crate**」
+
+[crates.io](https://crates.io/) 能查询各种各样的「crate」。
 
 ##### <span id="rust_cargo_commands">Cargo 命令</span>
 
@@ -187,6 +200,14 @@ rustup componet list
 `cargo fmt`： 代码格式化
 `cargo tree`： 查看第三方库的版本和依赖关系
 `cargo bench`： 运行 benchmark（基准测试，性能测试）
+
+##### <span id="rust_cargo_new">创建项目</span>
+
+`cargo new 项目名称`
+
+创建一个新的程序，默认项目结构：`main.rs` 文件及 `Cargo.toml` 项目文件。
+
+在新建的项目，git 已经初始化了。
 
 ---
 

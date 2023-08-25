@@ -3,8 +3,8 @@ aliases:
   - 
 tags:
   - 
-created: 2023-06-4 17:55:40
-modified: 2023-08-16 23:15:51
+created: 2023-08-18 19:44:52
+modified: 2023-08-25 20:47:33
 ---
 
 # LSP 及补全相关
@@ -199,6 +199,10 @@ gem install solargraph
 ```shell
 npm install yaml-language-server -g
 ```
+
+### <span id="lang_lsps_rust">Rust LSP</span>
+
+请参考笔记：[Rust LSP](../Rust/Rust_Note.md#rust_lsp)
 
 ---
 

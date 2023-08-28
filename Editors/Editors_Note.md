@@ -9,7 +9,7 @@ tags:
   - scite
   - lsp
 created: 2023-01-30 11:19:11
-modified: 2023-08-14 00:46:18
+modified: 2023-08-28 23:21:52
 ---
 
 # 编辑器笔记
@@ -65,6 +65,46 @@ modified: 2023-08-14 00:46:18
 
 [Sublime 4](https://www.sublimetext.com/blog/articles/sublime-text-4) 是 SublimeText 最新版本。
 
+### <span id="editors_sublime_dir">目录结构</span>
+
+Sublime 所有设置都存在在 `~/.config/sublime-text/Packages/User/` 目录下。
+
+Sublime 设置：`~/.config/sublime-text/Packages/User/Preferences.sublime-settings`
+
+Pakage Control 设置： `.config/sublime-text/Packages/User/Package\ Control.sublime-settings`
+
+其他插件设置都放在： `.config/sublime-text/Packages/`
+> [!tip] 关于插件安装位置
+> 
+> `.config/sublime-text/Packages/` 这个目录中的插件是解压后的的插件。
+> 
+> `.config/sublime-text/Installed Packages/` 这个目录中的插件，都是以插件包（后缀名都为 `sublime-package`）。如果手动把插件包放在这个目录，Sublime 会自动将包解压放到 `.config/sublime-text/Packages/` 中，重启 Sublime 后就能用了。
+> 
+> 当然部分插件可能会出问题，如 [本地化语言包](https://packagecontrol.io/packages/ChineseLocalizations)，虽然能加载成功，但布局上存在 bug。
+> 
+
+缓存：`.cache/sublime-text/`
+
+### <span id="editors_sublime_cli">CLI</span>
+
+SublimeText 是包含一个命令行工具 `subl`，用于处理命令行中的文件。
+
+Linux 版中的可执行程序，是可以当成**cli**（）方式来执行的。只要做个链接就行了：
+
+`sudo ln -s /opt/sublime_text/sublime_text /usr/local/bin/subl`
+
+> [!info]
+>
+> 也可以在当前用户中建立链接：
+> `sudo ln -s /opt/sublime_text/sublime_text ~/.local/bin/subl`
+> 
+
+更详细的请参考：[Command Line Interface](https://www.sublimetext.com/docs/command_line.html)
+> [!tip] 中方版
+> [命令行 - Sublime 官方文档](https://sublime-text-document.readthedocs.io/zh/latest/command_line/)
+
+### <span id="editors_sublime_settings">设置</span>
+
 SublimeText 基本设置：
 
 ```json
@@ -78,6 +118,9 @@ SublimeText 基本设置：
 "bold_folder_labels":true,
 "indent_guide_options": ["draw_active"],
 "vintage_start_in_command_mode": true,
+
+// 关闭多出的标题栏
+"gtk_client_side_window_decorations": false,
 ```
 > 基本设置大概就是 字体、当前行高亮、缩进线、行号等 
 
@@ -91,6 +134,10 @@ SublimeText 基本设置：
 1. 通过 [packagecontrol.io](https://packagecontrol.io) 这个网站中查询。
 > 本来这网站是有个中国镜像：[packagecontrol.cn](http://packagecontrol.cn) ，不过好像已经挂了。
 2. 通过在 SublimeText 中，使用 `Ctrl+Shift+P`，呼出命令面板，敲入 `pacakge`，就能列出插件相关的命令。
+> [!tip]
+> 安装插件时，如果全新 sublime，得先装 `Package Control` 这个插件，这是安装其他插件的基础。
+> 安装 `Package Control` 插件可以通过 `Ctrl+Shift+P` 命令面板中安装，与可以下载 [Package Control  包](https://packagecontrol.io/Package%20Control.sublime-package) ，放到 `~/.config/sublime-text/Installed\ Packages` 目录下。
+> 
 > 命令很简单，不做过多介绍了，不非就是 `install` 安装插件，`upgrade` 升级插件，`remove` 卸载插件，`list` 列出插件。  
 
 插件库地址，还能自定义。

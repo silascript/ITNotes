@@ -11,7 +11,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2023-08-23 17:01:09
+modified: 2023-08-28 00:29:02
 ---
 # Linux 笔记
 
@@ -313,6 +313,29 @@ tar -Jcf xxx.tar.xz *.jpg
 tar -Jxf xxx.tar.xz
 
 ```
+
+---
+
+#### <span id="linux_tarc_comptools_zip">zip</span>
+
+zip 能通用于 Linux 和 Windows。
+
+##### 压缩
+
+语法：`zip 最终压缩包名称 要打包的文件或目录`
+
+`-r`：递归
+`-q`：不显示压缩过程
+
+示例：
+
+```shell
+zip -q -r xxx ./xxx/*.txt
+```
+
+> [!tip]
+> 
+> 压缩包不用写后缀，最终打成包后是自动加上 `.zip` 后缀的。
 
 ---
 
@@ -911,6 +934,35 @@ IPtables 中可以做各种网络地址转换，网络地址转换主要有两�
 
 ---
 
+## <span id="linux_ps">进程</span>
+
+### 常用命令
+* `ps aux`
+* `ps -ef`
+* `ps -elf`
+
+`PID`：进程 ID
+`PPID`：父进程 ID
+
+大部分应用程序的父进程都是 `/usr/lib/systemd/systemd --user` 这个当前用户主进程。
+
+### 常用示例
+
+#### 按进程名称查询
+
+`ps -ef |grep '进程名'`：按进程名称搜索正在运行的进程
+> [!tip]
+> 这个查询的结果会多一个， 这个进程是 `grep` 的。
+>
+> 过滤掉 `grep` 本身进程：
+> `ps -elf |grep '进程名' | grep -v grep`：这是使用 `grep -v` 把 grep 本身的进程过滤掉，这才是真正想要的结果。
+>
+
+* `pgrep '进程名' -a`：显示进程 PID 及进程的程序全路径名
+* `pgrep '进程名' -l`：显示进程 PID 及进程名，比上面的简洁一些
+
+---
+
 ## <span id="linux_ssh">SSH</span>
 
 ### <span id="linux_ssh_insconf"> 安装和设置 SSH</span>
@@ -1076,6 +1128,24 @@ source `.bashrc` 或 `.bash_profile`
 ```shell
 sudo ln -s /opt/KomodoEdit/bin/komodo /usr/local/bin/komodo
 ```
+
+---
+
+## <span id="linux_grub">Grub</span>
+
+grub 模板：`/etc/default/grub`
+
+每当修改 `/etc/default/grub` 或者 `/etc/grub.d/` 中的文件之后，都需要再次生成主配置文件。
+
+制成配置文件：`grub-mkconfig -o /boot/grub/grub.cfg`
+
+重启电脑看效果。
+
+## 常用选项
+
+* `GRUB_TIMEOUT=10`：grub 等待时间，单位为秒
+* `GRUB_GFXMODE`：分辨率，默认是 **auto**，可以配多个，如 `GRUB_GFXMODE=1920x1080,1280x720,1024x768,auto`
+* `GRUB_DISABLE_OS_PROBER`：禁止使用 OS_PROBER（系统探针），默认值是 `false`，即不禁止**OS_PROBER**。**OS_PROBER**这东西是能探测操作系统的，操作系统变化，能及时的更新 Grub 的引导，所以最好不要修改，保持默认。
 
 ---
 

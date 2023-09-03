@@ -11,7 +11,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2023-08-28 00:29:02
+modified: 2023-09-01 19:59:56
 ---
 # Linux 笔记
 
@@ -337,6 +337,18 @@ zip -q -r xxx ./xxx/*.txt
 > 
 > 压缩包不用写后缀，最终打成包后是自动加上 `.zip` 后缀的。
 
+##### 解压
+
+`unzip xxx.zip`：在当前目录下解压。
+
+`unzip xxx.zip -d ./xxx `：解压到指定目录。
+
+`unzip -v xxx.zip`：不解压查看压缩包中的目录。
+
+`unzip -l xxx.zip`：列出压缩包的的文件信息，比 `unzip -v` 显示的信息更简洁一些。
+
+`zipinfo -s xxx.zip`：使用 `zipinfo` 同样也能查看压缩包中的信息。
+
 ---
 
 #### <span id="linux_tarc_comptools_rar">rar</span>
@@ -588,6 +600,29 @@ Linux 中使用的 GNU 版本的 grep ，可以直接通过 `-G`、`-E` 和 `-F`
 ### <span id="linux_textprocessing_sed">sed</span>
 
 ### <span id="linux_textprocessing_awk">awk</span>
+
+#### 列
+
+* `$0`：表示整行文本。
+* `$1`：表示文本行中的第一列。
+* `$N`：表示文本行中第 N 列。
+* `$NF`：表示文件行中的最后一列。
+
+#### 行
+
+`NR==N`：指定行号
+
+##### 多行
+
+使用逗号 `,` 分隔，表示显示一个连续范围的行，即标示要打印的「区间」，如 `NR==1,NR==3`：打印 1 至 3 行
+
+使用分号 `;` 分隔，表示分别显示各行，如 `NR==1;NR==3;NR==6`：打印第 1 行、第 3 行和第 6 行。
+
+###### 示例
+
+行和列综合使用：
+
+`unzip -l xxx.zip |awk 'NR==5{print $NF}'`：列出 zip 包中的文件列表，显示第 5 行最后一列信息
 
 ---
 
@@ -1095,6 +1130,14 @@ ssh 用户名@ip -p 端口
 > Terminal=false 是否使用启用终端  
 > StartupNotify=true 
 
+3. 刷新
+```shell
+# 刷用户目录
+update-desktop-database .local/share/applications
+# 刷根目录
+sudo update-desktop-database /usr/share/applications
+```
+
 ---
 
 ### <span id="linux_soft_install_komodo">Komodo Edit 安装 </span>
@@ -1168,6 +1211,10 @@ echo $XDG_SESSION_TYPE
 ---
 
 ## 小工具
+
+### FileManager-Actions
+
+FileManager-Actions 这个工具可以方便更改右键菜单。
 
 ### 彩色命令行
 

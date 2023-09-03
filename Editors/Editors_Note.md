@@ -9,7 +9,7 @@ tags:
   - scite
   - lsp
 created: 2023-01-30 11:19:11
-modified: 2023-08-28 23:21:52
+modified: 2023-09-04 00:03:58
 ---
 
 # 编辑器笔记
@@ -89,7 +89,7 @@ Pakage Control 设置： `.config/sublime-text/Packages/User/Package\ Control.su
 
 SublimeText 是包含一个命令行工具 `subl`，用于处理命令行中的文件。
 
-Linux 版中的可执行程序，是可以当成**cli**（）方式来执行的。只要做个链接就行了：
+Linux 版中的可执行程序，是可以当成**cli**（Command Line Interface）方式来执行的。只要做个链接就行了：
 
 `sudo ln -s /opt/sublime_text/sublime_text /usr/local/bin/subl`
 
@@ -269,6 +269,15 @@ SublimeText 基本设置：
 
 ![Theme One Shotcut](https://github.com/AmjadHD/sublime_one_theme/blob/main/one.png)
 
+但这个主题的部分 Icon 与 [A File Icon](#A%20File%20Icon) 插件冲突。
+
+###### <span id="editors_sublime_plugins_beautify_theme_guna">Guna</span>
+
+[Guna](https://packagecontrol.io/packages/Guna) [![Guna Reo](https://img.shields.io/github/stars/poucotm/Guna?style=social
+)](https://github.com/poucotm/Guna) 这是一个极富创新性的 Theme。
+
+![Guna Shotcut](https://packagecontrol.io/readmes/img/0e760aedaab82dde28bc557bd767821aadd40c37.png)
+
 ---
 
 #### <span id="editors_sublime_plugins_frontend">前端相关</span> 
@@ -291,6 +300,18 @@ SublimeText 基本设置：
 
 ---
 
+#### <span id="editors_sublime_plugins_sidebar">侧边栏</span>
+
+##### <span id="editors_sublime_plugins_sidebar_enhancements">SideBarEnhancements</span>
+
+[SideBarEnhancements](https://packagecontrol.io/packages/SideBarEnhancements) [![SideBarEnhancements Repo](https://img.shields.io/github/stars/titoBouzout/SideBarEnhancements?style=social
+)](https://github.com/titoBouzout/SideBarEnhancements) 这插件正如名称所描述的一样，是对侧边栏的功能的增强，增加了不少的实用功能。
+
+##### <span id="editors_sublime_plugins_sidebar_sidebartools">SideBarTools</span>
+
+[SideBar Tools](https://packagecontrol.io/packages/SideBarTools) [![SideBar Tools Repo](https://img.shields.io/github/stars/braver/SideBarTools?style=social
+)](https://github.com/braver/SideBarTools) 是 [SideBarEnhancements](#SideBarEnhancements) 的轻量级重构版本。
+
 ---
 
 #### <span id="editors_sublime_plugins_lsp">LSP 相关</span>
@@ -305,7 +326,8 @@ LSP 常用插件：
 
 ##### 通用 LSP
 
-[通用 LSP](https://packagecontrol.io/packages/LSP)
+[通用 LSP](https://packagecontrol.io/packages/LSP) [![LSP Repo](https://img.shields.io/github/stars/sublimelsp/LSP?style=social
+)](https://github.com/sublimelsp/LSP/)
 
 这个插件不针对特定语言，属于基本 LSP 插件。其他特定语言 lsp 插件都在这插件之上建立的，所以如果要使用 LSP，这个插件必装。
 
@@ -322,7 +344,7 @@ sublime 的 LSP 的本地 Server 是装在 `~/.cache/sublime-text/Package Storag
 * [LSP-typescript](https://github.com/sublimelsp/LSP-typescript)
 * [LSP-rust-analyzer](https://github.com/sublimelsp/LSP-rust-analyzer) ^66e1d9
 * [LSP-lemminx: XML support for Sublime's LSP plugin](https://github.com/sublimelsp/LSP-lemminx)
-* [LSP-bas](https://github.com/sublimelsp/LSP-bash)
+* [LSP-bash](https://github.com/sublimelsp/LSP-bash)
 
 ##### 部分 LSP 插件介绍
 
@@ -331,13 +353,7 @@ sublime 的 LSP 的本地 Server 是装在 `~/.cache/sublime-text/Package Storag
 LSP-pylsp 配置：
 
 ```json
-"settings": {
-	// 使用ruff作linter
-	"pylsp.plugins.ruff.enabled":true,
-	// 更换black风格
-	"pylsp.plugins.pycodestyle.enabled":false,	
-	"pylsp.plugins.pylsp_black.enabled":true,
-	},
+"settings": {},
 
 
 ```

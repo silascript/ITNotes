@@ -9,7 +9,7 @@ tags:
   - markdown
   - plugin
 created: 2023-01-30 11:19:11
-modified: 2023-06-22 11:31:48
+modified: 2023-08-31 20:21:25
 ---
 # vim 常用插件
 
@@ -116,11 +116,17 @@ Plug 'google/vim-codefmt',{'on':['FormatCode','FormatLines']}
 
 ### <span id="plugin_auto_pairs">自动括号匹配</span>
 
+#### auto-pairs
+
+[jiangmiao/auto-pairs](https://github.com/jiangmiao/auto-pairs) 这插件能自动补全匹配的括号。
+
 ```vim
 Plug 'jiangmiao/auto-pairs'
 ```
 
-[auto-pairs](https://github.com/jiangmiao/auto-pairs)
+#### vim9 版 auto-pairs
+
+[Eliot00/auto-pairs](https://github.com/Eliot00/auto-pairs) 是 [auto-pairs](#auto-pairs) 的 vim9 适配版。
 
 ### <span id="plugin_snippets">snippets 插件</span>
 
@@ -460,6 +466,10 @@ S  ： 选中内容添加包围并独成一行
 `<leader><leader>h`
 
 `<leader><leader>l`
+
+### vim9-stargate
+
+[vim9-stargate](https://github.com/monkoose/vim9-stargate) 这个是 [easymotion](#easymotion) 的 vim9 适配版。它使用的 vim9 的语法重写了
 
 ### undo tree
 

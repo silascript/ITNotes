@@ -7,7 +7,7 @@ tags:
   - video
   - list
 created: 2023-05-26 11:00:13
-modified: 2023-08-6 17:10:01
+modified: 2023-09-02 18:12:39
 ---
 # Javascript 视频清单
 
@@ -57,4 +57,10 @@ modified: 2023-08-6 17:10:01
 * [理解promise原理01](https://www.bilibili.com/video/BV1wu4y1B72B)
 * [理解promise原理02](https://www.bilibili.com/video/BV1qh4y1w7HY)
 * [理解promise原理03](https://www.bilibili.com/video/BV1su411p7Dr)
+
+### 各类框架
+
+#### three.js
+
+* [23年全网最新版Three.js教程](https://www.bilibili.com/video/BV1X94y1z7M6)
 

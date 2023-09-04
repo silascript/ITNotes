@@ -9,7 +9,7 @@ tags:
   - scite
   - lsp
 created: 2023-01-30 11:19:11
-modified: 2023-09-04 00:03:58
+modified: 2023-09-05 03:10:07
 ---
 
 # 编辑器笔记
@@ -82,6 +82,8 @@ Pakage Control 设置： `.config/sublime-text/Packages/User/Package\ Control.su
 > 
 > 当然部分插件可能会出问题，如 [本地化语言包](https://packagecontrol.io/packages/ChineseLocalizations)，虽然能加载成功，但布局上存在 bug。
 > 
+
+^34a72b
 
 缓存：`.cache/sublime-text/`
 
@@ -333,11 +335,25 @@ LSP 常用插件：
 
 具体语言的 LSP 得再装特定的 LSP 插件。-- 这个相当于 LSP 通用 Client，但有些语言得用特定 Client 才能调 LSP，所以这些语言对再装定的语言 LSP 插件。具体使用还得参考 [LSP配置说明](https://lsp.sublimetext.io/language_servers)。
 
+###### 本地 Server
+
 sublime 的 LSP 的本地 Server 是装在 `~/.cache/sublime-text/Package Storage` 下。
 
 ##### 常用 LSP 插件列表
 
-* [LSP-json](https://github.com/sublimelsp/LSP-json) 这个插件是必装的，因为 Sublime 本身的配置文件就是 json
+	这个LSP子插件有一部都自带了LSP实现的，所以装完这些插件，在启用这些插件时，就会在Sublime Text的缓存目录`~/.cache/sublime-text/Package Storage/` 中安装相应的[本地Server](#本地Server)。
+
+* [LSP-json](https://github.com/sublimelsp/LSP-json) 这个插件是必装的，因为 Sublime 本身的配置文件就是 json。但这货找不到 [Node](../Node/NodeJS_Note.md)（非常诡异，在终端下启动 Sublime，就能找到正确的「PATH」,直接通过桌面启动 Sublime 就找不到。），会提示安装一个插件：[lsp_utils](https://github.com/sublimelsp/lsp_utils)，它带了个便携式的 node-- 其实就算找到外部 node，`lsp_utils` 这个依赖插件也会自动在启用 LSP-json 插件时安装的，可以打开 `View`>`Show Console` 控制台观察。
+> [!tip] PATH
+> 
+> 在 `View` > `Show Console`，在输入框中输入：`import os; os.environ["PATH"]`，就能看到当前 Sublime 能获取到的「PATH」值是什么了。
+>
+> 原因：在终端中启用 Sublime Text，Sublime Text 使用的是 `.profile` 配置文件，而通过桌面图标（DeskTop）启动 Sublime Text，这时 Sublime Text 是使用 `xprofile` 配置。这是合理但也有点奇葩的。[关于xprofile](../Linux/ArchLinux_Note.md#^eba7ef)
+> 
+> 解决方案：将 `.profile` 更名为 `xprofile`，其他原来引用到 `.profile` 配置文件的 shell 配置，如 `.zshrc`、`.bashrc`，都更改引用 `.xprofile`，反正使用到 Sublime Text 的 Linux 操作系统都是用了图形界面的，所以使用 `xprofile` 也是非常合情合理的，而 `.xprofile` 也是能给文本模式的终端使用的。
+> 
+> 
+>  ^3026e5
 * [LSP-html](https://github.com/sublimelsp/LSP-html)
 * [LSP-CSS](https://github.com/sublimelsp/LSP-css)
 * [LSP-eslint](https://github.com/sublimelsp/LSP-eslint)

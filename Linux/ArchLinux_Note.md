@@ -8,8 +8,8 @@ tags:
   - rime
   - ime
 date created: 2022-11-08 11:32
-created: 2022-11-8 11:21:08
-modified: 2023-07-12 17:16:58
+created: 2023-08-18 19:44:52
+modified: 2023-09-05 03:12:00
 ---
 
 # ArchLinux 笔记
@@ -138,6 +138,14 @@ ibus-daemon -d -x
 > export QT_IM_MODULE=ibus
 >```
 > 不过我没配，rime 也能用
+
+> [!info] 关于 xprofile
+> 
+> 使用到有图形界面的 Linux 系统，建议还是使用 `.xprofile` 文件来代替 `.profile`。因为有部分「奇葩」软件，它们在终端启动和通过桌面图标（Desktop）启动，读取配置文件，「竟然」是读取不同的，如果只配置了 `.profile`，那这些「奇葩」在使用桌面图标启动时，它们就找 `PATH` 时，就不会去找 `.profile`，而是试图去找 `.xprofile`，找不到，它们就使用默认的根的 profile，这时就可能出现问题，比如 [SublimeText](../Editors/Editors_Note.md#SublimeText) 中使用到 [常用 LSP 插件列表](../Editors/Editors_Note.md#常用%20LSP%20插件列表) 时，有可能找 [NodeJS](../Node/NodeJS_Note.md)，即便在 `.profile` 已经配置了 node，但只要是通过桌面方式启动 Sublime，那就永远找不到 node-- 而相对的使用终端启动 Sublime 就能找到 node，这就是由于 Sublime 启动后使用不同的配置文件的策略造成的。所以建议使用图形界面的 Linux 系统时，还是使用 `.xprofile` 来代替 `profile` 来配置各种环境变量。
+>
+> [关于sublime lsp-json插件](Editors_Note#^3026e5)
+
+^eba7ef
 
 ##### 相关链接
 

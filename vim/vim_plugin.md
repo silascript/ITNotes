@@ -9,7 +9,7 @@ tags:
   - markdown
   - plugin
 created: 2023-01-30 11:19:11
-modified: 2023-08-31 20:21:25
+modified: 2023-09-06 01:39:51
 ---
 # vim 常用插件
 
@@ -244,25 +244,7 @@ vim-codefmt 使用，此插件对于 C、C++、Java 语言，依赖 clang-format
 * HTML、CSS、SASS、LESS、JSON 用的是 nodejs 的 **js-beautify**
 * rust 用的是 rustfmt
 
-顺便说下 Clang-Format:
-
-clang-format 全局配置文件是放在用户根目录下的**.clang-format**,既~/.clang-format。
-
-样例：
-
-```yaml
-BasedOnStyle: Google     # 配置格式化基于哪家的风格 有Google LLVM 微软等
-# BasedOnStyle: LLVM
-# BasedOnStyle: Microsoft
-IndentWidth: 4       # 缩进宽度
-TabWidth: 4        # tab缩进宽度
-# UseTab: Always
-UseTab: AlignWithSpaces     # 是否使用Tab缩进
-AllowShortFunctionsOnASingleLine: Empty # 简单函数格式化成单行 Empty是函数体是空的才格式化成单行样式
-AllowShortBlocksOnASingleLine: Empty # 简单代码块格式化成单行 Empty是代码块是空的才格式化单行样式
-AlignConsecutiveAssignments: true  # 连续赋值对齐
-# AlignConsecutiveDeclarations: true # 连续声明对齐
-```
+关于 clang-format 请参考：[clang-format](LSP_Complete.md#clang-format)。
 
 vim-codefmt 插件在 vim 中使用，就两个主要命令:
 

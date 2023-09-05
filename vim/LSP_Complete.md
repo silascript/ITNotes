@@ -4,7 +4,7 @@ aliases:
 tags:
   - 
 created: 2023-08-18 19:44:52
-modified: 2023-08-25 20:47:33
+modified: 2023-09-06 02:11:04
 ---
 
 # LSP 及补全相关
@@ -54,9 +54,63 @@ clangd
 clangd 是 clang 的扩展工具（clang-tools-extra），新版本是在 LLVM 中,安装 LLVM 就有 clangd 了。
 
 安装完可以执行以下命令，如果能出现版本信息就证明 clangd 能用了！
-```sh
+
+```shell
 clangd --version
 ```
+
+#### clang-format
+
+clang-format 是 clangd 附带的格式化工具。
+
+clang-format 全局配置文件是放在用户根目录下的**.clang-format**,既~/.clang-format。
+
+clang-format 配置文件不必全手工，可以使用 clang-format 生成指定风格的模板文件，然后再在此文件上进行自定义修改即可。
+
+```shell
+clang-format -style=格式名 -dump-config > 文件名
+```
+> [!info] 
+> 
+> clang 的格式风格有很多，如 google、微软、Mozilla 等。
+> 
+> 文件名可以取任何名字，一般取 `.clang-format` 或 `_clang-format`，这样能让 clang-format 识别。
+
+> [!info] clang-format 格式文档
+>
+> [Clang-Format Style Options ](https://clang.llvm.org/docs/ClangFormatStyleOptions.html)
+
+生成 llvm 风格的模板：
+
+`clang-format -style=llvm -dump-config > .clang-format`
+
+生成 google 风格的模板：
+
+`clang-format -style=google -dump-config > .clang-format`
+
+##### clang-format 配置
+
+###### 示例
+ 
+```yaml
+BasedOnStyle: Google     # 配置格式化基于哪家的风格 有Google LLVM 微软等
+# BasedOnStyle: LLVM
+# BasedOnStyle: Microsoft
+IndentWidth: 4       # 缩进宽度
+TabWidth: 4        # tab缩进宽度
+# UseTab: Always
+UseTab: AlignWithSpaces     # 是否使用Tab缩进
+AllowShortFunctionsOnASingleLine: Empty # 简单函数格式化成单行 Empty是函数体是空的才格式化成单行样式
+AllowShortBlocksOnASingleLine: Empty # 简单代码块格式化成单行 Empty是代码块是空的才格式化单行样式
+AlignConsecutiveAssignments: true  # 连续赋值对齐
+# AlignConsecutiveDeclarations: true # 连续声明对齐
+```
+
+> [!infot] 配置详解
+> 
+> 使用 `clang-format -style=格式名 -dump-config > 文件名` 这个语法生成的配置文件，默认会将 `BaseOnStyle` 注释掉，而把全部属性都在文件中显式地设置一遍 -- 其实就是将某厂商风格配置文件 Copy 一份过来而已，这非常不「优雅」。
+> 
+> 而更好的做法应该是，将 `BaseOnStyle` 属性注释取消，这意味着明确告诉 clang-format 格式化器，配置文件是使用哪家厂商的风格为底板，配置文件中设置的属性是自定义设置的外，其他属性都使用 `BaseOnStyle` 指定的厂商默认配置。这样设置，就使用配置文件中的配置项非常的少，以一种更「优雅」的方式自定义自己的格式化风格。
 
 ---
 
@@ -77,6 +131,14 @@ python lsp 实现：
 #### pyright
 
 [pyright](https://github.com/microsoft/pyright) 是微软新推出的 LSP，上面那个要被微软废弃了！因为微软 [VSCode](../Editors/VSCode_Note.md) 自己用的是 Pylance，所以开源的 Pyright 估计会被微软阉割，所以下场也不会太好！
+
+##### 安装
+
+pyright 可以用 npm 装也可以用 [pip](../Python/Python_Note.md#pip) 装，不过还是建议使用 npm 装，毕竟人家是用 [TypeScript](../JS/TypeScript/TypeScript_Note.md) 写的嘛！
+
+```shell
+npm i -g pyright
+```
 
 #### jedi 
 
@@ -145,6 +207,14 @@ pip install -U setuptools
 > [!tip] 注意
 > 
 > pylsp 这个 LSP 用的 [jedi](https://github.com/davidhalter/jedi) 模块的版本可能与 [jedi-language-server](#jedi-language-server) 存在差异，如果使用 [pip](../Python/Python_Note.md#pip) 直接安装，可能造成不必要的冲突，建议使用 [pipx](../Python/Python_Note.md#pipx) 来装，这样两个 LSP 都在各自的虚拟环境中运行，互不干扰。
+
+#### <span id="lang_lsps_python_ruff">ruff</span>
+
+[ruff](https://github.com/astral-sh/ruff)
+
+##### ruff-lsp
+
+[ruff-lsp](https://github.com/astral-sh/ruff-lsp)
 
 ---
 

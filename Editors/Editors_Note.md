@@ -9,7 +9,7 @@ tags:
   - scite
   - lsp
 created: 2023-01-30 11:19:11
-modified: 2023-09-05 03:10:07
+modified: 2023-09-05 11:17:36
 ---
 
 # 编辑器笔记
@@ -339,11 +339,30 @@ LSP 常用插件：
 
 sublime 的 LSP 的本地 Server 是装在 `~/.cache/sublime-text/Package Storage` 下。
 
+##### 文件监视器
+
+[LSP-file-watcher-chokidar](https://github.com/sublimelsp/LSP-file-watcher-chokidar) 这个插件，能配合 [LSP](#LSP%20相关) 使用， 监视文件变化。
+
 ##### 常用 LSP 插件列表
 
-	这个LSP子插件有一部都自带了LSP实现的，所以装完这些插件，在启用这些插件时，就会在Sublime Text的缓存目录`~/.cache/sublime-text/Package Storage/` 中安装相应的[本地Server](#本地Server)。
+这个 LSP 子插件有一部都自带了 LSP 实现的，所以装完这些插件，在启用这些插件时，就会在 Sublime Text 的缓存目录： `~/.cache/sublime-text/Package Storage/` 中安装相应的 [本地Server](#本地Server)。
 
-* [LSP-json](https://github.com/sublimelsp/LSP-json) 这个插件是必装的，因为 Sublime 本身的配置文件就是 json。但这货找不到 [Node](../Node/NodeJS_Note.md)（非常诡异，在终端下启动 Sublime，就能找到正确的「PATH」,直接通过桌面启动 Sublime 就找不到。），会提示安装一个插件：[lsp_utils](https://github.com/sublimelsp/lsp_utils)，它带了个便携式的 node-- 其实就算找到外部 node，`lsp_utils` 这个依赖插件也会自动在启用 LSP-json 插件时安装的，可以打开 `View`>`Show Console` 控制台观察。
+* [LSP-json](https://github.com/sublimelsp/LSP-json) 这个插件是必装的，因为 Sublime 本身的配置文件就是 json。但这货找不到 [Node](../Node/NodeJS_Note.md)（非常诡异，在终端下启动 Sublime，就能找到正确的「PATH」,直接通过桌面启动 Sublime 就找不到。），会提示安装一个插件：[lsp_utils](https://github.com/sublimelsp/lsp_utils)，它带了个便携式的 node-- 其实就算找到外部 node，`lsp_utils` 这个依赖插件也会自动在启用 LSP-json 插件时安装的，可以打开 `View`>`Show Console` 控制台观察：
+
+```shell
+Package Control: Installing 15 missing dependencies
+Package Control: Installed missing dependency wcmatch
+Package Control: Installed missing dependency python-markdown
+Package Control: Installed missing dependency markupsafe
+Package Control: Installed missing dependency ptyprocess
+Package Control: Installed missing dependency python-jinja2
+Package Control: Installed missing dependency mdpopups
+Package Control: Installed missing dependency wcwidth
+Package Control: Installed missing dependency pyte
+```
+
+装完这些依赖，Sublime Text 会弹出窗口提示重启 Sublime Text ，重启后，菜单栏中 Tools（「工具」）菜单中「LSP」的功能就会「亮」了，能使用了。
+
 > [!tip] PATH
 > 
 > 在 `View` > `Show Console`，在输入框中输入：`import os; os.environ["PATH"]`，就能看到当前 Sublime 能获取到的「PATH」值是什么了。
@@ -373,6 +392,10 @@ LSP-pylsp 配置：
 
 
 ```
+
+
+
+
 
 ###### LSP-CSS
 

@@ -11,7 +11,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2023-09-01 19:59:56
+modified: 2023-09-13 16:59:17
 ---
 # Linux 笔记
 
@@ -1211,6 +1211,18 @@ echo $XDG_SESSION_TYPE
 ---
 
 ## 小工具
+
+### cheat.sh
+
+[cheat.sh/:firstpage](https://cheat.sh/) 是一个快速查询 Linux 命令的小工具。它不但能使用浏览器查询，还能在命令行中使用：
+
+```shell
+curl cheat.sh
+```
+> [!tip]
+> 也可以缩写成这样：`curl cht.sh`
+
+如查询 [awk](#awk) 的使用，可以敲入这个命令：`curl cheat.sh/awk`，就会显示 awk 使用示例。
 
 ### FileManager-Actions
 

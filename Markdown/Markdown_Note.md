@@ -8,7 +8,7 @@ tags:
   - typora
   - mermaid
 created: 2023-01-13 12:27:45
-modified: 2023-05-29 8:06:25
+modified: 2023-09-13 21:36:54
 ---
 
 # Markdown 笔记
@@ -401,6 +401,38 @@ Font Awesome 使用步骤：
 ---
 
 ## <span id="md_tools">相关工具</span>
+
+### <span id="md_tools_preview">预览工具</span>
+
+#### Python-Markdown
+
+[markdown](https://github.com/Python-Markdown/markdown) 是 python 写的一个 markdown 转换工具。
+
+通过 [pip](../Python/Python_Note.md#python_pip) 来安装：
+
+```shell
+pip install markdown
+```
+
+当然这个工具是有可执行程序的，所以是可以使用 [pipx](../Python/Python_Note.md#python_pipx) 来安装：`pipx install markdown`。
+
+#### markdown2
+
+[python-markdown2](https://github.com/trentm/python-markdown2) 跟上面那个类似。
+
+同样也是可以通过 [pip](../Python/Python_Note.md#python_pip) 来安装：
+
+```shell
+pip install markdown2
+pip install markdown2[all]  # to install all optional dependencies (eg: Pygments for code syntax highlighting)
+pypm install markdown2      # if you use ActivePython (activestate.com/activepython)
+easy_install markdown2      # if this is the best you have
+python setup.py install
+```
+
+同理，这工具也能使用来安装 [pipx](../Python/Python_Note.md#python_pipx)：`pipx install markdown2`。
+
+---
 
 ### <span id="md_tools_mdeditors">Markdown 编辑器</span>
 

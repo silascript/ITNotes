@@ -5,7 +5,7 @@ tags:
   - git
   - github
 created: 2023-01-30 11:19:11
-modified: 2023-08-11 21:58:05
+modified: 2023-09-14 20:56:35
 ---
 # Git 笔记
 
@@ -173,7 +173,7 @@ git tag -a tag名称 -m "tag信息"
 示例：
 
 ```shell
-git tag -a v1.12 -m "1.12版本"shell
+git tag -a v1.12 -m "1.12版本"
 ```
 
 删除 tag：
@@ -719,6 +719,14 @@ git config --global --unset url.https://github.com/.insteadof
 ##### 下载加速
 
 * [gitclone.com](https://gitclone.com)
+* [Moeyy](https://github.moeyy.xyz/)
+> [!tip] Moeyy
+> 
+> 使用 [moeyy.xyz](https://github.moeyy.xyz/) 下载 github 上的 release 文件，只需要在原下载地址前加 `https://github.moeyy.xyz/` 就能使用 moeyy 加速下载 release 文件了。
+> 
+> 如要下载 `https://github.com/emmetio/sublime-text-plugin/releases/download/v2.0.2/Emmet.zip`，
+> 只需要将地址「拼接」为 `https://github.moeyy.xyz/https://github.com/emmetio/sublime-text-plugin/releases/download/v2.0.2/Emmet.zip` 就能实现加速下载此文件。
+> 
 
 ##### 其他相关的链接
 

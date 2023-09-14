@@ -9,7 +9,7 @@ tags:
   - scite
   - lsp
 created: 2023-01-30 11:19:11
-modified: 2023-09-05 11:17:36
+modified: 2023-09-13 18:11:08
 ---
 
 # 编辑器笔记
@@ -69,11 +69,12 @@ modified: 2023-09-05 11:17:36
 
 Sublime 所有设置都存在在 `~/.config/sublime-text/Packages/User/` 目录下。
 
-Sublime 设置：`~/.config/sublime-text/Packages/User/Preferences.sublime-settings`
+Sublime 全局设置：`~/.config/sublime-text/Packages/User/Preferences.sublime-settings`
 
 Pakage Control 设置： `.config/sublime-text/Packages/User/Package\ Control.sublime-settings`
 
 其他插件设置都放在： `.config/sublime-text/Packages/`
+
 > [!tip] 关于插件安装位置
 > 
 > `.config/sublime-text/Packages/` 这个目录中的插件是解压后的的插件。
@@ -339,6 +340,19 @@ LSP 常用插件：
 
 sublime 的 LSP 的本地 Server 是装在 `~/.cache/sublime-text/Package Storage` 下。
 
+###### 内置提示与 LSP 重复
+
+在使用各语言的 LSP 时，有可能会出现代码提示出现重复，可以针对特定语言进行以下设置：
+
+```json
+"disable_default_completions": true
+```
+> [!info] 特定语言设置
+> 
+> 这设置其实就是将某语言内置的代码提示禁止，只使用此语言的 LSP 做为代码提示唯一「补充源」。
+> 
+> 设置特定语言，在一个此语言页面中点选「Preferences」->「Settings - Syntax Specific」弹出的设置窗口中设置。
+
 ##### 文件监视器
 
 [LSP-file-watcher-chokidar](https://github.com/sublimelsp/LSP-file-watcher-chokidar) 这个插件，能配合 [LSP](#LSP%20相关) 使用， 监视文件变化。
@@ -380,22 +394,74 @@ Package Control: Installed missing dependency pyte
 * [LSP-rust-analyzer](https://github.com/sublimelsp/LSP-rust-analyzer) ^66e1d9
 * [LSP-lemminx: XML support for Sublime's LSP plugin](https://github.com/sublimelsp/LSP-lemminx)
 * [LSP-bash](https://github.com/sublimelsp/LSP-bash)
+* [LSP-jdtls](https://github.com/sublimelsp/LSP-jdtls)
+* [LSP-intelephense](https://github.com/sublimelsp/LSP-intelephense)
+* [LSP-vue](https://github.com/sublimelsp/LSP-vue)
+* [LSP-volar](https://github.com/sublimelsp/LSP-volar)
 
 ##### 部分 LSP 插件介绍
 
 ###### Python 相关
 
-LSP-pylsp 配置：
+Sublime LSP 与 Python 相关的有以下三个插件：
+
+1. [LSP-pylsp](https://github.com/sublimelsp/LSP-pylsp)
+
+ 配置：
 
 ```json
-"settings": {},
-
-
+"settings": {
+	"pylsp.plugins.ruff.enabled":true,
+	"pylsp.plugins.pycodestyle.enabled":false,
+	"pylsp.plugins.pylsp_black.enabled":true,
+},
 ```
 
+> [!info] pylsp 与 [pyright](../vim/LSP_Complete.md#pyright) 配合使用
+> 
+> 相关说明：[running alongside lsp-pyright](https://github.com/sublimelsp/LSP-pylsp#running-alongside-lsp-pyright)
 
+> [!info] pylsp 与 [ruff](../vim/LSP_Complete.md#ruff) 配合使用
+> 
+> pylsp 也能与 ruff 配合使用。其实就是把 ruff 当成 pylsp 的 linter，当下 ruff 的功能也是只能当 linter 使用。
+> 就一句设置：`pylsp.plugins.ruff.enabled`，即启用 ruff-- 默认 pylsp 使用的是 linter 是 `pycondestyle`。
+> 
+> 相关说明：[linters](https://github.com/sublimelsp/LSP-pylsp#linters)
 
+> [!info] pylsp 格式化
+> pylsp 默认格式化使用的是 `autopep8`，可以使用 `"pylsp.plugins.yapf.enabled"` 或 `"pylsp.plugins.pylsp_black.enabled"`，使用不同的格式策略。
+> 相关说明：[formatters](https://github.com/sublimelsp/LSP-pylsp#formatters)
 
+2. [LSP-pyright](https://github.com/sublimelsp/LSP-pyright)  
+
+lsp-pyright 配置：
+
+```json
+"settings": {
+	"python.analysis.diagnosticSeverityOverrides": {
+	"reportDuplicateImport": "none",
+	"reportImplicitStringConcatenation": "none",
+	"reportMissingParameterType": "none",
+	"reportUnboundVariable": "none",
+	"reportUninitializedInstanceVariable": "none",
+	"reportUnusedClass": "none",
+	"reportUnusedFunction": "none",
+	"reportUnusedImport": "none",
+	"reportUnusedVariable": "none",
+}
+```
+
+3. [LSP-ruff](https://github.com/sublimelsp/LSP-ruff)
+
+ LSP-ruff 使用到 [ruff-lsp](https://github.com/astral-sh/ruff-lsp)，所以先装 ruff-lsp。
+
+```shell
+pip install ruff-lsp
+```
+
+> [!tip] 
+> 
+> 可以使用 pipx 安装，这样不会「污染」pip。而如果是在 [conda](../Python/Python_Note.md#python_conda) 中使用 [pipx](../Python/Python_Note.md#python_pipx) 安装，那就更好了，因为在 conda 中的 pipx 是能够在各虚拟环境中共享的，因为无论你在 conda 中哪个虚拟环境中使用 pipx 安装程序，它们都会在 `.local/bin` 目录建立「软链接」！
 
 ###### LSP-CSS
 
@@ -465,6 +531,14 @@ npm install -g markmark
 
 [Terminal](https://packagecontrol.io/packages/Terminal)  [![Terminal Repo](https://img.shields.io/github/stars/SublimeText/Terminal?style=social
 )](https://github.com/SublimeText/Terminal) 这也是一个终端插件，与 [Terminus](#Terminus) 不同的是，另开一个窗口调出当前操作系统默认终端。可以说这两个终端插件各有千秋。
+
+---
+
+### <span id="editors_sublime_plugins_docs">文档相关插件</span>
+
+#### DoxyDoxygen
+
+[DoxyDoxygen](https://github.com/20Tauri/DoxyDoxygen) 是一个自动生成文档注释的插件，它支持大部分主流编程语言。
 
 ---
 

@@ -3,8 +3,8 @@ aliases:
   - 
 tags:
   - 
-created: 2022-11-7 02:50:13
-modified: 2023-08-1 14:38:12
+created: 2023-08-18 19:44:52
+modified: 2023-09-16 02:21:09
 ---
 
 # 常用小工具笔记
@@ -95,7 +95,7 @@ lux -F /path/to/links.txt
 > `-c` 后就是 Cookies 文件路径
 
 > [!example] 示例
-> `lux -p -c ~/mysoft/NetBrower/edge_cookies.txt -f 80-7 https://www.bilibili.com/video/xxxxx`
+> `lux -p -c ~/mysoft/NetBrower/edge_cookies.txt -f 80-7 https://www.bilibili.com/video/xxxxx`
 
 ###### 如果导出 Cookies
 
@@ -107,6 +107,8 @@ lux -F /path/to/links.txt
 > 相关链接：
 > 
 > [请求指导cookie.txt详细的使用方法 · Issue #739](https://github.com/iawia002/lux/issues/739)
+
+使用 [Cookie Editor Plus ](https://microsoftedge.microsoft.com/addons/detail/cookie-editor-plus/nbmajjcfigmlcnikhnfhhicidleefhpp?hl=zh-CN) 也能达到相同效果。
 
 ---
 

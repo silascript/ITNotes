@@ -6,7 +6,7 @@ tags:
   - linux
   - list
 created: 2023-08-18 19:44:52
-modified: 2023-08-30 21:44:52
+modified: 2023-09-18 18:17:17
 ---
 # Shell 笔记
 
@@ -196,6 +196,23 @@ while read line
 do
   echo $line
 done < xxx.txt
+```
+
+---
+
+## 相关工具
+
+### shfmt
+
+[shfmt](https://github.com/mvdan/sh) 是一款 shell 脚本格式化工具。
+
+这工具可以与多款 [文本编辑器](../Editors/Editors_Note.md) 的 shell 格式化插件配合使用。
+> [!info] 
+> 
+> [各编辑器 shell 格式化插件列表](https://github.com/mvdan/sh#related-projects)
+
+```shell
+shfmt -l -w script.sh
 ```
 
 ---

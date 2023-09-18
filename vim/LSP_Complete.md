@@ -4,7 +4,7 @@ aliases:
 tags:
   - 
 created: 2023-08-18 19:44:52
-modified: 2023-09-06 02:11:04
+modified: 2023-09-18 19:33:41
 ---
 
 # LSP 及补全相关
@@ -294,6 +294,12 @@ npm install -g vim-language-server
 
 html 的 LSP 就没什么可选的，因为这东西编辑器本身就能实现代码提示，所以 LSP 大概就只有微软的：[html-language-server](https://github.com/microsoft/vscode/blob/main/extensions/html-language-features/)。
 
+安装：
+
+```shell
+npm install -g vscode-html-languageserver-bin
+```
+
 这个 LSP 运行程序名是：`vscode-html-languageservice`。
 
 ---
@@ -311,6 +317,16 @@ npm install css-language-server -g
 ```
 
 css-language-server 的程序名：`css-languageserver`
+
+当然，也可以安装另一个的 css lsp：
+
+```shell
+npm install -g vscode-css-languageserver-bin
+```
+
+> [!tip]
+> 
+> 还是建议装 `vscode-css-languageserver-bin` 这个 lsp，上面那个 lsp，版本号才 0.0.2，看那个鬼样子，基本不怎么更了。
 
 ---
 

@@ -5,7 +5,7 @@ tags:
   - markdown
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2023-08-21 22:39:55
+modified: 2023-09-17 01:35:51
 ---
 # Obsidian 笔记
 
@@ -1090,6 +1090,27 @@ Callout Blocks 预置类型：
 > > > [!example] 示例 5.1.1
 
 更多内容请参考：[callout blocks 官方文档](https://help.obsidian.md/How+to/Use+callouts)
+
+---
+
+## 其他工具
+
+### Obsidian-CLI
+
+[obsidian-cli](https://github.com/Yakitrak/obsidian-cli) 是一个 Obsidian 的命令行工具。
+
+> [!tip]
+> 
+> 在 [Manjaro](https://manjaro.org/) 或 [ArchLinux](../Linux/ArchLinux_Note.md) 中，是叫 `obs-bin` 这个名字。
+
+obs-cli 大致使用：
+
+设置默认 vault：
+
+```shell
+# 只需要给一个指定的 vault 的根路径就可以设置默认vault了
+obs set-default ~/MyNotes/ITNotes
+```
 
 ---
 

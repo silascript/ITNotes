@@ -8,7 +8,7 @@ tags:
   - tutorial
   - list
 created: 2023-02-12 11:23:37
-modified: 2023-09-04 17:34:08
+modified: 2023-09-17 00:42:32
 ---
 
 # Python 视频清单
@@ -20,6 +20,8 @@ modified: 2023-09-04 17:34:08
 * [漫画Python](https://www.bilibili.com/video/BV1sA411674Q)
 * [常用模块](https://www.bilibili.com/video/BV12m4y1m7aL)
 * [100道练习题](https://www.bilibili.com/video/BV1P14y1L7kP)
+* [Python初学者首选：100道简单上手的编程题目，快速提升技能](https://www.bilibili.com/video/BV1z94y1s7qD)
+* [【Python】有了这套教程，我100%拿下Python！](https://www.bilibili.com/video/BV19H4y1D7u2)
 * [Python教程](https://www.ixigua.com/7014245703362806308)
 * [2023年 Python 进阶天花板教程 （基础+进阶案例+网络编程）](https://www.bilibili.com/video/BV1Nh4y137N2)
 * [2023python模块精讲](https://www.bilibili.com/video/BV1Y24y1P73y)
@@ -29,3 +31,4 @@ modified: 2023-09-04 17:34:08
 * [超超超基础Python课程，3小时快速入门](https://www.bilibili.com/video/BV1944y1x7SW)
 * [黑马8天python从入门到精通](https://www.bilibili.com/video/BV1qW4y1a7fU)
 * [【清华大学计算机系科协暑培 2023】Python 基础](https://www.bilibili.com/video/BV1kF411Q71M)
+* [【零基础学Python】](https://www.bilibili.com/video/BV1j34y1M7h9)

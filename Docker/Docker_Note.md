@@ -8,8 +8,8 @@ tags:
   - linux
   - ubuntu
   - mysql
-created: 2023-02-2 11:25:59
-modified: 2023-08-16 16:56:04
+created: 2023-08-18 19:44:52
+modified: 2023-09-19 22:24:10
 ---
 
 # Docker 笔记
@@ -107,11 +107,11 @@ docker 安装完成后，docker 会自动新增一个 docker 用户组。
 sudo gpasswd -a ${USER} docker
 ```
 
-> **查看** 有没有 docker 组：
+> [!info] **查看** 有没有 docker 组：
 > ```shell
 > sudo cat /etc/group | grep docker
 > ```
-
+>
 > 如果没有 docker 组，**添加**：
 > ```shell
 > sudo groupadd docker
@@ -126,6 +126,18 @@ sudo systemctl start docker
 > ```shell
 > sudo systemctl restart docker
 > ```
+
+如果不想用 `sudo` 来执行 `docker` 命令，可以为 docker 组添加访问和执行权限：
+
+```shell
+sudo chmod a+rw /var/run/docker.sock
+```
+
+查看 docker 服务情况：
+
+```shell
+ systemctl status docker.service
+```
 
 ### <span id="dk_install_win">Windows 下安装 Docker</span>
 1. 安装 Docker
@@ -145,6 +157,7 @@ Start-Service docker
 同样的，没有信息，就是开启成功了！
 
  重启 docker 服务：
+ 
 > ```shell
 >  Restart-Service docker
 > ```
@@ -159,13 +172,16 @@ Windows 下 Docker 的 daemon.json 文件是放在 `C:\ProgramData\docker\config
 
 ## <span id="dk_mirror">修改镜像源</span>
 
-使用命令来指定镜像并启动 docker
+使用命令来指定镜像并启动 docker：
+
 ```shell
 docker --registry-mirror=https://registry.docker-cn.com daemon
 ```
 
 通过配置文件添加镜像源：
+
 修改 `/etc/docker/daemon.json` 文件：
+
 ```shell
 {
 	"registry-mirror":[
@@ -173,13 +189,16 @@ docker --registry-mirror=https://registry.docker-cn.com daemon
 	"https://docker.mirrors.ustc.edu.cn"
 	]
 }
-
 ```
 
 > [!tip]
-> 如果 /etc/docker/ 目录下没有 daemon.json，可自行添加。
+> 如果 `/etc/docker/` 目录下没有 `daemon.json`，可自行添加。
+> 
+> 有可能连 `/etc/docker/` 目录都没有，所以也得自行新建。
 > 
 > 配置文件可以添加多个镜像。
+> 
+> 还有最后那一个镜像选项后，不要留逗号。
 
 Docker 镜像列表
 
@@ -196,6 +215,14 @@ Docker 镜像列表
 |       阿里 - 北京       |  https://registry.cn-beijing.aliyuncs.com  |
 |       阿里 - 深圳       | https://registry.cn-shenzhen.aliyuncs.com  |
 |       阿里 - 成都       |  https://registry.cn-chengdu.aliyuncs.com  |
+
+> [!info] 各镜像说明
+> 
+> 中科大只能校内使用，不推荐。
+> 
+> Docker 官方已挂，不推荐。
+> 
+> 
 
 #### <span id="dk_mirror_proxy">其他 docker 代理</span>
 
@@ -217,6 +244,11 @@ run 容器时出现 `Error response from daemon: failed to start service utility
 BCDEdit /set hypervisorlaunchtype auto
 ```
 重启电脑。
+
+### <span id="dk_mirror_proxy">代理</span>
+
+* [Docker Proxy 镜像加速](https://dockerproxy.com/)
+* [mirror.baidubce.com](https://mirror.baidubce.com/)
 
 ### <span id="dk_mirror_magic">镜像网站相关的魔法</span>
 
@@ -498,6 +530,7 @@ volume 是被设计用来持久化数据的，它的生命周期独立于容器�
 ### 常用命令
 
 #### 查看所有 volume
+
 ```shell
 docker volume ls
 ```
@@ -514,7 +547,8 @@ docker volume create volume名
 > 创建出来的 volume 实际是被存放在 `/var/lib/docker/volumes/` 目录下。
 > `/var/lib/docker` 这个目录其实就是 Docker 安装目录。 
 
-#### 查看指定 volume 的详细信息：
+#### 查看指定 volume 的详细信息
+
 ```shell
 docker volume inspect volume名
 ```
@@ -587,11 +621,16 @@ docker run -d --name d_apache_2.4 -p 8085:80 --mount destination=/usr/local/apac
 docker run -d --name d_apache-2.4 -p 8085:80 -v $(pwd)/html:/usr/local/apache2/htdocs httpd:2.4.52-bullseye
 ```
 
-> [!tp]
+> [!tip]
+> 
 > -v 选项后的参数使用「:」 分隔。  
+> 
 > 冒号 **左边** 的实参是宿主机的目录路径，**必须** 使用「**绝对路径**」。  
+> 
 > 冒号 **右** 边的实参是容器中要「映射」的目录路径。  
+> 
 > 这种方式的 **挂载**，与 --mount type=bind 方式实现的效果完全一致。副作用也一样，就是宿主机会「覆盖」掉容器的内容。  
+> 
 > 如果宿主机路径不存在，docker 会自动帮你创建相应的目录。  
 
 ---

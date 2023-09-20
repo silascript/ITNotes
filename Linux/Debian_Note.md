@@ -4,8 +4,8 @@ aliases:
 tags:
   - linux
   - debian
-created: 2023-06-3 8:15:03
-modified: 2023-06-3 9:52:08
+created: 2023-08-18 19:44:52
+modified: 2023-09-20 00:45:02
 ---
 # Debian 笔记
 
@@ -45,6 +45,17 @@ Debian 官网：[https://www.debian.org/](https://www.debian.org/)
 deb http://mirrors.ustc.edu.cn/debian stable main contrib non-free
 deb http://mirrors.ustc.edu.cn/debian stable-updates main contrib non-free
 ```
+
+> [!info] Debian12 容器镜像
+> 
+> Debian 12 (bookworm) 的**容器**镜像开始使用 DEB822 格式，源的格式改变了。
+> 
+>而对应修改的文件是： `/etc/apt/sources.list.d/debian.sources`。
+>
+> 可以使用：`sudo sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list.d/debian.sources` 来修改源文件。
+> 
+> 具体应参考各源说明文档，如中科大的：[Debian 源使用帮助](https://mirrors.ustc.edu.cn/help/debian.html#id5)
+>
 
 同时你也可能需要更改 Debian Security 源，同样也是在 `/etc/apt/sources.list` 文件中添加。
 

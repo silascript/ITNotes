@@ -9,7 +9,7 @@ tags:
   - ubuntu
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2023-09-19 22:24:10
+modified: 2023-09-21 02:34:18
 ---
 
 # Docker 笔记
@@ -391,6 +391,12 @@ docker pull 镜像名[:tag]
 ```
 > [!tip]
 > 跟 git 的类似
+>
+> 示例：
+>  
+> ```shell
+> docker pull debian:stable-20230725
+> ```
 
 ### 镜像其他操作
 
@@ -575,6 +581,8 @@ docker volume prune
 > [!info] 清理 volume 条件 
 > 删除或清理 volume ，必须相关的容器不存在，也就是说没有容器再使用这些 volume，不然是清理不成功的。  
 > 所以要清理 volume 前得先 `docker rm 容器`，只是 `docker stop` 还不行，必须先删除容器，才能清理 volume。
+> 
+> 还有一点 `docker volume prune` 只能清理那些 [匿名挂载](#匿名挂载) 的 volume，而 [具名挂载](#具名挂载) 的 volume 是不能清理的，即便其容器已经删除。
 
 ---
 
@@ -816,9 +824,12 @@ ip addr show 网桥名
 
 5. 配置 Docker 配置文件
 在 /etc/docker/daemon.json 文件中添加以下内容：
+
 ```json
 "bridge": "网桥名",
 ```
+> [!tip]
+> 
 > 这个配置可将 Docker 默认桥接到创建的网桥上。
 
 还能通过以下方式桥接到创建的网桥上：
@@ -846,12 +857,16 @@ docker network create -d bridge 网桥名称
 如果不想用自动分配的网段可以使用 `-subnet` 参数指定。格式：如 **172.17.1.0/16** 。
 
 指定网段示例：
+
 ```shell
 docker network create --subnet x.x.x.x/xx -d bridge 网桥名称
 ```
+> [!info]
+> 
 > 如果添加了 `--subnet` 参数，此网桥的网关就不会被设置，得使用 `--gateway` 参数手动指定。
 
 指定网段及网关示例：
+
 ```shell
 docker network create --subnet 172.20.0.0/16 --gateway 172.20.0.1 -d bridge 网桥名
 ```
@@ -968,7 +983,19 @@ docker network disconnect 网络名
 ```shell
 docker network inspect 网络名
 ```
-> 如果使用 `docker network inspect 网桥` 查询网桥信息 ，会显示该网桥中哪些正在运行中的容器使用的 IP，这样可以在创建新容器时指定 IP 就不容易重复冲突了！所以使用自定义网桥创建容器前，先查询下该网桥网段中哪些 IP 已经被占用了。
+> [!info]
+> 
+> 如果使用 `docker network inspect 网桥` 查询网桥信息 ，会显示该网桥中哪些正在运行中的容器使用的 IP，这样可以在创建新容器时指定 IP 就不容易重复冲突了！
+> 
+> 所以使用自定义网桥创建容器前，先查询下该网桥网段中哪些 IP 已经被占用了。
+
+> [!tip] 查询默认网桥信息
+> 
+> 默认网桥的名称为 `bridge`，所以直接根据这个名称查询即可：
+> 
+> ```shell
+> docker network inspect bridge
+> ```
 
 ##### 查询容器 IP
 
@@ -1146,22 +1173,28 @@ docker stats 容器ID
 docker run -d --name d_nginx -p 8899:80 nginx:stable
 ```
 
-将宿主机的目录挂载到容器内:
+将宿主机的目录挂载到容器内：
+
+> [!info]
+> 
 > 在执行以下操作前，应先 run 一个没有挂载目录的 nginx，然后将 default.conf 和 nginx.conf 这两个配置文件复制到宿主机目录中。  
-> 复制容器中的文件使用 **cp** 命令，语法：**docker cp 容器名称: 容器中文件路径 宿主机存放路径**  
+> 复制容器中的文件使用 `docker cp` 命令，语法：`docker cp 容器名称: 容器中文件路径 宿主机存放路径`  。
 >> [!Example] 示例：
 >> ```shell
->> docker cp d_nginx:/etc/nginx/conf.d/default.conf Docker_Mount/nginx_m/conf.d
->> docker cp d_nginx:/etc/nginx/nginx.conf Docker_Mount/nginx_m/conf/
+>> docker cp d_nginx:/etc/nginx/conf.d Docker_Mount/nginx_m/etc/conf.d/
+>> docker cp d_nginx:/etc/nginx/nginx.conf Docker_Mount/nginx_m/etc
 >>
 >>```shell
 docker run --name d_nginx -d -p 8899:80 -v /home/silascript/Docker_Mount/nginx_m/etc/conf.d:/etc/nginx/conf.d -v /home/silascript/Docker_Mount/nginx_m/html:/usr/share/nginx/html -v /home/silascript/Docker_Mount/nginx_m/log:/var/log/ngixn nginx:stable
 >> ```
+>
+> `/etc/nginx/conf.d` 这是个目录，这个目录下有一个 `default.conf`。
 
 #### <span id="dk_nginx_config">nginx 配置文件</span>  
 
 在 con.d 目录中的配置文件，default.conf 优先级更高。  
-如果要自定义配置文件，可能会不生效，最好把 default.con “backup”下。
+
+如果要自定义配置文件，可能会不生效，最好把 `default.conf` 「backup」下。
 
 ```conf
 location ~ \.php$ {
@@ -1177,6 +1210,7 @@ location ~ \.php$ {
 ```
 
 指定自定义网桥和 ip 生成容器：
+
 ```shell
 docker run --name d_nginx --network 网桥名 --ip 172.20.0.9 -d -p 8899:80 -v /home/silascript/Docker_Mount/nginx_m/etc/conf.d:/etc/nginx/conf.d -v /home/silascript/DevWorkSpace/PHPExercise:/usr/share/nginx/html -v /home/silascript/Docker_Mount/nginx_m/log:/var/log/ngixn nginx:stable
 ```
@@ -1194,11 +1228,11 @@ docker run --name php81 -p 9000:9000 -v /home/silascript/Docker_Mount/nginx_m/ht
 示例：
 ```shell
 docker inspect php81 |grep '"IPAddress"'
-
 ```
 
 检测 PHP-FPM 是否开启：
 使用 `docker exec` 命令进入 PHP 容器，执行以下命令：
+
 ```shell
 ps -ef|grep php
 ```
@@ -1206,19 +1240,37 @@ ps -ef|grep php
 > 如果没有 `ps` 命令，请安装 **procps**（以 Debian 系为例：`apt install procps`）
 
 指定自定义网桥和指定 ip 生成容器：
+
 ```shell
 docker run --name php81 --network 网桥名 --ip x.x.x.x  -p 9000:9000 -v /home/silascript/DevWorkSpace/PHPExercise:/var/www/html -d php:8.1.5-fpm-bullseye
 
 ```
+
 示例：
+
 ```shell
 docker run -d --name d_php81 --network vbridge01 --ip 172.20.0.8 -p 9000:9000 -p 2223:22 -v /home/silascript/DevWorkSpace/PHPExercise:/var/www/html php:8.1.5-fpm-bullseye
 ```
-> 映射两个端口，9000 是 fpm，映射 22 是为了开启 ssh 用的。
+> 映射两个端口，**9000** 是 fpm，映射 **22** 是为了开启 ssh 用的。
 
-案例：要将 php 执行文件映射到宿主机，让诸如 VSCode 等宿主机上的软件能调用（VSCode 有个插件 [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client) [![PHP Intelephense Repo](https://img.shields.io/github/stars/bmewburn/vscode-intelephense?style=social)](https://github.com/bmewburn/vscode-intelephense)，它就有个配置项 `php.validate.executablePath` 需要调用 php 的可执行文件）。
+`docker exec -it 容器ID php`：这样可以在容器外调用 php，但不适合以下的案例，即在 [VSCode](../Editors/VSCode_Note.md) 中调用 php。
 
-这种需要，就需要将 容器中 php 可执行文件所在的目录挂载出去，但 Docker 的特性，直接挂载如果宿主机目录本为空，那这空目录就会「覆盖」掉容器目录，所以还是按惯例，先「run」一个将 php 可执行文件所在目录「托管」给 Docker，然后复制这托管目录中所有文件到未来要挂载的指定目录，再进行第二次「run」，这一次就可以指定挂载目录了。具体操作如下：
+#### 特殊需求案例 
+
+要将 php 执行文件映射到宿主机，让诸如 VSCode 等宿主机上的软件能调用（VSCode 有个配置项 `php.validate.executablePath` 需要调用 php 的可执行文件，这是 [VSCode](../Editors/VSCode_Note.md) 与 PHP 相关的内置语言服务）。
+
+另外，像 [php intellisense](https://marketplace.visualstudio.com/items?itemName=zobo.php-intellisense) 插件也需要指定 php 可执行程序的路径（php intellisense 中指定 php 可执行程序路径比 vscode 内置的那个 `executablePath` 选项灵活一点，不过 php intellisense 这个插件名声好像不太好，听说容易卡）。
+
+> [!tip] PHP Intelephense 插件
+> [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client) [![PHP Intelephense Repo](https://img.shields.io/github/stars/bmewburn/vscode-intelephense?style=social)](https://github.com/bmewburn/vscode-intelephense) 这个插件不需要指定 php 的可执行程序路径，它用的是 VSCode 内置的 php 语言服务。
+
+这种需要，就需要将 容器中 php 可执行文件所在的目录挂载出去，但 Docker 的特性，直接挂载如果宿主机目录本为空，那这空目录就会「覆盖」掉容器目录，所以还是按惯例，先「run」一个将 php 可执行文件所在目录「托管」给 Docker，然后复制这托管目录中所有文件到未来要挂载的指定目录，再进行第二次「run」，这一次就可以指定挂载目录了。
+
+> [!info]
+> 
+> 网上也有同仁跟我一样的处理方式：[vscode php executable path docker-掘金](https://juejin.cn/s/vscode%20php%20executable%20path%20docker)
+
+具体操作如下：
 
 1. 先 run 一个容器：
 ```shell
@@ -1231,22 +1283,42 @@ docker run -d --name d_php81 --network vbridge01 --ip 172.20.0.8 -p 9000:9000 -p
 
 2. 复制 php 可执行文件所在的目录
 如上面使用「具名挂载」方式，先使用 `docker volume ls` 命令查询刚挂载的 volume 是否存在。然后使用 `docker volume inspect volume名称` 来查询挂载信息，查出 volume 真实存放的路径，一般是 `/usr/lib/docker/volumes/voluem名称/_data` （如果是「匿名挂载」，volume 名称那个目录就是一串 docker 生成的字符串，所以由此可以认为「匿名挂载」是一种特殊的「具名挂载」），查到路径了，那就将路径目录中所有文件复制到未来要挂载的自定义目录中。
+> [!info] 复制 php 可执行文件
 > 如果是未挂载目录，那就只能使用 `docker cp` 命令来复制了。
+> 
+> 将整个目录都复制过来：`docker cp d_php81:/usr/local/bin Docker_Mount/php81_m/php_bin`，因为有可能用到的不仅仅是 `php` 一个可执行文件，还有相关的其他程序，而 php 容器中 `/usr/local/bin` 目录下都是 php 相关的程序，所以整个目录复制过来；同时，也是为了防止「覆盖」。
 
 3. 再 run 一个容器：
 ```shell
 docker run -itd --name d_php81 --network vbridge01 --ip 172.20.0.8 -p 9000:9000 -p 2223:22 -v /home/silascript/DevWorkSpace/PHPExercise:/var/www/html -v /home/silascript/Docker_Mount/php81_m/php_bin:/usr/local/bin/ php:8.1.5-fpm-bullseye
 ```
+> [!info]
+> 
 > 经过上一步复制操作，`-v /home/silascript/Docker_Mount/php81_m/php_bin:/usr/local/bin/` 这个选项中 `php_bin` 这个目录中已经有了 `/usr/local/bin/` 目录所有文件，所以挂载上，就不会因为宿主目录空而出错了。
 
 经过这三步操作，就把 php 可执行文件所在的目录挂载到宿主目录了。
 
 如果为了方便，可以把 宿主目录中的 php 可执行文件，作软连接到 `/usr/local/bin` 目录下，这样，方便调用，如下：
+
 ```shell
 ln -s ~/Docker_Mount/php81_m/php_bin/php /usr/local/bin/d_php81 
 ```
 
+或者在当前用户目录下作链接：
+
+```shell
+ln -s ~/Docker_Mount/php81_m/php_bin/php ~/.local/bin/d_php81 
+```
+
 这种方式，避免了，「托管式」挂载权限问题。因为「托管」给 Docker，实际存放的路径是在 `/usr/lib/docker/volumes/` 这个目录下的，放在这里，访问调用是需要 root 权限的。而挂载到用户指定目录中，就避免了权限的问题 -- 因为权限问题，即使把 `/usr/lib/docker/volumes/...` 这个具体路径配置给 [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client) [![PHP Intelephense Repo](https://img.shields.io/github/stars/bmewburn/vscode-intelephense?style=social)](https://github.com/bmewburn/vscode-intelephense) 插件，这插件照样调用不了 php 可执行程序，原因就是权限问题。 
+
+> [!info] 关于这个需求想要再谈谈的
+> 
+> 这种将 php 可执行程序「外挂」到宿主机上，实际上是破坏了 Docker 的隔离性的 -- 实际 [volume](#volume%20使用) 本身就是在「破坏」Docker 的隔离性，只不过破坏的程序有轻有重，如果只有将 `/var/www/html`「挂载」出来，算是比较轻的破坏；而像将 `/usr/local/bin` 这个目录「挂载」出来，算是比较严重的「破坏」了。但这种破坏是基于这个 php 的容器不是将发布项目的容器，而且只是开发容器，所以这种「破坏」应该是允许的，虽然它看起来非常不「优雅」。
+
+#### 调用时出现的小问题
+
+按照上面几步，应该能在宿主机成功调用 php 的，但有可能会出现：`error while loading shared libraries: libonig.so.5: cannot open shared object file: No such file or directory` 错误。这是由于宿主机少了一些包，如 `libonig.so.5` 是少了 `oniguruma`，装上就可以调用 php 可执行程序了。
 
 ---
 
@@ -1257,6 +1329,7 @@ pecl install xdebug
 ```
 
 添加到配置文件
+
 ```shell
 docker-php-ext-enable xdebug
 ```
@@ -1268,15 +1341,19 @@ docker-php-ext-enable xdebug
 ### 示例 3：Apache
 
 简单创建容器：
+
 ```shell
 docker run -itd -p 8088:80 --name apache_2.4.52 httpd:2.4.52-bullseye
 ```
 
 指定网桥及 ip 创建容器：
+
 ```shell
 docker run -d --name d_apache --network 网桥名 --ip x.x.x.x -p 8085:80 -v /home/silascript/Docker_Mount/apache_m/conf:/usr/local/apache2/conf -v /home/silascript/DevWorkSpace/PHPExercise:/usr/local/apache2/htdocs httpd:2.4.52-bullseye
 ```
 
+> [!info]
+> 
 > apache 默认目录结构：
 > ![apche_dir_1](./Docker_Note.assets/apche_dir_1.png)
 > Apache 根目录：/usr/local/apache2/
@@ -1407,8 +1484,7 @@ docker run -d --name d_php81 -p 9000:9000 -v /home/silascript/DevWorkSpace/PHPEx
 
 2. 创建 Nginx 容器
 ```shell
-docker run -d --name d_nginx -p 8899:80 -v /home/silascript/Docker_Mount/nginx_m/etc/conf.d:/etc/nginx/conf.d -v /home/silascript/Docker_Mount/nginx_m/log:/var/log/nginx -v /home/silascript/DevWorkSpace/PHPExercise:/usr/share/nginx/html nginx:stable
-
+docker run -d --name d_nginx --network mybridge --ip 172.21.0.9 -p 8899:80 -v /home/silascript/Docker_Mount/nginx_m/etc/conf.d:/etc/nginx/conf.d -v /home/silascript/Docker_Mount/nginx_m/log:/var/log/nginx -v /home/silascript/DevWorkSpace/PHPExercise:/usr/share/nginx/html nginx:1.25.2-bookworm
 ```
 > php 容器与 nginx 容器的页面发布目录挂载到同一个宿主机目录：
 > ```shell
@@ -1423,10 +1499,15 @@ docker run -d --name d_nginx -p 8899:80 -v /home/silascript/Docker_Mount/nginx_m
 ```shell
 docker run -d --name d_apache -p 8085:80 -v /home/silascript/Docker_Mount/apache_m/conf:/usr/local/apache2/conf -v /home/silascript/DevWorkSpace/PHPExercise:/usr/local/apache2/htdocs httpd:2.4.52-bullseye
 ```
+> [!info]
+> 
 > 同样将发布页面目录「bind」到同一个宿主目录。
+> 
 > 测试下，如果发生如下错误信息：  
-> Service Unavailable  
->  The server is temporarily unable to service your request due to maintenance downtime or capacity problems. Please try again later.  
+> 
+> `Service Unavailable`
+>  `The server is temporarily unable to service your request due to maintenance downtime or capacity problems. Please try again later.  `
+>  
 > 有可能是 php 容器的 IP 变了，需要修改 Apache 的配置文件 --[apache 配置](#dk_apache_config)。
 
 4. 新建个 PHP 页面进行测试
@@ -1465,10 +1546,13 @@ mysql 与其他镜像区别的是，mysql 的数据目录，使用了「**bing m
 ![docker_mysql_df_volume](./Docker_Note.assets/docker_mysql_df_volume.png)
 
 如生成一个什么目录都不挂载的 mysql 容器：
+
 ```shell
 docker run -d --name d_mysql8 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql:8.0.28-debian
 ```
+
 通过 `docker volume ls` 命令可以看到一个 「**匿名挂载**」的 volume：
+
 ![docker_mysql_volume_ls](./Docker_Note.assets/docker_mysql_volume_ls.png)
 > 通过 `docker volume inspect 匿名挂载名` 命令查看挂载的 volume 的详细信息。 
 
@@ -1477,8 +1561,10 @@ docker run -d --name d_mysql8 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql:8
 > 很明显，存放的就是 mysql 的数据文件。可见之前在 Dockerfile 文件中那一句 `VOLUME /var/lib/mysql` 代码就是让 mysql 容器创建后，将数据目录设为挂载点。
 
 Docker MySQL 挂载方案：
+
 因为 MySQL 的数据目录即便是「bind mount」类型的挂载，都会将容器数据复制到指定目录，所以这个目录可以直接指定。
 但 MySQL 的配置目录没有这样的「特性」，所以得做些操作实现将容器数据复制到宿主机的挂载目录。
+
 大概步骤：
 1. 创建一个「匿名」或「具名」挂载容器。
 ```shell
@@ -1567,9 +1653,9 @@ CentOS 开启 SSH 服务
 * 提交镜像
 	> 使用 **docker commit** 选项，生成新的镜像。
 	> 类似 vmware 生成一个 **快照**，也类似 git 的 commit 操作（实际上 git 上的版本就是一个个“快照”）。
-```shell
-# 语法：docker commit 容器名/ID 新镜像名[:tag]
-```
+> ```shell
+> # 语法：docker commit 容器名/ID 新镜像名[:tag]
+> ```
 * 将新生成的镜像 **Run** 成容器
 	> 要记得把 SSH 服务配置文件中设置的那个端口映射到宿主机
 
@@ -1582,11 +1668,18 @@ CentOS 开启 SSH 服务
 ```shell
 	docker run -itd --name 容器名 镜像名/ID 
 ```
+
+> [!info]
+> 
+> ```shell
+> docker run -itd --name d_debian12 --network mybridge --ip 172.21.0.10 -p 2225:22 debian:stable-20230904-slim
+> ```
+
 在 Debian 中开启 SSH 功能。
 
 * 创建 Debian 容器
 
-* **exec** 进入系统。
+* **exec** 进入系统（`docker exec -it d_debian12 /bin/bash`）。
 	> [!info]
 	> 还是先确认 **systemctl** 能不能用！
 	> 如果出现 `bash: systemctl: command not found` 这个错误，就得重装 **systemd**。  
@@ -1599,6 +1692,12 @@ CentOS 开启 SSH 服务
 
 > [!tip]
 > 迄今为止，systemctl 问题尚未解决！待更！
+
+复制目录到容器中：
+
+```shell
+docker cp vim/ d_debian12:/root/vim_custum/
+```
 
 ---
 

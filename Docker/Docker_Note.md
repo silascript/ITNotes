@@ -9,7 +9,7 @@ tags:
   - ubuntu
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2023-09-21 02:34:18
+modified: 2023-09-21 12:20:15
 ---
 
 # Docker 笔记
@@ -1192,22 +1192,42 @@ docker run --name d_nginx -d -p 8899:80 -v /home/silascript/Docker_Mount/nginx_m
 
 #### <span id="dk_nginx_config">nginx 配置文件</span>  
 
-在 con.d 目录中的配置文件，default.conf 优先级更高。  
+`nginx.conf` 为主配置文件。
 
-如果要自定义配置文件，可能会不生效，最好把 `default.conf` 「backup」下。
+在 `http` 节点中的 `server` 节点：
 
 ```conf
-location ~ \.php$ {
-   # root           html;
-   # fastcgi_pass   127.0.0.1:9000;
-   fastcgi_pass   172.17.0.2:9000;
-   fastcgi_index  index.php;
-   # fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-   fastcgi_param  SCRIPT_FILENAME  /var/www/html/$fastcgi_script_name;
-   include        fastcgi_params;
-}
 
+server {
+    	listen       80;
+    	listen  [::]:80;
+    	server_name  localhost;
+
+    	#access_log  /var/log/nginx/host.access.log  main;
+
+		location / {
+		    root   /usr/share/nginx/html;
+		    index  index.html index.htm;
+		}
+		
+		location ~ \.php$ {
+		   # root           html;
+		   
+		   fastcgi_pass   172.21.0.8:9000;
+		   fastcgi_index  index.php;
+		   # fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+		   fastcgi_param  SCRIPT_FILENAME  /var/www/html/$fastcgi_script_name;
+		   include        fastcgi_params;
+		}
+
+		
+		
+    }
 ```
+
+而如果是导入到 `nginx.conf` 的方式，即导入 `con.d` 目录中的配置，在 `nginx.conf` 文件的 `server` 节点中使用 `include /etc/nginx/conf.d/*.conf;`。而在 `con.d` 目录中众多配置文件，又以 `default.conf` 文件的优先级更高。  
+
+如果要使用 `default.conf` 配置文件，最好先把 `default.conf` 「backup」下，因为 `conf.d/default.conf` 这个文件，实际只是 nginx 配置文件的模板文件，一般来说不会动到这个文件，而如果真要用到这文件作配置文件，还是先备份下好点。
 
 指定自定义网桥和 ip 生成容器：
 
@@ -1484,7 +1504,7 @@ docker run -d --name d_php81 -p 9000:9000 -v /home/silascript/DevWorkSpace/PHPEx
 
 2. 创建 Nginx 容器
 ```shell
-docker run -d --name d_nginx --network mybridge --ip 172.21.0.9 -p 8899:80 -v /home/silascript/Docker_Mount/nginx_m/etc/conf.d:/etc/nginx/conf.d -v /home/silascript/Docker_Mount/nginx_m/log:/var/log/nginx -v /home/silascript/DevWorkSpace/PHPExercise:/usr/share/nginx/html nginx:1.25.2-bookworm
+docker run -d --name d_nginx --network mybridge --ip 172.21.0.9 -p 8899:80 -v /home/silascript/Docker_Mount/nginx_m/etc/nginx.conf:/etc/nginx/nginx.conf -v /home/silascript/Docker_Mount/nginx_m/etc/conf.d:/etc/nginx/conf.d -v /home/silascript/Docker_Mount/nginx_m/log:/var/log/nginx -v /home/silascript/DevWorkSpace/PHPExercise:/usr/share/nginx/html nginx:1.25.2-bookworm
 ```
 > php 容器与 nginx 容器的页面发布目录挂载到同一个宿主机目录：
 > ```shell

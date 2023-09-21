@@ -9,7 +9,7 @@ tags:
   - ubuntu
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2023-09-21 12:20:15
+modified: 2023-09-22 02:13:45
 ---
 
 # Docker 笔记
@@ -583,6 +583,8 @@ docker volume prune
 > 所以要清理 volume 前得先 `docker rm 容器`，只是 `docker stop` 还不行，必须先删除容器，才能清理 volume。
 > 
 > 还有一点 `docker volume prune` 只能清理那些 [匿名挂载](#匿名挂载) 的 volume，而 [具名挂载](#具名挂载) 的 volume 是不能清理的，即便其容器已经删除。
+> 
+> 当然如果想强制 `prune`，可以加个参数：`-f`，就能强制清理了！
 
 ---
 
@@ -637,7 +639,7 @@ docker run -d --name d_apache-2.4 -p 8085:80 -v $(pwd)/html:/usr/local/apache2/h
 > 
 > 冒号 **右** 边的实参是容器中要「映射」的目录路径。  
 > 
-> 这种方式的 **挂载**，与 --mount type=bind 方式实现的效果完全一致。副作用也一样，就是宿主机会「覆盖」掉容器的内容。  
+> 这种方式的 **挂载**，与 `--mount type=bind` 方式实现的效果完全一致。副作用也一样，就是宿主机会「覆盖」掉容器的内容。  
 > 
 > 如果宿主机路径不存在，docker 会自动帮你创建相应的目录。  
 
@@ -650,13 +652,17 @@ docker run -d --name d_apache-2.4 -p 8085:80 -v html:/usr/local/apache2/htdocs h
 ```
 
 > [!info]
-> -v 中宿主机路径如果用的是相对路径，则不会指定为自定义路径，而是在 docker 安装目录下 **volumes** 目录下创建相应的目录。
+> 
+> `-v` 中宿主机路径如果用的是相对路径，则不会指定为自定义路径，而是在 docker 安装目录下 **volumes** 目录下创建相应的目录。
+> 
 > ![docker_volume_relativepath](./Docker_Note.assets/docker_volume_relativepath.png)
-> 这与 --mount type=volume 使用完全一样。
+> 
+> 这与 `--mount type=volume` 使用完全一样。
 
 #### 宿主机不给名称或路径
 
 > [!info]
+> 
 > **冒号** 左边不给出任何值，docker 将会在 **volumes** 目录下随机创建一个目录，目录名也是随机生成的一个字符串，如下：
 > ![docker_volume_random](./Docker_Note.assets/docker_volume_random.png)
 
@@ -665,20 +671,24 @@ docker run -d --name d_apache-2.4 -p 8085:80 -v html:/usr/local/apache2/htdocs h
 无论是使用 `--mount` 还是 `-volume`，只要是宿主机路径如果是绝对路径，就是指定自定义目录为挂载目录。 这类挂载被称为「指定路径挂载」。 这种挂载，一般情况，除非事先将容器要映射的路径中的数据从容器里复制到宿主机要挂载的路径下，正常情况，宿主机的目录会「覆盖」掉容器，所以像 nginx、apache、mysql 等，如果要把容器中配置相关的数据，通过挂载方式持久化到宿主机上，一般会先 run 一个没有挂载的容器，然后通过 `docker cp ` 命令将配置数据复制到将要挂载的目录中，不然有可能容器虽然创建成功了，但连启动都启动不了。
 
 > [!tip]
-> 当然有部分镜像有特殊设计，当你挂载某些目录时，它会自动复制该目录文件到要挂载的宿主机目录中，如 MySQL 的数据目录就是其中一个。可以看下 MySQL 的 Dockerfile 文件中有一句代码：
+> 
+> 当然有部分镜像有特殊设计，当你挂载某些目录时，它会自动复制该目录文件到要挂载的宿主机目录中，如 [MySQL/Mariadb](#示例%204：MySQL/Mariadb) 的数据目录就是其中一个。可以看下 MySQL 的 Dockerfile 文件中有一句代码：
+> 
 > ![docker_volume_mysql_data](./Docker_Note.assets/docker_volume_mysql_data.png)
+> 
 > 就是因为这句代码，使用得挂载 MySQL 的数据目录时，会自动将容器内的数据复制到指定要挂载的目录中。
+> 
 > 除了像 MySQL 数据目录这种情况外，指定路径的挂载，容器内的数据都会被「覆盖」，且不会在覆盖前复制到宿主机中，所以得手动复制。
 
 ##### <span id="docker_volume_namedvolume">具名挂载</span>
 
-无论是使用 **--mount** 还是 **-volume**，只要是宿主机路径如果是相对路径，就是在 docker 安装目录下的子目录 **volumes** 中创建相应的挂载目录。 此类挂载被称为「**具名挂载**」。
+无论是使用 **--mount** 还是 **-volume**，只要是宿主机路径如果是「**相对路径**」，就是在 docker 安装目录下的子目录 **volumes** 中创建相应的挂载目录。 此类挂载被称为「**具名挂载**」。
 
 ##### <span id="docker_volume_anonvolume">匿名挂载</span>
 
 无论是使用 `--mount` 还是 `-volume`，只要宿主机的参数（--mount source 不指定或 -v 的冒号左边值）缺失，那 Docker 会自动生成一个随机字符串来作为此 volume 的名称，这被称为「**匿名挂载**」。
 
-[具名挂载](#docker_volume_namedvolume) 和 [匿名挂载](#docker_volume_anonvolume) 都是将挂载数据交由 Docker 来「托管」，所以只能指定托管的名称，不能指定数据存放的路径，默认存放在 docker 安装目录下的 volumes 子目录中（volumes 目录，顾名思义就是专门上用来管理 volume 的 ）。而这种托管，是将容器中的路径下的数据复制到 volumes 目录下，所以这种两种挂载，容器内容没有被「覆盖」。
+[具名挂载](#docker_volume_namedvolume) 和 [匿名挂载](#docker_volume_anonvolume) 都是将挂载数据交由 Docker 来「托管」，所以只能指定托管的名称，不能指定数据存放的路径，默认存放在 docker 安装目录下的 `volumes` 子目录中（`volumes` 目录，顾名思义就是专门上用来管理 volume 的 ）。而这种托管，是将容器中的路径下的数据复制到 volumes 目录下，所以这种两种挂载，容器内容没有被「覆盖」。
 
 ---
 
@@ -1340,6 +1350,19 @@ ln -s ~/Docker_Mount/php81_m/php_bin/php ~/.local/bin/d_php81
 
 按照上面几步，应该能在宿主机成功调用 php 的，但有可能会出现：`error while loading shared libraries: libonig.so.5: cannot open shared object file: No such file or directory` 错误。这是由于宿主机少了一些包，如 `libonig.so.5` 是少了 `oniguruma`，装上就可以调用 php 可执行程序了。
 
+#### 另外更优雅的实现
+
+其实要想让 vscode 及其 php 插件调 php，不必真把 php 容器中的 `/usr/local/bin` 目录「挂载」出来这种非常具有「破坏性」的方式，可以使用一个 shell 脚本对 `docker exec` 命令进行「封装」，然后再做为这个脚本做个软连接，就非常方便地让像 vscode 亦或别的编辑器调用这个容器的 php 了。
+
+脚本如下：
+
+```shell
+docker exec -it d_php81 sh -c "php $*"
+```
+> [!info]
+> 
+> `php $*` 这个代码是让脚本能接收各种参数，然后传给容器中的 php，以完成 php 调用需求。
+
 ---
 
 #### 安装 xdebug
@@ -1544,6 +1567,8 @@ phpinfo();
 
 ### <span id="dk_softc_demo_mysql">示例 4：MySQL/Mariadb</span>
 
+[GitHub - docker-library](https://github.com/docker-library/mysql) 的镜像按底层系统分为 debian 和 oracle。
+
 ```shell
 # 不指定挂载目录
 # -e MYSQL_ROOT_PASSWORD 这个选项不能省，不然容器创建成功也启动不了
@@ -1555,14 +1580,17 @@ docker run --name mariadb10.8 -p 3366:3306 -v /home/silascript/Docker_Mount/mari
 ```
 
 > [!tip] mysql 相关相关的目录、文件路径
+> 
 > 配置文件目录：/etc/mysql
 >
 > 数据存放目录：/var/lib/mysql
 >
 > mariadb 的链接地址：
+> 
 > /usr/bin/mysql -> mariadb
 
 mysql 与其他镜像区别的是，mysql 的数据目录，使用了「**bing mount**」方式挂载，容器中的数据目录中数据会自动复制到指定的宿主机指定的目录中。可以看 mysql 的 Dockerfile 文件中有句代码，就知道为什么 MySQL 会有这个特殊点了：
+
 ![docker_mysql_df_volume](./Docker_Note.assets/docker_mysql_df_volume.png)
 
 如生成一个什么目录都不挂载的 mysql 容器：
@@ -1590,9 +1618,15 @@ Docker MySQL 挂载方案：
 ```shell
 docker run -d --name d_mysql8 -e MYSQL_ROOT_PASSWORD=123456 -v mysql8_data:/var/lib/mysql mysql:8.0.28-debian
 ```
+> [!tip]
+> 
 > 最好「具名挂载」，这样容易找点。
+
 2. 使用 `docker volume inspect xxx` 查看刚「托管」给 Docker 挂载的目录的路径
+> [!tip]
+> 
 > 什么看到 `"Mountpoint": "/var/lib/docker/volumes/xxx/_data` 类似的路径
+
 3. 将 `Mountpoint` 的路径中的数据复制到将来要挂载的目录中
 4. 停止容器和删除容器并清理托管的 volume
 5. 新建一个指定挂载宿主机路径为 volume
@@ -1600,14 +1634,21 @@ docker run -d --name d_mysql8 -e MYSQL_ROOT_PASSWORD=123456 -v mysql8_data:/var/
 ```shell
 docker run -d --name d_mysql8 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/mysql8_m/config:/etc/mysql -v /home/silascript/Docker_Mount/mysql8_m/data:/var/lib/mysql mysql:8.0.28-debian
 ```
+> [!info]
+> 
 > 因为之前已经将配置文件数据已经复制到要挂载的目录中，这样就不会因为宿主机目录为空，而使容器启动不了了。
+> 
 > 至于数据目录因为 MySQL 的存放数据库的目录，因为 MySQL 的「特性」会自动复制数据到要挂载的目录，所以能直接挂载到指定路径。
+> 
 > 这个方案的 **核心** 就是解决配置文件目录的挂载问题。
 
+> [!info]
+> 
 > 如果要指定网桥及 ip，可以用以下方式创建 MySQL 容器：
+> 
 > ```shell
-> docker run -d --name d_mysql8 --network 网桥名 --ip x.x.x.x -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/mysql8_m/config:/etc/mysql -v /home/silascript/Docker_Mount/mysql8_m/data:/var/lib/mysql mysql:8.0.28-debian
-> ```
+> docker run -d --name d_mysql8 --network mybridge --ip 172.21.0.20 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/mysql_m/config/mysql:/etc/mysql -v /home/silascript/Docker_Mount/mysql_m/data/mysql:/var/lib/mysql mysql:8.0.34-debian
+>```
 
 #### MySQL 内存优化
 

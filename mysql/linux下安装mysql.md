@@ -1,11 +1,13 @@
 ---
-aliases: 
-tags: linux mysql 
-created: 2023-01-13, 12:27:46
-modified: 2023-01-30, 9:24:37
+aliases:
+  - 
+tags:
+  - linux
+  - mysql
+created: 2023-08-18 19:44:52
+modified: 2023-09-21 23:06:35
 ---
 # Linux 下安装 MySQL5.7
-
 
 ### 创建用户组及用户
 ```shell
@@ -13,16 +15,12 @@ groupadd mysql
 useradd -r -g mysql -s /bin/false mysql
 ```
 
-
-
 ### 将压缩包解压到要安装的目录
 ```shell
 cd /usr/local
 tar zxvf /path/to/mysql-VERSION-OS.tar.gz
 ln -s full-path-to-mysql-VERSION-OS mysql
 ```
-
-
 
 #### 在 mysql 安装目录下新建 mysql-files 目录并分配权限
 
@@ -32,8 +30,6 @@ chmod 750 mysql-files
 ```
 
 > **data** 目录不能提前建，它是由 **mysqld** 初始化时通过**--datadir**来指定生成的
-
-
 
 ### 初始化：
 ``` shell
@@ -46,13 +42,7 @@ chmod 750 mysql-files
 
 **--user** **--basedir** **--datadir** **--pid-file** 本来这几个选项是 **mysql_install_db** 的。
 
-
-
 > 从 MySQL 5.7.6 开始不推荐使用 **mysql_install_db**，因为它的功能已集成到 MySQL 服务器 **mysqld** 中。要初始化 MySQL 安装，请使用**--initialize**或**--initialize-insecure**选项调用**mysqld**。
-
-
-
-
 
 #### **mysqld** 的选项:
 
@@ -76,15 +66,11 @@ chmod 750 mysql-files
 
 使用 **mysqld --verbose --help** 查询 **mysqld** 的选项和参数，发现原来 **mysql_install_db** 中的选项，在 **mysqld** 中都存在了，这也印证了 "**mysql_install_db** 将在将来的 MySQL 版本中删除 " 的说法。
 
-
-
 默认情况,执行 **mysqld** 可能缺少 **libnuma** 库,安装 **numactl** 就可以解决这个问题：
 
 ```shell
 sudo pacman -S numactl
 ```
-
-
 
 >**data**、**mysql-files** 目录的用户必须是 **mysql**
 >
@@ -100,11 +86,7 @@ chown mysql data mysql-files
 bin/mysql_ssl_rsa_setup --datadir=/usr/local/mysql-5.7/data
 ```
 
-
-
 ### 启动：
-
-
 
  #### 启动方式 1: mysqld_safe         
 
@@ -130,12 +112,6 @@ sudo pacman -S ncurses5-compat-libs　
 
 > 使用初始化生成的临时密码使用 root 登录
 
-
-
-
-
-
-
 #### 启动方式 2: 使用 mysql.server 来启动
 
 ```shell
@@ -155,10 +131,6 @@ support-files/mysql.server start
 >sudo pacman -S ncurses5-compat-libs
 >```
 
-
-
-
-
 ###### 为了方便将 mysql.server 添加为启动服务 (旧)
 
 ```shell
@@ -169,15 +141,9 @@ cp support-files/mysql.server /etc/init.d/mysql.server
 
 ![image-20200610114905111](./linux下安装mysql.assets/image-20200610114905111.png)
 
-
-
 > **添加服务后重启，不然容易出现找不到服务**
 >
 > 如果报 PID 文件找不到就得重新初始化 mysql 了~
-
-
-
-
 
 ###### manjaro 下不使用以上方式添加启动服务
 
@@ -196,10 +162,6 @@ cp support-files/mysql.server /etc/init.d/mysql.server
 >```shell
 >sudo mysql_server-5.7 stop
 >```
-
-
-
-
 
 #### my.cnf 配置
 
@@ -225,7 +187,6 @@ pid-file=/usr/local/mysql-5.7/data/mysql.pid
 
 mysql5.6.6+ 版本，推荐加上 **explicit_defaults_for_timestamp=true**
 
-
 utf8mb4 cnf 配置示例：
 ```cnf
 [client]
@@ -248,15 +209,9 @@ init_connect='SET NAMES utf8mb4'
 
 ```
 
-
-
 > **mysql_install_db** 不创建默认的 `my.cnf` 文件
 >
 > 从 MySQL 5.7.18 开始，`my-default.cnf` 不再包含在分发包中或由分发包安装
-
-
-
-
 
 #### 各配置文件路径及优先级
 
@@ -273,8 +228,6 @@ init_connect='SET NAMES utf8mb4'
 > MySQL 实例启动需要依赖 **my.cnf** 配置文件，而配置文件可以存在于多个操作系统目录下。
 >
 > **my.cnf** 的默认查找路径，从上往下找到的文件先读，但优先级逐级提升。
-
-
 
 MySQL 8.0 开始，客户端的配置放在 conf.d 目录下的 mysql.cnf 文件。
 默认情况下，MySQL 只对服务端的字符集作了设置，默认设置为 「utf8mb4」。而客户端是没有设置的，需要用户自行设置。
@@ -293,7 +246,6 @@ default_character_set=utf8mb4
 设置完后，重启 MySQL。进入 MySQL 后，使用 `status` 命令，可以查看相关信息，看配置是否成功。
 其中 `Client characterset` 和 `Conn.  characterset` 就是客户端的字符编码。
 
-
 ### 修改密码及权限
 
 >使用初始化给的 root 帐号及随机密码登录 mysql 成功后，要修改密码
@@ -308,8 +260,6 @@ alter user 'root'@'localhost' identified by 'youpassword';
 flush privileges;
 ```
 
-
-
 ###### 以下的修改密码不能在临时密码状态下使用，只能在上面修改后重新登录后才能使用
 
 ```mysql
@@ -317,7 +267,6 @@ grant all privileges on *.* to 'energy_pf'@'192.168.2.65' identified by 'energy_
 ```
 
 > **每次对用户权限修改、增加都得 flush 下**
-
 
 MySQL 8.0+ 版本，创建用户和授权应分开。
 所以上面那个 `grant ... identified by ...` 创建和授权一句搞掂的方式，在 MySQL8 下是无效的。
@@ -343,11 +292,15 @@ GRANT ALL PRIVILEGES ON *.* TO 'remote'@'%' WITH GRANT OPTION;
 
 ```
 
-
-
-
-
-
+> [!info] 添加用户完整示例
+> 
+> ```mysql
+> create user 'silasc'@'%' identified by '123456';
+>
+> grant all privileges on *.* to 'silasc'@'%' with grant option; 
+>
+> flush privileges;
+>```
 
 ##### 查看 user 表
 
@@ -366,10 +319,6 @@ GRANT ALL PRIVILEGES ON *.* TO 'remote'@'%' WITH GRANT OPTION;
 >
 >![image-20201130080857639](linux下安装mysql.assets/image-20201130080857639.png)
 
-
-
-
-
 ##### 其他账号操作：
 
 添加新账号:
@@ -383,12 +332,7 @@ DROP USER '用户名'@'连接地址';
 ```
 > `DROP USER 'root'@'%';`
 
-
-
-
-
 #### Misc
-
 
 ```shell
 
@@ -423,14 +367,10 @@ mysql.server start
 mysql.server stop
 ```
 
-
 ---
-
 
 MySQL 具体使用请参考：
 * [MySQL笔记](./MySQL_Note.md)
 * [MySQL常用操作](./MySQL常用操作.md)
 * [Docker 安装 MySQL](../Docker/Docker_Note.md#dk_softc_demo_mysql)
-
-
 

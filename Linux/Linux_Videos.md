@@ -6,7 +6,7 @@ tags:
   - video
   - list
 created: 2023-08-18 19:44:52
-modified: 2023-09-16 02:52:40
+modified: 2023-09-23 11:14:54
 ---
 # Linux 视频清单
 
@@ -21,6 +21,7 @@ modified: 2023-09-16 02:52:40
 * [grep,sed,awk命令从入门到精通](https://www.bilibili.com/video/BV1pc411W7bv)
 * [Linux三剑客之awk超全超详细教程](https://www.bilibili.com/video/BV1fe4y127WP)
 * [深入理解grep、sed、awk](https://www.bilibili.com/video/BV1LV4y1M7zM)
+* [20230906\_awk进阶教程](https://www.bilibili.com/video/BV17N411H7N8)
 
 ## 高级
 

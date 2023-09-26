@@ -11,7 +11,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2023-09-13 16:59:17
+modified: 2023-09-25 01:47:52
 ---
 # Linux 笔记
 
@@ -1207,6 +1207,18 @@ grub 模板：`/etc/default/grub`
 ```shell
 echo $XDG_SESSION_TYPE
 ```
+
+##### gnome-tweak 启动问题
+
+[conda](../Python/Python_Note.md#python_conda) 会引起 gnome-tweak 启动出错。主要是 conda 接管了 Python 环境造成的。
+
+解决方案：
+
+将 gnome-tweaks 的启动文件中的第一行，即 python 路径修改。
+
+`#!/usr/bin/python3` 或 `#!/usr/bin/env python3`，自行使用 `whereis python` 来查询自己的 python 的路径，把路径改下就能启动了！
+
+相关资料：[警惕conda造成的环境问题! | 三个技术小站](https://qsctech-sange.github.io/anaconda-problems.html)
 
 ---
 

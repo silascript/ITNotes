@@ -6,7 +6,7 @@ tags:
   - linux
   - list
 created: 2023-08-18 19:44:52
-modified: 2023-09-18 18:17:17
+modified: 2023-09-23 11:18:00
 ---
 # Shell 笔记
 
@@ -221,4 +221,12 @@ shfmt -l -w script.sh
 
 * [2023年最通俗易懂的Shell教程](https://www.bilibili.com/video/BV1Tu411W7Up)
 * [2023年最新Shell自动化开发全套顶级天花板教程](https://www.bilibili.com/video/BV1494y1i7ca)
+* [Shell脚本从入门到实战](https://www.bilibili.com/video/BV1k94y1W7cJ)
+
+---
+
+## 其他相关笔记
+
+* [Linux笔记](Linux_Note.md)
+* [Shell示例笔记](Shell_Example.md)
 

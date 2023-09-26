@@ -8,7 +8,7 @@ tags:
   - Eclipse
   - dbeaver
 created: 2023-01-30 11:19:11
-modified: 2023-08-23 18:57:13
+modified: 2023-09-25 20:07:57
 ---
 
 # Java 笔记
@@ -272,6 +272,15 @@ StartupNotify=true
 > [!tip] desktop 文件存在位置
 > 可以在 `/usr/share/applications` 目录下创建，也可以在当前用户目录下的 `.local/share/applications` 目录下创建。
 
+> [!tip] 记得刷新
+> 
+> ```shell
+> # 刷用户目录
+> update-desktop-database .local/share/applications
+> # 刷根目录
+> sudo update-desktop-database /usr/share/applications
+>```
+
 ---
 
 #### <span id="java_eclipse_hotkeys">Eclipse 快捷键</span>
@@ -411,13 +420,23 @@ Marketplace 是 Eclipse 的插件市场，通过它可以更方便地搜索和�
 
 如果不想使用插件市场安装，可以到 [sourceforge](http://editbox.sourceforge.net/updates/) 下载 `features` 和 `plugins` 两目录下的 `jar` 文件，把这两目录放到一个目录中，如 `editbox`，然后把这个目录放在 Eclipse 安装目录下 `dropins` 目录中，重启 Eclipse，就能生效。
 
-有时使用 `dropins` 这种方式，可以使用使用 `Install New Software` 方式来安装插件。
+有时使用 `dropins` 这种方式会失效，那就可以使用使用 `Install New Software` 方式来安装插件。
 
 > editbox 安装地址：[http://editbox.sourceforge.net/updates](http://editbox.sourceforge.net/updates)
 
 ##### relative-line-number
 
 [relative-line-number](https://marketplace.eclipse.org/content/relative-line-number-ruler) 相对行号。
+
+###### 设置
+
+1. 将 Eclipse 内置的行号功能关闭。
+
+> [!tip]
+> 
+> `General`->`Editors`->`Text Editors`->`Show line numbers`
+
+2. `Relative Number Ruler` 设置项中，勾选 `Show absolute value for current line number`，这样能显示光标所在行的绝对行号！
 
 ##### freemarker
 
@@ -573,8 +592,11 @@ DBeaver 插件版也独立安装版功能一致，具体信息可以参考 [DBea
 | 2021-12  |       N/A        |    4.22    | 2021 年 12 月 8 日 |    JDK 11     |   N/A    |
 | 2022-03  |       N/A        |    4.23    | 2022 年 3 月 16 日 |    JDK 11     |   N/A    |
 | 2022-06  |       N/A        |    4.24    | 2022 年 6 月 15 日 |    JDK 11     |   N/A    | 
-| 2022-09  |       N/A        |    4.25    | 2022 年 9 月 14 日 |    JDK 11     |   N/A    | 
-| 2022-12  |       N/A        |    4.26    | 2022 年 12 月 7 日 |    JDK 11     |   N/A    | 
+| 2022-09  |       N/A        |    4.25    | 2022 年 9 月 14 日 |    JDK 17     |   N/A    | 
+| 2022-12  |       N/A        |    4.26    | 2022 年 12 月 7 日 |    JDK 17     |   N/A    | 
+| 2023-03  |       N/A        |    4.27    | 2023 年 3 月 15 日 |    JDK 17     |   N/A    | 
+| 2023-06  |       N/A        |    4.28    | 2023 年 6 月 14 日 |    JDK 17     |   N/A    | 
+| 2023-09  |       N/A        |    4.29    | 2023 年 9 月 14 日 |    JDK 17     |   N/A    | 
 
 > [!tip] 32 位与 64 位
 > Eclipse 必须与 JRE 相一致，32 位 JRE 只能装 32 位版本的 Eclipse，64 位 JRE 装 64 位 Eclipse。

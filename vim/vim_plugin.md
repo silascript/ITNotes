@@ -9,7 +9,7 @@ tags:
   - markdown
   - plugin
 created: 2023-01-30 11:19:11
-modified: 2023-09-06 01:39:51
+modified: 2023-09-30 10:25:16
 ---
 # vim 常用插件
 
@@ -662,7 +662,7 @@ let g:startify_custom_header =
 [vim-signature](https://github.com/kshenoy/vim-signature) 是一个 mark 显示插件。
 在侧边栏显示 mark 标记。
 
-![](vim_plugin.assets/2021-04-29 20-03-01 的屏幕截图.png)
+![vim_signature shotcut](vim_plugin.assets/vim_plugin_signature.png)
 
 常用操作：
 

@@ -7,7 +7,7 @@ tags:
   - pip
   - conda
 created: 2023-08-18 19:44:52
-modified: 2023-09-15 11:09:22
+modified: 2023-09-26 20:54:17
 ---
 # Python 笔记
 
@@ -295,6 +295,7 @@ custom_channels:
 `conda env` 是针对 [环境](#环境) 的命令。
 
 > [!tip] conda env list
+> 
 > `conda env list` 不能与 `conda list env` 混淆。
 > 
 > `conda env list` 是列出有哪些环境；而 `conda list env` 这种语法根本就是错误的，要 [列出某环境中的包](#环境包列表)，得使用 `conda list -n 环境名` 这样的命令。
@@ -310,7 +311,9 @@ custom_channels:
 #### <span id="python_conda_environment_create">创建环境</span>
 
 创建环境使用到了 [创建](#python_conda_commands_create) 命令：`conda create -n myenv`
+
 > [!info] 命令解释
+> 
 > 使用 `-n` 参数来创建环境，实参的值就是自行指定的「环境名称」
 > 
 > 创建的环境会保存在用户目录下的 `.conda/envs` 目录下的同名目录中，如示例中的 *myenv* 环境，就会放在 `.conda/envs/myenv` 中。
@@ -349,11 +352,13 @@ conda create -n 新环境名 --clone 旧环境名
 启动环境：`conda activate 环境名`
 
 > [!tip] 指定 shell 类型
+> 
 > 第一次启动环境时，会有提示让你指定使用的 shell 类型：`conda init shell类型`。然后重启 Terminal，这时才会启动环境成功。而一次启动环境就不用再指定 Shell 类型了。
 
 ^d508bb
 
 > [!tip] 关闭启动 base 环境
+> 
 > 默认情况，在 `init` 时 [指定shell类型](#^d508bb) 重启 [终端](../Linux/Linux_Note.md#终端) 后，每次启打开 [终端](../Linux/Linux_Note.md#终端)，都会自动启动 [base 环境](#base%20环境)，这会影响到正常的 Terminal 的使用，有点烦，所以为了解决这问题，就需要关闭自动启动 base 环境。可以使用以下这个命令实现：
 > 
 > `conda config --set auto_activate_base false`
@@ -647,12 +652,11 @@ Obsidan 中 [中文分词插件](../Obsidian/Obsidian_Note.md#obn_plugins_wordsp
 ### <span id="python_resource_doc">相关文档</span>
 
 * [Python3.x 官方中文文档](https://docs.python.org/zh-cn/3/)
+* [Anaconda 中文网](https://anaconda.org.cn/)
 
 ### <span id="python_resource_links">相关网站</span>
 
 * [Python中文网](https://www.cnpython.com/)
-
----
 
 ---
 

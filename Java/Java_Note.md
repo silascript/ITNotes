@@ -8,7 +8,7 @@ tags:
   - Eclipse
   - dbeaver
 created: 2023-01-30 11:19:11
-modified: 2023-09-25 20:07:57
+modified: 2023-09-27 00:58:14
 ---
 
 # Java 笔记
@@ -782,8 +782,10 @@ SourceFile: "Test05.java"
 
 ---
 
-## 相关链接
+## 相关笔记
 
 * [Java 视频清单](./Java_Videos.md)
 * [Kotlin 笔记](Kotlin/Kotlin_Note.md)
+* [Java Apache 笔记](Java_Apache_Note.md)
+* [Java Web 笔记](Java_Web_Note.md)
 

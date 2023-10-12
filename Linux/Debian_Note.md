@@ -5,7 +5,7 @@ tags:
   - linux
   - debian
 created: 2023-08-18 19:44:52
-modified: 2023-09-20 00:45:02
+modified: 2023-10-09 23:25:55
 ---
 # Debian 笔记
 
@@ -89,6 +89,16 @@ deb http://mirrors.ustc.edu.cn/debian-security/ stable-security main non-free co
 * Debian 官方给出的全球镜像站：[Debian 全球镜像站](https://www.debian.org/mirror/list)
 
 ---
+
+## 特殊软件
+
+### mkpasswd
+
+`mkpasswd` 是一个随机生成密码的命令。在 debian 系统中，是不能直接安装，它是放在 `whois` 包中，所以得通过安装 `whois` 包来安装此命令。
+
+安装 `whois`：`apt install whois`
+
+装完，使用 `mkpasswk --help` 来测试下，`mkpasswd` 是不是已经能用了！
 
 ## <span id="debian_links">相关连接<span>
 

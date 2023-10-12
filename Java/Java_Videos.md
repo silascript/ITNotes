@@ -6,7 +6,7 @@ tags:
   - java
   - list
 created: 2023-06-24 01:08:17
-modified: 2023-09-26 18:47:28
+modified: 2023-10-13 00:57:25
 ---
 # Java 视频清单
 
@@ -23,17 +23,31 @@ modified: 2023-09-26 18:47:28
 * [java操作xml方法,总有适合你的](https://www.bilibili.com/video/BV15T4y1P7nM)
 * [混而不乱的java日志体系-log4j,jul,jcl,slf4j和logback](https://www.bilibili.com/video/BV13A41137Tc)
 
+---
+
+## JVM
+
+* [黑马程序员JVM虚拟机入门到实战全套视频教程](https://www.bilibili.com/video/BV1r94y1b7eS)
+* [尚硅谷宋红康JVM全套教程（详解java虚拟机）](https://www.bilibili.com/video/BV1PJ411n7xZ)
+* [【2023版】马士兵再讲JVM从入门到实战全套教程](https://www.bilibili.com/video/BV1jP411f7SS)
+
+---
+
 ## 消息
 
 * [黑马程序员RabbitMQ入门到实战教程](https://www.bilibili.com/video/BV1mN4y1Z7t9)
 * [尚硅谷RabbitMQ教程丨快速掌握MQ消息中间件rabbitmq](https://www.bilibili.com/video/BV1cb4y1o7zz)
 * [RabbitMQ 消息队列 理论与实战 已完结（2023最新版）](https://www.bilibili.com/video/BV1Sh411579p)
 
+---
+
 ## 测试
+
+---
 
 ## 系列
 
-### [乐之者Java](https://space.bilibili.com/392539815) 漫淡
+### [乐之者Java](https://space.bilibili.com/392539815) 
 
 * [带你从另一个角度认识lambda表达式](https://www.bilibili.com/video/BV1jw411v7KV)
 * [可序列化lambda表达式有什么用？优雅解决硬编码](https://www.bilibili.com/video/BV15k4y1c7uR)

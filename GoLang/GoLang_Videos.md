@@ -6,7 +6,7 @@ tags:
   - video
   - list
 created: 2023-06-28 10:52:44
-modified: 2023-10-01 17:46:11
+modified: 2023-10-12 20:38:57
 ---
 # GoLang 视频清单
 
@@ -15,6 +15,7 @@ modified: 2023-10-01 17:46:11
 ## 教程
 
 * [3小时学完Golang](https://www.bilibili.com/video/BV1db4y1e79v)
+* [Golang学习记](https://www.ixigua.com/7039367885902316068)
 * [2023巨献 Golang零基础小白最新版教程](https://www.bilibili.com/video/BV1Gh4y1W7VX)
 * [马士兵教育-2023版GO语言（golang）就业班全套视频讲解](https://www.bilibili.com/video/BV1tP4y1v7kW)
 * [2023最适合自学的Golang项目实战教程合集！整整300集，零基础入门Go语言](https://www.bilibili.com/video/BV16V411V78p)

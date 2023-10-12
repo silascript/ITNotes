@@ -9,7 +9,7 @@ tags:
   - ubuntu
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2023-09-22 02:13:45
+modified: 2023-10-09 21:23:01
 ---
 
 # Docker 笔记
@@ -469,7 +469,9 @@ docker pause 容器名|容器ID
 ```shell
 docker stop 容器名|容器ID
 ```
-> 相关命令：  
+
+> [!tip] 相关命令 
+>  
 > [启动容器](#dk_container_start)
 
 ### <span id="dk_container_exec">进入容器</span>

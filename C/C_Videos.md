@@ -4,7 +4,7 @@ aliases:
 tags:
   - 
 created: 2023-09-23 02:04:36
-modified: 2023-10-12 20:56:54
+modified: 2023-10-13 20:10:44
 ---
 # C 语言视频清单
 
@@ -14,6 +14,7 @@ modified: 2023-10-12 20:56:54
 
 * [C语言 最好的入门课（中国宝岛的课程）](https://www.bilibili.com/video/BV1V4411g7a2)
 * [嵌入式linux环境安装C语言](https://www.bilibili.com/video/BV15X4y1C7Rk)
+* [9天轻松掌握C语言](https://www.bilibili.com/video/BV1Rr4y1m7ua)
 * [C语言详细基础教程](https://www.bilibili.com/video/BV1nx41157P2)
 * [GNU/Linux C语言课堂教学](https://www.ixigua.com/6841532135296205319)
 

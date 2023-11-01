@@ -8,7 +8,7 @@ tags:
   - Eclipse
   - dbeaver
 created: 2023-01-30 11:19:11
-modified: 2023-09-27 00:58:14
+modified: 2023-11-01 12:37:41
 ---
 
 # Java 笔记
@@ -650,6 +650,25 @@ sudo chmod -R 755 tomcat-9.0.62
 
 ---
 
+## 字节码
+
+### 操作数栈
+
+### 局部变量表
+
+### int 类型入栈指令
+
+* 当 int 取值为**-1~5**采用 `iconst` 指令
+* 当 int 取值为**-128~127**采用 `bipush` 指令
+* 当 int 取值为**-32768~32767* 采用 `sipush` 指令
+* 当 int 取值为**-2147473648~2147483647**采用 `ldc` 指令
+
+### 相关资料
+
+* [两张图让你快速读懂JVM字节码指令 - 知乎](https://zhuanlan.zhihu.com/p/412472914)
+
+---
+
 ## <span id="java_commands">java 命令使用</span>
 
 ### <span id="java_commands_javac">javac</span>
@@ -779,6 +798,76 @@ Constant pool:
 SourceFile: "Test05.java"
 
 ```
+
+---
+
+## 基础深入
+
+### 赋值
+
+```java
+public class Demo_1{
+
+
+	public static void main(String[] args){
+
+		int i =0;
+
+		i=15;
+
+		System.out.println(i);
+
+	}
+	
+
+}
+```
+
+能 [javac](#javac) 及 [javap](#javap) 命令查看部分字节码：
+
+```
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=2, args_size=1
+         0: iconst_0
+         1: istore_1
+         2: bipush        15
+         4: istore_1
+         5: getstatic     #7                  // Field java/lang/System.out:Ljava/io/PrintStream;
+         8: iload_1
+         9: invokevirtual #13                 // Method java/io/PrintStream.println:(I)V
+        12: return
+      LineNumberTable:
+        line 6: 0
+        line 8: 2
+        line 10: 5
+        line 15: 12
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      13     0  args   [Ljava/lang/String;
+            2      11     1     i   I
+}
+
+
+```
+
+`int=5;` 这个赋值语句对应的字节码是：
+```
+2: bipush        15
+4: istore_1
+```
+
+> [!info] 关键字节码解析
+> 
+> `bipush` 是入栈指令，int 的值范围不同，有不同的 [入栈指令](#int%20类型入栈指令)。
+> 
+> 所谓「入栈」，即将值压入 [操作数栈](#操作数栈)。
+> 
+> 最后 `istore` 指令，是将刚入栈的数值「出栈」保存进 [局部变量表](#局部变量表) 对应的位置。
+> 
+> 经过上述两步，`i=5;` 这个赋值操作才算完成。
 
 ---
 

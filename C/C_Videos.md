@@ -4,7 +4,7 @@ aliases:
 tags:
   - 
 created: 2023-09-23 02:04:36
-modified: 2023-10-13 20:10:44
+modified: 2023-10-30 12:44:29
 ---
 # C 语言视频清单
 
@@ -33,3 +33,4 @@ modified: 2023-10-13 20:10:44
 * [【C语言指针初识篇】](https://www.bilibili.com/video/BV17u411A78X)
 * [【C语言指针中级篇】](https://www.bilibili.com/video/BV1yu411c7EG)
 * [【C语言指针高级篇】](https://www.bilibili.com/video/BV1ww411q7DV)
+* [通俗易懂的C语言指针概念讲解](https://www.bilibili.com/video/BV1V34y1u7tL)

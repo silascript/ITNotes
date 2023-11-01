@@ -4,7 +4,7 @@ aliases:
 tags:
   - 
 created: 2023-08-18 19:44:52
-modified: 2023-09-16 02:21:09
+modified: 2023-10-30 21:06:13
 ---
 
 # 常用小工具笔记
@@ -43,7 +43,18 @@ Window 下推荐使用 [Scoop](https://github.com/ScoopInstaller/scoop) 来安�
 ```shell
 lux -i 网址
 ```
+
 这条命令会出现诸如该视频的信息，如有多少种分辨率可下载，每种分辨率的体积大小。
+
+```shell
+lux -p --items 29 -c ~/mysoft/Browsers/cookies.txt -i 网址
+```
+
+> [!info] 查看视频集合某 p 的信息
+> 
+> 使用 `-p --items p序号` 指定具体 p
+> 
+> `-c` 是 [[指定 Cookies](#指定%20Cookies)]，因为常常因为权限问题会只能查看到**480p**，实际视频可能是**1080**的，如要查看视频完整信息，就得使用到 Cookies。
 
 ##### 下载单个视频
 

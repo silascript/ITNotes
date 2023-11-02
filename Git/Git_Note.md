@@ -5,7 +5,7 @@ tags:
   - git
   - github
 created: 2023-01-30 11:19:11
-modified: 2023-09-14 20:56:35
+modified: 2023-11-02 22:19:11
 ---
 # Git 笔记
 
@@ -675,6 +675,12 @@ sudo pacman -U switchhosts-4.1.2-1-x86_64.pkg.tar.zst
 
 * [Github520 host 文件地址](https://raw.githubusercontent.com/521xueweihan/GitHub520/main/hosts)
 * [GitHub520 host 文件加速地址](https://raw.hellogithub.com/hosts)
+* [GitHub520 CDN地址](https://fastly.jsdelivr.net/gh/521xueweihan/GitHub520@main/hosts)
+>[!info] jsdelivr 访问问题
+> 
+> 本来这个 CDN 的地址应该是 [cdn.jsdelivr.net](cdn.jsdelivr.net)，但 [cdn.jsdelivr.net](cdn.jsdelivr.net) 已经访问不了了，所以才换成这个的。
+> 
+> 如果 [fastly.jsdelivr.net](fastly.jsdelivr.net) 也访问不了，还可以换成 [gcore.jsdelivr.net](gcore.jsdelivr.net)。
 
 ---
 

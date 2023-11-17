@@ -1,11 +1,10 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - PL
   - rust
 created: 2023-01-30 11:19:11
-modified: 2023-08-25 20:57:22
+modified: 2023-11-16 21:17:33
 ---
 # Rust 笔记
 
@@ -172,7 +171,7 @@ rustup component add 组件名
 组件列表：
 
 ```shell
-rustup componet list
+rustup component list
 ```
 
 具体查询 [Rustup 文档](https://github.com/rust-lang/rustup/blob/master/README.md) （[Rustup Book](https://rust-lang.github.io/rustup/)）

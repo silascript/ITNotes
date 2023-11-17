@@ -11,7 +11,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2023-09-25 01:47:52
+modified: 2023-11-08 11:56:44
 ---
 # Linux 笔记
 
@@ -1210,15 +1210,28 @@ echo $XDG_SESSION_TYPE
 
 ##### gnome-tweak 启动问题
 
-[conda](../Python/Python_Note.md#python_conda) 会引起 gnome-tweak 启动出错。主要是 conda 接管了 Python 环境造成的。
+[conda](../Python/Python_Note.md#python_conda) 会引起 gnome-tweak 启动出错，可能会报 [`ValueError Namespace Gtk not available`](#`ValueError%20Namespace%20Gtk%20not%20available`) 这种错误。主要是 conda 接管了 Python 环境造成的。
 
-解决方案：
+###### 解决方案
 
 将 gnome-tweaks 的启动文件中的第一行，即 python 路径修改。
 
 `#!/usr/bin/python3` 或 `#!/usr/bin/env python3`，自行使用 `whereis python` 来查询自己的 python 的路径，把路径改下就能启动了！
 
-相关资料：[警惕conda造成的环境问题! | 三个技术小站](https://qsctech-sange.github.io/anaconda-problems.html)
+> [!tip] gnome-tweaks 启动文件
+> 
+> 使用 `whereis gnome-tweaks` 查看。一般是 `/usr/bin/gnome-tweaks` 这文件。
+
+很多时候 gnome-tweaks 使用的是 `#!/usr/bin/env python3` 这个，而使用的 [conda](../Python/Python_Note.md#conda)，这个 python 就是 conda 下的 python，一般来说 linux 会自带默认的 python，所以修改为系统默认的 python3，即 `/usr/bin/python3`，就可以启动 gnome-tweak 了。
+
+###### `ValueError: Namespace Gtk not available`
+
+运行：`conda install -c conda-forge gtk3`。不过很多时候这个错误报出只是表象，更多的是 gnome-tweak 使用了 conda 的 python，而 conda 中是没有 gtk 的，所以还是使用 [gnome-tweaks 启动出错解决方案](#解决方案) 中的修改 gnome-tweaks 的 python 路径来解决。
+
+相关资料：
+
+* [警惕conda造成的环境问题! | 三个技术小站](https://qsctech-sange.github.io/anaconda-problems.html)
+* [ValueError: Namespace Gtk not available 的解决方案](https://blog.csdn.net/qq_53937391/article/details/128125174)
 
 ---
 

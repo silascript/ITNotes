@@ -7,7 +7,7 @@ tags:
   - pip
   - conda
 created: 2023-08-18 19:44:52
-modified: 2023-09-26 20:54:17
+modified: 2023-11-08 11:44:25
 ---
 # Python 笔记
 
@@ -370,6 +370,14 @@ conda create -n 新环境名 --clone 旧环境名
 #### <span id="python_conda_environment_deactivate">退出环境</span>
 
 退出当前环境，使用：`conda deactivate` 命令。
+
+#### <span id="python_conda_environment_revision">重置环境</span>
+
+使用 `conda list --revision` 查看可以「回滚」哪些版本。
+
+每个版本后有个数字作为版本号。
+
+使用 `conda install --revision 数字版本号` 来「回滚」，如 `conda install --revision 0`。最后就是确认「回滚」（`Proceed ([y]/n)? `），回滚就完成了！
 
 #### <span id="python_conda_environment_list">环境列表</span>
 

@@ -1,12 +1,11 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - video
   - java
   - list
 created: 2023-06-24 01:08:17
-modified: 2023-10-13 00:57:25
+modified: 2023-11-17 02:48:42
 ---
 # Java 视频清单
 
@@ -30,6 +29,7 @@ modified: 2023-10-13 00:57:25
 * [黑马程序员JVM虚拟机入门到实战全套视频教程](https://www.bilibili.com/video/BV1r94y1b7eS)
 * [尚硅谷宋红康JVM全套教程（详解java虚拟机）](https://www.bilibili.com/video/BV1PJ411n7xZ)
 * [【2023版】马士兵再讲JVM从入门到实战全套教程](https://www.bilibili.com/video/BV1jP411f7SS)
+* [【2024精选版】这可能是B站讲的最好的JVM教程](https://www.bilibili.com/video/BV1Sc411X7JE)
 
 ---
 

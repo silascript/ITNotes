@@ -6,7 +6,7 @@ tags:
   - pip
   - conda
 created: 2023-08-18 19:44:52
-modified: 2023-11-19 02:18:32
+modified: 2023-11-19 02:42:31
 ---
 # Python 笔记
 
@@ -315,7 +315,7 @@ conda config --add https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
 
 在生成的 `.condarc` 文件中手动追加以下配置：
 
-```
+```text
 channels:
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
@@ -336,7 +336,7 @@ custom_channels:
 > 最好将 `default_channels` 也改为 `channels`，因为使用 default_channels 后，无论是否使用 `channels` 节点进行「引用」，即如下配置：
 >> [!info]
 >> 
->> ```shell
+>> ```text
 >> channels:
 >> - defaults
 >> default_channels:
@@ -350,7 +350,7 @@ custom_channels:
 > 
 >> [!info] 
 >> 
->> ```shell
+>> ```text
 >> Channels:
 >> - defaults
 >> - https://repo.anaconda.com/pkgs/main
@@ -359,8 +359,7 @@ custom_channels:
 >
 > 所以建议还是使用如下配置：
 > 
-> ```shell
-> 
+> ```text
 > channels:
 > - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
 > - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
@@ -379,11 +378,30 @@ custom_channels:
 >> * [2023年最新conda和pip国内镜像源 - 知乎](https://zhuanlan.zhihu.com/p/628870519)
 >> * [关于国内anaconda镜像站点看这一篇就够啦 - 知乎](https://zhuanlan.zhihu.com/p/584580420)
 >>  * [Conda Channel 介绍与配置-CSDN博客](https://blog.csdn.net/bluishglc/article/details/133803301)
->>  * [conda configuration doc](https://docs.conda.io/projects/conda/en/stable/configuration.html)
+>>  * [**conda 官方配置文档**](https://docs.conda.io/projects/conda/en/stable/configuration.html)
 
-切换 channel 后，使用 `conda clean -i` 或 `conda clean -a` 来清理缓存。
+> [!info] 关于 channel 配置
+> 
+> 观察发现清华源的配置中，`custom_channels` 中各类包都是 [mirrors.tuna.tsinghua.edu.cn/anaconda/cloud](https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud) 这个地址，所以可以使用 `channel_alias`「精简」下。另外，channels 各源在检索时是有优先级的，依次从上到下逐一检索，所以鉴于 conda-forge 的包又全又新，可以根据需要将其优先级提高仅限于 main。
+> 
 
-配完源，使用 `conda update --all` 更下，看能显示出刚配的**channel**，如果没有，就是配置文件存在问题。
+ 完整配置可如下：
+
+```text
+channels:
+- https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+- https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge
+- https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+- https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+channel_alias: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+show_channel_urls: true
+```
+
+> [!tip] 清缓存
+> 
+> 切换 channel 后，使用 `conda clean -i` 或 `conda clean -a` 来清理缓存。
+> 
+> 配完源，使用 `conda update --all` 更下，看能显示出刚配的**channel**，如果没有，就是配置文件存在问题。
 
 ##### channel 分类
 

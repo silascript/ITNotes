@@ -1,13 +1,12 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - PL
   - python
   - pip
   - conda
 created: 2023-08-18 19:44:52
-modified: 2023-11-08 11:44:25
+modified: 2023-11-19 02:18:32
 ---
 # Python 笔记
 
@@ -58,6 +57,40 @@ python -m pip install --upgrade pip
 
 ```
 
+### 重装 pip
+
+```shell
+
+# 查看pip
+pip show pip
+
+# 卸载
+python -m pip uninstall pip
+
+# 重装
+python -m ensurepip
+
+
+```
+
+> [!info] 关于 `command not found: pip`
+> 
+> 在 [conda](#conda) 中重装 pip，有可能出现找不到 pip 的情况。
+> 
+> 那极有可能是使用的 `python -m pip uninstall pip` 来装，而不是使用 `conda install pip` 命令来装。
+> 
+> 在 conda 环境中，使用 python 安装的 pip，执行命令是 `pip3`，不是 `pip`，所以在 conda 环境中就有可能发现 pip 找不到的情况。
+> 
+> 如果在 conda 环境中重装 pip，先使用 `conda install pip` 安装；然后再使用 `python -m ensurepip` 及 `python -m pip install --upgrade pip` 来「修复」。
+> 
+>> [!info] 相关资料
+>> 
+>> * [Anaconda环境中pip命令找不到解决方案](https://blog.csdn.net/weixin_33566282/article/details/115447064)
+>>   
+>> * [Conda下ModuleNotFoundError:No module named 'pip'](https://blog.csdn.net/Pin_BOY/article/details/120402542)
+>>   
+>>  * [PIP 更新后不能使用的使用 提示： No module named 'pip'问题解决 - Bush - 博客园](https://www.cnblogs.com/bushLing/p/17030223.html)
+
 ### pip 换源
 
 #### 临时换源并安装指定包
@@ -95,7 +128,7 @@ pip config set global.index-url http://pypi.douban.com/simple/
 2. 第二种方式：
 
 直接修改 pip 配置文件
-pip 的配置文件是放在 `.pip` 目录下的 pip.conf 文件中 (windows 是 pip.ini 文件)
+pip 的配置文件是放在 `.pip` 目录下的 **pip.conf** 文件中 (windows 是 pip.ini 文件)
 
 示例：
 
@@ -106,7 +139,7 @@ index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 
 > [!tip]
 > 
-> 现在的 pip，配置文件是放在 `~/.config/pip/` 目录中。在 [conda](#python_conda) 中配置 pip 也是放在这个目录中。
+> 现在的 pip，配置文件 **pip.conf** 是放在 `~/.config/pip/` 目录中。在 [conda](#python_conda) 中配置 pip 也是放在这个目录中。
 > 
 
 ### pip 搜索
@@ -226,15 +259,44 @@ fi
 unset __conda_setup
 ```
 
-在 `.profile` 或指定 shell 配置文件，如 zsh 的 `.zshrc` 中，加入以上配置，那终端启动一个 shell，这时就自动处于 conda 的一个虚拟环境中 -- 默认是处于 Base 环境。
+在 `.profile` 或指定 shell 配置文件，如 zsh 的 `.zshrc` 中，加入以上配置，那终端启动一个 shell，这时就自动处于 conda 的一个虚拟环境中 -- 默认是处于 Base 环境，conda 就「接管」了 Python。
 
 > [!info]
 > 
 > 这不是单纯的像 `export PATH=$PATH:"$HOME/miniconda3/bin"`，这样将 bin 目录加入 Path 路径，这种添加环境变量的方式，不能进行 `activate` 激活切换环境。
 
+> [!tip] 不同配置文件中配置 conda 的区别
+> 
+> 如果是配在 `.profile` 或 `xprofile` 中，激活或注释取消这种「接管」，需要重启或注销重新登录系统才能生效，而在 `.zshrc` 这种针对某个 shell 的配置文件中配置，就能 `source` 此配置文件后，立即生效！
+
 ---
 
 ### <span id="python_conda_chsources">conda 换源</span>
+
+### <span id="python_conda_uninstall">conda 卸载</span>
+
+查看 conda 环境：
+
+```shell
+conda info --envs
+```
+
+将环境一个个地 `remove`（删除到只剩个 base 就行了）：
+
+```shell
+conda remove -n 环境名称 --all
+```
+
+删除 `.profle`、`.xprofile`、`.bashrc` 或 `.zshrc` 等配置文件中 conda 相关的 配置。
+
+删除相应目录及配置文件：
+* `rm -rf ~/.conda`
+* `rm -rf ~/.condarc`
+
+> [!info] 相关资料
+> 
+> * [linux卸载conda环境\_千锋教育](http://www.mobiletrain.org/about/BBS/150422.html)
+> 
 
 #### 生成 conda 配置文件
 
@@ -254,7 +316,7 @@ conda config --add https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
 在生成的 `.condarc` 文件中手动追加以下配置：
 
 ```
-default_channels:
+channels:
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
@@ -265,14 +327,71 @@ custom_channels:
   menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
   pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloudtext
+  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
 ```
 
-> [!tip]
+> [!info] 关于 condarc 注意点
 > 
 > 最好把配置文件中 `default_channels` 项中的 `default` 去掉，不然在每次安装软件时，都会到默认的镜像源里找。
+> 最好将 `default_channels` 也改为 `channels`，因为使用 default_channels 后，无论是否使用 `channels` 节点进行「引用」，即如下配置：
+>> [!info]
+>> 
+>> ```shell
+>> channels:
+>> - defaults
+>> default_channels:
+>>  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+>> - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+>> - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+>>
+>> ```
+>
+> 在使用时，还是会使用到 default，如使用 `conda update --all` 更新时，会显示如下信息：
 > 
-> 还有，网上一些教程，那些主 channel，是 `free` 的，这个 channel 的 python 太老了，不要用了，换成 `main`。
+>> [!info] 
+>> 
+>> ```shell
+>> Channels:
+>> - defaults
+>> - https://repo.anaconda.com/pkgs/main
+>>
+>>``` 
+>
+> 所以建议还是使用如下配置：
+> 
+> ```shell
+> 
+> channels:
+> - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+> - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+> - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+>    
+> ``` 
+> 
+> 还有，网上一些教程，那些主 channel，是 `free` 的，这个 channel 的 python 太老了，不要用了，换成 `main`。-- [anaconda](https://www.anaconda.com/) 官方从 4.7 版本就已经移除了 free 这个 channel 了。
+>
+>> [!qoute]
+>> 
+>> [remove free channel](https://www.anaconda.com/blog/why-we-removed-the-free-channel-in-conda-4-7)
+> 
+>> [!info] 相关资料
+>> 
+>> * [2023年最新conda和pip国内镜像源 - 知乎](https://zhuanlan.zhihu.com/p/628870519)
+>> * [关于国内anaconda镜像站点看这一篇就够啦 - 知乎](https://zhuanlan.zhihu.com/p/584580420)
+>>  * [Conda Channel 介绍与配置-CSDN博客](https://blog.csdn.net/bluishglc/article/details/133803301)
+>>  * [conda configuration doc](https://docs.conda.io/projects/conda/en/stable/configuration.html)
+
+切换 channel 后，使用 `conda clean -i` 或 `conda clean -a` 来清理缓存。
+
+配完源，使用 `conda update --all` 更下，看能显示出刚配的**channel**，如果没有，就是配置文件存在问题。
+
+##### channel 分类
+
+* `pkgs/main`：python 最基础的包
+* `pkgs/r`：提供 R 语言使用的包
+* `pkgs/msys2`：windows 下 msys2 相关的包
+
+* `Conda-Forge`：由社区维护的最常用的 Channel，包含的包很全，更新也非常即时
 
 ---
 
@@ -425,6 +544,32 @@ conda env create -n env_name -f environment.yml
 
 `conda install 包名`
 
+#### 升级更换环境包
+
+搜索某模块可选版本，以 python 为例：
+
+```shell
+conda search --full --name python
+```
+
+更换当前环境下某模块版本，仍以 python 为例：
+
+```shell
+conda install python=3.11.5
+```
+
+升级模块到最新版本，以 python 为 例：
+
+```shell
+conda update python
+```
+
+> [!info] 相关资料
+> 
+> * [在 Anaconda 中更改 Python 版本](https://www.delftstack.com/zh/howto/python/change-python-version-in-anaconda/)
+> 
+>  * [如何将Anaconda安装时默认的python版本改成其他版本](https://blog.csdn.net/qq_56520755/article/details/130489115)
+
 ### <span id="python_conda_pip">conda 中的 pip</span>
 
 先使用 `which pip` 来确认现在用的是哪个哪个环境的 pip。如果当前虚拟环境没装，就使用 `conda install pip` 装下。
@@ -447,7 +592,7 @@ pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 
 ## <span id="python_pipx">pipx</span>
 
-[Site Unreachable](https://github.com/pypa/pipx) 是一个自动建立虚拟环境来使用 Python 应用的工具。
+[pipx](https://github.com/pypa/pipx) 是一个自动建立虚拟环境来使用 Python 应用的工具。
 
 pipx 与其他相近工具的比较：[pipx comparisons](https://pypa.github.io/pipx/comparisons/)
 
@@ -492,6 +637,30 @@ optional environment variables:
 > [!tip] pipx 安装模块要求
 > 
 > pipx 只能装那些有「cli」的模块，对于那些纯库类型的模块，像 pynvim，就不能装。
+
+### 安装 pipx
+
+pipx 可以使用 [pip](#pip) 来安装的：
+
+```shell
+pip install pipx
+# 或者
+python -m pip install --user pipx
+```
+
+> [!info] 相关资料
+> 
+> * [Pipx：在隔离环境中安装和运行 Python 应用 - 知乎](https://zhuanlan.zhihu.com/p/73675447)
+
+将 `pipx` 添加到 PATH 中，方便任何地方访问它：
+
+```shell
+pipx ensurepath
+```
+
+> [!tip] 相关资料
+> 
+> * [在 Linux 中安装和使用 pipx - 知乎](https://zhuanlan.zhihu.com/p/637791135)
 
 ### 安装模块
 
@@ -615,7 +784,45 @@ Obsidan 中 [中文分词插件](../Obsidian/Obsidian_Note.md#obn_plugins_wordsp
 
 #### <span id="python_syntax_basic_">字符串</span>
 
-### 字典和集合
+### 复合数据类型
+
+#### 列表和集合
+
+##### 列表
+
+列表定义：
+
+```python
+a = [1,3,4]
+```
+
+Python 的列表类型特点：
+
+1. 元素**可重复**
+2. 元素排列**有序**
+
+##### 集合
+
+集合定义：
+
+```python
+b = {1,3,4}
+```
+
+Python 的集合特点：
+1. 元素**不可重复**
+2. 元素排列**无序**
+
+> [!tip] 关于列表和集合定义
+>
+> 在「类 C 语言」的标识符中，`[]`（中括号）暗含了「**有序性**」，即使用 `[]` 定义的数据类型，其中的元素是**有序**的。这种**有序性**有时体现在存储的有序，如 [C语言](../C/C_Note.md) 或 [Java](../Java/Java_Note.md) 中的 [数组](../C/C_Note.md#数组) 是使用 `[]` 来定义的；而有时这种**有序性**体现在「**可索引**」上，即可以通过索引来获取相应位置的元素。
+> 
+> 
+> 而 `{}`（花括号）则隐含了「**无序性**」，即使用 `{}` 定义的数据类型，其中的元素是**无序**的。与**有序性**类似，使用 `{}` 定义的数据其**无序性**，有时体现在存储上，如 C、Java 等语言中 [函数](../C/C_Note.md#函数) 的「函数体」就是使用花括号来定义的，而可以谁其中的语句其存储上是**无序**的；而在集合类型中，这种「**无序性**」便体现在「不可索引」上，即不能通过索引值来获取相应位置的元素。
+
+#### 元组
+
+#### 字典
 
 ### 函数
 

@@ -1,12 +1,11 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - golang
   - video
   - list
 created: 2023-06-28 10:52:44
-modified: 2023-10-12 20:38:57
+modified: 2023-11-19 19:07:55
 ---
 # GoLang 视频清单
 
@@ -24,4 +23,6 @@ modified: 2023-10-12 20:38:57
 * [Go语言大厂直通车](https://www.bilibili.com/video/BV17e411N7L3)
 * [【2023 六月更新】 Go: 完整开发者指南（英文无字幕）](https://www.bilibili.com/video/BV17N411a7kw)
 * [【2023版】24小时从零入门golang开发，Java程序员转行golang工程师必看](https://www.bilibili.com/video/BV198411v7pj)
+* [8小时入门go语言开发|2023重制版](https://www.bilibili.com/video/BV1zu4y187Wb)
+* [GO语言-7天从入门到精通 最适合小白入门的GO语言教程](https://www.bilibili.com/video/BV1DQ4y187o9)
 

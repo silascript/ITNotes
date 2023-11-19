@@ -1,11 +1,10 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - markdown
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2023-09-17 01:35:51
+modified: 2023-11-19 11:50:27
 ---
 # Obsidian 笔记
 
@@ -1082,6 +1081,11 @@ Callout Blocks 预置类型：
 > [!quote]
 
 如果「标题」不写，那默认就会使用「类型」名称作为标题名。
+
+> [!tip]
+> [github](https://github.com) 支持有图标显示，语法与 obsidian 的 callout 完全一致的只有：**note**、**tip**、**important**、**warning**。
+> 
+> 具体请参考：[基本撰写和格式语法 - GitHub 文档](https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#referencing-issues-and-pull-requests)
 
 另外，Callout Blocks 还能可以进行嵌套，如下例：
 

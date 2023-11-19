@@ -6,7 +6,7 @@ tags:
   - pip
   - conda
 created: 2023-08-18 19:44:52
-modified: 2023-11-19 02:42:31
+modified: 2023-11-19 11:04:58
 ---
 # Python 笔记
 
@@ -643,9 +643,18 @@ optional environment variables:
 > 
 > 同样的，在 [conda](#python_conda) 的虚拟环境中使用的 pipx 装的模块的可执行程序，同样也是放在 `~/.local/bin/`。而这个程序只是一个 `link` 文件。（在 `~/.local/bin/` 目录中的那些可执行程序，其实都是些链接，它们都指向 `.local/pipx/venvs/` 目录下各模块，也就说在 conda 中使用 pipx 安装模块，这些模块安装根目录都是 `.local/pipx/venvs/`，而执行链接都是 `~/.local/bin/` 目录，pipx 有非常强的「共享性」。）
 > 
+> 另外，在 `~/.local/bin/` 下建立链接文件的好处还有，就是如果需要重装 pipx，并且在重装前肯定移除 `~/.local/pipx` 目录，在重装 pipx 后，又得把各模块再重装一次，，这时存在一个难题，就是该重装哪些模块，除非之前另外有记录，不然是有点麻烦的。但因为 `~/.local/bin/` 下「残留」有之前安装过的模块链接，而且因为 `~/.local/pipx/` 目录的移除，使得这些链接出现「指向」错误而在终端中「显红」，这就给该重装哪些模块提供了提示。
+>
+> 如下图中，那些标红的，都是之前装的，后来 `~/.local/pipx` 目录被移除后，残留的链接。
+> 
+> ![conda_pipx_links_error](Python_Note.assets/conda_pipx_links_error.png)
+>
+> 
 > 也就说，在 [conda](#python_conda) 中各虚拟环境用 pipx 装的相同模块，其可执行程序会出现同名冲突，会报：「already seems to be installed. 」的揭示，因为这个可执行程序是个 Link 文件，它可以指向不同虚拟环境，如果不同虚拟环境下装相同的模块，后来生成的这个模拟可执行的 Link 文件就会覆盖之前装的。
 > 
 > 同样的也就意味着，不同虚拟环境下使用 pipx 装的模块，只要有一个虚拟环境装了，就可以在其他虚拟环境中使用，除非，这个在虚拟环境将此模块删除，或此虚拟环境本身就被删除。
+> 
+> 
 > 
 > 
 > 所以得出一个重要的结论：pipx 装的模块在当前用户下，「全局性」更强，适合安装一些跨虚拟环境的模拟，如各种 [LSP](../vim/LSP_Complete.md)。
@@ -680,6 +689,63 @@ pipx ensurepath
 > 
 > * [在 Linux 中安装和使用 pipx - 知乎](https://zhuanlan.zhihu.com/p/637791135)
 
+如果在 [conda](#conda) 中不使用 [pip](#pip) 安装 pipx，可以直接使用 `conda install` 来安装，但前提是先将 conda-forget 在 conda 的 channel 中配置上了。不确定能不能用 conda 直接装，可以先搜索下：`conda search --full --name pipx`，如果能搜到，就通过 `conda install pipx` 进行安装。
+
+安装过程相关信息：
+
+```shell
+added / updated specs:
+    - pipx
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    argcomplete-1.12.3         |     pyhd3eb1b0_0          35 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    click-8.1.7                |  py311h06a4308_0         221 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    colorama-0.4.6             |  py311h06a4308_0          36 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    importlib-metadata-4.11.3  |  py311h06a4308_0          42 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    importlib_metadata-4.11.3  |       hd3eb1b0_0          12 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    packaging-23.1             |  py311h06a4308_0         100 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    pipx-1.2.1                 |     pyhd8ed1ab_0          48 KB  conda-forge
+    userpath-1.7.0             |     pyhd8ed1ab_0          17 KB  conda-forge
+    zipp-3.11.0                |  py311h06a4308_0          21 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    ------------------------------------------------------------
+                                           Total:         532 KB
+
+The following NEW packages will be INSTALLED:
+
+  argcomplete        anaconda/pkgs/main/noarch::argcomplete-1.12.3-pyhd3eb1b0_0 
+  click              anaconda/pkgs/main/linux-64::click-8.1.7-py311h06a4308_0 
+  colorama           anaconda/pkgs/main/linux-64::colorama-0.4.6-py311h06a4308_0 
+  importlib-metadata anaconda/pkgs/main/linux-64::importlib-metadata-4.11.3-py311h06a4308_0 
+  importlib_metadata anaconda/pkgs/main/noarch::importlib_metadata-4.11.3-hd3eb1b0_0 
+  packaging          anaconda/pkgs/main/linux-64::packaging-23.1-py311h06a4308_0 
+  pipx               conda-forge/noarch::pipx-1.2.1-pyhd8ed1ab_0 
+  userpath           conda-forge/noarch::userpath-1.7.0-pyhd8ed1ab_0 
+  zipp               anaconda/pkgs/main/linux-64::zipp-3.11.0-py311h06a4308_0 
+
+
+Proceed ([y]/n)? 
+```
+
+使用 conda 直接安装 pipx，使用 `conda list` 查看包信息，可以看到该环境下的 [pip](#pip) 和 pipx 是同一级的：
+
+```shell
+pip                       23.3            py311h06a4308_0    https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+pipx                      1.2.1              pyhd8ed1ab_0    conda-forge
+```
+
+> [!info] 不同安装方式存在异同
+> 
+> 1. 该环境下的 [[#pip]] 下（使用 `pip list` 命令查看）,同样存在 pipx，这与在该环境下使用 `pip install pipx` 结果基本相同。
+> 
+> 2. 使用 `conda install pipx` 方式安装，其卸载也连同相关的依赖组件一并卸载，所以而使用 pip 安装的 pipx，在卸载时，只会卸载 pipx，其依赖不同一同卸载。
+> 
+> 3. 如果使用 `python -m pip install --user pipx` 命令安装，该环境下使用 `conda list` 是没有 pipx 的，只能在 `pip list` 查看到。
+> 
+> **推荐使用 `conda install pipx` 方式安装 pipx**。
+
 ### 安装模块
 
 [pip](#pip) 和 `pipx` 默认都是从 [pypi](https://pypi.org/) 上安装包。
@@ -706,7 +772,9 @@ pipx install package==version
 
 #### PypiSearch
 
-如果想要搜索模块，可以安装 [pypisearch](https://github.com/shidenko97/pypisearch)：
+这个模块可以认为是 [pipx](#pipx) 必装的模块。
+
+因为 [pypisearch](https://github.com/shidenko97/pypisearch) 这个模块功能是**搜索**模块。
 
 ```shell
 pipx install pypisearch

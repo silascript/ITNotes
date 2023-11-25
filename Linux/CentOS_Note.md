@@ -1,13 +1,12 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - linux
   - centos
   - ssh
   - yum
-created: 2022-11-7 2:50:13
-modified: 2023-07-3 3:05:55
+created: 2023-08-18 19:44:52
+modified: 2023-11-25 21:08:31
 ---
 
 # CentOS 笔记
@@ -307,6 +306,9 @@ microdnf install vim -y          # vim
 
 ## 其他相关笔记
 
-* [Linux_Note](Linux_Note.md)
-* [Fedora_Note](Fedora_Note.md)
+* [Linux 笔记](./Linux_Note.md)
+* [Fedora 笔记](./Fedora_Note.md)
+* [ArchLinux 笔记](./ArchLinux_Note.md)
+* [Debian 笔记](./Debian_Note.md)
+* [Ubuntu 笔记](./Ubuntu_Note.md)
 

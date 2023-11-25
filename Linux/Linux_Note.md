@@ -1,6 +1,5 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - linux
   - archlinux
@@ -11,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2023-11-08 11:56:44
+modified: 2023-11-25 21:15:33
 ---
 # Linux 笔记
 
@@ -1116,6 +1115,8 @@ ssh 用户名@ip -p 端口
 > 也可以在 .local/share/applications 目录新建 desktop 文件
 
 2. 编辑 `desktop` 文件
+> [!info] desktop 文件格式
+>  
 > [Desktop Entry] (这里大小写敏感，写错一个就不会显示)  
 > Type=Application 类型  
 > Name=名称  
@@ -1210,7 +1211,7 @@ echo $XDG_SESSION_TYPE
 
 ##### gnome-tweak 启动问题
 
-[conda](../Python/Python_Note.md#python_conda) 会引起 gnome-tweak 启动出错，可能会报 [`ValueError Namespace Gtk not available`](#`ValueError%20Namespace%20Gtk%20not%20available`) 这种错误。主要是 conda 接管了 Python 环境造成的。
+[conda](../Python/Python_Note.md#python_conda) 会引起 gnome-tweak 启动出错，可能会报 [`ValueError Namespace Gtk not available`](#`ValueError%20Namespace%20Gtk%20not%20available`) 这种错误。主要是 [conda](../Python/Python_Note.md#python_conda) 接管了 Python 环境造成的。
 
 ###### 解决方案
 

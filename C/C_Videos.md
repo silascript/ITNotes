@@ -1,10 +1,10 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
-  - 
+  - c
+  - video
 created: 2023-09-23 02:04:36
-modified: 2023-10-30 12:44:29
+modified: 2023-11-21 11:05:36
 ---
 # C 语言视频清单
 
@@ -17,6 +17,7 @@ modified: 2023-10-30 12:44:29
 * [9天轻松掌握C语言](https://www.bilibili.com/video/BV1Rr4y1m7ua)
 * [C语言详细基础教程](https://www.bilibili.com/video/BV1nx41157P2)
 * [GNU/Linux C语言课堂教学](https://www.ixigua.com/6841532135296205319)
+* [一周内学完C语言](https://www.bilibili.com/video/BV1og4y1X7oe)
 
 ### 李慧芹系列
 
@@ -28,7 +29,13 @@ modified: 2023-10-30 12:44:29
 
 ---
 
-## 指针
+## 进阶
+
+* [C语言高级进阶教程](https://www.bilibili.com/video/BV13G411X73x)
+
+### 专题
+
+#### 指针
 
 * [【C语言指针初识篇】](https://www.bilibili.com/video/BV17u411A78X)
 * [【C语言指针中级篇】](https://www.bilibili.com/video/BV1yu411c7EG)

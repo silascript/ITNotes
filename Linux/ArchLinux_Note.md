@@ -1,6 +1,5 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - linux
   - archlinux
@@ -9,7 +8,7 @@ tags:
   - ime
 date created: 2022-11-08 11:32
 created: 2023-08-18 19:44:52
-modified: 2023-09-05 03:12:00
+modified: 2023-11-25 21:06:48
 ---
 
 # ArchLinux 笔记
@@ -186,3 +185,14 @@ sudo pacman -U xxx.pkg.tar.zst
 #### 参考资料
 
 * [Arch/Manjaro安装deb安装包  - 博客园](https://www.cnblogs.com/marklove/p/14047339.html)
+
+---
+
+## 其他相关笔记
+
+* [Linux 笔记](./Linux_Note.md)
+* [Debian 笔记](./Debian_Note.md)
+* [Ubuntu 笔记](./Ubuntu_Note.md)
+* [CentOS 笔记](./CentOS_Note.md)
+* [Fedora 笔记](./Fedora_Note.md)
+

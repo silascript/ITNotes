@@ -5,7 +5,7 @@ tags:
   - java
   - list
 created: 2023-06-24 01:08:17
-modified: 2023-11-17 02:48:42
+modified: 2023-11-23 02:30:13
 ---
 # Java 视频清单
 
@@ -13,6 +13,7 @@ modified: 2023-11-17 02:48:42
 
 ## 基础
 
+* [新版Java入门全套视频教程285集完整版(纯小白专享)-千锋](https://www.bilibili.com/video/BV1HN4y1m73i)
 * [2023年 java 面试题200问](https://www.bilibili.com/video/BV1wX4y1h7YG)
 * [Java核心技术讲解,深入底层原理](https://www.bilibili.com/video/BV1ck4y157fj)
 * [黑马Java多线程教程，23年最新版](https://www.bilibili.com/video/BV1g8411o7aj)

@@ -1,12 +1,11 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - linux
   - fedora
   - centos
-created: 2022-11-7 2:50:13
-modified: 2023-07-1 1:08:39
+created: 2023-08-18 19:44:52
+modified: 2023-11-25 21:10:00
 ---
 # Fedora 笔记
 
@@ -61,6 +60,9 @@ Fedora 39 将使用 DNF 5 来取代 [Microdnf](#Microdnf)，彻底统一包管�
 
 ## 其他相关笔记
 
-* [Linux_Note](Linux_Note.md)
-* [CentOS_Note](CentOS_Note.md)
+* [Linux 笔记](./Linux_Note.md)
+* [CentOS 笔记](./CentOS_Note.md)
+* [Debian 笔记](./Debian_Note.md)
+* [Ubuntu 笔记](./Ubuntu_Note.md)
+* [ArchLinux 笔记](./ArchLinux_Note.md)
 

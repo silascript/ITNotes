@@ -1,12 +1,11 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - linux
   - ubuntu
   - vim
-created: 2022-11-7 2:50:13
-modified: 2023-06-2 10:49:18
+created: 2023-08-18 19:44:52
+modified: 2023-11-25 21:11:31
 ---
 # Ubuntu 笔记
 
@@ -120,5 +119,9 @@ vim 具体使用请参考 [Vim_Note](../vim/Vim_Note.md) 笔记。
 
 ## 其他相关笔记
 
-* [Linux_Note](Linux_Note.md)
+* [Linux 笔记](./Linux_Note.md)
+* [Debian 笔记](./Debian_Note.md)
+* [CentOS 笔记](./CentOS_Note.md)
+* [Fedora 笔记](./Fedora_Note.md)
+* [ArchLinux 笔记](./ArchLinux_Note.md)
 

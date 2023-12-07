@@ -1,6 +1,5 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - editor
   - sublime
@@ -9,7 +8,7 @@ tags:
   - scite
   - lsp
 created: 2023-01-30 11:19:11
-modified: 2023-09-13 18:11:08
+modified: 2023-12-03 04:40:31
 ---
 
 # 编辑器笔记
@@ -739,6 +738,18 @@ style.*.35=italics,back:#ebeef3
 
 ---
 
+## <span id="editors_notepad3">NotePad3</span>
+
+[NotePad3](https://www.rizonesoft.com/downloads/notepad3/) [![NotePad3 Repo](https://img.shields.io/github/stars/rizonesoft/Notepad3?style=social
+)](https://github.com/rizonesoft/Notepad3) 是在 [Notepad2](https://www.flos-freeware.ch/notepad2.html) 基础上进行升级开发的 Windows「独占」的轻量级文本编辑器。它可以认为是 [NotePad2-mod](https://xhmikosr.github.io/notepad2-mod/) [![NotePad2-mod Repo](https://img.shields.io/github/stars/XhmikosR/notepad2-mod?style=social
+)](https://github.com/XhmikosR/notepad2-mod) 的分支（NotePad2-mod 在 2018 年后就停更了）。它跟 NotePad2 一样基于 [Scintilla](#SciTE) 开发的。
+
+> [!tip] 相关
+> 
+> 跟 NotePad3 类似的 NotePad2 的「借尸还魂」作品还有 [zufuliu版本的Notepad2](https://github.com/zufuliu/notepad2)。
+
+---
+
 ## <span id="editors_geany">Geany</span>
 
 [Geany](https://www.geany.org/) 是一个挺强大的文本编辑器，可以视它为一个轻量级「IDE」。
@@ -746,4 +757,11 @@ style.*.35=italics,back:#ebeef3
 ### Geany 插件
 
 Geany 支持很多插件：[https://plugins.geany.org/](https://plugins.geany.org/)
+
+---
+
+## 相关笔记
+
+* [VSCode笔记](VSCode_Note.md)
+* [Vim笔记](../vim/Vim_Note.md)
 

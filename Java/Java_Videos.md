@@ -5,7 +5,7 @@ tags:
   - java
   - list
 created: 2023-06-24 01:08:17
-modified: 2023-11-23 02:30:13
+modified: 2023-12-07 11:30:24
 ---
 # Java 视频清单
 
@@ -22,6 +22,12 @@ modified: 2023-11-23 02:30:13
 * [黑马Java基础进阶教程，轻松掌握java高级技术-单元测试、反射、注解、动态代理](https://www.bilibili.com/video/BV1Pu411N7fH)
 * [java操作xml方法,总有适合你的](https://www.bilibili.com/video/BV15T4y1P7nM)
 * [混而不乱的java日志体系-log4j,jul,jcl,slf4j和logback](https://www.bilibili.com/video/BV13A41137Tc)
+
+---
+
+## JavaWeb 基础
+
+* [2023新版JavaWeb从入门到精通视频教程(95集全)](https://www.bilibili.com/video/BV1Pj411a7fc)
 
 ---
 

@@ -1,10 +1,8 @@
 ---
-aliases:
-  - 
-tags:
-  - 
+aliases: []
+tags: []
 created: 2023-08-18 19:44:52
-modified: 2023-10-30 21:06:13
+modified: 2023-12-09 01:19:53
 ---
 
 # 常用小工具笔记
@@ -100,7 +98,8 @@ lux -F /path/to/links.txt
 
 有些网站下载视频，特别是下载 720 或 1080 等高清视频时，可以需要账号已登录，如「B 站」，这时就需要从 Cookie 中读取已登录账号的状态的。所以得在指定相应的 Cookies 文件。
 
-> [!example] 语法格式 
+> [!example] 语法格式
+>  
 > `lux -i -c ~/mysoft/NetBrower/edge_cookies.txt "xxxx"`
 > 
 > `-c` 后就是 Cookies 文件路径
@@ -120,6 +119,61 @@ lux -F /path/to/links.txt
 > [请求指导cookie.txt详细的使用方法 · Issue #739](https://github.com/iawia002/lux/issues/739)
 
 使用 [Cookie Editor Plus ](https://microsoftedge.microsoft.com/addons/detail/cookie-editor-plus/nbmajjcfigmlcnikhnfhhicidleefhpp?hl=zh-CN) 也能达到相同效果。
+
+### 常用命令示例
+
+```shell
+
+# 查看视频信息
+lux -i xxx
+
+# 使用指定Cookie，查看视频信息
+# 某些视频需要Cookie才能查看视频信息
+# 如B站，如果使用上面的命令，得到的视频信息就只显示最高480P画质，这是由于B站对未登录账号观看视频画质的限制
+lux -i -c ~/mysoft/Browsers/cookies.txt xxx
+
+
+# 下载1080P单个视频
+lux -f 80-7 xxx
+
+# 使用指定Cookie 下载单个视频 分辨率为1080P
+# 与查看视频信息一样，某些网站得登录才能下载更高画质的视频，所以就需要使用到Cookie
+lux -c ~/mysoft/Browsers/cookies.txt -f 80-7 xxxx
+
+# 使用指定Cookie 下载合集所有视频 分辨率为1080P
+lux -p -c ~/mysoft/Browsers/cookies.txt -f 80-7 xxx
+
+# 使用指定Cookie 下载合集中 47到50的视频 分辨率为1080P
+lux -p --start 47 --end 50 -c ~/mysoft/Browsers/cookies.txt -f 80-7 xxx
+
+# 使用指定Cookie 下载合集中 29和30两个视频 分辨率为1080P
+lux -p --items 29,30 -c ~/mysoft/Browsers/cookies.txt -f 80-7 xxx
+
+```
+
+#### 常见分辨率
+
+所谓「分辨率」，就是 `-f` 参数所要指定的「标识」，即你想要下载到哪种画质的视频。
+
+```shell
+
+ [80-7]  -------------------
+ Quality:         高清 1080P avc1.640032
+ # download with: lux -f 80-7 ...
+
+ [64-7]  -------------------
+ Quality:         高清 720P avc1.640028
+ # download with: lux -f 64-7 ...
+
+ [32-7]  -------------------
+ Quality:         清晰 480P avc1.64001F
+ # download with: lux -f 32-7 ...
+
+ [16-7]  -------------------
+ Quality:         流畅 360P avc1.64001E
+ # download with: lux -f 16-7
+
+```
 
 ---
 

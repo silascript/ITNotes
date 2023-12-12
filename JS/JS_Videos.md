@@ -1,13 +1,12 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - js
   - javascript
   - video
   - list
 created: 2023-05-26 11:00:13
-modified: 2023-10-10 10:42:40
+modified: 2023-12-09 02:59:42
 ---
 # Javascript 视频清单
 
@@ -38,6 +37,7 @@ modified: 2023-10-10 10:42:40
 
 * [JavaScript 高级教程](https://www.bilibili.com/video/BV1kh4y1j7uu)
 * [黑马程序员前端面试必看视频教程（手写Promise+js设计模式+继承+函数柯里化等），10小时JavaScript面试全通关](https://www.bilibili.com/video/BV1mH4y1Q7Z7)
+* [JavaScript 算法和数据结构大师班(一)](https://www.bilibili.com/video/BV1DN4y1m7at)
 
 ---
 

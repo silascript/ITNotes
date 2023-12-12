@@ -4,7 +4,7 @@ tags:
   - PL
   - golang
 created: 2023-01-31 11:31:14
-modified: 2023-12-01 03:42:26
+modified: 2023-12-09 20:32:02
 ---
 # Go 语言笔记
 
@@ -144,41 +144,49 @@ go install golang.org/x/tools/gopls@latest
 ## Go 命令
 
 查看 go 版本：
+
 ```shell
 go version
 ```
 
 编译：
+
 ```shell
 go build xxx.go
 ```
 
 运行：
+
 ```shell
 go run xxx.go
 ```
 
 清除对象：
+
 ```shell
 go clean
 ```
 
 显示 go 相关环境属性：
+
 ```shell
 go env
 ```
 
 格式化：
+
 ```shell
 fmt
 ```
 
 下载包：
+
 ```shell
 go get
 ```
 
 安装包及其依赖：
+
 ```shell
 go install 
 ```
@@ -190,10 +198,28 @@ go list
 
 ### go mod 命令
 
-初始化：
+#### 初始化
+
 ```shell
 go mod init 项目名
 ```
+
+#### go.mod
+
+`init` 后，会在项目根目录下生成一个 `go.mod` 文件，其中会有以下内容：
+
+```txt
+module e01
+
+go 1.21.3
+
+```
+
+> [!tip] go.mod 文件解析
+> 
+> `module e01`：module 的名称
+> 
+> `go 1.21.3`：当前项目使用的 go 的版本
 
 ---
 
@@ -221,6 +247,52 @@ Go 规定的项目结构：
 >> [!tip] main 函数不在 main 包
 >> 
 >> 在运行时，就会报 `package command-line-arguments is not a main package ` 错误提示。
+
+go 中**包**概念，可以简单看作两类：
+
+一个是实际目录，可以叫它作「物理包」；  ^2330f2
+
+另一个，是在 go 文件中，使用 `package` 定义的逻辑意义的包名，可简单称为「逻辑包」。   ^545dc0
+
+这个区别非常重要，因为在使用 [import](#import)「导包」，还有调用函数时需要使用的包名调用，这两处的「包」的概念是不同的。
+
+### import
+
+包引入，使用 `import` 关键字。
+
+引入某个目录：`import("module名/目录名")`
+
+> [!tip] 关于 module 名称
+> 
+> 可以查看项目根目录下的 [go.mod](#go.mod) 文件。
+
+```go
+
+import (
+	"e01/utils"
+	"fmt"
+)
+
+```
+
+> [!info] import 解析
+> 
+> `fmt`：go 内置包
+> 
+> `e01/utils`：导入的是 `e01` 这个 module 下 `utils` 目录
+
+> [!import] 目录与 package
+> 
+> 在 `import` 时，是导入的是目录，即 [物理包](#^2330f2)；而在调用函数时，使用的是那个包，是 `package` 定义的 [逻辑包](#^545dc0) 名称。
+> 
+
+---
+
+## 函数
+
+### init 函数
+
+`func init()` 函数是一个特殊的函数，在一个 go 文件中可以出现多次。`init` 函数是在 [import](#import) 包时，自动调用的函数，其调用顺序与 `import` 顺序相同。
 
 ---
 

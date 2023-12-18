@@ -8,7 +8,7 @@ tags:
   - ime
 date created: 2022-11-08 11:32
 created: 2023-08-18 19:44:52
-modified: 2023-11-25 21:06:48
+modified: 2023-12-18 20:26:45
 ---
 
 # ArchLinux 笔记
@@ -185,6 +185,17 @@ sudo pacman -U xxx.pkg.tar.zst
 #### 参考资料
 
 * [Arch/Manjaro安装deb安装包  - 博客园](https://www.cnblogs.com/marklove/p/14047339.html)
+
+---
+
+## Arch 各种变体
+
+* [rebornos](https://rebornos.org/)
+* [endeavouros](https://endeavouros.com/)
+* [arcolinux](https://arcolinux.com/)
+* [artixlinux](https://artixlinux.org/)
+* [archman](https://archman.org/)
+* [anarchy-linux](https://anarchy-linux.org/)
 
 ---
 

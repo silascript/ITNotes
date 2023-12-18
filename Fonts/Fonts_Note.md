@@ -1,10 +1,9 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - font
 created: 2023-01-31 11:31:14
-modified: 2023-06-16 1:17:03
+modified: 2023-12-17 19:53:22
 ---
 # 字体笔记
 
@@ -261,14 +260,11 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 
 ![ dream-han preview](https://github.com/Pal3love/dream-han-cjk/raw/main/image/png/weight_white.png#gh-dark-mode-only)
 
-
 ---
 
 ##### <span id="fonts_zh_glow-sans">未来荧黑</span>
 
 [未来荧黑](https://github.com/welai/glow-sans)
-
-
 
 ---
 ## <span id="fonts_program">编程字体</span>
@@ -376,4 +372,12 @@ Cascadia Code 版本差异：
 ## 各种字体工具
 
 [字体汉字计数软件](https://github.com/NightFurySL2001/CJK-character-count)
+
+---
+
+## 其他链接
+
+* [thisfaner](https://www.thisfaner.com/p/font-collection/)
+* [天珩的小站](http://cheonhyeong.com/)
+* [Free-Chinese-Fonts](http://zenozeng.github.io/Free-Chinese-Fonts/)
 

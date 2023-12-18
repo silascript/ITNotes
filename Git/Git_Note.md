@@ -1,11 +1,10 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - git
   - github
 created: 2023-01-30 11:19:11
-modified: 2023-11-02 22:19:11
+modified: 2023-12-19 02:50:03
 ---
 # Git 笔记
 
@@ -715,9 +714,10 @@ git config --global --unset url.https://github.com/.insteadof
 * [nuaa](https://hub.nuaa.cf/)
 * ~~[gitslow](https://hub.gitslow.tk/)~~
 * [kgithub](https://kgithub.com/)
+* [kkgithub](https://kkgithub.com/)
 * [njuu.cf](https://hub.njuu.cf/)
 * [yzuu.cf](https://hub.yzuu.cf/)
-* [fgit.ml](https://hub.fgit.ml/)
+* ~~[fgit.ml](https://hub.fgit.ml/)~~
 
 > [!tip] 镜像不是永久的
 > 所有的镜像都是暂时性的，你不知道哪天就挂了！
@@ -726,6 +726,8 @@ git config --global --unset url.https://github.com/.insteadof
 
 * [gitclone.com](https://gitclone.com)
 * [Moeyy](https://github.moeyy.xyz/)
+* [github.ur1.fun](https://github.ur1.fun/)
+  
 > [!tip] Moeyy
 > 
 > 使用 [moeyy.xyz](https://github.moeyy.xyz/) 下载 github 上的 release 文件，只需要在原下载地址前加 `https://github.moeyy.xyz/` 就能使用 moeyy 加速下载 release 文件了。
@@ -737,7 +739,10 @@ git config --global --unset url.https://github.com/.insteadof
 ##### 其他相关的链接
 
 > [!info] 自动检测镜像网站是否可用的网站
-> [github镜像及加速](http://lib.zuotiyi.cn/tool/github.html)
+> 
+> * [github镜像及加速](http://lib.zuotiyi.cn/tool/github.html)
+>   
+> * [www.sockstack.cn/github](https://www.sockstack.cn/github)
 
 ---
 

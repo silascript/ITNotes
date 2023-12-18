@@ -1,11 +1,10 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - linux
   - debian
 created: 2023-08-18 19:44:52
-modified: 2023-10-09 23:25:55
+modified: 2023-12-16 02:01:04
 ---
 # Debian 笔记
 
@@ -32,6 +31,47 @@ Debian 官网：[https://www.debian.org/](https://www.debian.org/)
 ### <span id="debian_introduction_version_lts">LTS</span>
 
 [LTS ](https://wiki.debian.org/LTS)（Long Term Support），既长期支持版本，实际是一个对 Debian 稳定版的扩展支持，扩展至少 5 年。
+
+#### 各 LTS 版本
+
+| **Version** | **schedule** |
+|:---:|:---:|
+|  Debian 6 「[Squeeze](https://wiki.debian.org/DebianSqueeze)」   | 2nd June 2014 to 29th of February 2016 |
+|    Debian 7 「[Wheezy](https://wiki.debian.org/LTS/Wheezy)」     |    26th April 2016 to 31st May 2018    |
+|    Debian 8 「[Jessie](https://wiki.debian.org/LTS/Jessie)」     |    17th June 2018 to June 30, 2020     |
+|   Debian 9 「[Stretch](https://wiki.debian.org/LTS/Stretch)」    |     July 6, 2020 to June 30, 2022      |
+|    Debian 10 「[Buster](https://wiki.debian.org/LTS/Buster)」    |  August 1st, 2022 to June 30th, 2024   |
+| Debian 11 「[Bullseye](https://wiki.debian.org/DebianBullseye)」 |  August 15th, 2024 to June 30th, 2026  |
+| Debian 12 「[Bookworm](https://wiki.debian.org/DebianBookworm)」 |   June 11th, 2026 to June 30th, 2028   |
+
+#### 查看版本小工具
+
+##### distro-info
+
+[distro-info](https://tracker.debian.org/pkg/distro-info) 是一个 debian 查看版本的小工具。通过 `apt install distro-info` 安装。
+
+```shell
+# 查看debian所有版本
+distro-info -a
+
+# 查看当前LTS版本的代号名（codename）
+distro-info -c -l
+
+# 查看所有版本的代号名
+distro-info -c -a
+
+# 查看所有版本的全名
+# 包括版本全名
+# 版本命名包括代号号及版本号，如「Debian 10 "Buster"」
+distro-info -f -a
+
+# 查看当前版本号
+distro-info -r -l
+# 查看当前版本名
+distro-info -l
+
+
+```
 
 ---
 

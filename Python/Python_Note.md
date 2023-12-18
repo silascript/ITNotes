@@ -6,7 +6,7 @@ tags:
   - pip
   - conda
 created: 2023-08-18 19:44:52
-modified: 2023-11-19 11:04:58
+modified: 2023-12-18 09:11:30
 ---
 # Python 笔记
 
@@ -35,6 +35,18 @@ modified: 2023-11-19 11:04:58
 ---
 
 ## <span id="python_install">安装</span>
+
+官网：[www.python.org](https://www.python.org)
+
+下载页面：[www.python.org/downloads](https://www.python.org/downloads)
+
+### 版本
+
+关于 Python 版本更新及维护计划，可以查看：[Status of Python versions](https://devguide.python.org/versions/)。
+
+> [!tip]
+> 
+>Python 每一个主版本的从**release**到**EOF**，整个生命周期是 5 年。
 
 ---
 

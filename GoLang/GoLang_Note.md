@@ -4,7 +4,7 @@ tags:
   - PL
   - golang
 created: 2023-01-31 11:31:14
-modified: 2023-12-09 20:32:02
+modified: 2023-12-13 21:30:30
 ---
 # Go 语言笔记
 
@@ -300,5 +300,6 @@ import (
 
 * [golang 官网](https://go.dev/)
 * [Go社区 Wiki](https://learnku.com/go/wikis)
+* [Golang中文学习文档](https://golang.halfiisland.com/)
 * [GoLang视频清单](GoLang_Videos.md)
 

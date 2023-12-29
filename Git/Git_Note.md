@@ -4,7 +4,7 @@ tags:
   - git
   - github
 created: 2023-01-30 11:19:11
-modified: 2023-12-19 02:50:03
+modified: 2023-12-30 07:24:35
 ---
 # Git 笔记
 
@@ -724,17 +724,35 @@ git config --global --unset url.https://github.com/.insteadof
 
 ##### 下载加速
 
+一般下载 github，都是下载「raw」，即 `raw.githubusercontent.com` 这个地址下的文件。
+
+对于 raw 加速，有两种方式：
+
+1. 直接在原地址前面添加加速网址：如 `https://mirror.ghproxy.com/ https://raw.githubusercontent.com/stilleshan/ServerStatus/master/Dockerfile` 
+2. 替换 `https://raw.githubusercontent.com/` 这个「前缀」，如 `https://raw.staticdn.net/stilleshan/ServerStatus/master/Dockerfile`
+
+###### 常用加速网址
+
 * [gitclone.com](https://gitclone.com)
 * [Moeyy](https://github.moeyy.xyz/)
+* [ghps.cc](https://ghps.cc/)
+* [gh.ddlc.top](https://gh.ddlc.top/)
 * [github.ur1.fun](https://github.ur1.fun/)
-  
-> [!tip] Moeyy
+* [raw.staticdn.net](https://raw.staticdn.net)
+
+> [!example] 示例 1
 > 
 > 使用 [moeyy.xyz](https://github.moeyy.xyz/) 下载 github 上的 release 文件，只需要在原下载地址前加 `https://github.moeyy.xyz/` 就能使用 moeyy 加速下载 release 文件了。
 > 
 > 如要下载 `https://github.com/emmetio/sublime-text-plugin/releases/download/v2.0.2/Emmet.zip`，
 > 只需要将地址「拼接」为 `https://github.moeyy.xyz/https://github.com/emmetio/sublime-text-plugin/releases/download/v2.0.2/Emmet.zip` 就能实现加速下载此文件。
 > 
+
+> [!example] 示例 2
+> 
+> 如下载某些 raw 地址的文件时，可以将 `raw.githubusercontent.com` 这个地址「前缀」替换为相关的 cdn，来达到加速文件下载的任用。
+> 
+> 如将 `raw.githubusercontent.com` 替换为 `raw.staticdn.net` 即可加速。
 
 ##### 其他相关的链接
 
@@ -743,6 +761,8 @@ git config --global --unset url.https://github.com/.insteadof
 > * [github镜像及加速](http://lib.zuotiyi.cn/tool/github.html)
 >   
 > * [www.sockstack.cn/github](https://www.sockstack.cn/github)
+>   
+> * [让你的GitHub下载飞速提升到2M/s以上](https://segmentfault.com/a/1190000023411392)
 
 ---
 
@@ -765,6 +785,12 @@ git config --global --unset url.https://github.com/.insteadof
 1. 点击 **Your gists** 进入 gist 页面
 2. 点 **+** 添加
 3. 输入 gist 名称和描述
+
+#### gist 加速
+
+> [!info]
+> 
+> 使用 `gist.gitmirror.com` 替换 `gist.githubusercontent.com`。
 
 ### <span id="git_github_token">Token</span>
 

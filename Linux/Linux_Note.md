@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2023-11-25 21:15:33
+modified: 2023-12-28 09:30:47
 ---
 # Linux 笔记
 
@@ -764,6 +764,7 @@ wget http://xxx.com
  ```shell
  # 大O 下载并重命令文件
  # 相当于 curl 的小o参数的操作
+ # 如果当前目录已存在同名文件将覆盖
  wget -O rename.zip http://xxxx.com/xxx.xxx
 ```
 
@@ -787,7 +788,9 @@ wget --limit-rate=400k URL
 # 检测连接
 wget –-spider URL
 ```
+
 示例：
+
 ![wget spider](./Linux_Note.assets/wget_spider.png)
 
 ```shell
@@ -809,6 +812,10 @@ wget -r -l 1 URL
 wget -r -l 1 -A azw3 http://xxxxx
 
 ```
+
+wget 相关资料：
+
+* [Linux系统中10个使用Wget命令下载文件示例 - 知乎](https://zhuanlan.zhihu.com/p/98778885)
 
 ##### <span id="linux_network_command_downloader_aria2">aria2</span>
 
@@ -1309,4 +1316,5 @@ alias ll='exa -a --long --header --group --tree --level=2 --icons --time-style=l
 ## <span id="linux_resource_links">相关资源链接</span>
 
 * [Linux迷](https://www.linuxmi.com/)
+* [linux-command](https://github.com/jaywcjlove/linux-command)
 

@@ -1,6 +1,5 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - markdown
   - editor
@@ -8,7 +7,7 @@ tags:
   - typora
   - mermaid
 created: 2023-01-13 12:27:45
-modified: 2023-09-13 21:36:54
+modified: 2024-01-05 11:37:11
 ---
 
 # Markdown 笔记
@@ -24,6 +23,7 @@ Markdown 比 doc 等文档更开放，更易于发布。
   * [关于锚点](#关于锚点)
 	  * [相关测试](#相关测试)
 * [高级](#md_advance)
+	* [折叠](#md_advance_collapse) 
 	* [画图](#md_advance_draw)
 	* [Mermaid图形种类](#Mermaid图形种类)
 	* [Mermaid 常用语法](#Mermaid-常用语法)
@@ -40,7 +40,7 @@ Markdown 比 doc 等文档更开放，更易于发布。
 
 ## <span id="md_basic">基础</span>
 
-### 标题
+### <span id="md_basic_title">标题</span>
 
 使用 `#` 号来表示标题。标题共有 6 个级别，分别以对于数量的 `#` 来表示。
 
@@ -54,7 +54,7 @@ Markdown 比 doc 等文档更开放，更易于发布。
 
 ```
 
-### <span id="md_anchor">关于锚点</span>
+### <span id="md_basic_anchor">关于锚点</span>
 
 > [!example] 示例 1：
 > 
@@ -158,7 +158,7 @@ Markdown 比 doc 等文档更开放，更易于发布。
 
 ---
 
-### <span id="md_esc">转义字符</span>
+### <span id="md_basic_esc">转义字符</span>
 
 Markdown 使用 `\` （反斜杠）来对一些特殊字符进行转义。当然如果觉得麻烦，还能使用 ASII 码直接显示。
 
@@ -167,9 +167,60 @@ Markdown 使用 `\` （反斜杠）来对一些特殊字符进行转义。当然
 > [!tip] 使用 ASII 码的小问题
 > 如使用 ASII 码显示特殊字符时，最后不要省略分号 `;`，虽然在 [Obsidian](../Obsidian/Obsidian_Note.md) 是能显示，但像 [Typora](https://typoraio.cn/) 等编辑器中是不能正常显示的，所以为了兼容性，最好把分号加上。
 
+### <span id="md_basic_qoate">引用</span>
+
+引用文本块使用 `>` 来标识。
+
+```markdown
+
+> 这一个段文本引用块
+```
+
+#### <span id="md_basic_qoate_extension">引用块扩展</span>
+
+引用块最常用的扩展就是在引用块上加上一些「美化」标识，这种扩展语法不是 Markdown 标准语法，而是扩展语法。就如 [Obsidiane](../Obsidian/Obsidian_Note.md) 中的 [Callout Blocks](../Obsidian/Obsidian_Note.md#obn_syntax_calloutblocks) 类似。而现今使用最多的是「**GFM**」（Github Flavo）Flavo ）已经支持了类似功能。不过 Github 没 Obsidian 的样式这么丰富。
+
+GFW 支持 5 种引用扩展样式：
+
+* NOTE
+* TIP
+* IMPORTANT
+* WARNING 
+* CAUTION
+
+> [!tip] 相关链接
+>
+> * [An option to highlight a "Note" and "Warning" using blockquote (Beta) #16925](https://github.com/orgs/community/discussions/16925)
+
 ---
 
 ## <span id="md_advance">高级</span>
+
+### <span id="md_advance_collapse">折叠</span>
+
+想要使部分内容「折叠」起来的效果，可以使用 `<details>` 标签。
+
+```markdown
+<details>
+
+折叠测试
+
+</details>
+```
+
+其实 `<details>` 标签不是 markdown 语法，而是 [Html](../Frontend/Html_Note.md) 的东西。
+
+而一般与 `<details>` 标签一起使用的，还有其子标签 `<summary>` 标签，作为 `<details>` 标签的「标题」。
+
+```markdown
+<details>
+<summary>折叠标题</summary>
+
+折叠测试
+
+</details>
+
+```
 
 ---
 

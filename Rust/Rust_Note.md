@@ -4,7 +4,7 @@ tags:
   - PL
   - rust
 created: 2023-01-30 11:19:11
-modified: 2023-11-16 21:17:33
+modified: 2024-01-10 16:03:17
 ---
 # Rust 笔记
 
@@ -207,6 +207,63 @@ Cargo cli 工具负责运行构建、运行测试和准备项目以供发布。R
 创建一个新的程序，默认项目结构：`main.rs` 文件及 `Cargo.toml` 项目文件。
 
 在新建的项目，git 已经初始化了。
+
+---
+
+### 换源
+
+#### 给 Rustup 换源
+
+在 `.bashrc` 或 `.bash_profile` 或 `.zshrc` 配置文件中添加以下配置：
+
+```bash
+export RUSTUP_UPDATE_ROOT="https://mirrors.tuna.tsinghua.edu.cn/rustup/rustup"
+export RUSTUP_DIST_SERVER="https://mirrors.tuna.tsinghua.edu.cn/rustup"
+```
+
+> [!tip] 国内镜像源
+> 
+> 例子中用的是 [清华的rustup镜像](https://mirrors.tuna.tsinghua.edu.cn/help/rustup/)。
+>
+> * [RsProxy](https://rsproxy.cn/) RsProxy 是字节提供的
+> * [上海交通](https://mirrors.sjtug.sjtu.edu.cn/)
+> * [中科大](https://mirrors.ustc.edu.cn)
+>
+
+使用字节的源：
+
+```bash
+export RUSTUP_DIST_SERVER="https://rsproxy.cn"
+export RUSTUP_UPDATE_ROOT="https://rsproxy.cn/rustup"
+```
+
+> [!info] 相关资料
+> 
+> * [RsProxy](https://rsproxy.cn/)
+> * [Rust使用国内Crates 源、 rustup源-CSDN博客](https://blog.csdn.net/inthat/article/details/106742193)
+
+####  crates 换源
+
+##### CRM
+
+可以使用 [CRM](https://github.com/wtklbm/crm) （ 「Cargo registry manager」 -- Cargo 注册表管理器）给 Cargo 换源。
+
+安装 CRM：`cargo install crm`。
+
+> [!tip] 相关链接
+> 
+> * [【镜像源】 最快的镜像源原来是它 - Rust语言中文社区](https://rustcc.cn/article?id=612eabf4-ddc7-42e1-876a-1d91310e6ef5)
+
+###### CRM 常用命令
+
+* `crm list`：列出可用的国内镜像源
+* `crm best`：使用网络延迟最少的源
+* `crm current`：查看当前镜像源
+* `crm default`：恢复官方镜像
+* `crm test [name] `：测试源。`[name]`，可以使用 `crm list` 列出源列表中得到。
+* `crm use <name>`：切换源。
+* `crm remove <name>`：删除源
+* `crm save <name> <addr> <dl>`：在镜像配置文件中添加/更新镜像源
 
 ---
 

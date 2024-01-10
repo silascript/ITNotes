@@ -1,13 +1,12 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - java
   - javaweb
   - spring
   - video
 created: 2023-08-18 19:44:52
-modified: 2023-10-04 18:20:55
+modified: 2024-01-06 09:36:21
 ---
 # Spring 视频清单
 
@@ -18,3 +17,4 @@ modified: 2023-10-04 18:20:55
 * [尚硅谷新版SSM框架全套视频教程，Spring6+SpringBoot3最新SSM企业级开发](https://www.bilibili.com/video/BV1AP411s7D7/)
 * [spring教程全套视频](https://www.bilibili.com/video/BV1T34y1N7CS)
 * [1天搞定SpringBoot+Vue全栈开发！](https://www.bilibili.com/video/BV1WH4y1S7EV)
+* [2023新版SpringMVC从入门到精通视频教程（26集全）](https://www.bilibili.com/video/BV1zc411B7Y9)

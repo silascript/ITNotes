@@ -1,6 +1,5 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - PL
   - java
@@ -8,7 +7,7 @@ tags:
   - Eclipse
   - dbeaver
 created: 2023-01-30 11:19:11
-modified: 2023-11-01 12:37:41
+modified: 2024-01-16 02:28:43
 ---
 
 # Java 笔记
@@ -214,19 +213,19 @@ SDKMane 语法 `sdk <command> [candidate] [version]`。
 
 ---
 
-### <span id="java_eclipse">Eclipse 相关</span>
+## <span id="java_eclipse">Eclipse 相关</span>
 
 [Eclipse](https://www.eclipse.org/) 最初是由 [IBM](https://www.ibm.com/) 开发的下一代 IDE，2001 年 11 月 IBM 将其贡献给开源社区，由 Eclipse 基金会管理。
 
-#### 一些概念
+### 一些概念
 
-##### 视图
+#### 视图
 
 视图：View 是 Eclipse 中各个显示区域，如编辑区、「Package Explorer」区等。
 
 视图列表可以通过菜单「Window」-->「Show View」查看。
 
-##### 透视图
+#### 透视图
 
 透视图：Perspective 其实是 Eclipse UI 布局，即按工作需求，将多个 [视图](#视图) 的不同组合形式。
 
@@ -236,17 +235,17 @@ SDKMane 语法 `sdk <command> [candidate] [version]`。
 
 ---
 
-#### Eclipse 目录结构
+### Eclipse 目录结构
 
-##### <span id="java_eclipse_plugindirectory">插件目录</span>
+#### <span id="java_eclipse_plugindirectory">插件目录</span>
 
-##### <span id="java_ecipse_workspace">工作空间</span>
+#### <span id="java_ecipse_workspace">工作空间</span>
 
-##### Linux 下的 Eclipse 公共目录
+#### Linux 下的 Eclipse 公共目录
 
 [Linux_Note](../Linux/Linux_Note.md) 系统下，用户根下有一个 `.eclipse` 的目录，这是所有 eclipse 的共享目录。
 
-#### 创建 Eclipse 桌面图标
+### 创建 Eclipse 桌面图标
 
 可以参考 [使用 desktop](../Linux/Linux_Note.md#linux_soft_install_desktop) 这个笔记来创建 Eclipse 的桌面图标。
 
@@ -283,9 +282,9 @@ StartupNotify=true
 
 ---
 
-#### <span id="java_eclipse_hotkeys">Eclipse 快捷键</span>
+### <span id="java_eclipse_hotkeys">Eclipse 快捷键</span>
 
-##### 窗口操作
+#### 窗口操作
 
 `Ctrl+M`：最大化当前视图，看焦点在哪里哪里就最大化。
 
@@ -379,27 +378,27 @@ StartupNotify=true
 
 ---
 
-#### <span id="java_eclipse_plugins">Eclipse 常用插件</span>
+### <span id="java_eclipse_plugins">Eclipse 常用插件</span>
 
-##### Marketplace
+#### Marketplace
 
 Marketplace 是 Eclipse 的插件市场，通过它可以更方便地搜索和安装插件。
 
 ---
 
-##### jeeeyuls-eclipse-themes
+#### jeeeyuls-eclipse-themes
 
 [jeeeyul_theme](https://marketplace.eclipse.org/content/jeeeyuls-eclipse-themes) 是一个 Eclipse 界面主题插件。
 
-##### colortheme
+#### colortheme
 
 [colortheme](https://marketplace.eclipse.org/content/eclipse-color-theme) 这个与上面那个不同，这是插件是针对编辑区的配色插件。 Eclipse 市场中的 color-theme 插件地址已经失效。 请到 [这个](https://eclipse-color-theme.github.io/update/) 页面，其中有个链接： [download this update site as a zip archive](https://eclipse-color-theme.github.io/update/eclipse-color-theme-update-site.zip)，下载这个压缩包。将其中的 `features` 和 `plugins` 两个目录提取出来放到一个你自定义名称的目录中，如「color-theme」，将这个包括有 `features` 和 `plugins` 的目录放到 Eclipse 安装目录下的 `dropins` 目录中，重启 Eclipse ，这个插件就能生效了！
 
-##### Bracketeer
+#### Bracketeer
 
 [Bracketeer](https://marketplace.eclipse.org/content/bracketeer-java-jdt) 是一个使用注释方式标识出匹配大括号的插件。Eclipse 插件市场中的 Bracketeer 插件的地址已经失效了，应自行通过 「Install new Software」 这个方式添加插件安装地址。安装地址：[https://chookapp.github.io/ChookappUpdateSite/](https://chookapp.github.io/ChookappUpdateSite/)
 
-##### Eclipse explorer
+#### Eclipse explorer
 
 [Eclipse explorer](https://marketplace.eclipse.org/content/eclipse-explorer)  [![eclipse explorer repo](https://img.shields.io/github/stars/Jamling/eclipse-explorer?style=social)](https://github.com/Jamling/eclipse-explorer/releases) 是打开项目本地目录的插件。同样的，插件市场的地址也是失效了，得到 github 中下载。同 color-theme 一样，下载下的包是不能直接丢到 `dropins` 目录的，得把 `features` 和 `plugins` 目录提取出来。
 
@@ -408,11 +407,11 @@ Marketplace 是 Eclipse 的插件市场，通过它可以更方便地搜索和�
 > 
 > 安装地址为：[https://www.ieclipse.cn/PDESite/updates/](https://www.ieclipse.cn/PDESite/updates/)
 
-##### Jcolon
+#### Jcolon
 
 [Jcolon](https://mystilleef.github.io/eclipse4-jcolon/) [![jcolon repo](https://img.shields.io/github/stars/mystilleef/eclipse4-jcolon?style=social)](https://github.com/mystilleef/eclipse4-jcolon) 是一款自动补分号的插件。真是自动，不需要按快捷键。
 
-##### EditBox
+#### EditBox
 
 [EditBox](https://marketplace.eclipse.org/content/editbox) 是一款显示代码范围的插件。
 
@@ -424,11 +423,11 @@ Marketplace 是 Eclipse 的插件市场，通过它可以更方便地搜索和�
 
 > editbox 安装地址：[http://editbox.sourceforge.net/updates](http://editbox.sourceforge.net/updates)
 
-##### relative-line-number
+#### relative-line-number
 
 [relative-line-number](https://marketplace.eclipse.org/content/relative-line-number-ruler) 相对行号。
 
-###### 设置
+##### 设置
 
 1. 将 Eclipse 内置的行号功能关闭。
 
@@ -438,7 +437,7 @@ Marketplace 是 Eclipse 的插件市场，通过它可以更方便地搜索和�
 
 2. `Relative Number Ruler` 设置项中，勾选 `Show absolute value for current line number`，这样能显示光标所在行的绝对行号！
 
-##### freemarker
+#### freemarker
 
 [freemarker](https://marketplace.eclipse.org/content/freemarker-ide) freemarker 插件。这插件 github 地址：[https://github.com/ddekany/jbosstools-freemarker](https://github.com/ddekany/jbosstools-freemarker) 。
 
@@ -446,21 +445,21 @@ Marketplace 是 Eclipse 的插件市场，通过它可以更方便地搜索和�
 
 事实上这插件也已经有 2 年多没更新了，估计停止维护也不远了，现在还是能用的。不过估计随着 Eclipse 继续版本迭代，不兼容性迟早会出现，到时候是真的就用不了了！
 
-##### SQL DAL Maker
+#### SQL DAL Maker
 
 [SQL DAL Maker](https://github.com/panedrone/sqldalmaker) 数据链接层生成插件
 
-##### mybatipse
+#### mybatipse
 
 [mybatipse](https://marketplace.eclipse.org/content/mybatipse) [![mybatipse repo](https://img.shields.io/github/stars/mybatis/mybatipse?style=social)](https://github.com/mybatis/mybatipse/) MyBatis 插件。
 
   mybatis 中 xml、java 文件的各种功能增强，如自动完成、相关 sql 关联等，使用 mybatis 必装的插件。
 
-##### MyBatis-Generator
+#### MyBatis-Generator
 
 [mybatis-generator](https://marketplace.eclipse.org/content/mybatis-generator) MyBatis 生成插件。
 
-##### Vrapper
+#### Vrapper
 
 [Vrapper](https://marketplace.eclipse.org/content/vrapper/) 是一个在 Eclipse 上模拟 [vim](../vim/Vim_Note.md) 的插件。
 
@@ -476,13 +475,13 @@ Vrapper 更详细使用请参考 [Vrapper Documentation](https://vrapper.sourcef
 
 ---
 
-##### Data Tools Platform
+#### Data Tools Platform
 
 Data Tools Platform 是一套数据库管理插件组，能在 Eclipse 中进行数据库相关的操作。
 
 这套插件，应该说是插件系列，有多个插件可选，下面简单介绍各插件的大概的功能：
 
-###### Data Tools Platform Connectivity
+##### Data Tools Platform Connectivity
 
 勾选「**Data Tools Platform Connectivity**」后，会根据依赖装两组插件：
 
@@ -495,7 +494,7 @@ Data Tools Platform 是一套数据库管理插件组，能在 Eclipse 中进行
 
 从图中可以看出，只装「Data Tools Platform Connectivity」就能实现数据库连接、SQL 等数据库管理的基础功能，其实对于只是「临时」连下数据库，作些简单的数据操作而言，这实际已经够用的了！不过，实际上，还是没法用的，因为连接这个功能，需要数据库的「连接驱动」，而只装「Connectivity」插件，只有通用 JDBC 可选，所以得安装相应数据库连接驱动的支持。
 
-###### Data Tools Platform Enablement
+##### Data Tools Platform Enablement
 
 Data Tools Platform Enablement 是一个对各大数据库连接支持的插件。
 
@@ -505,29 +504,29 @@ Data Tools Platform Enablement 是一个对各大数据库连接支持的插件�
 > [!tip] Enablement for MySQL
 > 在未装「Data Tools Platform Enablement for MySQL」时，只有「Generic JDBC」这个，装了这插件后就多了 MySQL 相关连接驱动可选。
 
-###### SQL Development Tools Data Functions
+##### SQL Development Tools Data Functions
 
 「SQL Development Tools Data Functions」主要功能是在数据库 Model 及 DDL 相关的。
 
 ![SQL Development Tools Data Functions](./Java_Note.assets/Eclipse_dtp_SQL_1.png)
 
-###### SQL Query Builder
+##### SQL Query Builder
 
 「SQL Query Builder」 这个插件依赖 [SQL Parsers](#SQL%20Parsers) 插件，拟勾选「SQL Query Builder」时，会连 [SQL Parsers](#SQL%20Parsers) 插件也一起装了。
 
 ![Eclipse DTP SQL Builder 1](./Java_Note.assets/Eclipse_dtp_SQL_Builder_1.png)
 
-###### SQL Parsers
+##### SQL Parsers
 
 SQL Parsers 这是跟 Model 相关的，应该是模型转换器。
 
 ![Eclise DTP SQL Parsers 1](./Java_Note.assets/Eclise_dtp_SQL_Parsers_1.png)
 
-###### Open Data Access Designer
+##### Open Data Access Designer
 
 「Open Data Access Designer」 依赖 「Open Data Access Designer Core」，而「Open Data Access Designer Core」又依赖「Open Data Access Designer Runtime」，所以只用勾选「Open Data Access Designer」就可以将其他两个一起装了。
 
-###### 对于 Eclipse 中使用数据库管理的总结
+##### 对于 Eclipse 中使用数据库管理的总结
 
 因为 [Data Tools Platform](#Data%20Tools%20Platform) 这套插件有点多，如果不知道装哪些，可以装 [Dali Java Persistence Tools](#Dali%20Java%20Persistence%20Tools) 这个插件，此插件是一个「持久化」插件，其中一个功能可以将数据库的表生成 Java 类，非常的方便，而这插件依赖了 DTP 部分基础插件。
 
@@ -535,7 +534,7 @@ SQL Parsers 这是跟 Model 相关的，应该是模型转换器。
 
 ---
 
-##### DBeaver
+#### DBeaver
 
 DBeaver 插件版是 [DBeaver](../DataBase/DataBase_Note.md#DBeaver) 的插件形式。
 
@@ -547,7 +546,7 @@ DBeaver 插件版也独立安装版功能一致，具体信息可以参考 [DBea
 
 ---
 
-##### Dali Java Persistence Tools
+#### Dali Java Persistence Tools
 
 [Dali Java Persistence Tools](https://projects.eclipse.org/projects/webtools.dali) 这是一个持久化插件。同样是跟数据库相关的，所以装它时，会将 [Data Tools Platform](#Data%20Tools%20Platform) 相关的插件也一并装了。
 
@@ -555,7 +554,7 @@ DBeaver 插件版也独立安装版功能一致，具体信息可以参考 [DBea
 
 ---
 
-#### Eclipse 各版本与 JDK 对应关系
+### Eclipse 各版本与 JDK 对应关系
 
 > [!info] Eclipse 版本代号
 > 从 2018 年 9 月开始，Eclipse 每 3 个月发布一个版本，并且版本僅不再延续天文星体名称，直接使用年份跟月份。
@@ -603,7 +602,7 @@ DBeaver 插件版也独立安装版功能一致，具体信息可以参考 [DBea
 
 ---
 
-#### Eclipse 基础的各种软件找不到 jre
+### Eclipse 基础的各种软件找不到 jre
 
 >可以将在软件安装目录下建一个软链接指向 jdk 中的 jre（如像 java11+ 的没有预装 **jre**，请用上面的命令生成 **jre**）
 >
@@ -619,7 +618,7 @@ DBeaver 插件版也独立安装版功能一致，具体信息可以参考 [DBea
 >
 >
 
-#### Tomcat 配置出问题
+### Tomcat 配置出问题
 
 >配置 tomcat 时，提示“eclipse tomcat unknown version of tomcat was specified”
 >
@@ -646,6 +645,148 @@ sudo chmod -R 755 tomcat-9.0.62
 
 ---
 
+## <span id="java_exception">异常</span>
+
+---
+
+## <span id="java_io">IO 相关</span>
+
+### <span id="java_io_file">File</span>
+
+#### 常见问题
+
+##### 关于 File 的空指针异常
+
+示例：
+
+```java
+try{
+	// 
+	File d01 = new File(File_E01.class.getResource("t02.txt").getPath());
+	// File d01 = new File("t02.txt");
+	
+	// 获取对象的路径
+	System.out.println(d01.getPath());
+	// 获取对象的父级路径
+	System.out.println(d01.getParent());
+
+} catch (NullPointerException e) {
+
+	logger.severe("NullPointerException! 文件对像为Null!\n" + e.getMessage());
+}
+```
+
+可以看文档知道，`File` 类在构建时有可能会抛空指针异常（`Throws: NullPointerException - If the pathname argument is null`），前提是那个 pathname 的字符串为 `null`。
+
+但实际上，除非故意传个 null 值给 File 的构造方法，基本不可能让 File 「new 空」。即便如上面示例一样，使用 `类.class.getResource("xxx").getPath()` 这种方式，获取地址值。而上面示例却有可能会触发抛出空指针异常。触发的原因不是 File 的构造方法，而是 `类.class.getResource("xxx").getPath()` 这里触发的。
+
+当执行到 `类.class.getResource("xxx")` 这里时，如果 `getResource()` 的参数是一个不存在的路径，那 `getResource()` 就会返回个 null，null 是不能继续 `getPath()` 的，所以触发了空指针异常的抛出。所以在这种方式构建 File 对象，空指针异常抛出在路径字符串「获取」时就有可能触发了，File 的构造方法根本没机会再触发空指针异常。
+
+还有 `类.class.getResource("xxx").getPath()` 这代码中的 `getPath()` 方法是不会返回 Null 值，它最多只会返回一个空字符串（`Returns: the path part of this `URL`, or an empty string if one does not exist`）。
+
+#### <span id="java_io_file_path">路径相关</span>
+
+获取文件路径的方式有多种：
+
+##### 方式 1 
+
+```java
+IO_E01.class.getResource("t01.txt").getPath()
+// 结果与getPath()是一致的，但toString()一般用于调试
+//File_E01.class.getResource("t01.txt").toString()
+
+File_E01.class.getResource("").getPaht() // 返回的是File_E01类所在的目录路径
+
+```
+
+##### 方式 2 
+
+```java
+System.out.println(this.getClass().getResource(""));
+System.out.println(this.getClass().getResource("/"));
+System.out.println(this.getClass().getResource("t01.txt"));
+System.out.println(this.getClass().getResource("/t01.txt"));
+
+// 结果
+// file:/home/silascript/DevWorkSpace/JavaExercise/io_exercise/
+// file:/home/silascript/DevWorkSpace/JavaExercise/io_exercise/
+// file:/home/silascript/DevWorkSpace/JavaExercise/io_exercise/t01.txt
+// file:/home/silascript/DevWorkSpace/JavaExercise/io_exercise/t01.txt
+
+```
+
+##### 方式 3
+
+```java
+System.out.println(this.getClass().getClassLoader().getResource(""));
+System.out.println(this.getClass().getClassLoader().getResource("t01.txt"));
+System.out.println(this.getClass().getClassLoader().getResource("/"));
+System.out.println(this.getClass().getClassLoader().getResource("/t01.txt"));
+
+// 结果
+// file:/home/silascript/DevWorkSpace/JavaExercise/io_exercise/
+// file:/home/silascript/DevWorkSpace/JavaExercise/io_exercise/t01.txt
+// null
+// null
+
+```
+
+> [!tip]
+> `this.getClass().getClassLoader().getResource(路径字符串)`，使用这个方式获取文件地址，不能以 `/`（根路径）开始，不然返回值只能是 `null` 。
+> 
+> 因为 `getClass().getClassLoader()` 这已经是表示 `/` 目录。
+
+> [!info] 相关链接
+>
+> * [java获取文件路径总结\_inputstream获取文件路径-CSDN博客](https://blog.csdn.net/qq_38747892/article/details/126751734)
+> * [Java中的getResource()方法，及路径相关问题](https://cloud.tencent.com/developer/article/1901321)
+
+### <span id="java_io_bytestream">字节流</span>
+
+#### 常用示例
+
+```java
+package io_exercise;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
+public class IO_E01 {
+
+	public static void main(String[] args) {
+	
+		try (InputStream inputStr = new FileInputStream(
+				// 获取要读取的文件
+				IO_E01.class.getResource("t01.txt").getPath())) {
+	
+			// 用来装每次读取到的字符
+			// 字符数组大小决定每次读了多少字符
+			var bbuf = new byte[1024];
+	
+			// 实际读取的字符数
+			var hasRead = 0;
+	
+			while ((hasRead = inputStr.read(bbuf)) > 0) {
+				System.out.println(new String(bbuf, 0, hasRead));
+			}
+	
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	
+	}
+}
+```
+
+> [!tip] 关闭流
+> 
+> 在 [JDK1.7（即JDK7）](#JDK) 之前的版本，需要手动关闭流，所以常常在 `finally` 代码块中执行 `inputStr.close()` 的代码。
+> 
+> 但从 1.7 开始，流接口已经实现了 `AutoCloseable` 接口，顾名思义，io 流已经可以「自动」关闭了，无须再手动写关闭流的代码了。
+
+---
+
 ## <span id="java_lambda">Lambda 相关</span>
 
 ---
@@ -658,10 +799,21 @@ sudo chmod -R 755 tomcat-9.0.62
 
 ### int 类型入栈指令
 
+#### 常量入栈
+
 * 当 int 取值为**-1~5**采用 `iconst` 指令
 * 当 int 取值为**-128~127**采用 `bipush` 指令
-* 当 int 取值为**-32768~32767* 采用 `sipush` 指令
+* 当 int 取值为**-32768~32767** 采用 `sipush` 指令
 * 当 int 取值为**-2147473648~2147483647**采用 `ldc` 指令
+
+#### 局部变量表入栈
+
+如果是从 [局部变量表](#局部变量表) 中入栈的，一般使用**load**指令。
+
+* `iload_1`：将局部变量表中第一个 int 型变量「加载」至栈顶
+* `fload_1`：将局部变量表中第一个 float 型变量「加载」至栈顶
+* `dload_1`：将局部变量表中第一个 double 型变量「加载」至栈顶
+* `aload_1`：将局部变量表中第一个引用类型的变量「加载」至栈顶
 
 ### 相关资料
 
@@ -831,7 +983,7 @@ public class Demo_1{
     flags: (0x0009) ACC_PUBLIC, ACC_STATIC
     Code:
       stack=2, locals=2, args_size=1
-         0: iconst_0
+         0: iconst_0地
          1: istore_1
          2: bipush        15
          4: istore_1

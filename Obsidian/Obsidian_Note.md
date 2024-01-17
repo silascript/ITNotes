@@ -4,7 +4,7 @@ tags:
   - markdown
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2023-11-19 11:50:27
+modified: 2024-01-17 11:34:01
 ---
 # Obsidian 笔记
 
@@ -884,6 +884,32 @@ Ctrl+P 呼出命令面板，搜索 「Obsidian Git:Open source control view」�
 ```ad-note
 note 类型
 ```
+
+---
+
+##### Multi-Column-markdown
+
+[Multi-column](https://github.com/ckRobinson/multi-column-markdown) 这个插件可以实现「双栏布局」显示效果。
+
+![Multi-column preview](https://github.com/ckRobinson/multi-column-markdown/raw/master/images/Preview_1.png?raw=true)
+
+这个插件本质主要是扩展了标准 [Markdown](../Markdown/Markdown_Note.md) 语法中分隔线语法。
+
+语法：
+
+`start-multi-column: id`：布局开始，可以给个 id 用于标识
+
+使用 `column-settings`：来进行布局的设置：
+
+`number of columns`：是分栏的数量，`largest column`：分栏的大小
+
+`--- end-column ---`：是分栏分隔
+
+`end-multi-column`：布局结尾
+
+> [!info] 相关资料
+> 
+> * [Obsidian | 人人都会做Obsidian分栏，超级方便，无需CSS代码 - 知乎](https://zhuanlan.zhihu.com/p/503562540)
 
 ---
 

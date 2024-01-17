@@ -7,7 +7,7 @@ tags:
   - Eclipse
   - dbeaver
 created: 2023-01-30 11:19:11
-modified: 2024-01-16 02:28:43
+modified: 2024-01-17 11:34:21
 ---
 
 # Java 笔记
@@ -653,6 +653,10 @@ sudo chmod -R 755 tomcat-9.0.62
 
 ### <span id="java_io_file">File</span>
 
+Java 构造一个 `File` 对象，即使传入的文件或目录不存在，代码也不会出错，因为这个对象只是 Java 在内存中构建的一个对象。
+
+因为构造一个 `File` 对象，并不会导致任何磁盘操作，而只有当调用 `File` 对象的某些方法的时候，才真正进行 IO 操作。
+
 #### 常见问题
 
 ##### 关于 File 的空指针异常
@@ -741,6 +745,122 @@ System.out.println(this.getClass().getClassLoader().getResource("/t01.txt"));
 > * [java获取文件路径总结\_inputstream获取文件路径-CSDN博客](https://blog.csdn.net/qq_38747892/article/details/126751734)
 > * [Java中的getResource()方法，及路径相关问题](https://cloud.tencent.com/developer/article/1901321)
 
+### <span id="java_io_iterate">遍历</span>
+
+File 类中有两组方法：`list()` 和 `listFiles()` 用来遍历。
+
+`list()` 的返回值是字符串数组，即文件或目录的名称。
+
+`listFiles()` 的返回值是 File 类型的数组，即返回的是 File 的对象。
+
+这两组方法的重载方法，都能接收 [FileFilter](#java_io_filter_filefilter) 和 [FilenameFilter](#java_io_filter_filenamefilter) 这两种 [过滤器](#java_io_filter)。
+
+### <span id="java_io_filter">过滤器</span>
+
+#### <span id="java_io_filter_filefilter">FileFilter</span>
+
+FileFilter 文件过滤器。
+
+在 [JDK8](#JDK8) 后，FileFilter 接口被标记为 [函数式接口](#函数式接口)，所以可以使用 [Lambda](#java_lambda) 语法去快速实现这个接口。
+
+FileFilter 接口只有一个方法：`boolean accept(File pathname)`。参数只有一个，即传入一个要过滤的目录 File 对象。
+
+> [!example] 示例
+> 
+> ```java
+> public class File_E03 {
+> 
+>	static Logger logger = Logger.getLogger("File_E03");
+>
+>	public static void main(String[] args) {
+>
+>		try {
+>
+>			// 当前类所在的目录
+>			File dir01 = new File(File_E03.class.getResource("").getPath());
+>
+>			// 获取所有java文件
+>			// listFiles() 方法得到的是File的数组
+>			File[] files = dir01.listFiles((f) -> f.getPath().endsWith(".java"));
+>
+>			// 遍历
+>			for (File f_temp : files) {
+>				System.out.println("文件名：" + f_temp.getName());
+>				System.out.println("文件绝对路径：" + f_temp.getAbsolutePath());
+>				System.out.println("文件路径：" + f_temp.getPath());
+>
+>				System.out.println("---------------------------------------");
+>			}
+>
+>		} catch (NullPointerException e) {
+>
+>			logger.severe(e.getMessage());
+>
+>		}
+>
+>	} 
+> }
+> 
+> 
+> ```
+> 
+
+#### <span id="java_io_filter_filenamefilter">FilenameFilter</span>
+
+FilenameFilter 文件名过滤器。
+
+在 [JDK8](#JDK8) 后，FilenameFilter 接口被标记为 [函数式接口](#函数式接口)，所以可以使用 [Lambda](#java_lambda) 语法去快速实现这个接口。
+
+这接口有且只有一个方法：`accept(File dir, String name)`。
+
+> [!example] 列出某目录下所有 java 文件
+>
+> ```java
+> public class File_E02 {
+>
+>	static Logger logger = Logger.getLogger("File_E02");
+>
+>	public static void main(String[] args) {
+>
+>		try {
+>
+>
+>			// 当前类所在目录
+>			File f01 = new File(File_E02.class.getResource("").getPath());
+>
+>			// 列出此目录下所有后缀名为".java"的文件
+>			String[] files = f01.list((dir, fname) -> {
+>				return fname.endsWith(".java");
+>			});
+>			
+>			 // 遍历文件名数组
+>			for (String fn_temp : files) {
+>
+>				File f = new File(f01, fn_temp);
+>
+>				if (f.isFile()) {
+>					System.out.println("文件名：" + f.getName());
+>					System.out.println("文件绝对路径：" + f.getAbsolutePath());
+>					System.out.println("文件路径：" + f.getPath());
+>				} else {
+>					System.out.println("子目录：" + f);
+>				}
+>				System.out.println("-----------------------------");
+>			}
+>
+>		} catch (NullPointerException e) {
+>
+>			logger.severe(e.getMessage());
+>		}
+>
+>	}
+>
+> } 
+> 
+> ```
+> 因为 FilenameFilter 接口已经被标记为函数式接口，所以示例代码中使用了 lambda 来定义这接口的实现。
+> 
+
 ### <span id="java_io_bytestream">字节流</span>
 
 #### 常用示例
@@ -785,9 +905,59 @@ public class IO_E01 {
 > 
 > 但从 1.7 开始，流接口已经实现了 `AutoCloseable` 接口，顾名思义，io 流已经可以「自动」关闭了，无须再手动写关闭流的代码了。
 
+### <span id="java_io_bytestream_fileinputstream">FileInputStream</span>
+
+`FileInputStream` 是 [字节流](#java_io_bytestream) 抽象类 `InputStream` 的子类。
+
+#### FileInputStream 与 InputStream 区别
+ 
+ `InputStream` 是字节流的抽象基类，它可以从任意的数据源中读取字节数据，包括内存、网络、文件等；
+ 
+ `FileInputStream` 顾名思义，它只能从文件读取字节数据。
+
+对比下两者部分源码对比：
+
+--- start-multi-column:
+```column-settings
+Number of Columns: 2
+Largest Column: standard
+```
+
+FileInputStream
+
+```java
+private native int readBytes(byte[] b, int off, int len) throws IOException;
+    
+@Override
+public int read(byte[] b) throws IOException {
+	long comp = Blocker.begin();
+	try {
+		return readBytes(b, 0, b.length);
+	} finally {
+		Blocker.end(comp);
+	}
+}
+```
+
+--- end-column --- 
+
+InputStream
+
+```java
+public int read(byte[] b) throws IOException {
+	return read(b, 0, b.length);
+}
+```
+
+--- end-multi-column
+
+可发现，`FileInputStream` 的 `read(byte[] b)` 方法调了一个 native 方法
+
 ---
 
 ## <span id="java_lambda">Lambda 相关</span>
+
+### <span id="java_lambda_functionalinterface">函数式接口</span>
 
 ---
 
@@ -1023,10 +1193,17 @@ public class Demo_1{
 
 ---
 
+## 相关文档
+
+* [Java17中文文档 - 全栈行动派](https://doc.qzxdp.cn/jdk/17/zh/api/index.html)
+
+---
+
 ## 相关笔记
 
 * [Java 视频清单](./Java_Videos.md)
 * [Kotlin 笔记](Kotlin/Kotlin_Note.md)
 * [Java Apache 笔记](Java_Apache_Note.md)
 * [Java Web 笔记](Java_Web_Note.md)
+* [Java 日志框架笔记](Java_Log_Note.md)
 

@@ -4,7 +4,7 @@ tags:
   - git
   - github
 created: 2023-01-30 11:19:11
-modified: 2023-12-30 07:24:35
+modified: 2024-01-17 14:10:48
 ---
 # Git 笔记
 
@@ -439,6 +439,12 @@ git pull --rebase origin main
 ---
 
 ## <span id="git_ignore">ignore</span>
+
+`.gitignore` 是 git 一个忽略文件。
+
+### 相关链接
+
+* [gitignore 模板集合](https://github.com/github/gitignore) 这个库中收集了包括各类编程语言在内的，各种各样的 ignore 文件，可以当成 ignore 模板进行参考使用。
 
 ---
 

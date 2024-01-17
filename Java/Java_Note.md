@@ -7,7 +7,7 @@ tags:
   - Eclipse
   - dbeaver
 created: 2023-01-30 11:19:11
-modified: 2024-01-17 11:34:21
+modified: 2024-01-17 18:17:32
 ---
 
 # Java 笔记
@@ -651,6 +651,82 @@ sudo chmod -R 755 tomcat-9.0.62
 
 ## <span id="java_io">IO 相关</span>
 
+### IO 相关类图
+
+#### InputStream 类图
+
+```mermaid
+classDiagram
+	class InputStream {
+		<<abstract>>
+		+read(byte[] b) int
+		+read(byte[] b, int off, int len) int
+	}
+
+	class FileInputStream {
+		FileInputStream(File file)
+		+read(byte[] b) int
+		+read(byte[] b, int off, int len) int
+	}
+
+	class FilterInputStream {
+		#FilterInputStream(InputStream in)
+		+read(byte[] b) int
+		+read(byte[] b, int off, int len) int
+	}
+
+	class BufferedInputStream {
+		BufferedInputStream(InputStream in)
+		BufferedInputStream(InputStream in, int size)
+		+read(byte[] b, int off, int len) int
+	}
+
+	InputStream <|-- FileInputStream
+	InputStream <|-- FilterInputStream 
+	FilterInputStream <| -- BufferedInputStream
+
+```
+
+#### OutputStream 类图
+
+```mermaid
+classDiagram
+	class OutputStream {
+		<<abstract>>
+		+write(byte[] b) void
+		+write(byte[] b, int off, int len) void
+	}
+
+
+	class FileOutputStream {
+		FileOutputStream(File file)
+		FileOutputStream(File file, boolean append)
+		FileOutputStream(String name)
+		FileOutputStream(String name, boolean append)
+		+write(byte[] b) void
+		+write(byte[] b, int off, int len) void
+	}
+
+
+	class FilterOutputStream {
+		FilterOutputStream(OutputStream out)
+		+write(byte[] b) void
+		+write(byte[] b, int off, int len) void
+	}
+
+
+	class BufferedOutputStream {
+		BufferedOutputStream(OutputStream out)
+		BufferedOutputStream(OutputStream out, int size)
+		+write(byte[] b, int off, int len) void
+	}
+
+	OutputStream <| -- FileOutputStream
+	OutputStream <| -- FilterOutputStream
+	FilterOutputStream <| -- BufferedOutputStream
+
+```
+
 ### <span id="java_io_file">File</span>
 
 Java 构造一个 `File` 对象，即使传入的文件或目录不存在，代码也不会出错，因为这个对象只是 Java 在内存中构建的一个对象。
@@ -756,6 +832,16 @@ File 类中有两组方法：`list()` 和 `listFiles()` 用来遍历。
 这两组方法的重载方法，都能接收 [FileFilter](#java_io_filter_filefilter) 和 [FilenameFilter](#java_io_filter_filenamefilter) 这两种 [过滤器](#java_io_filter)。
 
 ### <span id="java_io_filter">过滤器</span>
+
+#### <span id="java_io_filter_filterinputstream">FilterInputStream</span>
+
+`FilterInputStream` 是所有过滤输入流的所有类的父类。
+
+观察 [InputStream 类图](#InputStream%20类图)，发现 `FilterInputStream` 的构造方法是 `protected` 的。也就是说除了其自身还有及子类外的第三方要创建它，是不能通过 `new FilterInputStream()` 来创建的，只能通过其子类，如 [BufferedInputStream](#字节缓冲流) 等子类来创建。
+
+#### <span id="java_io_filter_filteroutputstream">FilterOutputStream</span>
+
+`FilterOutputStream` 是所有过滤输出流的所有类的父类。
 
 #### <span id="java_io_filter_filefilter">FileFilter</span>
 
@@ -952,6 +1038,107 @@ public int read(byte[] b) throws IOException {
 --- end-multi-column
 
 可发现，`FileInputStream` 的 `read(byte[] b)` 方法调了一个 native 方法
+
+### <span id="java_io_bytestream_fileouputstream">FileOutputStream</span>
+
+`FileOutputStream` 比较重要的方法：`write(byte[] b, int off, int len)`。
+
+#### FileInputStream 和 FileOutputStream 示例
+
+```java
+public class File_E05 {
+
+	static Logger logger = Logger.getLogger("File_E05");
+
+	public static void main(String[] args) {
+
+		// 要读取的文件
+		File fin = new File(File_E05.class.getResource("t01.txt").getPath());
+		// 要输出的文件
+		File fout = new File(File_E05.class.getResource("").getPath() +
+				File.separator + "t01_backup.txt");
+
+		try (FileInputStream fis = new FileInputStream(fin);
+				FileOutputStream fos = new FileOutputStream(fout)) {
+
+			byte[] buffer = new byte[10];
+
+			int len = 0;
+
+			while ((len = fis.read(buffer)) > 0) {
+
+				String cpStr = new String(buffer);
+				// 打印下
+				System.out.print(cpStr);
+
+				// 写出
+				fos.write(buffer, 0, len);
+
+			}
+
+		} catch (FileNotFoundException fnfe) {
+			logger.severe(fnfe.getMessage());
+		} catch (IOException ioe) {
+			logger.severe(ioe.getMessage());
+		} catch (NullPointerException npe) {
+			logger.severe(npe.getMessage());
+		} catch (Exception e) {
+			logger.severe(e.getMessage());
+		}
+
+	}
+}
+
+```
+
+### <span id="java_io_bytestream_bufferstream">字节缓冲流</span>
+
+`BufferedInputStream` 与 `BufferedOutputStream` 称为字节缓冲流。使用内置的缓冲区对读取或输出的数据进行缓冲，以此减少直接读取数据源的次数。
+
+`BufferedInputStream` 和 `BufferedOutputStream` 是 [FilterInputStream](#java_io_filter_filterinputstream) 与 [FilterOutputStream](#java_io_filter_filteroutputstream) 的子类。
+
+字节缓冲流默认的缓冲区大小是**8M**。这个数值可能通过重载的构造方法进行设置：`public BufferedInputStream(InputStream  in, int size)`。这个数值最好是 2 的 n 次幂。
+
+> [!info] BufferedInputStream 源码
+> 
+> `private static final int DEFAULT_BUFFER_SIZE = 8192;`
+
+这两类在对象实例化时，需要传入 [FileInputStream](#java_io_bytestream_fileinputstream) 和 [FileOutputStream](#java_io_bytestream_fileouputstream) 实例对象。
+
+而其 `read()` 方法与 `write()` 方法用法与 `FileInputStream` 与 `FileOutputStream` 大同小异。
+
+#### BufferedInputStream 与 BufferedOutputStream 示例
+
+```java
+// 类所在的目录路径
+String current_path = File_E06.class.getResource("").getPath();
+
+// 要读取的文件
+File in_file = new File(current_path +
+		File.separator + "t01.txt");
+
+// 要输出的文件
+File out_file = new File(current_path +
+		File.separator + "t01_backup.txt");
+
+// 读取数据字节缓存
+byte[] buff = new byte[64];
+
+int len = 0;
+
+try (FileInputStream fis = new FileInputStream(in_file);
+		BufferedInputStream bis = new BufferedInputStream(fis);
+		FileOutputStream fos = new FileOutputStream(out_file);
+		BufferedOutputStream bos = new BufferedOutputStream(fos)) {
+
+	// 读取
+	while ((len = bis.read(buff)) > 0) {
+	
+	// 输出
+	bos.write(buff, 0, len);
+
+}
+```
 
 ---
 

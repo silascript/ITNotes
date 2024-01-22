@@ -4,7 +4,7 @@ tags:
   - c
   - video
 created: 2023-09-23 02:04:36
-modified: 2023-11-21 11:05:36
+modified: 2024-01-18 15:19:56
 ---
 # C 语言视频清单
 
@@ -18,6 +18,7 @@ modified: 2023-11-21 11:05:36
 * [C语言详细基础教程](https://www.bilibili.com/video/BV1nx41157P2)
 * [GNU/Linux C语言课堂教学](https://www.ixigua.com/6841532135296205319)
 * [一周内学完C语言](https://www.bilibili.com/video/BV1og4y1X7oe)
+* [C语言 第三阶段 文件IO](https://www.bilibili.com/video/BV1vv411k78H)
 
 ### 李慧芹系列
 

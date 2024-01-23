@@ -1,12 +1,11 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - obsidian
   - plugin
   - list
 created: 2023-01-13 12:44:24
-modified: 2023-07-11 13:27:33
+modified: 2024-01-23 21:27:50
 ---
 # Obsidian 个人必装插件清单
 
@@ -51,6 +50,9 @@ modified: 2023-07-11 13:27:33
 * [MetaEdit](./Obsidian_Note.md#obn_plugins_commp_metaedit)
 * [Tag Wrangler](./Obsidian_Note.md#obn_plugins_commp_tag_wrangler)
 * [Mermaid Tools](./Obsidian_Note.md#obn_plugins_commp_draw_mermaid_tools)
+* [vim-yank-hightlight](Obsidian_Note.md#vim-yank-hightlight)
+* [various-complements-plugin](Obsidian_Note.md#various-complements-plugin)
+* [completr](Obsidian_Note.md#completr)
 
 更多的常用插件介绍，请参考 [Obsidian 笔记](./Obsidian_Note.md#obn_plugins_commp)
 

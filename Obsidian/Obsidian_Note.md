@@ -4,7 +4,7 @@ tags:
   - markdown
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2024-01-17 11:34:01
+modified: 2024-01-23 21:26:10
 ---
 # Obsidian 笔记
 
@@ -710,14 +710,6 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 ---
 
-##### <span id="obn_plugins_commp_vimrcsupport">Vimrc Support</span>
-
-[vimrc support](https://github.com/esm7/obsidian-vimrc-support) 是一个增加了内置的 vim 功能的插件。
-
-不过这插件有点鸡肋，完全比不上在 vscode 上使用 vim 的插件的体验，而且配置麻烦。
-
----
-
 ##### <span id="obn_plugins_commp_theme-picker">Theme Picker</span>
 
 [Theme Picker](https://github.com/kenset/obsidian-theme-picker) 在状态上实现快速切换已安装的主题功能。这个插件另外还附带快速进行深色与浅色间切换功能。
@@ -860,6 +852,40 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 [Mermaid Tools](https://github.com/dartungar/obsidian-mermaid) 是一个支持 [Mermaid](https://mermaid-js.github.io) 的插件，能够在 Markdown 文档中快速添加 Mermaid 图形组件。
 
 ![Mermaid Tool screenshot](https://user-images.githubusercontent.com/36126057/214052070-780d4aab-6325-4729-b07b-836b395160fc.gif)
+
+---
+
+#### <span id="obn_plugins_commp_vim">vim 相关</span>
+
+##### <span id="obn_plugins_commp_vim_yankhl">vim-yank-hightlight</span>
+
+[vim-yank-highlight ](https://github.com/aleksey-rowan/obsidian-vim-yank-highlight) vim 复制高亮插件。
+
+##### <span id="obn_plugins_commp_vim_rcsupport">Vimrc Support</span>
+
+[vimrc support](https://github.com/esm7/obsidian-vimrc-support) 是一个增加了内置的 vim 功能的插件。
+
+不过这插件有点鸡肋，完全比不上在 vscode 上使用 vim 的插件的体验，而且配置麻烦。
+
+---
+
+#### <span id="obn_plugins_commp_complete">补全相关</span>
+
+##### <span id="obn_plugins_commp_complete_variousc">various-complements-plugin</span>
+
+[various-complements-plugin](https://github.com/tadashi-aikawa/obsidian-various-complements-plugin) 是一个功能非常强大的补全插件。
+
+##### <span id="obn_plugins_commp_complete_completr">completr</span>
+
+[Completr ](https://github.com/tth05/obsidian-completr) 也是一个补全插件，不过功能简单，主要用来补全 [Callout Blocks](#Callout%20Blocks) 等的。
+
+> [!info] 相关资料
+> 
+> * [Various Complements 强大自动补全快捷输入工具](https://pkmer.cn/Pkmer-Docs/10-obsidian/obsidian%E7%A4%BE%E5%8C%BA%E6%8F%92%E4%BB%B6/various-complements/)
+> 
+> * [Completr 自动补全插件 - 知乎](https://zhuanlan.zhihu.com/p/665102896)
+> 
+> * [Completr 自动联想补全插件](https://pkmer.cn/Pkmer-Docs/10-obsidian/obsidian%E7%A4%BE%E5%8C%BA%E6%8F%92%E4%BB%B6/obsidian-completr/)
 
 ---
 

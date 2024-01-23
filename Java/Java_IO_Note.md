@@ -27,6 +27,10 @@ Unix/[Linux](../Linux/Linux_Note.md) 下有 5 种 IO 模型：
 
 BIO（BLocking IO）顾名思义是一种阻塞型 IO 模型。
 
+
+
+
+
 ### <span id="javaio_model_nio">NIO</span>
 
 NIO（Nonblocking IO ） 非阻塞 IO 模型。

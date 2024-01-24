@@ -1,6 +1,5 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - linux
   - database
@@ -20,8 +19,8 @@ tags:
   - obsidian
   - golang
   - font
-created: 2022-11-7 2:50:13
-modified: 2023-06-28 5:28:23
+created: 2023-08-18 19:44:52
+modified: 2024-01-25 00:23:03
 ---
 # ITNotes
 
@@ -102,10 +101,12 @@ modified: 2023-06-28 5:28:23
 
 ### 笔记工具
 
+* [笔记软件](NoteSoft/NoteSoft_Note.md)
+
 #### Obsidian
 
-* [Obsidian 笔记](./Obsidian/Obsidian_Note.md)
-* [Obsidian 部分插件笔记](Obsidian/Obsidian_Plugins_Note.md)
+* [Obsidian 笔记](NoteSoft/Obsidian/Obsidian_Note.md)
+* [Obsidian 部分插件笔记](NoteSoft/Obsidian/Obsidian_Plugins_Note.md)
 
 ---
 

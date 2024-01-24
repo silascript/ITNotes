@@ -1,12 +1,12 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
+  - notesoft
   - obsidian
   - video
   - list
 created: 2023-05-19 20:49:18
-modified: 2023-07-11 18:30:57
+modified: 2024-01-25 00:27:28
 ---
 
 # Obsidian 视频清单

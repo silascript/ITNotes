@@ -1,11 +1,11 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
+  - notesoft
   - obsidian
   - plugin
 created: 2023-06-28 17:02:25
-modified: 2023-07-17 02:08:12
+modified: 2024-01-25 00:28:24
 ---
 # Obsidian 部分插件笔记
 
@@ -25,6 +25,7 @@ modified: 2023-07-17 02:08:12
 它使用代码块来实现相应的功能：
 
 dataview 语法：
+
 ```text
 <QUERY-TYPE> <WITHOUT ID> <字段>
 FROM <来源>
@@ -49,8 +50,8 @@ General Settings 中有个设置「Template folder location」，这个是设置
 
 要使用这个「触发器」功能得做以下设置：
 1. 打开「Trigger Templater on new file creation」选项
-2.  当「Trigger Templater on new file creation」选项被打开后，就会出现「Add New」设置栏。它可以新增目录与模板对应关系
-3.  在「Add New」设置栏中，点击「+」，就能新建一个对应项：前面的是要生成新笔记的目录，后面是要使用到的模板文件
+2. 当「Trigger Templater on new file creation」选项被打开后，就会出现「Add New」设置栏。它可以新增目录与模板对应关系
+3. 在「Add New」设置栏中，点击「+」，就能新建一个对应项：前面的是要生成新笔记的目录，后面是要使用到的模板文件
 
 > [!tip] 触发条件
 > 只能在右键「新建笔记」时，套用模板文件的触发器才能生效。如果是点击「文件列表」顶部那个「新建笔记」按钮，是不会触发的。
@@ -63,7 +64,7 @@ General Settings 中有个设置「Template folder location」，这个是设置
 
 ### <span id="obp_templater_coding">编写</span>
 
-要调用 [Javascript](../JS/JS_Note.md) 函数时，使用 `<%* %>`。
+要调用 [Javascript](../../JS/JS_Note.md) 函数时，使用 `<%* %>`。
 
 如果以 `%>` 结束代码块，会在生成文件时，多加一个空行。如果不想多个空行，就使用 `-%>` 来结束代码块。
 

@@ -2,9 +2,10 @@
 aliases: []
 tags:
   - markdown
+  - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2024-01-23 21:26:10
+modified: 2024-01-25 00:25:07
 ---
 # Obsidian 笔记
 
@@ -94,12 +95,12 @@ modified: 2024-01-23 21:26:10
 * graph.json：图表相关的配置文件（像什么链接、关系图谱等）
 * hotkeys.json：快捷键配置文件
 
-![obsidian_configdir_1](./Obsidian_Note.assets/obsidian_configdir_1.png)
+![obsidian_configdir_1](Obsidian_Note.assets/obsidian_configdir_1.png)
 
 * plugins： 目录是存放插件的目录。每个插件都以独立的目录存放。
 * themes：主题样式。存的是一些 css 文件。
 
-![obsidian_configdir_2](./Obsidian_Note.assets/obsidian_configdir_2.png)
+![obsidian_configdir_2](Obsidian_Note.assets/obsidian_configdir_2.png)
 
 ---
 
@@ -292,7 +293,7 @@ Obsidian 的插件分为 [核心插件](#obn_plugins_core) 和 [第三方插件]
 
 ##### 模板编写
 
-模板实际还是 [Markdown](../Markdown/Markdown_Note.md) 文件。
+模板实际还是 [Markdown](../../Markdown/Markdown_Note.md) 文件。
 
 ###### 时间表示
 
@@ -340,7 +341,7 @@ Obsidian 的插件分为 [核心插件](#obn_plugins_core) 和 [第三方插件]
 插件安装，同样因为众所周知的原因，访问起来存在一定的困难性，因为它用的是 [github](https://github.com/)。
 
 各种解决访问 github 的方案：
-* [Github加速](../Git/Git_Note.md#Github加速)
+* [Github加速](../../Git/Git_Note.md#Github加速)
 
 #### 常用插件
 
@@ -362,7 +363,7 @@ Obsidian 的插件分为 [核心插件](#obn_plugins_core) 和 [第三方插件]
 > 这个在增强版命令面板中的 `/` 命令不是内置的 `/` 命令，内置的命令是在编辑区，并处于编辑状态时才触发的编辑快速命令。
 > 当然它也不是 vim 模式下那个搜索命令。
 
-命令面板与「快速切换」功能合并了，这就与 [VSCode_Note](../Editors/VSCode_Note.md) 等命令面板非常接近了。
+命令面板与「快速切换」功能合并了，这就与 [VSCode_Note](../../Editors/VSCode_Note.md) 等命令面板非常接近了。
 
 ###### 快速查找 tag 相关的文档
 
@@ -421,20 +422,20 @@ Obsidian 的插件分为 [核心插件](#obn_plugins_core) 和 [第三方插件]
 
 这插件支持 vim 模式。
 
-如果开启「使用结巴分词」选项，这插件可能用到 [结巴分词](../Python/Python_Note.md#结巴分词)。实话，用插件内置的分词引擎已经够用了，没必要再使用结巴分词引擎了。
+如果开启「使用结巴分词」选项，这插件可能用到 [结巴分词](../../Python/Python_Note.md#结巴分词)。实话，用插件内置的分词引擎已经够用了，没必要再使用结巴分词引擎了。
 
 ---
 
 ##### <span id="obn_plugins_commp_quick-explorer">Quick Explorer</span>
 这个插件，是在界面标题栏中显示，当前路径，并且可以快速浏览文件。
 
-![obsidian_plugin_quickexplorer](./Obsidian_Note.assets/obsidian_plugin_quickexplorer.png)
+![obsidian_plugin_quickexplorer](Obsidian_Note.assets/obsidian_plugin_quickexplorer.png)
 
 ##### <span id="obn_plugins_commp_show-current-file-path">Show Current File Path</span>
 此插件是在底部状态栏上显示当前文件名，点击能够复制文件的路径名。
 > 默认情况，点击复制的是相对路径，只有在这个插件的设置中，打开了「Copy absolute path」选项才会复制绝对路径。
 
-![obsidian_plugin_show_current_file_path](./Obsidian_Note.assets/obsidian_plugin_show_current_file_path.png)
+![obsidian_plugin_show_current_file_path](Obsidian_Note.assets/obsidian_plugin_show_current_file_path.png)
 
 ---
 ##### <span id="obn_plugins_commp_better_word_count">Better Word Count</span>
@@ -564,11 +565,11 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 使用 **Obsidian tabs** 前：
 
-![obsidian_plugin_tabs_before](./Obsidian_Note.assets/obsidian_plugin_tabs_before.png)
+![obsidian_plugin_tabs_before](Obsidian_Note.assets/obsidian_plugin_tabs_before.png)
 
 使用 **Obsidian tabs** 后：
 
-![obsidian_plugin_tabs_after](./Obsidian_Note.assets/obsidian_plugin_tabs_after.png)
+![obsidian_plugin_tabs_after](Obsidian_Note.assets/obsidian_plugin_tabs_after.png)
 
 ---
 
@@ -679,7 +680,7 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 这个插件就解决本应是 Obsidian 内置的功能：一个能够跳转的文件大纲自动生成 -- 像大名鼎鼎的 [Typora](https://typora.io/) 就天生拥有这个功能。
 
-![float-toc](./Obsidian_Note.assets/obsidian_plugin_float-toc.png)
+![float-toc](Obsidian_Note.assets/obsidian_plugin_float-toc.png)
 
 ---
 ##### <span id="obn_plugins_commp_scroll_to_top">Scroll to top</span>
@@ -774,7 +775,7 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 ##### <span id="obn_plugins_commp_jumptolink">Jump To Link</span>
 
-[Jump To Link](https://github.com/mrjackphil/obsidian-jump-to-link) 这个插件类似于 [vim](../vim/Vim_Note.md) 中 [easymotion](../vim/vim_plugin.md#easymotion) 插件，实现页面内跳转。
+[Jump To Link](https://github.com/mrjackphil/obsidian-jump-to-link) 这个插件类似于 [vim](../../vim/Vim_Note.md) 中 [easymotion](../../vim/vim_plugin.md#easymotion) 插件，实现页面内跳转。
 
 此插件主要有几个命令，可以使用「命令面板」调出。
 
@@ -919,7 +920,7 @@ note 类型
 
 ![Multi-column preview](https://github.com/ckRobinson/multi-column-markdown/raw/master/images/Preview_1.png?raw=true)
 
-这个插件本质主要是扩展了标准 [Markdown](../Markdown/Markdown_Note.md) 语法中分隔线语法。
+这个插件本质主要是扩展了标准 [Markdown](../../Markdown/Markdown_Note.md) 语法中分隔线语法。
 
 语法：
 
@@ -982,7 +983,7 @@ note 类型
 ```
 ~~~
 
-![obsidian_timeline_sc1](./Obsidian_Note.assets/obsidian-timeline_sc1.png)
+![obsidian_timeline_sc1](Obsidian_Note.assets/obsidian-timeline_sc1.png)
 
 `[line-4, body-4]` 这个是指定显示风格。
 
@@ -1157,7 +1158,7 @@ Callout Blocks 预置类型：
 
 > [!tip]
 > 
-> 在 [Manjaro](https://manjaro.org/) 或 [ArchLinux](../Linux/ArchLinux_Note.md) 中，是叫 `obs-bin` 这个名字。
+> 在 [Manjaro](https://manjaro.org/) 或 [ArchLinux](../../Linux/ArchLinux_Note.md) 中，是叫 `obs-bin` 这个名字。
 
 obs-cli 大致使用：
 
@@ -1174,9 +1175,9 @@ obs set-default ~/MyNotes/ITNotes
 
 * [Obsidian 部分插件笔记](Obsidian_Plugins_Note.md)
 * [Obsidian 常用插件清单](Obsidian_Plugins_List.md)
-* [Obsidian视频清单](./Obsidian_Videos.md)
+* [Obsidian视频清单](Obsidian_Videos.md)
 * [awesome-obsidian](https://github.com/kmaasrud/awesome-obsidian)
 * [obsidian-snippets](https://github.com/deathau/obsidian-snippets)
 * [Obsidian文档咖啡豆版](https://coffeetea.top)
-* [Markdown 笔记](../Markdown/Markdown_Note.md)
+* [Markdown 笔记](../../Markdown/Markdown_Note.md)
 

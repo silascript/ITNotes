@@ -83,7 +83,7 @@ Markdown 比 doc 等文档更开放，更易于发布。
 > 1. 对于部分使用了 `id` 指定「锚点」值的标题，使用 `#标题` 方式来引用「锚点」。
 > 2. 对于标准 Markdown 语法，即使用 `#标题` 方式定义标题来说，只能使用 `#标题` 方式来引用「锚点」。
 >
-> 来看下在 [Obsidian](../Obsidian/Obsidian_Note.md) 及 [github](https://github.com) 上的效果：
+> 来看下在 [Obsidian](../NoteSoft/Obsidian/Obsidian_Note.md) 及 [github](https://github.com) 上的效果：
 > 1. Obsidian 中使用 `<span id>` 这种方式定义的锚点，并在引用时使用 `#id` 的方式引用，Obsidian 找不到锚点。
 > 2. github 上无论哪种方式引用「锚点」都能实现链接跳转。
 >   
@@ -103,13 +103,13 @@ Markdown 比 doc 等文档更开放，更易于发布。
 >  
 >  但使用 `#标题` 方式引用「锚点」，[github](https://github.com) 就将中文标题「encoding」 了，可读性变差，但功能还是能实现的，这就是为什么 [github](https://github.com) 下两种方式都能实现跳转功能。
 >
->  如果想要在 [Obsidian](../Obsidian/Obsidian_Note.md) 中使用指定锚点 `id` 值来引用「锚点」，可以使用 `^` 符号来引用：
+>  如果想要在 [Obsidian](../NoteSoft/Obsidian/Obsidian_Note.md) 中使用指定锚点 `id` 值来引用「锚点」，可以使用 `^` 符号来引用：
 > 
 >> [!example] 示例 1.1
 >> ![md_anchor_1](./Markdown_Note.assets/md_anchor_1.png) 
->> 而出来是 ` [外观](Obsidian_Note.md#^f53495)` 这种效果，[Obsidian](../Obsidian/Obsidian_Note.md) 生成一个值来引用这个「锚点」,虽然不像之前使用 `#id` 方式引用出现 `unable to find section` 问题，同样也是没在预览窗口实现「锚点」内容的「完全」预览（说预览不完全是因为，它只预览出标题，但没有预览出标题「周围」的内容，这也体现了 Obsidian `#` 与 `^` 两种引用链接方式的不同），但是能够实现「锚点」跳转。
+>> 而出来是 ` [外观](Obsidian_Note.md#^f53495)` 这种效果，[Obsidian](../NoteSoft/Obsidian/Obsidian_Note.md) 生成一个值来引用这个「锚点」,虽然不像之前使用 `#id` 方式引用出现 `unable to find section` 问题，同样也是没在预览窗口实现「锚点」内容的「完全」预览（说预览不完全是因为，它只预览出标题，但没有预览出标题「周围」的内容，这也体现了 Obsidian `#` 与 `^` 两种引用链接方式的不同），但是能够实现「锚点」跳转。
 >>> [!bug] 问题
->>> `#^` 这种方式的引用在 [Obsidian_Note](../Obsidian/Obsidian_Note.md) 中跳转没问题，但在 [github](https://github.com/) 中就不能实现「锚点」跳转功能了，因为生成的链接的那个「值」是 Obsidian 自己特有的。 
+>>> `#^` 这种方式的引用在 [Obsidian_Note](../NoteSoft/Obsidian/Obsidian_Note.md) 中跳转没问题，但在 [github](https://github.com/) 中就不能实现「锚点」跳转功能了，因为生成的链接的那个「值」是 Obsidian 自己特有的。 
 
 > [!bug] 空格问题
 > 如果标题中存在空格，在使用 `#标题` 方式引用时，Obsidian 中预览及跳转都没问题，但在 [github](https://github.com/) 是未能跳转成功的。
@@ -121,7 +121,7 @@ Markdown 比 doc 等文档更开放，更易于发布。
 > 另外，中英混排的标题不能有空格，不然文档在 [github](https://github.com/) 下是不能跳转 -- 其实在 [VSCode](https://code.visualstudio.com/) 使用 [Markdown预览插件](../Editors/Editors_Note.md#editors_vscode_extensions_markdown-preview-enhanced) 预览文档，这种有空格的中英混排标题，同样是不能完成跳转功能的。
 >
 >> [!help] 解决方案
->> 1. 为了能使 [Obsidian](../Obsidian/Obsidian_Note.md) 的链接能够实现预览及跳转，而且更能体现 Markdown 的简单原则，在引用「锚点」时，尽量使用 `#标题` 这种更具备「语义性」的引用方式。
+>> 1. 为了能使 [Obsidian](../NoteSoft/Obsidian/Obsidian_Note.md) 的链接能够实现预览及跳转，而且更能体现 Markdown 的简单原则，在引用「锚点」时，尽量使用 `#标题` 这种更具备「语义性」的引用方式。
 >> 2. 在定义「标题」时，尽量不要使用中英混排的标题。
 >> 3. 在定义「标题」时，如果非要用到中英混排，尽量不要在其中使用 **空格**。
 >> 4. 在定义「标题」时，如果一定要中英混排而且还包含 **空格**，那有两种处理方案：
@@ -149,7 +149,7 @@ Markdown 比 doc 等文档更开放，更易于发布。
 >> 	>>>> ```
 >> 	>>>> 
 >>  
->> 	 * 如果不确定标题存在空格及英文大小写，造成引用「锚点」时跳转是否正常，那就直接使用 `#id` 这种对 [Obsidian](../Obsidian/Obsidian_Note.md) 不太「友好」的方式来引用「锚点」。
+>> 	 * 如果不确定标题存在空格及英文大小写，造成引用「锚点」时跳转是否正常，那就直接使用 `#id` 这种对 [Obsidian](../NoteSoft/Obsidian/Obsidian_Note.md) 不太「友好」的方式来引用「锚点」。
 > 
 
 #### 相关测试
@@ -165,7 +165,7 @@ Markdown 使用 `\` （反斜杠）来对一些特殊字符进行转义。当然
 比如要显示**\`**时，可以写成 **\\\`**，也可以写成 `&#96;`。
 
 > [!tip] 使用 ASII 码的小问题
-> 如使用 ASII 码显示特殊字符时，最后不要省略分号 `;`，虽然在 [Obsidian](../Obsidian/Obsidian_Note.md) 是能显示，但像 [Typora](https://typoraio.cn/) 等编辑器中是不能正常显示的，所以为了兼容性，最好把分号加上。
+> 如使用 ASII 码显示特殊字符时，最后不要省略分号 `;`，虽然在 [Obsidian](../NoteSoft/Obsidian/Obsidian_Note.md) 是能显示，但像 [Typora](https://typoraio.cn/) 等编辑器中是不能正常显示的，所以为了兼容性，最好把分号加上。
 
 ### <span id="md_basic_qoate">引用</span>
 
@@ -178,7 +178,7 @@ Markdown 使用 `\` （反斜杠）来对一些特殊字符进行转义。当然
 
 #### <span id="md_basic_qoate_extension">引用块扩展</span>
 
-引用块最常用的扩展就是在引用块上加上一些「美化」标识，这种扩展语法不是 Markdown 标准语法，而是扩展语法。就如 [Obsidiane](../Obsidian/Obsidian_Note.md) 中的 [Callout Blocks](../Obsidian/Obsidian_Note.md#obn_syntax_calloutblocks) 类似。而现今使用最多的是「**GFM**」（Github Flavo）Flavo ）已经支持了类似功能。不过 Github 没 Obsidian 的样式这么丰富。
+引用块最常用的扩展就是在引用块上加上一些「美化」标识，这种扩展语法不是 Markdown 标准语法，而是扩展语法。就如 [Obsidiane](../NoteSoft/Obsidian/Obsidian_Note.md) 中的 [Callout Blocks](../NoteSoft/Obsidian/Obsidian_Note.md#obn_syntax_calloutblocks) 类似。而现今使用最多的是「**GFM**」（Github Flavo）Flavo ）已经支持了类似功能。不过 Github 没 Obsidian 的样式这么丰富。
 
 GFW 支持 5 种引用扩展样式：
 
@@ -499,7 +499,7 @@ Obsidian 设置更丰富，而且更自由，更换配色主题比 Typora 方便
 
 Obsidian 是 windows、macos 和 Linux 三平台都支持的编辑器。Linux 下它依赖 electron，有 Snap 版和 Appimage 版本。
 
-Obsidian 具体使用请参考：[Obsidian 笔记](../Obsidian/Obsidian_Note.md)
+Obsidian 具体使用请参考：[Obsidian 笔记](../NoteSoft/Obsidian/Obsidian_Note.md)
 
 #### <span id="md_tools_mdeditors_joplin">Joplin</span>
 

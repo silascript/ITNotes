@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2024-01-25 00:25:07
+modified: 2024-01-27 18:17:57
 ---
 # Obsidian 笔记
 
@@ -83,13 +83,86 @@ modified: 2024-01-25 00:25:07
 
 ##  <span id="obn_config_dir">Obsidian 的配置目录</span>
 
-在 Obsidian 的 **vault**，就是所谓的「库」，其根目录下，Obsidian 会生成一个配置目录 **.obsidian**。
+### 全局配置
+
+以 [Linux_Note](../../Linux/Linux_Note.md) 为例，obsidian 的全局配置是放在 `~/.config/obsidian` 目录下。
+
+其中主配置文件 `obsidian.json`，这配置文件主要是 [vault](#vault) 的列表。
+
+#### `obsidian.json` 示例
+
+```json
+{
+	"vaults": {
+		"589cfccbc0bf7269": {
+			"path": "/home/silascript/MyNotes/ITNotes",
+			"ts": 1703889683501,
+			"open": true
+		},
+		"114389328d4119d4": {
+			"path": "/home/silascript/MyNotes/Test_Vault",
+			"ts": 1694958814348
+		},
+		"17847b20f8611fd5": {
+			"path": "/home/silascript/MyNotes/LiteratureNotes",
+			"ts": 1696215287552
+		},
+		"5631927d12119c66": {
+			"path": "/home/silascript/MyNotes/MyLogs",
+			"ts": 1706289161508
+		},
+		"f6171a93157953aa": {
+			"path": "/home/silascript/MyNotes/Test_Vault/test01",
+			"ts": 1706348850187
+		}
+	},
+	"frame": "custom",
+	"disableGpu": true,
+	"updateDisabled": true
+}
+```
+
+> [!info] 
+> 
+> 每个 [vault](#vault) 节点中，以 vault 的 id 为「key」。这个 key，在 `~/.config/obsidian/` 目录下，还有个同名的 `json` 配置文件，
+> 
+> `path` 属性是 vault 的路径，`open` 是指明这个 vault 当前是否打开状态。
+
+### vault
+
+在 Obsidian 的 **vault**，就是所谓的「库」，其根目录下，Obsidian 会生成一个配置目录 `.obsidian`。
+
+> [!tip]
+> 
+> 如果 `.obsidian` 目录已存在，将不会再生成，只有 vault 根目录下没有 `.obsidian` 目录，ob 才会生成此配置目录。
 
 ### .obsidian 目录结构
 
 * Obsidian 是使用 json 文件来配置的。
 * app.json：主配置文件
-* appearance.json：外观配置文件
+* appearance.json：外观配置文件，其实就是用了什么字体及使用了哪个 [主题](#主题)
+	> [!info] 
+	> 
+	> * `accentColor`：界面某些组件强调色
+    > * `baseFontSize`：字体大小
+    > * `interfaceFontFamily`：界面字体
+    > * `textFontFamily`：正文字体
+    > * `monospaceFontFamily`：等宽字体
+    > * `cssTheme`：主题
+	>>
+	>> [!example]
+	>> 
+	>> ```json
+	>> {
+    >> "accentColor": "#0e6fd8",
+    >> "baseFontSize": 20,
+    >> "interfaceFontFamily": "ChiuKong Gothic CL,更紗黑體 UI CL",
+    >> "textFontFamily": "ChiuKong Gothic CL,更紗黑體 CL",
+    >> "monospaceFontFamily": "等距更紗黑體 CL,DejaVu Sans Mono",
+    >> "theme": "obsidian",
+    >> "cssTheme": "Minimal"
+    >> }
+    >> ```
 * core-plugins.json：核心插件配置文件
 * community-plugins.json：第三方插件配置文件
 * graph.json：图表相关的配置文件（像什么链接、关系图谱等）
@@ -897,6 +970,18 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 [Obsidian Git](https://github.com/denolehov/obsidian-git) 这个插件是让 Obsidian 拥有常用 Git 功能的插件。
 
 Ctrl+P 呼出命令面板，搜索 「Obsidian Git:Open source control view」，这就在右侧边面板添加了 Git 的管理面板，它能方便对 当前 Git 库进行版本管理，比如 `git add` 及 `git commit`。个人习惯，会将这面板拖到左边。
+
+---
+
+#### <span id="obn_plugins_commp_diary">日记相关</span>
+
+##### <span id="obn_plugins_commp_diary_periodicnotes">Periodic-Notes</span>
+
+[obsidian-periodic-notes](https://github.com/liamcain/obsidian-periodic-notes) 是一个日记创建管理插件。
+
+> [!info] 相关资料
+> 
+> [Obsidian 插件：Periodic Notes 日记增强插件，管理周期性笔记](https://pkmer.cn/Pkmer-Docs/10-obsidian/obsidian%E7%A4%BE%E5%8C%BA%E6%8F%92%E4%BB%B6/obsidian-periodic-notes/)
 
 ---
 

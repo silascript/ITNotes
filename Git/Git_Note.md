@@ -4,7 +4,7 @@ tags:
   - git
   - github
 created: 2023-01-30 11:19:11
-modified: 2024-01-17 14:10:48
+modified: 2024-01-28 02:02:42
 ---
 # Git 笔记
 
@@ -555,6 +555,24 @@ git commit -m 'update .gitignore'
 ---
 
 ## <span id="git_github">GitHub 使用</span>
+
+### <span id="git_github_api">Github 部分 api</span>
+
+#### 获取库的 releases 版本
+
+获取所有 releases 版本：
+
+[https://api.github.com/repos/platers/obsidian-linter/releases](https://api.github.com/repos/platers/obsidian-linter/releases)
+
+获取最新的 releases 版本：
+
+[https://api.github.com/repos/platers/obsidian-linter/releases/latest](https://api.github.com/repos/platers/obsidian-linter/releases/latest)
+
+返回是 `json` 格式的数据。其中有一些常用的节点：
+
+* `html_url`：某 tag 的 url，如 `"html_url": "https://github.com/platers/obsidian-linter/releases/tag/1.22.0"`
+* `tag_name`：tag 的名称，如 `"tag_name": "1.22.0"`
+* `browser_download_url`：某文件下载 url，如 `"browser_download_url": "https://github.com/liamcain/obsidian-calendar-plugin/releases/download/2.0.0-beta.2/manifest.json"`
 
 ### <span id="git_github_acceleration">Github 加速</span>
 

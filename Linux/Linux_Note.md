@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2023-12-28 09:30:47
+modified: 2024-01-28 03:36:08
 ---
 # Linux 笔记
 
@@ -460,7 +460,17 @@ zip -F 烤肉500.zip --out 500.zip
 * `-v`：列出一些看不出来的特殊字符
 
 `cat -n` 这是将行号也一并打印出来。
+
 ![cat n](./Linux_Note.assets/linux_textprocessing_cat_n.png)
+
+##### cat 常用示例
+
+```shell
+
+# 将某文件内容清空，但不删除
+cat /dev/null > t01.txt
+
+```
 
 #### <span id="linux_textprocessing_commands_tac">tac</span>
 
@@ -708,8 +718,22 @@ curl http://www.baidu.com
 ```
 
 ```shell
-# 除了打印出响应内容外，还将 head 部分出打印出来
-curl -i url
+# 包括协议的响应的 head 信息
+# Include protocol response headers in the output
+curl -i, --include url
+
+# Show document info only
+curl -I, --head url
+
+# 返回状态码
+curl -w "%{http_code}\n" url
+
+# 使用 /dev/null 把多余的信息过滤掉
+curl -w "%{http_code}\n" -o /dev/null url
+
+# 只返回状态码
+curl -s -o /dev/null -w "%{http_code}\n" url
+
 ```
 
 ```shell
@@ -742,10 +766,17 @@ curl -X POST
 curl -d 
 ```
 
-```shell
-# 只显示文档的 head 部分
-curl -I url
-```
+> [!info] 相关资料
+> 
+> * [curl 的用法指南 - 知乎](https://zhuanlan.zhihu.com/p/336945420)
+>   
+> * [cURL命令详解 - 知乎](https://zhuanlan.zhihu.com/p/661602561)
+>   
+> * [通过curl获取HTTP状态返回码](https://blog.csdn.net/weixin_46686835/article/details/113761418)
+>   
+> * [cURL 如何只返回状态码](https://www.cnblogs.com/lsgxeva/p/13915259.html)
+>   
+> * [curl/wget 测试http请求的响应头信息 - dorothychai - 博客园](https://www.cnblogs.com/dorothychai/p/4381931.html)
 
 ##### <span id="linux_network_command_downloader_wget">wget</span>
 
@@ -775,6 +806,7 @@ wget -c http://xxx.com
 ```
 
  `-c` 和 `-O` 组合使用下载示例：
+ 
  ```shell
  wget -c -O miniconda_py39_4.12.0.sh https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh
 ```
@@ -787,6 +819,11 @@ wget --limit-rate=400k URL
 ```shell
 # 检测连接
 wget –-spider URL
+```
+
+```shell
+# 关闭详尽输出，但不进入安静模式
+wget -nv, --no-verbose                
 ```
 
 示例：

@@ -5,7 +5,7 @@ tags:
   - linux
   - list
 created: 2023-08-18 19:44:52
-modified: 2024-01-01 02:31:22
+modified: 2024-01-28 23:35:46
 ---
 # Shell 笔记
 
@@ -73,6 +73,13 @@ modified: 2024-01-01 02:31:22
 * `-e`：文件或目录存在为真。`[ -e path ]`
 * `-f`：文件存在为真。
 * `-d`：目录存在为真。
+   > [!info] 示例
+   > 
+   > ```shell
+   >  if [[ ! -d "/data/" ]];then
+   > 	  mkdir /data
+   > fi
+   > ```
 * `-r`：有读权限为真。
 * `-w`：有写权限为真。
 * `-x`：有执行权限为真。
@@ -177,6 +184,8 @@ done
 
 #### 2. 遍历数组
 
+方式 1：
+
 ```shell
 # 遍历数组
 for arr_temp in ${addrs_arr[*]}
@@ -191,6 +200,22 @@ done
 > `arr_temp` 是一个「临时变量」，用来存储每次循环从数组中取出的数据。
 > 
 > 这示例中的 `for` 循环类似其他高级编程语言中的 `foreach` 语句的用法。
+
+方式 2：
+
+```shell
+
+for i in ${!json_data_arr[@]}
+do
+	echo ${json_data_arr[$i]}
+done
+```
+
+> [!tip] 
+> 
+> 使用 `!` 这种方式，是使用数组索引来遍历。
+>  
+> `i` 是数组索引
 
 #### 4. 函数中的数组使用
 
@@ -234,6 +259,8 @@ local ads_array=($@)
 
 ### 截取
 
+#### 示例 1
+
 ```shell
 
 # # 是从左向右，一个#是取第一个，##是取最后一个
@@ -256,6 +283,19 @@ echo "${s1%.*}"
 # 从右向左取最后一个.后的字符串
 # 取到的是 http://github
 echo "${s1%%.*}"
+
+```
+
+#### 示例 2
+
+```shell
+
+# core_address是 denolehov/obsidian-git 这个样子。获取 / 左右两段字符串
+
+# 取前段 使用从右向左取，取 / 最后一段
+local account=${core_address%%/*}
+# 取后牌戏 使用从左向右取，同样取 / 最后一段
+local p_name=${core_address##*/}
 
 ```
 
@@ -321,6 +361,34 @@ do
 done < xxx.txt
 ```
 
+##### 小示例
+
+这示例使用到了 [jq](#jq) 这个 json 小工具，对 json 文件进行解析，并将解析后的结果数据输出存放到一个临时文件中。
+
+然后对这个临时文件进行读取，在读取时，还对读到的数据进行一定需求的过滤。
+
+```shell
+function get_dl_url(){
+
+	# json文件
+	local json_path=$1
+
+	# 使用 jq 获取各文件下载地址并输出到临时文件中
+	jq -r '.assets[] | .browser_download_url' $json_path > temp.txt
+
+	# 过滤掉 main.js manifest.json styles.css 三个文件之外所有文件
+	for line in `cat temp.txt`
+	do
+		# 从文件地址中获取文件名
+		local f_name=${line##*/}
+		# 过滤文件
+		if [[ $f_name == "main.js" ]] || [[ $f_name == "manifest.json" ]] || [[ $f_name == "styles.css" ]];then
+			echo $line
+		fi
+	done
+}
+```
+
 ---
 
 ## <span span id="shell_function">函数</span>
@@ -353,6 +421,46 @@ function 函数名(){
 ```shell
 shfmt -l -w script.sh
 ```
+
+### json 相关工具
+
+shell 下有多款 json 小工具：
+
+* `jq` 或 `jshon`：shell 下的 JSON 解析器。
+* `JSON.sh`、`jsonv.sh`：shell 脚本，能在 bash、zsh 等中解析 JSON。
+* `JSON.awk`：JSON 解析器 awk 脚本。
+* `json.tool`：python 模块。
+* `undercore-cli`：基于 [NodeJS](../Node/NodeJS_Note.md) 或 [JS](../JS/JS_Note.md) 的 json 工具。
+
+#### jq
+
+安装 `jq`：
+
+```shell
+yay -S jq
+```
+
+#### 示例
+
+##### 示例 1
+
+```shell
+
+# 从assets 数组中获取browser_download_url元素的值
+# 过滤除了main.js manifest.json styles.css三个文件外所有文件
+jq -r '.assets[] | .browser_download_url | select ( contains("main.js") or contains("manifest.json") or contains("styles.css") )' $json_path
+
+```
+
+#### 相关资料
+
+* [如何用 Linux 命令行工具解析和格式化输出 JSON - 知乎](https://zhuanlan.zhihu.com/p/77177160)
+* [Shell：如何解析json - 知乎](https://zhuanlan.zhihu.com/p/675809200)
+* [Linux 命令行工具之 jq 最佳实践 - 知乎](https://zhuanlan.zhihu.com/p/606945462)
+* [Linux jq 命令讲解与实战操作（json字符串解析工具）- 博客园](https://www.cnblogs.com/liugp/p/17613011.html)
+* [jq manual](https://jqlang.github.io/jq/manual/)
+
+---
 
 ---
 

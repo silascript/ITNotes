@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-01-28 03:36:08
+modified: 2024-01-29 11:48:55
 ---
 # Linux 笔记
 
@@ -800,6 +800,12 @@ wget http://xxx.com
 ```
 
 ```shell
+# 指定下载到哪目录
+# 文件名使用下载地址最后部分
+wget -P /home/test http://xxxx
+```
+
+```shell
 # 断点下续传
 # 使用 wget -c 重新启动下载中断的文件
 wget -c http://xxx.com
@@ -853,6 +859,8 @@ wget -r -l 1 -A azw3 http://xxxxx
 wget 相关资料：
 
 * [Linux系统中10个使用Wget命令下载文件示例 - 知乎](https://zhuanlan.zhihu.com/p/98778885)
+* [Linux必备下载命令之wget详解 - 知乎](https://zhuanlan.zhihu.com/p/336487919)
+* [wget下载文件到指定目录](https://blog.csdn.net/willingtolove/article/details/108802004)
 
 ##### <span id="linux_network_command_downloader_aria2">aria2</span>
 

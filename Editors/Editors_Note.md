@@ -8,7 +8,7 @@ tags:
   - scite
   - lsp
 created: 2023-01-30 11:19:11
-modified: 2023-12-03 04:40:31
+modified: 2024-01-29 19:36:16
 ---
 
 # 编辑器笔记
@@ -313,6 +313,34 @@ SublimeText 基本设置：
 
 [SideBar Tools](https://packagecontrol.io/packages/SideBarTools) [![SideBar Tools Repo](https://img.shields.io/github/stars/braver/SideBarTools?style=social
 )](https://github.com/braver/SideBarTools) 是 [SideBarEnhancements](#SideBarEnhancements) 的轻量级重构版本。
+
+---
+
+#### <span id="editor_sublime_plugins_formatter">格式化</span>
+
+源码格式化，在安装了 [LSP](#LSP%20相关) 后，很多都自带有格式化器，但有些语言的 LSP 没有带，比如 [Shell](../Linux/Shell_Note.md)，所以就得单独安装。
+
+##### <span id="editor_sublime_plugins_formatter_sh">Shell 格式化</span>
+
+[Sublime-Pretty-Shell](https://github.com/aerobounce/Sublime-Pretty-Shell) 是使用了 [shfmt](../Linux/Shell_Note.md#shfmt) 作为格式化工具的插件。所以本机得先安装 [ shfmt](https://github.com/mvdan/sh)。
+
+###### 设置
+
+Pretty-Shell 这插件没多少设置，基本都是基于 [shfmt](../Linux/Shell_Note.md#shfmt) 本身的设置。
+
+```json
+// 是否保存文件时自动格式化
+// 个人喜欢手动格式化
+format_on_save":false,
+// & 或 | 这些操作符后是否另起一行
+"binop":true,
+// switchcase 是否缩进
+"switchcase":true,
+// 重定向操作符，> >> << 这些操作符后面加一个空格
+"rediop":true,
+// 大括号起始那些括号是否另起一行
+"fnbrace":true
+```
 
 ---
 

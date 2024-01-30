@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-01-29 11:48:55
+modified: 2024-01-31 02:30:57
 ---
 # Linux 笔记
 
@@ -1342,8 +1342,27 @@ alias ll='exa -a --long --header --group --tree --level=2 --icons --time-style=l
 > `--level=2`：显示子目录的层数
 > 
 > `--time-style=long-iso`：这是将时间样式设置成 `2023-05-31 01:37` 样式。
+> 
+> `--git`：如果当前目录是 [Git](../Git/Git_Note.md) 管理目录，将会多出一个显示 git 状态的列，否则这一列将不会显示。
 
 更详细设置请参考：[exa 文档](https://the.exa.website/features)
+
+> [!tip] 
+> 
+> exa 已经停止更新的，可以使用 [eza](#eza) 平替。
+
+### eza
+
+[eza](https://github.com/eza-community/eza) 是 [exa](#exa) 的一个 fork 版本。因为 exa 已经停止更新的，所以可以使用 eza 进行替代。
+
+> [!tip] 
+> 
+> 可以将做 `exa` 的软链接指向 `eza` 安装目录。这样之前使用了 [exa](#exa) 的配置将不用修改，无痛过度到 eza。
+
+### 相关链接
+
+* [我的终端环境：高效 shell 命令（一）之目录文件 exa、zoxide 与 bat - POLOXUE's BLOG](https://www.poloxue.com/posts/2023-10-28-high-productivity-shell-commands-part1/)
+* [modern-unix](https://github.com/ibraheemdev/modern-unix) ：这是一个 Unix/Linux 命令行小工具合集库。
 
 ---
 

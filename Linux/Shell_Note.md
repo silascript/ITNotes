@@ -5,7 +5,7 @@ tags:
   - linux
   - list
 created: 2023-08-18 19:44:52
-modified: 2024-01-28 23:35:46
+modified: 2024-01-29 21:16:34
 ---
 # Shell 笔记
 
@@ -15,6 +15,31 @@ modified: 2024-01-28 23:35:46
 ---
 
 ##  <span id="shell_variable">变量</span>
+
+### 空格
+
+shell 对于空格有严格的规定：
+
+* **赋值**语句等号两边**绝对不能有**空格。
+* [字符串比较](#字符串比较) 等号两边**必须有**空格。
+* 所赋的值包含空格，可以用引号括起来。
+* `if` 语句的 `[]` 中，表达式前后都应有空格。而 `if` 语句中那个 `;` 与 `]` 间不能有空格。
+	> [!example] 小示例
+	> ```shell
+	> if [ "${s1}" = "hello" ];then
+	> ```
+
+> [!info] 相关资料
+> 
+> * [变量定义规则、shell 格式、空格注意事项汇总](https://blog.csdn.net/m0_45406092/article/details/129047592)
+
+### 引号
+
+数字可带可不带引号，但不带引号的数字可计算，带引号的数字不能用于计算。
+
+> [!info] 相关资料
+>
+> * [单引号、双引号、不加引号和反引号用法和区别详解](https://blog.csdn.net/m0_45406092/article/details/129056037)
 
 ### 局部变量
 
@@ -414,6 +439,7 @@ function 函数名(){
 [shfmt](https://github.com/mvdan/sh) 是一款 shell 脚本格式化工具。
 
 这工具可以与多款 [文本编辑器](../Editors/Editors_Note.md) 的 shell 格式化插件配合使用。
+
 > [!info] 
 > 
 > [各编辑器 shell 格式化插件列表](https://github.com/mvdan/sh#related-projects)
@@ -421,6 +447,24 @@ function 函数名(){
 ```shell
 shfmt -l -w script.sh
 ```
+
+#### 参数解释
+
+`-i`：缩进设置。默认是 0，表示制表符缩进。大于 0 空格缩进，数字是就是空格数。
+`bn`： && 及 |  另起一行
+`ci`：switch case 缩进
+`sr`：重定向符，`>`、`>>`、`<<` 这些，后面添加空格
+`fn`：函数大括号，起始那个括号另起一行
+`kp`：对齐
+
+Google 风格：[Style guides for Google-originated open-source projects](https://google.github.io/styleguide/shellguide.html#indentation)
+
+> [!note] 相关资料
+> * [如何在 Linux 中使用 Shfmt 格式化 Shell 程序 – Digitalixy.com](https://digitalixy.com/linux/505871.html)
+> * [使用 shfmt 更好地格式化 Shell 脚本 - Linux迷](https://www.linuxmi.com/shfmt-format-shell.html)
+> * [Shell 代码规范：ShellCheck 与 shfmt 自动检查 - 知乎](https://zhuanlan.zhihu.com/p/408651010)
+> * [如何在 Linux 中使用 Shfmt 格式化 Shell 程序 – Dbigr.com](https://dbigr.com/article/481199/) 
+> * [格式化 Shell 脚本利器，轻松理解复杂代码-编写shell脚本的工具](https://www.51cto.com/article/705054.html)
 
 ### json 相关工具
 

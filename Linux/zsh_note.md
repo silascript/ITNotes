@@ -2,7 +2,7 @@
 aliases: []
 tags: []
 created: 2023-08-18 19:44:52
-modified: 2024-01-31 04:12:24
+modified: 2024-01-31 19:06:07
 ---
 
 # zsh 笔记
@@ -120,6 +120,37 @@ zinit update --all
 
 ---
 
+##### <span id="zsh_plugins_mgs_grammar">zinit 语法</span>
+
+###### load
+
+`load` 命令用于加载并追踪插件
+
+###### light
+
+`light` 命令是更快的加载插件。一般跟着 [GitHub ](../Git/Git_Note.md#git_github) 的「全限定」库名（格式：账号/库名）。
+
+小示例：`zinit light oskarkrawczyk/honukai-iterm-zsh`，这里就**light**了一个主题，实际是将 [https://github.com/oskarkrawczyk/honukai-iterm-zsh](https://github.com/oskarkrawczyk/honukai-iterm-zsh) 这个库下载下来，并对其中的 `.theme` 文件进行加载。如果库中有多个 `.theme` 文件，那就需要 [pick](#pick) 命令对其选择加载了。
+
+###### pick
+
+有时 [load](#load) 或 [light](#light) 一个插件，其库中有多个符合加载条件的文件，那需要选择其中一个加载，这时就用到了 `pick` 命令。
+
+示例：
+
+```shell
+# zhiweichen0012/myys.zsh-theme这库中有两个theme
+# 使用pick命令选择了 myys.zsh-theme这个文件进行加载
+zinit ice pick"myys.zsh-theme"
+zinit light zhiweichen0012/myys.zsh-theme
+```
+
+> [!info] 
+> 
+> `pick` 命令需要注意的是：`pick` 命令与后面的 `""` 之间不要有空格。等写成 `pick"xxx"` 这样的形式。
+
+---
+
 ### <span id="zsh_plugins_common">常用插件</span>
 
 #### <span id="zsh_plugins_synhl">zsh-syntax-highlighting</span>
@@ -212,6 +243,14 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 
 使用时，使用 `tab` 键就能触发。
 
+这插件是大小写敏感的，如果想要忽略大小写敏感，可以有两种方式：
+
+1. 在 `.zshrc` 文件中添加 [忽略大小写代码](zsh_note.md#zsh_conf_insensitivity)。
+2. 启用 [oh-my-zsh](#oh-my-zsh) 的内置的补全功能：`zinit snippet OMZ::lib/completion.zsh`。
+  > [!info] 相关资料
+  > 
+  > * [Settings · ohmyzsh/ohmyzsh Wiki · GitHub](https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#case_sensitive)
+
 ![fzf-tab screenshot](https://camo.githubusercontent.com/34383a88766acde62884e7b4dd81a7ac05ea24c8b21487364670aa61566ae66a/68747470733a2f2f61736369696e656d612e6f72672f612f3239333834392e737667)
 
 fzf-tab 具体配置参考：[fzf-tab Wiki](https://github.com/Aloxaf/fzf-tab/wiki/Configuration)
@@ -274,6 +313,33 @@ vi-mod 这看插件更「骚」的，竟然还有简单地实现的 vim 的著�
 [modesty](https://github.com/saravanabalagi/zsh-theme-modesty) 这个主题可以显示 [conda 的env](../Python/Python_Note.md#python_conda_commands_env) 信息。不过得配合安装 [zsh-plugin-condaenv](#zsh-plugin-condaenv) 插件。
 
 ![modesty screencast](https://github.com/saravanabalagi/zsh-theme-modesty/raw/master/screencast.gif)
+
+#### alien
+
+[alien](https://github.com/eendroroy/alien) 颜值挺不错的主题。
+
+这个主题还有多种配色可选择。
+
+![alien screenshot](https://camo.githubusercontent.com/cd486bd4cda5af5003161a3924a50625dc7ee1bb20b5be2da4ef58f9cdf64d25/687474703a2f2f61736369696e656d612e6f72672f612f3233373131382e737667)
+
+#### myys
+
+[Site Unreachable](https://github.com/zhiweichen0012/myys.zsh-theme) 这个主题是 [oh-my-zsh](#oh-my-zsh) 经典主题**ys**的修改款。主要是增加了显示 [conda](../Python/Python_Note.md#python_conda) 环境。
+
+因为这个库有两个 `theme` 文件，所以得按需求选择一个 theme 来加载，配置如下：
+
+```shell
+zinit ice pick"myys.zsh-theme"
+zinit light zhiweichen0012/myys.zsh-theme
+```
+
+另外，还要在 `.condarc` 文件中增加一句代码：`changeps1: false`。
+
+> [!info] 
+> 
+> 这代码是隐藏默认情况会在 prompt 上方显示当前 conda 环境，因为这个修改后的 ys 主题已经将 conda 环境显示「整合」进 prompt 中，所以这默认显示就可以关闭了。
+
+类似的主题还有 [taw-ys](https://github.com/lyytaw/taw-ys.zsh-theme) 这个主题。
 
 #### 使用 [oh-my-zsh](#oh-my-zsh)
 

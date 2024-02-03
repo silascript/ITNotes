@@ -4,13 +4,116 @@ tags:
   - shell
   - linux
   - list
+  - sh
+  - bash
+  - zsh
 created: 2023-08-18 19:44:52
-modified: 2024-01-29 21:16:34
+modified: 2024-02-03 21:34:03
 ---
 # Shell 笔记
 
 ---
 ## 目录
+
+---
+
+## <span id="shell_type">Shell 种类</span>
+
+### Bourne shell 
+
+> Bourne shell 由 Steve Bourne 在 AT&T 贝尔实验室开发，被认为是第一个 UNIX shell。它被表示为 sh。 #sh
+
+### Bash
+
+> GNU Bourne-Again Shell (bash) 更多被称为 Bash shell，它被设计成与 Bourne shell 兼容。Bash shell 融合了 Linux 中不同类型 shell 的有用功能，如 Korn shell 和 C shell。 #bash
+
+### zsh
+
+> Z Shell 或 zsh 是 sh shell 的扩展，在自定义方面做了大量改进。如果你想要一个具有更多功能的现代 shell，zsh shell 就是你要找的。 #zsh
+
+### 相关资料
+
+* [Linux 中有哪些不同类型的 Shell？ - 知乎](https://zhuanlan.zhihu.com/p/614551538)
+
+---
+
+## <span id=="shell_mode">Shell 模式</span>
+
+Linux 下常见有：`.bashrc`、`.profile`、`.bash_profile` 等配置文件。
+
+这些配置文件的区别，首先得从 shell 的 4 种使用模式讲起。
+
+#### 交互与非交互
+
+##### 交互模式
+
+顾名思义就是 shell 与用户存在交互行为。 #shell/交互 
+
+##### 非交互模式
+
+与 [交互模式](#交互模式) 的情况就正好相反。 #shell/非交互
+
+ 与  区别的是 bash/zsh 用于接受用户命令，还是执行运行一段脚本。
+
+#### 登录与非登录
+
+使用 `echo $0` 可以检查是否是登录 shell：
+* 如果显示结果是 shell 名称前有一个「**连字符**」`-`,即登录 shell。
+* 如果没有「**连字符**」，即非登录 shell。 
+
+要登录的 shell，无论是否交互，最后都得加载 `.profile` 文件。
+
+而如果是
+
+示例：
+
+使用 ssh 连接本机：
+
+```shell
+$ ssh silascript@192.168.0.20
+
+# silascript @ (base) in ~ [4:57:15] 
+$ echo $-
+569XZhilms
+
+# silascript @ (base) in ~ [4:57:25] 
+$ echo $0
+-zsh
+```
+
+> [!note] 
+> 
+> 可以看到 `-zsh`，这是有连字符 `-` 的，说明此时的 shell 是一个 [登录shell](#登录与非登录)。
+> 
+> 另外，`$-` 的结果是 `569XZhilms`，其中存在 `i`，证明这个 shell 还是个 [交互shell](#交互与非交互)。
+>
+>> [!tip] 
+>> 而如果只是直接通过本地的各种终端直接输入 `echo $0`，一般都是直接显示 shell 的路径，如 `/bin/zsh` 这样的。`echo $-` 结果与通过 ssh 方式连接结果一致。由此可知，在图形界面的 Linux 下，打开一个终端窗口，这种方式的 shell 都是一个非登录式的 shell。
+
+#### shell 类型总结
+
+* 登录式 shell：
+	* 正常通过某终端登录的 shell。
+	* su - username。
+	* su -l username。
+
+* 非登录式 shell：
+	* su username。
+	* **图形终端**下打开的命令窗口。
+	* 自动执行的 shell 脚本。
+
+#### 相关资料
+
+##### 资料链接
+
+* [linux之登录式shell和非登录式shell - 知乎](https://zhuanlan.zhihu.com/p/415152910)
+* [什么是 Linux 中的登录 Shell？ - Linux迷](https://www.linuxmi.com/linux-login-shell.html)
+* [Linux文件 profile、bashrc、bash\_profile区别 - 知乎](https://zhuanlan.zhihu.com/p/405174594)
+* [Linux 交互/非交互/登录/非登录 shell 的区别](https://blog.csdn.net/weixin_44648216/article/details/104056712)
+* [shell 编程的，登录 shell 和非登录 shell 的区别是什么 ？- 知乎](https://www.zhihu.com/question/628721272)
+* [千万别混淆 Bash/Zsh 的四种运行模式 - 知乎](https://zhuanlan.zhihu.com/p/47819029)
+
+Sell 语法相关的内容请查看： [Shell 笔记](./Shell_Note.md)
 
 ---
 
@@ -98,6 +201,7 @@ shell 对于空格有严格的规定：
 * `-e`：文件或目录存在为真。`[ -e path ]`
 * `-f`：文件存在为真。
 * `-d`：目录存在为真。
+
    > [!info] 示例
    > 
    > ```shell
@@ -506,8 +610,6 @@ jq -r '.assets[] | .browser_download_url | select ( contains("main.js") or conta
 
 ---
 
----
-
 ## 视频清单
 
 * [2023年最通俗易懂的Shell教程](https://www.bilibili.com/video/BV1Tu411W7Up)
@@ -520,4 +622,5 @@ jq -r '.assets[] | .browser_download_url | select ( contains("main.js") or conta
 
 * [Linux笔记](Linux_Note.md)
 * [Shell示例笔记](Shell_Example.md)
+* [ZSH笔记](zsh_note.md) #zsh
 

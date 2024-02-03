@@ -6,7 +6,7 @@ tags:
   - pip
   - conda
 created: 2023-08-18 19:44:52
-modified: 2023-12-18 09:11:30
+modified: 2024-01-31 21:35:05
 ---
 # Python 笔记
 
@@ -427,7 +427,25 @@ show_channel_urls: true
 
 ### <span id="python_conda_commands">conda 常用命令</span>
 
+#### <span id="python_conda_commands_config">配置</span>
+
+`conda config` 是 conda 配置命令。
+
+* `conda config --show`：查看当前配置
+* `conda config --show-sources`：查看当前配置所有源
+* `conda config --set changeps1 true`：开启显示环境名称功能 #环境名
+* `conda config --set changeps1 false`：关闭显示环境名称功能 ^4d4740
+* `conda config --add channels`：添加 channel
+* `conda config --remove channels`：移除 channel
+* `conda config --show channels`：查看现有 channel
+* `conda config --set channel_priority strict`：设置 channel 解析优先级
+
+config 相关参数可以使用 `conda config --help` 查看。
+
 #### <span id="python_conda_commands_remove">删除</span>
+
+* `conda clean --all`：清理缓存和未使用的软件包
+* `conda remove 环境名`：[删除环境](#删除环境)
 
 #### <span id="python_conda_commands_create">创建</span>
 

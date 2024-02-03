@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-01-31 02:30:57
+modified: 2024-02-03 20:20:35
 ---
 # Linux 笔记
 
@@ -637,7 +637,8 @@ Linux 中使用的 GNU 版本的 grep ，可以直接通过 `-G`、`-E` 和 `-F`
 
 ## <span id="linux_font"> 字体 </span>
 
-安装字体：
+安装 [字体](../Fonts/Fonts_Note.md)：
+
 1. 使用字体安装程序点击安装
 > 也可以直接将字体文件复制到 `/usr/share/fonts` 目录下  
 > 如果是 ttf 字体，应复制在 `/usr/share/fonts/TTF` 目录下  
@@ -1079,10 +1080,19 @@ apt-get install openssh-server
 * 将 `UsePAM` 设为 `no`
 
 #### 重启
+
 ```shell
 service ssh restart
+# 或者
+systemctl restart sshd.service
+
 ```
+
+> [!note] 
+> 
 > 查看 ssh 是否已开启，可以使用 `ssh -V` 命令。
+> 
+> 或者使用 `systemctl status sshd.service` 来查看 ssh 服务状态。
 
 #### 连接
 
@@ -1152,7 +1162,7 @@ ssh 用户名@ip -p 端口
 
 ## <span id="linux_shell">Shell 相关 </span>
 
-具体请查看 [Shell 笔记](./Shell_Note.md)
+Shell 相关内容：[Shell笔记](Shell_Note.md)
 
 ---
 

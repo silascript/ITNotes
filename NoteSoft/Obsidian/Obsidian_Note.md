@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2024-01-27 23:22:43
+modified: 2024-02-04 04:52:04
 ---
 # Obsidian 笔记
 
@@ -235,6 +235,14 @@ modified: 2024-01-27 23:22:43
 ### <span id="obn_themes_catppuccin">Catppuccin</span>
 
 [Catppuccin](https://github.com/catppuccin/obsidian) 这也是一个非常好看的主题，同样也配合 [Style settings](obn_plugins_style-settings) 插件做到更多细节的美化设置。
+
+---
+
+### <span id="obn_themes_shibainu">Shiba-inu</span>
+
+[Obsidian-shiba-inu-theme](https://github.com/faroukx/Obsidian-shiba-inu-theme) 这个主题也非常好看，同样的也能配置 [Style Settings](#obn_plugins_style-settings) 实现更多的美化细节设置。
+
+![shiba-iun screenshot](https://github.com/faroukx/Obsidian-shiba-inu-theme/raw/main/shibainubackgroundshowcase.png?raw=true)
 
 ---
 
@@ -1106,6 +1114,66 @@ note 类型
 [Obsidian-Surfing](https://github.com/Quorafind/Obsidian-Surfing) 同样也是一个浏览器插件，这个插件是上面那个 [obsdian-web-browser](#obn_plugin_brat_webbrowser) 插件的修改版本，其功能更为强大。
 
 **Obsidian-Surfing**  github 地址：[https://github.com/Quorafind/Obsidian-Surfing](https://github.com/Quorafind/Obsidian-Surfing) 。
+
+---
+
+## <span id="obn_basic">Obsidian 基础用法</span>
+
+### Tag
+
+「标签」是 Obsidan 中很有意思的一个功能。
+
+#### 笔记级 Tag
+
+「笔记级 Tag」或叫「文档级 Tag」是定义在 [Front matter](#Front%20matter%20中的%20Tag) 中的 `tag` 属性。这是为一个笔记文档添加 Tag。
+
+#### 块级 Tag
+
+顾名思义，块级 Tag 就是为一段文字添加 tag。 #tag/blockTag
+
+定义语法：`空格#xxx`
+
+> [!tip] 
+> 
+> `#` 前面，即与要标识的段落，那个空格一定得有，即段落与 tag 之间必须使用空格区隔，不然这个 tag 就不会生效，obsidian 就只会将 `#` 后的文字当成普通文本处理。这与 [Block ID](#Block%20ID) 相同，可见 Obsdian 设计一致性。
+> 
+> 另外，tag 后空格，即离开这个 tag 的范围，后面输入的文字将不是这个 tag 的一部分。
+
+块级标签比 [块引用](#块引用) 更自由：
+1. 可以使用多个标签对一个段文字进行标识。
+2. 标签不一定非得放在一个段落最后，可以出现在文字的任何位置。
+
+### 引用
+
+#### 块引用
+
+在 Obsidian 中，每个段落都被称为「**块**」（Block）。 
+
+而每个**块**在 OB 中都能被其他引用，这就是所谓的 「块引用」（Block Reference）。这种用法，是非 [Markdown](../../Markdown/Markdown_Note.md) 语法的，连 GFM 风格也不存在，甚至是 [Html](../../Frontend/Html_Note.md) 本身都不存在的东西，因为它只是一个「脚标」。 ^block-reference
+
+##### Block ID
+
+###### 定义 Block ID
+
+当在文档中引用其他段落时，会自动为引用源的 [块](#^block-reference) 生成一个唯一标识，这个标识就是块 ID，Block ID。 ^block-reference-auto
+
+当然，Block ID 也可以手动定义。Block ID 语法： `空格^xxx`。`^` 后的字符就是自定义的 id，最好有一定的语义性，当然得保证「唯一性」。 ^block-reference-manual
+
+> [!info] 
+> 
+> 这个空格是定义一个 block ID 非常重要的关键。没有这空格，Block ID 的定义将不会生效，即 Block ID 不会缩成一个角标样式，而只是普通的文字。
+
+需要注意的是，id 值**中不能有空格和下划线**，整个 id 值中不能有空格或下划线，最后也不能有，不然 Obsidan 因为这些空格或下划线，将整个 ID 认为是普通文字。所以如果使用多个单词来定义这 ID，又为了这些单词间有一定的间隔，可以试下「大小驼峰」或连字符 `-` 的方式。 所以「块引用」只有放在段落最后，它之后不能有别的东西，因为输入任何非空格或下划线的文字都会被当成这 ID 的一部分，而如果加空格区隔，又会使前面定义的 Block ID 「失效」。如果考虑到未来可能需要引用到某段文字，可以使用块引用，不然可以考虑使用 [Tag](#Tag) 方式来标识某段文字。
+
+实话，「块引用」的限制比 [Tag](#Tag) 要多，不过块引用可以将文档实际地链接起来，而 [Tag](#Tag) 会更「链接」上会显得更为的松散。 #block/reference
+
+###### 引用 Block ID
+
+引用一个块，其语法是：`[文字](#^blockid)`。根普通的 [Markdown 标题](../../Markdown/Markdown_Note.md#md_basic_title) 引用很像，都使用 `#` 开头，不过后面跟了 `^`，然后才是 [Block ID](#Block%20ID)。 #block/reference  
+
+> [!tip] 
+> 
+> 实际上可以将 obsidian 中的块引用当成对标准 [Markdown](../../Markdown/Markdown_Note.md)`#` 引用的扩展。
 
 ---
 

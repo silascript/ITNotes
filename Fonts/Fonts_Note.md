@@ -2,8 +2,10 @@
 aliases: []
 tags:
   - font
+  - unicode
+  - cjk
 created: 2023-01-31 11:31:14
-modified: 2023-12-17 19:53:22
+modified: 2024-02-05 05:23:08
 ---
 # 字体笔记
 
@@ -12,6 +14,7 @@ modified: 2023-12-17 19:53:22
 ---
 ## 目录
 * [中文字体](#fonts_zh)
+	* [CJK](#fonts_zh_cjk)
 	* [思源字体](#fonts_zh_notofont)
 	* [更纱黑体](#fonts_zh_sarasa)
 * [编程字体](#fonts_program)
@@ -19,9 +22,36 @@ modified: 2023-12-17 19:53:22
 ---
 ## <span id="fonts_zh">中文字体</span>
 
+### <span id="fonts_zh_cjk">CJK</span>
+
+#### CJK 各区字数
+
+#cjk/字数
+
+| **字符集** | **字数** | **Unicode 编码** | **合计** |
+| :---: | :---: | :---: | :---:|
+|[基本汉字](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=jbhz)|20902 字|4E00-9FA5| 20902 字|
+|[基本汉字补充](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=jbhzbc)|90 字|9FA6-9FFF| 20992 字|
+|[扩展A](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kza)|6592 字|3400-4DBF| 27584 字|
+|[扩展B](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzb)|42720 字|20000-2A6DF| 70304 字 |
+|[扩展C](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzc)|4154 字|2A700-2B739| 74458 字|
+|[扩展D](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzd)|222 字|2B740-2B81D| 74680 字|
+|[扩展E](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kze)|5762 字|2B820-2CEA1| 80442 字|
+|[扩展F](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzf)|7473 字|2CEB0-2EBE0| 87915 字|
+|[扩展G](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzg)|4939 字|30000-3134A| 92854 字|
+|[扩展H](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzh)|4192 字|31350-323AF| 97046 字|
+
+#### 相关资料
+
+* [中文字符集 Unicode 编码范围](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php)
+* [GB 18030-2022 公安人口信息专用字库补充汉字 - 知乎](https://zhuanlan.zhihu.com/p/620620630)
+* [GB18030-2022强制标准之我见 - 知乎](https://zhuanlan.zhihu.com/p/641324854#:~:text=GB18030-2005%E6%A0%87%E5%87%86%E6%98%AF%E5%9C%A82000%E6%A0%87%E5%87%86%E7%9A%84%E5%9F%BA%E7%A1%80%E4%B8%8A%E5%A2%9E%E5%8A%A0%E7%BB%9F%E4%B8%80%E8%A1%A8%E6%84%8F%E6%96%87%E5%AD%97%E6%89%A9%E5%B1%95B%E5%8C%BA%E7%9A%8442711%E5%AD%97%E3%80%82,2022%E5%B9%B47%E6%9C%8819%E6%97%A5%E5%8F%91%E5%B8%83%E7%9A%84GB18030-2022%E6%A0%87%E5%87%86%EF%BC%8C%E5%AE%8C%E5%85%A8%E5%85%BC%E5%AE%B92005%E6%A0%87%E5%87%86%EF%BC%8C%E5%B9%B6%E5%9C%A8%E5%85%B6%E5%9F%BA%E7%A1%80%E4%B8%8A%E5%A2%9E%E5%8A%A0%E6%89%A9%E5%B1%95C%E3%80%81D%E3%80%81E%E3%80%81F%E5%8C%BA1.7%E4%B8%87%E5%A4%9A%E5%AD%97%EF%BC%8C%E5%B0%86%E4%BA%8E2023%E5%B9%B48%E6%9C%881%E6%97%A5%E6%AD%A3%E5%BC%8F%E5%AE%9E%E6%96%BD%E3%80%82)
+
+---
+
 ### <span id="fonts_zh_notofont">思源字体</span>
 
-[思源字体](https://fonts.google.com/noto/fonts) 是 Adobe 和 Google 领导开发的开源字体家族。
+[思源字体](https://fonts.google.com/noto/fonts) 是 Adobe 和 Google 领导开发的开源字体家族。 #font/noto
 
 「思源」一词来自成语「饮水思源」。
 

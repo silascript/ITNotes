@@ -1,8 +1,8 @@
 ---
-aliases: 
-tags: 
-created: 2022-11-7 2:50:13
-modified: 2023-05-12 2:14:21
+aliases: []
+tags: []
+created: 2023-08-18 19:44:52
+modified: 2024-02-07 06:03:44
 ---
 # Html 笔记
 
@@ -19,6 +19,8 @@ modified: 2023-05-12 2:14:21
 ---
 
 ## <span id="html_introducton_history">HTML 简介及历史</span>
+
+ #html
 
 **HTML** 全名叫 「超文本标记语言」（HperText Markup Language）。
 
@@ -47,6 +49,8 @@ XHTML 应用出现在 2005 年到 2012 年左右的「重构时代」。
 
 ### <span id="html_introducton_html5">HTML5</span>
 
+ #html #html5
+
 HTML 5 实质是 **WHATWG** 的，W3C 只是「发布者」。
 
 从 HTML 5 始，W3C 已经失去对 包括 HTML 及 DOM 在内的控制权。
@@ -60,7 +64,7 @@ HTML 5 实质是 **WHATWG** 的，W3C 只是「发布者」。
 
 ## <span id="html_editors">HTML 编辑器</span>
 
-HTML 本质上是文本，所以对 HTML 文件编辑可以使用「文本编辑器」。
+HTML 本质上是文本，所以对 HTML 文件编辑可以使用「文本编辑器」。 #文本编辑器 #editor 
 
 大概介绍几种常用的文本编辑器：
 
@@ -70,16 +74,22 @@ Windows 自带的，最朴素的文本编辑器。
 
 ### <span id="html_editors_sublime">SublimeText</span>
 
+ #sublime 
+
 轻量级、顔值高的文本编辑器。最新版本是 [SublimeText4](https://www.sublimetext.com)。
 
 ### <span id="html_editors_vim">vim</span>
 
-Linux 系统下最强大的编辑器。
+#vim 
+
+[Vim](../vim/Vim_Note.md) 是 [Linux](../Linux/Linux_Note.md) 系统下最强大的编辑器。 
 
 ### <span id="html_editors_vscode">VSCode</span>
 
+ #vscode 
+
 对于有更大项目管理需要的用户，可以使用 [VSCode](https://code.visualstudio.com) 。  
-虽然 vim 很强，但如果是做一些有点规模的项目时，VSCode 更优秀。
+虽然 [vim](#vim)，但如果是做一些有点规模的项目时，VSCode 更优秀。
 
 ## 其他
 

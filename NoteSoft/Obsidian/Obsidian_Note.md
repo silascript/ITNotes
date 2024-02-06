@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2024-02-04 04:52:04
+modified: 2024-02-06 22:57:30
 ---
 # Obsidian 笔记
 
@@ -138,9 +138,10 @@ modified: 2024-02-04 04:52:04
 
 ### .obsidian 目录结构
 
-* Obsidian 是使用 json 文件来配置的。
-* app.json：主配置文件
-* appearance.json：外观配置文件，其实就是用了什么字体及使用了哪个 [主题](#主题)
+* `Obsidian` 是使用 json 文件来配置的。
+* `app.json`：主配置文件
+* `appearance.json`：外观配置文件，其实就是用了什么字体及使用了哪个 [主题](#主题)
+
 	> [!info] 
 	> 
 	> * `accentColor`：界面某些组件强调色
@@ -163,18 +164,19 @@ modified: 2024-02-04 04:52:04
     >> "cssTheme": "Minimal"
     >> }
     >> ```
-* core-plugins.json：核心插件配置文件
-* community-plugins.json：第三方插件列表文件。
+* `core-plugins.json`：核心插件配置文件
+* `community-plugins.json`：第三方插件列表文件。
+
    > [!note] 
    > 
    > 这文件中的数据，只有插件被「启用」后，才会加入此文件列表中。如果没有一个第三方插件被启用，这文件中的数据为空。
-* graph.json：图表相关的配置文件（像什么链接、关系图谱等）
-* hotkeys.json：快捷键配置文件
+* `graph.json`：图表相关的配置文件（像什么链接、关系图谱等）
+* `hotkeys.json`：快捷键配置文件
 
 ![obsidian_configdir_1](Obsidian_Note.assets/obsidian_configdir_1.png)
 
-* plugins： 目录是存放插件的目录。每个插件都以独立的目录存放。
-* themes：主题样式。存的是一些 css 文件。
+* `plugins`： 目录是存放插件的目录。每个插件都以独立的目录存放。
+* `themes`：主题样式。存的是一些 css 文件。
 
 ![obsidian_configdir_2](Obsidian_Note.assets/obsidian_configdir_2.png)
 
@@ -279,7 +281,7 @@ modified: 2024-02-04 04:52:04
 |    Ctrl+w     |                 关闭当前标签页                 |
 |    Ctrl+f     |                 在当前文件搜索                 |
 | Ctrl+Shift+f  |                  所有文件搜索                  |
-|    Ctrl+k     |                  插件一个链接                  |
+|    Ctrl+k     |                  插入一个链接                  |
 |    Ctrl+t     |                   新建标签页                   |
 |    Ctrl+n     |                    新建笔记                    |
 |    Ctrl+/     |                 注释或取消注释                 |

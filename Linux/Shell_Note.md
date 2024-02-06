@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2024-02-03 21:34:03
+modified: 2024-02-06 04:09:32
 ---
 # Shell 笔记
 
@@ -47,13 +47,15 @@ Linux 下常见有：`.bashrc`、`.profile`、`.bash_profile` 等配置文件。
 
 ##### 交互模式
 
-顾名思义就是 shell 与用户存在交互行为。 #shell/交互 
+顾名思义就是 shell 与用户存在交互行为。 #shell/mode 
 
 ##### 非交互模式
 
-与 [交互模式](#交互模式) 的情况就正好相反。 #shell/非交互
+与 [交互模式](#交互模式) 的情况就正好相反。 #shell/mode
 
- 与  区别的是 bash/zsh 用于接受用户命令，还是执行运行一段脚本。
+> [!note] 
+> 
+> [交互模式](#交互模式) 与 [非交互模式](#非交互模式)  区别的是 bash/zsh 用于接受用户命令，还是执行运行一段脚本。
 
 #### 登录与非登录
 
@@ -114,6 +116,14 @@ $ echo $0
 * [千万别混淆 Bash/Zsh 的四种运行模式 - 知乎](https://zhuanlan.zhihu.com/p/47819029)
 
 Sell 语法相关的内容请查看： [Shell 笔记](./Shell_Note.md)
+
+---
+
+## <span id="shell_tools">Shell 工具</span>
+
+### Bash-It
+
+* [bash-it](https://github.com/Bash-it/bash-it.git) 是 [Bash](#Bash) 的配置框架，可以认为是 bash 版本的 [oh-my-zsh](zsh_note.md#zsh_plugins_mgs_ohmyzsh)。
 
 ---
 
@@ -618,9 +628,13 @@ jq -r '.assets[] | .browser_download_url | select ( contains("main.js") or conta
 
 ---
 
-## 其他相关笔记
+## 相关笔记及资料
 
 * [Linux笔记](Linux_Note.md)
 * [Shell示例笔记](Shell_Example.md)
 * [ZSH笔记](zsh_note.md) #zsh
+
+* [awesome-shell](https://github.com/alebcay/awesome-shell)
+* [awesome-shell_ZH-CN](https://github.com/xuxiaodong/awesome-shell/blob/master/README_ZH-CN.md#shell-%E5%8C%85%E7%AE%A1%E7%90%86)
+* [Awesome Shell：命令行框架、工具包、指南清单（中译版） - Shell - 软件编程 - 深度开源](https://www.open-open.com/news/view/e54142)
 

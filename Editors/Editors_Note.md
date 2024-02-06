@@ -8,7 +8,7 @@ tags:
   - scite
   - lsp
 created: 2023-01-30 11:19:11
-modified: 2024-01-29 19:36:16
+modified: 2024-02-06 10:54:15
 ---
 
 # 编辑器笔记
@@ -286,8 +286,10 @@ SublimeText 基本设置：
 
 ##### Emmet2
 
+ #emmet
+
 [Emmet 2](https://packagecontrol.io/packages/Emmet)  [![Emmet Plugin Repo](https://img.shields.io/github/stars/emmetio/sublime-text-plugin?style=social
-)](https://github.com/emmetio/sublime-text-plugin) 这应该是必装的。当然这是新版的 Emmet 插件（[老版Emmet插件](https://github.com/sergeche/emmet-sublime) 已经不维护了），所以叫「Emmet 2」。
+)](https://github.com/emmetio/sublime-text-plugin) 这应该是必装的。当然这是新版的 [Emmet](../Frontend/Css_Note.md#emmet) 插件（[老版Emmet插件](https://github.com/sergeche/emmet-sublime) 已经不维护了），所以叫「Emmet 2」。
 
 装完，如果有需要可以改下快捷键：
 

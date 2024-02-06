@@ -1,8 +1,11 @@
 ---
 aliases: []
-tags: []
+tags:
+  - front-end
+  - html
+  - dom
 created: 2023-08-18 19:44:52
-modified: 2024-02-07 06:03:44
+modified: 2024-02-07 06:16:31
 ---
 # Html 笔记
 
@@ -40,6 +43,8 @@ modified: 2024-02-07 06:03:44
 * 2014 年 10 月 28 日 HTML 5 作为 [W3C](https://www.w3.org) 推荐标准发布。
 
 ### <span id="html_introducton_xhtml">XHTML</span>
+
+ #html #xhtml
 
 **XHTML** 是 「3 种 HTML 4 文件根据 XML 1.0 标准重组」而成的。
 

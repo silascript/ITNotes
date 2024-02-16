@@ -1,13 +1,15 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - linux
   - video
+  - course
+  - tutorial
   - list
 created: 2023-08-18 19:44:52
-modified: 2023-09-23 11:14:54
+modified: 2024-02-09 04:06:08
 ---
+
 # Linux 视频清单
 
 ---
@@ -15,8 +17,11 @@ modified: 2023-09-23 11:14:54
 ## Linux 入门
 
 * [2023完整版 Linux从入门到精通](https://www.bilibili.com/video/BV1tX4y1r7Bn)
+* [Linux系统基础入门](https://www.bilibili.com/video/BV1v7421K74X)
 
 ## 三剑客
+
+ #grep #sed #awk
 
 * [grep,sed,awk命令从入门到精通](https://www.bilibili.com/video/BV1pc411W7bv)
 * [Linux三剑客之awk超全超详细教程](https://www.bilibili.com/video/BV1fe4y127WP)

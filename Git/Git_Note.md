@@ -4,7 +4,7 @@ tags:
   - git
   - github
 created: 2023-01-30 11:19:11
-modified: 2024-01-28 02:02:42
+modified: 2024-02-15 19:17:42
 ---
 # Git 笔记
 
@@ -742,6 +742,7 @@ git config --global --unset url.https://github.com/.insteadof
 * [njuu.cf](https://hub.njuu.cf/)
 * [yzuu.cf](https://hub.yzuu.cf/)
 * ~~[fgit.ml](https://hub.fgit.ml/)~~
+* [hscsec.cn](https://github.hscsec.cn/)
 
 > [!tip] 镜像不是永久的
 > 所有的镜像都是暂时性的，你不知道哪天就挂了！
@@ -758,6 +759,8 @@ git config --global --unset url.https://github.com/.insteadof
 ###### 常用加速网址
 
 * [gitclone.com](https://gitclone.com)
+* [521github](https://521github.com/)
+* [99988866.xyz](https://gh.api.99988866.xyz/)
 * [Moeyy](https://github.moeyy.xyz/)
 * [ghps.cc](https://ghps.cc/)
 * [gh.ddlc.top](https://gh.ddlc.top/)

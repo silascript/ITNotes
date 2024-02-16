@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-02-03 20:20:35
+modified: 2024-02-09 02:31:52
 ---
 # Linux 笔记
 
@@ -600,6 +600,9 @@ more 命令一些按键操作：
 ### <span id="linux_textprocessing_regex"> 正则表达式 </span>
 
 ### <span id="linux_textprocessing_grep">grep</span>
+
+ #grep
+
 grep 全称是 「**global search regular expression and print out the line**」，翻译过来就是 **全局搜索正则表达式并把行打印出来**。
 
 grep 是一个程序族，包括了 **grep**、**egrep** 和 **fgrep**。
@@ -608,7 +611,11 @@ Linux 中使用的 GNU 版本的 grep ，可以直接通过 `-G`、`-E` 和 `-F`
 
 ### <span id="linux_textprocessing_sed">sed</span>
 
+ #sed 
+
 ### <span id="linux_textprocessing_awk">awk</span>
+
+ #awk 
 
 #### 列
 

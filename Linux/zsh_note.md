@@ -6,7 +6,7 @@ tags:
   - zinit
   - linux
 created: 2023-08-18 19:44:52
-modified: 2024-02-03 20:27:56
+modified: 2024-02-07 20:35:16
 ---
 
 # zsh 笔记
@@ -549,6 +549,8 @@ zinit snippet https://github.com/docker/cli/blob/master/contrib/completion/zsh/_
 * [zsh 中文文档](https://shadowrz.github.io/zshdocs-zh/)
 * [Zsh 开发指南](https://github.com/goreliu/zshguide)
 * [ZSH - Documentation](https://zsh.sourceforge.io/Doc/)
+
+---
 
 ## 其他笔记
 

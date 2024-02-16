@@ -7,15 +7,18 @@ tags:
   - tutorial
   - list
 created: 2023-02-12 11:23:37
-modified: 2023-11-17 10:58:49
+modified: 2024-02-15 18:34:05
 ---
 
 # Python 视频清单
 
 ---
 
+## 基础入门
+
 * [Alex 8天 Python](https://www.bilibili.com/video/BV1hk4y1H7Q1)
 * [python速成教程——5天魔鬼训练营从入门到精通（完整版）](https://www.bilibili.com/video/BV1vN4y1d7Ri)
+* [【10天Python打基础】专为"非计算机专业和编程困难户"制作的10天Python基础教程](https://www.bilibili.com/video/BV1tt421H7zX)
 * [漫画Python](https://www.bilibili.com/video/BV1sA411674Q)
 * [2023最新版动画Python](https://www.bilibili.com/video/BV1Bm4y1P7gE)
 * [2023 高淇 Python 教程 ](https://www.bilibili.com/video/BV1Jm4y1W7aC)
@@ -34,3 +37,7 @@ modified: 2023-11-17 10:58:49
 * [【清华大学计算机系科协暑培 2023】Python 基础](https://www.bilibili.com/video/BV1kF411Q71M)
 * [【零基础学Python】](https://www.bilibili.com/video/BV1j34y1M7h9)
 * [2023最新版课程 Python入门视频教程零基础学习Python](https://www.bilibili.com/video/BV1UQ4y1H7sE)
+
+## 框架
+
+* [【Flask框架】Python从入门到精通之Flask框架详细教程](https://www.bilibili.com/video/BV1c7421T7Ki)

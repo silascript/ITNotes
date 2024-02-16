@@ -5,7 +5,7 @@ tags:
   - html
   - dom
 created: 2023-08-18 19:44:52
-modified: 2024-02-07 06:16:31
+modified: 2024-02-07 06:23:28
 ---
 # Html 笔记
 
@@ -69,7 +69,7 @@ HTML 5 实质是 **WHATWG** 的，W3C 只是「发布者」。
 
 ## <span id="html_editors">HTML 编辑器</span>
 
-HTML 本质上是文本，所以对 HTML 文件编辑可以使用「文本编辑器」。 #文本编辑器 #editor 
+HTML 本质上是文本，所以对 HTML 文件编辑可以使用「文本编辑器」。  
 
 大概介绍几种常用的文本编辑器：
 
@@ -79,19 +79,19 @@ Windows 自带的，最朴素的文本编辑器。
 
 ### <span id="html_editors_sublime">SublimeText</span>
 
- #sublime 
+  #editor #sublime 
 
 轻量级、顔值高的文本编辑器。最新版本是 [SublimeText4](https://www.sublimetext.com)。
 
 ### <span id="html_editors_vim">vim</span>
 
-#vim 
+#editor #vim 
 
 [Vim](../vim/Vim_Note.md) 是 [Linux](../Linux/Linux_Note.md) 系统下最强大的编辑器。 
 
 ### <span id="html_editors_vscode">VSCode</span>
 
- #vscode 
+ #editor #vscode 
 
 对于有更大项目管理需要的用户，可以使用 [VSCode](https://code.visualstudio.com) 。  
 虽然 [vim](#vim)，但如果是做一些有点规模的项目时，VSCode 更优秀。
@@ -105,7 +105,10 @@ Windows 自带的，最朴素的文本编辑器。
 IDE：
 
 当然还有古老又笨重还收费的 Adobe Dreamweaver。  
-另外还有个装 X 货 [Hbuilder X](https://www.dcloud.io/hbuilderx.html)
+
+另外还有个装 X 货 [Hbuilder X](https://www.dcloud.io/hbuilderx.html)。
+
+> [!info] 
 > Hbuilder 没有 Linux 版本，如果系统是 Linux 的，就略过了。
 
 当然，还有个重量级成员：[webstorm](https://www.jetbrains.com/webstorm/)。个人十分讨厌 [JetBrains](https://www.jetbrains.com) 全系的 IDE，因为我非常讨厌 Swing。
@@ -117,9 +120,12 @@ IDE：
 ##  <span id="html_basic_concept">HTML 基本概念</span>
 
 **HTML** 不是一门编程语言，而是一种用于定义内容结构的标记语言。
+
+> [!tip] 
 > html 是给页面搭「骨架」的。
 
 ### <span id="html_basic_concept_tag">标签</span>
+
 HTML 代码由不同的标签构成。
 
 ### <span id="html_basic_concept_element">元素</span>

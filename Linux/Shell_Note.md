@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2024-02-06 04:09:32
+modified: 2024-02-15 22:49:51
 ---
 # Shell 笔记
 
@@ -37,7 +37,7 @@ modified: 2024-02-06 04:09:32
 
 ---
 
-## <span id=="shell_mode">Shell 模式</span>
+## <span id="shell_mode">Shell 模式</span>
 
 Linux 下常见有：`.bashrc`、`.profile`、`.bash_profile` 等配置文件。
 
@@ -582,6 +582,8 @@ Google 风格：[Style guides for Google-originated open-source projects](https:
 
 ### json 相关工具
 
+ #json
+
 shell 下有多款 json 小工具：
 
 * `jq` 或 `jshon`：shell 下的 JSON 解析器。
@@ -591,6 +593,8 @@ shell 下有多款 json 小工具：
 * `undercore-cli`：基于 [NodeJS](../Node/NodeJS_Note.md) 或 [JS](../JS/JS_Note.md) 的 json 工具。
 
 #### jq
+
+ #shell #shell/tools #shell/tools/jq
 
 安装 `jq`：
 
@@ -625,6 +629,7 @@ jq -r '.assets[] | .browser_download_url | select ( contains("main.js") or conta
 * [2023年最通俗易懂的Shell教程](https://www.bilibili.com/video/BV1Tu411W7Up)
 * [2023年最新Shell自动化开发全套顶级天花板教程](https://www.bilibili.com/video/BV1494y1i7ca)
 * [Shell脚本从入门到实战](https://www.bilibili.com/video/BV1k94y1W7cJ)
+* [B站第一的Shell脚本的学习方法，每天只需30分钟让你效率保障99倍](https://www.bilibili.com/video/BV1sT4y1b7si)
 
 ---
 
@@ -632,7 +637,7 @@ jq -r '.assets[] | .browser_download_url | select ( contains("main.js") or conta
 
 * [Linux笔记](Linux_Note.md)
 * [Shell示例笔记](Shell_Example.md)
-* [ZSH笔记](zsh_note.md) #zsh
+* [ZSH笔记](zsh_note.md) 
 
 * [awesome-shell](https://github.com/alebcay/awesome-shell)
 * [awesome-shell_ZH-CN](https://github.com/xuxiaodong/awesome-shell/blob/master/README_ZH-CN.md#shell-%E5%8C%85%E7%AE%A1%E7%90%86)

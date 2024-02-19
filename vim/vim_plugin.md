@@ -7,49 +7,63 @@ tags:
   - lsp
   - markdown
   - vim-plugin
+  - list
 created: 2023-01-30 11:19:11
-modified: 2024-02-19 20:38:01
+modified: 2024-02-20 02:52:04
 ---
-# vim 常用插件
 
-* [Plug插件](#plug)
-* [自动符号](#plugin_auto_pairs)
-* [snippets插件](#plugin_snippets)
-* [格式化插件](#plugin_format)
-* [注释插件](#plugin_comment)
-	* [nerdcommentor](#plugin_nerdcommentor)
-* [状态栏插件](#plugin_statusline)
-	* [airline](#plugin_sl_airline)
-* [文件类型图标](#plugin_filetype_icon)
-* [语法增强](#plugin_syntax)
-	* [ployglot](#plugin_syn_ployglot)
-		* [子插件](#plugin_syn_subplugin)
-* [符号操作](#plugin_operator)
+# vim 常用插件清单
 
-* [Git相关插件](#plugin_git)
+---
 
-* [预览插件](#plugin_preview)
+## 目录
 
-* [小工具](#plugin_tools)
-  * [高亮](#plugin_hightlight)
-	* [vim-highlightedyank](#plugin_hlyank)
-  * [mark 相关](#plugin_mark)
-	* [vim-signature](#plugin_mk_signature)
-  * [浏览器插件](#plugin_browser)
-    * [open-browser](#plugin_browser_openbrowser)
-    * [browser-github](#plugin_browser_github)
-* [MarkDown相关](#plugin_markdown)
-  * [Markdown 预览插件](#plugin_md_privew)
-    * [markdown-preview](#plugin_md_privew_1)
-    * [vim-markdown-preview](#plugin_md_privew_2)
-    * [preview-markdown.vim](#plugin_md_privew_3)
-  * [Markdown 表格相关的插件](#plugin_md_table)
-   * [VIM Table Mode](#plugin_md_table_1)
-   * [markdowntable](#plugin_md_table_2)
+* [插件管理器](#vimplugin_mgmt)
+	* [vim-Plug](#vimplugin_mgmt_plug)
+* [插件列表](#vimplugin_list)
+	* [自动符号](#vimplugin_auto_pairs)
+	* [snippets插件](#vimplugin_snippets)
+	* [格式化插件](#vimplugin_format)
+	* [注释插件](#vimplugin_comment)
+		* [nerdcommentor](#vimplugin_nerdcommentor)
+	* [状态栏插件](#vimplugin_statusline)
+		* [airline](#vimplugin_sl_airline)
+	* [文件类型图标](#vimplugin_filetype_icon)
+	* [语法增强](#vimplugin_syntax)
+		* [ployglot](#vimplugin_syn_ployglot)
+			* [子插件](#vimplugin_syn_subplugin)
+	* [符号操作](#vimplugin_operator)
+	
+	* [Git相关插件](#vimplugin_git)
+	
+	* [预览插件](#vimplugin_preview)
+	
+	* [小工具](#vimplugin_tools)
+	  * [高亮](#vimplugin_hightlight)
+		* [vim-highlightedyank](#vimplugin_hlyank)
+	  * [mark 相关](#vimplugin_mark)
+		* [vim-signature](#vimplugin_mk_signature)
+	  * [浏览器插件](#vimplugin_browser)
+	    * [open-browser](#vimplugin_browser_openbrowser)
+	    * [browser-github](#vimplugin_browser_github)
+	* [MarkDown相关](#vimplugin_markdown)
+	  * [Markdown 预览插件](#vimplugin_md_privew)
+	    * [markdown-preview](#vimplugin_md_privew_1)
+	    * [vim-markdown-preview](#plugin_md_privew_2)
+	    * [preview-markdown.vim](#vimplugin_md_privew_3)
+	  * [Markdown 表格相关的插件](#vimplugin_md_table)
+	   * [VIM Table Mode](#vimplugin_md_table_1)
+	   * [markdowntable](#vimplugin_md_table_2)
 * [关于LSP及补全](#lsp_complete)
 * [相关笔记](#相关笔记)
 
-### <span id="vimplugin_plug">Plug 插件</span>
+---
+
+## <span id="vimplugin_mgmt">插件管理器</span>
+
+### <span id="vimplugin_mgmt_plug">vim-Plug</span>
+
+[vim-plug](https://github.com/junegunn/vim-plug) 是一款使用非常普遍的 [Vim](Vim_Note.md) 插件管理器。
 
  #vim-plug
 
@@ -91,6 +105,8 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 call plug#end()
 ```
 
+> [!info] 
+> 
 > 如果 begin() 中不写具体插件安装地下，windows 下会装在 `C:\Users\用户名\AppData\Local\nvim\plugged` 这个目录下。
 >
 > 在 `begin` 与 `end` 之间是配置各种插件
@@ -109,14 +125,18 @@ Plug 'othree/xml.vim',{'for':'xml'}
 Plug 'google/vim-codefmt',{'on':['FormatCode','FormatLines']}
 ```
 
-常用 **按需加载**:
+常用 **按需加载**：
 
 | `do`  | Post-update hook，某些 vim 插件在完成安装或更新后，需要执行额外的操作，可以使用 do 选项指定具体的操作或函数 |
 | ----- | ------------------------------------------------------------ |
 | `on`  | 按需加载: vim 命令或 `<Plug>`-mappings                         |
 | `for` | 按需加载: 文件类型                                           |
 
-### <span id="plugin_auto_pairs">自动括号匹配</span>
+---
+
+## <span id="vimplugin_list">插件列表</span>
+
+### <span id="vimplugin_auto_pairs">自动括号匹配</span>
 
 #### auto-pairs
 
@@ -130,9 +150,9 @@ Plug 'jiangmiao/auto-pairs'
 
 [Eliot00/auto-pairs](https://github.com/Eliot00/auto-pairs) 是 [auto-pairs](#auto-pairs) 的 vim9 适配版。
 
-### <span id="plugin_snippets">snippets 插件</span>
+### <span id="vimplugin_snippets">snippets 插件</span>
 
-#### <span id="plugin_snippets_ultisnips">Ultisnips</span>
+#### <span id="vimplugin_snippets_ultisnips">Ultisnips</span>
 
  #ultisnips
 
@@ -158,7 +178,7 @@ Plug 'honza/vim-snippets'
 
 ---
 
-#### <span id="plugin_snippets_snipmate">SnipMate</span>
+#### <span id="vimplugin_snippets_snipmate">SnipMate</span>
 
  #snipmate
 
@@ -173,13 +193,13 @@ Plug 'garbas/vim-snipmate'
 
 ```
 
-#### <span id="plugin_snippets_neosnippet">Neosnippet</span>
+#### <span id="vimplugin_snippets_neosnippet">Neosnippet</span>
 
 [neosnippet](https://github.com/Shougo/neosnippet.vim) 看名字就知道是 Shougo 的作品，这是一个 snippet 引擎，定位跟 [snipmate](#plugin_snippets_snipmate) 或 [ultisnips](#plugin_snippets_ultisnips) 相同。默认使用 [neosnippet-snippets](#plugin_snippets_neosnippet_snippets) 作为 snippet 仓库。
 
 ---
 
-#### <span id="plugin_snippets_neosnippet_snippets">neosnippet-snippets</span>
+#### <span id="vimplugin_snippets_neosnippet_snippets">neosnippet-snippets</span>
 
  [neosnippet-snippets](https://github.com/Shougo/neosnippet-snippets) 这是为 [Neosnippet](#plugin_snippets_neosnippet) 引擎而设的 snippet 仓库，跟 [vim-snippets](#plugin_snippets_vimsnippets) 类似。
 
@@ -210,7 +230,7 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 
 ```
 
-#### <span id="plugin_snippets_vimsnippets">vim-snippets</span>
+#### <span id="vimplugin_snippets_vimsnippets">vim-snippets</span>
 
  [vim-snippets](https://github.com/honza/vim-snippets) 是一个 snippet 仓库，它预存储了大量的不同语言的 snippet 文件。为 snippet 引擎，如 [Ultisnips](#Ultisnips) 或 [SnipMate](#SnipMate) 提供「弹药」。
 
@@ -228,7 +248,7 @@ snippets 语法格式请参考 [vim-snippets](https://github.com/honza/vim-snipp
 
 ---
 
-### <span id="plugin_format">格式化插件</span>
+### <span id="vimplugin_format">格式化插件</span>
 
 #### vim-codefmt
 
@@ -258,9 +278,9 @@ vim-codefmt 插件在 vim 中使用，就两个主要命令:
 
 2. **:FormatCode**：格式化整页代码
 
-### <span id="plugin_comment">注释插件</span>
+### <span id="vimplugin_comment">注释插件</span>
 
-#### <span id="plugin_nerdcommenter">nerdcommenter</span>
+#### <span id="vimplugin_nerdcommenter">nerdcommenter</span>
 
 [nerdcommenter](https://github.com/preservim/nerdcommenter)
 
@@ -288,9 +308,9 @@ nerdcommentor 默认快捷键:
 > [!tip] nerdcommenter 地址更换
 > 注意 此插件原来的 github 的地址为 **scrooloose/nerdcommenter**，如果原来装有的，得改下 Plug 后的字符串值为 **preservim/nerdcommenter**，然后 Clean 下再 Install。
 
-### <span id="plugin_statusline">状态栏插件</span>
+### <span id="vimplugin_statusline">状态栏插件</span>
 
-#### <span id="plugin_sl_airline">airline</span>
+#### <span id="vimplugin_sl_airline">airline</span>
 
 [vim-airline](https://github.com/vim-airline/vim-airline)
 
@@ -320,27 +340,27 @@ let g:airline_theme='dark'
 
 ```
 
-#### <span id="plugin_sl_lightline">lightline</span>
+#### <span id="vimplugin_sl_lightline">lightline</span>
 
 [lightline](https://github.com/itchyny/lightline.vim) 是一个跟 [airline](#airline) 类似的状态栏插件，但它比 airline 更轻量。
 
 ---
 
-### <span id="plugin_filetype_icon">文件类型图标</span>
+### <span id="vimplugin_filetype_icon">文件类型图标</span>
 
 [vim-devicons](https://github.com/ryanoasis/vim-devicons)
 
 ![image-20200618134854822](vim_plugin.assets/image-20200618134854822.png)
 
-### <span id="plugin_syntax">语法高亮增强</span>
+### <span id="vimplugin_syntax">语法高亮增强</span>
 
-#### <span id="plugin_syn_ployglot">vim-polyglot</span>
+#### <span id="vimplugin_syn_ployglot">vim-polyglot</span>
 [vim-polyglot](https://github.com/sheerun/vim-polyglot)
 
 vim-polyglot 这个插件是插件集，它集成了众多语言相关的插件,语法高亮只是其中一个功能。
 用户可以对某子插件进行自行设置。
 
-##### <span id="plugin_syn_subplugin">部分子插件</span>
+##### <span id="vimplugin_syn_subplugin">部分子插件</span>
 
 ###### markdown
 
@@ -360,7 +380,7 @@ let g:vim_markdown_folding_level = 6 //折叠级别 未设置默认为1
 其实 vim-markdown 折叠功能有点坑，折叠是折了，但展开输入内容，1 秒就重新折上~
 所以还是用 vim8 内置的折叠功能或 [vim-markdown-folding](#vim-markdown-folding) 这个插件好了!
 
-### <span id="plugin_operator">符号操作</span>
+### <span id="vimplugin_operator">符号操作</span>
 
 #### Surround
 
@@ -551,7 +571,7 @@ vim-gigutter 各种常用命令:
 :Loremipsum 数字 " 生成指定字符数目的文本
 ```
 
-### <span id="plugin_preview">预览插件</span>
+### <span id="vimplugin_preview">预览插件</span>
 
 [vim-livedown](https://github.com/shime/vim-livedown)
 
@@ -579,9 +599,9 @@ Plug 'shime/vim-livedown',{'on':['LivedownPreview','LivedownToggle','LivedownKil
 
 ---
 
-### <span id="plugin_tools">小工具</span>
+### <span id="vimplugin_tools">小工具</span>
 
-#### <span id="plugin_tools_startuptime">Startuptime</span>
+#### <span id="vimplugin_tools_startuptime">Startuptime</span>
 
 [Startuptime](https://github.com/dstein64/vim-startuptime)
 
@@ -643,26 +663,27 @@ let g:startify_custom_header =
 
 ---
 
-#### <span id="plugin_mcursors">多光标</span>
+#### <span id="vimplugin_mcursors">多光标</span>
 
-##### <span id="plugin_mcursors_1">vim-visual-multi</span>
+##### <span id="vimplugin_mcursors_1">vim-visual-multi</span>
 
 [vim-visual-multi](https://github.com/mg979/vim-visual-multi) 这个插件能使 vim 进行多光标操作。
 
-常用操作步骤:
-<kbd>Ctrl-n</kbd>：进入多光标模式，并选中当前光标所在字符。
+常用操作步骤：
 
-在启动多光标模式的，继续按 <kbd>n</kbd>，能够选中相同的下一个字符。
+`Ctrl-n`：进入多光标模式，并选中当前光标所在字符。
 
-选择完成，可以按 <kbd>i</kbd>，<kbd>a</kbd>，<kbd>I</kbd>，<kbd>A</kbd> 进入 Insert 模式，继续以下的操作。
+在启动多光标模式的，继续按 `n`，能够选中相同的下一个字符。
+
+选择完成，可以按 `i`，`a`，`I`，`A` 进入 [Insert 模式](Vim_Note.md#vim_mode_insert) ，继续以下的操作。
 
 按 <kbd>Exit</kbd> 可退出多光标模式。
 
 ---
 
-#### <span id="plugin_hightlight">高亮</span>
+#### <span id="vimplugin_hightlight">高亮</span>
 
-##### <span id="plugin_hlyank">高亮复制</span> 
+##### <span id="vimplugin_hlyank">高亮复制</span> 
 
 [vim-highlightedyank](https://github.com/machakann/vim-highlightedyank) 是一个实现了在复制操作时，高亮一下刚复制的文本功能的插件。
 
@@ -691,9 +712,9 @@ let g:startify_custom_header =
 > [!tip]
 > 高亮颜色设置要放在 colortheme 设置之后。
 
-#### <span id="plugin_mark">mark 相关</span>
+#### <span id="vimplugin_mark">mark 相关</span>
 
-##### <span id="plugin_mk_signature">signature</span>
+##### <span id="vimplugin_mk_signature">signature</span>
 
 [vim-signature](https://github.com/kshenoy/vim-signature) 是一个 mark 显示插件。
 在侧边栏显示 mark 标记。
@@ -724,9 +745,9 @@ Plugin 'puremourning/vimspector'
 
 ---
 
-#### <span id="plugin_browser">浏览器插件</span>
+#### <span id="vimplugin_browser">浏览器插件</span>
 
-##### <span id="plugin_browser_openbrowser">open-browser</span>
+##### <span id="vimplugin_browser_openbrowser">open-browser</span>
 [open-browser](https://github.com/tyru/open-browser.vim)
 
 打开浏览器并跳转到指定网址。
@@ -737,7 +758,7 @@ Plugin 'puremourning/vimspector'
 
 ![open-browser_2](./vim_plugin.assets/vim_plugin_open-browser2.png)
 
-##### <span id="plugin_browser_github">open-browser-github</span>
+##### <span id="vimplugin_browser_github">open-browser-github</span>
 
 快速打开 github。
 
@@ -749,7 +770,7 @@ Plugin 'puremourning/vimspector'
 
 ---
 
-### <span id="plugin_markdown">Markdown 相关插件</span>
+### <span id="vimplugin_markdown">Markdown 相关插件</span>
 
  #markdown 
 
@@ -763,10 +784,10 @@ Plugin 'puremourning/vimspector'
 
 还有其他命令:
 
-* **:set foldlevel=数字**: 设置折叠级别
-* **zM**: 相当于 set foldlevel=0
+* `:set foldlevel=数字`： 设置折叠级别
+* `zM`： 相当于 set foldlevel=0
 
-#### <span id="plugin_md_privew_1">Markdown 预览插件</span>
+#### <span id="vimplugin_md_privew_1">Markdown 预览插件</span>
 
 Markdown 预览插件原理大同小异，都是通过启动一个小型［服务器］来加载渲染 Markdown 页面，从而实现预览效果。
 这小型［服务器］有可能是用 Python 实现，也有可能是 NodeJS 或其他技术。
@@ -784,12 +805,12 @@ Markdown 预览插件原理大同小异，都是通过启动一个小型［服�
 :MarkdownPreviewStop
 ```
 
-##### <span id="plugin_md_privew_2">vim-markdown-preview</span>
+##### <span id="vimplugin_md_privew_2">vim-markdown-preview</span>
 
 [vim-markdown-preview](https://github.com/JamshedVesuna/vim-markdown-preview)
 这个插件是通过 Python 实现的,要使用此插件得先装 [Grip](#https://github.com/joeyespo/grip)(--GitHub Readme Instant Preview)
 
-##### <span id="plugin_md_privew_3">preview-markdown.vim</span>
+##### <span id="vimplugin_md_privew_3">preview-markdown.vim</span>
 
 [preview-markdown.vim](https://github.com/skanehira/preview-markdown.vim)
 
@@ -797,9 +818,9 @@ Markdown 预览插件原理大同小异，都是通过启动一个小型［服�
 >mdr is a standalone Markdown renderer for the terminal.
 因为这个插件是在 vim 内部使用 terminal 方式预览，所以对 vim 版本有限制：Vim 8.1.1401+
 
-#### <span id="plugin_md_table">Markdown 表格相关的插件</span>
+#### <span id="vimplugin_md_table">Markdown 表格相关的插件</span>
 
-##### <span id="plugin_md_table_1">VIM Table Mode</span>
+##### <span id="vimplugin_md_table_1">VIM Table Mode</span>
 
 [VIM Table Mode](https://github.com/dhruvasagar/vim-table-mode) 这个插件能够简化绘制表格操作。
 
@@ -816,7 +837,7 @@ markdown 表格的对齐方式那个行的输入。
 ```
 就能快速 " 生成 " 一个 **| :---: |** 这个对齐项
 
-##### <span id="plugin_md_table_2">markdowntable</span>
+##### <span id="vimplugin_md_table_2">markdowntable</span>
 
 [markdowntable](https://github.com/nora75/markdowntable) 用来快速生成一个表格。
 
@@ -824,12 +845,6 @@ markdown 表格的对齐方式那个行的输入。
 ```vim
 :TableMake 行数 列数
 ```
-
----
-
-### <span id="lsp_complete">关于 LSP 及补全</span>
-
-[LSP及补全](./LSP_Complete.md)
 
 ---
 
@@ -842,3 +857,6 @@ markdown 表格的对齐方式那个行的输入。
 * [vimscript 笔记](vimscript_note.md)
 * [vim 配色笔记](vim_colorscheme_Note.md)
 
+### <span id="lsp_complete">关于 LSP 及补全</span>
+
+[LSP及补全](./LSP_Complete.md)

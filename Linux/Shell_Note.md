@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2024-02-15 22:49:51
+modified: 2024-02-19 19:47:13
 ---
 # Shell 笔记
 
@@ -128,6 +128,13 @@ Sell 语法相关的内容请查看： [Shell 笔记](./Shell_Note.md)
 ---
 
 ##  <span id="shell_variable">变量</span>
+
+命名规则：
+
+* 首个字符必须为字母
+* 中间不能有 [空格](#空格)，可以使用下划线 `_`
+* 不能使用标点符号
+* 不能使用 [Bash](#Bash) 等 Shell 里的关键字
 
 ### 空格
 
@@ -635,9 +642,18 @@ jq -r '.assets[] | .browser_download_url | select ( contains("main.js") or conta
 
 ## 相关笔记及资料
 
+### 笔记
+
 * [Linux笔记](Linux_Note.md)
 * [Shell示例笔记](Shell_Example.md)
 * [ZSH笔记](zsh_note.md) 
+
+### 教程
+
+* [Shell 编程范例 - 书栈网](https://www.bookstack.cn/read/open-shell-book/README.md)
+* [Shell编程基础 - 书栈网](https://www.bookstack.cn/read/ShellBasicProgramming)
+
+### 周边资料
 
 * [awesome-shell](https://github.com/alebcay/awesome-shell)
 * [awesome-shell_ZH-CN](https://github.com/xuxiaodong/awesome-shell/blob/master/README_ZH-CN.md#shell-%E5%8C%85%E7%AE%A1%E7%90%86)

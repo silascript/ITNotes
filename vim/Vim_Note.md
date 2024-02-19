@@ -1,14 +1,13 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - vim
   - linux
   - plugin
   - neovim
   - lsp
-created: 2023-02-4 4:35:40
-modified: 2023-06-24 2:12:30
+created: 2023-08-18 19:44:52
+modified: 2024-02-16 21:35:09
 ---
 
 # Vim 笔记
@@ -58,9 +57,9 @@ modified: 2023-06-24 2:12:30
 ## <span id="vim_map">映射</span>
 
 模式字母：
-*  `n`：只有正常
-*  `v`：视觉和选择
-*  `o`：运营商待定
+* `n`：只有正常
+* `v`：视觉和选择
+* `o`：运营商待定
 * `x`：仅可视
 * `s`：仅选择
 * `i`： 插入
@@ -102,3 +101,5 @@ modified: 2023-06-24 2:12:30
 * [vim 插件](./vim_plugin.md)
 * [vim配置](./vim及neovim配置.md)
 * [vim视频清单](./Vim_Videos.md)
+* [vimscript笔记](vimscript_note.md)
+* [vim配色笔记](vim_colorscheme_Note.md)

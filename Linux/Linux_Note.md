@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-02-09 02:31:52
+modified: 2024-02-19 03:04:40
 ---
 # Linux 笔记
 
@@ -1391,6 +1391,7 @@ alias ll='exa -a --long --header --group --tree --level=2 --icons --time-style=l
 * [Ubuntu笔记](Ubuntu_Note.md)
 * [Debian笔记](Debian_Note.md)
 * [Linux视频清单](./Linux_Videos.md)
+* [Ranger相关](Ranger相关.md)
 
 ---
 

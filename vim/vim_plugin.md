@@ -1,15 +1,14 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - editor
   - vim
   - plugin
   - lsp
   - markdown
-  - plugin
+  - vim-plugin
 created: 2023-01-30 11:19:11
-modified: 2023-09-30 10:25:16
+modified: 2024-02-19 20:38:01
 ---
 # vim 常用插件
 
@@ -48,8 +47,11 @@ modified: 2023-09-30 10:25:16
    * [VIM Table Mode](#plugin_md_table_1)
    * [markdowntable](#plugin_md_table_2)
 * [关于LSP及补全](#lsp_complete)
+* [相关笔记](#相关笔记)
 
 ### <span id="vimplugin_plug">Plug 插件</span>
+
+ #vim-plug
 
 windows 下装 [Plug 插件](https://github.com/junegunn/vim-plug)
 
@@ -132,6 +134,8 @@ Plug 'jiangmiao/auto-pairs'
 
 #### <span id="plugin_snippets_ultisnips">Ultisnips</span>
 
+ #ultisnips
+
 [Ultisnips](https://github.com/SirVer/ultisnips) 是一个 snippet 引擎插件。
 
 ```shell
@@ -155,6 +159,8 @@ Plug 'honza/vim-snippets'
 ---
 
 #### <span id="plugin_snippets_snipmate">SnipMate</span>
+
+ #snipmate
 
 使用另一个 snippet 引擎：**SnipMate**
 
@@ -356,9 +362,9 @@ let g:vim_markdown_folding_level = 6 //折叠级别 未设置默认为1
 
 ### <span id="plugin_operator">符号操作</span>
 
----
-
 #### Surround
+
+ #surround
 
 [vim-surround](https://github.com/tpope/vim-surround)
 
@@ -423,31 +429,61 @@ S  ： 选中内容添加包围并独成一行
 
 ### easymotion
 
+ #easymotion
+
 [vim-easymotion](https://github.com/easymotion/vim-easymotion)
+
+#### easymotion 配置
+
+##### 按键配置
+
+```vim
+
+" 行内跳转
+map <Leader><Leader>h <Plug>(easymotion-linebackward)
+map <Leader><Leader>l <Plug>(easymotion-lineforward)
+
+" 行间跳转
+" easymotion-overwin-line 这是配置多窗口下也能使用行间跳转的快捷键配置
+map <Leader><Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader><Leader>L <Plug>(easymotion-overwin-line)
+
+```
+
+如果想使用 `<Leader><Leader>w` 来标记所有词，而不是只标记当光标之下的部分的单词，可以进行以下配置：
+
+```vim
+" 所有word跳转
+" 为可见区域所有单词都上标记，方便在所有词间跳转
+map <Leader><Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader><Leader>w <Plug>(easymotion-overwin-w)
+```
 
 #### 常用操作
 
 (1)  **跳转到当前光标前后的位置**
 
-`<leader><leader>w`
+`<leader><leader>w`：对当前标一所在位置**往下**所有单词进行标记，以便进行**词间跳转**
 
-`<leader><leader>b`
+`<leader><leader>b`：对当前光标所在位置**往上**所有单词进行标记，以便**词间跳转**
 
 (2) **搜索**
 
-`<leader><leader>s`
+`<leader><leader>s`：搜索包含输入字符的单词并进行标记，以便跳转
 
 (3) **行级跳转**
 
-`<leader><leader>j`
-
-`<leader><leader>k`
+* `<leader><leader>j`：对当前光标所在位置**往下**的所有**行**进行标记， 以便进行**行间跳转**
+* `<leader><leader>k`：对当前光标所在位置**往上**的所有**行**进行标记，以便进行**行间跳转**
 
 (4) **行内跳转**
 
-`<leader><leader>h`
+* `<leader><leader>h`：对当前光标所在行**右边**所有**单词**进行标记，以便进行**行内跳转**
+* `<leader><leader>l`：对当前光标所在行**左边**所有**单词**进行标记，以便进行**行内跳转**
 
-`<leader><leader>l`
+#### 相关资料
+
+* [vim插件: easymotion快速跳转](https://wklken.me/posts/2015/06/07/vim-plugin-easymotion.html)
 
 ### vim9-stargate
 
@@ -715,6 +751,8 @@ Plugin 'puremourning/vimspector'
 
 ### <span id="plugin_markdown">Markdown 相关插件</span>
 
+ #markdown 
+
 #### [vim-markdown-folding](https://github.com/masukomi/vim-markdown-folding)
 
 ```vim
@@ -792,4 +830,15 @@ markdown 表格的对齐方式那个行的输入。
 ### <span id="lsp_complete">关于 LSP 及补全</span>
 
 [LSP及补全](./LSP_Complete.md)
+
+---
+
+## 相关笔记
+
+* [Vim 笔记](Vim_Note.md)
+* [vim常用操作](vim常用操作.md)
+* [Vim 视频清单](Vim_Videos.md)
+* [vim及neovim配置](vim及neovim配置.md)
+* [vimscript 笔记](vimscript_note.md)
+* [vim 配色笔记](vim_colorscheme_Note.md)
 

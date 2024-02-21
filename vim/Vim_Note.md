@@ -1,13 +1,15 @@
 ---
 aliases: []
 tags:
+  - editor
   - vim
   - linux
   - plugin
   - neovim
+  - nvim
   - lsp
 created: 2023-08-18 19:44:52
-modified: 2024-02-16 21:35:09
+modified: 2024-02-21 03:22:14
 ---
 
 # Vim 笔记
@@ -21,6 +23,7 @@ modified: 2024-02-16 21:35:09
 	* [插入模式](#vim_mode_insert)
 	* [可视模式](#vim_mode_visual)
 	* [选择模式](#vim_mode_select)
+	* [命令行模式](#vim_mode_command)
 * [映射](#vim_map)
 * [相关笔记](#vim_about_notes)
 
@@ -51,6 +54,10 @@ modified: 2024-02-16 21:35:09
 使用 `Ctrl-o` 命令同样可以从选择模式切换到 [可视模式](#vim_mode_visual)。
 
 使用 `Esc` 或 `Ctrl-[` 键，可以退出选择模式，直接回到 [普通模式](#vim_mode_normal)。
+
+### <span id="vim_mode_command">命令行模式</span>
+
+命令行模式也称为「**末行模式**」。
 
 ---
 
@@ -100,6 +107,7 @@ modified: 2024-02-16 21:35:09
 * [vim常用操作](./vim常用操作.md)
 * [vim 插件](./vim_plugin.md)
 * [vim配置](./vim及neovim配置.md)
+* [neovim笔记](Neovim_Note.md)
 * [vim视频清单](./Vim_Videos.md)
 * [vimscript笔记](vimscript_note.md)
 * [vim配色笔记](vim_colorscheme_Note.md)

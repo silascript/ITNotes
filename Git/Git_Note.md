@@ -4,7 +4,7 @@ tags:
   - git
   - github
 created: 2023-01-30 11:19:11
-modified: 2024-02-15 19:17:42
+modified: 2024-02-21 00:48:58
 ---
 # Git 笔记
 
@@ -737,7 +737,7 @@ git config --global --unset url.https://github.com/.insteadof
 * ~~[hub.連接.台灣](https://hub.xn--gzu630h.xn--kpry57d)~~
 * [nuaa](https://hub.nuaa.cf/)
 * ~~[gitslow](https://hub.gitslow.tk/)~~
-* [kgithub](https://kgithub.com/)
+* ~~[kgithub](https://kgithub.com/)~~
 * [kkgithub](https://kkgithub.com/)
 * [njuu.cf](https://hub.njuu.cf/)
 * [yzuu.cf](https://hub.yzuu.cf/)
@@ -745,7 +745,14 @@ git config --global --unset url.https://github.com/.insteadof
 * [hscsec.cn](https://github.hscsec.cn/)
 
 > [!tip] 镜像不是永久的
+> 
 > 所有的镜像都是暂时性的，你不知道哪天就挂了！
+
+###### 相关资料
+
+* [github镜像及加速下载 - 最新可用](http://lib.zuotiyi.cn/tool/github.html)
+* [help.kkgithub.com](https://help.kkgithub.com/)
+* [sockstack.cn github](https://www.sockstack.cn/github)
 
 ##### 下载加速
 
@@ -867,6 +874,7 @@ yay -S community/rabbitvcs-nautilus
 [rabbitvcs 介绍视频](https://www.bilibili.com/video/BV1Fh4y1d7Qe)
 
 > [!bug] 介绍视频中的错误
+> 
 > 实际上，在装 rabbitvcs-nautilus 时，就已经将相关的依赖都一并装上了（包括了 svn 及依赖的 [Python](../Python/Python_Note.md) 的各种包也一并装上了），不用再 clone [Rabbitvcs](https://github.com/rabbitvcs/rabbitvcs) 仓库下来手动安装了。
 > 
 > ```shell

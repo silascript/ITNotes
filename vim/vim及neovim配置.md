@@ -1,6 +1,5 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - editor
   - vim
@@ -8,13 +7,18 @@ tags:
   - config
   - setting
 created: 2023-01-30 11:19:11
-modified: 2023-08-14 02:52:12
+modified: 2024-02-21 03:17:28
 ---
+
 # VIM 及 NeoVIM 配置
+
+---
 
 ## neovim 配置
 
 ### init.vim 配置文件
+
+[neovim 新配置](Neovim_Note.md#neovim%20新配置)
 
 ## 设置
 
@@ -109,7 +113,10 @@ filetype plugin on
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 ```
-> 有一些配置 vim 没有，但 neovim 已经出厂配好了的，所以先查询 neovim 哪些已配过的，以免重复配置。
+
+> [!info]
+> 
+> 有一些配置 [Vim](Vim_Note.md) 没有，但 neovim 已经出厂配好了的，所以先查询 neovim 哪些已配过的，以免重复配置。
 > 禁止注释行回国自动添加注释，这个设置要放在 `filetype on` 这些文件类型侦测之后，才能生效。
 
 windows 版设置有差异：
@@ -135,11 +142,23 @@ autocmd ColorScheme * call s:transparent_background()
 
 ```
 
->**注意: 透明背景设置必须放在 colortheme 设置之后!**
+> [!tip] 
+> 
+> **注意: 透明背景设置必须放在 colortheme 设置之后!**
+
+#### vim9 新设置
+
+##### 命令行坚排侯选项
+
+默认在 vim9 之前，[命令行模式](Vim_Note.md#命令行模式) 候选项是横排的。
+
+而到了 vim9 版本，可以通过 `set wildoptions=pum`，将候选项坚排显示。
 
 #### python 相关
 
->如果 python 不起作用就使用 **set pythonthreedll** 来指定 python 的 dll
+> [!info] 
+> 
+> 如果 python 不起作用就使用 `set pythonthreedll` 来指定 [Python](../Python/Python_Note.md) 的 dll
 
 ```shell
 if has('python3')
@@ -152,11 +171,13 @@ endif
 set pythonthreedll=I:/Scoop/apps/python-beta/current/python38.dll
 ```
 
->neovim 不使用 **set pythonthreedll**
+> [!info] 
 >
->（neovim 使用**:checkhealth**检测 python 支持）
+> neovim 不使用 `set pythonthreedll`
 >
->neovim 使用 **pip** 安装 **pyvim** 模块
+>（neovim 使用 `:checkhealth` 检测 python 支持）
+>
+> neovim 使用 [pip](../Python/Python_Note.md#pip) 安装 `pyvim` 模块
 
 ```shell
 pip3 install --user --upgrade pynvim
@@ -177,3 +198,14 @@ pip3 install --user --upgrade pynvim
 [LunarVim](https://www.lunarvim.org/)[![LunarVim Repo](https://img.shields.io/github/stars/LunarVim/LunarVim?style=social)](https://github.com/LunarVim/LunarVim)
 
 ![Lunarvim preview](https://www.lunarvim.org/img/lunarvim_preview.png)
+
+---
+
+## 其他笔记
+
+* [Vim笔记](Vim_Note.md)
+* [neovim笔记](Neovim_Note.md)
+* [vim及neovim配置](vim及neovim配置.md)
+* [vim插件](vim_plugin.md)
+* [vim配色笔记](vim_colorscheme_Note.md)
+

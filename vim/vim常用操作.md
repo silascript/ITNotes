@@ -1,8 +1,10 @@
 ---
 aliases: []
-tags: []
+tags:
+  - vim
+  - editor
 created: 2023-08-18 19:44:52
-modified: 2024-02-19 18:07:24
+modified: 2024-02-21 03:21:43
 ---
 # VIM 常用操作
 

@@ -2,7 +2,7 @@
 aliases: []
 tags: []
 created: 2023-08-18 19:44:52
-modified: 2023-12-09 01:19:53
+modified: 2024-02-20 06:04:56
 ---
 
 # 常用小工具笔记
@@ -242,3 +242,28 @@ f2 内置了一些变量，能够快速实现常用功能：
 
 ---
 
+## Google 相关
+
+### Google 镜像
+
+* Google 搜索：https://so.niostack.com/
+* Google 搜索：https://www.sowai.cn/
+* ~~Google 搜索：https://xn--flw351e.ml/~~
+* ~~Google 搜索：https://search.njau.cf/~~
+* ~~Google 搜索：https://search.ahnu.cf/~~
+* ~~Google 搜索：https://search.fuyeor.com/zh-cn/Google~~
+* Google 学术：https://ac.scmor.com/
+* Google 学术：https://scholar.lanfanshu.cn/
+
+### 其他相关
+
+* [谷粉搜导航](https://gufenso.coderschool.cc/)
+
+> [!important] 安全提醒
+> 
+> **不要在镜像站上登录谷歌账户**！
+
+#### 参考资料
+
+* [2023-2024 最新可用Google镜像地址 长期更新 - 哔哩哔哩](https://www.bilibili.com/opus/886060167271022609)
+* [谷歌镜像，谷歌学术镜像——2024年1月最新 - 知乎](https://zhuanlan.zhihu.com/p/607795300?utm_id=0&wd=&eqid=a982987d007d0be9000000056583f3f6)

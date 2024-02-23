@@ -853,6 +853,12 @@ git config --global --unset url.https://github.com/.insteadof
 
 ```
 
+> [!info] 参考资料
+> 
+> * [Github要求使用基于令牌的身份验证](https://zhuanlan.zhihu.com/p/401978754)
+> *[git push时鉴权失败](https://juejin.cn/post/7099019037706813471)
+
+
 ---
 
 ## <span id="git_tools">Git 工具</span>

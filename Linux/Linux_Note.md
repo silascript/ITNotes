@@ -1242,6 +1242,10 @@ source `.bashrc` 或 `.bash_profile`
 sudo ln -s /opt/KomodoEdit/bin/komodo /usr/local/bin/komodo
 ```
 
+
+
+
+
 ---
 
 ## <span id="linux_grub">Grub</span>
@@ -1302,6 +1306,22 @@ echo $XDG_SESSION_TYPE
 
 * [警惕conda造成的环境问题! | 三个技术小站](https://qsctech-sange.github.io/anaconda-problems.html)
 * [ValueError: Namespace Gtk not available 的解决方案](https://blog.csdn.net/qq_53937391/article/details/128125174)
+
+##### theme
+
+
+GTK主题不随着Gnome深浅色模式切换而切换
+
+
+解决这个问题可以使用Gnome-Shell的一种扩展插件：[night-theme-switcher](https://extensions.gnome.org/extension/2236/night-theme-switcher/) 来解决。
+
+night-theme-switcher 这个插件其中有个设置，「日间」和「夜间」指定相应的主题，可以自动切换，如果不管日间还是夜间都想用深色主题，那都设置为深夜主题就好了，从而解决了GTK主题不跟Gnome深浅色模式切换的Bug。
+
+> [!info] 参考资料
+>
+> * [Gnome 美化](https://zh.opensuse.org/Gnome_%E7%BE%8E%E5%8C%96)
+> * [auto-darkmode-on-gnome](https://envs.net/~grassblock/post/auto-darkmode-on-gnome/)
+
 
 ---
 

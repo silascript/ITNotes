@@ -853,10 +853,16 @@ git config --global --unset url.https://github.com/.insteadof
 
 ```
 
+github已经不允许使用账号密码方式pull代码，可以使用token。而每次pull都得输入一次账号名和token，为了「懒」，可以使用git cli工具改善。
+
+`gh auth login`，然后根本步骤进行操作，关键是最后一步，有两选项，一个是使用弹出页面账号密码登录，一个是使用token，如果使用token，想让`gh`记住你的token，就选这项。所有操作完成，下一次就不用再输一次账号和token了。
+
+
 > [!info] 参考资料
 > 
 > * [Github要求使用基于令牌的身份验证](https://zhuanlan.zhihu.com/p/401978754)
 > *[git push时鉴权失败](https://juejin.cn/post/7099019037706813471)
+> * [caching-your-github-credentials-in-git#github-cli](https://docs.github.com/zh/get-started/getting-started-with-git/caching-your-github-credentials-in-git#github-cli)
 
 
 ---

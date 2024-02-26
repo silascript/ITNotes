@@ -6,7 +6,7 @@ tags:
   - video
   - list
 created: 2023-05-26 11:00:13
-modified: 2023-12-09 02:59:42
+modified: 2024-02-26 19:32:42
 ---
 # Javascript 视频清单
 
@@ -54,11 +54,14 @@ modified: 2023-12-09 02:59:42
 * [JavaScript异步编程-03 Promise并发方法](https://www.bilibili.com/video/BV1gh4y1j7xH)
 * [JavaScript异步编程-04 async和await](https://www.bilibili.com/video/BV1314y1d7tA)
 
-#### Promise 原理
+#### Promise 相关 
 
+##### Promise 原理
 * [理解promise原理01](https://www.bilibili.com/video/BV1wu4y1B72B)
 * [理解promise原理02](https://www.bilibili.com/video/BV1qh4y1w7HY)
 * [理解promise原理03](https://www.bilibili.com/video/BV1su411p7Dr)
+
+* [一个从入门到精通Promise的视频](https://www.bilibili.com/video/BV1Zt42187oV)
 
 ### 各类框架
 

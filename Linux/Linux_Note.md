@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-02-19 03:04:40
+modified: 2024-02-27 01:14:21
 ---
 # Linux 笔记
 
@@ -1242,10 +1242,6 @@ source `.bashrc` 或 `.bash_profile`
 sudo ln -s /opt/KomodoEdit/bin/komodo /usr/local/bin/komodo
 ```
 
-
-
-
-
 ---
 
 ## <span id="linux_grub">Grub</span>
@@ -1270,17 +1266,53 @@ grub 模板：`/etc/default/grub`
 
 ### 显示服务器
 
-#### Xorg
-
-#### Wayland
-
-#### 常见问题
+#### 查询当前使用显示服务器
 
 如果查询当前系统使用的是的 [Xorg](#Xorg) 还是 [Wayland](#Wayland)：
 
 ```shell
 echo $XDG_SESSION_TYPE
 ```
+
+#### Xorg
+
+#### Wayland
+
+#### 常见问题
+
+##### wayland 不加载 xprofile
+
+wayland 模式下，系统是不会加载 `.profile` 或 `.xprofile` 文件的，即便是手动 `source`，也属于临时性的，关闭 Terminal 后，加载效果恢复原状。
+
+因为这个特性，让原有习惯的配置环境变量的方式处于一种「作废」的状态。
+
+###### 解决方案
+
+1. 将环境变量集中到自定义的配置文件中，比如 `.local_profile`，配置文件的文件名可以自己取，当然为了延续习惯，还是叫 `xxprofile` 好点。
+2. 如果使用 [Zsh_note](zsh_note.md)，可以在 `.zshrc` 文件中 `source` 自定义的配置文件。如果只使用 [Bash](Shell_Note.md#Bash)，就在 `.bashrc` 或 `.bash_profile` 中 `source` 自定义配置文件。
+> [!note] 
+> 
+> 如果使用 [Zsh](zsh_note.md)，只要在 `.zshrc` 中 `source` 下，连 [Bash](Shell_Note.md#Bash) 也生效。
+3. 如果当前是 [Xorg](#Xorg)，类似的，在 `.xprofile` 或 `.profile` 中 `source` 自定义的配置文件。
+
+> [!note] 
+> 
+> 如果为了兼容性，可以在 `.zshrc` 或 `.xprofile` 文件 `source` 配置文件时，加个 `if` 语句判断下：
+> 
+> `if [[ $XDG_SESSION_TYPE == "x11" ]]` 或 `if [[ $XDG_SESSION_TYPE == "wayland" ]] && [[ -f $HOME/.local_profile ]]` 
+> 
+> 这个 `.xprofile` 就能在 [Wayland](#Wayland) 模式下得以保留 -- 保留这货，可能对于某些软件是有必要的，如 [SublimeText](../Editors/Editors_Note.md#editors_sublime)。
+> 
+
+示例：
+
+* [我自己的.zshrc配置](https://github.com/silascript/LinuxConfigs/blob/master/manjaro/.zshrc)
+* [我自己的.xprofile配置](https://github.com/silascript/LinuxConfigs/blob/master/manjaro/.xprofile)
+
+>[!tip] 
+>
+>
+>不要使用 `.zshenv` 去配置或 `source` 环境变量，这货，每次 `source` 或打开一次 Terminal，都会「叠加」一次环境变量，这样就会出现重复，很可怕。个人看来 `.zshenv` 这货基本就已经是废了，[Zsh](zsh_note.md) 怪不得各种资料都不太提这货，一说配置都只说在 `.zshrc` 里配，这大概是其中一个原因罢。
 
 ##### gnome-tweak 启动问题
 
@@ -1309,19 +1341,39 @@ echo $XDG_SESSION_TYPE
 
 ##### theme
 
+主题以目录来区隔，可以放在根也可以放在用户目录：
 
-GTK主题不随着Gnome深浅色模式切换而切换
+* `/usr/share/themes/`
+* `~/.local/share/themes/`
 
+一般使用系统的包管理器安装的主题，都装在根上，即 `/usr/share/themes/` 这个目录下。
 
-解决这个问题可以使用Gnome-Shell的一种扩展插件：[night-theme-switcher](https://extensions.gnome.org/extension/2236/night-theme-switcher/) 来解决。
+而为了方便还是建议建在用户目录，即 `~/.local/share/themes`
 
-night-theme-switcher 这个插件其中有个设置，「日间」和「夜间」指定相应的主题，可以自动切换，如果不管日间还是夜间都想用深色主题，那都设置为深夜主题就好了，从而解决了GTK主题不跟Gnome深浅色模式切换的Bug。
+> [!tip] 
+>
+> [gnome-look](https://www.gnome-look.org/)：这个网站拥有大量 gnome 美化相关的资源。
+
+###### GTK 主题相关
+
+GTK 主题比较突出的一个问题，就是它不随着 Gnome「深浅色模式」切换而切换，虽然使用 tweak 工具可以设，但设完，系统重启或切换深浅色械，它就立即失效。
+
+为了解决这个问题，可以使用 Gnome-Shell 的一个扩展插件：[night-theme-switcher](https://extensions.gnome.org/extension/2236/night-theme-switcher/) 。
+
+night-theme-switcher 这个插件其中有个设置，为「日间」和「夜间」，即深色浅色模式，指定相应的主题 -- 这是自动切换。如果不管日间还是夜间都想用深色主题，那都设置为深色主题就好了。这个小插件非常方便地解决了 GTK 主题不跟 Gnome 深浅色模式切换的「小 Bug」。
 
 > [!info] 参考资料
 >
 > * [Gnome 美化](https://zh.opensuse.org/Gnome_%E7%BE%8E%E5%8C%96)
 > * [auto-darkmode-on-gnome](https://envs.net/~grassblock/post/auto-darkmode-on-gnome/)
 
+#### 打开文件夹问题
+
+其实是默认应用问题，只要以下代码就能回复打开文件夹功能：
+
+```shell
+xdg-mime default org.gnome.Nautilus.desktop inode/directory
+```
 
 ---
 

@@ -4,7 +4,7 @@ tags:
   - PL
   - golang
 created: 2023-01-31 11:31:14
-modified: 2023-12-13 21:30:30
+modified: 2024-02-27 03:16:17
 ---
 # Go 语言笔记
 
@@ -45,6 +45,7 @@ modified: 2023-12-13 21:30:30
 > 如果升级新版本，最后不要用新版直接覆盖旧版，这样容易在安装模块时出问题。最后先把旧版目录删除，新版的目录命令成一样的，复制到一样的路径下。这样升级，不用重新改 `PATH` 环境变量，也能使用 go。
 
 环境变量示例：
+
 ```shell
 export PATH=$PATH:/opt/golang/bin
 export PATH=$PATH:$(go env GOPATH)/bin
@@ -78,6 +79,7 @@ go 的环境配置是存放在 `~/.config/go/` 目录下的 `env` 文件，可�
 > 或者： [另一个域名](https://proxy.golang.com.cn)
 
 在 `env` 文件中配置以下代码：
+
 ```
 GO111MODULE=on
 GOPROXY=https://proxy.golang.com.cn,direct
@@ -86,12 +88,14 @@ GOPROXY=https://proxy.golang.com.cn,direct
 > `GO111MODULE` 是指 Go 1.11 后的版本使用 Module 方式
 
 也可以使用命令进行配置：
+
 ```shell
-got env -w G111MODULE=on
+go env -w G111MODULE=on
 go env -w GOPROXY=https://goproxy.cn,direct
 ```
 
 甚至能配多个：
+
 ```shell
 go env -w GOPROXY=https://goproxy.cn,https://proxy.golang.com.cn,https://goproxy.io,direct
 ```

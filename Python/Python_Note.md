@@ -6,7 +6,7 @@ tags:
   - pip
   - conda
 created: 2023-08-18 19:44:52
-modified: 2024-01-31 21:35:05
+modified: 2024-02-28 11:38:28
 ---
 # Python 笔记
 
@@ -617,6 +617,37 @@ conda update python
 > * [在 Anaconda 中更改 Python 版本](https://www.delftstack.com/zh/howto/python/change-python-version-in-anaconda/)
 > 
 >  * [如何将Anaconda安装时默认的python版本改成其他版本](https://blog.csdn.net/qq_56520755/article/details/130489115)
+
+#### 强行升级
+
+有时使用 `conda update --all` 或 `conda update conda` 升级时，会出现以下错误：
+
+```shell
+RemoveError: 'archspec' is a dependency of conda and cannot be removed from
+conda's operating environment.
+RemoveError: 'boltons' is a dependency of conda and cannot be removed from
+conda's operating environment.
+RemoveError: 'packaging' is a dependency of conda and cannot be removed from
+conda's operating environment.
+RemoveError: 'tqdm' is a dependency of conda and cannot be removed from
+conda's operating environment.
+```
+
+这种错误，有可能是使用 [pip](#pip) 安装或更新了，再使用 conda 更新，就会出现「冲突」。
+
+解决方法：
+
+简单粗暴，「强制升级」：
+
+```shell
+conda update --force conda
+```
+
+> [!note] 相关资料
+> 
+> * [解决问题](https://blog.csdn.net/qq_43145926/article/details/104237817)
+> * [更新conda update conda 遇到的问题 - 知乎](https://zhuanlan.zhihu.com/p/133365134)
+> * [python - RemoveError: 'setuptools' 是 conda 的依赖项，无法从 conda 的运行环境中移除 - SegmentFault 思否](https://segmentfault.com/q/1010000043259290)
 
 ### <span id="python_conda_pip">conda 中的 pip</span>
 

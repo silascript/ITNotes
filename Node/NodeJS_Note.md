@@ -2,7 +2,7 @@
 aliases: []
 tags: []
 created: 2023-08-19 23:06:10
-modified: 2024-01-22 17:22:25
+modified: 2024-02-28 06:01:49
 ---
 # NodeJS 笔记
 
@@ -25,6 +25,34 @@ Windows 下安装，可以下安装包，也可以下压缩包，解压后，手
 
 ### <span id="node_settings">配置</span>
 
+`config` 命令，顾名思义就是用来配置 node。
+
+`npm config list`：列出当前配置项，用来查看是否配置成功了。
+
+#### 配置全局目录及缓存目录
+
+全局目录：`npm config set prefix "~/nodejs/node_global/"`  ^node_global ^21bf6e
+
+缓存目录：`npm config set cache "~/nodejs/node_cache/"`
+
+> [!tip] 缓存相关的命令
+> 
+> 清理：`npm cache clean --force`
+
+这两项还是得配，特别是 [全局目录](#^21bf6e) 必须得配，不然当你更新时它会跑到 node 的安装目录下的 `node_modules` 更新，如果你的 node 装在根目录，那有可能报 [npm 下载权限不足](#npm%20下载权限不足) 的错误。
+
+当使用 `npm config set` 命令设置一个配置项后，会在当前用户目录下生成一个 `.npmrc ` 配置文件。
+
+#### 设置国内镜像
+
+`npm config set registry https://registry.npmmirror.com`
+
+> [!tip] 
+> 
+> ~~`http://registry.npm.taobao.org`~~ 这个镜像域名已经过期。
+> 
+> * [npm淘宝镜像最新官方指引（2023.08.31） - 知乎](https://zhuanlan.zhihu.com/p/653480874)
+
 #### eclectron 配置
 
 在 `.bashrc` 或 `.bash_profile` 或 `.profile` 文件中添加相应的环境变量：
@@ -45,3 +73,17 @@ Windows 下安装，可以下安装包，也可以下压缩包，解压后，手
 
 如果出现这个可以使用取消严格 ssl 检查的设置：`npm config set strict-ssl false`
 
+##### npm 下载权限不足
+
+这个错误出现，往往是忘记设 [全局目录](#^21bf6e)，而 npm 更新会跑 node 的安装目录中的 `node_modules` 子目录寻找要更新的模块，而如果 node 的安装目录正好是在根目录，那自然会出现访问权限问题，这样就会报出 下载权限不足的错误。
+
+其实观察错误也能推测出来，如下报错信息，明显可见，npm 是跑到的 `/` 根目录更新了：
+
+```shell
+npm ERR!   path: '/opt/NodeJS/node-v20/lib/node_modules/corepack',
+npm ERR!   dest: '/opt/NodeJS/node-v20/lib/node_modules/.corepack-o8GX3Rw6'
+```
+
+> [!info] 相关资料
+> 
+> * [npm下载权限不足问题解决 - nobody阿欣 - 博客园](https://www.cnblogs.com/lixin-nobody/p/14051905.html)

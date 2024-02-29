@@ -1,8 +1,10 @@
 ---
-aliases: 
-tags: PL ruby
+aliases: []
+tags:
+  - PL
+  - ruby
 created: 2023-08-18 19:44:52
-modified: 2023-08-25 10:44:43
+modified: 2024-02-29 08:24:11
 ---
 # Ruby 笔记
 
@@ -11,6 +13,12 @@ modified: 2023-08-25 10:44:43
 ## 目录
 
 * [安装](#ruby_install)
+	* [安装及包管理器](#ruby_install_managers)
+		* [Ruby-Install](#Ruby-Install)
+		* [Chruby](#Chruby)
+		* [rbenv](#rbenv)
+		* [ruby-build](#ruby-build)
+		* [Frum](#Frum)
 
 * [Gem](#ruby_gem)
 
@@ -151,15 +159,15 @@ chruby ruby-3.2.2
 
 ---
 
-### rbenv
+#### rbenv
 
 [rbenv](https://github.com/rbenv/rbenv) 是一款 ruby 版本管理工具。
 
-#### 安装
+##### 安装
 
-`yay -S rben`
+`yay -S rbenv`
 
-#### 配置
+##### 配置
 
 装完后，执行下 `rbenv init`。会有以下揭示：
 
@@ -187,7 +195,7 @@ eval "$(rbenv init - bash)"
 
 这就是不同 shell 下添加不同的初始化代码。
 
-#### 常用命令
+##### 常用命令
 
 * `rbenv commands`：列出 `rbenv` 所有命令
 * `rbenv version`：显示当前使用的 ruby 的版本
@@ -211,7 +219,7 @@ eval "$(rbenv init - bash)"
 	  > 
 	  > 此命令版本号可选，如果此命令没有给出版本号，即为显示当前的默认版本。
 
-#### 安装位置
+##### 安装位置
 
 `~/.rbenv/versions/` 这个目录下存各版本的 ruby，以 ruby 的版本号为子目录存放，如 `~/.rbenv/versions/3.2.2`，就是 `3.2.2` 这个版本的存放路径。
 
@@ -296,11 +304,75 @@ export RUBY_BUILD_HTTP_CLIENT=wget
 > 
 > 并且对应的，还有 `RUBY_BUILD_ARIA2_OPTS`、`RUBY_BUILD_CURL_OPTS` 和 `RUBY_BUILD_WGET_OPTS`，三个选项可以让用户使用各下载器的选项参数。
 
-#### rbenv 相关文档
+##### rbenv 相关资料
 
 * [rbenv readme](https://github.com/rbenv/rbenv#readme)
-
 * [rbenv 使用指南 · Ruby China](https://ruby-china.org/wiki/rbenv-guide)
+
+#### Frum
+
+[frum](https://github.com/tako8ki/frum) 是一款使用 [Rust](../Rust/Rust_Note.md) 写的 ruby 版本管理器。
+
+##### 安装及配置
+
+可以使用系统的包管理器安装，如 [ArchLinux](../Linux/ArchLinux_Note.md)：
+
+```
+yay -S frum-bin
+```
+
+frum 有个配置目录，默认是在 `~/.frum`，可以使用 `echo $FRUM_DIR` 查看。
+
+在 `.zshrc`，或其他配置文件中添加 `eval "$(frum init)"` 代码。
+
+##### 常用命令
+
+* `frum install -l`：列出可以安装的 ruby 版本。
+* `frum install 版本号`：安装指定版本的 ruby。
+> [!note] 
+> 
+> 默认使用 [cache.ruby-lang.org](https://cache.ruby-lang.org) 这个地址下载。
+> 
+> 下载的 ruby 会放安装在 `~/.frum/versions` 目录中，以版本号为子目录为区分。
+>
+> ```shell
+>  ll .frum/versions 
+> Permissions Size User       Group      Date Modified    Name
+> drwxr-xr-x     - silascript silascript 2024-02-29 04:38  .
+> drwxr-xr-x     - silascript silascript 2024-02-29 04:27  ..
+> drwxr-xr-x     - silascript silascript 2024-02-29 04:59  .downloads
+> drwxr-xr-x     - silascript silascript 2024-02-29 04:38  3.2.3
+>
+> ``` 
+
+* `frum versions`：查看当前 ruby 版本情况，如下载了哪几个版本，正在应用哪个版本
+ ```shell
+ $ frum versions
+ 3.3.0
+ * 3.2.3
+ ```
+ 
+* `frum local 版本号`：切换发前 ruby 版本，已安装的版本可以通过 `frum versions` 命令查看。
+* `frum global 版本号`：指定全局 ruby 版本。
+* `frum --ruby-build-mirror `：设定 ruby 下载镜像 url。单独使用没有意义，得配合 `install` 命令一起使用。
+> [!example] 示例
+> 
+>`frum --ruby-build-mirror=https://cache.ruby-china.com/pub/ruby install 版本号`：使用指定镜像下载安装指定版本的 ruby。
+>
+> ```shell
+> $ frum --ruby-build-mirror=https://cache.ruby-china.com/pub/ruby install 3.2.2
+> ==> Downloading https://cache.ruby-china.com/pub/ruby/3.2/ruby-3.2.2.tar.xz
+> ==> Extracting ruby-3.2.2.tar.xz
+> ==> Building Ruby 3.2.2
+> ```
+> 只有在 `Downloading` 中显示出指定的镜像 url，才证明使用 `--ruby-build-mirror` 已经生效了。
+>
+* `frum uninstall 版本号`：卸载指定版本的 ruby。
+
+##### 相关资料
+
+* [frum guide](https://mac.install.guide/ruby/14.html)
+* [Installing Ruby with frum](https://www.jafeininger.de/writing_samples/ruby_with_frum/)
 
 ---
 

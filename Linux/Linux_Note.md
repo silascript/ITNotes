@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-03-02 22:19:38
+modified: 2024-03-02 22:21:44
 ---
 # Linux 笔记
 
@@ -1306,8 +1306,8 @@ wayland 模式下，系统是不会加载 `.profile` 或 `.xprofile` 文件的�
 
 示例：
 
-* [我自己的.zshrc配置](https://github.com/silascript/LinuxConfigs/blob/master/manjaro/.zshrc)
-* [我自己的.xprofile配置](https://github.com/silascript/LinuxConfigs/blob/master/manjaro/.xprofile)
+* [我自己的.zshrc配置](https://github.com/silascript/LinuxConfigs/blob/master/manjaro/x11/.zshrc)
+* [我自己的.xprofile配置](https://github.com/silascript/LinuxConfigs/blob/master/manjaro/x11/.xprofile)
 
 >[!tip] 
 >

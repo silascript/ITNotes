@@ -2,10 +2,14 @@
 aliases: []
 tags: []
 created: 2023-08-18 19:44:52
-modified: 2024-03-01 03:29:29
+modified: 2024-03-03 04:47:15
 ---
 
 # LSP 及补全相关
+
+---
+
+## 目录
 
 * [关于LSP](#about_lsp)
 
@@ -27,6 +31,8 @@ modified: 2024-03-01 03:29:29
 	* [asyncomplete](#vp_complete_asyncomplete)
 	* [coc](#vp_complete_coc)
 	* [easycomplete](#vp_complete_easycomplete)
+
+---
 
 ## <span id="about_lsp">关于 LSP</span>
 
@@ -351,7 +357,7 @@ npm install -g vscode-css-languageserver-bin
 
 ### <span id="lang_lsps_typescript">TypeScript LSP</span>
 
-#### <span id="lang_lsps_typescript_tls"># typescript-language-server</span>
+#### <span id="lang_lsps_typescript_tls">typescript-language-server</span>
 
 ~~[typescript-language-server](https://github.com/prabirshrestha/typescript-language-server)~~ 这个 LSP 已过时。
 
@@ -380,9 +386,46 @@ typescript-language-server --stdio
 ---
 
 ### <span id="lang_lsps_vue">Vue LSP</span>
-	[VLS](https://www.npmjs.com/package/vls) [![VLS Repo](https://img.shields.io/github/stars/vuejs/vetur?style=social)](https://github.com/vuejs/vetur/tree/master/server)
+	
+[VLS](https://www.npmjs.com/package/vls) [![VLS Repo](https://img.shields.io/github/stars/vuejs/vetur?style=social)](https://github.com/vuejs/vetur/tree/master/server)
+
+安装：
+
 ```shell
 npm install vls -g
+```
+
+---
+
+### <span id="lang_lsps_other">其他 LSP</span>
+
+#### bash-language-server
+
+[bash-language-server](https://github.com/bash-lsp/bash-language-server) 顾名思义这是一款 [Bash](../Linux/Shell_Note.md#Bash) 的 LSP。
+
+使用 [nodejs](../Node/NodeJS_Note.md) 安装：
+
+```shell
+npm i -g bash-language-server
+```
+
+> [!info] 相关资料
+> 
+> * [bash-language-server vim 配置](https://github.com/bash-lsp/bash-language-server#vim)
+
+#### diagnostic-languageserver
+
+[diagnostic-languageserver](https://github.com/iamcco/diagnostic-languageserver) 这个是一个通用诊断语言服务器。
+
+主要有两功能：
+
+* 诊断
+* 格式化
+
+这个 LSP 对于那些没有专门的 LSP 的编程语言，如 [Shell](../Linux/Shell_Note.md)，是非常好的补充，至少有个 LSP 可用的。
+
+```shell
+npm install diagnostic-languageserver -g
 ```
 
 ---

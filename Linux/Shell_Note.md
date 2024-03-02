@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2024-02-19 19:47:13
+modified: 2024-03-03 03:10:59
 ---
 # Shell 笔记
 
@@ -554,6 +554,16 @@ function 函数名(){
 ---
 
 ## 相关工具
+
+### shellcheck
+
+[shellcheck](https://github.com/koalaman/shellcheck) 是一个 shell 的语法检查工具。
+
+它是用 [haskell](https://www.haskell.org/) 写的，所以装它时得把 haskell 一并给装了。
+
+```shell
+pacman -S shellcheck
+```
 
 ### shfmt
 

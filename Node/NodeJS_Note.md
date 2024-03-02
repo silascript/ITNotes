@@ -2,7 +2,7 @@
 aliases: []
 tags: []
 created: 2023-08-19 23:06:10
-modified: 2024-02-28 06:01:49
+modified: 2024-03-03 06:33:14
 ---
 # NodeJS 笔记
 
@@ -55,13 +55,21 @@ Windows 下安装，可以下安装包，也可以下压缩包，解压后，手
 
 #### eclectron 配置
 
-在 `.bashrc` 或 `.bash_profile` 或 `.profile` 文件中添加相应的环境变量：
+在 `.npmrc` 文件中添加环境变量：
 
-`export ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/`
+~~`export ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/`~~
+
+`export ELECTRON_MIRROR=https://npmmirror.com/mirrors/electron/`
+
+> [!info] 
+> 
+> 这里同样得注意淘宝的镜像过时问题。
 
 参考资料：
 
 * [正确设置 ELECTRON_MIRROR](https://newsn.net/say/electron-mirror.html)
+* [Electron 环境配置 - 知乎](https://zhuanlan.zhihu.com/p/676814265)
+* [npm安装Electron项目失败报错问题和解决方法](https://blog.csdn.net/weixin_46525113/article/details/132299107)
 
 #### 问题
 

@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-02-28 01:28:26
+modified: 2024-03-02 22:19:38
 ---
 # Linux 笔记
 
@@ -1338,6 +1338,20 @@ wayland 模式下，系统是不会加载 `.profile` 或 `.xprofile` 文件的�
 > * [systemd/User - ArchWiki](https://wiki.archlinux.org/title/Systemd/User#Environment_variables)
 > * [Environment variables - ArchWiki](https://wiki.archlinux.org/title/Environment_variables)
 > * [environment.d(5) — Arch manual pages](https://man.archlinux.org/man/environment.d.5)
+
+###### 解决方案 3
+
+此方案是迄今为此，最佳解决方案。
+
+使用 `.zprofile` 替代 `xprofile` 作为「全局」配置文件，这即**不用使用** `~/.config/environment.d/` 目录下的 `.conf` 配置文件，也**不用**使用 `.xprofile` 来「兼容」两种模式，甚至**不用**在配置文件中使用 `if [[ $XDG_SESSION_TYPE == "wayland" ]]` 这种判断语句，可以说这是最简洁高效的方案。
+
+> [!info] 
+> 
+> 使用 `.zprofile`，虽然在 `x11` 和 `Wayland` 两种模式下都能使用环境变量生效，而且不止是在 [Shell](Shell_Note.md) 中生效，图形界面的软件同样也能生效。
+> 
+> 但这个方案不是完全完美方案，因为如果配置文件中 `eval` 配置相关环境变量语法时，在 `x11` 模式下，环境变量配置是无效。
+> 
+> 在当前各 [Linux_Note](Linux_Note.md) 各大发行版都逐步使用 [Wayland](#Wayland) 的大趋势，[Xorg](#Xorg) 模式下存在一点小「bug」，应该也是可以接受的，毕竟 [Xorg](#Xorg) 已经开始处于「被淘汰」的状态了，所以使用 `.zprofile` 来代替 `.xprofile` 已经是「最优解」。
 
 ##### gnome-tweak 启动问题
 

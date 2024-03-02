@@ -8,7 +8,7 @@ tags:
   - scite
   - lsp
 created: 2023-01-30 11:19:11
-modified: 2024-02-06 10:54:15
+modified: 2024-02-29 11:27:44
 ---
 
 # 编辑器笔记
@@ -623,6 +623,7 @@ npm install -g markmark
 ### <span id="editors_sublime_links">Sublime 相关连接</span>
 
 * [Crack](https://gist.github.com/maboloshi/feaa63c35f4c2baab24c9aaf9b3f4e47)
+* [Creack Gist](https://gist.github.com/maboloshi/feaa63c35f4c2baab24c9aaf9b3f4e47?permalink_comment_id=4675177)
 
 ---
 

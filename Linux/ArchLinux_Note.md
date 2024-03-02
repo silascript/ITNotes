@@ -8,7 +8,7 @@ tags:
   - ime
 date created: 2022-11-08 11:32
 created: 2023-08-18 19:44:52
-modified: 2023-12-18 20:26:45
+modified: 2024-02-29 11:00:24
 ---
 
 # ArchLinux 笔记
@@ -70,6 +70,31 @@ sudo pacman -Syyu
 sudo pacman -S archlinuxcn-keyring
 sudo pacman -S antergos-keyring
 ```
+
+##### 阻止更新
+
+有时不想某软件更新，可以选择忽略其升级。
+
+1. 配置文件方式
+
+打开 `/etc/pacman.conf` 配置文件。这种配置文件，都是「键值对」形式的。
+
+在文件中找到 `IgnorePkg` 的「配置项」，取消注释，并在 `=` 后的「配置值」添加软件名称，即可忽略此软件更新。 ^arch_ignorepkg ^f12f84
+
+如果有多个软件需求忽略，可以使用**空格**分隔开。
+
+如果要消除某软件更新限制，反向操作，即把软件名从「配置值」删除即可，当然如果配置值只有一个软件，直接将 [IgnorePkg](#^f12f84) 注释掉就好了！
+
+2. 命令选项方式
+
+`sudo pacman -Syyu --ignore=linux` 就在更新时多加个 `--ignore` 的选项。
+
+如果有多个，使用 `,` 分隔，如 `sudo pacman -Syyu --ignore=linux,vim,nano`
+
+> [!info] 相关资料
+> 
+> * [如何防止 Arch Linux 中的软件包被更新](https://cn.linux-console.net/?p=12846)
+> * [让arch阻止某个软件包的升级 - 孙悟坑 - 博客园](https://www.cnblogs.com/reddusty/p/5469105.html) 
 
 ---
 

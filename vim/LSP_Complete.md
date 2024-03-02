@@ -1,10 +1,8 @@
 ---
-aliases:
-  - 
-tags:
-  - 
+aliases: []
+tags: []
 created: 2023-08-18 19:44:52
-modified: 2023-09-18 19:33:41
+modified: 2024-03-01 03:29:29
 ---
 
 # LSP 及补全相关
@@ -256,6 +254,27 @@ gem install ruby-lsp
 gem install solargraph
 ```
 
+#### <span id="lang_lsps_ruby_sorbet">sorbet</span>
+
+[sorbet](https://github.com/sorbet/sorbet) 安装完后， 使用 `srb` 来调用。
+
+```shell
+gem install sorbet
+gem install sorbet-runtime
+```
+
+#### <span id="lang_lsps_ruby_steep">steep</span>
+
+[steep](https://github.com/soutaro/steep)
+
+```shell
+gem install steep
+```
+
+#### 相关资料
+
+* [Solargraph vs Ruby LSP: which one to choose?](https://achris.me/posts/solargraph-vs-ruby-lsp/)
+
 ---
 
 ### <span id="lang_lsps_yaml">YAML LSP</span>
@@ -398,10 +417,7 @@ LSC 只是提供与 LSP 对接，并将 LSP 传来的语言服务获取补全数
 
 ```vim
 	let g:lsc_server_commands = {
-	 \ 'c': {
-	 \    'command': 'clangd --background-index',
-	 \	  'suppress_stderr': v:true
-	 \	},
+	 \ 'c': {},
 	 \ 'cpp':{
 	 \	'command':'clangd --background-index',
 	 \  'suppress_stderr': v:true

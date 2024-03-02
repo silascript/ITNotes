@@ -4,7 +4,7 @@ tags:
   - PL
   - ruby
 created: 2023-08-18 19:44:52
-modified: 2024-02-29 08:24:11
+modified: 2024-03-01 23:14:24
 ---
 # Ruby 笔记
 
@@ -263,10 +263,10 @@ git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-b
 export RUBY_BUILD_MIRROR_URL=https://cache.ruby-china.com
 ```
 
-> [!tip] ruby-builder 的配置项
+> [!tip] ruby-build 的配置项
+> 
 > [官方文档](https://github.com/rbenv/ruby-build#readme) Custom Build Configuration 一栏中就有列出 `ruby-build` 的配置项。
 >
-> ``
 > 像 `RUBY_BUILD_HTTP_CLIENT`，这个配置选项还能配置使用什么下载工具下载 ruby，在 [aria2](../Linux/Linux_Note.md#inux_network_command_downloader_aria2)、[curl](../Linux/Linux_Note.md#curl%20常用操作) 和 [wget](../Linux/Linux_Note.md#wget%20主要操作) 三选一，这好像比 [Ruby-Install](#Ruby-Install) 牛一点。
 
 ##### 镜像插件
@@ -294,11 +294,11 @@ git clone https://github.com/andorchen/rbenv-china-mirror.git "$(rbenv root)"/pl
 
 在 `.bashrc` 或其他配置文件中加入以下代码：
 
-```config
+```shell
 export RUBY_BUILD_HTTP_CLIENT=wget
 ```
 
-> [!info] rbenv 下载器可先项
+> [!info] rbenv 下载器可选项
 > 
 > `RUBY_BUILD_HTTP_CLIENT` 这个选项参数有三个可选：`aria2c`、`curl` 和 `wget`。
 > 
@@ -373,6 +373,7 @@ frum 有个配置目录，默认是在 `~/.frum`，可以使用 `echo $FRUM_DIR`
 
 * [frum guide](https://mac.install.guide/ruby/14.html)
 * [Installing Ruby with frum](https://www.jafeininger.de/writing_samples/ruby_with_frum/)
+* [Comparison of version managers · rbenv/rbenv Wiki · GitHub](https://github.com/rbenv/rbenv/wiki/Comparison-of-version-managers)
 
 ---
 

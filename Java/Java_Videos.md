@@ -3,9 +3,10 @@ aliases: []
 tags:
   - video
   - java
+  - tutorial
   - list
 created: 2023-06-24 01:08:17
-modified: 2023-12-07 11:30:24
+modified: 2024-03-01 23:06:17
 ---
 # Java 视频清单
 
@@ -60,3 +61,10 @@ modified: 2023-12-07 11:30:24
 * [可序列化lambda表达式有什么用？优雅解决硬编码](https://www.bilibili.com/video/BV15k4y1c7uR)
 * [mockito加junit搞定单元测试](https://www.bilibili.com/video/BV1P14y1k7Hi)
 * [java代码简洁之道 常用工具类的使用(apache commons系列/guava/spring utils)](https://www.bilibili.com/video/BV1Lv411P7Ua)
+
+---
+
+## 项目
+
+* [2024最新版Java中级项目实战-快递E栈](https://www.bilibili.com/video/BV1wu4m1w7LJ)
+

@@ -1,8 +1,10 @@
 ---
 aliases: []
-tags: []
+tags:
+  - vim
+  - lsp
 created: 2023-08-18 19:44:52
-modified: 2024-03-03 04:47:15
+modified: 2024-03-03 08:12:23
 ---
 
 # LSP 及补全相关

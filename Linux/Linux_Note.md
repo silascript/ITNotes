@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-03-02 22:21:44
+modified: 2024-03-04 05:02:17
 ---
 # Linux 笔记
 
@@ -574,6 +574,12 @@ more 命令一些按键操作：
 `/` 后输入要搜索的内容，按回车就开始向下搜索，按 `n` 就会跳转到下一个搜索结果。
 
 #### <span id="linux_textprocessing_commands_less">less</span>
+
+`less` 命令比 [more](#more) 命令要灵活很多，`more` 命令只能向下翻页，而 `less` 可上可下。
+
+参数：
+
+* `-N`：显示行号
 
 #### <span id="linux_textprocessing_commands_head">head</span>
 
@@ -1352,6 +1358,11 @@ wayland 模式下，系统是不会加载 `.profile` 或 `.xprofile` 文件的�
 > 但这个方案不是完全完美方案，因为如果配置文件中 `eval` 配置相关环境变量语法时，在 `x11` 模式下，环境变量配置是无效。
 > 
 > 在当前各 [Linux_Note](Linux_Note.md) 各大发行版都逐步使用 [Wayland](#Wayland) 的大趋势，[Xorg](#Xorg) 模式下存在一点小「bug」，应该也是可以接受的，毕竟 [Xorg](#Xorg) 已经开始处于「被淘汰」的状态了，所以使用 `.zprofile` 来代替 `.xprofile` 已经是「最优解」。
+> 
+>> [!tip] 
+>> 
+>> 但注意，[conda](../Python/Python_Note.md#python_conda) 那个 `conda init` 生成的配置代码，不能放在 `.zprofile` 中，虽然 conda 有效，但 `conda activate` 切换环境就失效了。所以为了 conda 的正常使用，还是将那段代码移到 `.zshrc` 文件中。
+> 
 
 ##### gnome-tweak 启动问题
 

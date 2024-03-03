@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2024-03-03 03:10:59
+modified: 2024-03-03 22:45:22
 ---
 # Shell 笔记
 
@@ -174,9 +174,12 @@ shell 对于空格有严格的规定：
 * `$0`：当前脚本的文件名
 * `$n`：传递给脚本或函数的参数。`n` 是数字，表示第几个参数，从**1**开始。
 * `$#`：传递给脚本或函数的参数个数。
-* `$*`：传递给脚本或函数的所有参数。
-* `$?`：上个命令的退出状态，或函数的返回值。
+* `$*`：传递给脚本或函数的所有参数，即以一个单字符显示所有向脚本传递的参数。
+* `$?`：上个命令的退出状态，或函数的返回值。`0` 表示没有错误，其他值表明有错误。
 * `$$`：当前 Shell 进程 ID。
+* `$!`：后台运行的最后一个进程 ID 号
+* `$@`：与 `$*` 相同，但是使用时加引号，并在引号中返回每个参数。
+* `$-`：显示 Shell 使用的当前选项，与 `set` 命令功能相同。
 
 ---
 
@@ -283,7 +286,8 @@ echo $PWD
   >>  for i in "${arr1[*]}";do
   >>  echo $i
   >> done
-  >>```
+  >>```  - 
+
   >
   >  这段代码会输出 `hello world then man`
   >  
@@ -551,6 +555,8 @@ function 函数名(){
 > 
 > 跟 [Javascript](../JS/JS_Note.md) 等语言很像。
 
+### <span id="shell_function_parameter">参数</span>
+
 ---
 
 ## 相关工具
@@ -631,6 +637,23 @@ jq -r '.assets[] | .browser_download_url | select ( contains("main.js") or conta
 
 ```
 
+> [!info] 
+> 
+> * `contains()` 方法是用来判断是否包含某字符串，包含返回 `true`，否则返回 `false`
+> * `select()` 选择过滤数据
+
+##### 示例 2
+
+```shell
+local tagstr="$2"
+curl http://hub-mirror.c.163.com/v2/library/${image}/tags/list | jq --arg tstr $tagstr -r '.tags[]| select(contains($tstr))'
+```
+
+> [!info] 
+> 
+> * `jq --arg` 是定义变量的选项
+> * `jq --arg tstr $tagstr`： `tstr` 为形参变量，是 jq 内部使用；而 `$tagstr` 是实参，外部传进来的。要使用形参时，使用 `$` 打头，跟普通 shell 变量使用一致。
+
 #### 相关资料
 
 * [如何用 Linux 命令行工具解析和格式化输出 JSON - 知乎](https://zhuanlan.zhihu.com/p/77177160)
@@ -638,6 +661,7 @@ jq -r '.assets[] | .browser_download_url | select ( contains("main.js") or conta
 * [Linux 命令行工具之 jq 最佳实践 - 知乎](https://zhuanlan.zhihu.com/p/606945462)
 * [Linux jq 命令讲解与实战操作（json字符串解析工具）- 博客园](https://www.cnblogs.com/liugp/p/17613011.html)
 * [jq manual](https://jqlang.github.io/jq/manual/)
+* [Linux shell jq工具操作文档（jq --help使用示例）-CSDN博客](https://blog.csdn.net/Dontla/article/details/135473677)
 
 ---
 

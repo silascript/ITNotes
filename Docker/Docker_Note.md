@@ -1,6 +1,5 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - docker
   - http
@@ -9,7 +8,7 @@ tags:
   - ubuntu
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2023-10-09 21:23:01
+modified: 2024-03-04 03:32:40
 ---
 
 # Docker 笔记
@@ -205,16 +204,19 @@ Docker 镜像列表
 |        镜像名         |                  镜像地址                  |
 |:---------------------:|:------------------------------------------:|
 |       科大镜像        |     https://docker.mirrors.ustc.edu.cn     |
+|     Docker Proxy      |          https://dockerproxy.com/          |
 |       网易镜像        |        https://hub-mirror.c.163.com        |
+|         百度          |        https://mirror.baidubce.com         |
+|         腾迅          |       https://ccr.ccs.tencentyun.com       |
 | Docker 中国区官方镜像 |       https://registry.docker-cn.com       |
 |       DaoCloud        |          https://hub.daocloud.io           |
 |       上海交大        |  https://docker.mirrors.sjtug.sjtu.edu.cn  |
-|       阿里 - 广州       | https://registry.cn-guangzhou.aliyuncs.com |
-|       阿里 - 上海       | https://registry.cn-shanghai.aliyuncs.com  |
-|       阿里 - 杭州       | https://registry.cn-hangzhou.aliyuncs.com  |
-|       阿里 - 北京       |  https://registry.cn-beijing.aliyuncs.com  |
-|       阿里 - 深圳       | https://registry.cn-shenzhen.aliyuncs.com  |
-|       阿里 - 成都       |  https://registry.cn-chengdu.aliyuncs.com  |
+|      阿里 - 广州      | https://registry.cn-guangzhou.aliyuncs.com |
+|      阿里 - 上海      | https://registry.cn-shanghai.aliyuncs.com  |
+|      阿里 - 杭州      | https://registry.cn-hangzhou.aliyuncs.com  |
+|      阿里 - 北京      |  https://registry.cn-beijing.aliyuncs.com  |
+|      阿里 - 深圳      | https://registry.cn-shenzhen.aliyuncs.com  |
+|      阿里 - 成都      |  https://registry.cn-chengdu.aliyuncs.com  |
 
 > [!info] 各镜像说明
 > 
@@ -223,6 +225,12 @@ Docker 镜像列表
 > Docker 官方已挂，不推荐。
 > 
 > 
+
+#### 相关资料
+
+ * [Docker Hub 镜像源 - 掘金](https://juejin.cn/post/7165806699461378085)
+ * [Docker 国内镜像 - 知乎](https://zhuanlan.zhihu.com/p/347643668)
+ * [dockerproxy 文档](https://dockerproxy.com/docs)
 
 #### <span id="dk_mirror_proxy">其他 docker 代理</span>
 
@@ -259,26 +267,29 @@ BCDEdit /set hypervisorlaunchtype auto
 ## <span id="dk_comm_commands">常用服务操作</span>
 
 重新加载配置
-```sh
+```shell
 sudo systemctl daemon-reload
 ```
 
 重启 docker 服务
-```sh
+```shell
 sudo systemctl restart docker
 ```
 
 停止 docker 服务
-```sh
+```shell
 sudo systemctl stop docker
 ```
 
 查看 Docker 信息
 
+> [!info] 
+> 
 > 这个操作得在 Docker 服务启动后才有效
-```sh
-docker info
-```
+> 
+>```sh
+> docker info
+> ```
 
 ---
 
@@ -343,11 +354,13 @@ echo "${tags}"
 ```
 
 > [!info] 此脚本应用在国内镜像上
-> 上述脚本中，其中 **tags=`wget -q https://registry.hub.docker.com/v1/repositories/${image}/tags` **，如果使用了国内镜像，就应该相应改成国内镜像的网址。
 > 
-> 如网易：http://hub-mirror.c.163.com/v2/library/${image}/tags/list
+> 上述脚本中，其中 `wget -q https://registry.hub.docker.com/v1/repositories/${image}/tags` ，如果使用了国内镜像，就应该相应改成国内镜像的网址。
+> 
+> 如网易：`http://hub-mirror.c.163.com/v2/library/${image}/tags/list`
 
 下面就是使用网易镜像源获取指定镜像 TAG 值的脚本：
+
 ```shell
 #!/bin/bash
 function usage() {
@@ -379,6 +392,54 @@ if [ -n "$2" ]; then
     tags=` echo "${tags}" | grep "$2" `
 fi
 echo "${tags}"
+```
+
+新版本的脚本：
+
+```shell
+
+# docker 查询
+# 调用这函数可以传一个参数也可以传两个参数
+# 第一个参数是要查询image的字符串
+# 第二个参数是tag包含的字符串，可以过滤tag数据，属于可选参数
+function docker_queryimagetag() {
+
+	if [[ $# -eq 0 ]]; then
+		echo -e "\e[93m必须输入一个要查询的字符串! \n \e[0m"
+		return
+	fi
+
+	# image 名称
+	local image="$1"
+
+	# tag模糊查询字符串
+	local tagstr="$2"
+
+	# 查询到的tag值
+	# http://hub-mirror.c.163.com/v2/library/${image}/tags/list
+	# 返回一个json格式：其中有个 tags 数组
+	# 使用 jq 工具来取数据
+	# 获取tags数组所有数据 去掉[]及双引号
+	# curl http://hub-mirror.c.163.com/v2/library/${image}/tags/list | jq -r '.tags[]'
+	# 对tag再进行模糊查询
+	# curl http://hub-mirror.c.163.com/v2/library/${image}/tags/list | jq -r '.tags[]| select(contains(${tagstr}))'
+
+	# local tags=$(curl http://hub-mirror.c.163.com/v2/library/${image}/tags/list | jq -r '.tags[]')
+
+	# 判断是参数是否大于2
+	# 第2个参数是tag查询的字符串
+	if [[ $# -gt 1 ]]; then
+		local tags=$(curl http://hub-mirror.c.163.com/v2/library/${image}/tags/list | jq --arg tstr $tagstr -r '.tags[]| select(contains($tstr))')
+	else
+		# 查询所有数据
+		local tags=$(curl http://hub-mirror.c.163.com/v2/library/${image}/tags/list | jq -r '.tags[]')
+	fi
+
+	# 显示
+	echo "${tags}" | less
+
+}
+
 ```
 
 #### <span id="dk_image_search_hub">Docker Hub</span>
@@ -1735,7 +1796,7 @@ CentOS 开启 SSH 服务
 > [!info]
 > 
 > ```shell
-> docker run -itd --name d_debian12 --network mybridge --ip 172.21.0.10 -p 2225:22 debian:stable-20230904-slim
+> docker run -itd --name d_debian12 --network mybridge --ip 172.21.0.10 -p 2225:22 debian:12.5-slim
 > ```
 
 在 Debian 中开启 SSH 功能。

@@ -6,7 +6,7 @@ tags:
   - nvim
   - config
 created: 2023-08-18 19:44:52
-modified: 2024-02-22 06:06:10
+modified: 2024-03-05 11:52:18
 ---
 
 # NeoVim 笔记
@@ -16,6 +16,9 @@ modified: 2024-02-22 06:06:10
 ## 目录
 
 * [neovim 新配置](#nvim_newconfig)
+* [插件](#nvim_colourscheme)
+	* [lazynvim](#nvim_plugins_lazynvim)
+* [配色](#nvim_colourscheme)
 
 ---
 
@@ -241,7 +244,7 @@ neovim 大概是按以下目录进行搜寻加载相应文件的：
 
 * `~/.config/nvim/` 目录是存放所有配置文件，这跟「[老设置](#neovim%20设置)」没什么区别。
  * `~/.config/nvim/init.lua`： 是配置入口文件，主要用来「导入」其他 `.lua` 文件，文件名 `init.lua` 是固定的。
-* `~/.config/lua`：这个目录是存放所有配置的目录。
+* `~/.config/nvim/lua`：这个目录是存放所有配置的目录。
 
 ### 配置
 
@@ -289,7 +292,7 @@ require('basic')
 ```lua
 require('a/b1') 
 -- 或
-`require('a.b1')
+require('a.b1')
 ```
 
 > [!info] 相关资料
@@ -300,6 +303,7 @@ require('a/b1')
 > * [从零开始配置 Neovim(Nvim) - MartinLwx's Blog](https://martinlwx.github.io/zh-cn/config-neovim-from-scratch/)
 > * [2022 年的 neovim 配置方案 | Zwlin's Blog](https://blog.zwlin.io/post/2022-nvim/)
 > * [**在 neovim 中使用 Lua**](https://github.com/glepnir/nvim-lua-guide-zh)
+> * [Neovim：插件入门 - 知乎](https://zhuanlan.zhihu.com/p/596932328)
 
 > [!tip] 
 > 
@@ -311,17 +315,25 @@ require('a/b1')
 
 ## <span id="nvim_plugins">插件</span>
 
-### <span id="nvim_plugins_vimplug">vim-plug 插件管理器</span>
+### 插件集合
+
+网上有好心的网友收集整理 neovim 插件集合：
+
+* [awesome-neovim](https://github.com/rockerBOO/awesome-neovim)
+
+### <span id="nvim_plugins_vimplug">vim-plug</span>
 
 [junegunn/vim-plug](https://github.com/junegunn/vim-plug) 是在 [Vim](Vim_Note.md) 中非常流行的一款插件管理器。
 
 Linux 下安装：
+
 ```shell
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 
 windows 下安装：
+
 ```shell
 iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
     ni "$(@($env:XDG_DATA_HOME, $env:LOCALAPPDATA)[$null -eq $env:XDG_DATA_HOME])/nvim-data/site/autoload/plug.vim" -Force
@@ -330,6 +342,7 @@ iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
 更详细内容：[vim plugin](#vimplugin_plug)
 
 > [!important] 
+> 
 > neovim 已经转向使用 lua 配置，所以 vim-plug 就有点不太适合现在的 neovim 了。
 
 ---
@@ -502,11 +515,199 @@ return {
 
 ![nvim-tree screenshot](https://user-images.githubusercontent.com/1505378/232662694-8dc494e0-24da-497a-8541-29344293378c.png)
 
+### nvim-treesitter
+
+[nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) 高亮增强插件。
+
+基础配置：
+
+```lua
+{
+	'nvim-treesitter/nvim-treesitter',
+	config = function()
+		require('nvim-treesitter.configs').setup({
+
+				ensure_installed = { "c","cpp","html", "css", "json","vim", "lua", "go","javascript", "typescript", "tsx"},
+				highlight = { 
+					enable = true,
+					additional_vim_regex_highlighting = false
+				},
+				-- indent = { enable = true },
+				-- 不同括号颜色区分
+				rainbow = {
+					enable = true,
+					extended_mode = true,
+					max_file_lines = nil,
+				},
+
+		})
+		 
+	end,
+}
+
+
+```
+
+#### nvim-treesitter 命令
+
+nvim-treesitter 的命令都是以 `TS` 开头的。
+
+要装哪个语言的就用 `TSInstall 语言名称`，比如 `:TSInstall javascript`。
+
+[nvim-treesitter 支持高亮的语言列表](https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#supported-languages)
+
+其他命令
+
+* `:TSInstallInfo`： 可以查看语言安装情况。
+* `:TSBufToggle highlight`：开启或关闭高亮
+
+#### 相关资料
+
+* [从零开始配置vim(21)——lsp简介与treesitter 配置-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/2127555)
+* [Neovim 代码高亮插件 nvim-treesitter 的安装与配置](https://www.zhihu.com/tardis/bd/art/441818052)
+* [Neovim 代码高亮插件 nvim-treesitter 的安装与配置](https://www.zhihu.com/tardis/bd/art/441818052?source_id=1001)
+
+### nvim-autopairs
+
+[nvim-autopairs](https://github.com/windwp/nvim-autopairs) 是个成对符号补全插件。
+
+### nvim-cursorline
+
+[nvim-cursorline](https://github.com/yamatsum/nvim-cursorline) 这插件是让光标所在的单词高亮的小工具。
+
+这插件除了主要功能高亮当前单词，还附赠了「动态」高亮当前行（原生配置只开启当前行高亮是固定的，一直高亮，而这个插件是让这高亮「动」起来），其实没有什么用。
+
+<video src="https://private-user-images.githubusercontent.com/42740055/163586272-17560f83-9195-4cb4-8c1c-557cfaf775ea.mp4"></video>
+
+```lua
+{
+	"yamatsum/nvim-cursorline",
+	config = function()
+		require('nvim-cursorline').setup({
+			cursorword = {
+				enable = true,
+				-- 最少多个字符的单词触发高亮
+				min_length = 3,
+				-- 高亮形式
+				hl = { underline = true },
+			  },
+			-- 禁用动态高亮当前行功能
+			cursorline = {
+				enable = false,
+			}
+		})
+	end,
+}
+```
+
+### nvim-surround
+
+[nvim-surround](https://github.com/kylechui/nvim-surround) 是大名鼎鼎的 [Surround](vim_plugin.md#Surround) 的 neovim 版本。
+
+<video src="https://user-images.githubusercontent.com/48545987/178679494-c7d58bdd-d8ca-4802-a01c-a9444b8b882f.mp4" type="video/mp4"></video>
+
+### comment
+
+[Comment](https://github.com/numToStr/Comment.nvim) 是 nvim 上的一款注释插件。
+
+默认注释和取消注释的快捷键为：`gcc`，而使用 [Visual 模式](vim常用操作.md#op_visual) 时，默认使用 `gc` 来注释及取消注释。
+
+在配置快捷键时，同样能使用 `<leader>` 键，而默认仍为 `\`。
+
+这个插件定义快捷键太细腻了，这是优势也是劣势，得记过多的快捷键，其实有一些操作是可以共用快捷键，如日常最常用的：**单行注释**及使用 [Visual 模式](vim常用操作.md#op_visual)[Visual 模式](vim常用操作.md#op_visual) 选取**多行注释**，这两种操作完全可以共用同一个快捷键。
+
+```lua
+{
+	'numToStr/Comment.nvim',
+	config = function()
+		require('Comment').setup({
+
+			-- NORMAL模式
+			toggler = {
+				line = '<leader>cc',
+			 },
+			
+			-- VISUAL模式
+			opleader = {
+				line = '<leader>cc',
+			},
+
+		})
+	end,
+},
+
+```
+
+### formatter.nvim
+
+[formatter.nvim](https://github.com/mhartington/formatter.nvim) 格式化插件。
+
+```lua
+{
+	"mhartington/formatter.nvim",
+	config = function()
+		require("formatter").setup(
+			{
+				filetype = {
+					c = {
+						require("formatter.filetypes.c").clangformat
+					},
+					lua = {
+						require("formatter.filetypes.lua").luafmt
+					},
+					go = {
+						require("formatter.filetypes.go").gofmt
+					},
+					cpp = {
+						require("formatter.filetypes.cpp").clangformat
+					},
+					rust = {
+						require("formatter.filetypes.rust").rustfmt
+					},
+					sh = {
+						require("formatter.filetypes.sh").shfmt
+					},
+					vue = {require("formatter.filetypes.vue").prettier},
+					css = {require("formatter.filetypes.css").prettier},
+					html = {require("formatter.filetypes.html").prettier},
+					javascript = {require("formatter.filetypes.javascript").prettier},
+					typescript = {require("formatter.filetypes.typescript").prettier},
+					markdown = {require("formatter.filetypes.markdown").prettier},
+					json = {require("formatter.filetypes.json").prettier},
+					less = {
+						function()
+							return {
+								exe = "prettier",
+								args = {"--stdin-filepath", vim.fn.shellescape(vim.api.nvim_buf_get_name(0))},
+								stdin = true
+							}
+						end
+					},
+					python = {
+						-- require("formatter.filetypes.python").autopep8
+						require("formatter.filetypes.python").black
+						-- require("formatter.filetypes.python").ruff
+					},
+					["*"] = {
+						-- filetype
+						-- 去除尾部空白
+						require("formatter.filetypes.any").remove_trailing_whitespace
+					}
+				} --filetype
+			}
+		)
+	end
+}
+
+```
+
 ---
 
 ### <span id="nvim_plugins_basic">基础插件</span>
 
 基础插件，大概围绕什么注释、光标样式等编辑基础的功能增加。
+
+有些插件已经不适用于使用 [Lua](../Lua/Lua_Note.md) 的 nvim 了。
 
 * [preservim/nerdcommenter](https://github.com/preservim/nerdcommenter)
 * [tpope/vim-surround](https://github.com/tpope/vim-surround)
@@ -516,6 +717,90 @@ return {
 * [auto-pairs](https://github.com/jiangmiao/auto-pairs)
 * [wellle/targets.vim](https://github.com/wellle/targets.vim)
 * [terryma/vim-expand-region](https://github.com/terryma/vim-expand-region)
+
+---
+
+## <span id="nvim_colourscheme">配色</span>
+
+### material
+
+[material.nvim](https://github.com/marko-cerovac/material.nvim)
+
+![material screenshot 1](https://user-images.githubusercontent.com/76592799/163740695-3c34201c-7ae4-482f-9548-53d08701bdd5.png)
+
+material 这个颜色主题，其中有不同的配色，得通过 `vim.g.material_style` 来设置：
+
+```lua
+# 这个设置必须放在colorscheme之前，不然不会生效，就只能用material默认配色
+vim.g.material_style = "darker"
+vim.cmd.colorscheme "material"
+```
+
+### gruvbox
+
+[GitHub - ellisonleao/gruvbox.nvim: Lua port of the most famous vim colorscheme](https://github.com/ellisonleao/gruvbox.nvim)
+
+![gruvbox screenshot](https://camo.githubusercontent.com/8dfd1f3d917727229318863a5c11d9f23e601332f572d646c054c374eb251b4a/68747470733a2f2f692e706f7374696d672e63632f667933746e4746742f67727576626f782d7468656d65732e706e67)
+
+```lua
+# 就俩配色：light和dark，这行设置一样得放在colorscheme设置之前
+-- vim.o.background = "dark"
+vim.o.background = "light"
+vim.cmd.colorscheme "gruvbox"
+```
+
+有三种对比度：`"hard"`、`"soft"` 和默认 `""`
+
+```lua
+{ 
+	"ellisonleao/gruvbox.nvim", 
+	priority = 1000 , 
+	config = true, 
+	config = function()
+		require("gruvbox").setup({
+			-- "hard" "soft" empty
+			-- contrast = "soft"
+			contrast = "hard"
+		})
+	end,
+}
+```
+
+### catppuccin
+
+[catppuccin](https://github.com/catppuccin/nvim) 又是经典的配色。
+
+![catppuccin screenshot](https://user-images.githubusercontent.com/56817415/213472445-091e54fb-091f-4448-a631-fa6b2ba7d8a5.png)
+
+有四个配色，其中 `latte` 是浅色：
+
+```lua
+{ 
+	"catppuccin/nvim", 
+	name = "catppuccin", 
+	priority = 1000,
+	config = function()
+		require("catppuccin").setup({
+			-- latte frappe macchiato mocha
+			-- flavour = "mocha",
+			-- flavour = "latte",
+			-- flavour = "frappe",
+			flavour = "macchiato",
+		})
+	end,
+}
+
+```
+
+---
+
+## neovim 相关资料
+
+* [Neovim插件推荐&配置 - 哔哩哔哩](https://www.bilibili.com/read/cv22495061/)
+* [awesome-newvim](https://github.com/rockerBOO/awesome-neovim)
+* [从零开始配置vim(21)——lsp简介与treesitter 配置-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/2127555)
+* [Neovim 主题配置 - 知乎](https://zhuanlan.zhihu.com/p/438382701)
+* [nvim代码格式化插件formatter.nvim](https://blog.csdn.net/lxyoucan/article/details/120411901)
 
 ---
 

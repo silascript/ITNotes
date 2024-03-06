@@ -6,7 +6,7 @@ tags:
   - nvim
   - config
 created: 2023-08-18 19:44:52
-modified: 2024-03-05 11:52:18
+modified: 2024-03-06 10:42:58
 ---
 
 # NeoVim 笔记
@@ -701,9 +701,100 @@ nvim-treesitter 的命令都是以 `TS` 开头的。
 
 ```
 
+### <span id="nvim_plugins_snippets">Snippet 插件</span>
+
+#### LuaSnip
+
+[LuaSnip](https://github.com/L3MON4D3/LuaSnip) 一个强大的 snippet 插件。
+
+##### 加载器
+
+> LuaSnip 能够加载不同格式的代码片段，包括成熟的 Vscode 和 Snipmate 格式，以及用 Lua 编写片段的纯 Lua 文件。
+
+```lua
+require("luasnip.loaders.from_snipmate").load()
+-- 指定加载路径
+require("luasnip.loaders.from_snipmate").lazy_load({paths = "~/.config/nvim/snippets"})
+-- or relative to the directory of $MYVIMRC
+require("luasnip.loaders.from_snipmate").lazy_load({paths = "./snippets"})
+
+```
+
+以 `dependencies` 方式安装 [vim-snippets](vim_plugin.md#vimplugin_snippets_vimsnippets)，安装位置是在：`~/.local/share/nvim/lazy/vim-snippets/`。所以如果要定位其 snippets，就应该是在 `~/.local/share/nvim/lazy/vim-snippets/snippets`。
+
+> [!tip] 
+> 
+> LuaSnip 配置可以参考 [LazyVim](https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/coding.lua) 的配置。
+
+##### snippet 插件相关资料
+
+* [LuaSnip 中文文档](https://zjp-cn.github.io/neovim0.6-blogs/nvim/luasnip/doc1.html)
+* [Luasnip使用手册（上） - 知乎](https://zhuanlan.zhihu.com/p/637854706)
+* [从零开始的Neovim配置--第2期：LuaSnip插件用法及其基本配置](https://www.bilibili.com/video/BV18g4y1V7qT)
+* [自定义代码段LuaSnip入门](https://www.bilibili.com/video/BV1iL4y1B7gH)
+* [【AstroNvim】第四期：LuaSnip](https://www.bilibili.com/video/BV1Lv421r7Sv)
+
 ---
 
-### <span id="nvim_plugins_basic">基础插件</span>
+### <span id="nvim_plugins_lsp">LSP 插件</span>
+
+neovim 本就已经内置了 LSP Client，只是配置麻烦，所以官方还弄了个插件：[nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) 来简化配置。
+
+> [!info] 相关资料
+> 
+> * [NeoVim Builtin LSP的基本配置](https://xfyuan.github.io/2021/02/neovim-builtin-lsp-basic-configuration/)
+> * [nvim-lspconfig server configuration doc](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
+> * [Language specific plugins · neovim/nvim-lspconfig Wiki · GitHub](https://github.com/neovim/nvim-lspconfig/wiki/Language-specific-plugins)
+
+neovim 并没有自动补全功能，它的补全是通过 `omnifunc` 绑定来实现的，代码去 [GitHub - neovim/nvim-lspconfig: Quickstart configs for Nvim LSP](https://github.com/neovim/nvim-lspconfig?tab=readme-ov-file#suggested-configuration)。
+
+如果需要自动补全，就得需要第三方插件，官方建议的是：[nvim-cmp](#nvim-cmp)。
+
+#### lspsaga.nvim
+
+[lspsaga.nvim](https://github.com/nvimdev/lspsaga.nvim) 这是基于 neovim 内置 lsp 接口的轻量级 LSP 插件。
+
+安装：
+
+```lua
+{
+	'nvimdev/lspsaga.nvim',
+    config = function()
+        require('lspsaga').setup({})
+    end,
+}
+```
+
+> [!info] lspsaga 文档
+> 
+> * [lspsaga doc](https://nvimdev.github.io/lspsaga/)
+
+---
+
+### <span id="nvim_plugins_completion">补全插件</span>
+
+#### nvim-cmp
+
+[nvim-cmp](https://github.com/hrsh7th/nvim-cmp/)
+
+> [!info] 相关资料
+> 
+> * [nvim-cmp Wiki](https://github.com/hrsh7th/nvim-cmp/wiki)
+> * [Neovim 内置 LSP 配置 (二)：自动代码补全 - 知乎](https://zhuanlan.zhihu.com/p/445331508)
+
+---
+
+### <span id="nvim_plugins_icons">图标</span>
+
+#### lspkind.nvim
+
+[lspkind.nvim](https://github.com/onsails/lspkind.nvim) 为 [补全插件](#补全插件) 的候选菜单中添加图标。
+
+![lspkind.nvim screenshot](https://github.com/onsails/lspkind-nvim/raw/images/images/screenshot.png)
+
+---
+
+### <span id="nvim_plugins_obasic">旧基础插件</span>
 
 基础插件，大概围绕什么注释、光标样式等编辑基础的功能增加。
 

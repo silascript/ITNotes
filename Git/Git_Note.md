@@ -4,7 +4,7 @@ tags:
   - git
   - github
 created: 2023-01-30 11:19:11
-modified: 2024-02-21 00:48:58
+modified: 2024-03-08 23:43:49
 ---
 # Git 笔记
 
@@ -735,14 +735,16 @@ git config --global --unset url.https://github.com/.insteadof
 * ~~[hub.gitfast.tk](https://hub.gitfast.tk)~~
 * ~~[hub.おうか.tw](https://hub.xn--p8jhe.tw)~~
 * ~~[hub.連接.台灣](https://hub.xn--gzu630h.xn--kpry57d)~~
-* [nuaa](https://hub.nuaa.cf/)
+* ~~[nuaa](https://hub.nuaa.cf/)~~
 * ~~[gitslow](https://hub.gitslow.tk/)~~
 * ~~[kgithub](https://kgithub.com/)~~
 * [kkgithub](https://kkgithub.com/)
-* [njuu.cf](https://hub.njuu.cf/)
-* [yzuu.cf](https://hub.yzuu.cf/)
+* ~~[njuu.cf](https://hub.njuu.cf/)~~
+* ~~[yzuu.cf](https://hub.yzuu.cf/)~~
 * ~~[fgit.ml](https://hub.fgit.ml/)~~
-* [hscsec.cn](https://github.hscsec.cn/)
+* ~~[hscsec.cn](https://github.hscsec.cn/)~~
+* [bgihub.xyz](https://bgithub.xyz/)
+* [ggithub.xyz](https://ggithub.xyz/)
 
 > [!tip] 镜像不是永久的
 > 
@@ -853,17 +855,15 @@ git config --global --unset url.https://github.com/.insteadof
 
 ```
 
-github已经不允许使用账号密码方式pull代码，可以使用token。而每次pull都得输入一次账号名和token，为了「懒」，可以使用git cli工具改善。
+github 已经不允许使用账号密码方式 pull 代码，可以使用 token。而每次 pull 都得输入一次账号名和 token，为了「懒」，可以使用 git cli 工具改善。
 
-`gh auth login`，然后根本步骤进行操作，关键是最后一步，有两选项，一个是使用弹出页面账号密码登录，一个是使用token，如果使用token，想让`gh`记住你的token，就选这项。所有操作完成，下一次就不用再输一次账号和token了。
-
+`gh auth login`，然后根本步骤进行操作，关键是最后一步，有两选项，一个是使用弹出页面账号密码登录，一个是使用 token，如果使用 token，想让 `gh` 记住你的 token，就选这项。所有操作完成，下一次就不用再输一次账号和 token 了。
 
 > [!info] 参考资料
 > 
 > * [Github要求使用基于令牌的身份验证](https://zhuanlan.zhihu.com/p/401978754)
 > *[git push时鉴权失败](https://juejin.cn/post/7099019037706813471)
 > * [caching-your-github-credentials-in-git#github-cli](https://docs.github.com/zh/get-started/getting-started-with-git/caching-your-github-credentials-in-git#github-cli)
-
 
 ---
 

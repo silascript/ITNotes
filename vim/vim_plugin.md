@@ -9,7 +9,7 @@ tags:
   - vim-plugin
   - list
 created: 2023-01-30 11:19:11
-modified: 2024-02-20 02:52:04
+modified: 2024-03-07 10:27:40
 ---
 
 # vim 常用插件清单
@@ -656,10 +656,26 @@ figlet -w 数字 要输出的文字
 在 startify 的配置中可以调用 figlet 来生成 vim 启动页面那个图案。
 
 直接贴出 github 上的示例：
+
 ```vimscript
 let g:startify_custom_header =
        \ startify#pad(split(system('figlet -w 100 VIM2020'), '\n'))
 ```
+
+字体 [GitHub](../Git/Git_Note.md#git_github) 库：[figlet-fonts](https://github.com/xero/figlet-fonts)
+
+```shell
+██╗  ██╗███████╗██╗     ██╗      ██████╗ 
+██║  ██║██╔════╝██║     ██║     ██╔═══██╗
+███████║█████╗  ██║     ██║     ██║   ██║
+██╔══██║██╔══╝  ██║     ██║     ██║   ██║
+██║  ██║███████╗███████╗███████╗╚██████╔╝
+```
+> [!tip] 
+> 
+> 这种字体是：`ANSI Shadow`。
+>
+> 使用 `-f` 指定字体时，如果字体名称有空格，应用引号 `'` 括起来。
 
 ---
 

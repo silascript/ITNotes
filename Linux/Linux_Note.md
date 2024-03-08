@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-03-04 05:02:17
+modified: 2024-03-07 02:35:34
 ---
 # Linux 笔记
 
@@ -443,6 +443,18 @@ zip -F 烤肉500.zip --out 500.zip
 
 ---
 
+## <span id="linux_file">文件</span>
+
+### <span id="linux_file_search">文件查找</span>
+
+#### find
+
+#### fd
+
+[fd](https://github.com/sharkdp/fd) 是一个更友好的 [find](#find)，它是用 [Rust](../Rust/Rust_Note.md) 编写。
+
+---
+
 ## <span id="linux_textprocessing"> 文本处理 </span>
 
 ### <span id="linux_textprocessing_commands"> 文本处理常用命令 </span>
@@ -645,6 +657,10 @@ Linux 中使用的 GNU 版本的 grep ，可以直接通过 `-G`、`-E` 和 `-F`
 行和列综合使用：
 
 `unzip -l xxx.zip |awk 'NR==5{print $NF}'`：列出 zip 包中的文件列表，显示第 5 行最后一列信息
+
+### ripgrep
+
+[ripgrep](https://github.com/burntsushi/ripgrep) 是使用 [Rust](../Rust/Rust_Note.md) 编写的现代版 [grep](#grep)。
 
 ---
 

@@ -5,8 +5,9 @@ tags:
   - neovim
   - nvim
   - config
+  - plugin
 created: 2023-08-18 19:44:52
-modified: 2024-03-06 10:42:58
+modified: 2024-03-08 11:04:16
 ---
 
 # NeoVim 笔记
@@ -18,6 +19,11 @@ modified: 2024-03-06 10:42:58
 * [neovim 新配置](#nvim_newconfig)
 * [插件](#nvim_colourscheme)
 	* [lazynvim](#nvim_plugins_lazynvim)
+	* [状态栏及Buffer](#nvim_plugins_sbline)
+	* [目录树](#nvim_plugins_dirtree)
+	* [缩进](#nvim_plugins_indent)
+	* [snippet](#nvim_plugins_snippets)
+	* [补全](#nvim_plugins_completion)
 * [配色](#nvim_colourscheme)
 
 ---
@@ -432,6 +438,20 @@ require("lazy").setup("plugins")
 require("lazy").setup({{import = "plugins"}})
 ```
 
+> [!info] 
+>
+> 可以 `import` 多个目录，甚至是子目录，因为 lazy 不会「遍历」子目录，如果有子目录，得再多加一个 `import` 语句：
+>  
+> ```lua
+> require("lazy").setup(
+> {
+> 	{ import = "plugins" },
+>	{ import = "plugins/ui" },
+> })
+>
+> ```
+> 
+
 3. 在 `plugins` 目录中添加相应的插件配置文件。
 如我要添加 [lualine.nvim](#lualine.nvim) 这个状态栏插件，可以在 `plugins` 目录中新建一个 `lua` 文件，文件名可以自定义，然后添加以下代码：
 ```lua
@@ -489,13 +509,103 @@ return {
 
 ```
 
+#### lazy 语法
+
+##### 插件配置
+
+* `dependencies`：插件启动依赖配置
+* `enabled`：开启或禁用某插件，如：`enable = false` 这就是禁用。
+
+###### config
+
+```lua
+config = function()
+	-- 配置语句写这里
+end
+```
+
+###### event
+
+`event`，指定该插件什么事件下触发，如： `event = "VeryLazy"`。
+
+如果有多个值，可以使用大括号 `{}` 括起来，如：`event = {"BufReadPre","BufNewFile"}`。
+
+这些值实际是 [vim events](Vim_Note.md#events) 和 neovim 本来就有的，可以通过命令：`:help {events}`
+
+其他配置项参考：[lazy.nvim README-plugin-spec](https://github.com/folke/lazy.nvim?tab=readme-ov-file#-plugin-spec)
+
 #### lazy.nvim 相关资料
 
 * [从0开始配置基于lua的neovim (lazy.nvim重制版)](https://www.bilibili.com/video/BV1HP411m7mQ)
 
 ---
 
-### lualine.nvim
+### <span id="nvim_plugins_starup">开始页面</span>
+
+#### dashboard-nvim
+
+[dashboard-nvim](https://github.com/nvimdev/dashboard-nvim) 是 [GitHub](../Git/Git_Note.md#git_github) 上「Starred」非常高的开始页面插件。
+
+![dashboard-nvim screenshot](https://user-images.githubusercontent.com/41671631/215015845-b13343c4-427e-45d6-9f92-267ab909eff1.png)
+
+dashboard 分 `Hyper` 和 `Doom` 两种样式。
+
+`Hyper` 可以对 `shortcut` 配置。
+
+```lua
+shortcut = {                                    
+	{ desc = '󰊳 Lazy', group = '@property', action = 'Lazy', key = 'l' },
+	-- { desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
+}
+```
+
+`Doom` 则是对 `center` 进行配置。
+
+```lua
+center = {
+	{ action = "ene | startinsert", desc = " New file", icon = " ", key = "n" },
+	{ action = "LazyExtras", desc = " Lazy Extras", icon = " ", key = "x" },
+	{ action = "Lazy", desc = " Lazy", icon = "󰒲 ", key = "l" },
+	{ action = "qa", desc = " Quit", icon = " ", key = "q" },
+```
+
+#### dashboard 相关资料
+
+* [从零开始配置 vim(16)——启动界面配置 - 知乎](https://zhuanlan.zhihu.com/p/555057672?utm_id=0)
+
+#### alpha-nvim
+
+[alpha-nvim](https://github.com/goolord/alpha-nvim) 这个是跟 [vim-startify](vim_plugin.md#vim-startify) 很像的插件。
+
+![alpha-nvim screenshot](https://user-images.githubusercontent.com/24906808/133367667-0f73e9e1-ea75-46d1-8e1b-ff0ecfeafeb1.png)
+
+这插件预设了几个不同风格的配置，在 `setup` 中 `require` 下就马上能用了。
+
+`startify` 风格是最简单的，只依赖了一个图标插件：
+
+```lua
+{
+	'goolord/alpha-nvim',
+	dependencies = { 'nvim-tree/nvim-web-devicons' },
+	config = function ()
+		require'alpha'.setup(require'alpha.themes.startify'.config)
+	end
+};
+```
+
+#### startup.nvim
+
+[starup.nvim](https://github.com/startup-nvim/startup.nvim) 是一个完全自由定制的开始页面插件。
+
+#### veil
+
+[veil](https://github.com/willothy/veil.nvim)
+
+<video src="https://private-user-images.githubusercontent.com/38540736/228553706-b68e99a7-c4d6-4803-a06e-4e3bb12109ea.mp4"></video>
+
+### <span id="nvim_plugins_sbline">状态栏及 Buffer</span>
+
+#### lualine.nvim
 
 [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) 是一款状态栏美化插件。
 
@@ -505,15 +615,113 @@ return {
 
 ![lualine.nvim screenshot 3](https://user-images.githubusercontent.com/41551030/108650378-be95dc80-74bf-11eb-9718-82b242ecdd54.png)
 
-### bufferline.nvim
+#### bufferline.nvim
 
 [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) 是一款美化 [Buffer](vim常用操作.md#op_normal_buffer) 的插件。
 
-### nvim-tree
+---
+
+### modicator
+
+[modicator](https://github.com/mawkler/modicator.nvim) 是一个动态改变行号颜色的插件。
+
+![modicator screenshot](https://user-images.githubusercontent.com/15816726/215295831-299dc732-85ae-4668-9e7b-e88cd499f18a.gif)
+
+---
+
+### <span idj="nvim_plugins_themeswitch">配色切换</span>
+
+#### themery
+
+[themery.nvim](https://github.com/zaldih/themery.nvim) 是一个 [配色](#配色) 切换的插件。
+
+![themery screenshot](https://github.com/zaldih/themery.nvim/raw/main/docs/header.png)
+
+#### colorbox
+
+[colorbox.nvim](https://github.com/linrongbin16/colorbox.nvim)
+
+---
+
+### <span id="nvim_plugins_dirtree">目录树</span>
+
+#### nvim-tree
 
 [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua) 是一个显示目录树的插件。
 
 ![nvim-tree screenshot](https://user-images.githubusercontent.com/1505378/232662694-8dc494e0-24da-497a-8541-29344293378c.png)
+
+---
+
+### <span id="nvim_plugins_indent">缩进</span>
+
+#### indent-blankline
+
+[indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) 是一个显示缩进线的插件。
+
+「彩虹」缩进线配置：
+
+```lua
+{
+	"lukas-reineke/indent-blankline.nvim",
+	main = "ibl",
+	-- enabled = false,
+	event = "BufReadPost",
+	config = function()
+		local highlight = {}
+
+		local hooks = require "ibl.hooks"
+		-- create the highlight groups in the highlight setup hook, so they are reset
+		-- every time the colorscheme changes
+		hooks.register(
+			hooks.type.HIGHLIGHT_SETUP,
+			function()
+				vim.api.nvim_set_hl(0, "RainbowRed", {fg = "#E06C75"})
+				vim.api.nvim_set_hl(0, "RainbowYellow", {fg = "#E5C07B"})
+				vim.api.nvim_set_hl(0, "RainbowBlue", {fg = "#61AFEF"})
+				vim.api.nvim_set_hl(0, "RainbowOrange", {fg = "#D19A66"})
+				vim.api.nvim_set_hl(0, "RainbowGreen", {fg = "#98C379"})
+				vim.api.nvim_set_hl(0, "RainbowViolet", {fg = "#C678DD"})
+				vim.api.nvim_set_hl(0, "RainbowCyan", {fg = "#56B6C2"})
+			end
+		)
+
+		require("ibl").setup(
+			{
+				indent = {highlight = highlight}
+			}
+		)
+	end
+	-- opts = {}
+}
+```
+
+#### hlchunck
+
+[hlchunk.nvim](https://github.com/shellRaining/hlchunk.nvim) 同样也是一个显示缩进线的插件。它比 [indent-blankline](#indent-blankline) 更轻量。
+
+![hlchunk screenshot 1](https://raw.githubusercontent.com/shellRaining/img/main/2302/23_hlchunk2.png)
+
+![hlchunk screenshot 2](https://raw.githubusercontent.com/shellRaining/img/main/2303/08_hlchunk8.gif)
+
+简单配置就很好用了：
+
+```lua
+{
+	"shellRaining/hlchunk.nvim",
+	-- enabled = false,
+	event = {"UIEnter"},
+	config = function()
+		require("hlchunk").setup({
+			blank = {
+				enable = false,
+			}
+		})
+	end
+}
+```
+
+---
 
 ### nvim-treesitter
 
@@ -576,8 +784,6 @@ nvim-treesitter 的命令都是以 `TS` 开头的。
 [nvim-cursorline](https://github.com/yamatsum/nvim-cursorline) 这插件是让光标所在的单词高亮的小工具。
 
 这插件除了主要功能高亮当前单词，还附赠了「动态」高亮当前行（原生配置只开启当前行高亮是固定的，一直高亮，而这个插件是让这高亮「动」起来），其实没有什么用。
-
-<video src="https://private-user-images.githubusercontent.com/42740055/163586272-17560f83-9195-4cb4-8c1c-557cfaf775ea.mp4"></video>
 
 ```lua
 {
@@ -750,6 +956,40 @@ neovim 并没有自动补全功能，它的补全是通过 `omnifunc` 绑定来�
 
 如果需要自动补全，就得需要第三方插件，官方建议的是：[nvim-cmp](#nvim-cmp)。
 
+配置：
+
+```lua
+-- nvim-lspconfig
+{
+	"neovim/nvim-lspconfig",
+	config = function()
+		local lspconfig = require('lspconfig')
+		-- local capabilities = require("cmp_nvim_lsp").default_capabilities()
+		--require('lspconfig').gopls.setup{}
+		--require('lspconfig').gopls.setup{}
+		lspconfig.clangd.setup{}
+		lspconfig.bashls.setup{}
+		lspconfig.lua_ls.setup{}
+		lspconfig.html.setup{}
+		lspconfig.cssls.setup{}
+		lspconfig.gopls.setup{}
+		lspconfig.tsserver.setup{}
+		-- lspconfig.jdtls.setup{ capabilities = capabilities }
+		lspconfig.jdtls.setup{}
+		lspconfig.ruff_lsp.setup{}
+		lspconfig.solargraph.setup{}
+		lspconfig.rust_analyzer.setup {
+		  settings = {
+			['rust-analyzer'] = {},
+		  },
+		}
+	end,
+
+},
+
+
+```
+
 #### lspsaga.nvim
 
 [lspsaga.nvim](https://github.com/nvimdev/lspsaga.nvim) 这是基于 neovim 内置 lsp 接口的轻量级 LSP 插件。
@@ -777,9 +1017,110 @@ neovim 并没有自动补全功能，它的补全是通过 `omnifunc` 绑定来�
 
 [nvim-cmp](https://github.com/hrsh7th/nvim-cmp/)
 
+##### 快捷键设置
+
+快捷键设置，最核心的就是三个「向下选择」、「向上选择」和「确认」。
+
+摘抄了 [官方文档](https://github.com/hrsh7th/nvim-cmp/blob/main/doc/cmp.txt) 的三段：
+
+```txt
+*cmp.select_next_item* (option: { behavior = cmp.SelectBehavior, count = 1 })
+  Select the next item. Set count with large number to select pagedown.
+  `behavior` can be one of:
+  - `cmp.SelectBehavior.Insert`: Inserts the text at cursor.
+  - `cmp.SelectBehavior.Select`: Only selects the text, potentially adds ghost_text at
+    cursor.
+```
+
+```txt
+*cmp.select_prev_item* (option: { behavior = cmp.SelectBehavior, count = 1 })
+  Select the previous item. Set count with large number to select pageup.
+  `behavior` can be one of:
+  - `cmp.SelectBehavior.Insert`: Inserts the text at cursor.
+  - `cmp.SelectBehavior.Select`: Only selects the text, potentially adds ghost_text at
+    cursor.
+```
+
+> [!info] 文档解析
+> 
+> 向下向上选择，默认效果是光标所在文字随着侯选项向下向上移动变化而即刻发生变动，这好处是对于非常确认输入会出现可选的侯选项情况下，提高输入流畅度。
+> 
+> 但如果是不确定输入后是否会出现可预期的侯选项，但又因为在侯选项菜单中，移动**选择游标**「试着」选择，这时光标所在的文字已经随着游标所处的侯选项的改变而发生更改，而这更改都不是用户想要的，即侯选项菜单中所有选项均非目标选项，但光标所在的文字已更改，这非常不符合需求。这就要求在设置相应快捷键时，对「选择」进行更细腻的设置。
+> 
+> `cmp.select_prev_item` 就是「**选择游标**」，而 `behavior` 就是设置它的行为，即它上下移动会发生什么效果。
+> 
+> 文档中就两个设置值：`cmp.SelectBehavior.Select` 和 `cmp.SelectBehavior.Insert` 。前者就是只是「选择」（`Select`），光标所处的文字不会发生任何变化，除非你再按「确认键」，比如回车；而后者，顾名思义，`Insert` 就意味着，游标移动到哪个侯选项，光标所处的文字就会变成侯选项的值，就如同 `insert` 了一般。
+
+```txt
+*cmp.confirm* (option: cmp.ConfirmOption, callback: function)
+  Accepts the currently selected completion item.
+  If you didn't select any item and the option table contains `select = true`,
+  nvim-cmp will automatically select the first item.
+
+  You can control how the completion item is injected into
+  the file through the `behavior` option:
+
+  `behavior=cmp.ConfirmBehavior.Insert`: inserts the selected item and
+    moves adjacent text to the right (default).
+  `behavior=cmp.ConfirmBehavior.Replace`: replaces adjacent text with
+    the selected item. 
+```
+
+> [!info] 
+> 
+> 这个是确认键的设置。同样也有两设置：
+> 
+> * `cmp.ConfirmBehavior.Insert`，就是把侯选项的文本值「追加」到现有光标的右边。
+> * `cmp.ConfirmBehavior.Replace`，这是将侯选项的文本值，替换光标所在那个文本值。
+
+下面这是不与 snippet 插件「关联性」地对选择游标操作及确认键设置：
+
+```lua
+
+-- No snippet plugin
+["<Tab>"] = cmp.mapping(function(fallback)
+  if cmp.visible() then
+	cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+  else
+	fallback()
+  end
+end, {
+  "i",
+  "s",
+}),
+
+["<S-Tab>"] = cmp.mapping(function(fallback)
+  if cmp.visible() then
+	cmp.select_prev_item( { behavior = cmp.SelectBehavior.Select })
+  else
+	fallback()
+  end
+end, {
+  "i",
+  "s",
+}),
+
+
+["<CR>"] = cmp.mapping({ 
+	i = function(fallback)
+	 if cmp.visible() and cmp.get_active_entry() then
+	   cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+	 else
+	   fallback()
+	 end
+	end,
+	s = cmp.mapping.confirm({ select = true }),
+	c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+}),
+
+
+
+```
+
 > [!info] 相关资料
 > 
 > * [nvim-cmp Wiki](https://github.com/hrsh7th/nvim-cmp/wiki)
+> * [nvim-cmp doc](https://github.com/hrsh7th/nvim-cmp/blob/main/doc/cmp.txt)
 > * [Neovim 内置 LSP 配置 (二)：自动代码补全 - 知乎](https://zhuanlan.zhihu.com/p/445331508)
 
 ---
@@ -791,6 +1132,40 @@ neovim 并没有自动补全功能，它的补全是通过 `omnifunc` 绑定来�
 [lspkind.nvim](https://github.com/onsails/lspkind.nvim) 为 [补全插件](#补全插件) 的候选菜单中添加图标。
 
 ![lspkind.nvim screenshot](https://github.com/onsails/lspkind-nvim/raw/images/images/screenshot.png)
+
+---
+
+### <span id="nvim_plugins_utils">小工具</span>
+
+#### which-key
+
+[which-key.nvim](https://github.com/folke/which-key.nvim) 是一个可以查看快捷键信息的插件。
+
+![which-key screenshot](https://user-images.githubusercontent.com/292349/116439438-669f8d00-a804-11eb-9b5b-c7122bd9acac.png)
+
+安装：
+
+```lua
+{
+  "folke/which-key.nvim",
+  event = "VeryLazy",
+  init = function()
+    vim.o.timeout = true
+    vim.o.timeoutlen = 300
+  end,
+  opts = {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
+
+```
+
+#### smartcolumn
+
+[smartcolumn](https://github.com/m4xshen/smartcolumn.nvim) 一个智能的边界插件。
+
+![smartcolumn screenshot](https://user-images.githubusercontent.com/74842863/219844450-37d96fe1-d15d-4aaf-ae57-1c6ce66d8cbc.gif)
 
 ---
 
@@ -848,11 +1223,7 @@ vim.cmd.colorscheme "gruvbox"
 	priority = 1000 , 
 	config = true, 
 	config = function()
-		require("gruvbox").setup({
-			-- "hard" "soft" empty
-			-- contrast = "soft"
-			contrast = "hard"
-		})
+		require("gruvbox").setup({})
 	end,
 }
 ```
@@ -882,6 +1253,13 @@ vim.cmd.colorscheme "gruvbox"
 }
 
 ```
+
+---
+
+## nvim 整合套件
+
+* [LazyVim](https://github.com/LazyVim)
+* [AstroNvim](https://astronvim.com/)
 
 ---
 

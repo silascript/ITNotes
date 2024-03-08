@@ -9,7 +9,7 @@ tags:
   - nvim
   - lsp
 created: 2023-08-18 19:44:52
-modified: 2024-02-21 03:22:14
+modified: 2024-03-08 11:00:52
 ---
 
 # Vim 笔记
@@ -99,6 +99,32 @@ modified: 2024-02-21 03:22:14
 * `snoremap`： 在**选择模式下** 以非递归方式工作。
 * `cnoremap`： 在**命令行模式下** 以非递归方式工作。
 * `onoremap`： 在**操作挂起模式下** 以非递归方式工作。
+
+---
+
+## 自动命令
+
+### events
+
+* `BufReadPre`
+* `BufReadPost`
+* `BufNewFile`
+* `BufEnter`
+* `InsertEnter`
+* `CmdlineEnter`
+* `VimEnter`
+* `VeryLazy`
+* `UIEnter`
+
+> [!info] 资料
+> 
+> * [VIM学习笔记 自动命令(autocmd) - 知乎](https://zhuanlan.zhihu.com/p/98360630)
+
+---
+
+## 相关资料
+
+* [VIM学习笔记 缓冲区 (Buffers) - 知乎](https://zhuanlan.zhihu.com/p/27616958)
 
 ---
 

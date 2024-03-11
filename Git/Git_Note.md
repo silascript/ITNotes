@@ -4,7 +4,7 @@ tags:
   - git
   - github
 created: 2023-01-30 11:19:11
-modified: 2024-03-08 23:43:49
+modified: 2024-03-09 00:47:47
 ---
 # Git 笔记
 
@@ -742,7 +742,7 @@ git config --global --unset url.https://github.com/.insteadof
 * ~~[njuu.cf](https://hub.njuu.cf/)~~
 * ~~[yzuu.cf](https://hub.yzuu.cf/)~~
 * ~~[fgit.ml](https://hub.fgit.ml/)~~
-* ~~[hscsec.cn](https://github.hscsec.cn/)~~
+* [hscsec.cn](https://github.hscsec.cn/)
 * [bgihub.xyz](https://bgithub.xyz/)
 * [ggithub.xyz](https://ggithub.xyz/)
 

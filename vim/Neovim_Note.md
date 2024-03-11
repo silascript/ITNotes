@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2024-03-08 11:04:16
+modified: 2024-03-11 10:36:10
 ---
 
 # NeoVim 笔记
@@ -615,6 +615,112 @@ center = {
 
 ![lualine.nvim screenshot 3](https://user-images.githubusercontent.com/41551030/108650378-be95dc80-74bf-11eb-9718-82b242ecdd54.png)
 
+```lua
+{
+	"nvim-lualine/lualine.nvim",
+	dependencies = {"nvim-tree/nvim-web-devicons"},
+	-- event = "InsertEnter,",
+	-- event = "VimEnter",
+	event = "BufEnter",
+	-- event = "BufWinEnter",
+	-- event = {"VimEnter","BufReadPre","BufNewFile"},
+	config = function()
+		require("lualine").setup {
+			options = {
+				-- 指定样式
+				--theme = "gruvbox"
+				--theme = "ayu_mirage"
+				--theme = "everforest"
+				--theme = "OceanicNext",
+				theme = "material"
+				-- 指定分隔符样式，默认认是尖角的
+				-- section_separators = { left = '', right = '' },
+				-- component_separators = { left = '', right = '' }
+				-- 这是默认的分隔符样式，不用专门指定
+				-- component_separators = { left = '', right = ''},
+				-- section_separators = { left = '', right = ''},
+				-- 如果想要像theme列表中显示那样平的，就把两个分隔符置空
+				-- 都置空就不用分左右
+				-- section_separators = '', component_separators = ''
+			}
+		}
+	end
+},
+
+```
+
+样式列表：[lualine.nvim/THEMES.md](https://github.com/nvim-lualine/lualine.nvim/blob/master/THEMES.md)
+
+当前 `theme` 设置项还能设置为 `auto`，这时，状态栏的配色就使用整个 nvim 全局 [配色](#配色)。
+
+```lua
+{
+	"nvim-lualine/lualine.nvim",
+	dependencies = {"nvim-tree/nvim-web-devicons"},
+	event = "BufEnter",
+	config = function()
+		require("lualine").setup {
+			-- 设置样式
+			options = {
+				-- 使用 auto 意味着状态栏配色使用全局配色
+				-- 即使用 vim.cmd.colorscheme 指定的配色
+				theme = "auto"
+			}
+		}
+	end
+}
+```
+
+> [!info] 相关资料
+> 
+> * [状态栏 | LunarVim](https://www.lunarvim.org/zh-Hans/docs/master/configuration/appearance/statusline)
+
+#### linefly
+
+[nvim-linefly](https://github.com/bluz71/nvim-linefly) 是一个非常小巧的 statusline 插件。它使用 nvim 的 colorscheme 的 [配色](#配色)。
+
+```lua
+{
+	'bluz71/nvim-linefly',
+	-- enabled = false,
+	enabled = true,
+	config =function ()
+		vim.g.linefly_options = {
+			with_lsp_status = false,
+		}
+	end
+}
+```
+
+#### hradline
+
+[nvim-hardline](https://github.com/ojroques/nvim-hardline) 同样是一个简洁轻量级的 statusline 插件。
+
+它内置了一些 theme 可用。
+
+![hardline screenshot](https://user-images.githubusercontent.com/23409060/188603562-aff6f003-69bc-4bd2-b4c5-83007f338d25.png)
+
+```lua
+{
+	"ojroques/nvim-hardline",
+	enabled = true,
+	config = function()
+		require("hardline").setup(
+			{
+				-- theme = "catppuccin_minimal"
+				-- theme = "codeschool_dark"
+				-- theme = "jellybeans"
+				theme = "nord"
+				-- theme = "nordic"
+				-- theme = "one"
+				-- theme = "gruvbox_minimal"
+				-- theme = "gruvbox"
+			}
+		)
+	end
+}
+```
+
 #### bufferline.nvim
 
 [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) 是一款美化 [Buffer](vim常用操作.md#op_normal_buffer) 的插件。
@@ -909,6 +1015,12 @@ nvim-treesitter 的命令都是以 `TS` 开头的。
 
 ### <span id="nvim_plugins_snippets">Snippet 插件</span>
 
+#### nvim-snippy
+
+[nvim-snippy](https://github.com/dcampos/nvim-snippy) 是一个支持 [vim-snippets](vim_plugin.md#vimplugin_snippets_vimsnippets) 的 snippet 插件。
+
+如果只使用 vim-snippets 作为 snippet 的「仓库」，可以使用这个插件。如果想要使用多种 snippet 格式，建议换更强大的 [LuaSnip](#LuaSnip)。
+
 #### LuaSnip
 
 [LuaSnip](https://github.com/L3MON4D3/LuaSnip) 一个强大的 snippet 插件。
@@ -1015,7 +1127,51 @@ neovim 并没有自动补全功能，它的补全是通过 `omnifunc` 绑定来�
 
 #### nvim-cmp
 
-[nvim-cmp](https://github.com/hrsh7th/nvim-cmp/)
+[nvim-cmp](https://github.com/hrsh7th/nvim-cmp/) 是一个补全框架插件。
+
+##### 补全源
+
+补全插件，本身是没有提供补全数据的，它补全的数据都是由补全源提供的。而补全源来源各异，有来自输入的缓存（Buffer），也有来自 [LSP](LSP_Complete.md)，或是来自 snippet 及其他各种补全插件，比如路径补全插件什么的，反正补全数据的来源五花八门，就看补全框架支持到什么程度。
+
+在 cmp 中，是在 `sources` 配置节点指定各种补全源。
+
+```lua
+sources = cmp.config.sources({
+	{ name = "nvim_lsp" },
+	{ name = "luasnip" },
+	{ name = "path" },
+	{ name = "calc" },
+},{
+	{ name = "buffer", keyword_length = 3 },
+})
+```
+
+这里就配了四个补全数据源，各源使用大括号及逗号区隔开。其中 `name` 是补全源的名称，是 cmp 规定好的，可以在 [官方wiki](https://github.com/hrsh7th/nvim-cmp/wiki) 中的 [补全源列表](https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources) 查询到。`keyword_length` 选项，是触发的字符数，没有配置默认是 `1`，就是输入一个字符就触发补全，出现补全候选菜单。
+
+##### snippet 配置
+
+nvim 中最流行的 snippet 插件就是 [LuaSnip](#LuaSnip)。而 cmp 与为 luasnip 写了个「桥接」插件：[Site Unreachable](https://github.com/saadparwaiz1/cmp_luasnip)。
+
+当前对于 luasnip 作为 cmp 的 [补全源](#补全源) 之一，也有其「专属配制」。
+
+```lua
+snippet = {
+	expand = function(args)
+		require'luasnip'.lsp_expand(args.body)
+	end,
+},
+
+sources = cmp.config.sources({
+	{ name = "nvim_lsp" },
+	{ name = "luasnip" },
+	{ name = "path" },
+	{ name = "calc" },
+},{
+	{ name = "buffer", keyword_length = 3 },
+})
+```
+
+`sources` 不用说，就是配 [补全源](#补全源) 的，但对于 snippet 作为补全源之一，又有专门的配置节点：`snippet`。这个配置节点中有个 `expand` 的配置项，就是指定 snippet「展开」的函数。这跟着 cmp_luasnip 官方上的文档给的配置抄就行了：[https://github.com/saadparwaiz1/cmp_luasnip#cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip#cmp_luasnip)。
 
 ##### 快捷键设置
 
@@ -1125,6 +1281,49 @@ end, {
 
 ---
 
+### <span id="nvim_plugins_finder">搜索器</span>
+
+#### fzf-lua
+
+[fzf-lua](https://github.com/ibhagwan/fzf-lua) 这是使用 fzf 进行文件搜索的搜索器。
+
+安装配置：
+
+```lua
+{
+	"ibhagwan/fzf-lua",
+	dependencies = {"nvim-tree/nvim-web-devicons"},
+	event = {"VimEnter"},
+	config = function()
+		require("fzf-lua").setup(
+			{
+				-- file
+				vim.keymap.set("n", "<c-P>", "<cmd>lua require('fzf-lua').files()<CR>", {silent = true}),
+				-- buffer
+				vim.keymap.set("n", "<c-e>", "<cmd>lua require('fzf-lua').buffers()<CR>", {silent = true}),
+				-- path
+				vim.keymap.set(
+					{"n", "v", "i"},
+					"<C-x><C-f>",
+					function()
+						require("fzf-lua").complete_path()
+					end,
+					{silent = true, desc = "Fuzzy complete path"}
+				)
+			}
+		)
+	end
+}
+```
+
+就配了下几个快捷键：
+
+* `Ctrl-p`：文件查找
+* `Ctrl-e`：[buffer](Vim_Note.md#buffer) 查找
+* `Ctrlx,Ctrl-f`：路径补全
+
+---
+
 ### <span id="nvim_plugins_icons">图标</span>
 
 #### lspkind.nvim
@@ -1187,6 +1386,31 @@ end, {
 ---
 
 ## <span id="nvim_colourscheme">配色</span>
+
+如果使用配色 [插件](#插件) 来安装相应的配色，可以直接在那具配色插件里配置上：`vim.cmd.colorscheme "配色名"`，然后通过 `enabled` 对这配色插件进行开关，只有开启这配色插件，就能直接启用相应的配色。这样免去了，再另新建配置文件对配色进行启用或禁用。
+
+示例如下：
+
+```lua
+{
+	"catppuccin/nvim",
+	name = "catppuccin",
+	priority = 1000,
+	enabled = false,
+	-- enabled = true,
+	config = function()
+		require("catppuccin").setup(
+			{
+				-- vim.cmd.colorscheme "catppuccin"
+				-- vim.cmd.colorscheme "catppuccin-latte"
+				-- vim.cmd.colorscheme "catppuccin-frappe"
+				-- vim.cmd.colorscheme "catppuccin-macchiato"
+				vim.cmd.colorscheme "catppuccin-mocha"
+			}
+		)
+	end
+}
+```
 
 ### material
 
@@ -1254,6 +1478,49 @@ vim.cmd.colorscheme "gruvbox"
 
 ```
 
+#### Base16
+
+[base16-nvim](https://github.com/RRethy/base16-nvim) 这是一个配色集，有大量的流行配色。
+
+```lua
+{
+	"RRethy/base16-nvim",
+	enabled = true,
+	-- enabled = false,
+	config = function()
+		require("base16-colorscheme").with_config(
+			{
+				-- telescope = true,
+				-- indentblankline = true,
+				-- notify = true,
+				-- ts_rainbow = true,
+				cmp = true,
+				-- illuminate = true,
+				-- dapui = true,
+
+				-- 设置配色
+				-- 多种配色：https://github.com/RRethy/base16-nvim
+				-- vim.cmd.colorscheme "base16-ayu-mirage"
+				-- vim.cmd.colorscheme "base16-catppuccin-macchiato"
+				-- vim.cmd.colorscheme "base16-catppuccin-mocha"
+				-- vim.cmd.colorscheme "base16-monokai"
+				-- vim.cmd.colorscheme "base16-materia"
+				-- vim.cmd.colorscheme "base16-material"
+				-- vim.cmd.colorscheme "base16-material-darker"
+				-- vim.cmd.colorscheme "base16-material-palenight"
+				-- vim.cmd.colorscheme "base16-ocean"
+				-- vim.cmd.colorscheme "base16-onedark"
+				-- vim.cmd.colorscheme "base16-tokyo-night-dark"
+				-- vim.cmd.colorscheme "base16-tomorrow-night"
+				-- vim.cmd.colorscheme "base16-gruvbox-dark-medium"
+				-- vim.cmd.colorscheme "base16-gruvbox-material-dark-medium"
+				vim.cmd.colorscheme "base16-everforest"
+			}
+		)
+	end
+} -- base16-nvim
+```
+
 ---
 
 ## nvim 整合套件
@@ -1266,6 +1533,7 @@ vim.cmd.colorscheme "gruvbox"
 ## neovim 相关资料
 
 * [Neovim插件推荐&配置 - 哔哩哔哩](https://www.bilibili.com/read/cv22495061/)
+* [详解nvim内建LSP体系与基于nvim-cmp的代码补全体系 - 知乎](https://zhuanlan.zhihu.com/p/643033884)
 * [awesome-newvim](https://github.com/rockerBOO/awesome-neovim)
 * [从零开始配置vim(21)——lsp简介与treesitter 配置-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/2127555)
 * [Neovim 主题配置 - 知乎](https://zhuanlan.zhihu.com/p/438382701)

@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2024-03-03 22:45:22
+modified: 2024-03-11 05:34:38
 ---
 # Shell 笔记
 
@@ -671,6 +671,7 @@ curl http://hub-mirror.c.163.com/v2/library/${image}/tags/list | jq --arg tstr $
 * [2023年最新Shell自动化开发全套顶级天花板教程](https://www.bilibili.com/video/BV1494y1i7ca)
 * [Shell脚本从入门到实战](https://www.bilibili.com/video/BV1k94y1W7cJ)
 * [B站第一的Shell脚本的学习方法，每天只需30分钟让你效率保障99倍](https://www.bilibili.com/video/BV1sT4y1b7si)
+* [2024年最新Shell脚本顶级天花板教程，血赚！](https://www.bilibili.com/video/BV17S421P7fa)
 
 ---
 

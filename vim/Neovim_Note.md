@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2024-03-11 10:36:10
+modified: 2024-03-13 03:54:48
 ---
 
 # NeoVim 笔记
@@ -19,6 +19,7 @@ modified: 2024-03-11 10:36:10
 * [neovim 新配置](#nvim_newconfig)
 * [插件](#nvim_colourscheme)
 	* [lazynvim](#nvim_plugins_lazynvim)
+	* [编辑支持](#nvim_plugins_editesupport)
 	* [状态栏及Buffer](#nvim_plugins_sbline)
 	* [目录树](#nvim_plugins_dirtree)
 	* [缩进](#nvim_plugins_indent)
@@ -276,12 +277,44 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 -- 高亮当前行
 vim.opt.cursorline = true
+-- 状态栏样式
+-- vim.opt.laststatus = 2
+-- 命令行高
+
+-- 开启真彩
+vim.opt.termguicolors = true
+
+-- 与底部保持固定间距
+vim.opt.scrolloff = 5
 
 -- Tab 相关设置
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = false
+
+-- 编码
+vim.opt.langmenu = "zh_CN.UTF-8"
+vim.opt.fileencodings = "utf-8,gb18030,gb2312,ucs-bom,cp936,big5,euc-jp,euc-kr"
+
+-- 搜索
+vim.opt.incsearch = true
+vim.opt.hlsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
+vim.opt.completeopt = "menu,menuone,noinsert"
+
+-- 补全显示的行数
+vim.opt.pumheight = 10
+
+-- 取消注释行回车自动注释
+vim.api.nvim_create_autocmd(
+    {"FileType"},
+    {
+        command = "setlocal formatoptions-=c formatoptions-=r formatoptions-=o"
+    }
+)
 
 ```
 
@@ -315,7 +348,11 @@ require('a.b1')
 > 
 > 如果不想重开 neovim，可以在 [命令行模式](Vim_Note.md#命令行模式) 下输入：`:source %`，就是 `source` 当前文件。
 
-#### vim 设置选项
+#### 快捷键设置
+
+##### 相关资料
+
+* [Neovim 的快捷键配置](https://www.zhihu.com/tardis/zm/art/435680085?source_id=1005)
 
 ---
 
@@ -727,6 +764,78 @@ center = {
 
 ---
 
+### <span id="nvim_plugins_motion">移动</span>
+
+#### hop.nvim
+
+[hop.nvim](https://github.com/smoka7/hop.nvim) 类似 [easymotion](vim_plugin.md#easymotion) 的移动跳转插件。
+
+##### 命令
+
+###### 行级
+
+* `:HopLine`：可视范围**行**级跳转。
+* `:HopLineAC`：当前光标所在位置**往下**可视范围**行**级跳转。
+* `:HopLineBC`：当前光标所在位置**往上**可视范围**行**级跳转。
+
+###### 单词级跳转
+
+* `:HopWord`：可视范围**单词**跳转。
+* `:HopWordAC`：当前光标所在位置**往下**可视范围**单词**级跳转。
+* `:HopWordBC`：当前光标所在位置**往上**可视范围**单词**级跳转。
+* `:HopWordCurrentLine`：光标所在行，**行内**单词跳转。
+* `:HopWordCurrentLineAC`：当前行内**往后**（**往右**）单词级跳转。
+* `:HopWordCurrentLineBC`：当前行内**往前**（**往左**）单词级跳转。
+
+###### 字符级
+
+这类跳转，就如名称所言「Anywhere」，可以跳转到任何地方，其实就是**字符**级跳转。功能很很强，但不太实用。因为跳转标记符会把目标位置字符都盖掉了，对下一步跳转操作造成麻烦。
+
+* `:HopAnywhere`：可见范围所有**字符**跳转。=
+* `:HopAnywhereAC`：当前光标**向下**可视范围所有**字符**跳转。
+* `:HopAnywhereBC`：当前光标**向上**可视范围所有**字符**跳转。
+
+> [!tip] 命令小结
+>  
+> * `Hop*AC`：往后/往右/往下，`A` 其实就是 `after`
+> * `Hop*BC`：往前/往左/往上，`B` 其实就是 `before`，这与 [vim操作](vim常用操作.md) 中的 `B` 保持一致。
+> * `Hop*MW`：命令中有 `MW`，是 `multi-window` 的意思，多 window 模式。
+
+自用配置：
+
+```lua
+{
+	"smoka7/hop.nvim",
+	event = {"BufRead"},
+	config = function()
+		require("hop").setup(
+			{
+				-- 行间跳转
+				-- 向下行间跳转
+				vim.api.nvim_set_keymap("n", "<leader><leader>j", "<cmd>HopLineAC<cr>", {silent = true}),
+				-- 向上行间跳转
+				vim.api.nvim_set_keymap("n", "<leader><leader>k", "<cmd>HopLineBC<cr>", {silent = true}),
+				-- 单词级跳转
+				-- 可视范围所有地方单词跳转
+				vim.api.nvim_set_keymap("n", "<leader><leader>w", "<cmd>HopWord<cr>", {silent = true}),
+				-- 当前行往下可视范围所有单词跳转
+				vim.api.nvim_set_keymap("n", "<leader><leader>wj", "<cmd>HopWordAC<cr>", {silent = true}),
+				-- 当前行往上可视范围所有单词跳转
+				vim.api.nvim_set_keymap("n", "<leader><leader>wk", "<cmd>HopWordBC<cr>", {silent = true}),
+				-- 当前行所有单词跳转
+				vim.api.nvim_set_keymap("n", "<leader><leader>wl", "<cmd>HopWordCurrentLine<cr>", {silent = true}),
+				-- 当前行向左所有单词跳转
+				vim.api.nvim_set_keymap("n", "<leader><leader>h", "<cmd>HopWordCurrentLineBC<cr>", {silent = true}),
+				-- 当前行向右所有单词跳转
+				vim.api.nvim_set_keymap("n", "<leader><leader>l", "<cmd>HopWordCurrentLineAC<cr>", {silent = true})
+			}
+		)
+	end
+}
+```
+
+---
+
 ### modicator
 
 [modicator](https://github.com/mawkler/modicator.nvim) 是一个动态改变行号颜色的插件。
@@ -881,11 +990,32 @@ nvim-treesitter 的命令都是以 `TS` 开头的。
 * [Neovim 代码高亮插件 nvim-treesitter 的安装与配置](https://www.zhihu.com/tardis/bd/art/441818052)
 * [Neovim 代码高亮插件 nvim-treesitter 的安装与配置](https://www.zhihu.com/tardis/bd/art/441818052?source_id=1001)
 
-### nvim-autopairs
+### <span id="nvim_plugins_editesupport">编辑支持</span>
+
+#### nvim-autopairs
 
 [nvim-autopairs](https://github.com/windwp/nvim-autopairs) 是个成对符号补全插件。
 
-### nvim-cursorline
+#### nvim-ts-autotag
+
+[nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag) 是一个自动关闭标签的插件。
+
+对于像 [Html](../Frontend/Html_Note.md)、[XML](../XML/xml_dtd.md) 等标签类型的文件而言，标签输入时自动关闭是必备功能，但对于 [nvim-autopairs](#nvim-autopairs) 只能补全标点符号这种成对补全插件而言，就有点力不从心了。而 nvim-ts-autotag 这个插件就是实现了自动关闭标签功能而存在的。
+
+简单配置就能用：
+
+```lua
+{
+	"windwp/nvim-ts-autotag",
+	dependencies = {"nvim-treesitter/nvim-treesitter"},
+	event = {"BufReadPost"},
+	config = function()
+		require("nvim-ts-autotag").setup()
+	end
+}
+```
+
+#### nvim-cursorline
 
 [nvim-cursorline](https://github.com/yamatsum/nvim-cursorline) 这插件是让光标所在的单词高亮的小工具。
 
@@ -918,9 +1048,11 @@ nvim-treesitter 的命令都是以 `TS` 开头的。
 
 <video src="https://user-images.githubusercontent.com/48545987/178679494-c7d58bdd-d8ca-4802-a01c-a9444b8b882f.mp4" type="video/mp4"></video>
 
-### comment
+### <span id="nvim_plugins_comments">注释</span>
 
-[Comment](https://github.com/numToStr/Comment.nvim) 是 nvim 上的一款注释插件。
+#### Comment.nvim
+
+[Comment.nvim](https://github.com/numToStr/Comment.nvim) 是 nvim 上的一款注释插件。
 
 默认注释和取消注释的快捷键为：`gcc`，而使用 [Visual 模式](vim常用操作.md#op_visual) 时，默认使用 `gc` 来注释及取消注释。
 
@@ -949,6 +1081,56 @@ nvim-treesitter 的命令都是以 `TS` 开头的。
 },
 
 ```
+
+#### nvim-ts-context-commentstring
+
+[nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) 是一个注释增强插件。
+
+它使用 [nvim-treesitter](#nvim-treesitter)，在 [Comment.nvim](#Comment.nvim) 插件基础上，优化了代码注释效果。
+
+比如在 [Html](../Frontend/Html_Note.md) 文件中的 [javascript](../JS/JS_Note.md) 代码，如果使用 [Comment.nvim](#Comment.nvim) 插件，只能是 `<!-- -->` 这种 html 风格的注释。而加上了 ts-context-commentstring 这个插件后，则会变为 `//` 这种 javascript 风格的注释。可以说这个插件是对 [Comment.nvim](#Comment.nvim) 插件非常好的补充。
+
+![ts-context-commentstring](https://user-images.githubusercontent.com/9450943/185669275-cdfa7fa4-092e-439b-822e-330559a7d4d7.gif)
+
+##### 配置
+
+要使用这个插件，有两个**前置条件**：
+
+1. 安装了 [nvim-tree](#nvim-tree) 插件
+2. 安装了 [Comment.nvim](#Comment.nvim) 等注释插件。事实上 ts-context-commentstring 这插件不止针对于 [Comment.nvim](#Comment.nvim) 这插件作出适配，它也支持其他注释插件，并给出了「适配」方案，具体参考：[ts-context-commentstring pre-comment-hook](https://github.com/JoosepAlviste/nvim-ts-context-commentstring/wiki/Integrations#plugins-with-a-pre-comment-hook)。
+
+> [!info] 支持注释插件列表
+> 
+> * [b3nj5m1n/kommentary](https://github.com/JoosepAlviste/nvim-ts-context-commentstring/wiki/Integrations#kommentary)
+> * [terrortylor/nvim-comment](https://github.com/JoosepAlviste/nvim-ts-context-commentstring/wiki/Integrations#nvim-comment)
+> * [numToStr/Comment.nvim](https://github.com/JoosepAlviste/nvim-ts-context-commentstring/wiki/Integrations#commentnvim)
+> * [echasnovski/mini.nvim/mini-comment](https://github.com/JoosepAlviste/nvim-ts-context-commentstring/wiki/Integrations#minicomment)
+> * [tpope/vim-commentary](https://github.com/JoosepAlviste/nvim-ts-context-commentstring/wiki/Integrations#vim-commentary)
+
+而要想让这个插件生效得配两个地方：
+
+1. ts-context-commentstring 本身的配置
+
+```lua
+{
+	"JoosepAlviste/nvim-ts-context-commentstring",
+	dependencies = {"nvim-treesitter/nvim-treesitter"},
+	-- lazy = true,
+	event = {"BufReadPost"},
+	config = function()
+		require("ts_context_commentstring").setup {}
+	end
+}
+
+```
+
+2. 在 [Comment.nvim](#Comment) 配置中加上以下代码：
+
+```lua
+pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+```
+
+---
 
 ### formatter.nvim
 
@@ -1029,6 +1211,12 @@ nvim-treesitter 的命令都是以 `TS` 开头的。
 
 > LuaSnip 能够加载不同格式的代码片段，包括成熟的 Vscode 和 Snipmate 格式，以及用 Lua 编写片段的纯 Lua 文件。
 
+> [!info] 
+> 
+> 称 「snipmate 格式」，其实指的是 [vim-snippets](vim_plugin.md#vimplugin_snippets_vimsnippets) 这个 snippet 库。只不过在「传统」[Vim](Vim_Note.md) 中使用这个库的两大 snippet 引擎：[Ultisnips](vim_plugin.md#vimplugin_snippets_ultisnips) 和 [SnipMate](vim_plugin.md#vimplugin_snippets_snipmate)，而 Ultisnips 是用 [Python](../Python/Python_Note.md) 写的，snipmate 是使用纯 [vimscript](vimscript_note.md) 写的，而 vim-snippets 库同样也是 vimscript 写的，所以用它来指代 vim-snippets 库更合适。
+>
+> 而「VSCode 格式」指的是是 [Friendly-snippets](#Friendly-snippets) 这个 snippet 库。
+
 ```lua
 require("luasnip.loaders.from_snipmate").load()
 -- 指定加载路径
@@ -1038,11 +1226,40 @@ require("luasnip.loaders.from_snipmate").lazy_load({paths = "./snippets"})
 
 ```
 
+###### 加载 [vim-snippets 库](vim_plugin.md#vimplugin_snippets_vimsnippets)
+
+```lua
+ dependencies = {
+	"honza/vim-snippets",
+	config = function()
+		-- 加载 vim-snippets 库
+		require("luasnip.loaders.from_snipmate").load()
+
+	end
+},
+```
+
 以 `dependencies` 方式安装 [vim-snippets](vim_plugin.md#vimplugin_snippets_vimsnippets)，安装位置是在：`~/.local/share/nvim/lazy/vim-snippets/`。所以如果要定位其 snippets，就应该是在 `~/.local/share/nvim/lazy/vim-snippets/snippets`。
 
 > [!tip] 
 > 
 > LuaSnip 配置可以参考 [LazyVim](https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/coding.lua) 的配置。
+
+###### 加载 [Friendly-snippets 库](#Friendly-snippets)
+
+```lua
+dependencies = {
+	"rafamadriz/friendly-snippets",
+	config = function()
+		-- 加载 rafamadriz/friendly-snippets 库
+		require("luasnip.loaders.from_vscode").load()
+	end
+}
+```
+
+> [!info] 
+> 
+> [加载 [vim-snippets 库](vim_plugin.md vimplugin_snippets_vimsnippets)](#加载%20[vim-snippets%20库](vim_plugin.md%20vimplugin_snippets_vimsnippets)) 与 [加载 [Friendly-snippets 库]( Friendly-snippets)](#加载%20[Friendly-snippets%20库](%20Friendly-snippets)) 区别不太大，主要是库的代码片段有差异，另外，使用 [Friendly-snippets](#Friendly-snippets) 性能会好点，因为 Friendly-snippets 是使用 [Lua](../Lua/Lua_Note.md) 写的，加载时会快一点。
 
 ##### snippet 插件相关资料
 
@@ -1051,6 +1268,10 @@ require("luasnip.loaders.from_snipmate").lazy_load({paths = "./snippets"})
 * [从零开始的Neovim配置--第2期：LuaSnip插件用法及其基本配置](https://www.bilibili.com/video/BV18g4y1V7qT)
 * [自定义代码段LuaSnip入门](https://www.bilibili.com/video/BV1iL4y1B7gH)
 * [【AstroNvim】第四期：LuaSnip](https://www.bilibili.com/video/BV1Lv421r7Sv)
+
+#### Friendly-snippets
+
+[friendly-snippets](https://github.com/rafamadriz/friendly-snippets) 跟 [vim-snippets](vim_plugin.md#vimplugin_snippets_vimsnippets) 一样是 snippet 库。
 
 ---
 
@@ -1322,6 +1543,18 @@ end, {
 * `Ctrl-e`：[buffer](Vim_Note.md#buffer) 查找
 * `Ctrlx,Ctrl-f`：路径补全
 
+#### telescope
+
+[telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) 是一个强大的搜索器。
+
+![telescope screenshot](https://camo.githubusercontent.com/93ccc50f336bf712787f4872e237b8ed3ac99353d18d69500c931a6c608e6c12/68747470733a2f2f692e696d6775722e636f6d2f5454546a6136742e676966)
+
+##### 相关资料
+
+* [Vim/Neovim 全文检索插件 -- telescope.nvim - 知乎](https://zhuanlan.zhihu.com/p/609527018)
+* [神级文件模糊搜索插件telescope_bilibili](https://www.bilibili.com/video/BV1r3411C7yx/)
+* [vim练级手册（七） ---telescope文件模糊搜索](https://command-z-z.github.io/2022/04/23/vim%E7%BB%83%E7%BA%A7%E6%89%8B%E5%86%8C%EF%BC%88%E4%B8%83%EF%BC%89-telescope%E6%96%87%E4%BB%B6%E6%A8%A1%E7%B3%8A%E6%90%9C%E7%B4%A2/)
+
 ---
 
 ### <span id="nvim_plugins_icons">图标</span>
@@ -1533,6 +1766,8 @@ vim.cmd.colorscheme "gruvbox"
 ## neovim 相关资料
 
 * [Neovim插件推荐&配置 - 哔哩哔哩](https://www.bilibili.com/read/cv22495061/)
+* [ADkun/lvim-config-suggest](https://github.com/ADkun/lvim-config-suggest/blob/main/README.md)
+* [nvim-lua-guide-zh: neovim指导nvim-lua-guide-zh](https://gitee.com/zhengqijun/nvim-lua-guide-zh)
 * [详解nvim内建LSP体系与基于nvim-cmp的代码补全体系 - 知乎](https://zhuanlan.zhihu.com/p/643033884)
 * [awesome-newvim](https://github.com/rockerBOO/awesome-neovim)
 * [从零开始配置vim(21)——lsp简介与treesitter 配置-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/2127555)

@@ -4,7 +4,7 @@ tags:
   - vim
   - lsp
 created: 2023-08-18 19:44:52
-modified: 2024-03-03 08:12:23
+modified: 2024-03-11 20:15:26
 ---
 
 # LSP 及补全相关
@@ -314,6 +314,14 @@ npm install yaml-language-server -g
 ```shell
 npm install -g vim-language-server
 ```
+
+最好连 `vscode-langservers-extracted` 这个也装上：
+
+```shell
+npm i -g vscode-langservers-extracted
+```
+
+有的 LSP 会用到这：[nvim-lspconfig server configuration docs about html](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#html)
 
 ---
 

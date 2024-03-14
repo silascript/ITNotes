@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2024-03-13 03:54:48
+modified: 2024-03-13 20:04:29
 ---
 
 # NeoVim 笔记
@@ -1213,7 +1213,7 @@ pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_
 
 > [!info] 
 > 
-> 称 「snipmate 格式」，其实指的是 [vim-snippets](vim_plugin.md#vimplugin_snippets_vimsnippets) 这个 snippet 库。只不过在「传统」[Vim](Vim_Note.md) 中使用这个库的两大 snippet 引擎：[Ultisnips](vim_plugin.md#vimplugin_snippets_ultisnips) 和 [SnipMate](vim_plugin.md#vimplugin_snippets_snipmate)，而 Ultisnips 是用 [Python](../Python/Python_Note.md) 写的，snipmate 是使用纯 [vimscript](vimscript_note.md) 写的，而 vim-snippets 库同样也是 vimscript 写的，所以用它来指代 vim-snippets 库更合适。
+> 称 「snipmate 格式」，其实指的是 [vim-snippets](vim_plugin.md#vimplugin_snippets_vimsnippets) 这个 snippet 库。只不过在「传统」[Vim](Vim_Note.md) 中使用这个库的两大 snippet 引擎：[Ultisnips](vim_plugin.md#vimplugin_snippets_ultisnips) 和 [SnipMate](vim_plugin.md#vimplugin_snippets_snipmate)，而 Ultisnips 是用 [Python](../Python/Python_Note.md) 写的，snipmate 是使用纯 [vimscript](Vimscript_Note.md) 写的，而 vim-snippets 库同样也是 vimscript 写的，所以用它来指代 vim-snippets 库更合适。
 >
 > 而「VSCode 格式」指的是是 [Friendly-snippets](#Friendly-snippets) 这个 snippet 库。
 
@@ -1549,11 +1549,21 @@ end, {
 
 ![telescope screenshot](https://camo.githubusercontent.com/93ccc50f336bf712787f4872e237b8ed3ac99353d18d69500c931a6c608e6c12/68747470733a2f2f692e696d6775722e636f6d2f5454546a6136742e676966)
 
+默认快捷键：
+
+* `Ctrl+C`：关闭面板
+
+##### Telescope 扩展
+
+telescope 还能装扩展：[telescope extensions](https://github.com/nvim-telescope/telescope.nvim/wiki/Extensions)
+
 ##### 相关资料
 
 * [Vim/Neovim 全文检索插件 -- telescope.nvim - 知乎](https://zhuanlan.zhihu.com/p/609527018)
-* [神级文件模糊搜索插件telescope_bilibili](https://www.bilibili.com/video/BV1r3411C7yx/)
 * [vim练级手册（七） ---telescope文件模糊搜索](https://command-z-z.github.io/2022/04/23/vim%E7%BB%83%E7%BA%A7%E6%89%8B%E5%86%8C%EF%BC%88%E4%B8%83%EF%BC%89-telescope%E6%96%87%E4%BB%B6%E6%A8%A1%E7%B3%8A%E6%90%9C%E7%B4%A2/)
+* [打造neovim IDE第六期：telescope_bilibili](https://www.bilibili.com/video/BV1P34y1e7SF)
+* [神级文件模糊搜索插件telescope_bilibili](https://www.bilibili.com/video/BV1r3411C7yx/)
+* [NeoVim 从平凡到非凡 第4集：Telescope 模糊搜索_bilibili](https://www.bilibili.com/video/BV1u14y197AT)
 
 ---
 
@@ -1783,4 +1793,4 @@ vim.cmd.colorscheme "gruvbox"
 * [vim插件](vim_plugin.md)
 * [Vim视频清单](Vim_Videos.md)
 * [vim常用操作](vim常用操作.md)
-* [vimscript笔记](vimscript_note.md)
+* [vimscript笔记](Vimscript_Note.md)

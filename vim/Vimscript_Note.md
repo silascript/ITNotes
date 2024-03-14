@@ -1,10 +1,16 @@
+---
+aliases: []
+tags: []
+created: 2023-08-18 19:44:52
+modified: 2024-03-14 05:57:27
+---
 # vimscript 笔记
 ---
 
 ## 目录
 
 * [基本语法](#viml_basic)
-  *  [比较](#viml_basic_compare)
+  * [比较](#viml_basic_compare)
   * [作用域](#viml_basic_scope)
 
 * [函数](#viml_func)
@@ -12,7 +18,6 @@
 * [常用函数](#viml_comuse_functions)
    * [字符串相关函数](#viml_comuse_functions_string)
    * [文件相关函数](#viml_comuse_functions_file)
-
 
 ---
 
@@ -32,74 +37,59 @@
 
 用来比较数字时，`==?` 或 `==#` 都可以，但如果用来比较字符串时，就应该谨慎。
 
-
-
 ---
 
 ### <span id="viml_basic_scope">作用域</span>
 
-- g: 全局变量
-- l: 局部变量
-- s: 脚本变量
-- a: 参数变量
-- b: Buffer变量
-
+* g: 全局变量
+* l: 局部变量
+* s: 脚本变量
+* a: 参数变量
+* b: Buffer 变量
 
 ## <span id="viml_func">函数</span>
 
-函数定义语法:
+函数定义语法：
+
 ```vim
+
 	function 函数名 (参数列表)	
 	
 	endfunction
 
 ```
 
-## <span id="viml_command">自定义命令< /span>
+## <span id="viml_command">自定义命令</span>
 
-命令定义语法:
-```vim
-command -nargs=* 命令 call 函数
-```
+命令定义语法：
+
+`command -nargs=* 命令 call 函数`
+
 | 参数 | 定义 |
 | :---: | :---: |
-| nargs=0 | 不接受任何参数（默认）|
-| -nagrs=1 | 只接受一个参数 |
-| -nargs=*| 可接收任意个数参数 |
-| -nargs=? | 可接受 1 个或者 0 个参数 |
-| -nargs=+ | 至少提供一个参数 |
-
-
+| `nargs=0` | 不接受任何参数（默认）|
+| `-nagrs=1` | 只接受一个参数 |
+| `-nargs=*` | 可接收任意个数参数 |
+| `-nargs=?` | 可接受 1 个或者 0 个参数 |
+| `-nargs=+` | 至少提供一个参数 |
 
 参数类型：
 
-#### args
+### args
 
-> <args>	命令的参数，和实际提供的完全相同 (但正如上面提到过的，数量或寄
->    存器会消耗若干参数，它们不再是 <args> 的一部分)。  
-> <lt>	一个单独的 '<' (小于号) 字符。在扩展中可用于使以上转义序列按本
->     义出现。
-
-
+> `<args>`	命令的参数，和实际提供的完全相同 (但正如上面提到过的，数量或寄
+>    存器会消耗若干参数，它们不再是 `<args>` 的一部分)。  
+> `<lt>`	一个单独的 `<` (小于号) 字符。在扩展中可用于使以上转义序列按本义出现。
 
 #### q-args
 
-> 如果一个转义序列的最前两个字符是 "q-" (例如，<q-args>) 那么该值用引号括起，使
+> 如果一个转义序列的最前两个字符是 `q-` (例如，`<q-args>`) 那么该值用引号括起，使
 > 之在表达式里使用时成为合法的值。这种方式把参数当做单个值。如果没有参数，
-> <q-args> 是空字符串。
-
-
+> `<q-args>` 是空字符串。
 
 #### f-args
 
-> 要允许命令把参数传送给用户定义的函数，有一种特殊的形式 <f-args> ("function
-> args"，函数参数)。它在空格和制表处分割命令行参数，每个参数分别用引号括起，然后
-> 把 <f-args> 序列替换为括起参数用逗号分隔的列表。参考下面的 Mycmd 示例。没有参
-> 数时，<f-args> 被删除。  
->   要在 <f-args> 的参数中嵌入空白字符，在前面加上反斜杠。<f-args> 把每对反斜杠
-> (\\) 用单个反斜杠替代。反斜杠后如跟非空白或反斜杠字符，保持不变。
-
-
+> 要允许命令把参数传送给用户定义的函数，有一种特殊的形式 `<f-args> ("function args"，函数参数)`。它在空格和制表处分割命令行参数，每个参数分别用引号括起，然后把 `<f-args>` 序列替换为括起参数用逗号分隔的列表。参考下面的 Mycmd 示例。没有参数时，`<f-args>` 被删除。  要在 `<f-args>` 的参数中嵌入空白字符，在前面加上反斜杠。`<f-args>` 把每对反斜杠 （`\`） 用单个反斜杠替代。反斜杠后如跟非空白或反斜杠字符，保持不变。
 
 ## <span id="viml_comuse_functions">常用函数</span>
 
@@ -124,8 +114,6 @@ command -nargs=* 命令 call 函数
 > 		也可用作 |method|: >
 > 			mylist->string()
 
-
-
 #### strlen()
 
 > strlen({expr})	返回数值，即字符串 {expr} 的字节长度。  
@@ -133,7 +121,6 @@ command -nargs=* 命令 call 函数
 >		要计算多字节字符的数目，可用 |strchars()|。  
 >		另见 |len()|、|strdisplaywidth()| 和 |strwidth()|。  
 >		也可用作 |method|: > GetString()->strlen()
-
 
 #### stridx()
 
@@ -172,15 +159,14 @@ command -nargs=* 命令 call 函数
 
 ### <span id="viml_comuse_functions_file">文件相关函数</span>
 
-
 #### expand()
 
-> expand({expr} [, {nosuf} [, {list}]])				*expand()*
+> `expand({expr} [, {nosuf} [, {list}]])`				*expand()*
 > 		扩展 {expr} 里的通配符和下列特殊关键字。
 > 		'wildignorecase' 此处适用。  
 > 
 > 		如果给出 {list} 且为 |TRUE|，返回列表。否则返回的是字符串，且
-> 		如果返回多个匹配，以 <NL> 字符分隔 [备注: 5.0 版本使用空格。但
+> 		如果返回多个匹配，以 `<NL>` 字符分隔 [备注: 5.0 版本使用空格。但
 > 		是文件名如果也包含空格就会有问题]。  
 > 
 > 		如果扩展失败，返回空字符串。如果 {expr} 以 '%'，'#' 或 '<' 开
@@ -190,67 +176,61 @@ command -nargs=* 命令 call 函数
 > 		|cmdline-special| 变量的方式扩展，包括相关的修饰符。这里是一个
 > 		简短的小结:  
 > 
-> 			%		当前文件名  
-> 			#		轮换文件名  
-> 			#n		轮换文件名 n  
-> 			<cfile>		光标所在的文件名  
-> 			<afile>		自动命令文件名  
-> 			<abuf>		自动命令缓冲区号 (以字符串形式出现！)  
-> 			<amatch>	自动命令匹配的名字  
-> 			<cexpr>		光标所在的 C 表达式  
-> 			<sfile>		载入的脚本文件或函数名  
-> 			<slnum>		载入脚本文件行号或函数行号  
-> 			<sflnum>	脚本文件行号，即使在函数中亦然  
-> 			<SID>		"<SNR>123_"  其中 "123" 是当前脚本 ID  
-> 					|<SID>|  
-> 			<stack>		调用栈  
-> 			<cword>		光标所在的单词  
-> 			<cWORD>		光标所在的字串 (WORD)  
-> 			<client>	最近收到的消息的 {clientid}  
+> 			`%`		当前文件名  
+> 			`#`		轮换文件名  
+> 			`#n`		轮换文件名 n  
+> 			`<cfile>`		光标所在的文件名  
+> 			`<afile>`		自动命令文件名  
+> 			`<abuf>`		自动命令缓冲区号 (以字符串形式出现！)  
+> 			`<amatch>`	自动命令匹配的名字  
+> 			`<cexpr>`		光标所在的 C 表达式  
+> 			`<sfile>`		载入的脚本文件或函数名  
+> 			`<slnum>`		载入脚本文件行号或函数行号  
+> 			`<sflnum>`	脚本文件行号，即使在函数中亦然  
+> 			`<SID>`		`<SNR>123_`  其中 "123" 是当前脚本 ID  
+> 					|`<SID>`|  
+> 			`<stack>`		调用栈  
+> 			`<cword>`		光标所在的单词  
+> 			`<cWORD>`		光标所在的字串 (WORD)  
+> 			`<client>`	最近收到的消息的 {clientid}  
 > 					|server2client()|  
 > 		修饰符:  
-> 			:p		扩展为完整的路径  
-> 			:h		头部 (去掉最后一个部分)  
-> 			:t		尾部 (只保留最后一个部分)  
-> 			:r		根部 (去掉一个扩展名)  
-> 			:e		只有扩展名  
+> 			`:p`		扩展为完整的路径  
+> 			`:h`		头部 (去掉最后一个部分)  
+> 			`:t`		尾部 (只保留最后一个部分)  
+> 			`:r`		根部 (去掉一个扩展名)  
+> 			`:e`		只有扩展名  
 > 
-> 		例如: >  
-> 			:let &tags = expand("%:p:h") . "/tags"  
-> < 		注意 扩展 '%'、'#' 或者 '<' 开头的字符串的时候，其后的文本被忽  
-> 		略。这样_不_行: >  
-> 			:let doesntwork = expand("%:h.bak")  
-> < 		应该这样: >  
-> 			:let doeswork = expand("%:h") . ".bak"  
-> <		还要 注意 扩展 "<cfile>" 和其它形式只能返回被引用的文件名，而
-> 不会进一步扩展。如果 "<cfile>" 是 "~/.cshrc"，你需要执行另一个
-> expand() 把 "~/" 扩展为主目录的路径: >  
->			:echo expand(expand("<cfile>"))  
-><
+> 		例如:   
+> 			`:let &tags = expand("%:p:h") . "/tags"`  
+> 		注意 扩展 `%`、`#` 或者 `<` 开头的字符串的时候，其后的文本被忽  
+> 		略。这样 _ 不 _ 行:   
+> 			`:let doesntwork = expand("%:h.bak") `
+>  		应该这样: ` :let doeswork = expand("%:h") . ".bak"`  
+> 		还要 注意 扩展 `<cfile>` 和其它形式只能返回被引用的文件名，而
+> 不会进一步扩展。如果 `<cfile>` 是 `~/.cshrc`，你需要执行另一个
+> `expand()` 把 `~/` 扩展为主目录的路径: `:echo expand(expand(<cfile>))`  
 >		变量名和其后的修饰符之间不能有空白。|fnamemodify()| 函数可以用
 >		来修改普通的文件名。  
 >
->		使用 '%' 或 '#' 但当前或轮换文件名没有定义的时候，使用空字符
->		串。在无名缓冲区使用 "%:p"  生成当前目录，后加一个 '/'。  
+>		使用 `%` 或 `#` 但当前或轮换文件名没有定义的时候，使用空字符
+>		串。在无名缓冲区使用 "%:p"  生成当前目录，后加一个 `/`。  
 >
->		如果 {expr} 不以 '%'、'#' 或 '<' 开始，它以命令行上的文件名那
+>		如果 {expr} 不以 `%`、`#` 或 `<` 开始，它以命令行上的文件名那
 >		样被扩展。使用 'suffixes' 和 'wildignore'，除非给出可选的
 >		{nosuf} 参数而且为 |TRUE|。  
->		这里可以有不存在的文件的名字。"**" 项目可以用来在目录树里查
->		找。例如，要寻找当前目录及其下目录的所有的 "README": >
->			:echo expand("**/README")  
-><
->		expand() 也可用来扩展变量和只有外壳知道的环境变量。但这会很
+>		这里可以有不存在的文件的名字。`**` 项目可以用来在目录树里查
+>		找。例如，要寻找当前目录及其下目录的所有的 "README": `:echo expand("**/README")`  
+>		`expand()` 也可用来扩展变量和只有外壳知道的环境变量。但这会很
 >		慢，因为需要使用外壳才能进行扩展。见 |expr-env-expand|。  
 >		扩展后的变量还是被当作文件名的列表处理。如果不能扩展环境变量，
->		保留其不变。这样，":echo expand('$FOOBAR')" 返回的还是
+>		保留其不变。这样，`:echo expand('$FOOBAR')` 返回的还是
 >		"$FOOBAR"。  
 >
 >		|glob()| 说明如何找到存在的文件。|system()| 说明如何得到外部命
 >		令的原始输出。  
 >
->		也可用作 |method|: >
->			Getpattern()->expand()
+>		也可用作 |method|: `Getpattern()->expand()`
 
 示例：
 
@@ -272,9 +252,9 @@ let cfilename = expand('%:t:r')
 
 ```
 
-#### getfsize()
+#### getfsize
 
-> getfsize({fname})					*getfsize()*
+> `getfsize({fname})`					*getfsize()*
 > 		返回数值，文件 {fname} 以字节数计算的大小。
 > 		如果 {fname} 是目录，返回 0。
 > 		如果找不到文件 {fname}，返回 -1。
@@ -285,18 +265,19 @@ let cfilename = expand('%:t:r')
 
 示例：
 
-```vimscript
+```
 
 " 检测字节数
 " 通过检测给定路径所代表的"文件"的字节数，来判断路径的状态 
 " 目录返回 0，找不到文件返回 -1，文件过大，超出了 vim 的数值的范围，返回 -2
 let fsizeresult = getfsize(l:dirnamepath)
 
-
 ```
 
-#### isdirectory()
+#### isdirectory
 
+> [!info] 
+> 
 > isdirectory({directory})				*isdirectory()*
 > 		返回数值，如果名为 {directory} 的目录存在，返回 |TRUE|。如果
 > 		{directory} 不存在或者不是目录，返回 |FALSE|。{directory} 可以
@@ -306,5 +287,10 @@ let fsizeresult = getfsize(l:dirnamepath)
 > 			GetName()->isdirectory()  
 > 
 
+---
 
+## 相关笔记
+
+* [Vim笔记](Vim_Note.md)
+* [Vimscript9笔记](Vimscript9_Note.md)
 

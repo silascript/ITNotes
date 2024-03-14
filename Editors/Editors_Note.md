@@ -658,7 +658,7 @@ VSCode 主要有几个版本：
 * [neovim配置](../vim/vim及neovim配置.md)
 * [Neovim_Note](../vim/Neovim_Note.md)
 * [Vim Plugin](../vim/vim_plugin.md)
-* [Vimscript 笔记](../vim/vimscript_note.md)
+* [Vimscript 笔记](../vim/Vimscript_Note.md)
 * [LSP_Complete](../vim/LSP_Complete.md)
 
 ---

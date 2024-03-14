@@ -870,7 +870,7 @@ markdown 表格的对齐方式那个行的输入。
 * [vim常用操作](vim常用操作.md)
 * [Vim 视频清单](Vim_Videos.md)
 * [vim及neovim配置](vim及neovim配置.md)
-* [vimscript 笔记](vimscript_note.md)
+* [vimscript 笔记](Vimscript_Note.md)
 * [vim 配色笔记](vim_colorscheme_Note.md)
 
 ### <span id="lsp_complete">关于 LSP 及补全</span>

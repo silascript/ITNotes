@@ -4,7 +4,7 @@ tags:
   - vim
   - lsp
 created: 2023-08-18 19:44:52
-modified: 2024-03-11 20:15:26
+modified: 2024-03-14 18:52:56
 ---
 
 # LSP 及补全相关
@@ -392,6 +392,28 @@ npm install -g typescript-language-server typescript
 ```shell
 typescript-language-server --stdio
 ```
+
+#### 问题
+
+有时想重装 [TypeScript](../JS/TypeScript/TypeScript_Note.md)，但会报错，会出现装不了 typescript，也卸载不了情况。如下：
+
+```shell
+npm ERR! code ENOTEMPTY
+npm ERR! syscall rename
+npm ERR! path /home/silascript/nodejs/node_global/lib/node_modules/typescript
+npm ERR! dest /home/silascript/nodejs/node_global/lib/node_modules/.typescript-k7ovRQHn
+npm ERR! errno -39
+npm ERR! ENOTEMPTY: directory not empty, rename '/home/silascript/nodejs/node_global/lib/node_modules/typescript' -> '/home/silascript/nodejs/node_global/lib/node_modules/.typescript-k7ovRQHn'
+
+npm ERR! A complete log of this run can be found in: /home/silascript/nodejs/node_cache/_logs/2024-03-14T10_44_17_348Z-debug-0.log
+```
+
+这只能「暴力出奇迹了」：删除相关目录：`cache` 和 `module` 相关目录，如 `rm -rf /home/silascript/nodejs/node_global/lib/node_modules/.typescript-k7ovRQHn` 和 `rm -rf /home/silascript/nodejs/node_global/lib/node_modules/typescript `，删完再重装，就能装了！
+
+> [!info] 相关资料
+> 
+> * [Unable to update anymore · Issue #46 · Volcomix/500wallpaper · GitHub](https://github.com/Volcomix/500wallpaper/issues/46)
+> * [解决：ENOTEMPTY: directory not empty, rename ‘node_modules/webpack‘ -＞ ‘node_modules/.webpack-E4nb的三种方式](https://blog.csdn.net/weixin_43405300/article/details/131551355)
 
 ---
 

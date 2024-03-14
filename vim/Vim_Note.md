@@ -143,5 +143,5 @@ modified: 2024-03-10 04:46:25
 * [vim配置](./vim及neovim配置.md)
 * [neovim笔记](Neovim_Note.md)
 * [vim视频清单](./Vim_Videos.md)
-* [vimscript笔记](vimscript_note.md)
+* [vimscript笔记](Vimscript_Note.md)
 * [vim配色笔记](vim_colorscheme_Note.md)

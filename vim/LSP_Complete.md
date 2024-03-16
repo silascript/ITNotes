@@ -4,7 +4,7 @@ tags:
   - vim
   - lsp
 created: 2023-08-18 19:44:52
-modified: 2024-03-14 18:52:56
+modified: 2024-03-14 21:17:41
 ---
 
 # LSP 及补全相关
@@ -1053,6 +1053,21 @@ ultisnips 外部依赖 Python,这有点违反 easycomplete 这个框架的「极
 
 此框架内置了路径、文件补全，非常方便。
 此框架应该是补全框架中的一股「清流」。
+
+#### 问题
+
+##### snippet 重复
+
+使用 snippet 时，出现两个不同位置的代码片段提示，类似：
+
+![easycomplete problem 1](https://user-images.githubusercontent.com/23642697/114323884-4a59db80-9af5-11eb-999e-a840ed1a6492.png)
+
+好像是 [Ultisnips](vim_plugin.md#vimplugin_snippets_ultisnips) 引起的，但未解决。
+
+> [!info] 相关资料
+> 
+> * [Duplicate snippets · Issue #236 · jayli/vim-easycomplete · GitHub](https://github.com/jayli/vim-easycomplete/issues/236)
+> * [Duplicated snippets when using symlink. · Issue #1341 · SirVer/ultisnips · GitHub](https://github.com/SirVer/ultisnips/issues/1341)
 
 ---
 

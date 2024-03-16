@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2024-03-13 20:04:29
+modified: 2024-03-16 21:38:03
 ---
 
 # NeoVim 笔记
@@ -1557,6 +1557,65 @@ end, {
 
 telescope 还能装扩展：[telescope extensions](https://github.com/nvim-telescope/telescope.nvim/wiki/Extensions)
 
+##### 配置 
+
+telescope 主配置文件：
+
+```lua
+ {
+	"nvim-telescope/telescope.nvim",
+	dependencies = {"nvim-lua/plenary.nvim"},
+	event = {"VimEnter"},
+	config = function()
+		-- 内置功能
+		local builtin = require("telescope.builtin")
+		vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
+		vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
+		vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
+		vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
+		require("telescope").setup {
+			-- 扩展设置
+			extensions = {
+				-- file-browser
+				file_browser = {
+					theme = "ivy"
+				},
+				-- fzf-native
+				fzf = {
+					fuzzy = true,
+					override_generic_sorter = true,
+					override_file_sorter = true,
+					case_mode = "smart_case"
+				},
+			}
+		}
+		--加载扩展
+		-- file_browser
+		require("telescope").load_extension("file_browser")
+		-- fzf-native
+		require("telescope").load_extension("fzf")
+	end
+}
+```
+
+扩展放在另一个配置文件中：
+
+```lua
+-- file-browser
+{
+	"nvim-telescope/telescope-file-browser.nvim",
+	dependencies = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"}
+},
+
+-- fzf-native
+{
+	"nvim-telescope/telescope-fzf-native.nvim",
+	dependencies = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+	build = "make"
+}
+
+```
+
 ##### 相关资料
 
 * [Vim/Neovim 全文检索插件 -- telescope.nvim - 知乎](https://zhuanlan.zhihu.com/p/609527018)
@@ -1574,6 +1633,78 @@ telescope 还能装扩展：[telescope extensions](https://github.com/nvim-teles
 [lspkind.nvim](https://github.com/onsails/lspkind.nvim) 为 [补全插件](#补全插件) 的候选菜单中添加图标。
 
 ![lspkind.nvim screenshot](https://github.com/onsails/lspkind-nvim/raw/images/images/screenshot.png)
+
+---
+
+### <span id="nvim_plugins_mark">标记</span>
+
+#### marks.nvim
+
+[marks.nvim](https://github.com/chentoast/marks.nvim) 是一个 marks 增强插件。
+
+![marks.nvim screenshot](https://github.com/chentoast/marks.nvim/raw/assets/marks-demo.gif)
+
+配置就直接复制官方给的：
+
+```lua
+{
+	"chentoast/marks.nvim",
+	config = function()
+		require("marks").setup(
+			{
+				-- whether to map keybinds or not. default true
+				default_mappings = true,
+				-- which builtin marks to show. default {}
+				builtin_marks = {".", "<", ">", "^"},
+				-- whether movements cycle back to the beginning/end of buffer. default true
+				cyclic = true,
+				-- whether the shada file is updated after modifying uppercase marks. default false
+				force_write_shada = false,
+				-- how often (in ms) to redraw signs/recompute mark positions.
+				-- higher values will have better performance but may cause visual lag,
+				-- while lower values may cause performance penalties. default 150.
+				refresh_interval = 250,
+				-- sign priorities for each type of mark - builtin marks, uppercase marks, lowercase
+				-- marks, and bookmarks.
+				-- can be either a table with all/none of the keys, or a single number, in which case
+				-- the priority applies to all marks.
+				-- default 10.
+				sign_priority = {lower = 10, upper = 15, builtin = 8, bookmark = 20},
+				-- disables mark tracking for specific filetypes. default {}
+				excluded_filetypes = {},
+				-- disables mark tracking for specific buftypes. default {}
+				excluded_buftypes = {},
+				-- marks.nvim allows you to configure up to 10 bookmark groups, each with its own
+				-- sign/virttext. Bookmarks can be used to group together positions and quickly move
+				-- across multiple buffers. default sign is '!@#$%^&*()' (from 0 to 9), and
+				-- default virt_text is "".
+				bookmark_0 = {
+					sign = "⚑",
+					virt_text = "hello world",
+					-- explicitly prompt for a virtual line annotation when setting a bookmark from this group.
+					-- defaults to false.
+					annotate = false
+				},
+				mappings = {}
+			}
+		)
+	end
+}
+```
+
+默认快捷键：
+
+* `dm-`：删除当前行所有的标记（一行可以「叠」多个标记）
+* `dm<space>`：删除当前 buffer 所有标记
+* `dm=`：删除光标下的标记
+* `dmx`：删除 x 标记。
+* `m]`：跳到下一个标记
+* `m[`：跳到上一个标记
+* `m:`：预览标记
+
+> [!info] 
+> 
+> [marks.nvim mappins](https://github.com/chentoast/marks.nvim?tab=readme-ov-file#mappings)
 
 ---
 
@@ -1608,6 +1739,45 @@ telescope 还能装扩展：[telescope extensions](https://github.com/nvim-teles
 [smartcolumn](https://github.com/m4xshen/smartcolumn.nvim) 一个智能的边界插件。
 
 ![smartcolumn screenshot](https://user-images.githubusercontent.com/74842863/219844450-37d96fe1-d15d-4aaf-ae57-1c6ce66d8cbc.gif)
+
+#### LoremIpsum
+
+[lorem.nvim](https://github.com/derektata/lorem.nvim) 是一个 loremipsum 插件。
+
+最简配置：
+
+```lua
+{
+	"derektata/lorem.nvim",
+	event = "VeryLazy"
+}
+```
+
+当然可以对句子长度作相关的配置：
+
+```lua
+require('lorem').setup({
+  sentenceLength = "mixedShort",
+  comma = 0.1
+})
+```
+> [!info] 
+> 
+> `comma` 的值是逗号出现的频率（至少是 3 个单词一个逗号），值范围是 `0~1` 之间。`0` 是禁止逗号，`1` 是每**3**个单词就一个逗号。这配置项不能单独配，得跟 `sentenceLength` 一起配，如果不配 `setenceLength` 只有 `comma`，会报错。不知道算不算 bug。
+> 
+
+##### 命令
+
+就一个命令，很简单：
+
+`:LoremIpsum 数字或句子长度单词`
+
+> [!example] 
+> 
+> * `:LoremIpsum 500`：生成一个 500 个单词的句子。默认句长长度是 `100`。
+> * `:LoremIpsum short`：生成一个 3~20 句子的段落。
+
+段落长度属性值，是随机生成的句子长度，每种属性值有一个生成长度范围，如 `short`，就是 `3~29`。具体参考官方说明：[Lorem.nvim README sethencelength-property](https://github.com/derektata/lorem.nvim#the-sentencelength-property)
 
 ---
 

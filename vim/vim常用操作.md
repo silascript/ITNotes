@@ -4,7 +4,7 @@ tags:
   - vim
   - editor
 created: 2023-08-18 19:44:52
-modified: 2024-02-21 03:21:43
+modified: 2024-03-16 20:59:34
 ---
 # VIM 常用操作
 
@@ -287,6 +287,11 @@ modified: 2024-02-21 03:21:43
 * `==`：		 格式化当前行
 
 ### <span id="op_normal_tab_buffer_window">标签页、Buffer 及窗口</span>
+
+#### <span id="op_normal_buffers">Buffer</span>
+
+* `:bnext`：切换下一个 buffer
+* `:bprevious`：切换上一个 buffer
 
 #### <span id="op_normal_tabs">标签页</span>
 
@@ -699,10 +704,12 @@ endtry
 * [vim及neovim配置](vim及neovim配置.md)
 * [vimscript笔记](Vimscript_Note.md)
 * [vim配色笔记](vim_colorscheme_Note.md)
+* [Neovim笔记](Neovim_Note.md)
 
 ---
 
 ## 相关连接
 
 * [Vim Cheat Sheet](https://vim.rtorr.com/lang/zh_cn)
+* [VIM 中文帮助: 总览最常用的命令](https://yianwillis.github.io/vimcdoc/doc/quickref.html)
 

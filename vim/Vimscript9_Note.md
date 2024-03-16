@@ -5,10 +5,28 @@ tags:
   - vimscript
   - vim9
 created: 2024-03-14 05:29:40
-modified: 2024-03-14 05:33:21
+modified: 2024-03-15 02:42:00
 ---
 
 # vimscript9 笔记
+
+---
+
+## 目录
+
+* [函数](#函数)
+
+---
+
+## <span id="viml9_def">函数</span>
+
+vim9 新语法，使用 `def` 来定义函数。并且与 [老语法的函数](Vimscript_Note.md#函数) `function` 不兼容。
+
+```vim
+def 函数名()
+
+endef
+```
 
 ---
 

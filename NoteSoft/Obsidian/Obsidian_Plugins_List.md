@@ -6,7 +6,7 @@ tags:
   - plugin
   - list
 created: 2023-01-13 12:44:24
-modified: 2024-01-25 00:25:43
+modified: 2024-03-17 01:02:37
 ---
 # Obsidian 个人必装插件清单
 
@@ -21,6 +21,7 @@ modified: 2024-01-25 00:25:43
 * [Cursor Location](Obsidian_Note.md#obn_plugins_commp_cursorlocation)
 * [Better Word Count](Obsidian_Note.md#obn_plugins_commp_better_word_count)
 * [Keyboard-Analyzer](Obsidian_Note.md#obn_plugins_commp_keyboard_analyzer)
+* [hover-editor](Obsidian_Note.md#obn_plugins_commp_hovereditor)
 * [中文分词增强](Obsidian_Note.md#obn_plugins_commp_wordsplitting_ch)
 * [Queit Outline](Obsidian_Note.md#obn_plugins_commp_quiet_outline)
 * [Crease](Obsidian_Note.md#obn_plugins_commp_crease)

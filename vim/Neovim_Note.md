@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2024-03-16 21:38:03
+modified: 2024-03-17 21:50:42
 ---
 
 # NeoVim 笔记
@@ -1945,6 +1945,7 @@ vim.cmd.colorscheme "gruvbox"
 
 ## neovim 相关资料
 
+* [nvim lua 指南 中文版](https://github.com/glepnir/nvim-lua-guide-zh)
 * [Neovim插件推荐&配置 - 哔哩哔哩](https://www.bilibili.com/read/cv22495061/)
 * [ADkun/lvim-config-suggest](https://github.com/ADkun/lvim-config-suggest/blob/main/README.md)
 * [nvim-lua-guide-zh: neovim指导nvim-lua-guide-zh](https://gitee.com/zhengqijun/nvim-lua-guide-zh)

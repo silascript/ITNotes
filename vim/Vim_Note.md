@@ -9,7 +9,7 @@ tags:
   - nvim
   - lsp
 created: 2023-08-18 19:44:52
-modified: 2024-03-10 04:46:25
+modified: 2024-03-19 09:52:03
 ---
 
 # Vim 笔记
@@ -61,6 +61,24 @@ modified: 2024-03-10 04:46:25
 
 ---
 
+## <span id="vim_marks">标记</span>
+
+`m` 是「打」标记；`'` 和&#96; 是「跳转」。
+
+&#96;（反引号） 这个是跳到标记时光标位置；`'` （单引号）这个是跳到标记时光标所在行。
+
+这两个跳转区别很关键，这不但关系到跳转的准确性，还关系与其他键组合使用时的准确性，如 `y&#96;b`：就是从光标位置复制到 b 点位置；而如果是 `y'b` 那就是从光标所在位置复制到标记 b 所在行。
+
+> [!note] 
+> 
+> [VIM 中文帮助: marks](https://yianwillis.github.io/vimcdoc/doc/motion.html#:marks)
+
+---
+
+## <span id="vim_txtobject">文本对象</span>
+
+---
+
 ## <span id="vim_map">映射</span>
 
 模式字母：
@@ -104,6 +122,8 @@ modified: 2024-03-10 04:46:25
 
 ## buffer
 
+[buffer操作](vim常用操作.md#op_normal_buffers)
+
 ### 相关资料
 
 * [精通 vim 你应该理解的几个名词 - 知乎](https://zhuanlan.zhihu.com/p/96801314/)
@@ -111,6 +131,12 @@ modified: 2024-03-10 04:46:25
 ---
 
 ## 自动命令
+
+ #vim-autocmd
+
+自动命令，简单讲就是「你什么时间对哪个对象执行什么命令」，即「**时间**」、「**目标**」及「**具体命令**」。
+
+其中「时间」就是事件（[events](#events)）；「目标」就是 [patterns](#patterns)。
 
 ### events
 
@@ -123,6 +149,8 @@ modified: 2024-03-10 04:46:25
 * `VimEnter`
 * `VeryLazy`
 * `UIEnter`
+
+### patterns
 
 > [!info] 资料
 > 

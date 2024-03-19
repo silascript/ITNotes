@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2024-02-06 22:57:30
+modified: 2024-03-17 01:06:54
 ---
 # Obsidian 笔记
 
@@ -496,6 +496,16 @@ Obsidian 的插件分为 [核心插件](#obn_plugins_core) 和 [第三方插件]
 [Keyboard-Analyzer](https://github.com/cogscides/obsidian-keyboard-analyzer) 是一个以图谱方式查看快捷键设置的插件。
 
 通过这个插件的图谱，可以快速查看指定按键设置了哪个相关的快捷键。
+
+---
+
+##### <span id="obn_plugins_commp_hovereditor">Hover-Editor</span>
+
+[nothingislost](https://github.com/nothingislost/obsidian-hover-editor) 是一个悬浮编辑窗口插件。它能使光标所在链接处显示的链接内容能够可编辑（默认 obsidian 中，鼠标放在链接上只能弹出预览窗口 -- 顾名思义预览就是无法编辑）。
+
+> [!note] 
+> 
+> 这个插件不但能使预览窗口可编辑，还「修正」了 Obsidian 一个一直没修复的 Bug，就是不支持 [Html](../../Frontend/Html_Note.md) 标签作的链接，这插件，在 html 标签作的锚点链接，能正常弹出预览窗口并正常显示链接内容。可见 Obsidian 原生功能的 Bug 是有多「蠢」了！
 
 ---
 

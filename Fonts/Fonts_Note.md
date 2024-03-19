@@ -5,7 +5,7 @@ tags:
   - unicode
   - cjk
 created: 2023-01-31 11:31:14
-modified: 2024-02-28 08:18:08
+modified: 2024-03-16 23:12:10
 ---
 # 字体笔记
 
@@ -112,8 +112,6 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 
 源石与源样区别在笔画上，源石的笔画有「喇叭口」特征，看起来更传统。
 
----
-
 ##### <span id="fonts_zh_notofont_chiron">昭源字体</span>
 
 [昭源字体](https://chiron-fonts.github.io) 是基于思源香港版修改而成的。
@@ -131,26 +129,25 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 
 ![昭源宋](https://chiron-fonts.github.io/technical-details/motivation/familiar-9.svg)
 
----
-
 ##### <span id="fonts_zh_notofont_nowar">有爱黑体</span>
 
 [有爱黑体](https://github.com/nowar-fonts/Nowar-Sans)
 
----
 ##### <span id="fonts_zh_notofont_genyo">源样明体</span>
 
 [源样明体](https://github.com/ButTaiwan/genyo-font)
 
----
 ##### <span id="fonts_zh_notofont_genryu">源流明体</span>
 
 [源流明体](https://github.com/ButTaiwan/genryu-font) 是将思源宋体宽度压缩了下，并对笔画作了细微处理。
 
----
 ##### <span id="fonts_zh_notofont_genwan">源云明体</span>
 
 [源云明体](https://github.com/ButTaiwan/genwan-font) 是将「源流明体」的笔画做了朦胧处理，使其有墨晕或过曝的效果。
+
+---
+
+#### 字体对比
 
 几种黑体及宋体衍生字体对比：
 

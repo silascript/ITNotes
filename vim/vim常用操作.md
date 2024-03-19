@@ -4,7 +4,7 @@ tags:
   - vim
   - editor
 created: 2023-08-18 19:44:52
-modified: 2024-03-16 20:59:34
+modified: 2024-03-19 06:01:12
 ---
 # VIM 常用操作
 
@@ -12,8 +12,9 @@ modified: 2024-03-16 20:59:34
 	* [基础移动](#op_normal_base_mv)
 	* [词间移动](#op_normal_word_mv)
 	* [行间移动](#op_normal_line_mv)
-	* [段落移动](#op_normal_p_mv)
-		* [快速移动](#op_normal_p_sp_mv)
+	* [句间移动](#op_normal_sentence_mv)
+	* [段落移动](#op_normal_paragraph_mv)
+		* [快速移动](#op_normal_paragraph_sp_mv)
 	* [删除](#op_normal_delete)
 	* [搜索](#op_normal_search)
 	* [复制粘贴](#op_normal_cp)
@@ -30,6 +31,7 @@ modified: 2024-03-16 20:59:34
 	* [从normal模式进入insert模式](#op_insert_nortoin)
 * [Visual模式操作](#op_visual)
 	* [词选择](#op_visual_sel_word)
+* [命令行模式](#op_cmd)
 * [小技巧](#tricks)
 * [基础配置](#config_basic)
 
@@ -58,14 +60,36 @@ modified: 2024-03-16 20:59:34
 
 ### <span id="op_normal_word_mv">词间移动</span>
 
+**单词**，在 [Vim](Vim_Note.md) 中是以**空白**来区隔的。 ^vim-word
+
+> [!quote] 
+> 
+> 「一个单词由**字符**、**数字**和**下划线**序列或者其他的**非空白字符**的序列组成。单词间可以**空白**字符 (空格、制表、换行) 分隔。这一规则可以用 ['iskeyword'](https://yianwillis.github.io/vimcdoc/doc/options.html#'iskeyword') 选项改变。空行也被认 作单词。 **WORD** 一个字串由非空白字符序列组成。**字串以空白分隔**。空行也被认作字串。」
+> 
+> 引自： [VIM 中文帮助: word](https://yianwillis.github.io/vimcdoc/doc/motion.html#WORD)
+
 #### 	基础词间移动
 
-* `w`：	向前移动到下一个词，光标在**词首**
-* `W`：	向前移动到下一个词，忽略标点符号，光标在词首
+* `w`：	向前移动到下一个**词首**
+* `W`：	向前移动到下一个词词首，忽略 `,`、`.` 等标点符号
 * `b`：	向后移动到上一个词
-* `B`：	向后移动到上一个词，忽略标点符号
-* `e`：	向前移动到下一个词，光标在**词尾**（end）
-* `E`：	向后移动到上一个词，忽略标点符号，光标在词尾
+* `B`：	向后移动到上一个词，忽略 `,`、`.` 等标点符号
+* `e`：	向右移动到单词的**词尾**（`e` 即「*end*」）
+* `E`：	向左移动到下一个**空格前**的单词**词尾**，忽略中间出现的标点符号
+> [!info] 
+> 
+> `E`，强调**空格前**，是非常必要的，`E` 不是简单的「忽略标点符号版」的 `e`，而它的跳转核心仍与 `w` 和 `e` 相同，即 [单词以空白为分隔符](#^vim-word)，与 `e` 区别，`e` 在下一个空白前的单词跳转「途中」出现如 `,` 或 `.` 等标点符号，这种空白为分隔符的跳转就会被「截停」，光标就会跳转到这些「标点」位置上，而 `E` 就会将这些「途中」的标点忽略掉，直接掉到下个空白前的单词的词尾。
+>
+> 
+> 另外，还要再说下，`e` 或 `b` 在实现「跨单词」跳转上，不如 `w` 来得「稳定」。
+> 
+> `w` 操作时，无论当前光标在当前单词哪个位置，只要安了 `w`，就会跳到下一个单词词首位置。
+> 
+> 而 `e` 操作时，如果当前光标不在当前单词最后一个字符，那按了 `e` 后，只会跳到当前单词词尾，而不会立即跳到下一个单词词尾。
+>
+>这种情况同样发生在 `b` 身上，就是当前光标所在单词非单词词首时，往回跳（往左）时，光标会先跳到当前单词的词首，下一次的 `b` 才会跳到上一个单词的词首。对于 `b` 的这个「缺陷」，可以使用 `ge` 来替代。而 `e` 就没办法了，所以更多时候向下（向右）跳转时，用得更多的是 `w`，而且其他的操作也是用 `w` 的，如 `diw`（删除一个单词），所以 `w` 因为使用率最高，所以有其「超然」的地位，所以在它的实现上有着 `e` 和 `b` 不一样的「稳定性」-- 这就点像 [Java](../Java/Java_Note.md) 中 `int` 类型（Java 的 int 类型是数值类型最高使用率的类型，以至于在 [字节码](../Java/Java_Note.md#字节码) 上都有特别「定制」，如 [i++和++i](../Java/i++和++i分析.md) 这种自增操作，其他类型在字节码上使用的是 `add` 指令，而且 Java 专门给 int 类型弄了个 `iinc` 指令。）。
+>
+> 
 
 ##### 	带查找型的词间移动
 
@@ -94,7 +118,20 @@ modified: 2024-03-16 20:59:34
 > 
 > 开启了相对行号显示，可以通过 `set relativenumber` 代码设置。
 
-### <span id="op_normal_p_mv">段落移动</span>
+### <span id="op_normal_sentence_mv">句间移动</span>
+
+> 一个句子以 '.'、'!' 或者 '?' 结尾并紧随着一个换行符、空格或者制表符。结束标点 和空白字符之间可以出现任何数量的闭括号和引号: ')'、']'、'"' 和 '''。段落和小节 的边界也视为句子的边界。
+
+* `(`：向上一句跳转
+* `)`：向下一句跳转
+
+> [!note] 
+> 
+> [VIM 中文帮助: sentence](https://yianwillis.github.io/vimcdoc/doc/motion.html#sentence)
+
+### <span id="op_normal_paragraph_mv">段落移动</span>
+
+段落，在 [Vim](Vim_Note.md) 中是以空行为分隔 -- 这点跟 [Markdown](../Markdown/Markdown_Note.md) 有相似的。
 
 `}`：	跳到下一个段落
 
@@ -104,7 +141,7 @@ modified: 2024-03-16 20:59:34
 
 `Ctrl+b`：向上翻页
 
-#### <span id="op_normal_p_sp_mv">快速跳转</span>
+#### <span id="op_normal_paragraph_sp_mv">快速跳转</span>
 
 `%`：	在（）[] {} 间跳转
 
@@ -166,19 +203,16 @@ modified: 2024-03-16 20:59:34
 
 ### <span  id="op_normal_marks">标记</span>
 
-`:marks`：查看所有的标记
+* `m+[0~9a~zA~Z]`：可以对光标所在位置进行「标记」。
+> [!info] 
+> 
+> 如果想要跨文件标记跳转，标记得使用**大写字母**来标记，小写字母只能在单文件内跳转。
+* &#96;+[a~z]：跳转到指定的「标记」位置。
+* `'+[a~z]`：跳转到标记的文本行首。
 
-`:marks 标记符 标记符`：查看相关的标记符，查看多个标记符使用空格隔开
+`dm[0~9a~zA-Z]`：删除某 [标记](Vim_Note.md#标记)
 
-`m+[a~z]`：可以对光标所在位置进行「标记」。
-
-&#96;+[a~z]：跳转到指定的「标记」位置。
-
-`'+[a~z]`：跳转到标记的文本行首。
-
-`:delmarks`+ 标记名：删除指定标记，可删除多个标记，多个标记使用空格分隔。
-
-`:delmarks!`：删除所有的标记。
+mark 用得更多的是 [命令行模式下marks命令](#op_cmd_marks)。
 
 ### <span id="op_normal_jump">跳转记录</span>
 
@@ -273,6 +307,7 @@ modified: 2024-03-16 20:59:34
 * `zk`：	跳转到上一个折叠
 
 > [!info] 
+> 
 >  命令模式下，与折叠相关的命令
 >  
 > * `:mkview`：	保存折叠状态
@@ -286,26 +321,23 @@ modified: 2024-03-16 20:59:34
 * `G=gg`：		全文格式化，跟上面命令一样，不过当前光标在页底，从页底向上选直选到页首行，然后格式化
 * `==`：		 格式化当前行
 
+---
+
 ### <span id="op_normal_tab_buffer_window">标签页、Buffer 及窗口</span>
 
 #### <span id="op_normal_buffers">Buffer</span>
 
-* `:bnext`：切换下一个 buffer
-* `:bprevious`：切换上一个 buffer
+buffer 大部分操作均在 [命令行模式的 buffer](#op_cmd_buffer) 下进行。
 
 #### <span id="op_normal_tabs">标签页</span>
 
 * `:tabe`：  新建一个标签页
 * `gt`：	  向右切换标签页
 * `gT`：	  向左切换标签页
-* `:tabn`：  切换下一个标签页
-* `:tabp`：  切换上一个标签页
-* `:tabc`：  关闭光标焦点为所在的标签页
-* `:tabo`：  关闭除了当前标签页其他标签页
+
+更多的操作是在 [命令行模式下](#op_cmd_tabs)
 
 #### <span id="op_normal_windows">窗口</span>
-
-----
 
 ###### 分割两窗口并将文档同时加载到两窗口中
 
@@ -356,19 +388,7 @@ vim -O 文档1 文档2 ....
 vim -p 文档1 文档2 ....
 ```
 
-#### <span id="op_normal_buffer">Buffer</span>
-
-----
-
-* `:ls`：	          buffer 列表
-* `:b 编号`：	切换 buffer(buffer 编号，可通过 `:ls` 命令查看)
-* `:bn`：		切换到下一个 buffer
-* `:bp`：		切换到上一个 buffer(或使用 ctrl+^快捷键)
-* `:bf`：		切换到第一个 buffer
-* `:bl`：		切换到最后一个 buffer
-* `:b 文件名`：	根据文件切换
-* `:tab ba`：	将所有 buffer 都以标签页显示
-* `:bd`：		删除当前 buffer(相当于关闭)
+---
 
 ### <span id="op_normal_intonor">从 Inser 模式回到 Nomal 模式</span>
 
@@ -496,7 +516,7 @@ vim -p 文档1 文档2 ....
 
 ---
 
-## <span id="op_commandline">命令行模式</span>
+## <span id="op_cmd">命令行模式</span>
 
 **命令行模式**也称为「**末行模式**」。是以 `:`、`/` 或 `?` 开始的。
 
@@ -548,6 +568,31 @@ vim -p 文档1 文档2 ....
 > 
 > 与 [指定范围](#指定范围) 操作的原理保持一致。
 > 
+
+### <span id="op_cmd_buffer">命令行模式的 buffer</span>
+
+* `:buffers`：显示 buffer 列表
+* `:bnext`：切换下一个 buffer
+* `:bprevious`：切换上一个 buffer
+* `:bfirst`：切换第一个 buffer
+* `:blast`：切换最后一个 buffer
+* `:bdelete`：从内存中卸载 buffer，并从列表中删除
+* `:bunload`：从内存 中卸载 buffer，但列表中仍存在
+* `:badd`：加入文件到 buffer 列表
+
+### <span id="op_cmd_tabs">命令行模式的标签页</span>
+
+* `:tabn`：  切换下一个标签页
+* `:tabp`：  切换上一个标签页
+* `:tabc`：  关闭光标焦点为所在的标签页
+* `:tabo`：  关闭除了当前标签页其他标签页
+
+### <span id="op_cmd_marks">命令行模式的 marks</span>
+
+* `:marks`：查看所有的标记
+* `:marks 标记符 标记符`：查看相关的标记符，查看多个标记符使用空格隔开
+* `:delmarks`+ 标记名：删除指定标记，可删除多个标记，多个标记使用空格分隔。
+* `:delmarks!`：删除所有的标记。
 
 ---
 

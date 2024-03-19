@@ -9,7 +9,7 @@ tags:
   - vim-plugin
   - list
 created: 2023-01-30 11:19:11
-modified: 2024-03-07 10:27:40
+modified: 2024-03-19 09:51:26
 ---
 
 # vim 常用插件清单
@@ -131,6 +131,31 @@ Plug 'google/vim-codefmt',{'on':['FormatCode','FormatLines']}
 | ----- | ------------------------------------------------------------ |
 | `on`  | 按需加载: vim 命令或 `<Plug>`-mappings                         |
 | `for` | 按需加载: 文件类型                                           |
+
+#### 延迟加载
+
+使用 `{'on': []}` 可以禁止加载某插件，而使用自动命令来指定触发加载的条件，示例如下： #vim-autocmd 
+
+```vim
+Plug 'easymotion/vim-easymotion',{'on': []}
+augroup load_easymotion
+	autocmd!
+	autocmd BufEnter * call plug#load('vim-easymotion') | autocmd! load_easymotion 
+augroup END
+```
+
+> [!info] 
+> 
+> 上面的例子，就是先禁加载 easymotion 插件，然后使用 [自动命令](Vim_Note.md#自动命令)`autocmd` 来制定触发 easymotion 加载条件。
+> 
+> `autocmd` 后面跟的是事件（`event`）。可以查看官方文档：[VIM 中文帮助: 事件](https://yianwillis.github.io/vimcdoc/doc/autocmd.html#autocmd-events)
+> 
+> `plug#load()` 中是插件名，可以通过 `:PlugStatus` 命令查看。
+> 
+>> [!note] 相关资料
+>> 
+>> * [VIM Lazy Load 懒加载／延迟加载技术](https://segmentfault.com/a/1190000017796824)
+>> * [搭建基于 Vim 的 C++和 Python 开发环境！ - 知乎](https://zhuanlan.zhihu.com/p/66007069)
 
 ---
 
@@ -343,6 +368,20 @@ let g:airline_theme='dark'
 #### <span id="vimplugin_sl_lightline">lightline</span>
 
 [lightline](https://github.com/itchyny/lightline.vim) 是一个跟 [airline](#airline) 类似的状态栏插件，但它比 airline 更轻量。
+
+---
+
+### <span id="vimplugin_cmd_tools">命令行工具</span>
+
+#### autosuggest
+
+[autosuggest](https://github.com/girishji/autosuggest.vim) 是一个命令行自动补全插件。 这插件是使用 [Vim9 脚本](Vimscript9_Note.md) 写的。
+
+![autosuggest screenshot](https://gist.githubusercontent.com/girishji/40e35cd669626212a9691140de4bd6e7/raw/f3e69c22e085f1029a048de422ac37a055e5ac80/autosuggest-demo.gif)
+
+```vim
+Plug 'girishji/autosuggest.vim'
+```
 
 ---
 

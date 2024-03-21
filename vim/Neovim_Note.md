@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2024-03-21 20:28:34
+modified: 2024-03-22 06:35:31
 ---
 
 # NeoVim 笔记
@@ -1202,6 +1202,80 @@ pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_
 [nvim-snippy](https://github.com/dcampos/nvim-snippy) 是一个支持 [vim-snippets](vim_plugin.md#vimplugin_snippets_vimsnippets) 的 snippet 插件。
 
 如果只使用 vim-snippets 作为 snippet 的「仓库」，可以使用这个插件。如果想要使用多种 snippet 格式，建议换更强大的 [LuaSnip](#LuaSnip)。
+> [!tip] 
+> 
+> 实话，nvim-snippy 真的很轻巧，比 [LuaSnip](#LuaSnip) 轻量级多了，如果对于自定义代码片段要求不太高，完全可以用它替代重量级的 luasnip。
+
+当前如果使用 [nvim-cmp](#nvim-cmp)，还得再加个「桥接器」：[cmp-snippy](https://github.com/dcampos/cmp-snippy)，所以得在 `dependencies` 中把 nvim-snippy 和 cmp-snippy 都加上。
+
+使用 nvim-cmp 配置：
+
+1. 配依赖
+```lua
+dependencies = {
+            "neovim/nvim-lspconfig",
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-calc",
+            "hrsh7th/cmp-cmdline",
+            -- 使用 nvim-snippy
+            "dcampos/nvim-snippy",
+            "dcampos/cmp-snippy",
+            "onsails/lspkind.nvim"
+        }
+```
+
+2. `snippet` 配置项
+```lua
+snippet = {
+	expand = function(args)
+		-- 使用 nvim-snippy
+		require "snippy".expand_snippet(args.body)
+	end
+}
+```
+
+3. `source` 配置项，配置数据源
+```lua
+sources = cmp.config.sources(
+{
+	{name = "nvim_lsp"},
+	-- {name = "luasnip"},
+	{name = "snippy"},
+	{name = "path"},
+	{name = "calc"}
+}
+```
+
+4. `vim_item.menu` 配置项，这个配置项主要用来设置补全菜单侯选项的
+```lua
+formatting = {
+	format = lspkind.cmp_format(
+		{
+			-- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
+			mode = "symbol_text",
+			maxwidth = 50,
+			ellipsis_char = "...",
+			before = function(entry, vim_item)
+				vim_item.menu =
+					({
+					buffer = "[Buffer]",
+					nvim_lsp = "[LSP]",
+					-- luasnip = "[LuaSnip]",
+					snippy = "[nvim-snippy]",
+					nvim_lua = "[Lua]"
+					-- latex_symbols = "[LaTeX]",
+				})[entry.source.name]
+				return vim_item
+			end
+		}
+	)
+}
+```
+> [!info] 
+> 
+> `vim_item_menu` 中的 `snippy` 是 [List of sources · hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources) 规定好的，每个 source 源都给了一个标识名。而后面的值，即方括号中的值，是补全菜单候选项中第个侯选项的数据源名称，可以自定义 -- 你写什么它就会显示什么。
 
 #### LuaSnip
 
@@ -1702,6 +1776,9 @@ telescope 主配置文件：
 
 * `dm-`：删除当前行所有的标记（一行可以「叠」多个标记）
 * `dm<space>`：删除当前 buffer 所有标记
+> [!tip]
+>  
+> 好像有 bug，设置了 `force_write_shada = true`，也还是没能永远删除 mark，只能暂时使用原生的 `:delmarks!`。
 * `dm=`：删除光标下的标记
 * `dmx`：删除 x 标记。
 * `m]`：跳到下一个标记

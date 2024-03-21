@@ -9,7 +9,7 @@ tags:
   - vim-plugin
   - list
 created: 2023-01-30 11:19:11
-modified: 2024-03-19 09:51:26
+modified: 2024-03-20 19:34:16
 ---
 
 # vim 常用插件清单
@@ -148,7 +148,7 @@ augroup END
 > 
 > 上面的例子，就是先禁加载 easymotion 插件，然后使用 [自动命令](Vim_Note.md#自动命令)`autocmd` 来制定触发 easymotion 加载条件。
 > 
-> `autocmd` 后面跟的是事件（`event`）。可以查看官方文档：[VIM 中文帮助: 事件](https://yianwillis.github.io/vimcdoc/doc/autocmd.html#autocmd-events)
+> `autocmd` 后面跟的是 [事件](Vim_Note.md#events)（`event`）。可以查看官方文档：[VIM 中文帮助: 事件](https://yianwillis.github.io/vimcdoc/doc/autocmd.html#autocmd-events)
 > 
 > `plug#load()` 中是插件名，可以通过 `:PlugStatus` 命令查看。
 > 

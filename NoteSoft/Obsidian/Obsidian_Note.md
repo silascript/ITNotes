@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2024-03-17 01:06:54
+modified: 2024-03-21 03:59:11
 ---
 # Obsidian 笔记
 
@@ -696,6 +696,14 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 [Better CodeBlock](https://github.com/stargrey/obsidian-better-codeblock) 类似与 [Copy Button for code blocks](#Copy%20Button%20for%20code%20blocks) 和 [Code Block Enhancer](#Code%20Block%20Enhancer) 类似，都是对代码框显示增强型插件。但它与主题兼容性好像更好一些，在 [Code Block Enhancer](#Code%20Block%20Enhancer) 中有时使用 [Callout Blocks](#Callout%20Blocks) 功能时，会使得部分代码被行数列遮挡。而这个插件默认将代码的语言名放在代码框右侧，就避免了代码框显示「变形」的问题 -- 更重要的是，如行数列及代码语言名称，是否显示都能自行设定，另外还有字体颜色及高亮设置，这就非常人性化了。
 
 ![Better CodeBlock screen 1](https://github.com/stargrey/obsidian-better-codeblock/raw/main/screenshots/image20220606011534.png)
+
+---
+
+#### <span id="obn_plugins_bettercommenttoggle">obsidian-better-comment-toggle</span>
+
+[obsidian-better-comment-toggle](https://github.com/MrGVSV/obsidian-better-comment-toggle) 一个增强注释的插件。
+
+![better comment toggle screenshot](https://github.com/MrGVSV/obsidian-better-comment-toggle/raw/main/assets/01_single.gif)
 
 ---
 

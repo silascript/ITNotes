@@ -7,10 +7,22 @@ tags:
   - config
   - setting
 created: 2023-01-30 11:19:11
-modified: 2024-02-21 03:17:28
+modified: 2024-03-21 20:04:56
 ---
 
 # VIM 及 NeoVIM 配置
+
+---
+
+## vim 配置
+
+### vimrc
+
+vim 主配置文件是用户目录下的 `.vimrc` 文件。配置根目录是 `.vim`。
+
+### viminfo
+
+`.viminfo` 文件，记录了如 vim 访问过哪些目录或文件、mark 标记等信息。像 [vim-startify](vim_plugin.md#vim-startify) 插件开始页面出现的访问文件列表，就是读取 `.viminfo` 文件而来的。
 
 ---
 
@@ -19,6 +31,10 @@ modified: 2024-02-21 03:17:28
 ### init.vim 配置文件
 
 [neovim 新配置](Neovim_Note.md#neovim%20新配置)
+
+### shada
+
+在 `.local/state/nvim/shada/` 目录中有一个 `main.shada` 文件，其作用等同于 [Vim](Vim_Note.md) 的 [viminfo](#viminfo) 文件。
 
 ## 设置
 

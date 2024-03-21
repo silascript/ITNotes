@@ -9,7 +9,7 @@ tags:
   - nvim
   - lsp
 created: 2023-08-18 19:44:52
-modified: 2024-03-19 09:52:03
+modified: 2024-03-21 18:34:43
 ---
 
 # Vim 笔记
@@ -140,15 +140,18 @@ modified: 2024-03-19 09:52:03
 
 ### events
 
-* `BufReadPre`
-* `BufReadPost`
-* `BufNewFile`
-* `BufEnter`
+* `BufReadPre`：开新的缓冲区并把文件读入缓冲区前，如果**文件不存在**，**不会触发**此事件。
+* `BufRead` 或 `BufReadPost`：开新的缓冲区并把文件读入缓冲区后。（文件不存在不会触发；`:r file` 命令也不会触发）
+* `BufNewFile`：开启编辑尚未存在的文件时。
+* `BufEnter`：进入缓冲区后，发生在 `BufReadPost` 之后。
+* `BufWrite` 或 `BufWritePre`：把整个缓冲区写回文件前。
+* `BufWritePost`：把整个缓冲区写回文件后。
 * `InsertEnter`
 * `CmdlineEnter`
 * `VimEnter`
 * `VeryLazy`
 * `UIEnter`
+* `GUIEnter`：启动 GUI 并打开窗口后，在使用 gvim 时，在 `VimEnter` 之前发生。
 
 ### patterns
 

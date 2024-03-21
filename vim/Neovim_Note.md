@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2024-03-17 21:50:42
+modified: 2024-03-21 20:28:34
 ---
 
 # NeoVim 笔记
@@ -1644,7 +1644,7 @@ telescope 主配置文件：
 
 ![marks.nvim screenshot](https://github.com/chentoast/marks.nvim/raw/assets/marks-demo.gif)
 
-配置就直接复制官方给的：
+配置就直接使用官方给的：
 
 ```lua
 {
@@ -1691,6 +1691,12 @@ telescope 主配置文件：
 	end
 }
 ```
+
+其实以上都不需要配，真正必须要配的只有一个：`force_write_shada = true`。即强制写入 [shada](vim及neovim配置.md#shada)。如果没有这句配置，永远删除不了 marks，虽然当时无论通过 `dm` 命令还是原生的 `delmarks!` 命令，只能暂时性删除 mark 标记，一旦下一次再将读取这个文件，mark 依然还在。这就是的「持久化」问题了，这就涉及到 [shada](vim及neovim配置.md#shada) 文件。而 `force_write_shada` 就是设置是否强制将对 mark 的操作结果写入 `shada` 文件，保证了对 mark 的「持久化」生效。
+
+> [!info] 相关资料
+> 
+> * [marks.nvim issues 13](https://github.com/chentoast/marks.nvim/issues/13)
 
 默认快捷键：
 

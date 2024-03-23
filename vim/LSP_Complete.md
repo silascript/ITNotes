@@ -3,8 +3,11 @@ aliases: []
 tags:
   - vim
   - lsp
+  - lsc
+  - complete
+  - plugin
 created: 2023-08-18 19:44:52
-modified: 2024-03-14 21:17:41
+modified: 2024-03-23 20:31:09
 ---
 
 # LSP 及补全相关
@@ -20,6 +23,7 @@ modified: 2024-03-14 21:17:41
 	* [vim-lsp](#vp_lsp_client_vim-lsp)
 	* [LanguageClient-neovim](#vp_lsp_client_lcn)
 	* [Yegappan](#vp_lsp_client_yegappan)
+	* [vim-lsp-client](#vp_lsp_client_vimlspclient)
 
 * [Vim 补全插件](#vp_complete)
 	* [vim-auto-popmenu](#vp_complete_vim_auto_popmenu)
@@ -33,7 +37,9 @@ modified: 2024-03-14 21:17:41
 	* [asyncomplete](#vp_complete_asyncomplete)
 	* [coc](#vp_complete_coc)
 	* [easycomplete](#vp_complete_easycomplete)
-
+	* [vimcomplete](#vp_complete_vimcomplete)
+* [相关链接](#about_links)
+* [相关笔记](#about_notes)
 ---
 
 ## <span id="about_lsp">关于 LSP</span>
@@ -591,11 +597,23 @@ LanguageClient 为补全框架提供源的名称是 `LanguageClient`。
 
 ### <span id="vp_lsp_client_yegappan">Yegappan</span>
 
-[GitHub - yegappan](https://github.com/yegappan/lsp) 这个 LSC 只支持 vim 9.0 。
+[GitHub - yegappan](https://github.com/yegappan/lsp) 这个 LSC 只支持 [Vimscript 9.0](Vimscript9_Note.md) 。
+
+---
+
+### <span id="vp_lsp_client_vimlspclient">vim-lsp-client</span>
+
+[vim-lspclient](https://github.com/creativenull/vim-lspclient) 是使用 [Vimscript 9.0](Vimscript9_Note.md) 写的 LSC。
+
+```vim
+Plug 'creativenull/vim-lspclient'
+```
 
 ---
 
 ## <span id="vp_complete">Vim 补全插件</span>
+
+ #vim-complete
 
 ### <span id="vp_complete_vim_auto_popmenu">vim-auto-popmenu</span>
 
@@ -1031,6 +1049,8 @@ asyncomplete 常用的功能插件：
 
 ### <span id="vp_complete_coc">coc </span>
 
+不评价了，使用 [NodeJS](../Node/NodeJS_Note.md) 的货，试用一次就不想再用了。
+
 ---
 
 ### <span id="vp_complete_easycomplete">easycomplete</span>
@@ -1069,10 +1089,27 @@ ultisnips 外部依赖 Python,这有点违反 easycomplete 这个框架的「极
 > * [Duplicate snippets · Issue #236 · jayli/vim-easycomplete · GitHub](https://github.com/jayli/vim-easycomplete/issues/236)
 > * [Duplicated snippets when using symlink. · Issue #1341 · SirVer/ultisnips · GitHub](https://github.com/SirVer/ultisnips/issues/1341)
 
+### <span id="vp_complete_vimcomplete">vimcomplete</span>
+
+[vimcomplete](https://github.com/girishji/vimcomplete) 这是一个用 [Vimscript9](Vimscript9_Note.md) 写的补全框架。
+
+![vimcomplete screenshot](https://gist.githubusercontent.com/girishji/40e35cd669626212a9691140de4bd6e7/raw/6041405e45072a7fbc4e352cbd461e450a7af90e/vimcomplete-demo.gif)
+
 ---
 
 ## <span id="about_links">相关链接</span>
 
+* [awesome-vim9: Collection of awesome vim9script plugins.](https://github.com/saccarosium/awesome-vim9)
+* [verilog vim 插件推荐 - 知乎](https://zhuanlan.zhihu.com/p/563392846)
+
+---
+
+## <span id="about_notes">相关笔记</span>
+
+* [Vim笔记](Vim_Note.md)
 * [vim及neovim配置](vim及neovim配置.md)
 * [vim插件](vim_plugin.md)
-
+* [vim常用操作](vim常用操作.md)
+* [Vim视频清单](Vim_Videos.md)
+* [Vimscript笔记](Vimscript_Note.md)
+* [Vimscript9笔记](Vimscript9_Note.md)

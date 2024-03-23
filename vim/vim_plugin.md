@@ -9,7 +9,7 @@ tags:
   - vim-plugin
   - list
 created: 2023-01-30 11:19:11
-modified: 2024-03-20 19:34:16
+modified: 2024-03-23 18:22:46
 ---
 
 # vim 常用插件清单
@@ -20,6 +20,7 @@ modified: 2024-03-20 19:34:16
 
 * [插件管理器](#vimplugin_mgmt)
 	* [vim-Plug](#vimplugin_mgmt_plug)
+	* [plugpac](#vimplugin_mgmt_plugpac)
 * [插件列表](#vimplugin_list)
 	* [自动符号](#vimplugin_auto_pairs)
 	* [snippets插件](#vimplugin_snippets)
@@ -156,6 +157,32 @@ augroup END
 >> 
 >> * [VIM Lazy Load 懒加载／延迟加载技术](https://segmentfault.com/a/1190000017796824)
 >> * [搭建基于 Vim 的 C++和 Python 开发环境！ - 知乎](https://zhuanlan.zhihu.com/p/66007069)
+
+### <span id="vimplugin_mgmt_plugpac">Plugpac</span>
+
+[plugpac.vim](https://github.com/bennyyip/plugpac.vim) 是使用 [Vim9脚本](Vimscript9_Note.md) 开发的类似于 [vim-Plug](#vim-Plug) 的插件管理器。
+
+配置示例：
+
+```vim
+plugpac#Begin({})
+
+	Pack 'xxx/xxx'
+
+plugpac#End()
+
+```
+
+插件配置在 `plugpac#Begin()` 与 `plugpac#End()` 之间，每个插件使用 `Pack` 来标识，这跟 [vim-Plug](#vim-Plug) 非常类似，使用过 vim-plug 的，迁移到 Plugpac 一点难度都没有。
+
+`plugpac#Begin()` 中还可以进行一些设置，主要就是设置安装、更新插件菜单的样式。如果什么都不配，默认 plugpac 的菜单是横向的，即当前分割成上下两窗口，上面的窗口就是用来显示插件管理。所以还是配下，这样就能跟 [vim-Plug](#vim-Plug) 那竖着的菜单一样了。
+
+```vim
+plugpac#Begin({
+  status_open: 'vertical',
+  verbose: 2,
+})
+```
 
 ---
 
@@ -302,6 +329,53 @@ vim-codefmt 插件在 vim 中使用，就两个主要命令:
 1. **:FormatLines**: 格式化某些行代码
 
 2. **:FormatCode**：格式化整页代码
+
+#### Neoformat
+
+[neoformat](https://github.com/sbdchd/neoformat) 同样也是一款优秀的格式化插件。
+
+这个比 google 的 [vim-codefmt](#vim-codefmt) 好用，支持的编程语言及各编程语言主流的多款格式化器也支持，可以说格式化支持上非常地 [全面](#^neoformat-support-list)，而且配置上也比 vim-codefmt 要简单，而且依赖也没有。
+
+支持列表：[supported-filetypes](https://github.com/sbdchd/neoformat#supported-filetypes) ^neoformat-support-list
+
+安装很简单：
+
+```vim
+Plug 'sbdchd/neoformat'
+```
+
+可以配置格式化器及为编程语言指定格式化器，示例：
+
+```vim
+g:neoformat_python_black = {                                                                                            
+   'exe': 'black',
+   'args': ['-S'],
+   'replace': 1
+}
+# g:neoformat_enabled_python = ['black', 'autopep8', 'yapf', 'docformatter']
+g:neoformat_enabled_python = ['black']
+
+# shell
+g:neoformat_sh_shfmt = {
+  'exe': 'shfmt',
+  'args': ['-i', '0', '-sr', '-ci'],
+}
+
+```
+
+> [!tip] 
+> 
+> 如果像 [Shell](../Linux/Shell_Note.md) 只有一个默认格式化器 [shfmt](../Linux/Shell_Note.md#shfmt)，可以只设置 shfmt，不用再 `enabled` 了。
+
+> [!info] 相关资料
+> 
+> * [Vim 安装程序 · Prettier 中文网](https://prettier.nodejs.cn/docs/en/vim.html)
+
+###### 格式化命令
+
+* `:Neoformat` 使用默认格式化器来格式化当前文件。
+* `:Neoformat! python`：为当前文件指定编程语言进行格式化，使用的是该语言的默认或已配置过的格式化器。
+* `:Neoformat! python yapf`：为当前文件指定编程语言及格式化器进行格式化。
 
 ### <span id="vimplugin_comment">注释插件</span>
 

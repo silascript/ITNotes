@@ -5,7 +5,7 @@ tags:
   - vimscript
   - vim9
 created: 2024-03-14 05:29:40
-modified: 2024-03-19 23:20:47
+modified: 2024-03-22 17:25:19
 ---
 
 # vimscript9 笔记
@@ -15,6 +15,12 @@ modified: 2024-03-19 23:20:47
 ## 目录
 
 * [函数](#函数)
+
+---
+
+## vim9 的性能
+
+[vim9 faster-vim-script](https://github.com/vim/vim/blob/master/README_VIM9.md#1-faster-vim-script)
 
 ---
 

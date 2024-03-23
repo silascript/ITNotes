@@ -7,7 +7,7 @@ tags:
   - tutorial
   - list
 created: 2023-02-12 11:23:37
-modified: 2024-02-15 18:34:05
+modified: 2024-03-22 17:46:35
 ---
 
 # Python 视频清单
@@ -20,6 +20,7 @@ modified: 2024-02-15 18:34:05
 * [python速成教程——5天魔鬼训练营从入门到精通（完整版）](https://www.bilibili.com/video/BV1vN4y1d7Ri)
 * [【10天Python打基础】专为"非计算机专业和编程困难户"制作的10天Python基础教程](https://www.bilibili.com/video/BV1tt421H7zX)
 * [漫画Python](https://www.bilibili.com/video/BV1sA411674Q)
+* [尚硅谷2024最新版Python视频教程](https://www.bilibili.com/video/BV1eZ421b7ag)
 * [2023最新版动画Python](https://www.bilibili.com/video/BV1Bm4y1P7gE)
 * [2023 高淇 Python 教程 ](https://www.bilibili.com/video/BV1Jm4y1W7aC)
 * [常用模块](https://www.bilibili.com/video/BV12m4y1m7aL)

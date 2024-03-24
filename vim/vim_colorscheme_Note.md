@@ -7,7 +7,7 @@ tags:
   - colorscheme
   - list
 created: 2023-08-18 19:44:52
-modified: 2024-03-20 02:21:02
+modified: 2024-03-24 00:54:25
 ---
 # vim 配色笔记
 
@@ -210,6 +210,22 @@ let g:airline_theme = 'material'
 另一个库：[nord.nvim](https://github.com/shaunsingh/nord.nvim) 这个在 neovim 下才显示正常。
 
 ![nord.nvim preview](https://user-images.githubusercontent.com/71196912/128029391-ad55fd41-d5f9-43bd-a795-c11b562f9d6d.jpg)
+
+---
+
+### <span id="vim_colorscheme_recommend_everforest">everforest</span>
+
+[everforest](https://github.com/sainnhe/everforest) 同样也是非常经典的配色。
+
+![everforest screenshot 1](https://user-images.githubusercontent.com/37491630/206063921-58418bb0-7752-43f3-9f3b-f3752f8ee753.png)
+
+---
+
+### <span id="vim_colorscheme_recommend_papercolor">papercolor</span>
+
+[papercolor-theme](https://github.com/NLKNguyen/papercolor-theme)
+
+![papercolor screenshot](https://camo.githubusercontent.com/73cceafdb27e465cb991a047ffc34440bc8c4aa746a3c4239f5cd96d369135bc/68747470733a2f2f6e6c6b6e677579656e2e66696c65732e776f726470726573732e636f6d2f323031352f30352f632d6461726b2d73706c69742e706e67)
 
 ---
 

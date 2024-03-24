@@ -905,5 +905,5 @@ yay -S community/rabbitvcs-nautilus
 
 ## <span id="git_resources">Git 相关资源</span>
 
-* [Git 教程资源笔记](./Git_Tutorial.md)
+* [Git 教程资源笔记](Git_Videos.md)
 

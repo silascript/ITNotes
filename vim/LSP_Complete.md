@@ -7,7 +7,7 @@ tags:
   - complete
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2024-03-23 20:31:09
+modified: 2024-03-24 01:46:41
 ---
 
 # LSP 及补全相关
@@ -1074,7 +1074,44 @@ ultisnips 外部依赖 Python,这有点违反 easycomplete 这个框架的「极
 此框架内置了路径、文件补全，非常方便。
 此框架应该是补全框架中的一股「清流」。
 
+简单设置：
+
+```vim
+# easycomplete 插件配置
+var easyc_result = commands_basic.ExistPlug('jayli/vim-easycomplete')
+if easyc_result == 1
+	# 样式： 自带四种样式：dark, light, rider, sharp
+	g:easycomplete_scheme = "sharp"
+
+	# 使用nerd字体
+	g:easycomplete_nerd_font = 1
+
+	g:easycomplete_cursor_word_hl = 1
+
+	# 关闭检测提示
+	g:easycomplete_diagnostics_enable = 0                                                                                   
+	g:easycomplete_lsp_checking = 0
+
+endif
+
+```
+
 #### 问题
+
+##### 诊断检测提示
+
+easycomplete 会对 lsp 等进行诊断检测，会出现「`you should set diagnostic jumping map-key manully.`」之类的提示。
+
+觉得烦的，可以将其关闭：
+
+```vim
+let g:easycomplete_diagnostics_enable = 0
+let g:easycomplete_lsp_checking = 0
+```
+
+> [!info] 相关资料
+> 
+> * [如何关闭警告提示 · Issue #131 · jayli/vim-easycomplete · GitHub](https://github.com/jayli/vim-easycomplete/issues/131)
 
 ##### snippet 重复
 

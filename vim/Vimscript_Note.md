@@ -2,7 +2,7 @@
 aliases: []
 tags: []
 created: 2023-08-18 19:44:52
-modified: 2024-03-14 05:57:27
+modified: 2024-03-25 00:05:53
 ---
 # vimscript 笔记
 ---
@@ -22,6 +22,29 @@ modified: 2024-03-14 05:57:27
 ---
 
 ## <span id="viml_basic">基本语法</span>
+
+### <span id="viml_basic_type">类型</span>
+
+#### Boolean
+
+*零*表示 `FALSE`，*非零*表示 [TRUE](https://yianwillis.github.io/vimcdoc/doc/eval.html#TRUE)
+
+[Vimscript9](Vimscript9_Note.md) 中可以直接用 `true` 和 `false` 表示。
+
+#### list
+
+list 是列表，使用中括号 `[]` 表示。
+
+##### 索引
+
+列表使用索引值来取列表中的元素。
+
+* `0`：索引会下是取列表第一个元素。
+* `-1`：索引值是取列表最后一个元素。
+
+#### 字典
+
+字典是「键 - 值对」，使用大括号 `{}` 表示。如 `{age: 20, name: 'tom'}`
 
 ### <span id="viml_basic_compare">比较</span>
 
@@ -91,7 +114,46 @@ modified: 2024-03-14 05:57:27
 
 > 要允许命令把参数传送给用户定义的函数，有一种特殊的形式 `<f-args> ("function args"，函数参数)`。它在空格和制表处分割命令行参数，每个参数分别用引号括起，然后把 `<f-args>` 序列替换为括起参数用逗号分隔的列表。参考下面的 Mycmd 示例。没有参数时，`<f-args>` 被删除。  要在 `<f-args>` 的参数中嵌入空白字符，在前面加上反斜杠。`<f-args>` 把每对反斜杠 （`\`） 用单个反斜杠替代。反斜杠后如跟非空白或反斜杠字符，保持不变。
 
-## <span id="viml_comuse_functions">常用函数</span>
+## <span id="viml_comuse_functions">常用内置函数</span>
+
+> [!info] 内置函数文档
+> 
+> * [VIM 中文帮助: 内建函数](https://yianwillis.github.io/vimcdoc/doc/builtin.html#builtin-function-list)
+
+### exists
+
+>[!info] 
+>
+> exists(`{expr}`) 数值 如果 `{expr}` 存在则为 [true](#Boolean)。
+
+### get
+
+`get()` 函数可以非常「优雅」地判断某变量是否存在，如果不存在便赋上一个默认值
+
+> [!info] 官方文档
+> 
+> get(`{dict}`, `{key}` [, `{default}`]) 获取 [Dictionary](https://yianwillis.github.io/vimcdoc/doc/eval.html#Dictionary) `{dict}` 键为 `{key}` 的项目。如果不存在此项目， 返回 `{default}`。如果省略 `{default}`，返回零。有用的例子: `let val = get(g:, 'var_name', 'default')` 如果 g:var_name 存在，返回它的值，如果不存在返回 `'default'`。
+>
+
+> [!example] 
+> 
+> `let g:colors_name = get(g:, 'colors_name', "default")`
+> 
+> 这是判断当前是否设置了 colorscheme，如果没有就设置为 `default`。
+ 
+ 这句配置最后加到基础配置中，防止如设置第三方配色时，如以下配置：
+
+### <span id="viml_comuse_functions_list">列表函数</span>
+
+#### add
+
+`add(列表, 元素)`：为一个列表添加一个元素。
+
+```vim
+var alist = [] 
+add(alist, 'foo')
+add(alist, 'bar')
+```
 
 ### <span id="viml_comuse_functions_string">字符串相关函数</span>
 
@@ -157,7 +219,37 @@ modified: 2024-03-14 05:57:27
 >		也可用作 |method|: >
 >			GetText()->strpart(5)
 
+#### split
+
+split(字符串，[分隔符])：将一个字符串按给定的分隔符切割成一个 [list](#list)。如果第二个参数，即分隔符不给，将以空白为分隔符切割。 
+
 ### <span id="viml_comuse_functions_file">文件相关函数</span>
+
+#### glob
+
+`glob(字符串, bool, bool)`：查找参数给的字符串匹配的文件，如 `glob("*.java")`。
+
+第二个参数是一个 [Boolean](#Boolean) 类型，可以给 `true` 或 `false`，也可以给 `0` 和 `1`。
+> [!tip] 
+> 
+> 建议还是给 `true` 或 `false`，语义性更明确，也符合 [Vimscript9](Vimscript9_Note.md) 的风格。
+这个参数如果为 `true`，将忽略匹配 [wildignore](https://yianwillis.github.io/vimcdoc/doc/options.html#'wildignore') 「文件模式的列表」所设定的忽略模式及 [suffixes](https://yianwillis.github.io/vimcdoc/doc/options.html#'suffixes') 所设定的后缀名文件。
+> [!info] 
+> `wildignore` 默认没设定，是个空字符串。这跟文件或目录补全相关的。`:set wildignore=*.o,*.pyc`，如这样设置后，补全将不会搜索 `.o`、`.pyc` 文件。
+> 
+> `suffixes` 默认是 `.bak`,`~`,`.o`,`.h`,`.info`,`.swp`,`.obj`
+
+其实这参数给 `true` 或 `false` 都有时其实是无所谓的。如果需求明确了要找某个类型的文件，只要在第一个参数中字符串中给包含查找文件的后缀，那这个参数是否忽略某些文件就显得不是那么重要。
+
+第三个参数如果不给或给个 `false`，就会返回一个字符串，如果给个 `true`，就会返回一个 [list](#list)。
+
+#### globpath
+
+`globpath(路径字符串，匹配字符串, bool, bool)` 与 [glob](#glob) 差不多，也是通过字符串找匹配文件的。
+
+区别是，它把*目录路径字符串*与*匹配字符串*分成两参数。
+
+第三、四个参数与 [glob](#glob) 函数的第二、三个参数一致。
 
 #### expand()
 

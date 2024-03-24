@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2024-03-11 05:34:38
+modified: 2024-03-24 05:27:49
 ---
 # Shell 笔记
 
@@ -448,6 +448,12 @@ local account=${core_address%%/*}
 local p_name=${core_address##*/}
 
 ```
+
+> [!tip] 
+> 
+> 从左往右，`*` 与 `#` 在一起，而且 `*` 总在左边
+> 
+> 从右往左，`*` 与 `#` 总被分隔符分离，`*` 总在右边。
 
 ---
 

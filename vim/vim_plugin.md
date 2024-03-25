@@ -9,7 +9,7 @@ tags:
   - vim-plugin
   - list
 created: 2023-01-30 11:19:11
-modified: 2024-03-25 03:34:11
+modified: 2024-03-25 04:25:57
 ---
 
 # vim 常用插件清单
@@ -180,9 +180,12 @@ plugpac#End()
 ```vim
 plugpac#Begin({
   status_open: 'vertical',
+  progress_open: 'vertical',
   verbose: 2,
 })
 ```
+
+Plugpac 是基于 [minpac](https://github.com/k-takata/minpac) 的，所以很多设置得查询 minpac。
 
 ---
 

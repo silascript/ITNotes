@@ -2,7 +2,7 @@
 aliases: []
 tags: []
 created: 2023-08-18 19:44:52
-modified: 2024-03-25 00:05:53
+modified: 2024-03-26 01:02:32
 ---
 # vimscript 笔记
 ---
@@ -25,15 +25,19 @@ modified: 2024-03-25 00:05:53
 
 ### <span id="viml_basic_type">类型</span>
 
+#### number
+
+[Vim](Vim_Note.md) 中所有的类型的数字都使用 `number` 来表示。
+
 #### Boolean
 
 *零*表示 `FALSE`，*非零*表示 [TRUE](https://yianwillis.github.io/vimcdoc/doc/eval.html#TRUE)
 
 [Vimscript9](Vimscript9_Note.md) 中可以直接用 `true` 和 `false` 表示。
 
-#### list
+#### List
 
-list 是列表，使用中括号 `[]` 表示。
+List 是列表，使用中括号 `[]` 表示。使用 `list` 来表示。
 
 ##### 索引
 
@@ -42,9 +46,17 @@ list 是列表，使用中括号 `[]` 表示。
 * `0`：索引会下是取列表第一个元素。
 * `-1`：索引值是取列表最后一个元素。
 
-#### 字典
+#### dictionary
 
-字典是「键 - 值对」，使用大括号 `{}` 表示。如 `{age: 20, name: 'tom'}`
+dictionary，字典是「键 - 值对」，使用大括号 `{}` 表示。如 `{age: 20, name: 'tom'}`。使用 `dict` 表示。
+
+#### string
+
+`string` 表示字符串。
+
+#### Blob
+
+`blob` 是一个二进行对象。
 
 ### <span id="viml_basic_compare">比较</span>
 
@@ -126,7 +138,15 @@ list 是列表，使用中括号 `[]` 表示。
 >
 > exists(`{expr}`) 数值 如果 `{expr}` 存在则为 [true](#Boolean)。
 
-### get
+### empty()
+
+`empty()` 函数，可以用来判断 [List](#list)、[dictionary](#dictionary)、[string](#string)、[number](#number)，甚至 [Boolean](#Boolean) 是否为空。
+
+> 如果 [List](https://yianwillis.github.io/vimcdoc/doc/eval.html#List) 很大，这比把长度和零比较要快得多。
+
+这文档中的说法，就是让用户优先使用 `empty()` 来判断列表是否为空，而不是使用 [len()](#len()) 函数获取列表长度后再与 `0` 作比较，这样写法，即不高效也不优雅。
+
+### get()
 
 `get()` 函数可以非常「优雅」地判断某变量是否存在，如果不存在便赋上一个默认值
 
@@ -135,17 +155,15 @@ list 是列表，使用中括号 `[]` 表示。
 > get(`{dict}`, `{key}` [, `{default}`]) 获取 [Dictionary](https://yianwillis.github.io/vimcdoc/doc/eval.html#Dictionary) `{dict}` 键为 `{key}` 的项目。如果不存在此项目， 返回 `{default}`。如果省略 `{default}`，返回零。有用的例子: `let val = get(g:, 'var_name', 'default')` 如果 g:var_name 存在，返回它的值，如果不存在返回 `'default'`。
 >
 
-> [!example] 
-> 
-> `let g:colors_name = get(g:, 'colors_name', "default")`
-> 
-> 这是判断当前是否设置了 colorscheme，如果没有就设置为 `default`。
- 
- 这句配置最后加到基础配置中，防止如设置第三方配色时，如以下配置：
+### len()
+
+`len()` 函数可以检测出 [List](#List)、[string](#string)、[dictionary](#dictionary) 还有 [Blob](#Blob) 的「长度」-- 对于 [List](#List)、[dictionary](#dictionary) 来说是其元素的个数，而 [Blob](#Blob) 就是其字节数。
+
+如果用来检测字符串长度，返回的字节数与 [strlen()](#strlen()) 函数相同。
 
 ### <span id="viml_comuse_functions_list">列表函数</span>
 
-#### add
+#### add()
 
 `add(列表, 元素)`：为一个列表添加一个元素。
 

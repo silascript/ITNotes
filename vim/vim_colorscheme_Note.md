@@ -7,7 +7,7 @@ tags:
   - colorscheme
   - list
 created: 2023-08-18 19:44:52
-modified: 2024-03-24 00:54:25
+modified: 2024-03-25 18:50:26
 ---
 # vim 配色笔记
 
@@ -219,6 +219,34 @@ let g:airline_theme = 'material'
 
 ![everforest screenshot 1](https://user-images.githubusercontent.com/37491630/206063921-58418bb0-7752-43f3-9f3b-f3752f8ee753.png)
 
+可以进行一些设置：
+
+```vim
+# everforest
+var everforest_result = commands_basic.ExistPlug('sainnhe/everforest')
+if everforest_result == 1
+  try
+    # 检测当前 colorscheme  
+    if g:colors_name ==? 'everforest'
+      # Available values: 'hard', 'medium'(default), 'soft'
+      # g:everforest_background = 'soft'
+      g:everforest_background = 'medium'
+      # For better performance
+      # g:everforest_better_performance = 1
+    endif
+  catch
+  endtry
+endif
+```
+
+---
+
+### <span id="vim_colorscheme_recommend_tokyonightnoir">tokyonightnoir</span>
+
+[tokyonightnoir-vim](https://github.com/timmajani/tokyonightnoir-vim) 
+
+![tokyonightnoir screenshot](https://raw.githubusercontent.com/ghifarit53/tokyonight-vim/master/pictures/screenshot.png)
+
 ---
 
 ### <span id="vim_colorscheme_recommend_papercolor">papercolor</span>
@@ -226,6 +254,16 @@ let g:airline_theme = 'material'
 [papercolor-theme](https://github.com/NLKNguyen/papercolor-theme)
 
 ![papercolor screenshot](https://camo.githubusercontent.com/73cceafdb27e465cb991a047ffc34440bc8c4aa746a3c4239f5cd96d369135bc/68747470733a2f2f6e6c6b6e677579656e2e66696c65732e776f726470726573732e636f6d2f323031352f30352f632d6461726b2d73706c69742e706e67)
+
+---
+
+### <span id="vim_colorscheme_recommend_base16">base16</span>
+
+[base16-vim](https://github.com/tinted-theming/base16-vim) 这是一个配色「小集合」，有**200**种配色样式可选。
+
+![base16 screenshot 1](https://github.com/tinted-theming/base16-vim/raw/main/screenshots/base16-vim-screenshot-horizon-dark.png)
+
+![base16 screenshot 1](https://github.com/tinted-theming/base16-vim/raw/main/screenshots/base16-vim-screenshot-onedark.png)
 
 ---
 

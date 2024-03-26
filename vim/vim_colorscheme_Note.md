@@ -7,7 +7,7 @@ tags:
   - colorscheme
   - list
 created: 2023-08-18 19:44:52
-modified: 2024-03-25 18:50:26
+modified: 2024-03-26 11:18:47
 ---
 # vim 配色笔记
 
@@ -264,6 +264,8 @@ endif
 ![base16 screenshot 1](https://github.com/tinted-theming/base16-vim/raw/main/screenshots/base16-vim-screenshot-horizon-dark.png)
 
 ![base16 screenshot 1](https://github.com/tinted-theming/base16-vim/raw/main/screenshots/base16-vim-screenshot-onedark.png)
+
+预览：[base16-gallery](https://tinted-theming.github.io/base16-gallery/)
 
 ---
 

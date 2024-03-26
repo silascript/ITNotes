@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2024-03-22 06:35:31
+modified: 2024-03-26 20:35:10
 ---
 
 # NeoVim 笔记
@@ -1707,6 +1707,40 @@ telescope 主配置文件：
 [lspkind.nvim](https://github.com/onsails/lspkind.nvim) 为 [补全插件](#补全插件) 的候选菜单中添加图标。
 
 ![lspkind.nvim screenshot](https://github.com/onsails/lspkind-nvim/raw/images/images/screenshot.png)
+
+---
+
+### <span id="nvim_plugins_cursorword">高亮单词</span>
+
+#### stcursorword
+
+[stcursoword](https://github.com/sontungexpt/stcursorword) 是一个高亮光标所在单词的小插件。
+
+经过使用 [nvim-cursorline](https://github.com/yamatsum/nvim-cursorline) 这插件会莫名其妙失效，而 stcursorword 这插件确正常工作。
+
+简单配置：
+
+```lua
+ -- stcursorword
+{
+	"sontungexpt/stcursorword",
+	event = "VeryLazy",
+	enabled =true,
+	config = function()
+		require("stcursorword").setup(
+			{
+				min_word_length = 2,
+				max_word_length = 50
+			}
+		)
+	end
+}
+```
+
+##### 类似插件
+
+* [nvim-cursorword](https://github.com/xiyaowong/nvim-cursorword)
+* [nvim-cursorline](https://github.com/yamatsum/nvim-cursorline)
 
 ---
 

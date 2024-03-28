@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2024-03-26 20:35:10
+modified: 2024-03-28 20:23:16
 ---
 
 # NeoVim 笔记
@@ -628,6 +628,39 @@ center = {
 		require'alpha'.setup(require'alpha.themes.startify'.config)
 	end
 };
+```
+
+配置一定的样式：
+
+```lua
+-- alpha-nvim
+{
+	"goolord/alpha-nvim",
+	dependencies = {"nvim-tree/nvim-web-devicons"},
+	enabled = true,
+	-- enabled = false,
+	event = {"VimEnter"},
+	config = function()
+		local alpha = require "alpha"
+
+		-- 不同的样式：dashboard startify
+		-- 对样式什么都不配置，可以直接将样式加入到setup中
+		-- require "alpha".setup(require "alpha.themes.startify".config)
+		-- require "alpha".setup(require'alpha.themes.dashboard'.config)
+
+		-- 对样式进行设置
+		-- local dashboard = require "alpha.themes.dashboard"
+		local startify = require "alpha.themes.startify"
+		-- 设置 header
+		-- 使用到了figlet
+		startify.section.header.val = vim.split(vim.fn.system("figlet -f 'ANSI Shadow' 'HELLO NVIM' "), "\n")
+		-- dashboard.section.header.val = {"NEOVIM"}
+
+		-- 加载样式配置
+		-- alpha.setup(dashboard.config)
+		alpha.setup(startify.config)
+	end
+}
 ```
 
 #### startup.nvim
@@ -1707,6 +1740,53 @@ telescope 主配置文件：
 [lspkind.nvim](https://github.com/onsails/lspkind.nvim) 为 [补全插件](#补全插件) 的候选菜单中添加图标。
 
 ![lspkind.nvim screenshot](https://github.com/onsails/lspkind-nvim/raw/images/images/screenshot.png)
+
+#### nvim-colorizer
+
+[nvim-colorizer.lua](https://github.com/NvChad/nvim-colorizer.lua) 这是高亮颜色代码的小插件。
+
+![nvim-colorizer screenshot](https://raw.githubusercontent.com/norcalli/github-assets/master/nvim-colorizer.lua-demo-short.gif)
+
+简单配置：
+
+```lua
+{
+	"NvChad/nvim-colorizer.lua",
+	envent = {"BufPost"},
+	enabled = true,
+	config = function()
+		require("colorizer").setup(
+			{
+				-- 允许显示的文件类型
+				-- 还能单独谁每个文件类型设置不同的显示样式
+				-- 如果没有设置样式，将使用默认样式设置，即 user_default_options选项设置的样式
+				filetypes = {
+					"css",
+					"sass",
+					"javascript",
+					"html"
+					-- html = {mode = "foreground"}
+				},
+				-- 默认显示样式设置
+				user_default_options = {
+					-- 高亮的样式
+					-- background 代码背景色显示相应的颜色 这是默认
+					-- foreground 代码字体颜色显示相应的颜色
+					-- virtualtext 代码添加自定义虚拟文本以显示相应的颜色
+					-- virtualtext 还能自定义不同的 Unicode 文字。默认是 virtualtext = "■"
+					-- mode = "foreground"
+					-- https://symbl.cc/ 或 https://www.fuhaoku.net/ 找图形
+					-- virtualtext = "◉",
+					virtualtext = "●",
+					mode = "virtualtext"
+				}
+			}
+		)
+	end
+}
+```
+
+在命令行模式，还能使用 `ColorizerToggle` 命令临时对颜色高亮功能进行开启和关闭。
 
 ---
 

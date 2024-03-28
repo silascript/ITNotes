@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2024-03-28 20:23:16
+modified: 2024-03-29 03:13:21
 ---
 
 # NeoVim 笔记
@@ -1163,6 +1163,27 @@ nvim-treesitter 的命令都是以 `TS` 开头的。
 pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
 ```
 
+#### comment-box
+
+[comment-box](https://github.com/LudoPinelli/comment-box.nvim) 是一个加各样式注释的插件。
+
+![comment-box screenshot 1](https://raw.githubusercontent.com/LudoPinelli/comment-box.nvim/main/imgs/cb-quickstart.png)
+
+##### comment-box 命令
+
+![comment-box commands screenshot](https://raw.githubusercontent.com/LudoPinelli/comment-box.nvim/main/imgs/cb-nomenclature.png)
+
+命令都是以 `CB` 开头。包括 `CB` 这个命令起始部分，共有 5 个部分，最后一个「可选外」，其余都是「必选」。
+
+2. 一个字符，指的是那个「框框」（就是 comment-box 那个「box」）放置在页面的位置：`c` 是 center 中间；`l` 是 left 左边；`r` 是 right 右边。
+3. 一个字符代表的是文字的位置，同样有 `c`、`l` 和 `r`，另外还有个 `a` 是 adapted 自适应。
+4. 两种选项：`box` 和 `line`，即要么生成结果是个「框框」，要么就是条线。
+5. 最后一个部分是风格样式，是个数字，属于可选。 就是那些框框或线条是什么样式的，实线啊还是虚线什么的。这有 22 种 box 和 17 种 line 样式可选：[comment-box.nvim-catalog](https://github.com/LudoPinelli/comment-box.nvim#the-catalog)。
+
+> [!info] comment-box 相关资料
+> 
+> [comment-box.nvim-doc](https://github.com/LudoPinelli/comment-box.nvim/blob/main/doc/comment-box.txt)
+
 ---
 
 ### formatter.nvim
@@ -2151,6 +2172,14 @@ vim.cmd.colorscheme "gruvbox"
 * [从零开始配置vim(21)——lsp简介与treesitter 配置-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/2127555)
 * [Neovim 主题配置 - 知乎](https://zhuanlan.zhihu.com/p/438382701)
 * [nvim代码格式化插件formatter.nvim](https://blog.csdn.net/lxyoucan/article/details/120411901)
+* [懒惰的Neovim](https://xfyuan.github.io/2023/02/lazy-neovim/)
+
+---
+
+## 参考配置
+
+* [xfyuan/nvim](https://github.com/xfyuan/nvim)
+* [LintaoAmons/CoolStuffes](https://github.com/LintaoAmons/CoolStuffes)
 
 ---
 

@@ -7,7 +7,7 @@ tags:
   - complete
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2024-03-24 01:46:41
+modified: 2024-04-04 21:42:42
 ---
 
 # LSP 及补全相关
@@ -226,7 +226,11 @@ pip install -U setuptools
 
 ##### ruff-lsp
 
-[ruff-lsp](https://github.com/astral-sh/ruff-lsp)
+[ruff-lsp](https://github.com/astral-sh/ruff-lsp) 因为没有补全功能，所以应跟 Python 其他 LSP，如 [pyright](#pyright) 配合使用，而 ruff-lsp 主要用来诊断用的。（[ruff-lsp README neovim example](https://github.com/astral-sh/ruff-lsp#example-neovim)）
+
+#### 相关资料
+
+* [Neovim 配置 Python 开发环境](https://latexalpha.github.io/6b5bd4725b2c/#Neovim-%E9%85%8D%E7%BD%AE-Python-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83)
 
 ---
 
@@ -420,6 +424,30 @@ npm ERR! A complete log of this run can be found in: /home/silascript/nodejs/nod
 > 
 > * [Unable to update anymore · Issue #46 · Volcomix/500wallpaper · GitHub](https://github.com/Volcomix/500wallpaper/issues/46)
 > * [解决：ENOTEMPTY: directory not empty, rename ‘node_modules/webpack‘ -＞ ‘node_modules/.webpack-E4nb的三种方式](https://blog.csdn.net/weixin_43405300/article/details/131551355)
+
+---
+
+### <span id="lang_lsps_md">Markdown LSP</span>
+
+常见的 markdown LSP ，如 [markmark](../Editors/Editors_Note.md#markmark)、[marksman](../Editors/Editors_Note.md#LSP-marksman)，已在 [SublimeText](../Editors/Editors_Note.md#SublimeText) 中介绍了。
+
+#### markdown-oxide
+
+ #lsp #markdown
+
+[markdown-oxide](https://github.com/Feel-ix-343/markdown-oxide) 这是一个功能非常强的 LSP，比 [markmark](../Editors/Editors_Note.md#markmark)、[marksman](../Editors/Editors_Note.md#LSP-marksman) 都要强。
+
+安装：
+
+```shell
+yay -S markdown-oxide
+```
+
+如果本机已装有 [Cargo](../Rust/Rust_Note.md#rust_about_cargo)，可以通过 Cargo 来安装：
+
+```shell
+cargo install --locked --git https://github.com/Feel-ix-343/markdown-oxide.git markdown-oxide
+```
 
 ---
 

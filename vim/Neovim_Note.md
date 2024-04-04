@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2024-04-04 18:06:11
+modified: 2024-04-04 21:56:12
 ---
 
 # NeoVim 笔记
@@ -1524,32 +1524,141 @@ neovim 并没有自动补全功能，它的补全是通过 `omnifunc` 绑定来�
 -- nvim-lspconfig
 {
 	"neovim/nvim-lspconfig",
+	lazy = true,
+	event = {"BufReadPre", "BufNewFile"},
+	-- event = { "CursorHold", "CursorHoldI" },
 	config = function()
-		local lspconfig = require('lspconfig')
+		local lspconfig = require("lspconfig")
+
+		local capabilities = vim.lsp.protocol.make_client_capabilities()
+		capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 		-- local capabilities = require("cmp_nvim_lsp").default_capabilities()
-		--require('lspconfig').gopls.setup{}
-		--require('lspconfig').gopls.setup{}
-		lspconfig.clangd.setup{}
-		lspconfig.bashls.setup{}
-		lspconfig.lua_ls.setup{}
-		lspconfig.html.setup{}
-		lspconfig.cssls.setup{}
-		lspconfig.gopls.setup{}
-		lspconfig.tsserver.setup{}
-		-- lspconfig.jdtls.setup{ capabilities = capabilities }
-		lspconfig.jdtls.setup{}
-		lspconfig.ruff_lsp.setup{}
-		lspconfig.solargraph.setup{}
-		lspconfig.rust_analyzer.setup {
-		  settings = {
-			['rust-analyzer'] = {},
-		  },
+		lspconfig.clangd.setup {}
+		lspconfig.bashls.setup {}
+		lspconfig.lua_ls.setup {}
+
+		-- html css typescript
+		lspconfig.html.setup {
+			capabilities = capabilities
 		}
-	end,
+		lspconfig.cssls.setup {
+			capabilities = capabilities
+		}
+		lspconfig.tsserver.setup {}
 
-},
+		-- golang
+		lspconfig.gopls.setup {}
+		-- java
+		-- lspconfig.jdtls.setup{ capabilities = capabilities }
+		lspconfig.jdtls.setup {}
 
+		-- python
+		lspconfig.pyright.setup {
+			settings = {
+				pyright = {
+					-- Using Ruff's import organizer
+					disableOrganizeImports = true
+				},
+				python = {
+					analysis = {
+						-- Ignore all files for analysis to exclusively use Ruff for linting
+						ignore = {"*"}
+					}
+				}
+			}
+		}
 
+		-- local on_attach = function(client, bufnr)
+		--     if client.name == "ruff_lsp" then
+		--         -- Disable hover in favor of Pyright
+		--         client.server_capabilities.hoverProvider = false
+		--     end
+		-- end
+
+		-- 使用 ruff 或 ruff-lsp 来作python分析诊断
+		-- lspconfig.ruff.setup {}
+		lspconfig.ruff_lsp.setup {}
+
+		-- ruby
+		lspconfig.solargraph.setup {
+			-- root_dir = function(fname)
+			root_dir = function()
+				return vim.fn.getcwd()
+			end,
+			settings = {
+				solargraph = {}
+			}
+		}
+
+		-- markdown
+		-- lspconfig.marksman.setup {}
+		lspconfig.markdown_oxide.setup {
+			-- capabilities = capabilities,
+			root_dir = function()
+				return vim.fn.getcwd()
+			end,
+			option = {
+				keyword_pattern = [[\(\k\| \|\/\|#\)\+]]
+			}
+		}
+
+		-- rust
+		lspconfig.rust_analyzer.setup {
+			settings = {
+				["rust-analyzer"] = {}
+			}
+		}
+
+		--
+		-- vim.api.nvim_create_autocmd(
+		--     {"TextChanged", "InsertLeave", "CursorHold", "LspAttach"},
+		--     {
+		--         buffer = bufnr,
+		--         callback = vim.lsp.codelens.refresh
+		--     }
+		-- )
+
+		-- trigger codelens refresh
+		-- vim.api.nvim_exec_autocmds("User", {pattern = "LspAttached"})
+	end --config
+} --nvim-lspconfig
+
+```
+
+##### python lsp
+
+python lsp 上是使用 [pyright](LSP_Complete.md#pyright)+[ruff-lsp](LSP_Complete.md#ruff-lsp) 的组合。
+
+pyright 是用来补全代码，而 ruff-lsp 是用来当 linter 用的。具体配置如下：
+
+```lua
+-- python
+lspconfig.pyright.setup {
+	settings = {
+		pyright = {
+			-- Using Ruff's import organizer
+			disableOrganizeImports = true
+		},
+		python = {
+			analysis = {
+				-- Ignore all files for analysis to exclusively use Ruff for linting
+				ignore = {"*"}
+			}
+		}
+	}
+}
+
+-- local on_attach = function(client, bufnr)
+--     if client.name == "ruff_lsp" then
+--         -- Disable hover in favor of Pyright
+--         client.server_capabilities.hoverProvider = false
+--     end
+-- end
+
+-- 使用 ruff 或 ruff-lsp 来作python分析诊断
+-- lspconfig.ruff.setup {}
+lspconfig.ruff_lsp.setup {}
 ```
 
 #### lspsaga.nvim

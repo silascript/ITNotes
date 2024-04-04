@@ -8,7 +8,7 @@ tags:
   - scite
   - lsp
 created: 2023-01-30 11:19:11
-modified: 2024-02-29 11:27:44
+modified: 2024-04-04 18:45:34
 ---
 
 # 编辑器笔记
@@ -519,7 +519,7 @@ pip install ruff-lsp
 
 ###### markmark
 
-Sublime 要使用 markmark 这个 LSP，是没有对应的特定 LSClient，而是使用 [通用LSP](#通用LSP) 这个插件与 [markmark](https://github.com/nikku/markmark) 这个 LSP 来实现。
+Sublime 要使用 markmark 这个 LSP，是没有对应的特定 LSClient，而是使用 [通用LSP](#通用LSP) 这个插件与 [markmark](https://github.com/nikku/markmark) 这个 LSP 来实现。 #lsp 
 
 安装 markmark：
 
@@ -528,6 +528,8 @@ npm install -g markmark
 ```
 
 ###### LSP-marksman
+
+ #lsp #marksman
 
 [LSP-marksman](https://github.com/sublimelsp/LSP-marksman)  [![LSP-marksman Repo](https://img.shields.io/github/stars/sublimelsp/LSP-marksman?style=social
 )](https://github.com/sublimelsp/LSP-marksman) 这插件不用自己配置 Client 了。

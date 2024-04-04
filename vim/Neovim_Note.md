@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2024-04-04 21:56:12
+modified: 2024-04-04 23:41:46
 ---
 
 # NeoVim 笔记
@@ -843,6 +843,128 @@ center = {
 > [!info] 相关资料
 > 
 > * [状态栏 | LunarVim](https://www.lunarvim.org/zh-Hans/docs/master/configuration/appearance/statusline)
+
+#### lsp-progress
+
+[linrongbin16/lsp-progress.nvim](https://github.com/linrongbin16/lsp-progress.nvim) 这是一个在状态栏上显示 [LSP](LSP_Complete.md) 信息的插件，算是状态栏插件的补充的插件。 
+
+这插件与 [lualine.nvim](#lualine.nvim) 搭配使用，效果极佳！
+
+##### 安装和配置
+
+简单安装：
+
+```lua
+ "linrongbin16/lsp-progress.nvim",
+lazy = true,
+event = {"BufReadPost", "BufAdd", "BufNewFile"},
+config = function()
+	require("lsp-progress").setup()
+end
+```
+
+在 [lualine.nvim](#lualine.nvim) 中添加组件，不过不要直接加，得用个函数包一下。
+
+一般加在 lualine 的「c 位」，就是文件名那个位置：
+
+```lua
+require("lualine").setup({
+  sections = {
+    lualine_c = {
+      -- invoke `progress` here.
+      function()
+        return require('lsp-progress').progress()
+      end,
+    },
+    ...
+  }
+})
+
+```
+
+再在 lualine 中加个「监听」，随时刷新 LSP 信息：
+
+```lua
+-- listen lsp-progress event and refresh lualine
+vim.api.nvim_create_augroup("lualine_augroup", { clear = true })
+vim.api.nvim_create_autocmd("User", {
+  group = "lualine_augroup",
+  pattern = "LspProgressStatusUpdated",
+  callback = require("lualine").refresh,
+})
+```
+
+这样配后，此组件已经可以用了。不过只是在状态栏显示「LSP」字样，并不能显示更多的信息。如果想显示诸如 LSP 名称什么的，得进一样配置：
+
+```lua
+-- lsp-progress.nvim
+{
+	"linrongbin16/lsp-progress.nvim",
+	lazy = true,
+	event = {"BufReadPost", "BufAdd", "BufNewFile"},
+	config = function()
+		require("lsp-progress").setup(
+			{
+				client_format = function(client_name, spinner, series_messages)
+					if #series_messages == 0 then
+						return nil
+					end
+					return {
+						name = client_name,
+						body = spinner .. " " .. table.concat(series_messages, ", ")
+					}
+				end,
+				format = function(client_messages)
+					--- @param name string
+					--- @param msg string?
+					--- @return string
+					local function stringify(name, msg)
+						return msg and string.format("%s %s", name, msg) or name
+					end
+
+					local sign = "" -- nf-fa-gear \uf013
+					local lsp_clients = vim.lsp.get_active_clients()
+					local messages_map = {}
+					for _, climsg in ipairs(client_messages) do
+						messages_map[climsg.name] = climsg.body
+					end
+
+					if #lsp_clients > 0 then
+						table.sort(
+							lsp_clients,
+							function(a, b)
+								return a.name < b.name
+							end
+						)
+						local builder = {}
+						for _, cli in ipairs(lsp_clients) do
+							if type(cli) == "table" and type(cli.name) == "string" and string.len(cli.name) > 0 then
+								if messages_map[cli.name] then
+									table.insert(builder, stringify(cli.name, messages_map[cli.name]))
+								else
+									table.insert(builder, stringify(cli.name))
+								end
+							end
+						end
+						if #builder > 0 then
+							return sign .. " " .. table.concat(builder, ", ")
+						end
+					end
+					return ""
+				end
+			}
+		)
+	end
+}
+```
+
+以上配置就是只在状态栏显示 LSP 的名称。
+
+其他需求配置可以参考：[Advanced Configuration · linrongbin16/lsp-progress.nvim Wiki · GitHub](https://github.com/linrongbin16/lsp-progress.nvim/wiki/Advanced-Configuration)，常用配置可以直接拷过来用，非常方便。
+
+##### 类似插件
+
+* [arkav/lualine-lsp-progress](https://github.com/arkav/lualine-lsp-progress)
 
 #### linefly
 

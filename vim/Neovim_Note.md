@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2024-03-29 03:13:21
+modified: 2024-04-04 18:06:11
 ---
 
 # NeoVim 笔记
@@ -354,6 +354,27 @@ require('a.b1')
 
 * [Neovim 的快捷键配置](https://www.zhihu.com/tardis/zm/art/435680085?source_id=1005)
 
+### NVIM_APPNAME
+
+[nvim](https://neovim.io/) 0.9 版本加了一个东西：`NVIM_APPNAME`。
+
+这东西能使用 nvim 能实现不同配置的隔离。
+
+在 `.bashrc` 或 `.zshrc` 中添加以下类似的别名（`alias`）代码，就能让 nvim 拥有不同的配置版本。
+
+```sh
+# nvim 不同的配置
+alias tiny-nvim="NVIM_APPNAME=tiny-nvim nvim"
+```
+
+> [!info] 
+> 
+> `alias tiny-nvim` 这是声明一个 nvim 的别名，它不是简单的 `nvim` 的软连接更名，而是连配置文件都指向不同目录。
+> 
+> `NVIM_APPNAME=tiny-nvim` 是指定 `.local/share/` 目录下子目录为 `tiny-nvim`，即 nvim 的 [运行时目录](#运行时目录)，这在 `source` 完 `xxxrc`，别名生效后，第一次调用这个别名启动 nvim 时，系统自动为其生成对应的 [运行时目录](#运行时目录)，这示例中就会生成 `~/.local/share/tiny-nvim` 目录。
+> 
+> 而不同配置，也还得有不同的配置目录。这个目录就没有自动生成了，得自己手动创建。位置在 `~/.config/` 目录下，与 `nvim` 那个目录是同级。即这个配置的 nvim 与默认的 nvim 是兄弟关系。
+
 ---
 
 ## <span id="nvim_plugins">插件</span>
@@ -662,6 +683,84 @@ center = {
 	end
 }
 ```
+
+可以对 `header`、`footer` 等部分进行单独设置：
+
+```lua
+{
+	"goolord/alpha-nvim",
+	dependencies = {"nvim-tree/nvim-web-devicons"},
+	enabled = true,
+	-- enabled = false,
+	-- lazy = true,
+	event = {"VimEnter"},
+	config = function()
+		local alpha = require "alpha"
+
+		-- 不同的样式：dashboard startify
+		-- 对样式什么都不配置，可以直接将样式加入到setup中
+		-- require "alpha".setup(require "alpha.themes.startify".config)
+		-- require "alpha".setup(require'alpha.themes.dashboard'.config)
+
+		-- 对样式进行设置
+		-- local dashboard = require "alpha.themes.dashboard"
+		local startify = require "alpha.themes.startify"
+
+		-- 设置 header
+		-- header.val 接受的就是一个字典，以回车换行分隔的字符字典
+		-- 所以将 figlet生成的 ASII字符以回车换行符切割
+		-- startify.section.header.val = vim.split(vim.fn.system("figlet -f 'ANSI Shadow' 'HELLO NVIM' "), "\n")
+		local header_str = vim.split(vim.fn.system("figlet -f 'ANSI Shadow' 'HELLO NVIM' "), "\n")
+		startify.section.header.val = header_str
+		startify.section.header.opts.position = "center"
+
+		-- mru 设置
+		-- 把mru 或 mru_cwd 禁用
+		startify.section.mru_cwd.val = {{type = "padding", val = 0}}
+		-- startify.section.mru.val = {{type = "padding", val = 0}}
+
+		-- 加载样式配置
+		-- alpha.setup(dashboard.config)
+		alpha.setup(startify.config)
+
+		-- footer 设置
+		-- 使用回调函数
+		-- 因为需要获取插件相关信息
+		vim.api.nvim_create_autocmd(
+			"User",
+			{
+				callback = function()
+					local stats = require("lazy").stats()
+					local plugins_count = stats.loaded .. "/" .. stats.count
+					-- 获取启动时长
+					local stms = math.floor(stats.startuptime * 100) / 100
+					local fline1 = " " .. plugins_count .. " plugins loaded in " .. stms .. "ms"
+
+					startify.section.footer.val = {
+						{
+							type = "text",
+							-- val = "footer",
+							val = fline1,
+							opts = {
+								position = "center"
+								hl = "Number"
+							}
+						}
+					}
+					pcall(vim.cmd.AlphaRedraw)
+				end
+			}
+		)
+
+		end
+	}
+}
+
+```
+
+##### alpha 相关资料
+
+* [alpha-nvim-doc](https://github.com/goolord/alpha-nvim/blob/main/doc/alpha.txt)
 
 #### startup.nvim
 
@@ -1405,6 +1504,8 @@ dependencies = {
 
 ### <span id="nvim_plugins_lsp">LSP 插件</span>
 
+#### lspconfig
+
 neovim 本就已经内置了 LSP Client，只是配置麻烦，所以官方还弄了个插件：[nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) 来简化配置。
 
 > [!info] 相关资料
@@ -1845,6 +1946,61 @@ telescope 主配置文件：
 
 ---
 
+### <span id="nvim_plugins_codenavi">代码导航</span>
+
+#### nvim-navic
+
+[nvim-navic](https://github.com/SmiteshP/nvim-navic) 是一个以「面包屑」形式显示代码结构的小插件。
+
+![nvim-navic screenshot](https://user-images.githubusercontent.com/43147494/173186210-c8d689ad-1f8a-43cf-8125-127c7bd5be35.gif)
+
+简单配置：
+
+```lua
+
+{
+	"SmiteshP/nvim-navic",
+	dependencies = "neovim/nvim-lspconfig",
+	lazy = true,
+	event = {"BufReadPost"},
+	config = function()
+		local navic = require("nvim-navic")
+
+		vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+
+		-- local on_attach = function(client, bufnr)
+		--     if client.server_capabilities.documentSymbolProvider then
+		--         navic.attach(client, bufnr)
+		--     end
+		-- end
+
+		navic.setup(
+			{
+				lsp = {
+					auto_attach = true,
+					-- auto_attach = false,
+					-- on_attach = on_attach,
+					-- preference = {"clangd", "gopls"}
+					preference = {"ruff-lsp", "solargraph", "typescript-language-server", "bash-language-server"}
+				}
+			}
+		)
+	end
+}
+
+
+```
+
+> [!info] 
+>
+> 这插件是与 LSP 相关的，所以得依赖 [lspconfig](#lspconfig) 插件。
+> 
+> `vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"` 这句配置得加上，不然不生效。
+>
+> `preference` 这个配不配都行，这主要是对于一些有多个 [LSP](LSP_Complete.md) 时，指定优先使用的 LSP。
+
+---
+
 ### <span id="nvim_plugins_mark">标记</span>
 
 #### marks.nvim
@@ -1996,6 +2152,16 @@ require('lorem').setup({
 > * `:LoremIpsum short`：生成一个 3~20 句子的段落。
 
 段落长度属性值，是随机生成的句子长度，每种属性值有一个生成长度范围，如 `short`，就是 `3~29`。具体参考官方说明：[Lorem.nvim README sethencelength-property](https://github.com/derektata/lorem.nvim#the-sentencelength-property)
+
+---
+
+### 插件推荐清单
+
+一些网站整理的 nvim 插件推荐集。
+
+* [nvimluau.dev](https://nvimluau.dev/)
+* [Track Awesome Neovim (rockerBOO/awesome-neovim)](https://www.trackawesomelist.com/rockerBOO/awesome-neovim/)
+* [awesome-neovim - Github](https://github.com/rockerBOO/awesome-neovim)
 
 ---
 
@@ -2158,10 +2324,13 @@ vim.cmd.colorscheme "gruvbox"
 
 * [LazyVim](https://github.com/LazyVim)
 * [AstroNvim](https://astronvim.com/)
+* [LunarVim](https://github.com/lunarvim/lunarvim)
 
 ---
 
 ## neovim 相关资料
+
+### 各种配置资料
 
 * [nvim lua 指南 中文版](https://github.com/glepnir/nvim-lua-guide-zh)
 * [Neovim插件推荐&配置 - 哔哩哔哩](https://www.bilibili.com/read/cv22495061/)
@@ -2174,12 +2343,17 @@ vim.cmd.colorscheme "gruvbox"
 * [nvim代码格式化插件formatter.nvim](https://blog.csdn.net/lxyoucan/article/details/120411901)
 * [懒惰的Neovim](https://xfyuan.github.io/2023/02/lazy-neovim/)
 
+### 各种文档
+
+* [Lua-guide - Neovim docs](https://neovim.io/doc/user/lua-guide.html#lua-guide)
+
 ---
 
 ## 参考配置
 
 * [xfyuan/nvim](https://github.com/xfyuan/nvim)
 * [LintaoAmons/CoolStuffes](https://github.com/LintaoAmons/CoolStuffes)
+* [luyuhuang](https://github.com/luyuhuang/nvim)
 
 ---
 

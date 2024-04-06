@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-03-07 02:35:34
+modified: 2024-04-05 18:06:18
 ---
 # Linux 笔记
 
@@ -634,6 +634,8 @@ Linux 中使用的 GNU 版本的 grep ，可以直接通过 `-G`、`-E` 和 `-F`
 ### <span id="linux_textprocessing_awk">awk</span>
 
  #awk 
+
+awk 语法结构：`awk 'pattern {action} pattern {action}..' 文件`
 
 #### 列
 

@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2024-04-04 23:41:46
+modified: 2024-04-06 11:52:34
 ---
 
 # NeoVim 笔记
@@ -2175,6 +2175,28 @@ telescope 主配置文件：
 * [nvim-cursorword](https://github.com/xiyaowong/nvim-cursorword)
 * [nvim-cursorline](https://github.com/yamatsum/nvim-cursorline)
 
+#### sentiment
+
+[sentiment.nvim](https://github.com/utilyre/sentiment.nvim) 是一个高亮光标所在区块成对括号的插件。
+
+安装配置：
+
+```lua
+{
+  "utilyre/sentiment.nvim",
+  version = "*",
+  lazy = true,
+  event = {"BufReadPost", "BufAdd", "BufNewFile"},
+  opts = {
+    -- config
+  },
+  init = function()
+    -- `matchparen.vim` needs to be disabled manually in case of lazy loading
+    vim.g.loaded_matchparen = 1
+  end,
+}
+```
+
 ---
 
 ### <span id="nvim_plugins_codenavi">代码导航</span>
@@ -2229,6 +2251,43 @@ telescope 主配置文件：
 > `vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"` 这句配置得加上，不然不生效。
 >
 > `preference` 这个配不配都行，这主要是对于一些有多个 [LSP](LSP_Complete.md) 时，指定优先使用的 LSP。
+
+#### goto-preview
+
+[goto-preview](https://github.com/rmagatti/goto-preview) 一个代码预览插件。
+
+![goto-preview screenshot](https://github.com/rmagatti/readme-assets/raw/main/goto-preview-zoomed.gif)
+
+安装配置：
+
+```lua
+{
+	"rmagatti/goto-preview",
+	lazy = true,
+	event = {"BufReadPost"},
+	config = function()
+		require("goto-preview").setup {}
+	end
+}
+```
+
+不想自己配快捷键，就在配置里加 `default_mappings = true` 这句，使用默认定义的快捷键（[goto-preview mappings](https://github.com/rmagatti/goto-preview#%EF%B8%8F-mappings)）：
+
+```lua
+nnoremap gpd <cmd>lua require('goto-preview').goto_preview_definition()<CR>
+nnoremap gpt <cmd>lua require('goto-preview').goto_preview_type_definition()<CR>
+nnoremap gpi <cmd>lua require('goto-preview').goto_preview_implementation()<CR>
+nnoremap gpD <cmd>lua require('goto-preview').goto_preview_declaration()<CR>
+nnoremap gP <cmd>lua require('goto-preview').close_all_win()<CR>
+nnoremap gpr <cmd>lua require('goto-preview').goto_preview_references()<CR>
+```
+
+还能对预览窗口大小设置：
+
+```lua
+width = 80; 
+height = 15;
+```
 
 ---
 
@@ -2339,11 +2398,35 @@ telescope 主配置文件：
 
 ```
 
+`:WhichKey` 用来查询快捷键。
+
+ `:WhichKey` 默认有两个参数：
+
+1. 要查询的快捷键开头的字符串
+2. [模式](Vim_Note.md#vim_mode) 字符，用来限定只显示某模式的快捷键
+
 #### smartcolumn
 
 [smartcolumn](https://github.com/m4xshen/smartcolumn.nvim) 一个智能的边界插件。
 
 ![smartcolumn screenshot](https://user-images.githubusercontent.com/74842863/219844450-37d96fe1-d15d-4aaf-ae57-1c6ce66d8cbc.gif)
+
+#### colorful-winsep
+
+[colorful-winsep.nvim](https://github.com/nvim-zh/colorful-winsep.nvim) 是高亮当前 [窗口（Window）](vim常用操作.md#op_normal_windows) 的小插件。
+
+安装配置：
+
+```lua
+{
+	"nvim-zh/colorful-winsep.nvim",
+	lazy = true,
+	event = {"WinNew"},
+	config = function()
+		require("colorful-winsep").setup({})
+	end
+}
+```
 
 #### LoremIpsum
 
@@ -2566,6 +2649,7 @@ vim.cmd.colorscheme "gruvbox"
 * [nvim lua 指南 中文版](https://github.com/glepnir/nvim-lua-guide-zh)
 * [Neovim插件推荐&配置 - 哔哩哔哩](https://www.bilibili.com/read/cv22495061/)
 * [ADkun/lvim-config-suggest](https://github.com/ADkun/lvim-config-suggest/blob/main/README.md)
+* [NeoVim 插件推荐 - inner.ren](https://blog.innei.ren/nvim-plugin-recommend?locale=zh)
 * [nvim-lua-guide-zh: neovim指导nvim-lua-guide-zh](https://gitee.com/zhengqijun/nvim-lua-guide-zh)
 * [详解nvim内建LSP体系与基于nvim-cmp的代码补全体系 - 知乎](https://zhuanlan.zhihu.com/p/643033884)
 * [awesome-newvim](https://github.com/rockerBOO/awesome-neovim)

@@ -325,7 +325,7 @@ vim-codefmt 使用，此插件对于 C、C++、Java 语言，依赖 clang-format
 * HTML、CSS、SASS、LESS、JSON 用的是 nodejs 的 **js-beautify**
 * rust 用的是 rustfmt
 
-关于 clang-format 请参考：[clang-format](LSP_Complete.md#clang-format)。
+关于 clang-format 请参考：[clang-format](Vim_LSP_Complete.md#clang-format)。
 
 vim-codefmt 插件在 vim 中使用，就两个主要命令:
 
@@ -1156,4 +1156,4 @@ markdown 表格的对齐方式那个行的输入。
 
 ### <span id="lsp_complete">关于 LSP 及补全</span>
 
-[LSP及补全](./LSP_Complete.md)
+[LSP及补全](Vim_LSP_Complete.md)

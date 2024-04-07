@@ -8,7 +8,7 @@ tags:
   - scite
   - lsp
 created: 2023-01-30 11:19:11
-modified: 2024-04-04 18:45:34
+modified: 2024-04-08 01:10:49
 ---
 
 # 编辑器笔记
@@ -348,7 +348,7 @@ format_on_save":false,
 
 #### <span id="editors_sublime_plugins_lsp">LSP 相关</span>
 
-[关于LSP](../vim/LSP_Complete.md#about_lsp)
+[关于LSP](../Protocols/LSP_Note.md#about_lsp)
 
 Sublime 中装的 LSP 插件其实是 LSP 的 **Client**。而 **Server** 得根据需求在 Sublime 外的系统中安装。
 
@@ -446,11 +446,11 @@ Sublime LSP 与 Python 相关的有以下三个插件：
 },
 ```
 
-> [!info] pylsp 与 [pyright](../vim/LSP_Complete.md#pyright) 配合使用
+> [!info] pylsp 与 [pyright](../vim/Vim_LSP_Complete.md#pyright) 配合使用
 > 
 > 相关说明：[running alongside lsp-pyright](https://github.com/sublimelsp/LSP-pylsp#running-alongside-lsp-pyright)
 
-> [!info] pylsp 与 [ruff](../vim/LSP_Complete.md#ruff) 配合使用
+> [!info] pylsp 与 [ruff](../vim/Vim_LSP_Complete.md#ruff) 配合使用
 > 
 > pylsp 也能与 ruff 配合使用。其实就是把 ruff 当成 pylsp 的 linter，当下 ruff 的功能也是只能当 linter 使用。
 > 就一句设置：`pylsp.plugins.ruff.enabled`，即启用 ruff-- 默认 pylsp 使用的是 linter 是 `pycondestyle`。
@@ -513,23 +513,15 @@ pip install ruff-lsp
 ##### LSP-bash
 
 [LSP-bash](https://packagecontrol.io/packages/LSP-bash) [![LSP-bash Repo](https://img.shields.io/github/stars/sublimelsp/LSP-bash?style=social
-)](https://github.com/sublimelsp/LSP-bash) 是写 bash shell 很好的 lsp。这插件使用到 [bash-language-server](https://github.com/bash-lsp/bash-language-server)，所以得安装下：`npm i -g bash-language-server`。
+)](https://github.com/sublimelsp/LSP-bash) 是写 bash shell 很好的 lsp。这插件使用到 [bash-language-server](../Protocols/LSP_Note.md#bash-language-server) 所以得安装下：`npm i -g bash-language-server`。
 
 ##### Markdown
 
 ###### markmark
 
-Sublime 要使用 markmark 这个 LSP，是没有对应的特定 LSClient，而是使用 [通用LSP](#通用LSP) 这个插件与 [markmark](https://github.com/nikku/markmark) 这个 LSP 来实现。 #lsp 
-
-安装 markmark：
-
-```shell
-npm install -g markmark
-```
+Sublime 要使用 markmark 这个 LSP，是没有对应的特定 LSClient，而是使用 [通用LSP](#通用LSP) 这个插件与 [markmark](../Protocols/LSP_Note.md#markmark) 这个 LSP 来实现。 
 
 ###### LSP-marksman
-
- #lsp #marksman
 
 [LSP-marksman](https://github.com/sublimelsp/LSP-marksman)  [![LSP-marksman Repo](https://img.shields.io/github/stars/sublimelsp/LSP-marksman?style=social
 )](https://github.com/sublimelsp/LSP-marksman) 这插件不用自己配置 Client 了。
@@ -661,7 +653,7 @@ VSCode 主要有几个版本：
 * [Neovim_Note](../vim/Neovim_Note.md)
 * [Vim Plugin](../vim/vim_plugin.md)
 * [Vimscript 笔记](../vim/Vimscript_Note.md)
-* [LSP_Complete](../vim/LSP_Complete.md)
+* [Vim_LSP_Complete](../vim/Vim_LSP_Complete.md)
 
 ---
 
@@ -797,4 +789,5 @@ Geany 支持很多插件：[https://plugins.geany.org/](https://plugins.geany.or
 
 * [VSCode笔记](VSCode_Note.md)
 * [Vim笔记](../vim/Vim_Note.md)
+* [LSP笔记](../Protocols/LSP_Note.md)
 

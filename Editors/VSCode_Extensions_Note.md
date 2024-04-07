@@ -427,7 +427,7 @@ VSCode 已经内置了大名鼎鼎的 [Emmet](https://emmet.io) （[Emmet Wiki](
  npm install vls -g
  ```
 > Vue LSP 但能在 VSCode 使用，也能让其他编辑器使用，如 vim 等。  
-> 关于 [LSP](../vim/LSP_Complete.md#about_lsp)
+> 关于 [LSP](../vim/Vim_LSP_Complete.md#about_lsp)
 
 * vti  Terminal 接口
 

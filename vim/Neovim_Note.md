@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2024-04-07 20:40:20
+modified: 2024-04-08 01:14:10
 ---
 
 # NeoVim 笔记
@@ -846,7 +846,7 @@ center = {
 
 #### lsp-progress
 
-[linrongbin16/lsp-progress.nvim](https://github.com/linrongbin16/lsp-progress.nvim) 这是一个在状态栏上显示 [LSP](LSP_Complete.md) 信息的插件，算是状态栏插件的补充的插件。 
+[linrongbin16/lsp-progress.nvim](https://github.com/linrongbin16/lsp-progress.nvim) 这是一个在状态栏上显示 [LSP](Vim_LSP_Complete.md) 信息的插件，算是状态栏插件的补充的插件。 
 
 这插件与 [lualine.nvim](#lualine.nvim) 搭配使用，效果极佳！
 
@@ -1311,6 +1311,9 @@ nvim-treesitter 的命令都是以 `TS` 开头的。
 	config = function()
 		require("yanky").setup(
 			{
+				system_clipboard = {
+					sync_with_ring = false
+				},
 				highlight = {
 					on_put = true,
 					on_yank = true,
@@ -1798,7 +1801,7 @@ neovim 并没有自动补全功能，它的补全是通过 `omnifunc` 绑定来�
 
 ##### python lsp
 
-python lsp 上是使用 [pyright](LSP_Complete.md#pyright)+[ruff-lsp](LSP_Complete.md#ruff-lsp) 的组合。
+python lsp 上是使用 [pyright](Vim_LSP_Complete.md#pyright)+[ruff-lsp](Vim_LSP_Complete.md#ruff-lsp) 的组合。
 
 pyright 是用来补全代码，而 ruff-lsp 是用来当 linter 用的。具体配置如下：
 
@@ -1850,6 +1853,71 @@ lspconfig.ruff_lsp.setup {}
 > 
 > * [lspsaga doc](https://nvimdev.github.io/lspsaga/)
 
+#### trouble
+
+[trouble.nvim](https://github.com/folke/trouble.nvim) 一个诊断相关的插件。它能在下半部显示相关诊断信息，这跟 [VSCode](../Editors/Editors_Note.md#editors_vscode) 等编辑器类似。
+
+安装配置：
+
+```lua
+{
+	"folke/trouble.nvim",
+	dependencies = {"nvim-tree/nvim-web-devicons"},
+	lazy = true,
+	event = {"BufReadPost"},
+	config = function()
+		-- require("trouble").setup({
+		-- })
+		vim.keymap.set(
+			"n",
+			"<leader>xx",
+			function()
+				require("trouble").toggle()
+			end
+		)
+		vim.keymap.set(
+			"n",
+			"<leader>xw",
+			function()
+				require("trouble").toggle("workspace_diagnostics")
+			end
+		)
+		vim.keymap.set(
+			"n",
+			"<leader>xd",
+			function()
+				require("trouble").toggle("document_diagnostics")
+			end
+		)
+		vim.keymap.set(
+			"n",
+			"<leader>xq",
+			function()
+				require("trouble").toggle("quickfix")
+			end
+		)
+		vim.keymap.set(
+			"n",
+			"<leader>xl",
+			function()
+				require("trouble").toggle("loclist")
+			end
+		)
+		vim.keymap.set(
+			"n",
+			"gR",
+			function()
+				require("trouble").toggle("lsp_references")
+			end
+		)
+	end
+}
+```
+
+> [!info] 
+> 
+> 这插件配置主要就是配些快捷键，能快速查看相关的诊断信息。
+
 ---
 
 ### <span id="nvim_plugins_completion">补全插件</span>
@@ -1860,7 +1928,7 @@ lspconfig.ruff_lsp.setup {}
 
 ##### 补全源
 
-补全插件，本身是没有提供补全数据的，它补全的数据都是由补全源提供的。而补全源来源各异，有来自输入的缓存（Buffer），也有来自 [LSP](LSP_Complete.md)，或是来自 snippet 及其他各种补全插件，比如路径补全插件什么的，反正补全数据的来源五花八门，就看补全框架支持到什么程度。
+补全插件，本身是没有提供补全数据的，它补全的数据都是由补全源提供的。而补全源来源各异，有来自输入的缓存（Buffer），也有来自 [LSP](Vim_LSP_Complete.md)，或是来自 snippet 及其他各种补全插件，比如路径补全插件什么的，反正补全数据的来源五花八门，就看补全框架支持到什么程度。
 
 在 cmp 中，是在 `sources` 配置节点指定各种补全源。
 
@@ -2298,7 +2366,7 @@ telescope 主配置文件：
 > 
 > `vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"` 这句配置得加上，不然不生效。
 >
-> `preference` 这个配不配都行，这主要是对于一些有多个 [LSP](LSP_Complete.md) 时，指定优先使用的 LSP。
+> `preference` 这个配不配都行，这主要是对于一些有多个 [LSP](Vim_LSP_Complete.md) 时，指定优先使用的 LSP。
 
 #### goto-preview
 
@@ -2765,3 +2833,4 @@ vim.cmd.colorscheme "gruvbox"
 * [Vim视频清单](Vim_Videos.md)
 * [vim常用操作](vim常用操作.md)
 * [vimscript笔记](Vimscript_Note.md)
+* [LSP笔记](../Protocols/LSP_Note.md)

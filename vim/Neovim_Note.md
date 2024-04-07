@@ -2488,6 +2488,13 @@ height = 15;
 
 ---
 
+### <span id="nvim_plugins_git">git相关</span>
+
+
+
+
+---
+
 ### <span id="nvim_plugins_utils">小工具</span>
 
 #### which-key

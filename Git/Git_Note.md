@@ -4,7 +4,7 @@ tags:
   - git
   - github
 created: 2023-01-30 11:19:11
-modified: 2024-03-09 00:47:47
+modified: 2024-04-08 03:39:12
 ---
 # Git 笔记
 
@@ -868,6 +868,32 @@ github 已经不允许使用账号密码方式 pull 代码，可以使用 token�
 ---
 
 ## <span id="git_tools">Git 工具</span>
+
+### 命令行工具
+
+#### lazygit
+
+[lazygit](https://github.com/jesseduffield/lazygit) 是一个使用 [Go](../GoLang/GoLang_Note.md) 写的轻量级 git 终端图形化工具。
+
+![lazygit](https://github.com/jesseduffield/lazygit/raw/assets/demo/commit_and_push-compressed.gif)
+
+lazygit 界面自带中文，非常 nice。
+
+使用系统的包管理工具就能安装 lazygit：[lazygit installation](https://github.com/jesseduffield/lazygit#installation)。
+
+##### 配置
+
+配置文件路径：
+
+* Linux： `~/.config/lazygit/config.yml`
+* Windows：`%APPDATA%\lazygit\config.ym`
+
+可以在参考 [默认配置](https://gitcode.gitcode.host/docs-cn/lazygit-docs-cn/Config.html#%E9%BB%98%E8%AE%A4) 基础上，进行自行配置。其实大部分情况都不需求再配了。
+
+##### 相关资料
+
+* [配置 - LazyGit 中文文档](https://gitcode.gitcode.host/docs-cn/lazygit-docs-cn/Config.html)
+* [zen·工作环境搭建之git篇之Lazygit - 知乎](https://zhuanlan.zhihu.com/p/586776869)
 
 ### 图形界面工具
 

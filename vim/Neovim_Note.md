@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2024-04-06 11:52:34
+modified: 2024-04-07 20:40:20
 ---
 
 # NeoVim 笔记
@@ -1296,7 +1296,37 @@ nvim-treesitter 的命令都是以 `TS` 开头的。
 }
 ```
 
-### nvim-surround
+#### yanky
+
+[yanky.nvim](https://github.com/gbprod/yanky.nvim) 是一个复制增强插件。
+
+我装这插件主要是为了复制高亮这个功能，但实际上这个插件的功能不止复制高亮这点。
+
+```lua
+{
+	"gbprod/yanky.nvim",
+	dependencies = {"kkharji/sqlite.lua"},
+	lazy = true,
+	event = {"BufReadPost", "BufAdd", "BufNewFile"},
+	config = function()
+		require("yanky").setup(
+			{
+				highlight = {
+					on_put = true,
+					on_yank = true,
+					timer = 2500
+				}
+			}
+		)
+	end
+}
+```
+
+> [!info] 
+> 
+> `highlight` 中 `timer` 是高亮时值。
+
+#### nvim-surround
 
 [nvim-surround](https://github.com/kylechui/nvim-surround) 是大名鼎鼎的 [Surround](vim_plugin.md#Surround) 的 neovim 版本。
 
@@ -1404,6 +1434,24 @@ pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_
 > [!info] comment-box 相关资料
 > 
 > [comment-box.nvim-doc](https://github.com/LudoPinelli/comment-box.nvim/blob/main/doc/comment-box.txt)
+
+#### todo-comments
+
+[todo-comments.nvim](https://github.com/folke/todo-comments.nvim) 高亮注释关键字。
+
+![todo-comments screenshot](https://user-images.githubusercontent.com/292349/118135272-ad21e980-b3b7-11eb-881c-e45a4a3d6192.png)
+
+```lua
+{
+	"folke/todo-comments.nvim",
+	dependencies = {"nvim-lua/plenary.nvim"},
+	lazy = true,
+	event = {"BufReadPost", "BufAdd"},
+	config = function()
+		require("todo-comments").setup({})
+	end
+}
+```
 
 ---
 
@@ -2466,6 +2514,43 @@ require('lorem').setup({
 > * `:LoremIpsum short`：生成一个 3~20 句子的段落。
 
 段落长度属性值，是随机生成的句子长度，每种属性值有一个生成长度范围，如 `short`，就是 `3~29`。具体参考官方说明：[Lorem.nvim README sethencelength-property](https://github.com/derektata/lorem.nvim#the-sentencelength-property)
+
+#### smoothCursor
+
+[SmoothCursor](https://github.com/gen740/SmoothCursor.nvim) 一个光标移动特效插件。
+
+能在侧边栏使用小标志显示当前行。
+
+安装：
+
+```lua
+{
+	"gen740/SmoothCursor.nvim",
+	lazy = true,
+	event = {"BufReadPost", "BufAdd", "BufNewFile"},
+	config = function()
+		require("smoothcursor").setup()
+	end
+}
+```
+
+[SmoothCursor 相关命令](https://github.com/gen740/SmoothCursor.nvim#commands)
+
+#### Cybu
+
+[cybu](https://github.com/ghillb/cybu.nvim) 是一个快速切换 [buffer](Vim_Note.md#buffer) 的小插件。
+
+「Cy」：「Cycle」；「bu」：「Buffer」，顾名思义，就是循环切换 Buffer。
+
+通过使用这个插件，可以让 nvim 实现像 [VSCode](../Editors/Editors_Note.md#editors_vscode) 使用 `Ctrl+Tab` 快速标签一样，快速切换 [buffer](Vim_Note.md#buffer)。
+
+![cybu screenshot](https://user-images.githubusercontent.com/35503959/169406683-6fb0c4dd-2083-4b9b-87b2-3928da81d472.gif)
+
+安装：
+
+```lua
+
+```
 
 ---
 

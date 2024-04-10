@@ -4,7 +4,7 @@ tags:
   - vim
   - editor
 created: 2023-08-18 19:44:52
-modified: 2024-03-19 06:01:12
+modified: 2024-04-09 18:13:41
 ---
 # VIM 常用操作
 
@@ -387,6 +387,10 @@ vim -O 文档1 文档2 ....
 ```shell
 vim -p 文档1 文档2 ....
 ```
+
+##### 窗口相关资料
+
+* [5分钟学会 Vim 分屏操作 - 知乎](https://zhuanlan.zhihu.com/p/337157587)
 
 ---
 

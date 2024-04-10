@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2024-04-08 01:14:10
+modified: 2024-04-10 19:55:56
 ---
 
 # NeoVim 笔记
@@ -2488,10 +2488,7 @@ height = 15;
 
 ---
 
-### <span id="nvim_plugins_git">git相关</span>
-
-
-
+### <span id="nvim_plugins_git">git 相关</span>
 
 ---
 
@@ -2747,6 +2744,42 @@ vim.cmd.colorscheme "gruvbox"
 	end,
 }
 
+```
+
+#### bamboo
+
+[bamboo](https://github.com/ribru17/bamboo.nvim)
+
+![bamboo screenshot](https://private-user-images.githubusercontent.com/55766287/311408651-203a3dfb-26fb-45d3-ab55-36624e263b7d.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTI3NTAyODIsIm5iZiI6MTcxMjc0OTk4MiwicGF0aCI6Ii81NTc2NjI4Ny8zMTE0MDg2NTEtMjAzYTNkZmItMjZmYi00NWQzLWFiNTUtMzY2MjRlMjYzYjdkLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MTAlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDEwVDExNTMwMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTk4NzllZmE1YjNkYWQ4YjRmZDViNTVjNTllOGNjNDNiMTI1NGNhZTE5M2NlMWZkYzRkYjM2ZTU1MWMxN2EyYzQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.NAiRd79o81MrtCF8IYZ19ahvSnGioutZKCPa0uoQqzM)
+
+bamboo 这配色有一种第一次看见 [gruvbox](#gruvbox) 配色的感觉，给人一种很「稳」的感觉。
+
+```lua
+{
+	"ribru17/bamboo.nvim",
+	lazy = false,
+	priority = 1000,
+	config = function()
+		require("bamboo").setup(
+			{
+				-- Main options --
+				--  'vulgaris' (regular), 'multiplex' (greener) ,'light'
+				style = "vulgaris",
+				-- style = "multiplex",
+				-- 代码样式设置
+				code_style = {
+					keywords = {bold = true}
+				},
+				-- 高亮设置
+				highlights = {
+					-- 注释设为灰色
+					["@comment"] = {fg = "$grey"}
+				}
+			}
+		)
+		require("bamboo").load()
+	end
+}
 ```
 
 #### Base16

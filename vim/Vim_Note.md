@@ -9,7 +9,7 @@ tags:
   - nvim
   - lsp
 created: 2023-08-18 19:44:52
-modified: 2024-03-21 18:34:43
+modified: 2024-04-09 17:56:40
 ---
 
 # Vim 笔记
@@ -164,6 +164,7 @@ modified: 2024-03-21 18:34:43
 ## 相关资料
 
 * [VIM学习笔记 缓冲区 (Buffers) - 知乎](https://zhuanlan.zhihu.com/p/27616958)
+* [Just Vim It](https://vim.nauxscript.com/)
 
 ---
 

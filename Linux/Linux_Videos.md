@@ -7,7 +7,7 @@ tags:
   - tutorial
   - list
 created: 2023-08-18 19:44:52
-modified: 2024-02-28 04:30:42
+modified: 2024-04-09 17:17:24
 ---
 
 # Linux 视频清单
@@ -35,4 +35,5 @@ modified: 2024-02-28 04:30:42
 * [Linux高级程序设计](https://www.bilibili.com/video/BV1go4y1N7m3)
 * [B站唯一讲的最好的堡垒机教程](https://www.bilibili.com/video/BV1au411Y7Yx)
 * [图解Linux网络编程_select,poll,epoll原理和实践](https://www.bilibili.com/video/BV14z421d7sa)
+* [Linux内核/kernel技术专家教程，入门到进阶实战教程完整版全集通俗易懂](https://www.bilibili.com/video/BV14M4m1Q7qq)
 

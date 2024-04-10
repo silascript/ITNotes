@@ -4,7 +4,7 @@ tags:
   - git
   - github
 created: 2023-01-30 11:19:11
-modified: 2024-04-08 03:39:12
+modified: 2024-04-08 18:22:59
 ---
 # Git 笔记
 
@@ -894,6 +894,61 @@ lazygit 界面自带中文，非常 nice。
 
 * [配置 - LazyGit 中文文档](https://gitcode.gitcode.host/docs-cn/lazygit-docs-cn/Config.html)
 * [zen·工作环境搭建之git篇之Lazygit - 知乎](https://zhuanlan.zhihu.com/p/586776869)
+* [lazygit教程一 - 掘金](https://juejin.cn/post/7176182782035492923)
+
+#### git-delta
+
+[delta](https://github.com/dandavison/delta) 是一个终端下 git 对比工具。
+
+![delta screenshot](https://user-images.githubusercontent.com/52205/87230973-412eb900-c381-11ea-8aec-cc200290bd1b.png)
+
+安装，直接使用系统的包管理工具就能安装。
+
+> [!tip] delta install doc
+> 
+> [Installation - delta](https://dandavison.github.io/delta/installation.html)
+
+##### delta 配置
+
+delta 的配置是在 `.gitconfig` 配置文件中进行的。
+
+简单配了下：
+
+```gitconfig
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+	side-by-side = true
+    # delta detects terminal colors automatically; set one of these to disable auto-detection
+    # dark = true
+    light = false
+
+	line-numbers = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
+[delta "decorations"]
+    commit-decoration-style = blue ol
+    commit-style = raw
+    file-style = omit
+    hunk-header-decoration-style = blue box
+    hunk-header-file-style = red
+    hunk-header-line-number-style = "#067a00"
+    hunk-header-style = file line-number syntax
+```
+
+##### 相关资料
+
+* [git-delta 终端代码 diff 也很酷](https://www.bilibili.com/video/BV1Jo4y1N7fi)
 
 ### 图形界面工具
 

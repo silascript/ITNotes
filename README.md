@@ -91,6 +91,8 @@ modified: 2024-01-25 00:23:03
 ### 文本编辑器
 
 * [文本编辑器笔记](./Editors/Editors_Note.md)
+* [VSCode笔记](./Editors/VSCode_Note.md)
+* [VSCode扩展笔记](./Editors/VSCode_Extensions_Note.md)
 
 #### VIM 及 NeoVim
 

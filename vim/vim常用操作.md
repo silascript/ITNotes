@@ -4,7 +4,7 @@ tags:
   - vim
   - editor
 created: 2023-08-18 19:44:52
-modified: 2024-04-09 18:13:41
+modified: 2024-04-10 21:16:32
 ---
 # VIM 常用操作
 
@@ -137,9 +137,15 @@ modified: 2024-04-09 18:13:41
 
 `{`：	跳到上一个段落
 
-`Ctrl+f`：向下翻页
+### <span id="op_normal_page_mv">页面移动</span>
 
-`Ctrl+b`：向上翻页
+`Ctrl+u`：向上翻半页
+
+`Ctrl+d`：向下翻半页
+
+`Ctrl+b`：向上翻一页
+
+`Ctrl+f`：向下翻一页
 
 #### <span id="op_normal_paragraph_sp_mv">快速跳转</span>
 
@@ -745,6 +751,14 @@ endtry
 
 ---
 
+## 相关连接
+
+* [Vim Cheat Sheet](https://vim.rtorr.com/lang/zh_cn)
+* [VIM 中文帮助: 总览最常用的命令](https://yianwillis.github.io/vimcdoc/doc/quickref.html)
+* [Vim Commands | Vim.page](https://vim.page/vim-commands)
+
+---
+
 ## 其他相关笔记
 
 * [Vim笔记](Vim_Note.md)
@@ -754,11 +768,4 @@ endtry
 * [vimscript笔记](Vimscript_Note.md)
 * [vim配色笔记](vim_colorscheme_Note.md)
 * [Neovim笔记](Neovim_Note.md)
-
----
-
-## 相关连接
-
-* [Vim Cheat Sheet](https://vim.rtorr.com/lang/zh_cn)
-* [VIM 中文帮助: 总览最常用的命令](https://yianwillis.github.io/vimcdoc/doc/quickref.html)
 

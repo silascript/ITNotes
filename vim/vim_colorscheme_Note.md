@@ -7,7 +7,7 @@ tags:
   - colorscheme
   - list
 created: 2023-08-18 19:44:52
-modified: 2024-04-10 04:02:39
+modified: 2024-04-10 20:27:22
 ---
 # vim 配色笔记
 
@@ -279,6 +279,7 @@ endif
 
 * [vimcolorschemes](https://vimcolorschemes.com/)
 * [Vim colors | Generate your custom colorscheme](https://vimcolors.org/)
+* [best vim colorscheme](https://vim.page/best-vim-themes-color-schemes)
 
 ---
 

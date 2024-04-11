@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2024-04-10 19:55:56
+modified: 2024-04-11 10:27:54
 ---
 
 # NeoVim 笔记
@@ -2624,6 +2624,39 @@ require('lorem').setup({
 
 ```
 
+#### cursor.nvim
+
+[rasulomaroff/cursor.nvim](https://github.com/rasulomaroff/cursor.nvim) 是一个光标插件，可以对光标进行各种设置。
+
+nvim 默认光标是不闪烁的，而这个「特性」致使，使用过 nvim 后，连带当前的终端本来光标是闪的，也不闪了，这非常的愚蠢。
+
+而通过这个插件，能让 nvim 的光标闪烁起来，而且还能设置闪烁的频率：
+
+```lua
+{
+	"rasulomaroff/cursor.nvim",
+	config = function()
+		require("cursor").setup(
+			{
+				cursors = {
+					{
+						-- 让光标闪烁
+						mode = "a",
+						blink = {wait = 100, default = 400}
+					}
+				}
+			}
+		)
+	end
+}
+```
+
+> [!tip] 
+> 
+> `mode = "a" `，这里的 `mode` 就是 [光标](Vim_Note.md#光标) 中的 [mode](Vim_Note.md#mode)，`a` 表示所有模式都使用这个配置。
+
+这插件功能远不止于此，其实功能还是非常丰富的。不过个人也就是为了解决光标不闪的问题才用的这插件。至于这个插件其他功能，可以参考：[Cursor.nvim doc](https://github.com/rasulomaroff/cursor.nvim/tree/main/doc)。
+
 ---
 
 ### 插件推荐清单
@@ -2824,6 +2857,11 @@ bamboo 这配色有一种第一次看见 [gruvbox](#gruvbox) 配色的感觉，�
 	end
 } -- base16-nvim
 ```
+
+#### 配色相关网站
+
+* [vimcolorschemes](https://vimcolorschemes.com/)
+* [Vim colors | Generate your custom colorscheme](https://vimcolors.org/)
 
 ---
 

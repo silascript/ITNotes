@@ -2,9 +2,11 @@
 aliases: []
 tags:
   - notesoft
+  - obsidian
 created: 2024-01-25 00:20:31
-modified: 2024-01-25 00:22:15
+modified: 2024-04-11 11:41:39
 ---
+
 # 笔记软件笔记
 
 ---

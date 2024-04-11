@@ -6,7 +6,7 @@ tags:
   - pip
   - conda
 created: 2023-08-18 19:44:52
-modified: 2024-02-28 11:38:28
+modified: 2024-04-11 22:52:58
 ---
 # Python 笔记
 
@@ -36,11 +36,17 @@ modified: 2024-02-28 11:38:28
 
 ## <span id="python_install">安装</span>
 
+### 历史
+
+[Python简史 - Vamei - 博客园](https://www.cnblogs.com/vamei/archive/2013/02/06/2892628.html)
+
+### 安装
+
 官网：[www.python.org](https://www.python.org)
 
 下载页面：[www.python.org/downloads](https://www.python.org/downloads)
 
-### 版本
+#### 版本
 
 关于 Python 版本更新及维护计划，可以查看：[Status of Python versions](https://devguide.python.org/versions/)。
 
@@ -192,6 +198,27 @@ pip install pipdeptree
 ```shell
 pip install pip-autoremove
 ```
+
+---
+
+## <span id="python_virtualenvironments">虚拟环境</span>
+
+Python 有多种多样的虚拟环境，如 `Virtualenv`、自带的 `venv`，著名的 `pipenv`，还有最最流行的 [conda](#conda)。
+
+### virtualenv
+
+[Virtualenv](https://virtualenv.pypa.io/en/latest/) 是 python2 到 python3 都能使用的一个虚拟环境。
+
+### venv
+
+从 python3.3 开始，就自带了一个虚拟环境：venv。
+
+### pipenv
+
+### 相关资料
+
+* [Python虚拟环境（pipenv、venv、conda一网打尽）-腾讯云](https://cloud.tencent.com/developer/article/2124483)
+* [最全的Python虚拟环境使用方法 - 知乎](https://zhuanlan.zhihu.com/p/60647332)
 
 ---
 
@@ -1015,6 +1042,10 @@ Python 的集合特点：
 
 * [Python3.x 官方中文文档](https://docs.python.org/zh-cn/3/)
 * [Anaconda 中文网](https://anaconda.org.cn/)
+
+### <span id="python_resource_books">相关教程书籍</span>
+
+* [Python - 100天从新手到大师  - 书栈网](https://www.bookstack.cn/read/Python-100-Days/README.md)
 
 ### <span id="python_resource_links">相关网站</span>
 

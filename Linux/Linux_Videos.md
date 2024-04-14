@@ -2,12 +2,15 @@
 aliases: []
 tags:
   - linux
+  - awk
+  - grep
+  - sed
   - video
   - course
   - tutorial
   - list
 created: 2023-08-18 19:44:52
-modified: 2024-04-09 17:17:24
+modified: 2024-04-15 03:17:08
 ---
 
 # Linux 视频清单
@@ -21,13 +24,19 @@ modified: 2024-04-09 17:17:24
 
 ## 三剑客
 
- #grep #sed #awk
-
 * [grep,sed,awk命令从入门到精通](https://www.bilibili.com/video/BV1pc411W7bv)
-* [Linux三剑客之awk超全超详细教程](https://www.bilibili.com/video/BV1fe4y127WP)
 * [深入理解grep、sed、awk](https://www.bilibili.com/video/BV1LV4y1M7zM)
-* [20230906\_awk进阶教程](https://www.bilibili.com/video/BV17N411H7N8)
 * [Linux三剑客之sed命令详解，深入理解grep、sed、awk！](https://www.bilibili.com/video/BV1pW421N723)
+
+### awk
+
+* [【linux】awk指令使用介绍](https://www.bilibili.com/video/BV1cz421y7gB)
+* [Linux三剑客之awk超全超详细教程](https://www.bilibili.com/video/BV1fe4y127WP)
+* [20230906\_awk进阶教程](https://www.bilibili.com/video/BV17N411H7N8)
+
+## jq
+
+* [Linux的第4个剑客，使用jq命令处理json](https://www.bilibili.com/video/BV1Dj421R7fr)
 
 ## 高级
 

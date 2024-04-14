@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2024-04-13 12:08:27
+modified: 2024-04-15 01:54:28
 ---
 # Shell 笔记
 
@@ -497,6 +497,50 @@ local p_name=${core_address##*/}
 > 
 > 从右往左，`*` 与 `#` 总被分隔符分离，`*` 总在右边。
 
+### 遍历
+
+字符串是可以遍历的。
+
+#### 示例 1
+
+```shell
+str2="hello,world"
+
+for s_temp in $str2; do
+	echo $s_temp
+done
+
+```
+
+> [!info] 
+> 
+> 示例 1 中最终输出就是 `hello,world`，就是把字符串中每一个字符「遍历」一遍。
+
+#### 示例 2
+
+```shell
+str1="silas tom jack lucy mary"
+
+for s_tem in $str1; do
+	echo $s_tem
+done
+
+```
+
+> [!info] 
+> 
+> 示例 2 中的字符串，是带空格的；所以遍历的结果是按空格分割，将分割后每段子串依次输出。
+> 
+> 这种以空格为分隔符的字符串，也可以这样遍历：
+> 
+>> ```shell
+>> for s_tem in ${str1[@]}; do
+>> 	 echo $s_tem
+>> done
+>> ```
+>
+> 其实这是一种 [数组样式](#2.%20遍历数组) 的遍历。
+
 ---
 
 ## 条件
@@ -604,6 +648,43 @@ function 函数名(){
 > 跟 [Javascript](../JS/JS_Note.md) 等语言很像。
 
 ### <span id="shell_function_parameter">参数</span>
+
+### <span id="shell_function_returnv">返回值</span>
+
+函数所有返回值无论之前是什么类型，最后都是以 [字符串](#字符串) 形式返回。
+
+如果是返回 [数组](#数组)，实际返回一个带有空格的字符串。
+
+虽然执行此函数时，获取到的这个返回值是可以遍历的，但它不能如正常数组一样，通过索引取某个元素。
+
+要想「正常」使用，得转换成数组。
+
+#### 示例
+
+```shell
+function test1() {
+
+	local arr1=("cat" "dog" "duck" "cock" "fish" "goose")
+
+	# 返回数组
+	echo ${arr1[@]}
+}
+
+# 执行函数test1 并获取返回值
+an_arr=$(test1)
+
+# for a_temp in ${an_arr[@]}; do
+# 	echo $a_temp
+# done
+
+# for a_temp in $an_arr; do
+# 	echo $a_temp
+# done
+
+# 转换成数组
+r_arr=($an_arr)
+echo ${r_arr[@]}
+```
 
 ---
 

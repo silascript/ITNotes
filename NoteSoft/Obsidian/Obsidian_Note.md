@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2024-03-21 03:59:11
+modified: 2024-04-12 09:44:27
 ---
 # Obsidian 笔记
 
@@ -176,6 +176,7 @@ modified: 2024-03-21 03:59:11
 ![obsidian_configdir_1](Obsidian_Note.assets/obsidian_configdir_1.png)
 
 * `plugins`： 目录是存放插件的目录。每个插件都以独立的目录存放。
+
 * `themes`：主题样式。存的是一些 css 文件。
 
 ![obsidian_configdir_2](Obsidian_Note.assets/obsidian_configdir_2.png)
@@ -426,8 +427,34 @@ Obsidian 的插件分为 [核心插件](#obn_plugins_core) 和 [第三方插件]
 
 插件安装，同样因为众所周知的原因，访问起来存在一定的困难性，因为它用的是 [github](https://github.com/)。
 
-各种解决访问 github 的方案：
-* [Github加速](../../Git/Git_Note.md#Github加速)
+各种解决访问 github 的方案：[Github加速](../../Git/Git_Note.md#Github加速)
+
+#### 插件目录结构
+
+`plugins` 目录中各插件都以目录形式存放，其中由 `manifest.json` 和 `main.js` 两个**必要**文件及 `styles.css` 和 `data.json`**非必要可选**文件构成。所以如果手动下载安装插件，可以直接把这三个文件「丢」到 `plugins` 目录，就算安装成功了！
+
+> [!tip] 
+> 
+> 装完插件后，除上插件本身的那三个文件外，会自动生成一个 `data.json` 文件，这是 obsidian 自动生成的，所以不用理。
+
+当然 `plugins` 目录如果未关闭「安全模式」及通过插件市场安装至少一个插件，这个目录是不存在的，所以如果采取手动下载安装方式，先 `mkdir` 下 `plugins` 目录。
+ 
+插件目录的目录名是由 `manifest.json` 中的 `id` 的值决定的，如：
+ 
+```json
+{
+	"id": "floating-toc",
+	"name": "floating toc",
+	"version": "2.4.7",
+	"minAppVersion": "0.14.0",
+	"description": "This is a floating Toc plugin that  hovers a table of content  containing a header level on the notes sidebar.",
+	"author": "Cuman ",
+ 	"authorUrl": "https://github.com/cumany/obsidian-floating-toc-plugin",
+	"isDesktopOnly": false
+}
+ ```
+
+这个插件的插件目录名就叫 `floating-foc`。
 
 #### 常用插件
 
@@ -825,6 +852,9 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 ##### <span id="obn_plugins_commp_folder_icon">Icon-Folder</span>
 
 [Icon-Folder](https://github.com/FlorianWoelki/obsidian-icon-folder) 这个插件是给文件夹加图标的，让目录更具辨识度。
+> [tip]
+> 
+> 这插件更名了：[obsidian-iconize](https://github.com/FlorianWoelki/obsidian-iconize)
 
 ---
 

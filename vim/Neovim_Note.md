@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2024-04-11 10:27:54
+modified: 2024-04-14 22:00:43
 ---
 
 # NeoVim 笔记
@@ -2867,9 +2867,33 @@ bamboo 这配色有一种第一次看见 [gruvbox](#gruvbox) 配色的感觉，�
 
 ## nvim 整合套件
 
-* [LazyVim](https://github.com/LazyVim)
-* [AstroNvim](https://astronvim.com/)
-* [LunarVim](https://github.com/lunarvim/lunarvim)
+建议使用整合套件，最好使用 [NVIM_APPNAME](#NVIM_APPNAME) 方式安装。
+
+### LazyVim
+
+[LazyVim](https://github.com/LazyVim)
+
+### AstroNvim
+
+ [AstroNvim](https://astronvim.com/)
+
+![astronvim screenshot](https://camo.githubusercontent.com/d120d69852eae1f6471c9c3c64f16b75096aaa9ca54d974f892d7afbf6dc341e/68747470733a2f2f617374726f6e76696d2e636f6d2f7468656d65732f6f766572766965772e706e67)
+
+AstroNvim 实际配置目录是跟插件安装目录放到 `~/.local/share/` 目录下了。
+
+更具体是：`.local/share/xxx/lazy/AstroNvim/` 这个目录下。
+
+`~/.config/xxx/` 下那个 `init.lua` 只是用来安装 AstroNvim 用的。
+
+> [!tip] 
+> 
+> 那个 `xxx` 就是你使用 [NVIM_APPNAME](#NVIM_APPNAME) 时，自己定义的目录名。
+>
+> 如我的定义是：`alias astro-nvim="NVIM_APPNAME=astro-nvim nvim"`，那我的路径就为 `~/.config/astro-nvim` 和 `~/.local/share/astro-nvim`。
+
+### LunarVim
+
+[LunarVim](https://github.com/lunarvim/lunarvim)
 
 ---
 

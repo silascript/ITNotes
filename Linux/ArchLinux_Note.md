@@ -8,7 +8,7 @@ tags:
   - ime
 date created: 2022-11-08 11:32
 created: 2023-08-18 19:44:52
-modified: 2024-02-29 11:00:24
+modified: 2024-04-15 11:31:07
 ---
 
 # ArchLinux 笔记
@@ -231,4 +231,6 @@ sudo pacman -U xxx.pkg.tar.zst
 * [Ubuntu 笔记](./Ubuntu_Note.md)
 * [CentOS 笔记](./CentOS_Note.md)
 * [Fedora 笔记](./Fedora_Note.md)
+* [自用初始化配置](linux_init/init_config_linux.md)
+* [wps相关](linux_init/wps相关.md)
 

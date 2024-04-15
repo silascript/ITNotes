@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-04-05 18:06:18
+modified: 2024-04-15 10:14:53
 ---
 # Linux 笔记
 
@@ -627,6 +627,10 @@ grep 是一个程序族，包括了 **grep**、**egrep** 和 **fgrep**。
 
 Linux 中使用的 GNU 版本的 grep ，可以直接通过 `-G`、`-E` 和 `-F` 命令选项来使用 grep、egrep 和 fgrep 的功能。
 
+#### ripgrep
+
+[ripgrep](https://github.com/burntsushi/ripgrep) 是使用 [Rust](../Rust/Rust_Note.md) 编写的现代版 [grep](#grep)。
+
 ### <span id="linux_textprocessing_sed">sed</span>
 
  #sed 
@@ -634,6 +638,20 @@ Linux 中使用的 GNU 版本的 grep ，可以直接通过 `-G`、`-E` 和 `-F`
 ### <span id="linux_textprocessing_awk">awk</span>
 
  #awk 
+ 
+### awk 历史与简介
+
+awk 写于 1977 年。作者：Alfred V *A*ho、Peter J.*W*einberger 和 Brian W *K*ernighan。awk 这名，就是取自三位作者姓氏的首字母。
+
+awk 有多处版本，包括旧版的 awk、nawk（new awk）、gawk（GNU 版本）以及 POSIX awk 等。
+
+现在大部分 Linux 发行版默认装的都是 gawk，而 awk 只是 gawk 的一个软链接 -- 这在 Red hat Linux9 时代就已经是这样了。
+
+### 语法
+
+awk 逐行扫描文件，从第一行到最后一行寻找匹配对家模式的行，并在这些行上运行指定的动作。
+
+awk 由包含**模式**和**动作**的单行或多行文本组成。
 
 awk 语法结构：`awk 'pattern {action} pattern {action}..' 文件`
 
@@ -659,10 +677,6 @@ awk 语法结构：`awk 'pattern {action} pattern {action}..' 文件`
 行和列综合使用：
 
 `unzip -l xxx.zip |awk 'NR==5{print $NF}'`：列出 zip 包中的文件列表，显示第 5 行最后一列信息
-
-### ripgrep
-
-[ripgrep](https://github.com/burntsushi/ripgrep) 是使用 [Rust](../Rust/Rust_Note.md) 编写的现代版 [grep](#grep)。
 
 ---
 

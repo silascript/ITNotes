@@ -7,7 +7,7 @@ tags:
   - Eclipse
   - dbeaver
 created: 2023-01-30 11:19:11
-modified: 2024-01-19 17:07:39
+modified: 2024-04-17 20:18:27
 ---
 
 # Java 笔记
@@ -110,6 +110,7 @@ Temurin JDK 清华镜像：[https://mirror.tuna.tsinghua.edu.cn/Adoptium/](https
 ### 相关资料
 
 * [JDK 集合](https://www.injdk.cn/)
+* [Java中有那么多JDK，应该选择哪一个呢？](https://www.bilibili.com/video/BV1wp421X7hu)
 
 ---
 

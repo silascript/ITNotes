@@ -8,7 +8,7 @@ tags:
   - scite
   - lsp
 created: 2023-01-30 11:19:11
-modified: 2024-04-08 01:10:49
+modified: 2024-04-20 10:35:02
 ---
 
 # 编辑器笔记
@@ -772,6 +772,12 @@ style.*.35=italics,back:#ebeef3
 > [!tip] 相关
 > 
 > 跟 NotePad3 类似的 NotePad2 的「借尸还魂」作品还有 [zufuliu版本的Notepad2](https://github.com/zufuliu/notepad2)。
+
+### theme
+
+* [Notepad3ColorTheme](https://github.com/maboroshin/Notepad3ColorTheme)
+* [Notepad3 Themes - Optimize the display of Chinese fonts](https://github.com/F9y4ng/Notepad3-Themes)
+* [Notepad3 One Dark Pro theme](https://github.com/DanRotaru/Notepad3_OneDarkPro)
 
 ---
 

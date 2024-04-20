@@ -1,13 +1,12 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - docker
   - k8s
   - video
   - list
 created: 2023-08-18 19:44:52
-modified: 2023-09-12 16:58:55
+modified: 2024-04-20 09:58:03
 ---
 # Docker & K8s 视频清单
 
@@ -25,4 +24,5 @@ modified: 2023-09-12 16:58:55
 * [Docker&k8s教程](https://www.bilibili.com/video/BV1HM411Y7Pg)
 * [kubernetes教程](https://www.bilibili.com/video/BV13g4y1s7pj)
 * [2023版K8s全栈架构师初级篇](https://www.bilibili.com/video/BV1UX4y1S7zb)
+* [终极 Docker 课程 - 2024 - Mosh - 中文字幕版](https://www.bilibili.com/video/BV1gx4y1Y7cN)
 

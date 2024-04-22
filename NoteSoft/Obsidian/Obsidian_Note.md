@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2024-04-12 09:44:27
+modified: 2024-04-23 01:25:38
 ---
 # Obsidian 笔记
 
@@ -177,9 +177,38 @@ modified: 2024-04-12 09:44:27
 
 * `plugins`： 目录是存放插件的目录。每个插件都以独立的目录存放。
 
-* `themes`：主题样式。存的是一些 css 文件。
+* `themes`：主题样式。存的是各 theme 目录及一些 css 文件。
 
 ![obsidian_configdir_2](Obsidian_Note.assets/obsidian_configdir_2.png)
+
+#### theme 目录
+
+每个 theme（主题）都是以目录形式存放在 theme 目录中。
+
+而每个主题目录中，至少有两个文件：`manifest.json` 和 `theme.css`
+
+```shell
+$ ll MyNotes/ITNotes/.obsidian/themes/AnuPpuccin 
+Permissions Size User       Group      Date Modified    Name
+drwxr-xr-x     - silascript silascript 2023-08-22 18:29 .
+drwxr-xr-x     - silascript silascript 2024-02-02 03:58 ..
+.rw-r--r--   150 silascript silascript 2023-11-25 03:15 manifest.json
+.rw-r--r--  330k silascript silascript 2023-11-25 03:15 theme.css
+```
+
+其中 `manifest.json` 中的 `name` 的属性值，就是这个主题目录的目录名，这跟 [插件](#插件目录结构) 一样。
+
+```shell
+$ cat MyNotes/ITNotes/.obsidian/themes/AnuPpuccin/manifest.json
+{
+  "name": "AnuPpuccin",
+  "version": "1.4.5",
+  "minAppVersion": "0.16.0",
+  "author": "Anubis",
+  "authorUrl": "https://github.com/AnubisNekhet"
+}
+
+```
 
 ---
 

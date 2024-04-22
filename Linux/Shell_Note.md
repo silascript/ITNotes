@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2024-04-15 01:54:28
+modified: 2024-04-22 11:39:47
 ---
 # Shell 笔记
 
@@ -651,7 +651,55 @@ function 函数名(){
 
 ### <span id="shell_function_returnv">返回值</span>
 
-函数所有返回值无论之前是什么类型，最后都是以 [字符串](#字符串) 形式返回。
+#### 返回及获取
+
+Shell 返回值可以有两种方式进行返回：
+
+1. 使用 `echo` 进行返回。使用这种方式返回的返回值都是字符串，获取方式可以是使用变量接收 `$(xxx)` 函数执行结果，也可以通过 `$?` 方式获取。
+2. 使用 `return` 进行返回，这种方式只能返回整型。这种方式只能通过 `$?` 方式获取。
+
+##### 示例
+
+```shell
+# 检测目录是否存在
+# 返回值：0为存在 其余都是有问题的
+function validate_dir() {
+
+	local dir_path=$1
+
+	# 检测路径是否为空
+	if [ -z $dir_path ]; then
+		echo -e "\e[93m Vault路径不能为空！\n \e[0m"
+		return 1
+	fi
+
+	# 目录存在
+	if [ ! -d "$dir_path" ]; then
+		echo -e "\e[93m $dir_path \e[96mVault路径不存在！\n \e[0m"
+		return 1
+	else
+		# return 0
+		echo 0
+	fi
+
+}
+
+# 检测 Vault 路径
+r_1=$(validate_dir $1)
+echo $r_1
+# echo $?
+
+```
+
+> [!tip] 
+> 
+> 示例中，因为需要判断后就结束函数，所以 `return` 是必须的，同时还要显示「错误」信息。
+>
+> 这样写，即满足业务需求，而且还能兼容 `r_1=$(validate_dir $1)` 及 `echo $?` 这两种获取返回值的方式。
+
+#### 返回数组
+
+其实函数所有返回值无论之前是什么类型，最后都是以 [字符串](#字符串) 形式返回。
 
 如果是返回 [数组](#数组)，实际返回一个带有空格的字符串。
 
@@ -659,7 +707,7 @@ function 函数名(){
 
 要想「正常」使用，得转换成数组。
 
-#### 示例
+##### 示例
 
 ```shell
 function test1() {
@@ -685,6 +733,11 @@ an_arr=$(test1)
 r_arr=($an_arr)
 echo ${r_arr[@]}
 ```
+
+### 相关资料
+
+* [shell脚本——如何获取函数的返回值](https://blog.csdn.net/qq_31598113/article/details/80611480)
+* [Shell函数（函数定义、函数变量、函数调用、函数传参、函数返回值、获取函数返回值）](https://blog.csdn.net/xhaimail/article/details/103208901) 
 
 ---
 

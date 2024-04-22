@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-04-15 10:14:53
+modified: 2024-04-23 00:37:06
 ---
 # Linux 笔记
 
@@ -239,8 +239,8 @@ tar -cjf xxx.tar.bz2 *.jpg
 tar -xjf xxx.tar.bz2
 
 # 如果加上v 可以看到包内文件的如权限等详细信息
-tar -cjvf xxx.tar.gz
-tar -xjvf xxx.tar.gz
+tar -cjvf xxx.tar.bz2
+tar -xjvf xxx.tar.bz2
 ```
 
 #### <span id="linux_tarc_comptools_compress">compress</span>

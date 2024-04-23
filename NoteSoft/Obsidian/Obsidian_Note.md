@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2024-04-23 01:25:38
+modified: 2024-04-24 01:03:20
 ---
 # Obsidian 笔记
 
@@ -685,7 +685,10 @@ Obsidian 的插件分为 [核心插件](#obn_plugins_core) 和 [第三方插件]
 Linter 插件还可以配合 [Commander](#obn_plugins_obsidian-commander) 插件，在侧边栏上添加一个按钮，方便格式化当前文件。
 
 ---
-##### <span id="obn_plugins_commp_table_generator">Table Generator</span>
+
+##### <span id="obn_plugins_commp_table">Table 相关插件</span>
+
+###### <span id="obn_plugins_commp_table_generator">Table Generator</span>
 
 [Table Generator](https://github.com/quorafind/obsidian-table-generator) 是一款快速生成 Markdown 表格的插件。
 
@@ -693,20 +696,25 @@ Linter 插件还可以配合 [Commander](#obn_plugins_obsidian-commander) 插件
 
 同样，这插件也配合 [Commander](#obn_plugins_obsidian-commander) 插件，在侧边栏添加新建表格的按钮，方便添加表格。
 
----
-##### <span id="obn_plugins_commp_advanced_tables">Advanced Tables</span>
+###### <span id="obn_plugins_commp_advanced_tables">Advanced Tables</span>
 
 [Advanced Tables](https://github.com/tgrosinger/advanced-tables-obsidian) 是一个编辑 Markdown 表格的插件。
 
 ![advanced tables example](https://raw.githubusercontent.com/tgrosinger/advanced-tables-obsidian/main/resources/screenshots/basic-functionality.gif)
 
----
-
-##### <span id="obn_plugins_commp_obsidian_table_editor">Obsidian Table Editor</span>
+###### <span id="obn_plugins_commp_obsidian_table_editor">Obsidian Table Editor</span>
 
 [Obsidian Table Editor](https://github.com/ganesshkumar/obsidian-table-editor) 是一个 Markdown 表格编辑器。
 
 这插件会给出一个编辑区面板，能方便输入数据及排版表格，等表格都编辑完成，直接复制到 Markdown 页面中即可。
+
+###### <span id="obn_plugins_commp_obsidian_table_tsorting">Obsidian Table Sorting Plugin</span>
+
+[obsidian-table-sorting](https://github.com/kraibse/obsidian-table-sorting) 这是一个给表格排序的插件。
+
+![table-sorting screenshot](https://github.com/kraibse/obsidian-table-sorting/raw/master/attachments/preview-single-column.gif)
+
+![table-sorting screenshot 2](https://github.com/kraibse/obsidian-table-sorting/raw/master/attachments/preview-multi-column.gif)
 
 ---
 

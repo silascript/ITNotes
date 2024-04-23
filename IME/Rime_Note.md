@@ -1,12 +1,11 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - rime
   - yaml
   - ime
 created: 2023-08-18 19:44:52
-modified: 2023-08-23 11:51:03
+modified: 2024-04-24 01:27:14
 ---
 # Rime 笔记
 
@@ -92,16 +91,42 @@ app_opsions:
 > [!tip] 关于「app_options」
 > [ibus-rime不支持 `app_options`](https://github.com/rime/ibus-rime/issues/96)！所以在 linux 下使用的 rime「无缘」这个配置功能了。真是悲剧！
 
+### rime 的一些小问题
+
+#### 莫名激活缩放功能
+
+默认情况，使用 `Ctrl+`` 快捷键用来切换不同 [方案](#方案切换) 的。但在某些软件中使用这个快捷键切换方案，会使得另一些软件的缩放功能被激活。
+
+在 [SublimeText](../Editors/Editors_Note.md#editors_sublime) 和 gedit 中，进行 [方案切换](#方案切换) 操作，就会使得各浏览器、目录窗口的缩放功能被激活，如果这时在浏览器或目录窗口中，滚动鼠标中键，那就不是页面的上下滚动，而且是页面的放大缩小，只有再按一次 `Ctrl+``，缩放功能才关闭。
+
+推测出现这种情况，大概是因为浏览器、目录窗口等缩放功能本就是使用是长按 `Ctrl` 键配合鼠标中键的滚动可实现缩放的，所以当 rime使用 `Ctrl+``切换方案时，有可能其中有什么bug，使得浏览器及目录窗口认为你在按着`Ctrl` 键不放，所以这时你滚动鼠标中键，就成了页面缩放了。
+
+这个情况，在 [VSCode](../Editors/VSCode_Note.md)、[Obsidian](../NoteSoft/Obsidian/Obsidian_Note.md) 中并没有发生。而且在浏览器输入框内使用 `Ctrl+`` 切换方案，也同样没有发生缩放功能被激活的状态。
+
+> [!bug] 
+> 
+> [很奇怪的现象 · Issue #1533 · rime/home · GitHub](https://github.com/rime/home/issues/1533)
+
 ---
 
 ## 输入法列表
 
 ### 汉语输入法
 
+#### 五笔
+
 * [rime-wubi98](https://github.com/lotem/rime-wubi98 "五筆98版 Rime 輸入方案")
 * [arzyu/rime-wubi98](https://github.com/arzyu/rime-wubi98)
 * [shrekuu/rime-wubi98](https://github.com/shrekuu/rime-wubi98)
 * [ThreeDefenders/my-wubi-98](https://github.com/ThreeDefenders/my-wubi-98 "在lotem/rime-wubi98基础上修改的")
+
+#### 仓颉
+
+* [rime-cangjie: 【倉頡】輸入方案](https://github.com/rime/rime-cangjie)
+* [Jackchows/Cangjie5](https://github.com/Jackchows/Cangjie5)
+* [rime-aca/rime-cangjie6: 蒼頡檢字法](https://github.com/rime-aca/rime-cangjie6)
+* [LEOYoon-Tsaw/Cangjie6: 蒼頡檢字法](https://github.com/LEOYoon-Tsaw/Cangjie6)
+* [RIME 倉頡輸入法方案集成](https://github.com/cangjie-system/rime-cangjie-integrated)
 
 ### 日语输入法
 

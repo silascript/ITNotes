@@ -5,7 +5,7 @@ tags:
   - yaml
   - ime
 created: 2023-08-18 19:44:52
-modified: 2024-04-24 01:27:14
+modified: 2024-04-25 03:30:10
 ---
 # Rime 笔记
 
@@ -39,6 +39,13 @@ sudo apt-get install ibus-rime
 ```
 
 ---
+
+## 一些概念
+
+### 方案
+
+方案就是包括码表在内的一套输入方案。
+
 ## <span id="rime_input">打字操作</span>
 
 ### 方案切换
@@ -64,6 +71,37 @@ ibus-rime 的配置文件存在目录是在：`~/.config/ibus/rime/`
 
 > [!tip]
 > rime 中的配置文件都是 [YAML](../YAML/YAML_Note.md) 格式，所以配置时要严格遵循 YAML 语法。
+
+`default.custom.yaml` 配置是针对所有输入 [方案](#方案) 的自定义配置文件。
+
+而针对单独 [方案](#方案) 而配置文件，其文件名：`x.custom.yaml`，这里的 `x` 就是 `xxx.scheme.yaml` 方案描述文件那个方案名称。
+
+如 `wubi98.schema.yaml`，如果要对这个方案做自定义配置，那配置文件就应该为 `wubi98.custom.yaml`。
+
+无论是 `default.custom.yaml` 还是各方案自定义配置文件，其实都是给默认配置「打补丁」，所以 `yaml` 文件的根都是 `patch`。
+
+> [!note] 参考资料
+> 
+> * [weasel issues 6](https://github.com/rime/weasel/issues/6)
+> * [定制指南](https://github.com/rime/home/wiki/CustomizationGuide)
+
+### 常用配置
+
+#### 繁简转换
+
+其实就是配 `simplication`，`reset` 为 `1` 就开启繁体转简体，如果设为 `0`，就不开启。
+
+> [!tip] 
+> 
+> 开启繁转简，在候选菜单中所有码表中的繁体都显示为简体，如五笔 98 为例：繁体的「書」的五笔码为 `vfjf`，如果开启繁转简，候选菜单只会显示简体的「书」。
+
+```yaml
+patch:
+  switches:
+   - name: simplification
+    reset: 1                # 增加這一行：默認啓用「繁→簡」轉換。
+    states: [ 漢字, 汉字 ]
+```
 
 ### vim 输入法切换
 
@@ -119,6 +157,7 @@ app_opsions:
 * [arzyu/rime-wubi98](https://github.com/arzyu/rime-wubi98)
 * [shrekuu/rime-wubi98](https://github.com/shrekuu/rime-wubi98)
 * [ThreeDefenders/my-wubi-98](https://github.com/ThreeDefenders/my-wubi-98 "在lotem/rime-wubi98基础上修改的")
+* [yanhuacuo/98wubi-unicode: 98五笔超大字符集码表](https://github.com/yanhuacuo/98wubi-unicode)
 
 #### 仓颉
 
@@ -141,8 +180,10 @@ app_opsions:
 
 ---
 
-## 相关联接
+## 相关链接
 
 * [官方说明书](https://github.com/rime/home/wiki/UserGuide)
 * [Plum](https://github.com/rime/plum)
+* [五笔小筑](https://wubi98.gitee.io/)
+* [98五笔资源库](http://98wb.ysepan.com/)
 

@@ -28,7 +28,7 @@ php81 -S localhost:8088 -t /home/silascript/DevWorkSpace/PHPExercise
 > 
 > `-t` 参数就是指定网站根目录的路径
 
-内置服务器，可以在不配置 [Nginx](../mysql/Nginx_Videos.md) 或 [Apache](Linux下安装配置Apache.md) 服务器下，快速进行 php 开发或学习。但实际开发布署，还是得配下 nginx 或 apache。
+内置服务器，可以在不配置 [Nginx](../DataBase/mysql/Nginx_Videos.md) 或 [Apache](Linux下安装配置Apache.md) 服务器下，快速进行 php 开发或学习。但实际开发布署，还是得配下 nginx 或 apache。
 
 ---
 

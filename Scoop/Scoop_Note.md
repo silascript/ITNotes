@@ -423,8 +423,8 @@ select user,host,authentication_string from user;
 ##### <span id="scoop_softs_programs_mysql_links">MySQL 相关链接</span>
 
 其他 MySQL 具体使用信息，请参考以下笔记：
-* [MySQL 笔记](../mysql/MySQL_Note.md)
-* [MySQL 常用操作](../mysql/MySQL常用操作.md)
+* [MySQL 笔记](../DataBase/mysql/MySQL_Note.md)
+* [MySQL 常用操作](../DataBase/mysql/MySQL常用操作.md)
 
 ---
 

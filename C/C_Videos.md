@@ -5,7 +5,7 @@ tags:
   - video
   - list
 created: 2023-09-23 02:04:36
-modified: 2024-03-23 21:00:36
+modified: 2024-04-26 12:26:38
 ---
 # C 语言视频清单
 
@@ -45,3 +45,4 @@ modified: 2024-03-23 21:00:36
 * [【C语言指针高级篇】](https://www.bilibili.com/video/BV1ww411q7DV)
 * [通俗易懂的C语言指针概念讲解](https://www.bilibili.com/video/BV1V34y1u7tL)
 * [C语言为什么要设计指针的概念](https://www.bilibili.com/video/BV1wm411k7RK)
+* [大白话讲指针【村口大妈都能听懂的C/C++指针课程】【第一季】](https://www.bilibili.com/video/BV1wZ421v7kX)

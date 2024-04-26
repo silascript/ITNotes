@@ -43,7 +43,7 @@ mycli 有语法高亮、代码提示、分页显示等非常实用的功能。
 
 ## 相关内容
 
-* [Linux 下安装 MySQL](./linux下安装mysql.md)
-* [MySQL常用操作](./MySQL常用操作.md)
-* [Docker 安装 MySQL](../Docker/Docker_Note.md#dk_softc_demo_mysql)
-* [MySQL 视频清单](./MySQL_Videos.md)
+* [Linux 下安装 MySQL](linux下安装mysql.md)
+* [MySQL常用操作](MySQL常用操作.md)
+* [Docker 安装 MySQL](../../Docker/Docker_Note.md#dk_softc_demo_mysql)
+* [MySQL 视频清单](MySQL_Videos.md)

@@ -49,7 +49,7 @@ show variables like '%datadir%';
 ```shell
 status
 ```
-![mysql_status](./MySQL常用操作.assets/mysql_status.png)
+![mysql_status](MySQL常用操作.assets/mysql_status.png)
 
 
 8. 查看 MySQL 版本号
@@ -61,4 +61,4 @@ status
 
 ---
 
-MySQL具体介绍请参考：[MySQL笔记](./MySQL_Note.md)
+MySQL具体介绍请参考：[MySQL笔记](MySQL_Note.md)

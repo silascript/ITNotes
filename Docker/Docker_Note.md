@@ -1730,9 +1730,9 @@ performance_schema = off
 ---
 
 MySQL 其他设置及操作请参考：
-* [MySQL笔记](../mysql/MySQL_Note.md)
-* [MySQL常用操作](../mysql/MySQL常用操作.md)
-* [linux下安装mysql](../mysql/linux下安装mysql.md)
+* [MySQL笔记](../DataBase/mysql/MySQL_Note.md)
+* [MySQL常用操作](../DataBase/mysql/MySQL常用操作.md)
+* [linux下安装mysql](../DataBase/mysql/linux下安装mysql.md)
 
 ---
 

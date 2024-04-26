@@ -96,7 +96,7 @@ bin/mysqld_safe --user=mysql &
 
 如果使用 mysqld_safe 方式登录，出现错误，往往是少了依赖。
 
-![image-20200610022158342](./linux下安装mysql.assets/image-20200610022158342.png)
+![image-20200610022158342](linux下安装mysql.assets/image-20200610022158342.png)
 
 那就装依赖包：
 
@@ -139,7 +139,7 @@ cp support-files/mysql.server /etc/init.d/mysql.server
 
 ###### suppor-files/mysql.server 会找/etc/下的 my.cnf 配置文件，如果/etc/下没有，将会到默认地址/usr/local/mysql/路径下找 mysql_safe
 
-![image-20200610114905111](./linux下安装mysql.assets/image-20200610114905111.png)
+![image-20200610114905111](linux下安装mysql.assets/image-20200610114905111.png)
 
 > **添加服务后重启，不然容易出现找不到服务**
 >
@@ -370,7 +370,7 @@ mysql.server stop
 ---
 
 MySQL 具体使用请参考：
-* [MySQL笔记](./MySQL_Note.md)
-* [MySQL常用操作](./MySQL常用操作.md)
-* [Docker 安装 MySQL](../Docker/Docker_Note.md#dk_softc_demo_mysql)
+* [MySQL笔记](MySQL_Note.md)
+* [MySQL常用操作](MySQL常用操作.md)
+* [Docker 安装 MySQL](../../Docker/Docker_Note.md#dk_softc_demo_mysql)
 

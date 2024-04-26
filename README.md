@@ -32,9 +32,9 @@ modified: 2024-01-25 00:23:03
 
 ### MySQL
 
-* [MySQL笔记](./mysql/MySQL_Note.md)
-* [linux下安装mysql](./mysql/linux下安装mysql.md)
-* [MySQL常用操作](./mysql/MySQL常用操作.md)
+* [MySQL笔记](DataBase/mysql/MySQL_Note.md)
+* [linux下安装mysql](DataBase/mysql/linux下安装mysql.md)
+* [MySQL常用操作](DataBase/mysql/MySQL常用操作.md)
 
 ---
 

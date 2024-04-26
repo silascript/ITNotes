@@ -1,6 +1,5 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - database
   - mysql
@@ -12,6 +11,8 @@ tags:
   - sybase
   - navicat
   - dbeaver
+created: 2023-08-18 19:44:52
+modified: 2024-04-27 03:08:12
 ---
 
 # 数据库笔记
@@ -32,7 +33,7 @@ tags:
 
 ## MySQL
 
-[MySQL_Note](../mysql/MySQL_Note.md)
+[MySQL_Note](mysql/MySQL_Note.md)
 
 ---
 
@@ -88,4 +89,8 @@ DBeaver 使用 [Maven_Note](../Java/Maven/Maven_Note.md) 下载驱动。要知�
 > 如上图中，「本地文件夹」设置的路径下，`maven` 下有两目录，一个是 maven 的 [中央仓库](../Java/Maven/Maven_Note.md#中央仓库)，而另一个是自行添加的阿里的源。
 
 ---
+
+## 相关笔记
+
+* [SQL 视频清单](SQL_Videos.md)
 

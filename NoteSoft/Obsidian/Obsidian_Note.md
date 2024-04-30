@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2024-04-24 01:03:20
+modified: 2024-04-28 21:31:10
 ---
 # Obsidian 笔记
 
@@ -1410,6 +1410,21 @@ obs-cli 大致使用：
 ```shell
 # 只需要给一个指定的 vault 的根路径就可以设置默认vault了
 obs set-default ~/MyNotes/ITNotes
+```
+
+#### obs-cli 常用参数
+
+```shell
+Available Commands:
+  completion    Generate the autocompletion script for the specified shell
+  create        Creates note in vault
+  delete        Delete note in vault
+  help          Help about any command
+  move          Move or rename note in vault and updated corresponding links
+  open          Opens note in vault
+  print-default prints default vault name and path
+  search        Searches note in vault
+  set-default   Sets default vault
 ```
 
 ---

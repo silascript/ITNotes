@@ -9,7 +9,7 @@ tags:
   - list
   - video
 created: 2024-05-01 03:10:27
-modified: 2024-05-01 03:30:35
+modified: 2024-05-02 17:27:03
 ---
 
 # Dotnet 视频清单
@@ -20,6 +20,7 @@ modified: 2024-05-01 03:30:35
 
 * [【手把手带你入门】C#编程零基础教程 2024全新录制已完结](https://www.bilibili.com/video/BV1Um411y7vu)
 * [【2024年最新录制】C#进阶语法专题-泛型、反射、特性、委托、事件、Lambda、Linq（.NET8/C#12）](https://www.bilibili.com/video/BV1tD421H7DK)
+* [[中文字幕\]C#/.NET 训练营：基础知识（OOP、LINQ、测试自动化 + 更多）](https://www.bilibili.com/video/BV1SK421e76o)
 
 ## WPF
 
@@ -28,3 +29,9 @@ modified: 2024-05-01 03:30:35
 * [【WPF入门教程 Visual Studio 2022】WPF界面开发入门](https://www.bilibili.com/video/BV13D4y1u7XX)
 * [【解锁WPF数据绑定的秘密：从入门到精通的完整课程】WPF数据绑定全方位细致讲解](https://www.bilibili.com/video/BV1ro4y1N7SE)
 * [油管百万播放量 C# WPF UI 完整教程 - AngelSix（1080P + 中英字幕）](https://www.bilibili.com/video/BV1Lh4y1t7ix)
+
+---
+
+## 相关笔记
+
+* [WPF笔记](WPF_Note.md)

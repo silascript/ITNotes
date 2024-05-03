@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2024-04-27 21:54:26
+modified: 2024-05-02 18:14:08
 ---
 # Shell 笔记
 
@@ -855,6 +855,7 @@ curl http://hub-mirror.c.163.com/v2/library/${image}/tags/list | jq --arg tstr $
 * [B站第一的Shell脚本的学习方法，每天只需30分钟让你效率保障99倍](https://www.bilibili.com/video/BV1sT4y1b7si)
 * [2024年最新Shell脚本顶级天花板教程，血赚！](https://www.bilibili.com/video/BV17S421P7fa)
 * [Linux的第4个剑客，使用jq命令处理json](https://www.bilibili.com/video/BV1Dj421R7fr)
+* [279个拿来就能用的shell脚本 助你秒变Linux高手](https://www.bilibili.com/video/BV1vM4m197ZT)
 
 ---
 

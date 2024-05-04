@@ -3,8 +3,9 @@ aliases: []
 tags:
   - cpp
   - video
+  - list
 created: 2023-12-07 11:31:08
-modified: 2024-04-15 03:10:59
+modified: 2024-05-04 19:38:00
 ---
 
 # C++ 视频清单
@@ -14,4 +15,5 @@ modified: 2024-04-15 03:10:59
 * [史上最易懂C/C++视频教程从入门到精通（118集全）](https://www.bilibili.com/video/BV18w41187Fc)
 * [马士兵教育最新C++入门到精通完整版教程](https://www.bilibili.com/video/BV1L94y1P7oJ)
 * [全B站最实用的C++核心教程80集](https://www.bilibili.com/video/BV1rD421L7pm)
+* [最新C++多线程编程--------从入门到实战完整版【C++训练营】2024最新版](https://www.bilibili.com/video/BV1AZ421H7C7)
 

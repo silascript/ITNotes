@@ -6,7 +6,7 @@ tags:
   - video
   - list
 created: 2023-05-26 11:00:13
-modified: 2024-04-30 12:19:04
+modified: 2024-05-04 17:52:13
 ---
 # Javascript 视频清单
 
@@ -33,6 +33,8 @@ modified: 2024-04-30 12:19:04
 * [【前段教程】JavaScript 2小时快速入门](https://www.bilibili.com/video/BV1gz421C7yT)
 * [JavaScript 基础篇 - Mosh](https://www.bilibili.com/video/BV13b411H7LR)
 * [JavaScript OOP 面向对象编程 - Mosh](https://www.bilibili.com/video/BV1gb411w7eW)
+* [通过构建项目逐步学习 Javascript](https://www.bilibili.com/video/BV1zm41117g1)
+* [【3小时快速精通】2024最新版ES6基础视频教程（16集全）](https://www.bilibili.com/video/BV1Bt421A7LB)
 
 ---
 

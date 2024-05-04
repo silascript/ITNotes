@@ -7,7 +7,7 @@ tags:
   - tutorial
   - list
 created: 2023-02-12 11:23:37
-modified: 2024-04-20 10:28:08
+modified: 2024-05-04 19:40:27
 ---
 
 # Python 视频清单
@@ -38,8 +38,12 @@ modified: 2024-04-20 10:28:08
 * [【清华大学计算机系科协暑培 2023】Python 基础](https://www.bilibili.com/video/BV1kF411Q71M)
 * [【零基础学Python】](https://www.bilibili.com/video/BV1j34y1M7h9)
 * [2023最新版课程 Python入门视频教程零基础学习Python](https://www.bilibili.com/video/BV1UQ4y1H7sE)
-* [【Python面向对象】究竟什么是面向对象？](https://www.bilibili.com/video/BV1zH4y1p76G)
 * [【全361集】2024最符合B站用户学习的Python动画短片](https://www.bilibili.com/video/BV1vZ421q7DN)
+
+### 面向对象
+
+* [【Python面向对象】究竟什么是面向对象？](https://www.bilibili.com/video/BV1zH4y1p76G)
+* [【Python】1小时搞懂面向对象编程 | 面向过程vs面向对象](https://www.bilibili.com/video/BV1Wz421k7QP)
 
 ### 100 Days of Code
 

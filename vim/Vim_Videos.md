@@ -6,7 +6,7 @@ tags:
   - video
   - list
 created: 2023-08-18 19:44:52
-modified: 2024-03-14 07:45:25
+modified: 2024-05-05 11:00:38
 ---
 
 # vim 视频清单
@@ -20,6 +20,10 @@ modified: 2024-03-14 07:45:25
 * [【Vim】可能是B站最系统的Vim教程](https://www.bilibili.com/video/BV1s4421A7he)
 * [玩转Vim-从放弃到入门](https://www.bilibili.com/video/BV1NG4y1p74h)
 * [Vim核心基础: 光标移动](https://www.bilibili.com/video/BV1F14y1j7f4)
+
+## 高级
+
+* [01-Vim插件系统和runtimepath](https://www.bilibili.com/video/BV19Z421J7VR)
 
 ## vimscript
 

@@ -5,7 +5,7 @@ tags:
   - video
   - list
 created: 2023-09-23 02:04:36
-modified: 2024-04-26 12:26:38
+modified: 2024-05-05 03:02:23
 ---
 # C 语言视频清单
 
@@ -21,6 +21,7 @@ modified: 2024-04-26 12:26:38
 * [一周内学完C语言](https://www.bilibili.com/video/BV1og4y1X7oe)
 * [C语言 第三阶段 文件IO](https://www.bilibili.com/video/BV1vv411k78H)
 * [C语言零基础入门C语言初学者小白C语言程序设计](https://www.bilibili.com/video/BV1sH4y1Y7jt)
+* [膜拜！油管大佬竟把C语言讲的如此通俗易懂！（2024版）草履虫都能听懂！](https://www.bilibili.com/video/BV1Js421K75Q)
 
 ### 李慧芹系列
 

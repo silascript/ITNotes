@@ -6,8 +6,9 @@ tags:
   - tutorial
   - list
 created: 2023-06-24 01:08:17
-modified: 2024-04-08 17:47:22
+modified: 2024-05-05 03:01:43
 ---
+
 # Java 视频清单
 
 ---
@@ -17,13 +18,23 @@ modified: 2024-04-08 17:47:22
 * [新版Java入门全套视频教程285集完整版(纯小白专享)-千锋](https://www.bilibili.com/video/BV1HN4y1m73i)
 * [2023年 java 面试题200问](https://www.bilibili.com/video/BV1wX4y1h7YG)
 * [Java核心技术讲解,深入底层原理](https://www.bilibili.com/video/BV1ck4y157fj)
-* [黑马Java多线程教程，23年最新版](https://www.bilibili.com/video/BV1g8411o7aj)
-* [2023年 JUC并发编程 天花板教程从入门到精通](https://www.bilibili.com/video/BV1uj411y7Vw)
 * [从0到1搭建Java企业级微服务冰眼冷链物流监控项目](https://www.bilibili.com/video/BV1fc411c7tG)
 * [黑马Java基础进阶教程，轻松掌握java高级技术-单元测试、反射、注解、动态代理](https://www.bilibili.com/video/BV1Pu411N7fH)
 * [java操作xml方法,总有适合你的](https://www.bilibili.com/video/BV15T4y1P7nM)
-* [混而不乱的java日志体系-log4j,jul,jcl,slf4j和logback](https://www.bilibili.com/video/BV13A41137Tc)
 * [2024全套java教程，零基础入门到精通，2小时快速入门](https://www.bilibili.com/video/BV11z421f7HJ)
+
+### IO
+
+* [Java 开发必备！！从操作系统底层带你速通Java IO底层原理 ！](https://www.bilibili.com/video/BV18E421L7xb)
+
+### 多线程
+
+* [黑马Java多线程教程，23年最新版](https://www.bilibili.com/video/BV1g8411o7aj)
+* [2023年 JUC并发编程 天花板教程从入门到精通](https://www.bilibili.com/video/BV1uj411y7Vw)
+
+### log
+
+* [混而不乱的java日志体系-log4j,jul,jcl,slf4j和logback](https://www.bilibili.com/video/BV13A41137Tc)
 
 ---
 

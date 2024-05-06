@@ -8,8 +8,9 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2024-05-02 18:14:08
+modified: 2024-05-06 20:34:06
 ---
+
 # Shell 笔记
 
 ---
@@ -738,6 +739,54 @@ echo ${r_arr[@]}
 
 * [shell脚本——如何获取函数的返回值](https://blog.csdn.net/qq_31598113/article/details/80611480)
 * [Shell函数（函数定义、函数变量、函数调用、函数传参、函数返回值、获取函数返回值）](https://blog.csdn.net/xhaimail/article/details/103208901) 
+
+---
+
+## 常用命令
+
+### 解析参数
+
+在 Shell 中，三种方式解析命令行参数：
+
+1. 直接处理，使用 `$1 $2` 这种特殊变量进行解析。
+2. 使用 [getopts](#getopts)
+3. 使用 [getopt](#getopt)
+
+####  getopts
+
+`getopts`，是 [Bash](#Bash) 的内置命令。
+
+但 `getopts` 只能处理*短选项*，如 `-n` 这种。
+
+#### getopt
+
+`getopt` 不是标准的 unix 命令，但大多数 [Linux](Linux_Note.md) 发行版都自带了。
+
+在非 [Bash](#Bash) 的 sh 中，没有 [getopts](#getopts)，所以可以使用 `getopt` 替代。
+
+`getopt` 相较于 [getopts](#getopts) 有个优势，就是它可以处理*短选项*，也可以处理*长选项*，如 `--prefix=/home` 这种。
+
+> [!tip] 
+> 
+> 在 [zsh](#zsh) 中，没有 `getopts`。
+> 
+> 而且 `getopts` 因为不能处理长选项，所以为了兼容性，还是优先使用 [getopt](#getopt) 命令。
+
+`getopt` 老版本不太好用，后来的版本解决了老版本的问题，一般称为「增强版」。
+
+，通过 `-T` 选项，即 `getopt -T`，就能检测当前发行版是否是「增强版」了。返回值为 4，就证明当前系统装的是增强版。
+
+```shell
+# silascript @ (base) in ~ [3:21:16] 
+$ getopt -T
+# silascript @ (base) in ~ [3:21:18] C:4
+$ echo $?
+4
+```
+
+### 相关资料
+
+* [shell 命令之：getopt - 法杰拉 - 博客园](https://www.cnblogs.com/hit-joseph/p/12060376.html)
 
 ---
 

@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2024-04-14 22:00:43
+modified: 2024-05-07 21:12:56
 ---
 
 # NeoVim 笔记
@@ -2489,6 +2489,36 @@ height = 15;
 ---
 
 ### <span id="nvim_plugins_git">git 相关</span>
+
+---
+
+### <span id="nvim_plugins_languages">语言特定插件</span>
+
+#### headlines
+
+[headlines](https://github.com/lukas-reineke/headlines.nvim) 是一个给 [Markdown](../Markdown/Markdown_Note.md) 加颜色高亮的插件。
+
+![headlines screenshot](https://user-images.githubusercontent.com/12900252/152090098-f0fe7ad5-efea-42d9-b3d7-a4bfd6391189.png)
+
+简单配置：
+
+```lua
+{
+	"lukas-reineke/headlines.nvim",
+	dependencies = {"nvim-treesitter/nvim-treesitter"},
+	-- lazy = true,
+	ft = {"markdown"},
+	config = function()
+		require("headlines").setup(
+			{
+				markdown = {
+					fat_headlines = false
+				}
+			}
+		)
+	end
+}
+```
 
 ---
 

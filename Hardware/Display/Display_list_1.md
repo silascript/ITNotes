@@ -5,7 +5,7 @@ tags:
   - display
   - list
 created: 2024-05-11 01:24:19
-modified: 2024-05-14 02:47:41
+modified: 2024-05-14 21:43:30
 ---
 
 # 显示器清单 1
@@ -207,6 +207,7 @@ modified: 2024-05-14 02:47:41
 |   对比度   |                       1500:1                        |
 |  响应时间  |                    4 毫秒（GTG）                    |
 |  电源类型  |                    **外置电源**                     |
+|  生产日期  |                        2024                         |
 
 [官网参数](https://www.aocmonitor.com.cn/product-15388.html)
 

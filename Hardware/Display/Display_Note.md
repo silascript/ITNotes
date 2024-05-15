@@ -4,7 +4,7 @@ tags:
   - hardware
   - display
 created: 2024-05-03 10:36:44
-modified: 2024-05-11 01:28:12
+modified: 2024-05-16 03:09:17
 ---
 
 # 显示器笔记
@@ -36,6 +36,7 @@ modified: 2024-05-11 01:28:12
 ## 相关资料
 
 * [显示器选购心得：细节篇 - 知乎](https://zhuanlan.zhihu.com/p/74242577)
+* [IPS面板，为何分出这么多花样？ - 知乎](https://zhuanlan.zhihu.com/p/614905333)
 
 ---
 

@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-04-23 00:37:06
+modified: 2024-05-23 00:18:07
 ---
 # Linux 笔记
 
@@ -1203,6 +1203,20 @@ ssh 用户名@ip -p 端口
 
 缺点：耗内存、启动有点慢
 
+#### terminal 相关
+
+##### 复制粘贴
+
+在通常情况下，粘贴剪切版的内容使用 `Shift+Insert` 就可以实现。
+
+但在终端中，`Shift+Insert` 只能粘贴第一次复制的内容，如果有新复制的内容，使用 `Shift+Insert` 就会失效。
+
+解决这个问题其实很简单，只要使用 `Ctrl+Shift+Insert` 就好了！
+
+> [!info] 相关资料
+> 
+> * [Linux剪贴板shift+insert无效解决方案](https://blog.csdn.net/tcliuwenwen/article/details/106988784)
+
 ---
 
 ## <span id="linux_shell">Shell 相关 </span>
@@ -1522,13 +1536,41 @@ alias ll='exa -a --long --header --group --tree --level=2 --icons --time-style=l
 > 
 > exa 已经停止更新的，可以使用 [eza](#eza) 平替。
 
-### eza
+#### eza
 
 [eza](https://github.com/eza-community/eza) 是 [exa](#exa) 的一个 fork 版本。因为 exa 已经停止更新的，所以可以使用 eza 进行替代。
 
 > [!tip] 
 > 
 > 可以将做 `exa` 的软链接指向 `eza` 安装目录。这样之前使用了 [exa](#exa) 的配置将不用修改，无痛过度到 eza。
+
+### 监控工具
+
+#### lm_sensors
+
+`lm_sensors` 是用来获取 CPU 温度的一个小工具。
+
+执行 `sensors` 命令就能查看当前系统当前的温度列表，如：
+
+```shell
+$ sensors
+acpitz-acpi-0
+Adapter: ACPI interface
+temp1:        +27.8°C  
+temp2:        +29.8°C  
+
+coretemp-isa-0000
+Adapter: ISA adapter
+Package id 0:  +42.0°C  (high = +82.0°C, crit = +102.0°C)
+Core 0:        +42.0°C  (high = +82.0°C, crit = +102.0°C)
+Core 1:        +42.0°C  (high = +82.0°C, crit = +102.0°C)
+
+```
+
+##### 相关资料
+
+* [获取Linux上的CPU温度](https://cn.linux-console.net/?p=10034)
+* [在 Linux 上监控 CPU 和 GPU 温度 - 知乎](https://zhuanlan.zhihu.com/p/67791270)
 
 ### 相关链接
 

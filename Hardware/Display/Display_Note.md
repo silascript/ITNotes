@@ -4,7 +4,7 @@ tags:
   - hardware
   - display
 created: 2024-05-03 10:36:44
-modified: 2024-05-19 12:15:12
+modified: 2024-05-19 21:10:27
 ---
 
 # 显示器笔记
@@ -42,6 +42,47 @@ modified: 2024-05-19 12:15:12
 ---
 
 ## 刷新率
+
+---
+
+## 接口
+
+### VGA
+
+VGA 接口也称为「D-Sub」接口。 ^display-interface-dsub
+
+VGA 采用的是模拟协议。
+
+VGA 支持的分辨率：`640*480` 到 `2560*1600` 各种分辨率。
+
+### DVI
+
+DVI 接口又分三类：`DVI-A`、`DVI-D` 和 `DVI-I`。
+
+这三种 DVI 还分「单通道」和「双通道」。
+
+![dvi 接口](https://bkimg.cdn.bcebos.com/pic/b17eca8065380cd728d234bfac44ad3458828190?x-bce-process=image/format,f_auto/resize,m_lfit,limit_1,h_860)
+
+#### DVI-A
+
+DVI-Analog，只传输模拟信号，跟 [VGA](#VGA) 一样，一般用在 DVI 与 VGA 的转接头这种接口上。
+
+#### DVI-D
+
+DVI-Digital，纯数字接口，不兼容模拟信号。
+
+#### DVI-I
+
+DVI-Integrated，兼容 [DVI-A](#DVI-A) 和 [DVI-D](#DVI-D) 两种接口，兼容数字和模拟信号。
+
+### HDMI
+
+### DP
+
+### 相关资料
+
+* [VGA、DVI、HDMI区别 - 知乎](https://zhuanlan.zhihu.com/p/36440703)
+* [显示器的 VGA、HDMI、DVI 和 DisplayPort 接口有什么区别？ - 知乎](https://www.zhihu.com/question/19571221)
 
 ---
 

@@ -7,7 +7,7 @@ tags:
   - typora
   - mermaid
 created: 2023-01-13 12:27:45
-modified: 2024-01-05 11:37:11
+modified: 2024-05-24 11:16:40
 ---
 
 # Markdown 笔记
@@ -19,6 +19,7 @@ Markdown 比 doc 等文档更开放，更易于发布。
 ---
 
 ## 目录
+
 * [基础](#md_basic)
   * [关于锚点](#关于锚点)
 	  * [相关测试](#相关测试)
@@ -56,7 +57,7 @@ Markdown 比 doc 等文档更开放，更易于发布。
 
 ### <span id="md_basic_anchor">关于锚点</span>
 
-> [!example] 示例 1：
+> [!example] 示例 1
 > 
 > ```markdown
 >	* [基础设置](#基础设置)
@@ -178,7 +179,7 @@ Markdown 使用 `\` （反斜杠）来对一些特殊字符进行转义。当然
 
 #### <span id="md_basic_qoate_extension">引用块扩展</span>
 
-引用块最常用的扩展就是在引用块上加上一些「美化」标识，这种扩展语法不是 Markdown 标准语法，而是扩展语法。就如 [Obsidiane](../NoteSoft/Obsidian/Obsidian_Note.md) 中的 [Callout Blocks](../NoteSoft/Obsidian/Obsidian_Note.md#obn_syntax_calloutblocks) 类似。而现今使用最多的是「**GFM**」（Github Flavo）Flavo ）已经支持了类似功能。不过 Github 没 Obsidian 的样式这么丰富。
+引用块最常用的扩展就是在引用块上加上一些「美化」标识，这种扩展语法不是 Markdown 标准语法，而是扩展语法。就如 [Obsidiane](../NoteSoft/Obsidian/Obsidian_Note.md) 中的 [Callout Blocks](../NoteSoft/Obsidian/Obsidian_Note.md#obn_syntax_calloutblocks) 类似。而现今使用最多的是 [GFM](https://github.github.com/gfm/) （Github Flavo）已经支持了类似功能。不过 Github 没 Obsidian 的样式这么丰富。
 
 GFW 支持 5 种引用扩展样式：
 
@@ -485,6 +486,47 @@ python setup.py install
 
 ---
 
+### <span>格式化器</span>
+
+#### mdformat
+
+[mdformat](https://github.com/executablebooks/mdformat) 是一个 [Python](../Python/Python_Note.md) 写的 markdown 格式化工具。
+
+可以使用 [pip](../Python/Python_Note.md#python_pip) 或 [pipx](../Python/Python_Note.md#python_pipx) 来安装。
+
+```shell
+pipx install mdformat
+```
+
+mdformat 默认如果只装这个，安格式化的风格是标准的 Markdown 风格。这个格式化器，有其他风格的库可以安装，如 [GFM](https://github.github.com/gfm/) 风格的 `mdformat-gfm`，可以通过 `pip` 安装：
+
+```shell
+pip install mdformat-gfm
+```
+
+官方是建议你把几个支持库都装了：
+
+```shell
+pip install mdformat-gfm mdformat-frontmatter mdformat-footnote
+```
+
+##### 配置
+
+在用户根目录下，新建 `.mdformat.toml` 配置文件。这是 mdformat 的默认配置文件。
+
+```toml
+
+number = true # 有序列表按数字排序
+```
+
+相关配置参考 [Configuration file - mdformat documentation](https://mdformat.readthedocs.io/en/stable/users/configuration_file.html)
+
+##### 相关资料
+
+* [mdformat | VitePress](https://shellraining.github.io/tools/mdformat)
+
+---
+
 ### <span id="md_tools_mdeditors">Markdown 编辑器</span>
 
 #### <span id="md_tools_mdeditors_typora">Typora</span>
@@ -510,3 +552,10 @@ Obsidian 具体使用请参考：[Obsidian 笔记](../NoteSoft/Obsidian/Obsidian
 	<!-- <script defer src="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.4/js/v4-shims.min.js"></script> -->
 	<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.4/css/all.css" >
 </head>
+
+---
+
+## 相关资料
+
+* [互联网那些事儿 | 扒一扒互联网Markdown的那些事儿](https://cloud.tencent.com/developer/article/2355142)
+

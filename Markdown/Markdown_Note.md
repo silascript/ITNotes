@@ -7,7 +7,7 @@ tags:
   - typora
   - mermaid
 created: 2023-01-13 12:27:45
-modified: 2024-05-24 11:16:40
+modified: 2024-05-24 11:22:29
 ---
 
 # Markdown 笔记
@@ -179,7 +179,7 @@ Markdown 使用 `\` （反斜杠）来对一些特殊字符进行转义。当然
 
 #### <span id="md_basic_qoate_extension">引用块扩展</span>
 
-引用块最常用的扩展就是在引用块上加上一些「美化」标识，这种扩展语法不是 Markdown 标准语法，而是扩展语法。就如 [Obsidiane](../NoteSoft/Obsidian/Obsidian_Note.md) 中的 [Callout Blocks](../NoteSoft/Obsidian/Obsidian_Note.md#obn_syntax_calloutblocks) 类似。而现今使用最多的是 [GFM](https://github.github.com/gfm/) （Github Flavo）已经支持了类似功能。不过 Github 没 Obsidian 的样式这么丰富。
+引用块最常用的扩展就是在引用块上加上一些「美化」标识，这种扩展语法不是 Markdown 标准语法，而是扩展语法。就如 [Obsidiane](../NoteSoft/Obsidian/Obsidian_Note.md) 中的 [Callout Blocks](../NoteSoft/Obsidian/Obsidian_Note.md#obn_syntax_calloutblocks) 类似。而现今使用最多的是 [GFM](https://github.github.com/gfm/) （GitHub Flavored Markdown）已经支持了类似功能。不过 Github 没 Obsidian 的样式这么丰富。
 
 GFW 支持 5 种引用扩展样式：
 
@@ -558,4 +558,5 @@ Obsidian 具体使用请参考：[Obsidian 笔记](../NoteSoft/Obsidian/Obsidian
 ## 相关资料
 
 * [互联网那些事儿 | 扒一扒互联网Markdown的那些事儿](https://cloud.tencent.com/developer/article/2355142)
+* [unified - 一个用于处理markdown的解析器 - 掘金](https://juejin.cn/post/7193215092316438589)
 

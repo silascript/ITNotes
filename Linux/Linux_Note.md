@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-05-23 00:18:07
+modified: 2024-05-25 02:15:11
 ---
 # Linux 笔记
 
@@ -1567,10 +1567,29 @@ Core 1:        +42.0°C  (high = +82.0°C, crit = +102.0°C)
 
 ```
 
-##### 相关资料
+> [!info] 相关资料
+> 
+> * [获取Linux上的CPU温度](https://cn.linux-console.net/?p=10034)
+> * [在 Linux 上监控 CPU 和 GPU 温度 - 知乎](https://zhuanlan.zhihu.com/p/67791270)
 
-* [获取Linux上的CPU温度](https://cn.linux-console.net/?p=10034)
-* [在 Linux 上监控 CPU 和 GPU 温度 - 知乎](https://zhuanlan.zhihu.com/p/67791270)
+### 硬件检测
+
+#### cpu-x
+
+[CPU-X](https://github.com/TheTumultuousUnicornOfDarkness/CPU-X) 是 「Linux 版的 CPU-Z」，而且是开源的。
+
+> [!info] 相关资料
+>
+> * [CPU-X 是 Linux 的 CPU-Z 的替代品 - 知乎](https://zhuanlan.zhihu.com/p/570458864)
+
+#### hardinfo2
+
+[hardinfo2](https://github.com/hardinfo2/hardinfo2) 是 hardinfo 的重构版。
+
+> [!info] 相关资料
+>
+> * [使用 Hardinfo 以图形方式检查 Linux 上的硬件信息](https://cn.linux-console.net/?p=18500)
+> * [Linux系统查看硬件信息神器，比设备管理器好用100倍！ - 良许Linux - 博客园](https://www.cnblogs.com/yychuyu/p/13373827.html)
 
 ### 相关链接
 

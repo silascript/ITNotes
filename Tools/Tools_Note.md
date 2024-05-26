@@ -2,7 +2,7 @@
 aliases: []
 tags: []
 created: 2023-08-18 19:44:52
-modified: 2024-02-20 06:04:56
+modified: 2024-05-26 23:11:31
 ---
 
 # 常用小工具笔记
@@ -44,6 +44,10 @@ lux -i 网址
 
 这条命令会出现诸如该视频的信息，如有多少种分辨率可下载，每种分辨率的体积大小。
 
+> [!tip] 
+> 
+> 如果是 B 站，地址值可以不用引号括起来，但 [youtube](https://www.youtube.com/) 的话，是必须得使用引号括起来，不然会出现 `no matches found` 错误。
+
 ```shell
 lux -p --items 29 -c ~/mysoft/Browsers/cookies.txt -i 网址
 ```
@@ -59,6 +63,7 @@ lux -p --items 29 -c ~/mysoft/Browsers/cookies.txt -i 网址
 下载视频，需要指定要下载的分辨率，`-f` 这个参数的值是分辨率的标识符，可以通过上面的 `lux -i` 命令查询出来。
 
 示例：
+
 ```shell
 lux -f 64-12 "https://www.bilibili.com/video/BV18p4y167Md?p=1"
 ```
@@ -174,6 +179,157 @@ lux -p --items 29,30 -c ~/mysoft/Browsers/cookies.txt -f 80-7 xxx
  # download with: lux -f 16-7
 
 ```
+
+如果是 youtube，那分辨率及编码格式选项会更多一些：
+
+```shell
+Streams:   # All available quality
+ [399]  -------------------
+ Quality:         1080p video/mp4; codecs="av01.0.08M.08"
+ Size:            54.28 MiB (56918398 Bytes)
+ # download with: lux -f 399 ...
+
+ [137]  -------------------
+ Quality:         1080p video/mp4; codecs="avc1.640028"
+ Size:            51.10 MiB (53583147 Bytes)
+ # download with: lux -f 137 ...
+
+ [398]  -------------------
+ Quality:         720p video/mp4; codecs="av01.0.05M.08"
+ Size:            46.55 MiB (48809546 Bytes)
+ # download with: lux -f 398 ...
+
+ [397]  -------------------
+ Quality:         480p video/mp4; codecs="av01.0.04M.08"
+ Size:            42.35 MiB (44403410 Bytes)
+ # download with: lux -f 397 ...
+
+ [136]  -------------------
+ Quality:         720p video/mp4; codecs="avc1.4d401f"
+ Size:            41.37 MiB (43382188 Bytes)
+ # download with: lux -f 136 ...
+
+ [396]  -------------------
+ Quality:         360p video/mp4; codecs="av01.0.01M.08"
+ Size:            40.42 MiB (42378300 Bytes)
+ # download with: lux -f 396 ...
+
+ [248]  -------------------
+ Quality:         1080p video/webm; codecs="vp9"
+ Size:            39.92 MiB (41863419 Bytes)
+ # download with: lux -f 248 ...
+
+ [135]  -------------------
+ Quality:         480p video/mp4; codecs="avc1.4d401e"
+ Size:            39.91 MiB (41847960 Bytes)
+ # download with: lux -f 135 ...
+
+ [134]  -------------------
+ Quality:         360p video/mp4; codecs="avc1.4d401e"
+ Size:            38.82 MiB (40700587 Bytes)
+ # download with: lux -f 134 ...
+
+ [395]  -------------------
+ Quality:         240p video/mp4; codecs="av01.0.00M.08"
+ Size:            38.52 MiB (40395784 Bytes)
+ # download with: lux -f 395 ...
+
+ [133]  -------------------
+ Quality:         240p video/mp4; codecs="avc1.4d4015"
+ Size:            37.79 MiB (39626514 Bytes)
+ # download with: lux -f 133 ...
+
+ [394]  -------------------
+ Quality:         144p video/mp4; codecs="av01.0.00M.08"
+ Size:            37.54 MiB (39362759 Bytes)
+ # download with: lux -f 394 ...
+
+ [160]  -------------------
+ Quality:         144p video/mp4; codecs="avc1.4d400c"
+ Size:            37.05 MiB (38844751 Bytes)
+ # download with: lux -f 160 ...
+
+ [258]  -------------------
+ Quality:         audio/mp4; codecs="mp4a.40.2"
+ Size:            35.90 MiB (37648420 Bytes)
+ # download with: lux -f 258 ...
+
+ [328]  -------------------
+ Quality:         audio/mp4; codecs="ec-3"
+ Size:            35.57 MiB (37294848 Bytes)
+ # download with: lux -f 328 ...
+
+ [380]  -------------------
+ Quality:         audio/mp4; codecs="ac-3"
+ Size:            35.57 MiB (37294846 Bytes)
+ # download with: lux -f 380 ...
+
+ [247]  -------------------
+ Quality:         720p video/webm; codecs="vp9"
+ Size:            29.15 MiB (30565005 Bytes)
+ # download with: lux -f 247 ...
+
+ [244]  -------------------
+ Quality:         480p video/webm; codecs="vp9"
+ Size:            22.26 MiB (23342418 Bytes)
+ # download with: lux -f 244 ...
+
+ [243]  -------------------
+ Quality:         360p video/webm; codecs="vp9"
+ Size:            19.09 MiB (20019475 Bytes)
+ # download with: lux -f 243 ...
+
+ [256]  -------------------
+ Quality:         audio/mp4; codecs="mp4a.40.5"
+ Size:            18.06 MiB (18940576 Bytes)
+ # download with: lux -f 256 ...
+
+ [22]  -------------------
+ Quality:         720p video/mp4; codecs="avc1.64001F, mp4a.40.2"
+ Size:            17.41 MiB (18255720 Bytes)
+ # download with: lux -f 22 ...
+
+ [242]  -------------------
+ Quality:         240p video/webm; codecs="vp9"
+ Size:            16.12 MiB (16898629 Bytes)
+ # download with: lux -f 242 ...
+
+ [18]  -------------------
+ Quality:         360p video/mp4; codecs="avc1.42001E, mp4a.40.2"
+ Size:            14.85 MiB (15573687 Bytes)
+ # download with: lux -f 18 ...
+
+ [278]  -------------------
+ Quality:         144p video/webm; codecs="vp9"
+ Size:            14.82 MiB (15538967 Bytes)
+ # download with: lux -f 278 ...
+
+ [251]  -------------------
+ Quality:         audio/webm; codecs="opus"
+ Size:            12.45 MiB (13059673 Bytes)
+ # download with: lux -f 251 ...
+
+ [140]  -------------------
+ Quality:         audio/mp4; codecs="mp4a.40.2"
+ Size:            11.99 MiB (12572333 Bytes)
+ # download with: lux -f 140 ...
+
+ [250]  -------------------
+ Quality:         audio/webm; codecs="opus"
+ Size:            6.63 MiB (6955948 Bytes)
+ # download with: lux -f 250 ...
+
+ [249]  -------------------
+ Quality:         audio/webm; codecs="opus"
+ Size:            5.07 MiB (5314249 Bytes)
+ # download with: lux -f 249 ...
+```
+
+> [!info] 
+> 
+> `codecs` 是编码格式。
+> 
+> `avc1` 是 `h.264`；`av01` 是 `av1`
 
 ---
 

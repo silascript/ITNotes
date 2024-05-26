@@ -4,7 +4,7 @@ tags:
   - git
   - github
 created: 2023-01-30 11:19:11
-modified: 2024-05-25 11:16:08
+modified: 2024-05-26 02:52:49
 ---
 # Git 笔记
 
@@ -804,7 +804,9 @@ git config --global --unset url.https://github.com/.insteadof
 
 #### 旁门左道的加速 git
 
-使用 [steam++](https://steampp.net/) 来加速 git 访问。
+ #steampp #watt_toolkit
+
+使用 [steam++](https://steampp.net/) 来加速 git 访问。 ^steampp
 
 ![steam++](Git_Note.assets/steampp.png)
 

@@ -9,7 +9,7 @@ tags:
   - shadowsocksr
   - clash
 created: 2024-05-25 22:58:31
-modified: 2024-05-26 02:37:53
+modified: 2024-05-26 20:50:44
 ---
 
 # 梯子笔记
@@ -103,7 +103,11 @@ pacman -S clash-verge
 
 3. 在 Clash-Verge「*代理*」页面，选择合适的「节点」。
 
-4. 在 Clash-Verge「*设置*」页面，开启「**系统代理**」。
+4. 在 Clash-Verge「*设置*」页面，开启「**系统代理**」，这就能「出海」了，如果不用代理，就把这项关闭就好了！
+
+#### 使用体验
+
+使用各种机场，对于 [github](github.com) 虽然可以访问，但延迟还是相较于 [Google](google.com) 等普通人的常用网站来说，还是比较 高的，可能 `github` 对于普通用户来说有点非主流吧，这些机场都对其有针对性的优化，所以造成了对于 `git push` 这种操作，还不如使用 [Steam++](../Git/Git_Note.md#^steampp) 来得高效。
 
 ### 相关资料
 

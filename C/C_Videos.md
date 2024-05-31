@@ -5,8 +5,9 @@ tags:
   - video
   - list
 created: 2023-09-23 02:04:36
-modified: 2024-05-05 03:02:23
+modified: 2024-05-31 10:10:32
 ---
+
 # C 语言视频清单
 
 ---
@@ -38,6 +39,10 @@ modified: 2024-05-05 03:02:23
 * [C语言高级进阶教程](https://www.bilibili.com/video/BV13G411X73x)
 
 ### 专题
+
+#### 函数
+
+* [C语言进阶专题：C语言函数知识全解！](https://www.bilibili.com/video/BV1am411y7So)
 
 #### 指针
 

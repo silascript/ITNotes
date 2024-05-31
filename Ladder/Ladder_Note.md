@@ -9,7 +9,7 @@ tags:
   - shadowsocksr
   - clash
 created: 2024-05-25 22:58:31
-modified: 2024-05-30 18:09:32
+modified: 2024-05-31 20:18:19
 ---
 
 # 梯子笔记
@@ -40,9 +40,9 @@ modified: 2024-05-30 18:09:32
 
 #### 疾风云
 
-[jifeng3267](https://jifeng3267.xyz/) 老牌机场
+[疾风云](https://jifeng3267.xyz/) 老牌机场
 
-入门套餐：9.9 元 ，一个月 50G 流量，60M 速度，非常适合临时用下，如登下 [Google](googl.com) 和 Gmail，用来「保号」！
+入门套餐：9.9 元 ，一个月 50G 流量，60M 速度，非常适合临时用下，如登下 [Google](https://www.google.com) 和 Gmail，用来「保号」！
 
 > [!info] 
 > 

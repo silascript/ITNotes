@@ -5,13 +5,15 @@ tags:
   - scoop
   - git
 created: 2023-01-13 12:27:46
-modified: 2023-02-02 4:36:31
+modified: 2024-06-02 20:24:04
 ---
+
 # Scoop 笔记
 
 ---
 
 ## 目录
+
 * [安装 Scoop](#scoop_install)
 * [卸载 Scoop](#scoop_uninstall)
 * [使用 Scoop](#scoop_use)
@@ -24,54 +26,55 @@ modified: 2023-02-02 4:36:31
 
 ## <span id="scoop_install">安装 Scoop</span>
 
-
 ### 指定安装目录
-方式 1:
+
+方式 1：
+
 ```powershell
 .\install.ps1 -ScoopDir 'F:\scoop\locals' -ScoopGlobalDir 'F:\scoop\global' -NoProxy
 ```
+
 这种方式，官方推荐，但这种方式，会报 `Cannot find path 'C:\Users\xxx\scoop\buckets' because it does not exist.` 错误。因为是指定了目录，但装完 scoop 后，scoop 找 bucket 还是去 C 盘默认目录去找，这明显是找不到的，所以才会报错。
 
+方式 2：
 
-方式 2:
 ```powershell
 $env:SCOOP='F:\scoop\locals'
 $env:SCOOP_GLOBAL='F:\scoop\global'
 [Environment]::SetEnvironmentVariable('SCOOP_GLOBAL', $env:SCOOP_GLOBAL, 'User')
 iwr get.scoop.sh | iex
 ```
-三句，为防止出问题，建议一句句执行。第一、二句是指定安装目录变量；第三句设置环境变量；第四句是下载和安装。
 
+> [!info] 
+> 
+> 三句，为防止出问题，建议一句句执行。第一、二句是指定安装目录变量；第三句设置环境变量；第四句是下载和安装。
 
 最好分开设置：
 
 设置 scoop 目录：
+
 ```powershell
 $env:SCOOP='F:\scoop\locals'
 [Environment]::SetEnvironmentVariable('SCOOP', $env:SCOOP, 'User')
 iwr -useb get.scoop.sh | iex
 ```
+
 其实执行完这里，scoop 已经能用了。因为前两句代码只是将「SCOOP」这个变量加入到用户变量中，第三句才是安装 scoop。
 
-
-
 设置全局目录：
+
 ```powershell
 $env:SCOOP_GLOBAL='F:\scoop\global'
 [environment]::setEnvironmentVariable('SCOOP_GLOBAL',$env:SCOOP_GLOBAL,'Machine')
 ```
+
 其实全局这里设置只是将「SCOOP_GLOBAL」这个环境变量加入到「系统变量」中。
 
 执行完以上操作，最好到「属性」-「高级设置」-「环境变量」里查看：
 1. 「用户变量」里是否存在 **SCOOP** 变量
 2. 「系统变量」中是否存在 **SCOOP_GLOBAL** 变量。
 
-
-
-
-
 具体安装可参考：[ScoopInstaller/Install](https://github.com/ScoopInstaller/Install)
-
 
 ---
 
@@ -79,7 +82,6 @@ $env:SCOOP_GLOBAL='F:\scoop\global'
 ```powershell
 scoop uninstall scoop
 ```
-
 
 ---
 
@@ -94,8 +96,6 @@ scoop config aria2-enabled false
 ```powershell
 scoop config aria2-warining-enable false
 ```
-
-
 
 ---
 
@@ -131,8 +131,6 @@ scoop bucket add bucket名 bucket的url
 
  > 有时 `scoop update` 后，main 库会丢失，所以每次 update 后先 `scoop bucket list` 查看下 bucket 情况。
 
-
-
 ---
 
 ### <span id="scoop_use_search">scoop search</span>
@@ -141,22 +139,30 @@ scoop bucket add bucket名 bucket的url
 scoop search 软件名
 ```
 
-
 ---
 
 ### <span id="scoop_use_install">scoop install</span>
+
 ```shell
 scoop install 软件名
 ```
 
 全局安装：
+
 ```shell
 scoop install 软件名 -g
 ```
 
 安装特定版本的软件：
+
 ```shell
 scoop install 软件@版本号
+```
+
+安装指定库的软件：
+
+```shell
+scoop install 库名/软件名
 ```
 
 ### <span id="scoop_use_uninstall">scoop uninstall</span>
@@ -211,7 +217,6 @@ scoop list
 scoop status
 ```
 
-
 ---
 
 ### <span id="scoop_use_clean">Scoop 清理</span>
@@ -225,7 +230,6 @@ scoop cleanup *
 ```shell
 scoop cleanup -k *
 ```
-
 
 #### <span id="scoop_use_cache">Scoop 缓存清理</span>
 ```shell
@@ -250,7 +254,6 @@ git 是 scoop 基础软件，并且不单只装 git，如果执行 `scoop instal
 
 这个 git 套件包括了 [git](https://git-scm.com/)、[7zip](https://www.7-zip.org/)。
 
-
 ---
 
 #### <span id="scoop_softs_basic_linux">linux 模拟命令软件</span>
@@ -266,23 +269,18 @@ git 是 scoop 基础软件，并且不单只装 git，如果执行 `scoop instal
 scoop install uutils-coreutils
 ```
 
-
-
 ##### <span id="scoop_softs_basic_linux_sudo">sudo</span>
 
 上面那个 coreutils 没有 sudo 命令，所以想要使用这个命令得单独安装。
 `scoop install sudo`
 
-
 这个 `sudo` 命令，实际是另一个 linux 移植的集合 [lukesampson/psutils](https://github.com/lukesampson/psutils) 中的一个实现的命令：，只是这个集合比较小，只有 10 个命令。这个小集合是专门为了 Scoop 写的，应该是想让 Scoop 更好用而写的。
 
 可以使用 psutils 中的一些命令来补充 [uutils-coreutils](https://github.com/uutils/coreutils) ，使得在 powershell 下能用更多的 linux 命令。
 
-
 ##### <span id="scoop_softs_basic_linux_scompletion">scoop-completion</span>
 
 [scoop-completion](https://github.com/liuzijing97/scoop-completion) 是一个 scoop 命令补全命令，可以让使用 scoop 时更流畅快捷。
-
 
 ---
 
@@ -292,11 +290,9 @@ scoop install uutils-coreutils
 
 [lux](https://github.com/iawia002/lux) 是一个使用 go 语言写的视频下载器。这货原来叫 `annie`。这软件依赖 [ffmpeg](https://www.ffmpeg.org/) ，ffmpeg 是视频库，所以要么先安装 ffmpeg，要么安装 lux 时，scoop 自动先安装 ffmpeg：。
 
-
 [Shotcut](https://www.shotcut.org/) [![shotcut repo](https://img.shields.io/github/stars/mltframework/shotcut?style=social)](https://github.com/mltframework/shotcut) 开源免费的视频剪辑软件。这货同样依赖 `ffmpeg`。
 
 [Kdenlive](https://kdenlive.org/) 同样是一款跨平台的免费视频剪辑软件，同样依赖 [ffmpeg](https://www.ffmpeg.org/) 。
-
 
 [Zeal](https://zealdocs.org/) 离线文档软件，码农「搬砖」的好助手！
 
@@ -311,13 +307,10 @@ scoop install uutils-coreutils
 什么 [gcc](https://gcc.gnu.org/)、[llvm](https://llvm.org/)、[go](https://golang.google.cn/)、java、[rust](https://www.rust-lang.org/)、[python](https://www.python.org/)、[ruby](https://www.ruby-lang.org/en/) 就不用说了，直接 `install` 就好了，连环境变量都给你配好了！
 > 注意下，`rust` ，应该是装 `rustup`，这是 rust 的一个安装工具，通过 rustup 来装 rust。关于 rust 详细信息，请参考 [Rust 笔记](../Rust/Rust_Note.md)。 
 
-
 [Spring Tool Suite](https://spring.io/tools) 是整合了 Spring 开发插件包的 Eclipse，不想手动安装 Spring 插件包的就直接下这个用好了，人家帮你整合好了！ 先用 `scoop search sts` 和 `scoop info sts` ，看下软件具体信息，确认没错，再 `install`。
 > eclipse 也是类似操作 
 
-
 [dbeaver](https://dbeaver.io/) [![dbeaver repo](https://img.shields.io/github/stars/dbeaver/dbeaver?style=social)](https://github.com/dbeaver/dbeaver) 一个数据库管理软件。免费版本就够用了，完全可以替代 [Navicat](https://navicat.com.cn/)，不用再辛苦地去找什么「破解版」。这货功能很强，还能非常方便地对对应的数据库的驱动进行下载，不用再另加开浏览器找驱动。
-
 
 #### <span id="scoop_softs_programs_mysql">scoop 安装和使用 MySQL</span>
 
@@ -348,12 +341,10 @@ Run 'mysqld --standalone' or 'mysqld --console' to start the Database,or run fol
 
 > 在添加服务时，还指定其他 `mysqld` 命令的其他属性，如最常见的，就是指定默认配置文件的指定：`--defaults-file="xxx\scoop\locals\apps\mysql\current\my.ini"`
 
-
 示例：
 ```powershell
 mysqld --install-manual MySQL8 --defaults-file="F:\scoop\locals\apps\mysql\current\my.ini"
 ```
-
 
 > 执行完全命令，出现 `Service successfully installed.` 信息，就证明添加 mysql 服务成功了！如不放心可以到「管理」-「服务」里查看。
 
@@ -375,7 +366,6 @@ windows 下有两个命令都可以启动 Windows 服务：
 
  `sc start 服务名`
  `sc stop 服务名`
-
 
 ###### net 命令与 sc 命令的差异
 
@@ -428,7 +418,6 @@ select user,host,authentication_string from user;
 
 ---
 
-
 ### <span id="scoop_softs_beauti">美化相关</span>
 
 #### <span id="scoop_softs_beauti_concfg">concfg</span>
@@ -446,7 +435,6 @@ select user,host,authentication_string from user;
 
 使用 `concfg presets` 命令，能列出所有内置配色方案的名称。
 
-
 #### <span id="scoop_softs_beauti_pshazz">pshazz</span>
 
 [pshazz](https://github.com/lukesampson/pshazz) 是个主题软件。
@@ -456,8 +444,6 @@ pshazz 内置了一些 theme，可以使用 `pshazz list` 命令列出内置 the
 pshazz 常用命令
 * `pshazz use theme名称` ： 切换当前 theme。
 * `pshazz get url`： 获取 theme
-
-
 
 ---
 

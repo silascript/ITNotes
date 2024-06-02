@@ -1,10 +1,12 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - mirror
-created: 2023-06-3 10:16:26
-modified: 2023-06-30 11:13:37
+  - url
+  - list
+  - opensource
+created: 2023-08-18 19:44:52
+modified: 2024-06-02 00:51:03
 ---
 # 开源镜像网址清单
 

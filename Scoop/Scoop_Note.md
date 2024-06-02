@@ -5,7 +5,7 @@ tags:
   - scoop
   - git
 created: 2023-01-13 12:27:46
-modified: 2024-06-02 20:24:04
+modified: 2024-06-02 20:39:40
 ---
 
 # Scoop 笔记
@@ -119,17 +119,21 @@ scoop bucket known
 * [dorado](https://github.com/chawyehsu/dorado)： 国内常用软件
 
 添加或移除 bucket
+
 ```
 scoop bucket add bucket名
 scoop bucket rm bucket名
 ```
 
 如果要添加第三方 bucket，就得加上 bucket 的 url。
+
 ```powershell
 scoop bucket add bucket名 bucket的url
 ```
 
- > 有时 `scoop update` 后，main 库会丢失，所以每次 update 后先 `scoop bucket list` 查看下 bucket 情况。
+> [!info] 
+> 
+> 有时 `scoop update` 后，main 库会丢失，所以每次 update 后先 `scoop bucket list` 查看下 bucket 情况。
 
 ---
 
@@ -305,9 +309,15 @@ scoop install uutils-coreutils
 ### <span id="scoop_softs_programs">编程软件<span>
 
 什么 [gcc](https://gcc.gnu.org/)、[llvm](https://llvm.org/)、[go](https://golang.google.cn/)、java、[rust](https://www.rust-lang.org/)、[python](https://www.python.org/)、[ruby](https://www.ruby-lang.org/en/) 就不用说了，直接 `install` 就好了，连环境变量都给你配好了！
+
+> [!tip] 
+> 
 > 注意下，`rust` ，应该是装 `rustup`，这是 rust 的一个安装工具，通过 rustup 来装 rust。关于 rust 详细信息，请参考 [Rust 笔记](../Rust/Rust_Note.md)。 
 
 [Spring Tool Suite](https://spring.io/tools) 是整合了 Spring 开发插件包的 Eclipse，不想手动安装 Spring 插件包的就直接下这个用好了，人家帮你整合好了！ 先用 `scoop search sts` 和 `scoop info sts` ，看下软件具体信息，确认没错，再 `install`。
+
+> [!tip] 
+> 
 > eclipse 也是类似操作 
 
 [dbeaver](https://dbeaver.io/) [![dbeaver repo](https://img.shields.io/github/stars/dbeaver/dbeaver?style=social)](https://github.com/dbeaver/dbeaver) 一个数据库管理软件。免费版本就够用了，完全可以替代 [Navicat](https://navicat.com.cn/)，不用再辛苦地去找什么「破解版」。这货功能很强，还能非常方便地对对应的数据库的驱动进行下载，不用再另加开浏览器找驱动。
@@ -315,6 +325,7 @@ scoop install uutils-coreutils
 #### <span id="scoop_softs_programs_mysql">scoop 安装和使用 MySQL</span>
 
 ##### 安装 MySQL
+
 `scoop install mysql` 很简单
 
 ---
@@ -322,11 +333,14 @@ scoop install uutils-coreutils
 ##### 启动 MySQL
 
 安装完，scoop 会提示可以使用三种方式启动 MySQL：
+
 ```powershell
 Run 'mysqld --standalone' or 'mysqld --console' to start the Database,or run following command as administrator to register MySQL as a service.
 ```
 
-个人偏爱添加加服务这种方式启动 MySQL。
+> [!tip] 
+> 
+> 个人偏爱添加加服务这种方式启动 MySQL。
 
 ---
 
@@ -342,12 +356,17 @@ Run 'mysqld --standalone' or 'mysqld --console' to start the Database,or run fol
 > 在添加服务时，还指定其他 `mysqld` 命令的其他属性，如最常见的，就是指定默认配置文件的指定：`--defaults-file="xxx\scoop\locals\apps\mysql\current\my.ini"`
 
 示例：
+
 ```powershell
 mysqld --install-manual MySQL8 --defaults-file="F:\scoop\locals\apps\mysql\current\my.ini"
 ```
 
+> [!tip] 
+> 
 > 执行完全命令，出现 `Service successfully installed.` 信息，就证明添加 mysql 服务成功了！如不放心可以到「管理」-「服务」里查看。
 
+> [!tip] 
+> 
 > 如出现 `Install/Remove of the Service Denied!` 这个错误，就是权限不够，要么使用管理员 powershell 再执行一次上述命令，要么在当前非管理员 powershell 下，在命令前添加 `sudo` 来执行：`sudo mysqld --install-manual MySQL8 --defaults-file="F:\scoop\locals\apps\mysql\current\my.ini"` ，当前前提是，scoop 你得装了 `sudo`。
 
 ---
@@ -357,22 +376,24 @@ mysqld --install-manual MySQL8 --defaults-file="F:\scoop\locals\apps\mysql\curre
 添加 MySQL 服务成功，如果是「手动启动」类型的服务，就需要启动服务。
 
 windows 下有两个命令都可以启动 Windows 服务：
-1. net
+
+1. `net`
 
  `net start 服务名`
  `net stop 服务名`
 
-2. sc
+2. `sc`
 
  `sc start 服务名`
  `sc stop 服务名`
 
 ###### net 命令与 sc 命令的差异
 
-`net` 命令不是只针对于服务的，还可以用在网络、用户、登录等。
-`sc` 命令是 `service` 命令的缩写，顾名思义，这是专门针对 Windows 服务的命令
+* `net` 命令不是只针对于服务的，还可以用在网络、用户、登录等。
+* `sc` 命令是 `service` 命令的缩写，顾名思义，这是专门针对 Windows 服务的命令
 
 两者使用有一点区别：
+
 1. `net` 命令对于禁用的服务无效，而 `sc` 却能启动禁用状态的服务
 2. `sc` 命令不但能开启或停止服务，而且可以新建、配置服务。`mysqld` 底层应该是调用的 `sc` 命令来实现 MySQL 服务的创建。
 3. 对于重启服务而言，`net` 和 `sc` 存在一定的细节差异。
@@ -394,9 +415,13 @@ windows 下有两个命令都可以启动 Windows 服务：
 
 使用 scoop 安装的 MySQL 是没有初始密码的。 
 直接执行：` mysql -P 3366 -u root -p`
+
+> [!tip] 
+> 
 > 如果你没有在 `my.ini` 配置文件中专门指定过 MySQL 的端口号，`-P` 这个参数可以省略
 
 进到 MySQL 后，执行以下代码：
+
 ```powershell
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '新密码';
 ```
@@ -404,6 +429,7 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '新密�
 当然记得刷新下：`FLUSH PRIVILEGES;`
 
 如果不放心的，可以查询下 `user` 表
+
 ```sql
 select user,host,authentication_string from user;
 ```
@@ -413,6 +439,7 @@ select user,host,authentication_string from user;
 ##### <span id="scoop_softs_programs_mysql_links">MySQL 相关链接</span>
 
 其他 MySQL 具体使用信息，请参考以下笔记：
+
 * [MySQL 笔记](../DataBase/mysql/MySQL_Note.md)
 * [MySQL 常用操作](../DataBase/mysql/MySQL常用操作.md)
 
@@ -431,6 +458,9 @@ select user,host,authentication_string from user;
 ![ocean](https://github.com/lukesampson/concfg/raw/master/preset_examples/ocean.png)
 
 使用也简单： `concfg import 内置配色方案名称`
+
+> [!info] 
+> 
 > [预览内置的配色方案](https://github.com/lukesampson/concfg/blob/master/preset_examples/README.md)
 
 使用 `concfg presets` 命令，能列出所有内置配色方案的名称。
@@ -441,7 +471,8 @@ select user,host,authentication_string from user;
 
 pshazz 内置了一些 theme，可以使用 `pshazz list` 命令列出内置 theme 名称。
 
-pshazz 常用命令
+##### pshazz 常用命令
+
 * `pshazz use theme名称` ： 切换当前 theme。
 * `pshazz get url`： 获取 theme
 

@@ -3,9 +3,11 @@ aliases: []
 tags:
   - git
   - github
+  - gist
 created: 2023-01-30 11:19:11
-modified: 2024-05-26 02:52:49
+modified: 2024-06-03 21:51:21
 ---
+
 # Git 笔记
 
 ---
@@ -987,6 +989,13 @@ yay -S community/rabbitvcs-nautilus
 ---
 
 ## <span id="git_resources">Git 相关资源</span>
+
+### 教程
+
+* [Git的奇技淫巧](https://github.com/jackfrued/git-tips)
+* [git - 简明指南](https://rogerdudler.github.io/git-guide/index.zh.html)
+
+### 其他笔记
 
 * [Git 教程资源笔记](Git_Videos.md)
 

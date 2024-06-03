@@ -5,8 +5,9 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2024-04-28 21:31:10
+modified: 2024-06-04 03:23:13
 ---
+
 # Obsidian 笔记
 
 ---
@@ -54,7 +55,9 @@ modified: 2024-04-28 21:31:10
 「默认视图」选择「阅读模式」（Reading View）。
 
 「默认编辑模式」选择「源码模式」，这样编辑更准确些，而且不用即时渲染还能节省性能，提高编辑的流畅度。
+
 > [! tip] 实时预览
+> 
 > 「实时预览模式」效果跟 [Typora](https://typora.io/) 默认的类似，就是一边编辑，编辑器一边给你渲染出发布的页面效果。
 
 ### <span id="obn_config_settings_basice_filelinks">文件与链接</span>
@@ -66,6 +69,7 @@ modified: 2024-04-28 21:31:10
 默认「内部链接类型」是「尽可能简短形式」，就是不管链接目标文件是否在当前目录，都以不加目录路径（即没有绝对路径，也没有相对路径），这样链接如果是当前目录当前文件内部链接还没什么问题，如果链接目标是目录的文件时，虽然在 Obsidian 中能够链接到，但这在实际 Markdown 使用会出现问题，会出现找不到链接情况。为了更符合 Markdown 使用习惯，应将链接类型改为「**基于当前目录的相对路径**」，这样它就是根据目标链接文件是否在当前目录而使用 **相对路径** 链接策略。
 
 #### 不使用 Wiki 链接
+
 为了使文档更符合 Markdown 规范，将「使用 Wiki 链接」选项给关闭，仅使用 Markdown 标准的 `[]()` 这种语法
 
 ### <span id="obn_config_settings_appearance">外观</span>
@@ -219,6 +223,7 @@ $ cat MyNotes/ITNotes/.obsidian/themes/AnuPpuccin/manifest.json
  Snippets ，根据需要启用相应的 CSS Snippet，该 Snippet 的功能就能生效了。
 
 > [!tip] Mysnippet
+> 
 > snippet 可以与插件 [MySnippets](#MySnippets) 配合使用。
 
 ### 常用的 Snippet：
@@ -252,6 +257,7 @@ $ cat MyNotes/ITNotes/.obsidian/themes/AnuPpuccin/manifest.json
 ![anuppuccin rainbow folder](https://github.com/AnubisNekhet/AnuPpuccin/raw/main/assets/gh-rainbow-preview.webp)
 
 这主题一些特色的功能：
+
 * 「Rainbow folder」彩虹目录
 * 「File Browser」中有个「Enable folder icons for collapse indicators」选项，可以给目录添加有颜色的目录图标
 * 「Active line highlight」 高亮当前行
@@ -260,6 +266,7 @@ $ cat MyNotes/ITNotes/.obsidian/themes/AnuPpuccin/manifest.json
 * 「Layout」 能将界面布局设成 **卡片式**
 * 「Tabs」对标签页风格样式作设置
 > [!tip] 新建标签按钮设置
+> 
 > 默认时候，新建标签按钮都是放在右侧，如果将「Diable new tab button right alignment」这个选项开启，那新建标签页按钮就会跑到最后的一个标签后后面，这方便点击新建标签页。
 
 ---
@@ -378,20 +385,18 @@ $ cat MyNotes/ITNotes/.obsidian/themes/AnuPpuccin/manifest.json
 
 侧边栏相关快捷键设置：
 
-|                       命令功能                        |    快捷键    |
-|:-------------------------------------------------:|:------------:|
-|                     文件列表                      | Ctrl+Shift+M |
-|                       搜索                        | Ctrl+Shift+F |
-|                Git Source Control                 | Ctrl+Shift+G |
-| Show Outline 或者 [Quiet Outline](#Quiet%20Outline) | Ctrl+Shift+U | 
-|                                                   |              |
+|                      命令功能                       |    快捷键    |
+|:---------------------------------------------------:|:------------:|
+|                      文件列表                       | Ctrl+Shift+M |
+|                        搜索                         | Ctrl+Shift+F |
+|                 Git Source Control                  | Ctrl+Shift+G |
+| Show Outline 或者 [Quiet Outline](#Quiet%20Outline) | Ctrl+Shift+U |
 
 #### 其他自定义快捷键
 
 |     命令功能     | 快捷键 |
 |:----------------:|:------:|
 | 折叠/展开 当前行 | Ctrl+Z | 
-|                  |        |
 
 ---
 
@@ -541,6 +546,7 @@ Obsidian 的插件分为 [核心插件](#obn_plugins_core) 和 [第三方插件]
 [Omnisearch](https://github.com/scambier/obsidian-omnisearch) 是搜索增强插件。
 
 功能：
+
 * 支持搜索 PDF 文件
 * 能将搜索结果插入 `[[]]` 链接中
 * 支持 **vim** 方式的导航操作
@@ -570,6 +576,7 @@ Obsidian 的插件分为 [核心插件](#obn_plugins_core) 和 [第三方插件]
 [cm-chs-path](https://github.com/aidenlx/cm-chs-patch) 这个插件是增强中文分词能力。
 
 > [!info] 官方描述
+> 
 > 增加 Obsidian 内置编辑器的 (简体) 中文分词支持，使得编辑模式的双击可以选中中文，以及在 Vim 模式下可以按中文分词移动光标。
 
 这插件支持 vim 模式。
@@ -611,6 +618,7 @@ Obsidian 的插件分为 [核心插件](#obn_plugins_core) 和 [第三方插件]
 [Templater](https://github.com/SilentVoid13/Templater) 是一个强大的第三方模板插件，比核心那个 [模板](#模板) 插件强不少。
 
 > [!tip]
+> 
 > 要启用 Templater 插件，得先把核心模板插件给关了。
 
 详细笔记：[Templater](Obsidian_Plugins_Note.md#Templater)
@@ -628,18 +636,22 @@ Obsidian 的插件分为 [核心插件](#obn_plugins_core) 和 [第三方插件]
 
 [Linter](https://github.com/platers/obsidian-linter) 是一款格式化 Markdown 文件的插件。
 
-常用设置：
+###### 常用设置
+
 「Content」 选项卡：
+
 1. 「Emphasis Style」斜体书写风格。有三种选项：`consistent`、`asterisk`、`underscore`。
 2. 「Strong Style」 粗体书写风格。同样有三种选项：`consistent`、`asterisk`、`underscore`。
 3. 「Unordered List Style」无序列表书写风格 ，有四种。
 这几个选项设置，个人一般使用 `asterisk`，就是星号。
 
 「Spacing」 选项卡：
+
 1. 「Heading blank lines」 设置标题前后的空行，默认是在标题后空一行。
 2. 「Space between Chinese Japanese or Korean and English or numbers」，这选项是数字与汉字英文等间加空格。这功能是参考了 [中文文案排版指北](https://github.com/sparanoid/chinese-copywriting-guidelines) 这个中文 Markdown 文档排版建议方案文档来弄的！
 
 「YAML」 选项卡：
+
 1. 「Format Tags in YAML」格式化 [tag][#obn_advanced_frontmatter_tag]，将 [YAML front matter](#obn_advanced_frontmatter) 中的 **#**符号去除。 如果不想设置这个设置，可以安装 [Frontmatter Tag Suggest](#obn_plugins_tagsuggest) 插件，在输入并选定 tag 候选项时就直接去除**#**符号了。
 2. 「Insert YAML attributes」添加缺少的属性，可以在属性文本框中加入属性，方便格式化时添加。
 3. 「YAML Timestamp」 这是添加时间戳的，可以添加建档时间及修改时间，时间格式也可自行设定。
@@ -833,6 +845,16 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 [obsidian-editing-toolbar](https://github.com/cumany/obsidian-editing-toolbar) 是一个在编辑区显示常用 Markdown 组件的工具栏。 这个插件最初是 [cMenu](#obn_plugins_cmenu) 的魔改版本，后来才更名为「editing toolbar」。
 
 ![editing-toolbar demo](https://github.com/cumany/obsidian-editing-toolbar/raw/master/editing-toolbar-demo.gif)
+
+---
+
+##### <span id="obn_plugins_commp_heti">heti</span>
+
+[obsidian-heti](https://github.com/moeyua/obsidian-heti) 是一款中文排版增强插件。
+
+![heti screenshot](https://raw.githubusercontent.com/sivan/heti/master/_site/assets/screenshot-grid.png)
+
+这插件比较适合那种中文书籍阅读笔记，而如果是 IT 类等中英文夹杂的笔记，就有点不太适合。
 
 ---
 

@@ -9,7 +9,7 @@ tags:
   - shadowsocksr
   - clash
 created: 2024-05-25 22:58:31
-modified: 2024-05-31 20:18:19
+modified: 2024-06-05 04:01:46
 ---
 
 # 梯子笔记
@@ -141,10 +141,104 @@ pacman -S clash-verge
 > 
 > * [Clash Verge Rev使用教程](https://clashvergerev.com/tutorial.html)
 
+#### PAC
+
+通过开启 `PAC模式` 对国内网站进行直链设置。
+
+类似代码如下：
+
+```js
+function FindProxyForURL(url, host) {
+
+	const directList = [
+		"www.baidu.com",
+		"www.bilibili.com",
+		"www.163.com",
+		"www.jd.com",
+		"www.taobao.com",
+		"www.ixigua.com",
+		"www.msn.cn",
+		"www.bing.com",
+		"cn.bing.com",
+		"tv.cctv.com",
+		"www.dangdang.com",
+		"www.zol.com.cn",
+		"www.miguvideo.com",
+		"www.smzdm.com",
+		"www.zdic.net",
+		"mirrors.tuna.tsinghua.edu.cn",
+		"www.shuge.org"
+		
+		//"10.11.12.13",
+	
+	];
+	
+	if (directList.includes(host)) {
+	
+		return "DIRECT";
+	
+	}
+	
+	return "PROXY 127.0.0.1:%mixed-port%; SOCKS5 127.0.0.1:%mixed-port%; DIRECT;";
+
+}
+
+```
+
+> [!info] 
+> 
+> 最重要的是 `directList` 这块代码函数。其中是要直链的网站地址列表。
+
+### V2ray
+
+[V2Ray](https://www.v2ray.com/) 是 ProjectV 下的一个工具。V2Ray 是一个与 Shadowsocks 类似的代理软件。
+
+V2Ray 本身不支持 [PAC](#PAC)。
+
+#### V2ray 客户端
+
+> [!quote] 
+> 
+> 从软件上 V2Ray 不区分服务器版和客户端版，也就是说在服务器和客户端运行的 V2Ray 是同一个软件，区别只是配置文件的不同。
+>
+> 因此 V2Ray 的安装在服务器和客户端上是一样的，但是通常情况下 VPS 使用的是 [Linux](#Linux) 而 PC 使用的是 [Windows](#Windows)。
+
+##### Windows
+
+[v2rayN](https://github.com/2dust/v2rayN) 是 Windows 下的 v2ray 的客户端。
+
+##### Linux
+
+首先得先安装 `v2ray`，可以通过操作系统的包管理器进行安装，如 `pacman -S v2ray`。
+
+安装完了，通过 `systemctl` 启动 v2ray 服务：
+
+```shell
+sudo systemctl start v2ray
+```
+
+> [!tip] 
+> 
+> 启动 v2ray 后 ，可以使用 `systemctl status v2ray` 来查看当前 v2ray 的状态。
+
+Linux 下 gui 客户端，比较流行的的有 [v2rayA](https://github.com/v2rayA/v2rayA) ，它是一个 Web 端图形界面。
+
+同样的，通过包管理工具安装，如 `pacman -S v2raya`。
+
+同样的，v2rayA 安装完了，也需要启动其服务：
+
+```shell
+sudo systemctl start v2raya
+```
+
+`v2raya` 的服务启动成功后，在浏览器中输入 `[127.0.0.1:2017](http://127.0.0.1:2017/)` 来访问 v2raya。
+
 ### 相关资料
 
 * [如何使用疾风云机场？-2024 VPN](https://gfwoff.com/how-to-use-jifeng-cloud-vpn/)
 * [Clash Verge Rev官网下载 - Clash Verge](https://clashverge.net/clash-verge-rev/)
+* [toutyrater](https://toutyrater.github.io/)
+* [v2rayA 入门使用教程](https://v2rayn.uuk.app/112)
 
 ---
 

@@ -4,11 +4,13 @@ tags:
   - PL
   - golang
 created: 2023-01-31 11:31:14
-modified: 2024-02-27 03:16:17
+modified: 2024-06-12 18:13:39
 ---
+
 # Go 语言笔记
 
 ---
+
 ## 目录
 
 * [安装和设置](#golang_setup)
@@ -302,8 +304,20 @@ import (
 
 ## Go 相关的资料
 
+### 教程
+
+* [Go 语言简明教程| 极客兔兔](https://geektutu.com/post/quick-golang.html)
+
+### 文档 
+
 * [golang 官网](https://go.dev/)
 * [Go社区 Wiki](https://learnku.com/go/wikis)
 * [Golang中文学习文档](https://golang.halfiisland.com/)
+* [Go语言中文文档](https://www.topgoer.com/)
+
+---
+
+## 相关笔记
+
 * [GoLang视频清单](GoLang_Videos.md)
 

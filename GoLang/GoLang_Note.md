@@ -4,7 +4,7 @@ tags:
   - PL
   - golang
 created: 2023-01-31 11:31:14
-modified: 2024-06-12 18:13:39
+modified: 2024-06-12 19:51:30
 ---
 
 # Go 语言笔记
@@ -25,6 +25,7 @@ modified: 2024-06-12 18:13:39
 
 * Rob Pike，Go 语言项目总负责人
 > [!tip] 关于 Rob Pike 的谣言
+> 
 > 中文百科中说 Rob Pike 曾在 1980 年莫斯科奥运会上夺得射箭银牌，这完全是 **谣言**！
 * Ken Thompson 「**Unix 之父**」
 * Rober Griesemer 参与开发 [Java](../Java/Java_Note.md) HotSpot 虚拟机。
@@ -110,9 +111,10 @@ go env -w GOPROXY=https://goproxy.cn,https://proxy.golang.com.cn,https://goproxy
 > Goproxy.cn 是布置在 [七牛云](https://www.qiniu.com/) 上，所以稳定性应该可以保证。
 * [GoProxy.io](https://goproxy.io/) [![goproxy.io Repo](https://img.shields.io/github/stars/goproxyio/goproxy?style=social)](https://github.com/goproxyio/goproxy)
 > [!tip] 关于 GoProxy.io
+> 
 > GoProxy.io 应该是有两个域名：  
-> `https:/goproxy.io` 
-> `https://proxy.golang.com.cn`
+> * `https:/goproxy.io` 
+> * `https://proxy.golang.com.cn`
 * [阿里 Go代理](https://mirrors.aliyun.com/goproxy/)
 
 > [!info]

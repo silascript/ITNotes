@@ -6,15 +6,29 @@ tags:
   - vocabulary
   - word
 created: 2023-08-18 19:44:52
-modified: 2024-03-27 17:28:30
+modified: 2024-06-13 22:58:04
 ---
+
 # IT 英文词汇
 
 ---
 
 ## 目录
 
+* [硬件相关](#硬件相关)
+* [编程相关](#编程相关)
 * [文本相关](#文本相关)
+	* [段落句子](#段落句子)
+	* [标点符号](#标点符号)
+		* [括号](#括号)
+* [相关工具](#相关工具)
+* [相关字典](#相关字典)
+
+---
+
+## 说明
+
+本单词表所有单词以 [剑桥字典](https://dictionary.cambridge.org/) 及 [牛津字典](https://www.oxfordlearnersdictionaries.com/) 所标识的音标为准。
 
 ---
 
@@ -48,20 +62,24 @@ modified: 2024-03-27 17:28:30
 
 #### 括号
 
-* parentheses：小括号
+* parenthesis：[pəˈrenθəsɪs] 小括号；复数 parentheses [pəˈren.θə.siːz]
 * braces：花括号；大括号
 * brackets：中括号
 
 > [!tip]
 > 
-> *parentheses* 主要是美国人用，英国人常用*round brackets*或*brackets*。
+> **parentheses** 主要是美国人用，英国人常用**round brackets** 或 **brackets**。
 > 
-> *braces* 和 *brackets* 也常常泛指括号，特别是 braces 也常被用来指小括号，因为小括号在编程环境出现的频率最高。
+> **braces** 和 **brackets**  也常常泛指括号，特别是 **braces** 也常被用来指小括号，因为小括号在编程环境出现的频率最高。
 >
 > 如 [Vim](../vim/Vim_Note.md) 的操作中，有一个常用操作 `cib`，是修改小括号中的文字，这命令中的 `b` 指的就是小括号，而不是中括号或大括号。因为编程中，函数的参数列表常使用到小括号，所以才会有 `cib` 这个命令。
 > 
 
-## 相关链接
+* backslash：反斜杠（`\`）
+
+---
+
+## 相关工具
 
 ### Qwerty Learner
 
@@ -81,3 +99,9 @@ modified: 2024-03-27 17:28:30
 
 [Qwerty-Learner - VSCode Extension](https://marketplace.visualstudio.com/items?itemName=Kaiyi.qwerty-learner)
 
+---
+
+## 相关字典
+
+* [Cambridge Dictionary](https://dictionary.cambridge.org/)
+* [Oxford Learner's Dictionaries](https://www.oxfordlearnersdictionaries.com/)

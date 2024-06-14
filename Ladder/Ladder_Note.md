@@ -9,7 +9,7 @@ tags:
   - shadowsocksr
   - clash
 created: 2024-05-25 22:58:31
-modified: 2024-06-09 22:19:19
+modified: 2024-06-14 12:45:49
 ---
 
 # 梯子笔记
@@ -66,18 +66,26 @@ modified: 2024-06-09 22:19:19
 
 #### 海盗云
 
-[海盗cloud](https://www.hdycco.xyz/) 入门套餐：9.9 元/月，1000G，量大管饱。
+[海盗cloud](https://www.hdycco.xyz/) 入门套餐：9.9 元/月，300G，100M 速度。
 
 ### 起帆云
 
 [起帆Cloud](https://www.qf1.us/) 入门套餐：9.9 元/月，2000G，不限速、不限设备数，极具性价比。
 
+> [!info] 
+> 
+> 起帆云节点主要在亚太，有香港、台湾、俄罗斯和越南等地的节点。
+
 ### 超悦机场
 
 [**超悦**](https://www.chaoyue.shop/#/register?code=2VpoP7sg) 入门套餐有两个：
 
-1. **年付** 12 元，每月 100G 流量，限速 100M，相当于 1 元/月，适合长期订阅，流量需求不大的用户
+1. **年付** 12 元（实付 12.96 元，0.96 元是手续费），每月 100G 流量，限速 100M，相当于 1 元/月，适合长期订阅，流量需求不大的用户
 2. 6.8 元/月，500G，限速 300M，长期订阅但单月流量较大。
+
+> [!info] 
+> 
+> 超悦节点主要在欧洲，最近的只有新加坡和印度的节点。不如 [疾风云](#疾风云) 那样有台湾和香港的节点。
 
 ### 相关资料
 
@@ -86,6 +94,7 @@ modified: 2024-06-09 22:19:19
 * [机场推荐！2024年5月大量高性价比机场指南与免费机场汇总集合啦！ - 机场8指南](https://www.jichang8.com/ji-chang/stable-and-good-ji-chang.html)
 * [机场评测表 | VPN中国](https://www.vpn-china.org/%e6%9c%ba%e5%9c%ba%e8%af%84%e6%b5%8b%e8%a1%a8/)
 * [2024最新Clash节点订阅地址链接分享Clash机场推荐购买](https://clashnode.org/)
+* [机场跑路名单（持续更新）-2024 VPN](https://gfwoff.com/jichang-paolu-lists/)
 
 ---
 

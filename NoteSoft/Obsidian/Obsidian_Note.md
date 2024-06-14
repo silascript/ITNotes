@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2024-06-08 20:34:14
+modified: 2024-06-14 19:10:31
 ---
 
 # Obsidian 笔记
@@ -40,6 +40,8 @@ modified: 2024-06-08 20:34:14
 	* [绘图相关](#obn_plugins_commp_draw)
 		* [Mermaid Tools](#obn_plugins_commp_draw_mermaid_tools)
 	* [Git 相关](#obn_plugins_commp_git)
+	* [杂项插件](#obn_plugins_misc)
+		* [PowerMode](#PowerMode)
 	* [非 markdown 语法插件](#obn_plugins_notmarkdown)
 	* [未在社区插件库的插件](#obn_plugins_outside_community)
 * [Obsidian 专用语法](#obn_syntax)
@@ -308,24 +310,24 @@ $ cat MyNotes/ITNotes/.obsidian/themes/AnuPpuccin/manifest.json
 
 ### <span id="obn_default_hotkeys">常用默认快捷键</span>
 
-|    快捷键     |                      功能                      |
-|:-------------:|:----------------------------------------------:|
-|      F2       |                   文件重命名                   |
-|    Ctrl+,     |                    打开设置                    |
-|    Ctrl+g     |                  打开关系图谱                  |
-|    Ctrl+o     | 打开 [快速切换](#obn_basic_quickswitcher) 面板 |
-|    Ctrl+p     |                  打开命令面板                  |
-|    Ctrl+e     |       当前文件页面编辑模式与阅读模式切换       |
-|    Ctrl+w     |                 关闭当前标签页                 |
-|    Ctrl+f     |                 在当前文件搜索                 |
-| Ctrl+Shift+f  |                  所有文件搜索                  |
-|    Ctrl+k     |                  插入一个链接                  |
-|    Ctrl+t     |                   新建标签页                   |
-|    Ctrl+n     |                    新建笔记                    |
-|    Ctrl+/     |                 注释或取消注释                 |
-|    Ctrl+B     |                 加粗或取消加粗                 |
-|   Ctrl+Tab    |                   标签页切换                   |
-| Ctrl+ 鼠标中键 |                  字体放大缩小                  | 
+|     快捷键     |                      功能                      |
+|:--------------:|:----------------------------------------------:|
+|       F2       |                   文件重命名                   |
+|     Ctrl+,     |                    打开设置                    |
+|     Ctrl+g     |                  打开关系图谱                  |
+|     Ctrl+o     | 打开 [快速切换](#obn_basic_quickswitcher) 面板 |
+|     Ctrl+p     |                  打开命令面板                  |
+|     Ctrl+e     |       当前文件页面编辑模式与阅读模式切换       |
+|     Ctrl+w     |                 关闭当前标签页                 |
+|     Ctrl+f     |                 在当前文件搜索                 |
+|  Ctrl+Shift+f  |                  所有文件搜索                  |
+|     Ctrl+k     |                  插入一个链接                  |
+|     Ctrl+t     |                   新建标签页                   |
+|     Ctrl+n     |                    新建笔记                    |
+|     Ctrl+/     |                 注释或取消注释                 |
+|     Ctrl+B     |                 加粗或取消加粗                 |
+|    Ctrl+Tab    |                   标签页切换                   |
+| Ctrl+ 鼠标中键 |                  字体放大缩小                  |
 
 > [!bug] 标签页切换问题
 >
@@ -369,11 +371,15 @@ $ cat MyNotes/ITNotes/.obsidian/themes/AnuPpuccin/manifest.json
 使用 `Ctrl+Tab` 快捷键进行标签页切换。标签页不单止编辑区中的打开的各文档，而可以是侧边栏，文件列表、搜索等标签。
 
 设置并使用「将焦点切换至编辑区」快捷键，就能从其他区域，将焦点跳转回编辑区。
+
 > [!tip] 焦点切回编辑区
+> 
 > 我个人将此快捷键设置为 `Ctrl+M`。
 
 设置并使用「显示文件列表」快捷键，就能将焦点从比如编辑区跳转到侧边栏，对文件列表或搜索标签进行下一步的标签页切换操作。
+
 > [!tip] 焦点切回文件列表
+> 
 > 我个人将此快捷键设置为 `Ctrl+Shift+M` (`Ctrl+Shift+H` 有可能与 [osdlyrics](https://github.com/osdlyrics/osdlyrics) 这个音乐播放器歌词插件的快捷键冲突，我在 Linux 上使用到这货)
 
 #### 侧边栏的开关
@@ -1192,6 +1198,16 @@ note 类型
 ![obsidian_timeline_sc1](Obsidian_Note.assets/obsidian-timeline_sc1.png)
 
 `[line-4, body-4]` 这个是指定显示风格。
+
+---
+
+### <span id="obn_plugins_misc">杂项插件</span>
+
+#### PowerMode
+
+[obsidian-power-mode](https://github.com/zhouhua/obsidian-power-mode) 就是那个曾经在 [文本编辑器](../../Editors/Editors_Note.md) 圈子流行过一个「小玩意」插件，就是在输入时，加点「特效」，以改善输入的「无聊度」。
+
+![power mode screenshot](https://github.com/zhouhua/obsidian-power-mode/raw/master/screenshots/powermode.gif)
 
 ---
 

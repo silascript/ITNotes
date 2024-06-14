@@ -6,8 +6,9 @@ tags:
   - plugin
   - list
 created: 2023-01-13 12:44:24
-modified: 2024-03-17 01:02:37
+modified: 2024-06-14 18:45:24
 ---
+
 # Obsidian 个人必装插件清单
 
 ---
@@ -55,6 +56,14 @@ modified: 2024-03-17 01:02:37
 * [vim-yank-hightlight](Obsidian_Note.md#vim-yank-hightlight)
 * [various-complements-plugin](Obsidian_Note.md#various-complements-plugin)
 * [completr](Obsidian_Note.md#completr)
+* [PowerMode](Obsidian_Note.md#PowerMode)
 
 更多的常用插件介绍，请参考 [Obsidian 笔记](Obsidian_Note.md#obn_plugins_commp)
 
+---
+
+## 相关笔记
+
+* [Obsidian 笔记](Obsidian_Note.md)
+* [Obsidian部分插件笔记](Obsidian_Plugins_Note.md)
+* [Markdown 笔记](../../Markdown/Markdown_Note.md)

@@ -5,16 +5,18 @@ tags:
   - obsidian
   - plugin
 created: 2023-06-28 17:02:25
-modified: 2024-01-25 00:28:24
+modified: 2024-06-14 19:07:42
 ---
+
 # Obsidian 部分插件笔记
 
 ---
 
 ## 目录
 
-* [Dataview](Obsidian_Plugins_Note.md#obp_dataview)
-* [相关链接](Obsidian_Plugins_Note.md#obp_aboutlinks)
+* [Dataview](#obp_dataview)
+* [Templater](#obp_templater)
+* [相关链接](#obp_aboutnotes)
 
 ---
 
@@ -49,15 +51,19 @@ General Settings 中有个设置「Template folder location」，这个是设置
 但有一种需求是，我想在某个目录下新建笔记时，不使用右键选「Create Note from Template」后再选择相应模板这两个操作，而直接使用 Obsidian 新建笔记动作，而笔记自动套用相应的模板文件生成新笔记，那就得使用到 Templater 中的我翻译为「新建文件触发器」的功能。
 
 要使用这个「触发器」功能得做以下设置：
+
 1. 打开「Trigger Templater on new file creation」选项
 2. 当「Trigger Templater on new file creation」选项被打开后，就会出现「Add New」设置栏。它可以新增目录与模板对应关系
 3. 在「Add New」设置栏中，点击「+」，就能新建一个对应项：前面的是要生成新笔记的目录，后面是要使用到的模板文件
 
 > [!tip] 触发条件
+> 
 > 只能在右键「新建笔记」时，套用模板文件的触发器才能生效。如果是点击「文件列表」顶部那个「新建笔记」按钮，是不会触发的。
 > 
 > 原因，大概是「文件列表」**顶部**那个「新建笔记」按钮是「全局」的，新键笔记前「焦点」可能未落在指定目录，而使得触发条件不明，因为 Obsidian 的「新建笔记」有三个选项：「根目录」、「当前文件所在目录」和「指定附件目录」，所以使用 `Ctrl+N` 、`Ctrl+Shift+N` 或顶部「新建笔记」按钮新建笔记时，焦点并未落在指定的目录，所以 Templater 的新建笔记触发器未能触发成功。
+> 
 > > [!tip]
+> > 
 > > 这极有可能是因为 Obsidian 的设计哲学造成的，因为 Obsidian 最亮点功能是「双链」，这个功能的出现，使得原来使用目录方式来分类笔记的方式被「平面化」了，至少目录层级会减少。所以焦点这块，Obsidian 做得非常烂，即便当前文件焦点都已经失去，使用快捷键将操作转到「文件列表」上，文件列表焦点都不存在，如果这里使用 `Ctrl+N` 或按顶部「新建笔记」按钮，只会设置里设定的新建笔记的三个地方新建笔记，如设置为「当前文件所在目录」，那只会在编辑区正显示的文件所在的目录中新建笔记，即便这个「当前文件」的焦点已经失去了。
 > 
 > 右键「新键笔记」是针对指定目录的，所以触发目标更明确，满足了触发条件，所以这个方式是能生效。
@@ -121,30 +127,31 @@ tp.file.title
 > 
 > 这是个属性，只获取当前文件的标题
 
-###### 文件内空
+###### 文件内容
 
 ```javascript
 tp.file.content
 ```
 
-> [!tip] 注意
+> [!tip] 
+> 
 > `tp.file.content` 不是一个函数，而是一个属性，别乱加小括号。
 
-> [!info] 相关源码
+> [!info] 源码
 > 
 > Templater [content 函数](https://github.com/SilentVoid13/Templater/blob/master/src/core/functions/internal_functions/file/InternalModuleFile.ts#L57)
-> ```javascript
-> async generate_content(): Promise<string> {
->        return await app.vault.read(this.config.target_file);
->  }
-> ```
 > 
 > Obsidian [read 函数](https://github.com/obsidianmd/obsidian-api/blob/master/obsidian.d.ts#L747)
-> ```javascript
->  read(normalizedPath: string): Promise<string>;
-> ```
-> 
-> 
+
+```javascript
+async generate_content():  Promise<string> {
+	return await app.vault.read(this.config.target_file);
+}
+```
+
+```javascript
+read(normalizedPath: string): Promise<string>;
+```
 
 ###### 查询模板
 
@@ -203,6 +210,7 @@ tp.file.exists(filename: string)
 > [!info] exists 函数解析
 > 
 > 参数：文件名的相对路径。
+> 
 >> [!tip] 路径注意点
 >> 
 >> 这个路径中，文件名必须包括后缀名，如「**MyFolder/MyFile.md**」，`.md` 不能省。 
@@ -292,8 +300,9 @@ tp.system.suggester(text_items: string[] ⎮ ((item: T) => string), items: T[], 
 
 ---
 
-## <span id="obp_aboutlinks">相关链接</span>
+## <span id="obp_aboutnotes">相关笔记</span>
 
 * [Obsidian 笔记](Obsidian_Note.md)
 * [Obsidian常用插件清单](Obsidian_Plugins_List.md)
 * [Obsidian 相关视频](Obsidian_Videos.md)
+* [Markdown笔记](../../Markdown/Markdown_Note.md)

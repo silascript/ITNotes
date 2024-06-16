@@ -9,7 +9,7 @@ tags:
   - shadowsocksr
   - clash
 created: 2024-05-25 22:58:31
-modified: 2024-06-14 18:34:08
+modified: 2024-06-15 20:52:22
 ---
 
 # 梯子笔记
@@ -31,6 +31,28 @@ modified: 2024-06-14 18:34:08
 > [!info] 相关资料
 > 
 > * [机场的几种协议的历史](https://www.vpn-china.org/history-of-several-airport-agreements/)
+
+---
+
+## 协议
+
+### Vmess
+
+> Vmess 是一种基于 WebSocket 的代理协议,由 [V2ray](#V2ray) 项目开发。它采用 AES-128-GCM 加密算法,并支持多种传输方式,如普通 TCP、[Http/2](../Network/Http_Note.md)、WebSocket 等,具有较强的隐蔽性。vmess 协议广泛应用于科学上网领域,是 [V2ray](#V2ray)、[Clash](#Clash) 等众多代理工具的默认协议。
+> 
+> 它分为**入站**和**出站**两部分，其作用是帮助客户端跟服务器之间建立通信。在 V2Ray 上客户端与服务器的通信主要是通过 VMess 协议通信。（[v2ray doc - vmess](https://www.v2ray.com/chapter_02/protocols/vmess.html#vmess)）
+
+> [!important] 
+> 
+> VMess 依赖于系统时间，请确保使用 [V2ray](#V2ray) 的系统 UTC 时间误差在 90 秒之内，与 V2Ray 服务器所在时区无关。在 Linux 系统中可以安装 ntp 服务来自动同步系统时间。
+
+### Hysteria
+
+[Hysteria](https://github.com/apernet/hysteria)
+
+> [!info] 文档
+> 
+> * [Hysteria 中文文档](https://v2.hysteria.network/zh/)
 
 ---
 
@@ -83,7 +105,9 @@ modified: 2024-06-14 18:34:08
 1. **年付** 12 元（实付 12.96 元，0.96 元是手续费），每月 100G 流量，限速 100M，相当于 1 元/月，适合长期订阅，流量需求不大的用户
 2. 6.8 元/月，500G，限速 300M，长期订阅但单月流量较大。
 
-超悦适合作为「保底」机场使用，毕竟 1 块钱一个月，还能要求什么呢！
+超悦使用 [Hysteria](#Hysteria) 协议。
+
+超悦更适合作为「保底」机场使用，各节点稳定性不如那些 9.9 一个月的机场，但毕竟 1 块钱一个月，还能要求什么呢！
 
 > [!info] 
 > 
@@ -211,6 +235,7 @@ function FindProxyForURL(url, host) {
 		"www.ixigua.com",
 		"www.msn.cn",
 		"www.bing.com",
+		"www2.bing.com",
 		"cn.bing.com",
 		"tv.cctv.com",
 		"www.dangdang.com",
@@ -240,6 +265,10 @@ function FindProxyForURL(url, host) {
 > [!info] 
 > 
 > 最重要的是 `directList` 这块代码函数。其中是要直链的网站地址列表。
+>  
+>  相关文档
+> 
+> * [代理自动配置文件（PAC）文件 - HTTP | MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Proxy_servers_and_tunneling/Proxy_Auto-Configuration_PAC_file)
 
 ### V2ray
 

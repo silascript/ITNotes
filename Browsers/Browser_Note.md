@@ -6,8 +6,9 @@ tags:
   - edge
   - firefox
   - vivaldi
+  - brave
 created: 2023-08-18 19:44:52
-modified: 2024-06-16 18:45:25
+modified: 2024-06-17 02:51:28
 ---
 
 # 浏览器 笔记
@@ -16,7 +17,11 @@ modified: 2024-06-16 18:45:25
 
 ## Chrome 
 
+---
+
 ## Edge
+
+---
 
 ## FireFox
 
@@ -55,4 +60,14 @@ modified: 2024-06-16 18:45:25
 * [Customizations & Extensions | Vivaldi Forum](https://forum.vivaldi.net/category/43/customizations-extensions)
 
 ---
+
+## Brave
+
+[Brave](https://brave.com)
+
+---
+
+## 相关笔记
+
+* [Chrome浏览器笔记](Chrome_Note.md)
 

@@ -9,7 +9,7 @@ tags:
   - shadowsocksr
   - clash
 created: 2024-05-25 22:58:31
-modified: 2024-06-17 00:54:49
+modified: 2024-06-17 11:53:14
 ---
 
 # 梯子笔记
@@ -32,11 +32,9 @@ modified: 2024-06-17 00:54:49
 > 
 > * [机场的几种协议的历史](https://www.vpn-china.org/history-of-several-airport-agreements/)
 
----
+### 协议
 
-## 协议
-
-### Vmess
+#### Vmess
 
 > Vmess 是一种基于 WebSocket 的代理协议,由 [V2ray](#V2ray) 项目开发。它采用 AES-128-GCM 加密算法,并支持多种传输方式,如普通 TCP、[Http/2](../Network/Http_Note.md)、WebSocket 等,具有较强的隐蔽性。vmess 协议广泛应用于科学上网领域,是 [V2ray](#V2ray)、[Clash](#Clash) 等众多代理工具的默认协议。
 > 
@@ -46,13 +44,52 @@ modified: 2024-06-17 00:54:49
 > 
 > VMess 依赖于系统时间，请确保使用 [V2ray](#V2ray) 的系统 UTC 时间误差在 90 秒之内，与 V2Ray 服务器所在时区无关。在 Linux 系统中可以安装 ntp 服务来自动同步系统时间。
 
-### Hysteria
+#### Hysteria
 
 [Hysteria](https://github.com/apernet/hysteria)
 
 > [!info] 文档
 > 
 > * [Hysteria 中文文档](https://v2.hysteria.network/zh/)
+
+### 路由规则
+
+#### GFWList
+
+「GFWList」产生于 Shadowsocks 诞生之时，Shadowsocks 根据 GFWList 判断哪些网站需要被代理，如果网站被收录在 GFWList 里，那这个网站将通过 Shadowsocks 代理，否则不会被代理。即 GFWList 收集了已知的被墙的网站。GFWList 中的网站是被墙的，即黑名单，所以这种分流方式被称为「黑名单模式」。 #黑名单模式
+
+#### ChinaList
+
+ChinaList 收录了中国大陆境内的网站，如果访问的网站在此列表中，该网站直连，反之不在此列表中，则会通过代理。这种方式被称为「白名单模式」。 #白名单模式 
+
+> [!tip] 
+> 
+> 白名单模式有一些不被墙的网站都走了代理，比黑名单更耗流量。
+>
+> 但实际上那些不被墙的网站走直连速度也非常「可人」，所以花点流量有更好的体验，也是非常不错的。
+> 
+> [GitHub - dctxmei/v2ray-china-list](https://github.com/dctxmei/v2ray-china-list)
+
+#### geoip
+
+geoip 是使用 MaxMind 的 [GeoLite2](https://dev.maxmind.com/geoip/geolite2-free-geolocation-data) IP 库，非常全面。
+
+> 一个中国大陆网站的域名通过代理 DNS 查询到一个国外的 IP，根据上面的规则，这个网站则会通过代理访问，一样会出现慢的问题。
+
+> [!info] 相关链接
+> 
+> * [GitHub - Loyalsoldier/geoip: GeoIP 规则文件加强版，同时支持定制 V2Ray dat 格式路由规则文件 geoip.dat 和 MaxMind mmdb 格式文件 Country.mmdb](https://github.com/Loyalsoldier/geoip)
+> * [GitHub - Loyalsoldier/v2ray-rules-dat: V2Ray 路由规则文件加强版，可代替 V2Ray 官方 geoip.dat 和 geosite.dat](https://github.com/Loyalsoldier/v2ray-rules-dat)
+
+#### DNS 分流
+
+国内网站使用国内 DNS 解析，国外的使用国外 DNS 解析。
+
+DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
+
+#### 参考资料
+
+* [路由规则设定方法 · V2Ray 配置指南](https://waloyn.github.io/rater/routing/configurate_rules.html)
 
 ---
 

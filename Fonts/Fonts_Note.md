@@ -5,21 +5,26 @@ tags:
   - unicode
   - cjk
 created: 2023-01-31 11:31:14
-modified: 2024-04-23 18:21:26
+modified: 2024-06-17 20:53:00
 ---
+
 # 字体笔记
 
 介绍各类字体
 
 ---
+
 ## 目录
+
 * [中文字体](#fonts_zh)
 	* [CJK](#fonts_zh_cjk)
+	* [GB18030](#fonts_zh_gb18030)
 	* [思源字体](#fonts_zh_notofont)
 	* [更纱黑体](#fonts_zh_sarasa)
 * [编程字体](#fonts_program)
 
 ---
+
 ## <span id="fonts_zh">中文字体</span>
 
 ### <span id="fonts_zh_cjk">CJK</span>
@@ -28,20 +33,32 @@ modified: 2024-04-23 18:21:26
 
 #cjk/字数
 
-| **字符集** | **字数** | **Unicode 编码** | **合计** |
-| :---: | :---: | :---: | :---:|
-|[基本汉字](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=jbhz)|20902 字|4E00-9FA5| 20902 字|
-|[基本汉字补充](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=jbhzbc)|90 字|9FA6-9FFF| 20992 字|
-|[扩展A](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kza)|6592 字|3400-4DBF| 27584 字|
-|[扩展B](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzb)|42720 字|20000-2A6DF| 70304 字 |
-|[扩展C](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzc)|4154 字|2A700-2B739| 74458 字|
-|[扩展D](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzd)|222 字|2B740-2B81D| 74680 字|
-|[扩展E](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kze)|5762 字|2B820-2CEA1| 80442 字|
-|[扩展F](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzf)|7473 字|2CEB0-2EBE0| 87915 字|
-|[扩展G](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzg)|4939 字|30000-3134A| 92854 字|
-|[扩展H](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzh)|4192 字|31350-323AF| 97046 字|
+|                                  **字符集**                                   | **字数** | **Unicode 编码** | **合计** |
+|:-----------------------------------------------------------------------------:|:--------:|:----------------:|:--------:|
+|    [基本汉字](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=jbhz)    | 20902 字 |    4E00-9FA5     | 20902 字 |
+| [基本汉字补充](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=jbhzbc) |  90 字   |    9FA6-9FFF     | 20992 字 |
+|      [扩展A](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kza)      | 6592 字  |    3400-4DBF     | 27584 字 |
+|      [扩展B](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzb)      | 42720 字 |   20000-2A6DF    | 70304 字 |
+|      [扩展C](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzc)      | 4154 字  |   2A700-2B739    | 74458 字 |
+|      [扩展D](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzd)      |  222 字  |   2B740-2B81D    | 74680 字 |
+|      [扩展E](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kze)      | 5762 字  |   2B820-2CEA1    | 80442 字 |
+|      [扩展F](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzf)      | 7473 字  |   2CEB0-2EBE0    | 87915 字 |
+|      [扩展G](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzg)      | 4939 字  |   30000-3134A    | 92854 字 |
+|      [扩展H](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzh)      | 4192 字  |   31350-323AF    | 97046 字 |
 
-#### 相关资料
+### <span id="fonts_zh_gb18030">GB18030</span>
+
+> GB 18030，全称《信息技术 中文编码字符集》，是中华人民共和国国家标准所规定的变长多字节字符集。其对 GB 2312-1980 完全向后兼容，与 GBK 基本向后兼容，并支持 Unicode（GB 13000）的所有码位。
+
+#### 版本
+
+GB 18030-2000，兼容 Unicode 3.0 中日韩统一表意文字（即扩展 A 区），共收 **27,533** 个汉字；2000 年 3 月 17 日发布、2000 年 7 月 1 日实施。
+
+GB 18030-2005，更新至 Unicode 3.1 中日韩统一表意文字（即扩展 B 区），并刊载少数民族包括朝鲜文、蒙古文（包括满文、托忒文、锡伯文、阿礼嘎礼文）、德宏傣文、藏文、维吾尔文／哈萨克文／柯尔克兹文和彝文的文字。共有 **70,244** 个汉字；2005 年 11 月 8 日发布、2006 年 5 月 1 日实施。
+
+GB 18030-2022，更新至 Unicode 11 中日韩统一表意文字（增补了基本区的 66 个字，并在扩展 A、B 区的基础上增加了扩展 C、D、E、F 区），新增康熙部首，以及滇东北苗文、傈僳文、西双版纳新傣文、西双版纳老傣文、德宏傣文等少数民族文字以及蒙古文 BIRGA 符号，共收录汉字 **87,887** 个和汉字部首 228 个，比上一版增加录入了 1.7 万余个生僻汉字；于 2022 年 7 月 19 日发布、2023 年 8 月 1 日实施
+
+### 相关资料
 
 * [中文字符集 Unicode 编码范围](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php)
 * [GB 18030-2022 公安人口信息专用字库补充汉字 - 知乎](https://zhuanlan.zhihu.com/p/620620630)

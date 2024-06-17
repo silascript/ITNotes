@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-05-25 02:15:11
+modified: 2024-06-18 01:55:40
 ---
 # Linux 笔记
 
@@ -1233,13 +1233,15 @@ Shell 相关内容：[Shell笔记](Shell_Note.md)
 
 1. 新建 `desktop` 文件
 在/usr/share/applications/目录中新建一个后缀名为 desktop 的文件
+> [!tip] 
+> 
 > 也可以在 .local/share/applications 目录新建 desktop 文件
 
 2. 编辑 `desktop` 文件
 > [!info] desktop 文件格式
 >  
 > [Desktop Entry] (这里大小写敏感，写错一个就不会显示)  
-> Type=Application 类型  
+> Type=Application 类型（这个属性是必须的，默认可以就写 Application）
 > Name=名称  
 > Name[zh_CN]=简中名称  
 > Name[zh_TW]=繁中名称  
@@ -1259,6 +1261,9 @@ update-desktop-database .local/share/applications
 # 刷根目录
 sudo update-desktop-database /usr/share/applications
 ```
+> [!tip] 
+> 
+> 如果 desktop 不生效，可以使用 `desktop-file-validate xxx.desktop` 来检测 desktop 文件是否存在语法错误。
 
 ---
 

@@ -7,10 +7,12 @@ tags:
   - tutorial
   - list
 created: 2023-02-12 11:23:37
-modified: 2024-05-04 19:40:27
+modified: 2024-06-19 01:17:43
 ---
 
 # Python 视频清单
+
+python 相关视频汇集整理。
 
 ---
 
@@ -40,6 +42,10 @@ modified: 2024-05-04 19:40:27
 * [2023最新版课程 Python入门视频教程零基础学习Python](https://www.bilibili.com/video/BV1UQ4y1H7sE)
 * [【全361集】2024最符合B站用户学习的Python动画短片](https://www.bilibili.com/video/BV1vZ421q7DN)
 
+### 内置函数
+
+* [【Python】71个内置函数你知多少 | 十分钟高手系列](https://www.bilibili.com/video/BV1aM4m1S7YV)
+
 ### 面向对象
 
 * [【Python面向对象】究竟什么是面向对象？](https://www.bilibili.com/video/BV1zH4y1p76G)
@@ -54,3 +60,9 @@ modified: 2024-05-04 19:40:27
 ## 框架
 
 * [【Flask框架】Python从入门到精通之Flask框架详细教程](https://www.bilibili.com/video/BV1c7421T7Ki)
+
+---
+
+## 相关笔记
+
+* [Python笔记](Python_Note.md)

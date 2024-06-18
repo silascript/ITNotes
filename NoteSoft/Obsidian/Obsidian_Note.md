@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2024-06-14 19:10:31
+modified: 2024-06-18 21:54:17
 ---
 
 # Obsidian 笔记
@@ -870,6 +870,12 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) 是一款对主题进一步细化调整美化的插件。很多优秀的主题，诸如 [Blue-Topaz](https://github.com/whyt-byte/Blue-Topaz_Obsidian-css) 、[Catppucin](https://github.com/catppuccin/obsidian) 都会适配这个插件。
 
 ---
+
+#### <span id="obn_plugins_commp_styletext">Style Text</span>
+
+[Style Text](https://github.com/juanjoarranz/style-text-obsidian-plugin) 是一个自定义字体风格并在文本快速应用的插件。
+
+![styletext screenshot 1](https://github.com/juanjoarranz/style-text-obsidian-plugin/raw/master/assets/context-menu.png)
 
 ##### <span id="obn_plugins_commp_obsidian-floating-toc-plugin">Obsidian-floating-toc-plugin</span>
 

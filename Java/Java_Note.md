@@ -7,12 +7,13 @@ tags:
   - Eclipse
   - dbeaver
 created: 2023-01-30 11:19:11
-modified: 2024-06-18 03:07:06
+modified: 2024-06-18 18:13:14
 ---
 
 # Java 笔记
 
 ---
+
 ## 目录
 
 * [JDK](#java_jdk)
@@ -75,9 +76,11 @@ Temurin JDK 清华镜像：[https://mirror.tuna.tsinghua.edu.cn/Adoptium/](https
 没想到吧，微软也有发 OpenJDK。
 
 > [!inof] 微软与 [Eclipse](#Eclipse%20相关)
+> 
 > 2021 年 8 月，微软宣布将成为 Eclipse 基金会的战略成员，并且加入其董事会。
 > 
 > 早在 2016 年，微软就以解决方案成员的身份加入了 Eclipse 基金会，并在当时提供了一套开发工具和服务。
+> 
 > 可见微软的「魔爪」已经伸向 Java 系的领域。事实是 [Visual Studio](https://visualstudio.microsoft.com/) 在 「VS2015」版本时，在其安装选项中就有 JDK 选项，当时还是针对 [Android](https://developer.android.google.cn/)。但现在看来，微软的野心可不止这么窄。从 [dotnet core](https://dotnet.microsoft.com/) [![dotnet core Repo](https://img.shields.io/github/stars/dotnet/core?style=social)](https://github.com/dotnet/core) 到收购 [Github](https://github.com)，微软近年对于原来非微软传统领域，特别是开源领域的涉足越来越多。
 
 官网：[https://www.microsoft.com/openjdk](https://www.microsoft.com/openjdk)
@@ -97,6 +100,7 @@ Temurin JDK 清华镜像：[https://mirror.tuna.tsinghua.edu.cn/Adoptium/](https
 但离奇的是，在 [JDK11](#JDK11) 及 [JDK17](#JDK17) 仍保持 `--version` 这种用法。猜测是想要把 java 8 跟后继的版本「区隔」开，而且给那些仍使用 java8 的「钉子户」程序员一个好像 java8 用不了的「错觉」。
 
 > [!info] 关于 version 选项
+> 
 > 通过 java 的帮助可以知道两种 `version` 是有一点区别的。
 > 
 > `-version` 将产品版本输出到错误流并退出
@@ -126,11 +130,13 @@ Temurin JDK 清华镜像：[https://mirror.tuna.tsinghua.edu.cn/Adoptium/](https
 sudo ./bin/jlink --module-path jmods --add-modules java.desktop --output jre
 ```
 
->把 jmodes 目录所有模块都生成 jre:
+>[!info] 
 >
->```shell
->sudo ./bin/jlink --module-path jmods --add-modules ALL-MODULE-PATH --output jre
->```
+> 把 jmodes 目录所有模块都生成 jre：
+>
+> ```shell
+> sudo ./bin/jlink --module-path jmods --add-modules ALL-MODULE-PATH --output jre
+> ```
 >
 >
 
@@ -663,9 +669,11 @@ sudo chmod -R 755 tomcat-9.0.62
 
 #### 启动 Tomcat 后 404
 
->![](Java相关.assets/eclipse_tomcat_publish.png)
+![](Java相关.assets/eclipse_tomcat_publish.png)
+
+> [!info] 
 >
->要选第二项，就是将项目复制一份到 tomcat 安装目录下的 wtpwebapps 目录中进行发布
+>要选第二项，就是将项目复制一份到 tomcat 安装目录下的 `wtpwebapps` 目录中进行发布
 
 ---
 
@@ -747,13 +755,11 @@ LocalVariableTable:
 ```java
 public class Test05{
     public static void main(String[] args){
-    
 
         int i=2;
         int j=0;
 
         i=j;
-
 
     }
 }
@@ -761,6 +767,7 @@ public class Test05{
 ```
 
 使用的大致步骤：
+
 1. 先使用 `javac -g Test05.java` 来编译，如上述所讲的，如果不加 `-g` 来编译，使用 `javap` 时，将不会显示「局部变量表」的信息。
 
 2. 使用 `javap -v Test05` 后显示的内容：

@@ -9,7 +9,7 @@ tags:
   - shadowsocksr
   - clash
 created: 2024-05-25 22:58:31
-modified: 2024-06-17 11:53:14
+modified: 2024-06-19 00:25:41
 ---
 
 # 梯子笔记
@@ -369,8 +369,20 @@ Linux 下 gui 客户端项目，大部分都停更了。还活着的只有 [v2ra
 
 同样的，v2rayA 安装完了，它也是「服务方式运行」，所以也需要启动其服务：
 
+~~```shell~~
+~~sudo systemctl start v2raya~~
+~~```~~
+
+> [!info] 
+>
+> `v2raya` 服务已经过时，要启动 v2raya 的服务使用 `v2raya-lite` 。
+> 
+> WARN: v2raya@.service was deprecated; please use user service v2raya-lite.service instead.
+> 
+> This does NOT impact v2raya.service users.
+
 ```shell
-sudo systemctl start v2raya
+sudo systemctl start v2raya-lite
 ```
 
 `v2raya` 的服务启动成功后，在浏览器中输入 `[127.0.0.1:2017](http://127.0.0.1:2017/)` 来访问 v2raya。

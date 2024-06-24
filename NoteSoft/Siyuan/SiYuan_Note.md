@@ -4,7 +4,7 @@ tags:
   - siyuan
   - notesoft
 created: 2024-06-24 01:28:18
-modified: 2024-06-24 20:16:25
+modified: 2024-06-25 03:59:29
 ---
 
 # 思源软件笔记
@@ -127,4 +127,10 @@ git push -u origin "master"
 ### 挂件
 
 ### 模板
+
+---
+
+## 相关资料
+
+* [思源笔记快速上手指南 - 掘金](https://juejin.cn/post/7309755128852365364)
 

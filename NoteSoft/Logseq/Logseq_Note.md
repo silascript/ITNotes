@@ -4,7 +4,7 @@ tags:
   - notesoft
   - logseq
 created: 2024-01-25 00:24:07
-modified: 2024-01-26 02:18:38
+modified: 2024-06-24 02:45:05
 ---
 # Logseq 笔记
 

@@ -5,7 +5,7 @@ tags:
   - github
   - gist
 created: 2023-01-30 11:19:11
-modified: 2024-06-03 21:51:21
+modified: 2024-06-24 03:06:49
 ---
 
 # Git 笔记
@@ -440,9 +440,9 @@ git pull --rebase origin main
 
 ---
 
-## <span id="git_ignore">ignore</span>
+## <span id="git_ignore">gitignore</span>
 
-`.gitignore` 是 git 一个忽略文件。
+`.gitignore` 是 git 一个忽略文件。 #忽略文件
 
 ### 相关链接
 

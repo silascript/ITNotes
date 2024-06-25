@@ -4,10 +4,12 @@ tags:
   - siyuan
   - notesoft
 created: 2024-06-24 01:28:18
-modified: 2024-06-25 03:59:29
+modified: 2024-06-25 11:40:48
 ---
 
-# 思源软件笔记
+# 思源笔记软件笔记
+
+---
 
 ## 目录
 
@@ -118,6 +120,22 @@ git push -u origin "master"
 
 ---
 
+## 核心概念
+
+### 块
+
+「块」是思源笔记最重要的概念，它是思源笔记**最小单位**。
+
+> [!important]
+> 
+> 思源笔记默认以块为单位来保存文档内容。
+
+### Markdown
+
+思源也支持 [Markdown](../../Markdown/Markdown_Note.md) 语法。
+
+---
+
 ## 集市
 
 ### 插件
@@ -133,4 +151,14 @@ git push -u origin "master"
 ## 相关资料
 
 * [思源笔记快速上手指南 - 掘金](https://juejin.cn/post/7309755128852365364)
+* [基于思源笔记的数据库使用分享 - 少数派](https://sspai.com/post/87423)
+
+---
+
+## 相关笔记
+
+* [笔记软件笔记](../NoteSoft_Note.md)
+* [Logseq笔记](../Logseq/Logseq_Note.md)
+* [Obsidian笔记](../Obsidian/Obsidian_Note.md)
+* [AnyType笔记](../AnyType/AnyType_Note.md)
 

@@ -5,7 +5,7 @@ tags:
   - obsidian
   - anytype
 created: 2024-01-25 00:20:31
-modified: 2024-06-24 02:03:54
+modified: 2024-06-25 11:40:30
 ---
 
 # 笔记软件笔记
@@ -22,5 +22,6 @@ modified: 2024-06-24 02:03:54
 
 * [Obsidian笔记](Obsidian/Obsidian_Note.md)
 * [AnyType笔记](AnyType/AnyType_Note.md)
-* [思源笔记](Siyuan/SiYuan_Note.md)
+* [思源笔记软件笔记](Siyuan/SiYuan_Note.md)
+* [Logseq笔记](Logseq/Logseq_Note.md)
 

@@ -5,7 +5,7 @@ tags:
   - github
   - gist
 created: 2023-01-30 11:19:11
-modified: 2024-06-24 03:06:49
+modified: 2024-06-26 03:27:29
 ---
 
 # Git 笔记
@@ -59,7 +59,7 @@ git config --global init.defaultBranch main
 
 #### 提交大概流程
 
-1. **初始化**:
+1. **初始化**
 
 ```shell
 git init
@@ -556,6 +556,21 @@ git commit -m 'update .gitignore'
 
 ---
 
+### Git 目录结构
+
+Git 仓库有两种形式：
+
+1. 工作目录中的 `.git` 目录。这种是我们经常接触的 Git 仓库形式。
+2. 裸仓库，目录一般是 `<project>.git`。裸仓库没有 [工作区](#工作区)（working tree），一般是存在于服务器中，用于给用户仓库交互和存储的。
+
+> [!info] 
+> 
+> 注：有些仓库底下没有 `.git` 目录，但是有一个 `.git` 文本文件，其内容格式为 `gitdir: <path>` ，代表指向真正的 `.git` 目录。这种情况经常用在 [子目录](#子目录) 中。
+
+#### 子目录
+
+[git submodule](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97)
+
 ## <span id="git_github">GitHub 使用</span>
 
 ### <span id="git_github_api">Github 部分 api</span>
@@ -994,6 +1009,10 @@ yay -S community/rabbitvcs-nautilus
 
 * [Git的奇技淫巧](https://github.com/jackfrued/git-tips)
 * [git - 简明指南](https://rogerdudler.github.io/git-guide/index.zh.html)
+
+### 相关资料
+
+* [Git 目录结构](https://xiaowenxia.github.io/git-inside/2021/02/16/git-layout/index.html)
 
 ### 其他笔记
 

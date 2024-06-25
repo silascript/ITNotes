@@ -4,7 +4,7 @@ tags:
   - notesoft
   - logseq
 created: 2024-01-25 00:24:07
-modified: 2024-06-24 02:45:05
+modified: 2024-06-25 22:30:18
 ---
 # Logseq 笔记
 
@@ -38,6 +38,14 @@ Graph 的目录下有三个子目录：
 * `journals`：存放每天的日记 [Markdown](../../Markdown/Markdown_Note.md) 文件。
 * `logseq`：这是 Graph 级别的配置目录。`.css` 那是主题样式的配置，`edn` 就是快捷键等配置。
 * `pages`：存放的是笔记文件，也都是 [Markdown](../../Markdown/Markdown_Note.md) 文件。
+
+---
+
+## 同步
+
+### 参考资料
+
+* [使用 Github 作为 Logseq 的数据同步 - 白宦成](https://www.ixiqin.com/2023/01/20/use-a-lot-as-logseq-data-synchronization/)
 
 ---
 

@@ -4,8 +4,11 @@ tags:
   - notesoft
   - obsidian
   - anytype
+  - obsidian
+  - siyuan
+  - logseq
 created: 2024-01-25 00:20:31
-modified: 2024-06-25 11:40:30
+modified: 2024-06-25 17:42:48
 ---
 
 # 笔记软件笔记

@@ -8,7 +8,7 @@ tags:
   - ime
 date created: 2022-11-08 11:32
 created: 2023-08-18 19:44:52
-modified: 2024-04-17 18:04:30
+modified: 2024-06-25 23:16:19
 ---
 
 # ArchLinux 笔记
@@ -268,6 +268,24 @@ sudo pacman -U xxx.pkg.tar.zst
 #### 参考资料
 
 * [Arch/Manjaro安装deb安装包  - 博客园](https://www.cnblogs.com/marklove/p/14047339.html)
+
+---
+
+## 桌面相关
+
+### desktop
+
+desktop 规范：[Desktop Entry Specification](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#recognized-keys)
+
+[desktop-file-validate](https://man.archlinux.org/man/desktop-file-validate.1) 这个工具用来检验 `desktop` 文件是否正确。
+
+刷新：`update-desktop-database ~/.local/share/applications`
+
+[gendesk](https://archlinux.org/packages/?name=gendesk) 是一个在 AchLinux 上生成 desktop 的工具。
+
+### 相关资料
+
+* [桌面项](https://wiki.archlinuxcn.org/wiki/%E6%A1%8C%E9%9D%A2%E9%A1%B9)
 
 ---
 

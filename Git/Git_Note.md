@@ -5,7 +5,7 @@ tags:
   - github
   - gist
 created: 2023-01-30 11:19:11
-modified: 2024-06-26 03:27:29
+modified: 2024-06-26 18:50:52
 ---
 
 # Git 笔记
@@ -210,6 +210,12 @@ git push origin --tags
 git config --global init.defaultBranch <名称>
 ```
 
+将默认分支设为 `main`：
+
+```shell
+git config --global init.defaultBranch main
+```
+
 设置完默认分支后，可以查看 `~/.gitconfig` 配置文件，可以看到如下的内容：
 
 ```
@@ -279,6 +285,14 @@ git checkout 分支名
 git branch -M 名称
 ```
 
+##### 修改已创建项目的主分支为**main**
+
+1. [切换分支](#切换分支) 到主分支 `master`
+> [!tip] 
+> 
+> [查看当前分支](#查看当前分支)
+2. 使用 `git branch -M main` 命令，把当前 `master` 分支改名为 `main`， 其中 `-M` 的意思是移动或者重命名当前分支
+
 ---
 
 ### <span id="git_stash">Stash</span>
@@ -331,6 +345,12 @@ git ls-files -s
 ```
 
 ![git ls files screenshot](Git_Note.assets/screenshot_git_ls_files.png)
+
+#### 查看跟踪的文件
+
+```shell
+git ls-files
+```
 
 ---
 
@@ -1013,6 +1033,11 @@ yay -S community/rabbitvcs-nautilus
 ### 相关资料
 
 * [Git 目录结构](https://xiaowenxia.github.io/git-inside/2021/02/16/git-layout/index.html)
+* [Git基础-查看当前文件状态、跟踪新文件、暂存文件、忽略文件、提交更新、移除文件、移动文件 - sandy.simple - 博客园](https://www.cnblogs.com/wangwenhui/p/10555261.html)
+
+#### 常见问题
+
+* [把git的默认分支master修改成main - 掘金](https://juejin.cn/post/7051873701305778207)
 
 ### 其他笔记
 

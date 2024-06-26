@@ -8,7 +8,7 @@ tags:
   - siyuan
   - logseq
 created: 2024-01-25 00:20:31
-modified: 2024-06-25 17:42:48
+modified: 2024-06-27 03:22:18
 ---
 
 # 笔记软件笔记
@@ -18,6 +18,7 @@ modified: 2024-06-25 17:42:48
 ## 相关资料
 
 * [二一 - 笔记软件全测评计划](https://leon21.notion.site/02f5e85d06674d988ae5072f49f29863)
+* [27款笔记软件的介绍 - 菜小七 - 博客园](https://www.cnblogs.com/caixiaoqi/p/16999824.html)
 
 ---
 

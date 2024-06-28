@@ -4,7 +4,7 @@ tags:
   - siyuan
   - notesoft
 created: 2024-06-24 01:28:18
-modified: 2024-06-25 17:34:36
+modified: 2024-06-29 01:02:31
 ---
 
 # 思源笔记软件笔记
@@ -136,6 +136,22 @@ git push -u origin "master"
 
 ---
 
+## 快捷功能
+
+### 优化排版
+
+「优化排版」这个小功能，能快速对中英文混全排版进行优化。
+> [!tip] 
+> 
+> 其实就是中英文间加空格什么的。
+
+### 常用快捷键
+
+* `Ctrl+a`：选取块
+* `Ctrl+a` 两次：当前文档全选
+
+---
+
 ## 集市
 
 ### 插件
@@ -158,6 +174,7 @@ git push -u origin "master"
 
 ## 相关笔记
 
+* [思源笔记视频清单](SiYuan_Videos.md)
 * [笔记软件笔记](../NoteSoft_Note.md)
 * [Logseq笔记](../Logseq/Logseq_Note.md)
 * [Obsidian笔记](../Obsidian/Obsidian_Note.md)

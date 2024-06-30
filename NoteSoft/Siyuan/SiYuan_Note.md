@@ -4,7 +4,7 @@ tags:
   - siyuan
   - notesoft
 created: 2024-06-24 01:28:18
-modified: 2024-06-29 01:02:31
+modified: 2024-06-30 01:31:05
 ---
 
 # 思源笔记软件笔记
@@ -130,9 +130,25 @@ git push -u origin "master"
 > 
 > 思源笔记默认以块为单位来保存文档内容。
 
+![块种类](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/840e48ae24134333900f5f630c40d9d7~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=330&h=836&s=56697&e=png&b=f9f9f9)
+
+[叶子块](#叶子块) 和 [容器块](#容器块) 的设计，估计是源于 [行内元素](../../Frontend/Html_Note.md#行内元素) 和 [块级元素](../../Frontend/Html_Note.md#块级元素)。
+
+#### 叶子块
+
+#### 容器块
+
+#### 文档块
+
+#### 内容块
+
 ### Markdown
 
 思源也支持 [Markdown](../../Markdown/Markdown_Note.md) 语法。
+
+### 标签
+
+标签，Tag，与 [Obsidian](../Obsidian/Obsidian_Note.md) 一样的东西。
 
 ---
 
@@ -147,8 +163,13 @@ git push -u origin "master"
 
 ### 常用快捷键
 
+* `/`：可以弹出命令，输入各种块、新建文档。
+> [!tip] 
+> 
+> 类似 [Obsidian](../Obsidian/Obsidian_Note.md) 中 `Ctrl+p`[命令面板快捷键](../Obsidian/Obsidian_Note.md#obn_default_hotkeys)。
 * `Ctrl+a`：选取块
 * `Ctrl+a` 两次：当前文档全选
+* `[[` 或 `((`：建立链接。按下 `[[` 或 `((` 后，会触发 [块](#块) 的搜索，输入关键字来定位 [内容块](#内容块) 和 [文档块](#文档块)，从而建议链接。这与 [Obsidian](../Obsidian/Obsidian_Note.md) 建立链接的操作类似。
 
 ---
 
@@ -167,8 +188,10 @@ git push -u origin "master"
 ## 相关资料
 
 * [思源笔记快速上手指南 - 掘金](https://juejin.cn/post/7309755128852365364)
+* [思源笔记·学习资源](https://flowus.cn/hub001/share/7f64c804-79c1-443f-929d-240066953b41)
 * [基于思源笔记的数据库使用分享 - 少数派](https://sspai.com/post/87423)
 * [思源笔记使用心得 - 哔哩哔哩](https://www.bilibili.com/read/cv21936410/)
+* [【Achuan-2】思源笔记教程和心得分享](https://www.yuque.com/achuan-2/siyuan)
 
 ---
 

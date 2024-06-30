@@ -5,7 +5,7 @@ tags:
   - html
   - dom
 created: 2023-08-18 19:44:52
-modified: 2024-02-07 06:23:28
+modified: 2024-06-29 18:07:23
 ---
 # Html 笔记
 
@@ -129,13 +129,26 @@ IDE：
 HTML 代码由不同的标签构成。
 
 ### <span id="html_basic_concept_element">元素</span>
-浏览器渲染网页时候，会把 HTML 源码解析成一个标签树，每个标签都是一个节点（node），被称为网页元素（element）。
 
-「标签」和「元素」使用的场合不一样：标签是网页源码的角度来看，而元素是从编程角度来看。
+浏览器渲染网页时候，会把 HTML 源码解析成一个标签树，每个 [标签](#标签) 都是一个节点（node），被称为网页「**元素**」（element）。
+
+> [!info] 
+> 
+>「标签」和「元素」使用的场合不一样：标签是网页源码的角度来看，而元素是从编程角度来看。
 
 标签和元素的关系：
 
 ![tag_element](https://mdn.mozillademos.org/files/16475/element.png)
+
+#### <span id="html_basic_concept_type">元素分类</span>
+
+##### 行内元素
+
+行内元素也称为「内联元素」，inline element。
+
+行内元素不会独占一行，宽度随元素的内容变化而变化。
+
+##### 块级元素
 
 ### <span id="html_basic_concept_attribute">属性</span>
 

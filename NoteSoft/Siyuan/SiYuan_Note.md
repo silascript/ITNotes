@@ -4,7 +4,7 @@ tags:
   - siyuan
   - notesoft
 created: 2024-06-24 01:28:18
-modified: 2024-06-30 01:31:05
+modified: 2024-07-02 03:39:05
 ---
 
 # 思源笔记软件笔记
@@ -170,6 +170,7 @@ git push -u origin "master"
 * `Ctrl+a`：选取块
 * `Ctrl+a` 两次：当前文档全选
 * `[[` 或 `((`：建立链接。按下 `[[` 或 `((` 后，会触发 [块](#块) 的搜索，输入关键字来定位 [内容块](#内容块) 和 [文档块](#文档块)，从而建议链接。这与 [Obsidian](../Obsidian/Obsidian_Note.md) 建立链接的操作类似。
+* `Ctrl+p`：全局搜索
 
 ---
 

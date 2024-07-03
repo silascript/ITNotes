@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2024-06-18 21:54:17
+modified: 2024-07-03 23:50:04
 ---
 
 # Obsidian 笔记
@@ -1215,8 +1215,6 @@ note 类型
 
 ![power mode screenshot](https://github.com/zhouhua/obsidian-power-mode/raw/master/screenshots/powermode.gif)
 
----
-
 #### <span id="obn_plugins_outside_community">未在社区插件库的插件</span>
 
 要安装未在社区插件库上架的插件，得先安装 [obsidian42-brat](https://github.com/TfTHacker/obsidian42-brat) 这个插件。
@@ -1239,13 +1237,21 @@ note 类型
 
 **obsidian-web-browser** github 地址：[https://github.com/Trikzon/obsidian-web-browser](https://github.com/Trikzon/obsidian-web-browser) 。
 
----
-
 ##### <span id="obn_plugin_brat_surfing">Obsidian-Surfing</span>
 
 [Obsidian-Surfing](https://github.com/Quorafind/Obsidian-Surfing) 同样也是一个浏览器插件，这个插件是上面那个 [obsdian-web-browser](#obn_plugin_brat_webbrowser) 插件的修改版本，其功能更为强大。
 
 **Obsidian-Surfing**  github 地址：[https://github.com/Quorafind/Obsidian-Surfing](https://github.com/Quorafind/Obsidian-Surfing) 。
+
+---
+
+## <span id="obn_pkmer">PKMer</span>
+
+[PKMer\_PKMer](https://pkmer.cn) 是一个 Obsidian 的社区。它提供了插件的速度下载等丰富的功能。
+
+### <span id="obn_pkmer_widget">PKMer 的挂件</span>
+
+[PKMer 挂件集市](https://pkmer.cn/products/widget/widgetMarket/) 提供了丰富的挂件。
 
 ---
 

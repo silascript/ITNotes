@@ -7,7 +7,7 @@ tags:
   - tutorial
   - list
 created: 2023-02-12 11:23:37
-modified: 2024-06-19 01:17:43
+modified: 2024-07-04 18:57:23
 ---
 
 # Python 视频清单
@@ -41,6 +41,7 @@ python 相关视频汇集整理。
 * [【零基础学Python】](https://www.bilibili.com/video/BV1j34y1M7h9)
 * [2023最新版课程 Python入门视频教程零基础学习Python](https://www.bilibili.com/video/BV1UQ4y1H7sE)
 * [【全361集】2024最符合B站用户学习的Python动画短片](https://www.bilibili.com/video/BV1vZ421q7DN)
+* [【Python基础语法训练营】完整版](https://www.bilibili.com/video/BV13J4m1u75M)
 
 ### 内置函数
 

@@ -6,7 +6,7 @@ tags:
   - tutorial
   - list
 created: 2023-06-24 01:08:17
-modified: 2024-07-05 11:17:22
+modified: 2024-07-05 22:00:01
 ---
 
 # Java 视频清单
@@ -81,3 +81,11 @@ modified: 2024-07-05 11:17:22
 
 * [2024最新版Java中级项目实战-快递E栈](https://www.bilibili.com/video/BV1wu4m1w7LJ)
 
+---
+
+## 相关笔记
+
+* [Java笔记](Java_Note.md)
+* [Java Web笔记](Java_Web_Note.md)
+* [Java IO 笔记](Java_IO_Note.md)
+* [Java Log 笔记](Java_Log_Note.md)

@@ -4,7 +4,7 @@ tags:
   - siyuan
   - notesoft
 created: 2024-06-24 01:28:18
-modified: 2024-07-02 03:39:05
+modified: 2024-07-06 23:17:56
 ---
 
 # 思源笔记软件笔记
@@ -117,6 +117,26 @@ git push -u origin "master"
 > [!info] 参考资料
 > 
 > * [利用Git同步思源笔记 - SimonLiang20 - 博客园](https://www.cnblogs.com/liangshaoming/p/16974724.html)
+
+---
+
+## 特色
+
+### markdown
+
+思源笔记支持 [Markdown](../../Markdown/Markdown_Note.md) 语法，并且是「**所见即所得**」。
+
+### 双向链接
+
+思源笔记支持文档间的「双向链接」，跟 [Obsidian](../Obsidian/Obsidian_Note.md) 一样。
+
+### 自动保存
+
+思源笔记是自动保存写作内容的，无需手动保存。
+
+### 跨平台支持
+
+思源笔记支持 Windows、Linux 和 Mac 系统。
 
 ---
 

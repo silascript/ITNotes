@@ -1,12 +1,12 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - typerscript
+  - ts
   - js
   - javascript
 created: 2023-08-02 11:41:26 
-modified: 2023-08-4 21:54:20
+modified: 2024-07-07 03:29:24
 
 ---
 
@@ -148,4 +148,8 @@ let a1: (string | number)[] = ["shell", 123]
 > 原生 JS 数组本来就是可以存在任何类型的数据，而且可以混着放，但对于真正开发而言，这种「高自由度」是不利于开发规范性的，所以 TS 就在编译期对这个「自由度」作了适当的限制。
 
 ---
+
+## 相关笔记
+
+* [TypeScript视频清单](TypeScript_Videos.md)
 

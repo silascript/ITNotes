@@ -1,8 +1,13 @@
 ---
 aliases: []
-tags: []
+tags:
+  - tools
+  - download
+  - windows
+  - lux
+  - google
 created: 2023-08-18 19:44:52
-modified: 2024-05-26 23:11:31
+modified: 2024-07-08 02:00:01
 ---
 
 # 常用小工具笔记
@@ -423,3 +428,11 @@ f2 内置了一些变量，能够快速实现常用功能：
 
 * [2023-2024 最新可用Google镜像地址 长期更新 - 哔哩哔哩](https://www.bilibili.com/opus/886060167271022609)
 * [谷歌镜像，谷歌学术镜像——2024年1月最新 - 知乎](https://zhuanlan.zhihu.com/p/607795300?utm_id=0&wd=&eqid=a982987d007d0be9000000056583f3f6)
+
+---
+
+## 相关笔记
+
+* [Ladder 笔记](../Ladder/Ladder_Note.md)
+* [Youtube笔记](../Ladder/Youtube_Note.md)
+* [Linux 笔记](../Linux/Linux_Note.md)

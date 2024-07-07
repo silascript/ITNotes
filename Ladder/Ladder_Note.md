@@ -13,7 +13,7 @@ tags:
   - clash
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2024-07-02 03:09:02
+modified: 2024-07-08 01:56:20
 ---
 
 # 梯子笔记
@@ -791,3 +791,9 @@ sudo systemctl start v2raya
 * [clashios爱好者](https://clashios.com/)
 * [clashverge.org](https://clashverge.org/)
 * [whoer.net](https://whoer.net)
+
+---
+
+## 相关笔记
+
+* [Youtube 笔记](Youtube_Note.md)

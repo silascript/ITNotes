@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-06-18 01:55:40
+modified: 2024-07-07 19:30:35
 ---
 # Linux 笔记
 
@@ -1605,12 +1605,14 @@ Core 1:        +42.0°C  (high = +82.0°C, crit = +102.0°C)
 
 ## <span id="linux_notes">其他 Linux 笔记</span>
 
-* [ArchLinux笔记](ArchLinux_Note.md)
-* [CentOS笔记](CentOS_Note.md)
-* [Fedora笔记](Fedora_Note.md)
-* [Ubuntu笔记](Ubuntu_Note.md)
-* [Debian笔记](Debian_Note.md)
-* [Linux视频清单](./Linux_Videos.md)
+* [ArchLinux 笔记](ArchLinux_Note.md)
+* [CentOS 笔记](CentOS_Note.md)
+* [Fedora 笔记](Fedora_Note.md)
+* [Ubuntu 笔记](Ubuntu_Note.md)
+* [Debian 笔记](Debian_Note.md)
+* [Shell 笔记](Shell_Note.md)
+* [Linux 视频清单](./Linux_Videos.md)
+* [Shell 视频清单](Shell_Videos.md)
 * [Ranger相关](Ranger相关.md)
 
 ---

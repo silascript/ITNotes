@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2024-05-06 20:34:06
+modified: 2024-07-07 19:29:10
 ---
 
 # Shell 笔记
@@ -927,4 +927,12 @@ curl http://hub-mirror.c.163.com/v2/library/${image}/tags/list | jq --arg tstr $
 * [awesome-shell_ZH-CN](https://github.com/xuxiaodong/awesome-shell/blob/master/README_ZH-CN.md#shell-%E5%8C%85%E7%AE%A1%E7%90%86)
 * [Awesome Shell：命令行框架、工具包、指南清单（中译版） - Shell - 软件编程 - 深度开源](https://www.open-open.com/news/view/e54142)
 * [shell echo 显示颜色 - 知乎](https://zhuanlan.zhihu.com/p/181609730)
+
+---
+
+## 其他笔记
+
+* [Shell 视频清单](Shell_Videos.md)
+* [Linux 笔记](Linux_Note.md)
+* [Linux 视频清单](Linux_Videos.md)
 

@@ -6,7 +6,7 @@ tags:
   - tutorial
   - list
 created: 2023-06-24 01:08:17
-modified: 2024-07-05 22:00:01
+modified: 2024-07-07 19:33:20
 ---
 
 # Java 视频清单
@@ -32,6 +32,7 @@ modified: 2024-07-05 22:00:01
 * [黑马Java多线程教程，23年最新版](https://www.bilibili.com/video/BV1g8411o7aj)
 * [2023年 JUC并发编程 天花板教程从入门到精通](https://www.bilibili.com/video/BV1uj411y7Vw)
 * [Java 并发编程 78 讲](https://www.bilibili.com/video/BV1Gf421R7Gz)
+* [【面试教程】2024年B站最强的JAVA多线程面试教程全集](https://www.bilibili.com/video/BV1BE421N7cf)
 
 ### log
 

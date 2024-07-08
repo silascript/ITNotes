@@ -6,7 +6,7 @@ tags:
   - tutorial
   - list
 created: 2023-06-24 01:08:17
-modified: 2024-07-07 19:33:20
+modified: 2024-07-08 12:13:56
 ---
 
 # Java 视频清单
@@ -75,6 +75,7 @@ modified: 2024-07-07 19:33:20
 * [可序列化lambda表达式有什么用？优雅解决硬编码](https://www.bilibili.com/video/BV15k4y1c7uR)
 * [mockito加junit搞定单元测试](https://www.bilibili.com/video/BV1P14y1k7Hi)
 * [java代码简洁之道 常用工具类的使用(apache commons系列/guava/spring utils)](https://www.bilibili.com/video/BV1Lv411P7Ua)
+* [为什么Xxx.class.getResource("")会返回null](https://www.bilibili.com/video/BV1gy4y1N7QQ)
 
 ---
 

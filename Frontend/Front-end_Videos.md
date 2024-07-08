@@ -5,9 +5,12 @@ tags:
   - html
   - css
   - bootstrap
+  - js
+  - javascript
   - video
+  - list
 created: 2023-08-18 19:44:52
-modified: 2024-02-07 11:17:44
+modified: 2024-07-08 20:24:06
 ---
 # 前端教程视频清单
 
@@ -23,6 +26,7 @@ modified: 2024-02-07 11:17:44
 * [web前端开发150集全套教程，零基础入门html5+css3+js](https://www.bilibili.com/video/BV1Pu4y1g7Mk)
 * [HTML5+CSS3+JavaScript+Vue3，2024年前端入门到精通](https://www.bilibili.com/video/BV1hT4y1h7aw)
 * [2024最新版web前端开发140集零基础入门html5+css3+js全套教程](https://www.bilibili.com/video/BV1nU421Z7pr)
+* [前端基础：HTML+CSS+JavaScript全套视频教程（84集全）](https://www.bilibili.com/video/BV1Nz421z7YX)
 * [【七天搞定Web前端】之H5+CSS全面剖析（Web前端/gird/响应式）](https://www.bilibili.com/video/BV14e411y7GK)
 * [HTML5开发系列：1、HTML与CSS基础](https://www.bilibili.com/video/BV1kg4y1m7rC)
 * [前端小姐姐讲解超详细的HTML5&CSS3&JS教学](https://www.bilibili.com/video/BV19g4y127S5)
@@ -50,4 +54,22 @@ modified: 2024-02-07 11:17:44
 ## Angular
 
 * [2023 Angular教程 ](https://www.bilibili.com/video/BV1PQ4y1W7TB)
+
+---
+
+## 零散视频
+
+* [【24前端技术提升必备】一篇技术面试题带你了解与高级前端差在哪](https://www.bilibili.com/video/BV1my411q7M1)
+
+---
+
+## 相关笔记
+
+* [前端笔记](Front-end_Note.md)
+* [Html 笔记](Html_Note.md)
+* [Css 笔记](Css_Note.md)
+* [CSS 视频清单](CSS_Videos.md)
+* [JS 笔记](../JS/JS_Note.md)
+* [JS 视频清单](../JS/JS_Videos.md)
+* [Vue 视频清单](Vue_Videos.md)
 

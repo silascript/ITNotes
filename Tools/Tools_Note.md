@@ -7,7 +7,7 @@ tags:
   - lux
   - google
 created: 2023-08-18 19:44:52
-modified: 2024-07-08 02:00:01
+modified: 2024-07-08 21:29:01
 ---
 
 # 常用小工具笔记
@@ -334,7 +334,7 @@ Streams:   # All available quality
 > 
 > `codecs` 是编码格式。
 > 
-> `avc1` 是 `h.264`；`av01` 是 `av1`
+> `avc1` 是 [H.264](../Media/Video_Note.md#H.264)；`av01` 是 [AV1](../Media/Video_Note.md#AV1)；`hev1` 即 [HEVC](../Media/Video_Note.md#HEVC)，就是 `h.265`
 
 ---
 

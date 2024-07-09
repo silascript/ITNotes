@@ -4,14 +4,18 @@ tags:
   - front-end
   - html
   - dom
+  - w3c
+  - whatwg
 created: 2023-08-18 19:44:52
-modified: 2024-06-29 18:07:23
+modified: 2024-07-09 19:06:36
 ---
+
 # Html 笔记
 
 ---
 
 ## 目录
+
 * [HTML 简介及历史](#html_introducton_history)
 	* [XHTML](#html_introducton_xhtml)
 	* [HTML5](#html_introducton_html5)
@@ -22,8 +26,6 @@ modified: 2024-06-29 18:07:23
 ---
 
 ## <span id="html_introducton_history">HTML 简介及历史</span>
-
- #html
 
 **HTML** 全名叫 「超文本标记语言」（HperText Markup Language）。
 
@@ -44,7 +46,7 @@ modified: 2024-06-29 18:07:23
 
 ### <span id="html_introducton_xhtml">XHTML</span>
 
- #html #xhtml
+ #xhtml
 
 **XHTML** 是 「3 种 HTML 4 文件根据 XML 1.0 标准重组」而成的。
 
@@ -54,16 +56,29 @@ XHTML 应用出现在 2005 年到 2012 年左右的「重构时代」。
 
 ### <span id="html_introducton_html5">HTML5</span>
 
- #html #html5
+ #html5
 
-HTML 5 实质是 **WHATWG** 的，W3C 只是「发布者」。
+HTML 5 实质是 [WHATWG](#WHATWG) 的，[W3C](#W3C) 只是「发布者」。
 
 从 HTML 5 始，W3C 已经失去对 包括 HTML 及 DOM 在内的控制权。
+> [!info] 
+> 
 > 2018 年 W3C 的 DOM 4.1 标准被苹果、Mozilla、Google 及微软四大浏览器厂商反对。  
 > 2019 年 5 月 28 日，W3C 宣布 WHATWG 将是 HTML 和 DOM 标准的唯一发布者。
 
-**WHATWG** 背后「站着」的是浏览器厂商。
-> WHATWG （Web Hypertext Application Technology Working Group）是 2004 年苹果、Opera、Mozilla 组建的一个推动 HTML 标准为目的而成立的组织。后来随着 Chrome 浏览器大行其道，Google 也加入其中。再后来连微软了加入的。
+ [WHATWG](#WHATWG) 背后站着的是浏览器厂商。
+
+### W3C
+
+万维网联盟
+
+### WHATWG
+
+WHATWG（WHATWG 正确发音是：[what-wig]）， Web Hypertext Application Technology Working Group，在 2004 年，由 Apple 公司、Mozilla 基金会和 Opera 软件公司所组成。
+
+后来随着 Chrome 浏览器大行其道，Google 也加入其中。再后来连微软了加入的。
+
+WHATWG 是针对 [W3C](#W3C) 网页标准的发展缓慢，以及 [W3C](#W3C) 意图放弃 HTML 转而发展以 XML 为基础的技术而成立。
 
 ---
 
@@ -81,7 +96,7 @@ Windows 自带的，最朴素的文本编辑器。
 
   #editor #sublime 
 
-轻量级、顔值高的文本编辑器。最新版本是 [SublimeText4](https://www.sublimetext.com)。
+[SublimeText](../Editors/Sublime_Note.md) 是一款轻量级、顔值高的文本编辑器。最新版本是 [SublimeText4](https://www.sublimetext.com)。
 
 ### <span id="html_editors_vim">vim</span>
 
@@ -93,7 +108,7 @@ Windows 自带的，最朴素的文本编辑器。
 
  #editor #vscode 
 
-对于有更大项目管理需要的用户，可以使用 [VSCode](https://code.visualstudio.com) 。  
+对于有更大项目管理需要的用户，可以使用 [VSCode](../Editors/VSCode_Note.md)。  
 虽然 [vim](#vim)，但如果是做一些有点规模的项目时，VSCode 更优秀。
 
 ## 其他
@@ -109,6 +124,7 @@ IDE：
 另外还有个装 X 货 [Hbuilder X](https://www.dcloud.io/hbuilderx.html)。
 
 > [!info] 
+> 
 > Hbuilder 没有 Linux 版本，如果系统是 Linux 的，就略过了。
 
 当然，还有个重量级成员：[webstorm](https://www.jetbrains.com/webstorm/)。个人十分讨厌 [JetBrains](https://www.jetbrains.com) 全系的 IDE，因为我非常讨厌 Swing。
@@ -122,6 +138,7 @@ IDE：
 **HTML** 不是一门编程语言，而是一种用于定义内容结构的标记语言。
 
 > [!tip] 
+> 
 > html 是给页面搭「骨架」的。
 
 ### <span id="html_basic_concept_tag">标签</span>
@@ -161,6 +178,7 @@ HTML 代码由不同的标签构成。
 ## <span id="html_tag_basic">基本标签</span>
 
 网页的基本标签有以下这些：
+
 * `<!doctype>`
 * `<html>`
 * `<head>`
@@ -169,6 +187,7 @@ HTML 代码由不同的标签构成。
 * `<body>`
 
 符合语法标准的网页，应满足以下基本结构：
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -185,9 +204,11 @@ HTML 代码由不同的标签构成。
 * `<!DOCTYPE html>` 用来声明文档类型的。
 
 在 xhtml 时代，这个声明是写成类似这样的：
+
 ```html
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 ```
+
 当初 W3C 就是想把 Html 弄成 XML 的子集，所以使用了与 XML 一样的声明样式。
 
 到了 HTML 5 时代，WHATWG 把 HTML 5 拉回了 html 4 那种比较自由的风格，所以对 XHTML 的风格作了调整，文档声明部分就简化成现在这个样子。

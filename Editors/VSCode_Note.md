@@ -1,11 +1,11 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - editor
   - vscode
+  - vscodium
 created: 2023-01-30 11:19:11
-modified: 2023-08-12 01:51:33
+modified: 2024-07-09 03:10:46
 ---
 # VSCode 笔记
 

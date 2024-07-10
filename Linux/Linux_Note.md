@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-07-07 19:30:35
+modified: 2024-07-11 01:33:43
 ---
 # Linux 笔记
 
@@ -380,9 +380,11 @@ pacman -S unrar
 ```
 
 > [!tip]
+> 
 > [ArchLinux_Note](ArchLinux_Note.md) 如果安装了 [AUR Helper](ArchLinux_Note.md#AUR%20Helper)，如 [yay](ArchLinux_Note.md#yay)，就能使用相应的 aur helper 来安装。
 
-unrar 简单示例：
+`unrar` 简单示例：
+
 ```shell
 
 # 不解压只查看压缩包中的信息
@@ -393,7 +395,29 @@ unrar v task.rar
 
 # 解压
 unrar e a.rar
+
+
+
+
+
 ```
+
+`rar` 示例：
+
+```shell
+# rar a -vSIZE  压缩后的文件名 被压缩的文件或者文件夹
+# -v后跟的是分包的大小，单位可以是b/B、k/K、m/M、g/G、t/T。
+
+rar a -v50000k eclipse.rar eclipse
+
+# 解压
+# 如果压缩包是以分包形式存在，只要指定第一个分包，程序会自动进行下一个分包的解压
+rar x xxx.part1.rar
+
+```
+> [!quote] 
+> 
+> * [分卷压缩及解压分卷压缩文件 - Ubuntu中文](https://wiki.ubuntu.org.cn/%E5%88%86%E5%8D%B7%E5%8E%8B%E7%BC%A9%E5%8F%8A%E8%A7%A3%E5%8E%8B%E5%88%86%E5%8D%B7%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6)
 
 #### 其他压缩小技巧
 

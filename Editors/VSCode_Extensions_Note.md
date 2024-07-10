@@ -1,12 +1,11 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - editor
   - vscode
   - vscode-extension
 created: 2023-08-10 15:44:32 
-modified: 2023-08-10 22:17:29
+modified: 2024-07-09 20:50:16
 
 ---
 
@@ -72,10 +71,11 @@ VSCode 的语言包。
 [Bookmarks](https://open-vsx.org/extension/alefragnani/Bookmarks) [![bookmarks](https://img.shields.io/github/stars/alefragnani/vscode-bookmarks?style=social)](https://github.com/alefragnani/vscode-bookmarks) 是在代码某一行做标记的插件。
 
 Bookmarks 快捷键：
-| 快捷键 | 功能 |
-| :---: | :---: |
-| Ctrl+Alt+K | 创建或消除书签 |
-| Ctrl+Alt+J | 跳转到前一个书签|
+
+|   快捷键   |       功能       |
+|:----------:|:----------------:|
+| Ctrl+Alt+K |  创建或消除书签  |
+| Ctrl+Alt+J | 跳转到前一个书签 |
 | Ctrl+Alt+L | 跳转到后一个书签 |
 
 ---
@@ -430,6 +430,12 @@ VSCode 已经内置了大名鼎鼎的 [Emmet](https://emmet.io) （[Emmet Wiki](
 > 关于 [LSP](../vim/Vim_LSP_Complete.md#about_lsp)
 
 * vti  Terminal 接口
+
+#### <span id="vscode_extensions_frontend_open-in-default-browser">Open In Default Browser</span>
+
+[Open In Default Browser](https://github.com/peakchen90/vscode-open-in-default-browser) 是一个使用默认 [浏览器](../Browsers/Browser_Note.md) 打开页面的插件。
+
+![open-in-default-browser screenshot](https://github.com/peakchen90/vscode-open-in-default-browser/raw/master/public/preview.gif)
 
 ---
 

@@ -10,7 +10,7 @@ tags:
   - tutorial
   - list
 created: 2023-08-18 19:44:52
-modified: 2024-05-04 17:32:14
+modified: 2024-07-10 21:57:06
 ---
 
 # Linux 视频清单
@@ -22,6 +22,8 @@ modified: 2024-05-04 17:32:14
 * [2023完整版 Linux从入门到精通](https://www.bilibili.com/video/BV1tX4y1r7Bn)
 * [Linux系统基础入门](https://www.bilibili.com/video/BV1v7421K74X)
 * [2024最新版Linux运维视频精讲教程，从入门到精通（146集全）](https://www.bilibili.com/video/BV1pm411C7nX)
+* [Linux学习教程](https://www.bilibili.com/video/BV1P4421U7Ky)
+* [黑客萌妹_HackMM视频合集](https://space.bilibili.com/3494364789607153/channel/series)
 
 ## 三剑客
 

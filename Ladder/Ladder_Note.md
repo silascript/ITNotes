@@ -13,7 +13,7 @@ tags:
   - clash
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2024-07-08 20:35:26
+modified: 2024-07-11 10:28:31
 ---
 
 # 梯子笔记
@@ -365,7 +365,7 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 
 不限时套餐：
 
-16 元，150，全节点 [ss](#Shadowsocks) 中转高速线路
+16 元，150G，全节点 [ss](#Shadowsocks) 中转高速线路
 
 > [!important] 
 > 

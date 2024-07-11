@@ -10,7 +10,7 @@ tags:
   - tutorial
   - list
 created: 2023-08-18 19:44:52
-modified: 2024-07-10 21:57:06
+modified: 2024-07-11 20:18:23
 ---
 
 # Linux 视频清单
@@ -24,6 +24,9 @@ modified: 2024-07-10 21:57:06
 * [2024最新版Linux运维视频精讲教程，从入门到精通（146集全）](https://www.bilibili.com/video/BV1pm411C7nX)
 * [Linux学习教程](https://www.bilibili.com/video/BV1P4421U7Ky)
 * [黑客萌妹_HackMM视频合集](https://space.bilibili.com/3494364789607153/channel/series)
+* [全方位讲解Linux操作系统](https://www.bilibili.com/video/BV1Kf421q7S3)
+
+---
 
 ## 三剑客
 
@@ -48,4 +51,12 @@ modified: 2024-07-10 21:57:06
 * [B站唯一讲的最好的堡垒机教程](https://www.bilibili.com/video/BV1au411Y7Yx)
 * [图解Linux网络编程_select,poll,epoll原理和实践](https://www.bilibili.com/video/BV14z421d7sa)
 * [Linux内核/kernel技术专家教程，入门到进阶实战教程完整版全集通俗易懂](https://www.bilibili.com/video/BV14M4m1Q7qq)
+
+---
+
+## 相关笔记
+
+* [Linux 笔记](Linux_Note.md)
+* [Shell 视频清单](Shell_Videos.md)
+* [Shell 笔记](Shell_Note.md)
 

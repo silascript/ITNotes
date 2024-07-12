@@ -2,7 +2,7 @@
 aliases: []
 tags: []
 created: 2023-08-19 23:06:10
-modified: 2024-03-03 06:33:14
+modified: 2024-07-12 02:10:20
 ---
 # NodeJS 笔记
 
@@ -19,9 +19,14 @@ modified: 2024-03-03 06:33:14
 ### <span id="node_install">安装</span>
 
 * [NodeJS 官网](https://nodejs.org/)
+	* [NodeJS 官网中文](https://nodejs.org/zh-cn)
 * [NodeJS 中文网](http://nodejs.cn/)
 
 Windows 下安装，可以下安装包，也可以下压缩包，解压后，手动配置环境变量。
+
+> [!tip] 
+> 
+> 推荐下载「LTS」，长期维护版，更稳定。
 
 ### <span id="node_settings">配置</span>
 

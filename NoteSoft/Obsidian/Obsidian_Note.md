@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2024-07-03 23:50:04
+modified: 2024-07-12 20:04:39
 ---
 
 # Obsidian 笔记
@@ -1115,6 +1115,16 @@ Ctrl+P 呼出命令面板，搜索 「Obsidian Git:Open source control view」�
 > [!info] 相关资料
 > 
 > [Obsidian 插件：Periodic Notes 日记增强插件，管理周期性笔记](https://pkmer.cn/Pkmer-Docs/10-obsidian/obsidian%E7%A4%BE%E5%8C%BA%E6%8F%92%E4%BB%B6/obsidian-periodic-notes/)
+
+##### <span id="obn_plugins_commp_diary_dustcalendar">Dust-calendar</span>
+
+[dust-obsidian-calendar](https://github.com/a-nano-dust/dust-obsidian-calendar) 是一款符合中国使用习惯的日历插件。
+
+![dust-calendar screenshot 1](https://github.com/a-nano-dust/dust-obsidian-calendar/raw/master/resource/overview.jpg)
+
+这插件不但显示带有农历的日历，而且还有创建日记、周记、月记等功能。
+
+![dust-calendar screenshot 2](https://github.com/a-nano-dust/dust-obsidian-calendar/raw/master/resource/create_note_by_command.jpg)
 
 ---
 

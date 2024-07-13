@@ -4,8 +4,9 @@ tags:
   - java
   - io
   - PL
+  - base
 created: 2024-01-19 17:01:19
-modified: 2024-01-19 21:54:32
+modified: 2024-07-13 11:24:13
 ---
 # Java IO 笔记
 
@@ -26,10 +27,6 @@ Unix/[Linux](../Linux/Linux_Note.md) 下有 5 种 IO 模型：
 ### <span id="javaio_model_bio">BIO</span>
 
 BIO（BLocking IO）顾名思义是一种阻塞型 IO 模型。
-
-
-
-
 
 ### <span id="javaio_model_nio">NIO</span>
 
@@ -600,4 +597,12 @@ class ByteBuffer{
 
 
 ```
+
+---
+
+## 相关笔记
+
+* [Java 笔记](Java_Note.md)
+* [Java 基础笔记](Java_Base_Note.md)
+* [Java 视频清单](Java_Videos.md)
 

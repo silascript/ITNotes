@@ -7,7 +7,7 @@ tags:
   - w3c
   - whatwg
 created: 2023-08-18 19:44:52
-modified: 2024-07-09 19:06:36
+modified: 2024-07-13 18:09:28
 ---
 
 # Html 笔记
@@ -60,7 +60,7 @@ XHTML 应用出现在 2005 年到 2012 年左右的「重构时代」。
 
 HTML 5 实质是 [WHATWG](#WHATWG) 的，[W3C](#W3C) 只是「发布者」。
 
-从 HTML 5 始，W3C 已经失去对 包括 HTML 及 DOM 在内的控制权。
+从 HTML 5 始，W3C 已经失去对 包括 HTML 及 [DOM](../JS/DOM_Note.md) 在内的控制权。
 > [!info] 
 > 
 > 2018 年 W3C 的 DOM 4.1 标准被苹果、Mozilla、Google 及微软四大浏览器厂商反对。  

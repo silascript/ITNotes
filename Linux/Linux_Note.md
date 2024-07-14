@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-07-15 04:05:28
+modified: 2024-07-15 04:16:34
 ---
 
 # Linux 笔记
@@ -1120,7 +1120,7 @@ export all_proxy=socks5://127.0.0.1:端口
 > 
 > `http_proxy` 后面的值，可以加双引号 `"`，也可以不加。即可以写成这样：`export https_proxy="http://127.0.0.1:7897"`
 
-设置完成，可以使用测试下：
+设置完，先用 `echo $http_proxy` 命令查看当前窗口是否设置了 `http_proxy` 值。然后测试下代理是否真能生效：
 
 1. `curl ip.gs`
 2. `curl cip.cc`

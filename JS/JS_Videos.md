@@ -6,7 +6,7 @@ tags:
   - video
   - list
 created: 2023-05-26 11:00:13
-modified: 2024-07-08 20:25:21
+modified: 2024-07-14 18:11:31
 ---
 # Javascript 视频清单
 
@@ -36,6 +36,7 @@ modified: 2024-07-08 20:25:21
 * [JavaScript OOP 面向对象编程 - Mosh](https://www.bilibili.com/video/BV1gb411w7eW)
 * [通过构建项目逐步学习 Javascript](https://www.bilibili.com/video/BV1zm41117g1)
 * [【3小时快速精通】2024最新版ES6基础视频教程（16集全）](https://www.bilibili.com/video/BV1Bt421A7LB)
+* [30分钟学会JS核心语法](https://youtu.be/WX87IbdAPuQ)
 
 ---
 

@@ -7,7 +7,7 @@ tags:
   - lux
   - google
 created: 2023-08-18 19:44:52
-modified: 2024-07-08 21:29:01
+modified: 2024-07-14 23:45:28
 ---
 
 # 常用小工具笔记
@@ -23,6 +23,7 @@ modified: 2024-07-08 21:29:01
 ## <span id="tools_vdowners">视频下载工具</span>
 
 常用的视频下载工具有：
+
 * [lux](#tools_vdowners_lux)
 
 ---
@@ -31,13 +32,9 @@ modified: 2024-07-08 21:29:01
 
 [lux](https://github.com/iawia002/lux) 原名叫「annie」，是一款命令行视频下载工具，用来下载 B 站等视频网站的视频是挺爽的。
 
----
-
 #### 安装
 
 Window 下推荐使用 [Scoop](https://github.com/ScoopInstaller/scoop) 来安装。Linux 下就使用各发行版的包管理器来装了，非常简单。
-
----
 
 #### lux 常用命令
 
@@ -130,7 +127,7 @@ lux -F /path/to/links.txt
 
 使用 [Cookie Editor Plus ](https://microsoftedge.microsoft.com/addons/detail/cookie-editor-plus/nbmajjcfigmlcnikhnfhhicidleefhpp?hl=zh-CN) 也能达到相同效果。
 
-### 常用命令示例
+#### 常用命令示例
 
 ```shell
 
@@ -250,7 +247,7 @@ Streams:   # All available quality
  # download with: lux -f 394 ...
 
  [160]  -------------------
- Quality:         144p video/mp4; codecs="avc1.4d400c"
+ Qualiyou-getty:         144p video/mp4; codecs="avc1.4d400c"
  Size:            37.05 MiB (38844751 Bytes)
  # download with: lux -f 160 ...
 
@@ -335,6 +332,52 @@ Streams:   # All available quality
 > `codecs` 是编码格式。
 > 
 > `avc1` 是 [H.264](../Media/Video_Note.md#H.264)；`av01` 是 [AV1](../Media/Video_Note.md#AV1)；`hev1` 即 [HEVC](../Media/Video_Note.md#HEVC)，就是 `h.265`
+
+#### 代理问题
+
+使用 `HTTP_PROXY` 来指定代理。
+
+```shell
+HTTP_PROXY="http://127.0.0.1:1087/" lux -i "https://www.youtube.com/watch?v=Gnbch2osEeo"
+```
+
+或者
+
+```shell
+HTTP_PROXY="socks5://127.0.0.1:1080/" lux -i "https://www.youtube.com/watch?v=Gnbch2osEeo"
+```
+
+---
+
+### you-get
+
+[you-get](https://github.com/soimort/you-get) 是一个使用 [Python](../Python/Python_Note.md) 写的视频下载小工具。
+
+建议使用 [pipx](../Python/Python_Note.md#pipx) 去安装：
+
+```shell
+pipx install you-get
+```
+
+> [!tip] 
+> 
+> [Python](../Python/Python_Note.md) 的版本官方建议是 `3.7.4` 以上。
+
+#### 常用参考及选项
+
+* `-i` 或 `--info`： 显示视频信息
+* `-l` 或 `--playlist`：要下载一列表的视频，类似 [lux](#lux) 的 `-p`
+	* `--first`：列表起始项
+	* `--last`：列表结束项
+* `-x` 或 `--http-proxy`：设置代理，示例 `you-get -x 127.0.0.1:8087 'https://www.youtube.com/watch?v=jNQXAC9IVRw'`
+> [!tip] 
+> 
+> 这个选项对于使用 [机场](../Ladder/Ladder_Note.md) 下载 [Youtube](../Ladder/Youtube_Note.md) 的视频是非常重要的。
+
+### 参考资料
+
+* [lux proxy](https://github.com/iawia002/lux?tab=readme-ov-file#proxy)
+* [You-Get, Youtube-dl, Lux/Annie 视频下载器 一键安装脚本 - Lussac's Blog](https://blog.lussac.net/archives/121/)
 
 ---
 

@@ -13,7 +13,7 @@ tags:
   - clash
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2024-07-13 19:49:23
+modified: 2024-07-14 11:24:31
 ---
 
 # 梯子笔记
@@ -269,7 +269,7 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 1. **年付** 12 元（实付 12.96 元，0.96 元是手续费），每月 100G 流量，限速 100M 带宽速度，相当于 1 元/月，相当于 0.01/G -- 1 分钱 1G，性价比应该是最高的了，非常适合长期订阅，流量需求不大的用户。
 2. 6.8 元/月，500G，限速 300M，长期订阅但单月流量较大。
 
-超悦使用 [Hysteria](#Hysteria) 协议。
+超悦使用 [Hysteria1](#Hysteria) 或 [Hysteria2](#Hysteria) 协议。
 
 超悦更适合作为「保底」机场使用，各节点稳定性不如那些 9.9 一个月的机场，但毕竟 1 块钱一个月，还能要求什么呢！
 
@@ -519,6 +519,19 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 
 但这机场有不限时套餐，其中 8 元 200G 不限时套餐跟 [Lemon](#Lemon)7.9 的 200G 套餐一个档。
 
+#### 顶级机场
+
+[顶级机场](https://顶级机场.com) 性价比套餐：
+
+1. 年付，12 元/年，每月 200G，不限客户端数
+2. 5 元/月，1000G，不限客户端数
+
+不限时套餐：
+
+* 8 元/一次性，200G，不限客户端数
+
+看套餐，跟 [极速机场](#极速机场) 一样。
+
 #### 养鸡场
 
 [养鸡场](https://yangjichang.com) 性价比套餐：
@@ -590,6 +603,25 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 
 但日本、香港和台湾的节点非常多，大部分正常情况下，延迟也非常不错。就是价格上不太「美丽」，算是一个优质的不限时的「补充机场」。
 
+### 专线机场
+
+#### CloudFisher
+
+[CloudFisher](https://cloudfisher.net) 是一个 [IEPL](#IEPL) 专线的机场。
+
+* 5 元/月，每月 150G，300M 速率。
+* 35 元/年付，每月 150G，500M 速率
+
+不限时套餐：
+
+* 35 元/一次性，300G，600M 速率
+
+> [!info] 
+> 
+> ![cloudfisher screenshot](https://t.tutu.to/img/mOcjQ)
+> 
+> 看上述几个套餐，如果是专线的话，5 元 150G，性价比还不错。如果要与其他机场搭配使用，建议还是入手不限时 35 元 300G，就当是其他直连机场在高峰时段「全红」后的保底。
+
 ### 恶臭机场
 
 #### 十元一年
@@ -632,6 +664,7 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 * [2024最新Clash节点订阅地址链接分享Clash机场推荐购买](https://clashnode.org/)
 * [机场跑路名单（持续更新）-2024 VPN](https://gfwoff.com/jichang-paolu-lists/)
 * [机场推荐（2024年6月20日更新） - 毒奶](https://limbopro.com/865.html)
+* [机场常见问题大全 TOS/SLA/VPN/机场/线路/专线等问题](https://youtu.be/XnuKK9Gnb8Y)
 
 ---
 
@@ -873,6 +906,8 @@ sudo systemctl start v2raya
 * [clashverge.org](https://clashverge.org/)
 * [whoer.net](https://whoer.net)
 * [fanqiangdang](https://fanqiangdang.org)
+* [ACL4SSR 在线订阅转换](https://acl4ssr-sub.github.io)
+* [Subscription Converter](https://api.nameless13.com)
 
 ---
 

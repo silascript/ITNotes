@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-07-11 20:15:42
+modified: 2024-07-15 04:05:28
 ---
 
 # Linux 笔记
@@ -1088,6 +1088,57 @@ IPtables 中可以做各种网络地址转换，网络地址转换主要有两�
 **SNAT** 是 「source networkaddress translation」的缩写，即「源地址目标转换」。
 
 **DNAT** 是 「destination networkaddress translation」的缩写，即「目标网络地址转换」。
+
+### 代理
+
+#### 临时代理
+
+ #proxy
+
+想要在当前窗口临时设下代理，可以使用 `export` 命令设置 `http_proxy` 或 `https_proxy` 的值。如下：
+
+```shell
+export http_proxy=http://127.0.0.1:端口
+# 或者
+export https_proxy=http://127.0.0.1:端口
+
+# 当然可以二个一起设
+export all_proxy=socks5://127.0.0.1:端口
+```
+
+如果使用 socks5 就这样设置：
+
+```shell
+export http_proxy=socks5://127.0.0.1:端口
+# 或者
+export https_proxy=socks5://127.0.0.1:端口
+# 同样的可以二个一起设
+export all_proxy=socks5://127.0.0.1:端口
+```
+
+> [!tip] 
+> 
+> `http_proxy` 后面的值，可以加双引号 `"`，也可以不加。即可以写成这样：`export https_proxy="http://127.0.0.1:7897"`
+
+设置完成，可以使用测试下：
+
+1. `curl ip.gs`
+2. `curl cip.cc`
+3. `curl https://www.google.com`
+
+清除环境变量可以这样：
+
+```shell
+unset http_proxy  
+unset https_proxy
+```
+
+> [!info] 相关资料
+> 
+> * [linux终端设置临时代理 - 建站笔记 - 博客园](https://www.cnblogs.com/dede369/p/14475170.html)
+> * [Windows / Linux 下为 命令行 设置临时代理](https://blog.csdn.net/weixin_45956258/article/details/120423310)
+> * [linux命令配置代理 • Worktile社区](https://worktile.com/kb/ask/313574.html)
+> * [终端使用代理加速的正确方式（Clash） | Ln's Blog](https://weilining.github.io/294.html)
 
 ---
 

@@ -7,7 +7,7 @@ tags:
   - lux
   - google
 created: 2023-08-18 19:44:52
-modified: 2024-07-14 23:45:28
+modified: 2024-07-15 03:24:50
 ---
 
 # 常用小工具笔记
@@ -335,17 +335,9 @@ Streams:   # All available quality
 
 #### 代理问题
 
-使用 `HTTP_PROXY` 来指定代理。
+使用 `HTTP_PROXY` 来指定代理。Windows 是使用 `set` 命令。
 
-```shell
-HTTP_PROXY="http://127.0.0.1:1087/" lux -i "https://www.youtube.com/watch?v=Gnbch2osEeo"
-```
-
-或者
-
-```shell
-HTTP_PROXY="socks5://127.0.0.1:1080/" lux -i "https://www.youtube.com/watch?v=Gnbch2osEeo"
-```
+[Linux](../Linux/Linux_Note.md) 下，使用 `export` 命令设置。参考：[临时代理](../Linux/Linux_Note.md#临时代理)。
 
 ---
 
@@ -373,6 +365,7 @@ pipx install you-get
 > [!tip] 
 > 
 > 这个选项对于使用 [机场](../Ladder/Ladder_Note.md) 下载 [Youtube](../Ladder/Youtube_Note.md) 的视频是非常重要的。
+* `--itag`：这是指定下载某个格式或分辨率选项，类似 [lux](#lux) 的 `-f` 选项。
 
 ### 参考资料
 

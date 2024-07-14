@@ -13,7 +13,7 @@ tags:
   - clash
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2024-07-14 22:37:51
+modified: 2024-07-15 04:02:43
 ---
 
 # 梯子笔记
@@ -927,6 +927,30 @@ sudo systemctl start v2raya
 * [toutyrater](https://toutyrater.github.io/)
 * [v2rayA 入门使用教程](https://v2rayn.uuk.app/112)
 * [什么是 SSR、V2ray、Trojan、Clash，什么是机场？ | Yasir Lin 的笔记](https://young1lin.me/2020/10/30/GFW/)
+
+---
+
+## 系统相关设置
+
+### 设置临时代理
+
+Linux 参考：[临时代理](../Linux/Linux_Note.md#临时代理)
+
+当然不想手动设置，如果使用了 [Clash](#Clash) 的客户端，可以右键图标，下拉菜单中有「复制环境变量」，就能复制要设置的环境变量，把复制的值粘到终端中执行下就好了。
+
+而环境变量的类型，在「设置」面板中「复制环境变量类型」中可选。
+
+以 Bash 类型认例，复制出的环境变量是这样的：
+
+```shell
+export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897
+```
+
+> [!info] 相关资料
+> 
+> * [终端使用代理加速的正确方式（Clash） | Ln's Blog](https://weilining.github.io/294.html)
+> * [终端使用代理 - faf4r - 博客园](https://www.cnblogs.com/faf4r/p/17765134.html)
+> * [在 Linux 中使用 Clash | AISYUN's Blog](https://blog.cyida.com/2023/32KRQRV.html#%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86)
 
 ---
 

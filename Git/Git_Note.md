@@ -5,7 +5,7 @@ tags:
   - github
   - gist
 created: 2023-01-30 11:19:11
-modified: 2024-06-26 18:50:52
+modified: 2024-07-14 23:53:53
 ---
 
 # Git 笔记
@@ -572,6 +572,14 @@ git add .
 
 # 提交
 git commit -m 'update .gitignore'
+```
+
+### 代理
+
+使用 `git -c http.proxy=` 方式指定代理。
+
+```shell
+git -c http.proxy='http://127.0.0.1:7890'
 ```
 
 ---

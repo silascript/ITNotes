@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2024-07-16 22:14:20
+modified: 2024-07-17 01:46:24
 ---
 
 # Shell 笔记
@@ -406,7 +406,7 @@ done
 >  
 > `i` 是数组索引
 
-#### 添加元素
+#### 3. 添加元素
 
 向数组中添加元素，可以有四种方法：
 
@@ -474,6 +474,8 @@ local ads_array=($@)
 
 * [shell 数组与函数之间的传参 - 知己一语 - 博客园](https://www.cnblogs.com/zhijiyiyu/p/15038939.html)
 * [shell 数组和算法 - YhtWeirdo - 博客园](https://www.cnblogs.com/yhtweirdo/p/15036737.html)
+* [Shell——数组 - peiqy - 博客园](https://www.cnblogs.com/peiqingyi/p/15039051.html)
+* [shell 把一个数组赋给另一个数组 - CSDN文库](https://wenku.csdn.net/answer/46wz4kkdau)
 
 ---
 
@@ -664,6 +666,10 @@ function get_dl_url(){
 	done
 }
 ```
+
+### 循环相关资料
+
+* [Shell while循环详解 - zhouyuqiang - 博客园](https://www.cnblogs.com/qiangyuzhou/p/10806851.html)
 
 ---
 
@@ -960,6 +966,7 @@ curl http://hub-mirror.c.163.com/v2/library/${image}/tags/list | jq --arg tstr $
 * [awesome-shell_ZH-CN](https://github.com/xuxiaodong/awesome-shell/blob/master/README_ZH-CN.md#shell-%E5%8C%85%E7%AE%A1%E7%90%86)
 * [Awesome Shell：命令行框架、工具包、指南清单（中译版） - Shell - 软件编程 - 深度开源](https://www.open-open.com/news/view/e54142)
 * [shell echo 显示颜色 - 知乎](https://zhuanlan.zhihu.com/p/181609730)
+* [实现shell脚本中的转圈、进度条等一些效果 · 艾莉亚的猫](https://yangtze736.github.io/%E6%8A%80%E6%9C%AF/2018/05/02/shell-tips/)
 
 ---
 

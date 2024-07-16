@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-07-15 04:16:34
+modified: 2024-07-17 01:32:01
 ---
 
 # Linux 笔记
@@ -840,14 +840,11 @@ curl -d
 > [!info] 相关资料
 > 
 > * [curl 的用法指南 - 知乎](https://zhuanlan.zhihu.com/p/336945420)
->   
 > * [cURL命令详解 - 知乎](https://zhuanlan.zhihu.com/p/661602561)
->   
 > * [通过curl获取HTTP状态返回码](https://blog.csdn.net/weixin_46686835/article/details/113761418)
->   
 > * [cURL 如何只返回状态码](https://www.cnblogs.com/lsgxeva/p/13915259.html)
->   
 > * [curl/wget 测试http请求的响应头信息 - dorothychai - 博客园](https://www.cnblogs.com/dorothychai/p/4381931.html)
+> * [curl 命令详解，省的来回找了【Linux】-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1747958)
 
 ##### <span id="linux_network_command_downloader_wget">wget</span>
 

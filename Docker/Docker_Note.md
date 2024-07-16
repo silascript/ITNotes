@@ -8,7 +8,7 @@ tags:
   - ubuntu
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2024-03-04 03:32:40
+modified: 2024-07-16 03:40:49
 ---
 
 # Docker 笔记
@@ -318,7 +318,7 @@ docker search busybox --limit=10
 
 ##### 搜索镜像时列出该镜像的 TAG
 
- 以下 [Shell](../Linux/Shell_Note.md) 脚本实现了列出镜像 tag 的功能：
+ ~~以下 [Shell](../Linux/Shell_Note.md) 脚本实现了列出镜像 tag 的功能：
 
 ```shell
 #!/bin/bash
@@ -353,13 +353,13 @@ fi
 echo "${tags}"
 ```
 
-> [!info] 此脚本应用在国内镜像上
+~~> [!info] 此脚本应用在国内镜像上
 > 
 > 上述脚本中，其中 `wget -q https://registry.hub.docker.com/v1/repositories/${image}/tags` ，如果使用了国内镜像，就应该相应改成国内镜像的网址。
 > 
 > 如网易：`http://hub-mirror.c.163.com/v2/library/${image}/tags/list`
 
-下面就是使用网易镜像源获取指定镜像 TAG 值的脚本：
+~~下面就是使用网易镜像源获取指定镜像 TAG 值的脚本：
 
 ```shell
 #!/bin/bash
@@ -394,7 +394,7 @@ fi
 echo "${tags}"
 ```
 
-新版本的脚本：
+~~新版本的脚本：
 
 ```shell
 
@@ -441,6 +441,38 @@ function docker_queryimagetag() {
 }
 
 ```
+
+> [!important] 
+> 
+> 上面无论是 docker hub 的 v1 版本的 api，还是 163 的 api 都已经过时，得使用 [新版获取 Tag API](#新版获取%20Tag%20API) 去查询 tag。
+> 
+> * [Docker Hub API v1 (deprecated)](https://docs.docker.com/docker-hub/api/deprecated/)
+> 
+
+##### 新版获取 Tag API
+
+新版本的 API 其实是简化了原有的 API。
+
+* `/v2/namespaces/{namespace}/repositories/{repository}/images`
+* `/v2/namespaces/{namespace}/repositories/{repository}/tags`
+* `/v2/namespaces/{namespace}/repositories/{repository}/tags/{tag}`
+
+###### 参数说明
+
+* `{namespace}`：Docker 官方的 `namspace` 就是 `library`
+* `{repository}`：就是 [镜像](#镜像) 的库名，Docker 官方的镜像库名可以通过 [ docker-library/docs](https://github.com/docker-library/docs) 这个 [GitHub](../Git/Git_Note.md#git_github) 库查询到，确实就是这个库中那些目录名。
+
+> [!example] 
+> 
+> 1. `registry.hub.docker.com/v2/namespaces/library/repositories/mysql/` 
+> 2. `registry.hub.docker.com/v2/namespaces/library/repositories/mysql/tags`
+> 3. `registry.hub.docker.com/v2/namespaces/library/repositories/mysql/tags/5.7`
+> 
+> 第一个是查询 Docker Hub 官方镜像叫*mysql*所有的镜像。
+> 
+> 第二个是查询 Docker Hub 官方镜像 mysql 的带 tag 的镜像。返回结果是一个 json 文件。可以使用 [jq](../Linux/Linux_Note.md#jq) 这个小工具进一步过滤检索。
+> 
+> 第三个是查询 Docker Hub 官方镜像 mysql 的 tag 叫*5.7*的镜像。
 
 #### <span id="dk_image_search_hub">Docker Hub</span>
 

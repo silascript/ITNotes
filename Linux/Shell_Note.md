@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2024-07-17 01:46:24
+modified: 2024-07-18 03:57:03
 ---
 
 # Shell 笔记
@@ -197,6 +197,20 @@ shell 对于空格有严格的规定：
 > 
 > 在条件表达式中，括号中的表达式前后必须都加上空格，不然就会报错。而赋值表达式中，`=` 前后就不能加空格。
 
+```shell
+ if [[ xxx ]];then
+	xxx
+elif [[ xxx ]];then
+	xxxx
+else
+	xxxx
+fi
+```
+
+> [!tip] 
+> 
+> Shell 中是 `elif`，不是 else if
+
 #### 整数比较
 
 * `-eq` 或 `equal`：等于
@@ -247,6 +261,11 @@ shell 对于空格有严格的规定：
 > [!tip]
 > 
 > 如果当前 Shell 不支持逻辑判断符，可使用 [布尔运算符](#布尔运算) 替代。
+
+### 相关资料
+
+* [Shell脚本中if条件判断的写法实例\_linux shell\_脚本之家](https://www.jb51.net/article/235932.htm#_lab2_3_2)
+* [linux,shell中if else if的写法,if elif - Zhai\_David - 博客园](https://www.cnblogs.com/chuanzhang053/p/8566043.html)
 
 ---
 
@@ -476,6 +495,25 @@ local ads_array=($@)
 * [shell 数组和算法 - YhtWeirdo - 博客园](https://www.cnblogs.com/yhtweirdo/p/15036737.html)
 * [Shell——数组 - peiqy - 博客园](https://www.cnblogs.com/peiqingyi/p/15039051.html)
 * [shell 把一个数组赋给另一个数组 - CSDN文库](https://wenku.csdn.net/answer/46wz4kkdau)
+
+---
+
+## <span>运算</span>
+
+原生 Shell 不支持数学运算，可以通过 [awk](Linux_Note.md#linux_textprocessing_awk)、`expr` 命令来实现。
+
+```shell
+num1=`expr 1+2`
+echo num1
+
+```
+
+当然还有更便捷的方式，使用 `(())` 来进行整数运算。
+
+### 相关资料
+
+* [Shell整数运算-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1770000)
+* [Shell中的算术运算](https://xstarcd.github.io/wiki/shell/expr.html)
 
 ---
 

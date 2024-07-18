@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-07-17 01:32:01
+modified: 2024-07-18 21:38:31
 ---
 
 # Linux 笔记
@@ -1116,6 +1116,9 @@ export all_proxy=socks5://127.0.0.1:端口
 > [!tip] 
 > 
 > `http_proxy` 后面的值，可以加双引号 `"`，也可以不加。即可以写成这样：`export https_proxy="http://127.0.0.1:7897"`
+> 
+> 如果使用 Clash 客户端，如 [Clash-Verge-Rev](../Ladder/Ladder_Note.md#Clash-Verge-Rev)，其中有个功能能方便复制「环境变量」，点一个，就能复制出要执行的代码，诸如：`export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897`，将代码贴到终端中，执行下，当前终端窗口就能启用临时代理了。
+> 
 
 设置完，先用 `echo $http_proxy` 命令查看当前窗口是否设置了 `http_proxy` 值。然后测试下代理是否真能生效：
 

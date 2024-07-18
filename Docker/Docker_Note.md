@@ -8,7 +8,7 @@ tags:
   - ubuntu
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2024-07-18 17:57:46
+modified: 2024-07-18 21:51:40
 ---
 
 # Docker 笔记
@@ -16,6 +16,7 @@ modified: 2024-07-18 17:57:46
 ---
 
 ## 目录
+
 * [Docker 介绍](#dk_introduction)
 	* [虚拟化技术](#dk_virtual_info)
 * [Docker 架构及概念](#dk_arch)
@@ -102,6 +103,7 @@ pacman -S docker
 
 docker 安装完成后，docker 会自动新增一个 docker 用户组。  
 为了方便，主要是为了避免权限问题，当前用户如果是非 root 用户，最好将当前用户加入这个用户组中。
+
 ```shell
 sudo gpasswd -a ${USER} docker
 ```
@@ -139,6 +141,7 @@ sudo chmod a+rw /var/run/docker.sock
 ```
 
 ### <span id="dk_install_win">Windows 下安装 Docker</span>
+
 1. 安装 Docker
 个人喜欢用 [Scoop](../Scoop/Scoop_Note.md) 来安装软件，所以 Docker 也不例外。
 
@@ -198,6 +201,11 @@ docker --registry-mirror=https://registry.docker-cn.com daemon
 > 配置文件可以添加多个镜像。
 > 
 > 还有最后那一个镜像选项后，不要留逗号。
+> 
+> 给 Docker 走 [代理](#代理) 也是通过配置这个文件实现的。
+> 
+
+配置完了，重载配置文件：`sudo systemctl daemon-reload` 及重启 Docker 服务：`sudo systemctl restart docker`。
 
 Docker 镜像列表
 
@@ -241,9 +249,11 @@ Docker 镜像列表
  docker 出现 `no matching manifest for windows/amd64 10.0.18363 in the manifest list entries` 错误。
 
 在 `daemon.json` 配置文件中添加：
+
 ```json
 "experimental":true
 ```
+
 然后重启服务。
 
 run 容器时出现 `Error response from daemon: failed to start service utility VM ` 错误。
@@ -251,12 +261,41 @@ run 容器时出现 `Error response from daemon: failed to start service utility
 ```shell
 BCDEdit /set hypervisorlaunchtype auto
 ```
+
 重启电脑。
 
 ### <span id="dk_mirror_proxy">代理</span>
 
+开了 [梯子](../Ladder/Ladder_Note.md)，终端也开启了 [临时代理](../Linux/Linux_Note.md#临时代理) 了，但 Docker 在 `pull` 时，也还是不走代理，那就得对 Docker 的全局配置进行相关代理的配置。
+
+> [!tip] 
+> 
+> docker 镜像由 docker daemon 管理，所以不能用修改 shell 环境变量的方法使用代理服务，而是从 systemd 角度设置环境变量。
+
+在 `daemon.json` 配置文件中加入代理相关配置：
+
+```json
+{
+  "proxies": {
+    "http-proxy": "http://proxy.example.com:3128",
+    "https-proxy": "https://proxy.example.com:3129",
+    "no-proxy": "*.test.example.com,.example.org,127.0.0.0/8"
+  }
+}
+```
+
+配置完了，重载配置文件：`sudo systemctl daemon-reload` 及重启 Docker 服务：`sudo systemctl restart docker`。
+
+#### 代理相关资料
+
 * [Docker Proxy 镜像加速](https://dockerproxy.com/)
 * [mirror.baidubce.com](https://mirror.baidubce.com/)
+* [国内的 Docker Hub 镜像加速器](https://gist.github.com/y0ngb1n/7e8f16af3242c7815e7ca2f0833d3ea6)
+* [怎样才能让我的 docker 走代理 - v2ex](https://v2ex.com/t/874777)
+* [daemon to use a proxy](https://docs.docker.com/config/daemon/proxy/#httphttps-proxy)
+* [docker 设置代理，以及国内加速镜像设置-次世代BUG池](https://neucrack.com/p/286)
+* [【Docker】新手记一次为docker挂代理加速docker pull笔记 – 一桐のBlog](http://ytmc.fun:55555/?p=146)
+* [如何配置docker通过代理服务器拉取镜像 | 自由行](https://www.lfhacks.com/tech/pull-docker-images-behind-proxy/)
 
 ### <span id="dk_mirror_magic">镜像网站相关的魔法</span>
 
@@ -272,11 +311,13 @@ sudo systemctl daemon-reload
 ```
 
 重启 docker 服务
+
 ```shell
 sudo systemctl restart docker
 ```
 
 停止 docker 服务
+
 ```shell
 sudo systemctl stop docker
 ```
@@ -287,7 +328,7 @@ sudo systemctl stop docker
 > 
 > 这个操作得在 Docker 服务启动后才有效
 > 
->```sh
+>```shell
 > docker info
 > ```
 
@@ -316,9 +357,17 @@ docker search ubuntu --filter "is-official=true"
 docker search busybox --limit=10
 ```
 
+```shell
+docker search --filter is-official=true --filter stars=3 busybox
+
+NAME      DESCRIPTION           STARS     OFFICIAL
+busybox   Busybox base image.   325       [OK]
+
+```
+
 ##### 搜索镜像时列出该镜像的 TAG
 
- ~~以下 [Shell](../Linux/Shell_Note.md) 脚本实现了列出镜像 tag 的功能：
+ ~~以下 [Shell](../Linux/Shell_Note.md) 脚本实现了列出镜像 tag 的功能：~~
 
 ```shell
 #!/bin/bash
@@ -353,13 +402,13 @@ fi
 echo "${tags}"
 ```
 
-~~> [!info] 此脚本应用在国内镜像上
-> 
-> 上述脚本中，其中 `wget -q https://registry.hub.docker.com/v1/repositories/${image}/tags` ，如果使用了国内镜像，就应该相应改成国内镜像的网址。
-> 
-> 如网易：`http://hub-mirror.c.163.com/v2/library/${image}/tags/list`
+~~> [!info] 此脚本应用在国内镜像上~~
+~~> 
+~~> 上述脚本中，其中 `wget -q https://registry.hub.docker.com/v1/repositories/${image}/tags` ，如果使用了国内镜像，就应该相应改成国内镜像的网址。~~
+~~> 
+~~> 如网易：`http://hub-mirror.c.163.com/v2/library/${image}/tags/list`~~
 
-~~下面就是使用网易镜像源获取指定镜像 TAG 值的脚本：
+~~下面就是使用网易镜像源获取指定镜像 TAG 值的脚本：~~
 
 ```shell
 #!/bin/bash
@@ -394,7 +443,7 @@ fi
 echo "${tags}"
 ```
 
-~~新版本的脚本：
+~~新版本的脚本：~~
 
 ```shell
 
@@ -479,10 +528,12 @@ function docker_queryimagetag() {
  [hub.docker](https://hub.docker.com) 上搜
 
 下载镜像：
+
 ```shell
 docker pull 镜像名[:tag]
 ```
 > [!tip]
+> 
 > 跟 git 的类似
 >
 > 示例：
@@ -494,14 +545,24 @@ docker pull 镜像名[:tag]
 ### 镜像其他操作
 
 查看已存在的镜像：
+
 ```shell
 docker images
 ```
 
 删除镜像：
+
 ```shell
 docker rmi 镜像名
 ```
+
+### 镜像相关资料
+
+#### 官方文档
+
+* [official-images using docs](https://docs.docker.com/trusted-content/official-images/using/)
+* [docker image search docs](https://docs.docker.com/reference/cli/docker/search/)
+* [docker image pull docs](https://docs.docker.com/reference/cli/docker/image/pull/)
 
 ---
 

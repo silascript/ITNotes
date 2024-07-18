@@ -1,11 +1,10 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - database
   - mysql
 created: 2023-01-30 11:19:11
-modified: 2023-06-22 7:58:12
+modified: 2024-07-18 16:52:43
 ---
 # MySQL 笔记
 
@@ -38,6 +37,21 @@ mycli 有语法高亮、代码提示、分页显示等非常实用的功能。
 
 ### 连接问题
 如果在连接 MySQL 8.x 时，出现 `Public Key Retrieval is not allowed` 错误，请开启相应的权限。 
+
+---
+
+## 版本
+
+Oracle 又要刷版本号了，弄出个「创新」和「LTS」版本。这两个都是生产级质量。其实就是把包含之前的补丁加新功能的版本重命名，把版本啊升了个级：如本来是 8.0.x 的，这样容易给人好像没怎么升，所以干脆，更名为 8.x，这样看起来有比较大的更新。
+
+未来的计划：8.4.x、9.7.x 是 LTS，其余 8.x 及 9.x 是「创新」版。
+
+![mysql version schedule screenshot](https://developer.qcloudimg.com/http-save/10653659/60a817fc9e60ec8daebd29fe56699ab8.png)
+
+### 相关资料
+
+* [MySQL8.1来了：MySQL创新和长期支持（LTS）版本简介-腾讯云开发者社区-腾讯云](https://cloud.tencent.cn/developer/article/2303772)
+* [MySQL 8.4版本发布与历史版本回顾 – orczhou.com](https://www.orczhou.com/index.php/2024/05/mysql-8-4-and-version-history/)
 
 ---
 

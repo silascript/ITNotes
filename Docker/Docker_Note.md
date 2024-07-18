@@ -8,7 +8,7 @@ tags:
   - ubuntu
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2024-07-16 03:40:49
+modified: 2024-07-18 17:57:46
 ---
 
 # Docker 笔记
@@ -1663,6 +1663,10 @@ phpinfo();
 ### <span id="dk_softc_demo_mysql">示例 4：MySQL/Mariadb</span>
 
 [GitHub - docker-library](https://github.com/docker-library/mysql) 的镜像按底层系统分为 debian 和 oracle。
+
+> [!info] 
+> 
+> 8.0.38 之后，官方镜像全转向使用 Oracle Linux。
 
 ```shell
 # 不指定挂载目录

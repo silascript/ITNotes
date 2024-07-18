@@ -9,7 +9,7 @@ tags:
   - list
   - video
 created: 2024-05-01 03:10:27
-modified: 2024-07-07 10:38:32
+modified: 2024-07-18 17:34:00
 ---
 
 # Dotnet 视频清单
@@ -40,4 +40,5 @@ modified: 2024-07-07 10:38:32
 
 ## 相关笔记
 
+* [.net 笔记](Dotnet_Note.md)
 * [WPF笔记](WPF_Note.md)

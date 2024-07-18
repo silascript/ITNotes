@@ -4,8 +4,9 @@ tags:
   - database
   - mysql
 created: 2023-01-30 11:19:11
-modified: 2024-07-18 16:52:43
+modified: 2024-07-18 22:54:49
 ---
+
 # MySQL 笔记
 
 ---
@@ -13,6 +14,8 @@ modified: 2024-07-18 16:52:43
 ## 目录
 
 * [客户端工具](#mysqln_client_tools)
+* [版本](#版本)
+
 ---
 
 ## <span id="mysqln_client_tools">客户端工具</span>

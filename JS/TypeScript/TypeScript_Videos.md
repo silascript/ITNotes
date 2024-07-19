@@ -6,7 +6,7 @@ tags:
   - video
   - list
 created: 2023-08-26 11:59:50
-modified: 2024-07-07 03:29:07
+modified: 2024-07-19 17:50:33
 ---
 
 # TypeScript 视频清单
@@ -21,6 +21,7 @@ modified: 2024-07-07 03:29:07
 * [【2024版】TypeScript+Node高分教程，手把手教你敲代码](https://www.bilibili.com/video/BV1gy411B7W5)
 * [某手大牛耗时240分钟拆分讲解TypeScript，TS基础理论](https://www.bilibili.com/video/BV166421Z7yJ)
 * [TypeScript 从系统入门到项目实战](https://youtu.be/tae8pRmB0UI?list=PL9nxfq1tlKKkG8HjoiTDk6YFeyQslC8s6)
+* [2024徐老师TypeScript系列课程](https://www.bilibili.com/video/BV1mJ4m1T7c4)
 
 ---
 

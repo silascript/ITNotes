@@ -1,12 +1,28 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
-  - 
+  - PL
+  - php
 created: 2023-09-21 23:13:13
-modified: 2023-09-21 23:20:58
+modified: 2024-07-19 03:36:16
 ---
+
 # PHP 笔记
+
+---
+
+## 目录
+
+* [版本](#版本)
+* [内置服务器](#内置服务器)
+
+---
+
+## 版本
+
+### 相关资料
+
+* [PHP Versions • PHP.Watch](https://php.watch/versions)
 
 ---
 
@@ -36,3 +52,4 @@ php81 -S localhost:8088 -t /home/silascript/DevWorkSpace/PHPExercise
 
 * [Linux下PHP安装](Linux下PHP安装.md)
 * [Linux下安装配置Apache](Linux下安装配置Apache.md)
+* [Docker 笔记](../Docker/Docker_Note.md)

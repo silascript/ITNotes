@@ -8,7 +8,7 @@ tags:
   - ubuntu
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2024-07-19 02:16:01
+modified: 2024-07-19 20:36:26
 ---
 
 # Docker 笔记
@@ -29,7 +29,7 @@ modified: 2024-07-19 02:16:01
 	* [停止容器](#dk_container_stop)
 	* [进入容器](#dk_container_exec)
 	* [删除容器](#dk_container_delete)
-	* [查看容器](#dk_container_inspect)
+	* [查看容器](#dk_container_info)
 * [Volume和挂载](#dk_volume_mount)
 * [网络](#dk_network)
 	* [虚拟网桥](#dk_network_vbridge)
@@ -570,8 +570,6 @@ docker rmi 镜像名
 
 ### <span id="dk_container_create">创建容器</span>
 
-1. 新建容器
-
 使用 `docker create` 命令新建一个容器。
 
 ```shell
@@ -579,6 +577,7 @@ docker create -it --name 自定义容器名 镜像名
 ```
 
 常用参数：
+
 * `-i, --interactive=true|false`：保持标准输入打开，默认为 false 
 * `-t, --tty=true|false`：是否分配一个伪终端，默认为 false
 * `-p, --publish`： 端口
@@ -587,7 +586,7 @@ docker create -it --name 自定义容器名 镜像名
 * `--ip`：指定容器的 IPv4 地址
 * `--link=[<name or id>:alias]`：链接到其他容器
 
-2. <span id="dk_container_start">启动容器</span>
+### <span id="dk_container_start">启动容器</span>
 
 使用 `docker start` 命令来启动一个已经创建的容器。
 
@@ -595,20 +594,19 @@ docker create -it --name 自定义容器名 镜像名
 docker start 容器名|容器ID
 ```
 
-> [!info] 相关命令
->
-> * `docker ps` 查看运行中的容器
-> * `docker ps -a` 查看所有的容器，包括没有运行中的容器
-> * `docker restart` 将正在运行的容器 [停止](#dk_container_stop) 然后再运行
+### <span id="dk_container_run">新建并启动容器</span>
 
-3. 新建并启动容器
-
-直接新建并启动容器。所需要的命令为 `docker run`，等价于先执行 `docker create` 命令，再执行 `docker start` 命令。
+如果嫌创建和启动两步走比较麻烦，可以直接 [创建](#创建容器) 并 [启动容器](#启动容器)「合并」操作，那就可以使用 `docker run` 命令。
+> [!tip] 
+> 
+> `docker run` 命令等价于先执行 `docker create` 命令，再执行 `docker start` 命令。
 
 `docker create` 命令的常用选项参数，在 `docker run` 命令都通用：如 `-i`、`-t`、`-p`、`-v` 等。
 
 `docker run` 独有的常用选项参数：
 `-d,detach`：在后台运行容器并将打印出容器的 ID
+> [!info] 
+> 
 > 更多的时候，需要让 Docker 容器在后台以守护形式运行，这就要加上 `-d` 选项来实现，而 `-d` 其实就是 「Daemon」。
 
 ### <span id="dk_container_stop">停止容器</span>
@@ -636,6 +634,7 @@ docker stop 容器名|容器ID
 * -t, --tty=true|false：分配伪终端，默认值为 false
 
 示例：
+
 ```shell
 docker exec -it 容器名/容器ID /bin/bash
 ```
@@ -645,24 +644,40 @@ docker exec -it 容器名/容器ID /bin/bash
 ```shell
 docker rm 容器|容器ID
 ```
+> [!tip] 
+> 
 > `-f, --force=false` 强行删除容器 
 
-### <span id="dk_container_inspect">查看容器</span>
+### <span id="dk_container_info">查看容器</span>
 
-1. 查看窗口详细信息
+#### ps
+
+* `docker ps` 查看运行中的容器
+* `docker ps -a` 查看所有的容器，包括没有运行中的容器
+* `docker restart` 将正在运行的容器 [停止](#dk_container_stop) 然后再运行
+
+#### inspect
+
+`inspect` 命令：查看容器详细信息
 ```shell
 docker inspect 容器名|容器ID
 ```
 
-2. 查看容器内进程
+#### top
+
+`top` 命令：查看容器内进程
 ```shell
 docker top 容器名|容器ID
 ```
 
-3. 查看统计信息
+#### stats
+
+`stats` 命令：查看统计信息
 ```shell
 docker stats [容器名|容器ID]
 ```
+> [!info] 
+> 
 > 可以查看当前 Docker 中容器运行情况，会显示 CPU、内存、存储等使用情况。  
 > 如果不指定 **容器名** 或 ID，将显示运行中的所有容器的实时信息。
 

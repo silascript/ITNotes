@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-07-18 21:38:31
+modified: 2024-07-19 22:03:08
 ---
 
 # Linux 笔记
@@ -19,6 +19,8 @@ modified: 2024-07-18 21:38:31
 ## 目录
 
 * [配置文件](#linux_configs)
+* [目录](#linux_directory)
+* [用户](#linux_user)
 
 * [打包压缩](#linux_tarc)
   * [Tar 命令](#linux_tarc_tar)
@@ -158,6 +160,36 @@ lsb 其他选项和参数：
  
 > [!tip] path 变量路径
 > 路径末尾不能以 **\/** 结尾，否则将导致整个 PATH 变量出错。
+
+---
+
+## <span id="linux_directory">目录</span>
+
+----
+
+## <span id="linux_user">用户</span>
+
+更改用户组：
+
+```shell
+chgrp -R 用户名 目录名
+```
+
+> [!tip] 
+> 
+> `-R`：表示递归，即当前目录名的所有文件及子目录其及文件均更改。下面那些 [更改用户名](#^linux-chown)，这个参数也同样适用。
+
+更改用户名： ^linux-chown
+
+```shell
+chown -R 用户名 文件名
+# 连同用户组一起改
+chown -R 用户名:用户组名 文件名
+```
+
+### 权限
+
+`chmod` 命令是用来修改用户权限的。
 
 ---
 
@@ -1695,6 +1727,12 @@ Core 1:        +42.0°C  (high = +82.0°C, crit = +102.0°C)
 
 ## <span id="linux_resource_links">相关资源链接</span>
 
+### 社区
+
 * [Linux迷](https://www.linuxmi.com/)
 * [linux-command](https://github.com/jaywcjlove/linux-command)
+
+### 各种资料
+
+* [linux修改文件或目录的所有者(chown)和用户组(chgrp)-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1627599)
 

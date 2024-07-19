@@ -8,7 +8,7 @@ tags:
   - ubuntu
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2024-07-19 20:36:26
+modified: 2024-07-20 01:40:30
 ---
 
 # Docker 笔记
@@ -693,6 +693,7 @@ docker cp .config/nvim/init.vim d_ubuntu21:/root/
 docker cp d_ubuntu21:/root/.vim/configs ~/mysoft/vims/custumvimconfig/linux/vim/
 ```
 > [!tip]
+> 
 > 左侧是拷贝源，右侧是目的地。哪边有 `:` 的，哪边就是容器。
 
 ---
@@ -721,6 +722,7 @@ docker volume create volume名
 ```
 
 > [!info] volume
+> 
 > 创建出来的 volume 实际是被存放在 `/var/lib/docker/volumes/` 目录下。
 > `/var/lib/docker` 这个目录其实就是 Docker 安装目录。 
 
@@ -730,7 +732,8 @@ docker volume create volume名
 docker volume inspect volume名
 ```
 
-> [!example] 示例
+> [!example]
+> 
 > ![docker_volume_inspect](./Docker_Note.assets/docker_volume_inspect.png)
 > 可以见到，volume 名实际是在 volumes 这个 存放 volume 的根目录下，建立了同名的目录用来存放同名的 volume。
 
@@ -741,6 +744,7 @@ docker volume rm volume名
 ```
 
 > [!tip]
+> 
 > volume 的名称可以通过	`dokcer volumes ls` 命令查询。
 
 #### 清理无主 volume
@@ -749,7 +753,8 @@ docker volume rm volume名
 docker volume prune
 ```
 
-> [!info] 清理 volume 条件 
+> [!info] 清理 volume 条件
+> 
 > 删除或清理 volume ，必须相关的容器不存在，也就是说没有容器再使用这些 volume，不然是清理不成功的。  
 > 所以要清理 volume 前得先 `docker rm 容器`，只是 `docker stop` 还不行，必须先删除容器，才能清理 volume。
 > 
@@ -1789,23 +1794,21 @@ Docker MySQL 挂载方案：
 但 MySQL 的配置目录没有这样的「特性」，所以得做些操作实现将容器数据复制到宿主机的挂载目录。
 
 大概步骤：
-1. 创建一个「匿名」或「具名」挂载容器。
+1. 创建一个「临时」容器。
 ```shell
-docker run -d --name d_mysql8 -e MYSQL_ROOT_PASSWORD=123456 -v mysql8_data:/var/lib/mysql mysql:8.0.28-debian
+docker run -d --name d_mysql8 -e MYSQL_ROOT_PASSWORD=123456 mysql:8.0.28-debian
 ```
-> [!tip]
+
+2. 将容器中 `/etc/mysql` 目录复制到宿主指定的目录
+> [!info] 
 > 
-> 最好「具名挂载」，这样容易找点。
-
-2. 使用 `docker volume inspect xxx` 查看刚「托管」给 Docker 挂载的目录的路径
-> [!tip]
+> 这个复制非常重要，如果不先复制到宿主目录，未在在正式容器中再使用 `-v` 直接挂载，因为宿主目录是空的，所以容器中 `/etc/mysql` 这个配置目录被「覆盖」掉，致使容器启动失败。
 > 
-> 什么看到 `"Mountpoint": "/var/lib/docker/volumes/xxx/_data` 类似的路径
+> 这个目录是未来在正式 [MySQL](../DataBase/mysql/MySQL_Note.md) 容器 `run` 时要挂载的宿主目录。
+> 
 
-3. 将 `Mountpoint` 的路径中的数据复制到将来要挂载的目录中
-4. 停止容器和删除容器并清理托管的 volume
-5. 新建一个指定挂载宿主机路径为 volume
-
+3. 停止容器和删除容器并清理托管的 volume
+6. 新建一个指定挂载宿主机路径的 MySQL 容器
 ```shell
 docker run -d --name d_mysql8 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/mysql8_m/config:/etc/mysql -v /home/silascript/Docker_Mount/mysql8_m/data:/var/lib/mysql mysql:8.0.28-debian
 ```
@@ -1813,16 +1816,16 @@ docker run -d --name d_mysql8 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /hom
 > 
 > 因为之前已经将配置文件数据已经复制到要挂载的目录中，这样就不会因为宿主机目录为空，而使容器启动不了了。
 > 
-> 至于数据目录因为 MySQL 的存放数据库的目录，因为 MySQL 的「特性」会自动复制数据到要挂载的目录，所以能直接挂载到指定路径。
+> 至于数据目录 `/var/lib/mysql`，因为 MySQL 镜像 的「特性」会自动复制数据到要挂载的目录，所以能直接挂载到指定路径。
 > 
 > 这个方案的 **核心** 就是解决配置文件目录的挂载问题。
 
 > [!info]
 > 
 > 如果要指定网桥及 ip，可以用以下方式创建 MySQL 容器：
-> 
-> ```shell
-> docker run -d --name d_mysql8 --network mybridge --ip 172.21.0.20 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/mysql_m/config/mysql:/etc/mysql -v /home/silascript/Docker_Mount/mysql_m/data/mysql:/var/lib/mysql mysql:8.0.34-debian
+>
+>```shell
+> docker run -d --name d_mysql80 --network mybridge --ip 172.21.0.20 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/mysql_m/config:/etc/mysql -v /home/silascript/Docker_Mount/mysql_m/data:/var/lib/mysql mysql:8.0.38
 >```
 
 #### MySQL 内存优化

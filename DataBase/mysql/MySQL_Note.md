@@ -4,7 +4,7 @@ tags:
   - database
   - mysql
 created: 2023-01-30 11:19:11
-modified: 2024-07-18 22:54:49
+modified: 2024-07-20 03:28:34
 ---
 
 # MySQL 笔记
@@ -36,10 +36,17 @@ mycli 有语法高亮、代码提示、分页显示等非常实用的功能。
 常用配置：
 
 `syntax_style` 配置语法配色，值就里配色方案的名称。
+> [!info] 
+> 
 > 官方提供了几个 [配色](https://www.mycli.net/syntax)。
 
 ### 连接问题
+
 如果在连接 MySQL 8.x 时，出现 `Public Key Retrieval is not allowed` 错误，请开启相应的权限。 
+
+### 图形界面客户端
+
+推荐免费的 [DBeaver](../DataBase_Note.md#DBeaver)。
 
 ---
 
@@ -55,6 +62,7 @@ Oracle 又要刷版本号了，弄出个「创新」和「LTS」版本。这两�
 
 * [MySQL8.1来了：MySQL创新和长期支持（LTS）版本简介-腾讯云开发者社区-腾讯云](https://cloud.tencent.cn/developer/article/2303772)
 * [MySQL 8.4版本发布与历史版本回顾 – orczhou.com](https://www.orczhou.com/index.php/2024/05/mysql-8-4-and-version-history/)
+* [如何选择适合的 MySQL Connector/J 版本](https://segmentfault.com/a/1190000044667101)
 
 ---
 

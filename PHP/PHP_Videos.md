@@ -6,7 +6,7 @@ tags:
   - video
   - list
 created: 2023-09-26 18:13:01
-modified: 2024-07-19 17:44:49
+modified: 2024-07-20 17:09:11
 ---
 
 # PHP 视频清单
@@ -24,3 +24,4 @@ modified: 2024-07-19 17:44:49
 
 * [【Nginx教程】整整2小时](https://www.bilibili.com/video/BV1ZF41167RH)
 * [【网络安全】从来没有人把Nginx讲的这么细！Nginx从入门到精通](https://www.bilibili.com/video/BV1uJhoeLEGs)
+* [花费60分钟一口气学完！带你快速入门Nginx到实战，全程干货，无废话！](https://www.bilibili.com/video/BV1KM4m1U73N)

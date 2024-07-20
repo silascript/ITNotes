@@ -4,11 +4,13 @@ tags:
   - PL
   - rust
 created: 2023-01-30 11:19:11
-modified: 2024-01-10 16:03:17
+modified: 2024-07-20 22:54:21
 ---
+
 # Rust 笔记
 
 ---
+
 ## 目录
 
 * [安装与设置](#rust_insconf)
@@ -59,6 +61,7 @@ Current installation options:
 除非必要，一路默认！
 
 安装成功，会显示以下信息：
+
 ```shell
 Rust is installed now. Great!
 
@@ -98,10 +101,13 @@ scoop install rustup
 
 #### <span id="rust_rustup_about">Rustup 是什么</span>
 
-[![Rustup Repo]()](https://github.com/rust-lang/rustup.rs) 是一个 Rust 工具链安装器（the Rust toolchain installer），专门用于安装 Rust，也能对 Rust 进行管理：安装、升级、卸载等，还能切换版本。
+[rustup](https://github.com/rust-lang/rustup) 是一个 Rust 工具链安装器（the Rust toolchain installer），专门用于安装 Rust，也能对 Rust 进行管理：安装、升级、卸载等，还能切换版本。
+> [!info] 
+> 
 > Rust 包括 stable、beta 和 nightly 三个版本。
 
 `rustup` 命令：
+
 ```shell
 rustup 1.24.3 (ce5817a94 2021-05-31)
 The Rust toolchain installer

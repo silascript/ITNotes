@@ -12,7 +12,7 @@ tags:
   - navicat
   - dbeaver
 created: 2023-08-18 19:44:52
-modified: 2024-07-20 03:29:09
+modified: 2024-07-20 04:00:51
 ---
 
 # 数据库笔记
@@ -93,6 +93,7 @@ DBeaver 使用 [Maven_Note](../Java/Maven/Maven_Note.md) 下载驱动。要知�
 #### DBeaver 资料
 
 * [DBeaver 显示 系统数据库 方法 - 中国DBA社区](https://www.cndba.cn/dave/article/131425)
+* [DBeaver常用操作 - monkey6 - 博客园](https://www.cnblogs.com/monkey6/p/17943444)
 
 ---
 

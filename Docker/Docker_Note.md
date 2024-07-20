@@ -8,7 +8,7 @@ tags:
   - ubuntu
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2024-07-20 01:40:30
+modified: 2024-07-20 11:28:18
 ---
 
 # Docker 笔记
@@ -1468,6 +1468,7 @@ docker run -d --name d_php81 --network vbridge01 --ip 172.20.0.8 -p 9000:9000 -p
 另外，像 [php intellisense](https://marketplace.visualstudio.com/items?itemName=zobo.php-intellisense) 插件也需要指定 php 可执行程序的路径（php intellisense 中指定 php 可执行程序路径比 vscode 内置的那个 `executablePath` 选项灵活一点，不过 php intellisense 这个插件名声好像不太好，听说容易卡）。
 
 > [!tip] PHP Intelephense 插件
+> 
 > [PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client) [![PHP Intelephense Repo](https://img.shields.io/github/stars/bmewburn/vscode-intelephense?style=social)](https://github.com/bmewburn/vscode-intelephense) 这个插件不需要指定 php 的可执行程序路径，它用的是 VSCode 内置的 php 语言服务。
 
 这种需要，就需要将 容器中 php 可执行文件所在的目录挂载出去，但 Docker 的特性，直接挂载如果宿主机目录本为空，那这空目录就会「覆盖」掉容器目录，所以还是按惯例，先「run」一个将 php 可执行文件所在目录「托管」给 Docker，然后复制这托管目录中所有文件到未来要挂载的指定目录，再进行第二次「run」，这一次就可以指定挂载目录了。
@@ -1483,6 +1484,7 @@ docker run -d --name d_php81 --network vbridge01 --ip 172.20.0.8 -p 9000:9000 -p
 docker run -d --name d_php81 --network vbridge01 --ip 172.20.0.8 -p 9000:9000 -p 2223:22 -v /home/silascript/DevWorkSpace/PHPExercise:/var/www/html -v php_bin:/usr/local/bin/ php:8.1.5-fpm-bullseye
 ```
 > [!info]
+> 
 > 其中 `-v php_bin:/usr/local/bin/` 这个设置，就是将容器中 `/usr/local/bin` 目录「托管」给 Docker。  
 > 其实 连 **php_bin** 这个名字都可以不用，不过给个名字方便查询存放数据目录信息。详情请查看 [具名挂载](#docker_volume_namedvolume) 和 [匿名挂载](#docker_volume_anonvolume)。  
 > 当然，更懒的，连 `-v php_bin:/usr/local/bin/` 这个选项都可以省。那到复制时，就使用 `docker cp` 命令来复制。
@@ -1490,9 +1492,34 @@ docker run -d --name d_php81 --network vbridge01 --ip 172.20.0.8 -p 9000:9000 -p
 2. 复制 php 可执行文件所在的目录
 如上面使用「具名挂载」方式，先使用 `docker volume ls` 命令查询刚挂载的 volume 是否存在。然后使用 `docker volume inspect volume名称` 来查询挂载信息，查出 volume 真实存放的路径，一般是 `/usr/lib/docker/volumes/voluem名称/_data` （如果是「匿名挂载」，volume 名称那个目录就是一串 docker 生成的字符串，所以由此可以认为「匿名挂载」是一种特殊的「具名挂载」），查到路径了，那就将路径目录中所有文件复制到未来要挂载的自定义目录中。
 > [!info] 复制 php 可执行文件
+> 
 > 如果是未挂载目录，那就只能使用 `docker cp` 命令来复制了。
 > 
 > 将整个目录都复制过来：`docker cp d_php81:/usr/local/bin Docker_Mount/php81_m/php_bin`，因为有可能用到的不仅仅是 `php` 一个可执行文件，还有相关的其他程序，而 php 容器中 `/usr/local/bin` 目录下都是 php 相关的程序，所以整个目录复制过来；同时，也是为了防止「覆盖」。
+>
+>> [!tip] 
+>> 
+>> 如果想在宿主机方便配置 php，也应该把 php 相应的配置文件或目录都复制过来。
+>>
+>> 主要有以下配置文件： 
+>> * `/usr/local/etc/php-fpm.d/www.conf`
+>> * `/usr/local/etc/php/php.ini`
+>>   
+>>  `/usr/local/etc/` 配置目录下就这么几个配置文件：
+>>   
+>>   ```shell
+>> root@5e780c968edf:~# ls -al /usr/local/etc/
+>> drwxr-xr-x 1 root root 4096 Jul  6 00:46 .
+>> drwxr-xr-x 1 root root 4096 Jul  6 00:46 ..
+>> -rw-r--r-- 1 root root 1195 Jul  6 00:46 pear.conf
+>> drwxr-xr-x 1 root root 4096 Jul  6 00:46 php
+>> -rw-r--r-- 1 root root 5345 Jul  6 00:46 php-fpm.conf
+>> -rw-r--r-- 1 root root 5350 Jul  6 00:46 php-fpm.conf.default
+>> drwxr-xr-x 1 root root 4096 Jul  6 00:46 php-fpm.d
+>>   
+>> ```
+>>   
+> 
 
 3. 再 run 一个容器：
 ```shell
@@ -1839,12 +1866,15 @@ table_definition_cache=400
 table_open_cache=256
 performance_schema = off
 ```
+> [!tip] 
+> 
 > 内存占用优化挺明显的。  
 > `performan_schema` 关不关可根据需要。这货是 5.7 及以上版本才默认开启的。
 
 ---
 
 MySQL 其他设置及操作请参考：
+
 * [MySQL笔记](../DataBase/mysql/MySQL_Note.md)
 * [MySQL常用操作](../DataBase/mysql/MySQL常用操作.md)
 * [linux下安装mysql](../DataBase/mysql/linux下安装mysql.md)
@@ -1859,6 +1889,7 @@ MySQL 其他设置及操作请参考：
 docker run -itd --name d_centos8 centos:centos8.4.2105
 ```
 > [!tip] -it 参数
+> 
 > 最简单的创建一个 CentOS 容器
 > `-it` 这参数得加上，如果只是像其他镜像那样只有 `-d` 创建容器是成功，但启动不了容器
 > 因为 CentOS 启动，需要开启一个伪终端
@@ -1866,37 +1897,45 @@ docker run -itd --name d_centos8 centos:centos8.4.2105
 CentOS 开启 SSH 服务
 
 * **run** 容器时加入 **--privileged=true** 参数
-    > [!tip]	
-	> 使用 --privileged=true 参数，可以使容器内的 root 用户真正拥有 root 权限。
-	> 没有此参数的容器内的 root 用户只是外部的一个普通用户权限。
-	> 以下代码使用在 CentOS 7
-	> 
-	> ```shell
-	> docker run --name d_centos7  --privileged=true -p 10022:22 -d centos:7 /usr/sbin/ini
-	> ```
-	> 22 端口得映射，这是 ssh 访问的端口  
-	> 如果是 CentOS 8，得使用以下代码创建容器，**systemctl** 才能正常使用。 
-	> 如果 CentOS  8 没有使用以下代码开创建容器，可能会报以下这些错误信息 ：
-	> ```shell
-	> System has not been booted with systemd as init system (PID 1). Can't operate.
-	> Failed to connect to bus: Host is down.
-	> ```
-	```shell
-	docker run -itd --name d_centos8 --privileged centos:centos8.4.2105 /usr/sbin/init
-	```
-	> CentOS 8 已被官方“寿终正寝”了。而 CentOS 7 systemctl 使用都存在 `Failed to get D-Bus connection: No such file or directory` 错误。网上所有解决方案都存在问题。建议使用 Debian 系的系统。
+> [!tip]
+> 
+> 使用 --privileged=true 参数，可以使容器内的 root 用户真正拥有 root 权限。
+> 没有此参数的容器内的 root 用户只是外部的一个普通用户权限。
+> 以下代码使用在 CentOS 7
+> 
+> ```shell
+> docker run --name d_centos7  --privileged=true -p 10022:22 -d centos:7 /usr/sbin/ini
+> ```
+> 22 端口得映射，这是 ssh 访问的端口  
+> 如果是 CentOS 8，得使用以下代码创建容器，**systemctl** 才能正常使用。 
+> 如果 CentOS  8 没有使用以下代码开创建容器，可能会报以下这些错误信息 ：
+> ```shell
+> System has not been booted with systemd as init system (PID 1). Can't operate.
+> Failed to connect to bus: Host is down.
+> ```
+>```shell
+> docker run -itd --name d_centos8 --privileged centos:centos8.4.2105 /usr/sbin/init
+>```
+> 
+> CentOS 8 已被官方“寿终正寝”了。而 CentOS 7 systemctl 使用都存在 `Failed to get D-Bus connection: No such file or directory` 错误。网上所有解决方案都存在问题。建议使用 Debian 系的系统。
 
 * 使用 **exec** 选项进入 CentOS 容器
 * 在 CentOS 容器内添加 SSH 服务并进行相应的配置
-	> 参考 [CentOS 开启 SSH 服务](../Linux/CentOS_Note.md#cent_cs_ssh)
+>[!info] 
+>
+> 参考 [CentOS 开启 SSH 服务](../Linux/CentOS_Note.md#cent_cs_ssh)
 * 提交镜像
-	> 使用 **docker commit** 选项，生成新的镜像。
-	> 类似 vmware 生成一个 **快照**，也类似 git 的 commit 操作（实际上 git 上的版本就是一个个“快照”）。
+>[!info] 
+>
+> 使用 **docker commit** 选项，生成新的镜像。
+> 类似 vmware 生成一个 **快照**，也类似 git 的 commit 操作（实际上 git 上的版本就是一个个“快照”）。
 > ```shell
 > # 语法：docker commit 容器名/ID 新镜像名[:tag]
 > ```
 * 将新生成的镜像 **Run** 成容器
-	> 要记得把 SSH 服务配置文件中设置的那个端口映射到宿主机
+> [!info] 
+> 
+> 要记得把 SSH 服务配置文件中设置的那个端口映射到宿主机
 
 ---
 
@@ -1955,6 +1994,10 @@ docker run -itd --name d_ubuntu21 --network vbridge01 --ip 172.20.0.20 -p 2225:2
 ```shell
 docker run -itd --name d_almalinux92 --network vbridge01 --ip 172.20.0.23 almalinux:9.2-minimal
 ```
+
+### 示例相关资料
+
+* [基于 Docker 搭建 PHP 开发环境 - 掘金](https://juejin.cn/post/6943062993823334407)
 
 ---
 

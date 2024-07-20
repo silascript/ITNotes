@@ -8,7 +8,7 @@ tags:
   - ubuntu
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2024-07-20 11:58:21
+modified: 2024-07-21 02:47:13
 ---
 
 # Docker 笔记
@@ -1566,7 +1566,25 @@ docker exec -it d_php81 sh -c "php $*"
 > 
 > `php $*` 这个代码是让脚本能接收各种参数，然后传给容器中的 php，以完成 php 调用需求。
 
----
+VSCode [intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client) 插件关于 [PHP](../PHP/PHP_Note.md) 可执行文件设置：
+
+```json
+"php.validate.executablePath": "/home/silascript/docker_cmds/docker_php.sh"
+```
+
+设置成功，那 VSCode 的代码提示等语言功能就能用了。
+> [!important] 
+> 
+> `php.validate.executablePath` 这个属性值必须是使用绝对路径，不能用 `~/xxx/xxx` 这种形式。
+
+#### 测试 PHP 引擎是否能正常工作
+
+1. 进入 PHP 容器中 `docker exec -it d_php83 /bin/bash​`
+2. 开启 php 内置服务器：`php -S 172.21.0.30:8088 -t /var/www/html/​`
+> [!tip] 
+> 
+> `-t` 用来让内置服务器知道，PHP 发布页面的目录在哪。
+4. 在浏览器页面访问 `http://172.21.0.30:8088/xxx.php​`
 
 #### 安装 xdebug
 
@@ -1580,7 +1598,9 @@ pecl install xdebug
 docker-php-ext-enable xdebug
 ```
 
-使用 `php -m` 命令查看是否安装成功。
+完成上述操作后，使用 `php -m` 命令查看是否安装成功。
+
+如果安装成功，显示 `[Zend Modules] Xdebug`​。
 
 ---
 

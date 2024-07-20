@@ -8,7 +8,7 @@ tags:
   - ubuntu
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2024-07-21 02:47:13
+modified: 2024-07-21 02:59:02
 ---
 
 # Docker 笔记
@@ -1555,7 +1555,7 @@ ln -s ~/Docker_Mount/php81_m/php_bin/php ~/.local/bin/d_php81
 
 #### 另外更优雅的实现
 
-其实要想让 vscode 及其 php 插件调 php，不必真把 php 容器中的 `/usr/local/bin` 目录「挂载」出来这种非常具有「破坏性」的方式，可以使用一个 shell 脚本对 `docker exec` 命令进行「封装」，然后再做为这个脚本做个软连接，就非常方便地让像 vscode 亦或别的编辑器调用这个容器的 php 了。
+其实要想让 vscode 及其 php 插件调 php，不必真把 php 容器中的 `/usr/local/bin` 目录「挂载」出来这种非常具有「破坏性」的方式，可以使用一个 shell 脚本对 `docker exec` 命令进行「封装」，然后再做为这个脚本做个软连接，就非常方便地让像 vscode 亦或别的编辑器调用这个容器的 php 了。 ^docker-php-exec-shell
 
 脚本如下：
 
@@ -1583,8 +1583,17 @@ VSCode [intelephense](https://marketplace.visualstudio.com/items?itemName=bmewbu
 2. 开启 php 内置服务器：`php -S 172.21.0.30:8088 -t /var/www/html/​`
 > [!tip] 
 > 
-> `-t` 用来让内置服务器知道，PHP 发布页面的目录在哪。
-4. 在浏览器页面访问 `http://172.21.0.30:8088/xxx.php​`
+> ​`php -S`​ 这是指定 ip 及端口，注意示例中的 **172.21.0.30**​ 为当前容器的 ip，不能使用 **localhost**​ 来替代，不然宿主环境下是访问不了的。
+> 
+> `-t`​ 是指定 PHP 发布页面的目录路径，如果不指定，访问时是找不到相应页面的。
+> 
+> 如果编写了 [宿主机调容器中PHP可执行程序的小脚本](#^docker-php-exec-shell)，就可以在宿主机环境下开启 php 的内置服务器：
+> 
+> ```shell
+> ./docker_cmds/docker_php.sh -S 172.21.0.30:8088 -t /var/www/html/​
+> ```
+> 
+4. 在浏览器页面访问 `http://172.21.0.30:8088/xxx.php​`。如果访问成功，php 页面能正常解析，那 PHP 容器就是 `run` 成功了。
 
 #### 安装 xdebug
 

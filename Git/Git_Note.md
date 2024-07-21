@@ -5,7 +5,7 @@ tags:
   - github
   - gist
 created: 2023-01-30 11:19:11
-modified: 2024-07-14 23:53:53
+modified: 2024-07-21 17:47:07
 ---
 
 # Git 笔记
@@ -787,9 +787,10 @@ git config --global --unset url.https://github.com/.insteadof
 * ~~[njuu.cf](https://hub.njuu.cf/)~~
 * ~~[yzuu.cf](https://hub.yzuu.cf/)~~
 * ~~[fgit.ml](https://hub.fgit.ml/)~~
-* [hscsec.cn](https://github.hscsec.cn/)
+* ~~[hscsec.cn](https://github.hscsec.cn/)~~
 * [bgihub.xyz](https://bgithub.xyz/)
-* [ggithub.xyz](https://ggithub.xyz/)
+* ~~[ggithub.xyz](https://ggithub.xyz/)~~
+* [git.homeegu.com](https://git.homegu.com)
 
 > [!tip] 镜像不是永久的
 > 

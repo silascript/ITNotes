@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2024-07-21 13:06:23
+modified: 2024-07-21 18:38:20
 ---
 
 # Docker 示例
@@ -259,7 +259,9 @@ VSCode [intelephense](https://marketplace.visualstudio.com/items?itemName=bmewbu
 > 
 4. 在浏览器页面访问 `http://172.21.0.30:8088/xxx.php​`。如果访问成功，php 页面能正常解析，那 PHP 容器就是 `run` 成功了。
 
-### 安装 xdebug
+### 安装模块及扩展
+
+#### 安装 xdebug
 
 先检测下 xdebug 安装没：`php -m | grep xdebug​`
 
@@ -278,6 +280,20 @@ docker-php-ext-enable xdebug
 完成上述操作后，使用 `php -m` 命令查看是否安装成功。
 
 如果安装成功，显示 `[Zend Modules] Xdebug`​。
+
+#### 安装 GD 扩展
+
+1. 进到 PHP 容器内安装：
+	* ​libpng-dev​
+	* ​libjpeg-dev​
+	* ​libfreetype6-dev​
+2. 安装 gd​：`docker-php-ext-install gd​`
+3. 重启 PHP 容器
+
+#### 安装 MySQLi
+
+1. 进 PHP 容器内安装：`docker-php-ext-install mysqli`
+2. 重启 PHP 容器
 
 ---
 

@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2024-07-21 18:38:20
+modified: 2024-07-22 04:03:00
 ---
 
 # Docker 示例
@@ -40,7 +40,7 @@ docker run --name d_nginx -d -p 8899:80 -v /home/silascript/Docker_Mount/nginx_m
 
 ### <span id="dke_nginx_config">nginx 配置文件</span>  
 
-`nginx.conf` 为主配置文件。
+`/etc/nginx` 目录下的 `nginx.conf` 为主配置文件。
 
 在 `http` 节点中的 `server` 节点：
 
@@ -73,7 +73,7 @@ server {
     }
 ```
 
-而如果是导入到 `nginx.conf` 的方式，即导入 `con.d` 目录中的配置，在 `nginx.conf` 文件的 `server` 节点中使用 `include /etc/nginx/conf.d/*.conf;`。而在 `con.d` 目录中众多配置文件，又以 `default.conf` 文件的优先级更高。  
+而如果是导入到 `nginx.conf` 的方式，即导入 `conf.d` 目录中的配置，在 `nginx.conf` 文件的 `server` 节点中使用 `include /etc/nginx/conf.d/*.conf;`。而在 `conf.d` 目录中众多配置文件，又以 `default.conf` 文件的优先级更高。  
 
 如果要使用 `default.conf` 配置文件，最好先把 `default.conf` 「backup」下，因为 `conf.d/default.conf` 这个文件，实际只是 nginx 配置文件的模板文件，一般来说不会动到这个文件，而如果真要用到这文件作配置文件，还是先备份下好点。
 

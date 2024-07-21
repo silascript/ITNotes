@@ -8,7 +8,7 @@ tags:
   - ubuntu
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2024-07-21 13:02:25
+modified: 2024-07-22 03:24:34
 ---
 
 # Docker 笔记
@@ -38,7 +38,9 @@ modified: 2024-07-21 13:02:25
 * [Docker 常用操作](#dk_comm_commands)
 * [Dockerfile 编写](#dk_dkf)
   * [Docker 构建镜像常用命令](#dk_dkf_commands)
-* [常用软件容器使用](#dk_softc_demo)
+* [常用软件容器使用](#dk_examples)
+* [Docker工具](#dk_tools)
+* [相关笔记](#相关笔记)
 
 ---
 
@@ -108,7 +110,8 @@ docker 安装完成后，docker 会自动新增一个 docker 用户组。
 sudo gpasswd -a ${USER} docker
 ```
 
-> [!info] **查看** 有没有 docker 组：
+> [!info] **查看** 有没有 docker 组
+> 
 > ```shell
 > sudo cat /etc/group | grep docker
 > ```
@@ -124,6 +127,7 @@ sudo systemctl start docker
 ```
 
 > [!tip] 重启
+> 
 > ```shell
 > sudo systemctl restart docker
 > ```
@@ -160,10 +164,12 @@ Start-Service docker
 
  重启 docker 服务：
  
-> ```shell
->  Restart-Service docker
-> ```
+```shell
+ Restart-Service docker
+```
 
+> [!tip] 
+> 
 > 如果开启 Docker 服务成功，可以使用 `dokcer images` 查看镜像命令来试下 Docker 是否正常。
 
 Windows 下 Docker 的数据目录路径是在 `C:\ProgramData\docker`。
@@ -194,6 +200,7 @@ docker --registry-mirror=https://registry.docker-cn.com daemon
 ```
 
 > [!tip]
+> 
 > 如果 `/etc/docker/` 目录下没有 `daemon.json`，可自行添加。
 > 
 > 有可能连 `/etc/docker/` 目录都没有，所以也得自行新建。
@@ -615,6 +622,8 @@ docker start 容器名|容器ID
 ```shell
 docker pause 容器名|容器ID
 ```
+> [!tip] 
+> 
 > 恢复容器运行状态： `docker unpause 容器名`
 
 2. 停止容器
@@ -659,6 +668,7 @@ docker rm 容器|容器ID
 #### inspect
 
 `inspect` 命令：查看容器详细信息
+
 ```shell
 docker inspect 容器名|容器ID
 ```
@@ -787,6 +797,7 @@ docker run -d --name d_apache-2.4 -p 8085:80 --mount type=bind,source=$(pwd)/htm
 ```
 
 > [!tip]
+> 
 > type=bind，source 指定路径后，destination 中的容器被「映射」的路径中的内容就会被「覆盖」或称为「隐藏」了。
 
 如果 **source** 为空，那 docker 会自动随机生成一个字符串作为这个 volume 的名称：
@@ -959,15 +970,20 @@ none 无指定网络，窗口内不指定局域网 ip host，不为 Docker 容�
 ![Docker 网络](https://3503645665-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-M5xTVjmK7ax94c8ZQcm%2Fuploads%2Fgit-blob-fdf892864409593e4417468c6f0430ee8c0ebfe9%2Fnetwork.png?alt=media)
 
 **docker0** 这个网桥可以通过 `sudo brctl show` 命令查询。
+> [!info] 
+> 
 > 如果系统没有，请安装。Debian 系的，可以使用 `sudo apt-get install bridge-utils` 来安装。  
 > 关于 [网桥](../Linux/Linux_Note.md#linux_network_bridge)
 
 brctl 查询结果大概如下：
+
 ```shell
 bridge name	bridge id		STP enabled	interfaces
 docker0		8000.0242d0f8c584	no		
 ```
  
+> [!info] 
+> 
 > 通过 `docker network ls` 命令同样也能查询，不过没有使用 `brctl` 查询信息更详细。  
 > 如需要更详细信息，就能动用 `docker network inspect` 命令了。
 
@@ -994,6 +1010,8 @@ sudo brctl delbr docker0
 ```
 
 3. 创建一个网桥
+> [!info] 
+> 
 > 使用 `brctl addbr ` 命令来创建网桥  
 > 使用 `ip addr add ` 命令来为网桥添加 ip  
 > 使用 `ip link set up` 命令来启用这个网桥
@@ -1009,7 +1027,7 @@ ip addr show 网桥名
 ```
 
 5. 配置 Docker 配置文件
-在 /etc/docker/daemon.json 文件中添加以下内容：
+在 `/etc/docker/daemon.json` 文件中添加以下内容：
 
 ```json
 "bridge": "网桥名",
@@ -1033,6 +1051,8 @@ sudo systemctl start docker
 ```shell
 docker network create -d bridge 网桥名称 
 ```
+> [!info] 
+> 
 > docker 允许创建 3 种类型的自定义网格：bridge、overlay、MACVLAN  
 > 通过 -d（--driver）设置网络类型，默认值为「bridge」。 实际就是「CNM 生命周期」中「驱动」。
 
@@ -1096,17 +1116,21 @@ target     prot opt source               destination
 MASQUERADE  all  --  172.17.0.0/16        0.0.0.0/0           
 MASQUERADE  tcp  --  172.17.0.2           172.17.0.2           tcp dpt:3306
 ```
-> 第一行结果：源地址在 172.17.0.0/16 网段。  
-> MASQUERADE 表示能动态从网卡获取地址。 **MASQUERADE**，地址伪装，算是 **snat** 的一种特例，可以实现自动化的 snat。
-> 关于 iptables 及 Linux 网络相关的资料请查询 [Linux 网络](../Linux/Linux_Note.md#linux_network)。
 
----
+> [!info] 
+> 
+> 第一行结果：源地址在 172.17.0.0/16 网段。 
+> 
+> MASQUERADE 表示能动态从网卡获取地址。 **MASQUERADE**，地址伪装，算是 **snat** 的一种特例，可以实现自动化的 snat。
+> 
+> 关于 iptables 及 Linux 网络相关的资料请查询 [Linux 网络](../Linux/Linux_Note.md#linux_network)。
 
 ---
 
 ### <span id="dk_network_custom_ip">自定义固定 IP</span>
 
 要自定义固定 ip，只能在 [自定义虚拟网桥](#dk_network_define_bridge) 中进行，不然会报以下错误：
+
 ```shell
 docker: Error response from daemon: user specified IP address is supported on user defined networks only.
 ```
@@ -1135,6 +1159,8 @@ docker network create 网络名
 ```shell
 docker network create -d overlay 网络名
 ```
+> [!info] 
+> 
 > bridge 只能指定一个子网。  
 > overlay 网络支持多个子网络，使用 `--subnet` 选项来创建子网。
 
@@ -1147,6 +1173,8 @@ docker network rm 网络名
 # 清空无主网络
 docker network prune
 ```
+> [!info] 
+> 
 > `docker network rm` 这种方式无法删除默认虚拟网桥，会报以下错误：  
 > ```shell
 > bridge is a pre-defined network and cannot be removed
@@ -1185,16 +1213,20 @@ docker network inspect 网络名
 
 ##### 查询容器 IP
 
-查询所有容器名称及 IP,使用的是默认网桥:
+查询所有容器名称及 IP,使用的是默认网桥：
+
 ```shell
 docker inspect --format='{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
 ```
 
-查询自定义网桥下已指定的 IP 有哪些,也就是全部容器占了哪些 IP.
+查询自定义网桥下已指定的 IP 有哪些,也就是全部容器占了哪些 IP：
+
 ```shell
 docker inspect $(docker ps -aq) | grep IPv4Address
 ```
-显示结果:
+
+显示结果：
+
 ```shell
 "IPv4Address": "172.20.0.8"
 "IPv4Address": "172.20.0.30"
@@ -1202,13 +1234,17 @@ docker inspect $(docker ps -aq) | grep IPv4Address
 "IPv4Address": "172.20.0.9"
 ```
 
-使用 `docker inspect` 语法:
+使用 `docker inspect` 语法：
+
 ```shell
 docker inspect -f '{{.Name}} - {{.NetworkSettings.Networks.vbridge01.IPAMConfig.IPv4Address}}' $(docker ps -aq)
 ```
+> [!tip] 
+> 
 > `vbridge01` 这是自定义的网桥名
 
-显示结果类似:
+显示结果类似：
+
 ```shell
 /d_php81 - 172.20.0.8
 /d_mysql8 - 172.20.0.30
@@ -1351,13 +1387,33 @@ docker stats 容器ID
 
 ---
 
-## <span id="dk_softc_demo">各软件容器使用示例</span>
+## <span id="dk_examples">各软件容器使用示例</span>
 
 [Docker 示例](Docker_Examples.md)
 
 ---
 
-## 相关链接
+## <span id="dk_tools">Docker 工具</span>
+
+### LazyDocker
+
+[LazyDocker](https://github.com/jesseduffield/lazydocker) 是一个终端图形化 Docker 工具。
+
+![lazydocker screenshot](https://github.com/jesseduffield/lazydocker/raw/master/docs/resources/demo3.gif)
+
+通过操作系统的包管理器就是安装，如：`yay -S lazydocker`
+
+---
+
+## 相关资料
+
+* [Docker 操作指令](https://docker.shujuwajue.com/docker-de-shi-yong/docker-ke-hu-duan-chang-yong-ming-ling/docker-cao-zuo-zhi-ling)
+* [docker容器之run命令 - 进击的davis - 博客园](https://www.cnblogs.com/davis12/p/14467421.html)
+* [docker run常用参数-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/2246184)
+
+---
+
+## 相关笔记
 
 * [Docker & K8s 视频清单](./Docker_Videos.md)
 * [Docker 示例笔记](Docker_Examples.md)

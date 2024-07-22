@@ -4,7 +4,7 @@ tags:
   - linux
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2024-07-22 21:48:12
+modified: 2024-07-22 21:59:33
 ---
 # Linux 下安装 MySQL5.7
 
@@ -205,6 +205,7 @@ pid-file=/usr/local/mysql-5.7/data/mysql.pid
 mysql5.6.6+ 版本，推荐加上 **explicit_defaults_for_timestamp=true**
 
 utf8mb4 cnf 配置示例：
+
 ```cnf
 [client]
 default-character-set = utf8mb4
@@ -234,19 +235,19 @@ init_connect='SET NAMES utf8mb4'
 
 |      File Name      |                    Purpose                    |
 | :-----------------: | :-------------------------------------------: |
-|     /etc/my.cnf     |                Global options                 |
-|  /etc/mysql/my.cnf  |                Global options                 |
-|  SYSCONFDIR/my.cnf  |                Global options                 |
-| $MYSQL_HOME/my.cnf  |     Server-specific options(server only)      |
+|     `/etc/my.cnf`     |                Global options                 |
+|  `/etc/mysql/my.cnf`  |                Global options                 |
+|  `SYSCONFDIR/my.cnf`  |                Global options                 |
+| `$MYSQL_HOME/my.cnf`  |     Server-specific options(server only)      |
 | defaults-extra-file |                                               |
-|      ~/.my.cnf      |             User-specific options             |
-|   ~/.mylogin.cnf    | User-specific login path options(client only) |
+|      `~/.my.cnf`      |             User-specific options             |
+|   `~/.mylogin.cnf`    | User-specific login path options(client only) |
 
 > [!info]
 >
-> MySQL 实例启动需要依赖 **my.cnf** 配置文件，而配置文件可以存在于多个操作系统目录下。
+> MySQL 实例启动需要依赖 `my.cnf` 配置文件，而配置文件可以存在于多个操作系统目录下。
 >
-> **my.cnf** 的默认查找路径，从上往下找到的文件先读，但优先级逐级提升。
+> `my.cnf` 的默认查找路径，从上往下找到的文件先读，但优先级逐级提升。
 
 MySQL 8.0 开始，客户端的配置放在 `conf.d` 目录下的 `mysql.cnf` 文件。
 

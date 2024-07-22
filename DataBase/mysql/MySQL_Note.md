@@ -4,7 +4,7 @@ tags:
   - database
   - mysql
 created: 2023-01-30 11:19:11
-modified: 2024-07-20 03:28:34
+modified: 2024-07-22 21:37:34
 ---
 
 # MySQL 笔记
@@ -51,6 +51,20 @@ mycli 有语法高亮、代码提示、分页显示等非常实用的功能。
 ---
 
 ## 版本
+
+* MySQL Enterprise Edition：企业版，提供企业版备份工具、线程池、防火墙、审计、监控等功能。
+* MySQL Cluster 企业版：MySQL Cluster CGE，是一套基于内存、无共享的高勅方案，底层使用的是 NDB 存储引擎。
+* MySQL 社区版：免费版，遵循 GPL 协议。
+
+GA：General Availability Releases 正式版。一般情况下，MySQL 的发布 GA 版本之前，会有三个 RC 版本。
+
+GA 有多个下载，除了 32 位及 64 位区别外，最大区别是分 `glibc2.12​` ​和 `glibc2.17`​ ​两版本。
+
+> [!tip] 
+> 
+> ​`glibc2.12​` 和 `glibc2.17​` 是编译 MySQL 的 glibc 版本。
+> 
+> 这两个 glibc 区别：`glibc2.17​` ​剔除了 debug 相关的二进制文件及 debug symbol，所以体积比 `glibc2.12​` ​小。
 
 Oracle 又要刷版本号了，弄出个「创新」和「LTS」版本。这两个都是生产级质量。其实就是把包含之前的补丁加新功能的版本重命名，把版本啊升了个级：如本来是 8.0.x 的，这样容易给人好像没怎么升，所以干脆，更名为 8.x，这样看起来有比较大的更新。
 

@@ -4,7 +4,7 @@ tags:
   - linux
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2024-07-20 03:47:31
+modified: 2024-07-22 21:48:12
 ---
 # Linux 下安装 MySQL5.7
 
@@ -249,6 +249,8 @@ init_connect='SET NAMES utf8mb4'
 > **my.cnf** 的默认查找路径，从上往下找到的文件先读，但优先级逐级提升。
 
 MySQL 8.0 开始，客户端的配置放在 `conf.d` 目录下的 `mysql.cnf` 文件。
+
+#### 字符集设置
 
 默认情况下，MySQL 只对服务端的字符集作了设置，默认设置为 「utf8mb4」。而客户端是没有设置的，需要用户自行设置。
 

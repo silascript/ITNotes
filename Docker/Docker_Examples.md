@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2024-07-22 04:03:00
+modified: 2024-07-22 21:48:47
 ---
 
 # Docker 示例
@@ -568,7 +568,13 @@ docker run -d --name d_mysql8 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /hom
 > docker run -d --name d_mysql80 --network mybridge --ip 172.21.0.20 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/mysql_m/config:/etc/mysql -v /home/silascript/Docker_Mount/mysql_m/data:/var/lib/mysql mysql:8.0.38
 >```
 
-### MySQL 内存优化
+### 配置
+
+#### 字符集设置
+
+[字符集设置](../DataBase/mysql/linux下安装mysql.md#字符集设置)
+
+#### MySQL 内存优化
 
 conf.d 目录下 **docker.cnf** 文件中 `[mysqld]` 下添加以下代码：
 

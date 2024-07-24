@@ -4,7 +4,7 @@ tags:
   - database
   - mysql
 created: 2023-01-30 11:19:11
-modified: 2024-07-23 03:32:56
+modified: 2024-07-23 03:48:16
 ---
 
 # MySQL 笔记
@@ -39,6 +39,10 @@ mycli 有语法高亮、代码提示、分页显示等非常实用的功能。
 
 * `syntax_style`： 配置语法配色，值就里配色方案的名称。
 > [!info] 
+> 
+> manni, igor, xcode, vim, autumn, vs, rrt,
+> native, perldoc, borland, tango, emacs, friendly, monokai, paraiso-dark,
+> colorful, murphy, bw, pastie, paraiso-light, trac, default, fruity
 > 
 > 官方提供了几个 [配色](https://www.mycli.net/syntax)。
 > 

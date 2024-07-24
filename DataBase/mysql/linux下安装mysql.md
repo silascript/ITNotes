@@ -4,7 +4,7 @@ tags:
   - linux
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2024-07-22 21:59:33
+modified: 2024-07-24 12:44:07
 ---
 # Linux 下安装 MySQL5.7
 
@@ -229,7 +229,11 @@ init_connect='SET NAMES utf8mb4'
 
 > **mysql_install_db** 不创建默认的 `my.cnf` 文件
 >
-> 从 MySQL 5.7.18 开始，`my-default.cnf` 不再包含在分发包中或由分发包安装
+> 从 MySQL 5.7.18 开始，`my-default.cnf` 不再包含在分发包中或由分发包安装。
+> 
+> 
+> `character-set-client-handshake`，这是设置客户端链接时指定字符集，如果想要在链接时指定字符集，这个选项就不能设。
+> 
 
 #### 各配置文件路径及优先级
 

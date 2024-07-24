@@ -5,7 +5,7 @@ tags:
   - db
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2024-07-20 03:36:01
+modified: 2024-07-24 18:54:47
 ---
 
 # MySQL 常用操作
@@ -87,3 +87,4 @@ status
 ## 相关笔记
 
 * [MySQL笔记](MySQL_Note.md)
+* [MySQL 配置笔记](MySQL_Config_Note.md)

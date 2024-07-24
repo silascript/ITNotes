@@ -90,7 +90,7 @@ Oracle 又要刷版本号了，弄出个「创新」和「LTS」版本。这两�
 
 ## 相关内容
 
-* [Linux 下安装 MySQL](linux下安装mysql.md)
+* [Linux 下安装 MySQL](Linux下安装MySQL.md)
 * [MySQL常用操作](MySQL常用操作.md)
 * [Docker 安装 MySQL](../../Docker/Docker_Note.md#dk_softc_demo_mysql)
 * [MySQL 视频清单](MySQL_Videos.md)

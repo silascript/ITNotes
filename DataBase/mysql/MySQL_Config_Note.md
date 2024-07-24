@@ -6,8 +6,9 @@ tags:
   - database
   - config
 created: 2024-07-24 18:49:11
-modified: 2024-07-24 18:52:54
+modified: 2024-07-24 20:36:35
 ---
+
 # MySQL 配置笔记
 
 ---
@@ -165,5 +166,5 @@ alter table 表名 change 列名 列名 varchar(10) character set utf8mb4;
 ## 相关笔记
 
 * [MySQL 笔记](MySQL_Note.md)
-* [linux下安装mysql](linux下安装mysql.md)
+* [Linux下安装MySQL](Linux下安装MySQL.md)
 

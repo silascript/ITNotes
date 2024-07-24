@@ -26,8 +26,13 @@ pacman -Scc
 清理无用的包：
 sudo pacman -R $(pacman -Qdtq)
 
+sudo pacman -Rns $(pacman -Qdtq)
 
 日志相关：
+
+查看日志占用了多少空间
+journalctl --disk-usage
+
 
 只保留一周的日志：
 journalctl --vacuum-time=1w

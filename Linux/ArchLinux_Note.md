@@ -8,7 +8,7 @@ tags:
   - ime
 date created: 2022-11-08 11:32
 created: 2023-08-18 19:44:52
-modified: 2024-06-25 23:16:19
+modified: 2024-07-25 01:20:08
 ---
 
 # ArchLinux 笔记
@@ -179,6 +179,12 @@ paru 是使用 [Rust语言](../Rust/Rust_Note.md) 编写的。
 
 * `pacman -R 软件包名`：删除某软件
 * `pacman -Rs 软件包`：删除指定软件包，以其所有没有被其他已安装软件包使用的依赖关系
+
+### 相关资料
+
+* [Arch 清除缓存及无用包 - yuanj's blog](https://yuanj.top/posts/o1r3l6y0/)
+* [Arch Linux 软件包的查询及清理 - osoft - 博客园](https://www.cnblogs.com/sztom/p/10652624.html)
+* [Linux 磁盘空间不足时可以删除哪些文件](https://cn.linux-console.net/?p=8614)
 
 ---
 

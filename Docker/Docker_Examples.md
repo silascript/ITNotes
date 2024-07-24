@@ -572,7 +572,7 @@ docker run -d --name d_mysql8 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /hom
 
 #### 字符集设置
 
-[字符集设置](../DataBase/mysql/linux下安装mysql.md#字符集设置)
+[字符集设置](../DataBase/mysql/Linux下安装MySQL.md#字符集设置)
 
 #### MySQL 内存优化
 
@@ -596,7 +596,7 @@ MySQL 其他设置及操作请参考：
 
 * [MySQL笔记](../DataBase/mysql/MySQL_Note.md)
 * [MySQL常用操作](../DataBase/mysql/MySQL常用操作.md)
-* [linux下安装mysql](../DataBase/mysql/linux下安装mysql.md)
+* [Linux下安装MySQL](../DataBase/mysql/Linux下安装MySQL.md)
 
 ---
 

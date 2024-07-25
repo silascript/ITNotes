@@ -13,7 +13,7 @@ tags:
   - clash
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2024-07-22 18:43:07
+modified: 2024-07-25 20:26:51
 ---
 
 # 梯子笔记
@@ -839,7 +839,8 @@ function FindProxyForURL(url, host) {
 		"www.smzdm.com",
 		"www.zdic.net",
 		"mirrors.tuna.tsinghua.edu.cn",
-		"www.shuge.org"
+		"www.shuge.org",
+		"www.tmp.link"
 		
 		//"10.11.12.13",
 	

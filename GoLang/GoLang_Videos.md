@@ -5,8 +5,9 @@ tags:
   - video
   - list
 created: 2023-06-28 10:52:44
-modified: 2023-12-08 18:48:24
+modified: 2024-07-25 10:46:15
 ---
+
 # GoLang 视频清单
 
 ---
@@ -28,6 +29,8 @@ modified: 2023-12-08 18:48:24
 * [8小时入门go语言开发|2023重制版](https://www.bilibili.com/video/BV1zu4y187Wb)
 * [GO语言-7天从入门到精通 最适合小白入门的GO语言教程](https://www.bilibili.com/video/BV1DQ4y187o9)
 * [6小时学会go语言合集](https://www.bilibili.com/video/BV1vs4y1m7hX)
+* [【老男孩】Golang从入门到实战教程，一套精通GO语言，纯干货讲解，无废话](https://www.bilibili.com/video/BV1o24y1U7Ux)
+
 ### 杂项
 
 * [传统方式新建 Go 项目](https://www.bilibili.com/video/BV1sv4y1Q7YX)

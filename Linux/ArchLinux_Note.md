@@ -8,7 +8,7 @@ tags:
   - ime
 date created: 2022-11-08 11:32
 created: 2023-08-18 19:44:52
-modified: 2024-07-25 01:20:08
+modified: 2024-07-26 23:06:45
 ---
 
 # ArchLinux 笔记
@@ -303,6 +303,12 @@ desktop 规范：[Desktop Entry Specification](https://specifications.freedeskto
 * [artixlinux](https://artixlinux.org/)
 * [archman](https://archman.org/)
 * [anarchy-linux](https://anarchy-linux.org/)
+
+---
+
+## 相关资料
+
+* [Linux 日常操作与基础知识 | archlinux 简明指南](https://arch.icekylin.online/guide/advanced/system-ctl)
 
 ---
 

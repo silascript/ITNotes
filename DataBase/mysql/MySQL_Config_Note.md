@@ -6,7 +6,7 @@ tags:
   - database
   - config
 created: 2024-07-24 18:49:11
-modified: 2024-07-24 20:36:35
+modified: 2024-07-26 10:52:44
 ---
 
 # MySQL 配置笔记
@@ -37,7 +37,7 @@ pid-file=/usr/local/mysql-5.7/data/mysql.pid
 
 ```
 
-mysql5.6.6+ 版本，推荐加上 **explicit_defaults_for_timestamp=true**
+mysql5.6.6+ 版本，推荐加上 `explicit_defaults_for_timestamp=true`
 
 utf8mb4 cnf 配置示例：
 

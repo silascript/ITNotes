@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2024-07-18 03:57:03
+modified: 2024-07-27 04:07:09
 ---
 
 # Shell 笔记
@@ -671,7 +671,7 @@ done
 写法 2：
 
 ```shell
-while read line
+while read line$*用法
 do
   echo $line
 done < xxx.txt
@@ -726,6 +726,23 @@ function 函数名(){
 > 跟 [Javascript](../JS/JS_Note.md) 等语言很像。
 
 ### <span id="shell_function_parameter">参数</span>
+
+Shell 脚本内，传递参数格式为 `$n`，**1**为执行脚本的第一个参数，**2**为执行脚本的第二个参数，以此类推。
+
+* `$#`：传递到脚本的参数个数
+* `$*`：以一个单字符串显示所有向脚本传递的参数。
+> [!tip] 
+> 
+> 如果使用引号 `"` 括起来，是以 `"$1 $2 ... $n"` 形式输出所有参数。
+* `$@`：与 `$*` 相同，但是使用时加引号，并在引号中返回每一个参数。
+> [!tip] 
+> 
+> 如果使用引号 `"` 括起来，是以 `"$1" "$2" ... "$n"` 形式输出所有参数。
+> 
+> `$*` 与 `$@` 跟 [数组元素](#数组元素) 中的 `*` 和 `@` 类似，`$*` 是把参数当成一个「**整体**」处理，而 `$@` 是单个参数的组合。
+* `$$`：脚本运行的当前进程 ID 号。
+* `$!`：后台运行的最后一个进程 ID 号。
+* `$?`：显示最后命令的退出状态。`0` 表示没有错误，其他任何值表明有错误。
 
 ### <span id="shell_function_returnv">返回值</span>
 
@@ -1005,6 +1022,12 @@ curl http://hub-mirror.c.163.com/v2/library/${image}/tags/list | jq --arg tstr $
 * [Awesome Shell：命令行框架、工具包、指南清单（中译版） - Shell - 软件编程 - 深度开源](https://www.open-open.com/news/view/e54142)
 * [shell echo 显示颜色 - 知乎](https://zhuanlan.zhihu.com/p/181609730)
 * [实现shell脚本中的转圈、进度条等一些效果 · 艾莉亚的猫](https://yangtze736.github.io/%E6%8A%80%E6%9C%AF/2018/05/02/shell-tips/)
+
+### 杂项资料
+
+* [执行Shell脚本的三种方式 - 掘金](https://juejin.cn/post/7087583630314176526)
+* [Shell脚本调用另一个脚本的三种方法](https://blog.51cto.com/u_15060461/4074877)
+* [sh命令 – shell命令语言解释器 – Linux命令大全(手册)](https://www.linuxcool.com/sh)
 
 ---
 

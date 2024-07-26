@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2024-07-22 21:48:47
+modified: 2024-07-27 04:09:13
 ---
 
 # Docker 示例
@@ -228,7 +228,11 @@ docker exec -it d_php81 sh -c "php $*"
 ```
 > [!info]
 > 
-> `php $*` 这个代码是让脚本能接收各种参数，然后传给容器中的 php，以完成 php 调用需求。
+> `sh -c`：里有 `sh` 是 [sh 命令](../Linux/Linux_Note.md#sh%20命令)，`-c` 参数是让 `sh` 命令接收一个**字符串**作为参数。
+> 
+> `php $*` 就是一个参数的实参。其中 `$*` 同样也也是个 [Shell](../Linux/Shell_Note.md) 语法元素，表示接收一个 [参数](../Linux/Shell_Note.md#参数) 列表。在这里的意思就是，让脚本能接收各种参数，以完成 php 各种调用需求。
+> 
+> 
 
 VSCode [intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client) 插件关于 [PHP](../PHP/PHP_Note.md) 可执行文件设置：
 
@@ -475,6 +479,8 @@ docker run -d --name d_apache -p 8085:80 -v /home/silascript/Docker_Mount/apache
 phpinfo();
 ?>
 ```
+> [!info] 
+> 
 > 就显示下 PHP 的安装信息。
 
 还是更 **推荐使用 Nginx**，而且使用 PHP-fpm 方式解析 PHP 页面。Apache 配置实在是太麻烦了！

@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-07-19 22:03:08
+modified: 2024-07-27 03:48:32
 ---
 
 # Linux 笔记
@@ -1329,7 +1329,26 @@ ssh 用户名@ip -p 端口
 
 ## <span id="linux_shell">Shell 相关 </span>
 
-Shell 相关内容：[Shell笔记](Shell_Note.md)
+### sh 命令
+
+`sh` 命令其功能是 [Shell](Shell_Note.md) 语言的解释器。
+>[!tip] 
+>
+> `sh` 其实不是实际存在的命令文件，而是 `bash` 的别名命名，所以使用 `bash` 效果相同。
+
+语法格式：`sh [参数] 脚本名`
+
+#### 参数
+
+* `-c`：从字符串中读取命令
+* `-i`：实现脚本交互
+* `-n`：进行语法检查
+* `-v`：显示执行过程详细信息
+* `-x`：实现逐条语句跟踪
+* `--help`：帮助文档
+* `--versoin`：sh 的版本信息
+
+Shell 语言相关内容：[Shell笔记](Shell_Note.md)
 
 ---
 

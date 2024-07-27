@@ -4,7 +4,7 @@ tags:
   - database
   - mysql
 created: 2023-01-30 11:19:11
-modified: 2024-07-23 03:48:16
+modified: 2024-07-27 21:36:35
 ---
 
 # MySQL 笔记
@@ -47,6 +47,20 @@ mycli 有语法高亮、代码提示、分页显示等非常实用的功能。
 > 官方提供了几个 [配色](https://www.mycli.net/syntax)。
 > 
 * `key_bindings`​：快捷键绑定，两种选项：`Emac` 和 `vi`。默认是 `Emac`
+
+#### mycli 使用
+
+mycli 登录与 mysql 自带的客户端几乎一样。
+
+##### 字符集问题
+
+ mycli 默认情况下，存在客户端字符集问题，使用 mycli 登录时，使用 `status` 或 `show variables like "%char%";` 命令查询字符集，`Client characterset` 和 `Conn.characterset` 还是 `utf8mb3`，这即便已经在 mysql 的配置文件中 `[client]` 中设置了 `default-character-set = utf8mb4`，也是无效。
+ 
+不过幸好 [github](https://github.com) 上有解决方法，就是加字符集参数：
+
+```shell
+mycli -h localhost -P 3356 -u silascript -p 123456 --charset=utf8mb4
+```
 
 ### 连接问题
 

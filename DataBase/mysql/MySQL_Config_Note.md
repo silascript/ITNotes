@@ -6,7 +6,7 @@ tags:
   - database
   - config
 created: 2024-07-24 18:49:11
-modified: 2024-07-26 10:52:44
+modified: 2024-07-27 21:43:38
 ---
 
 # MySQL 配置笔记
@@ -91,6 +91,125 @@ MySQL 8.0 开始，客户端的配置放在 `conf.d` 目录下的 `mysql.cnf` �
 ---
 
 ## 字符集设置
+
+### MySQL 数据库中字符集转换流程
+
+* [MySQL](MySQL_Note.md) 收到请求时将请求数据从 `character_set_client`​ 转换为 `character_set_connection`​
+    
+* 进行内部操作前将请求数据从 character_set_connection​ 转换为内部操作字符集，其确定方法如下：
+    * 使用每个数据字段的 CHARACTER SET​ 设定值
+    * 若上述值不存在，则使用对应数据表的 DEFAULT CHARACTER SET​ 设定值 (MySQL 扩展，非 SQL 标准)
+    * 若上述值不存在，则使用对应数据库的 DEFAULT CHARACTER SET​ 设定值
+    * 若上述值不存在，则使用 character_set_server​ 设定值
+* 将操作结果从内部操作字符集转换为 character_set_connection​
+    
+* 将响应数据从 `character_set_connection`​ 转为 `character_set_client`​
+
+> [!info] 
+> 
+> 执行 SQL 语句时信息的路径是这样的：
+> 
+> 信息输入路径：client → connection → server
+> 
+> 信息输出路径：server → connection → results
+> 
+> 所以只需要关注 client、connection、server 和 results 这四个位置的字符集设置，那从输入到输出的字符集设置就是确定的。
+> 
+> 要知道这四处位置字符集信息，可以通过 status​ ​命令查询到。
+
+### 查询字符集信息
+
+* ​status​ ​命令查询：
+
+```shell
+mysql> status;
+--------------
+mysql  Ver 8.0.38 for Linux on x86_64 (MySQL Community Server - GPL)
+
+Connection id:		9
+Current database:
+Current user:		silascript@localhost
+SSL:			Not in use
+Current pager:		stdout
+Using outfile:		''
+Using delimiter:	;
+Server version:		8.0.38 MySQL Community Server - GPL
+Protocol version:	10
+Connection:		Localhost via UNIX socket
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8mb4
+Conn.  characterset:	utf8mb4
+UNIX socket:		/var/run/mysqld/mysqld.sock
+Binary data as:		Hexadecimal
+Uptime:			12 sec
+```
+
+以下四个属性值均为 utf8mb4​ ​就 OK 了：
+
+* ​`Server characterset​`
+* ​`Db characterset​`
+* ​`Client characterset​`
+* ​`Conn.characterset​`
+
+* 使用 `show variables like "%char%";​`：查询字符集相关配置信息：
+
+```shell
++--------------------------+--------------------------------+
+| Variable_name            | Value                          |
++--------------------------+--------------------------------+
+| character_set_client     | utf8mb4                        |
+| character_set_connection | utf8mb4                        |
+| character_set_database   | utf8mb3                        |
+| character_set_filesystem | binary                         |
+| character_set_results    | utf8mb4                        |
+| character_set_server     | utf8mb3                        |
+| character_set_system     | utf8mb3                        |
+| character_sets_dir       | /usr/share/mysql-8.0/charsets/ |
++--------------------------+--------------------------------+
+```
+
+* ​`character_set_client`​：客户端请求数据的字符集
+* ​`character_set_connection`​：从客户端接收到数据，然后传输的字符集
+* ​`character_set_database​`：默认数据库的字符集，无论默认数据库如何改变，都是这个字符集；如果没有默认数据库，那就使用 character_set_server​ ​指定的字符集，这个变量建议由系统自己管理，不要人为定义。
+* `​character_set_filesystem​`：把操作系统上的文件名转化成此字符集，即把 `character_set_client`​ 转换 `character_set_filesystem`​， 默认 binary 是不做任何转换的
+* ​`character_set_results​`：结果集的字符集
+* ​`character_set_server`​：数据库服务器的默认字符集
+* ​`character_set_system​`：存储系统元数据的字符集，总是 utf8，不需要设置。
+
+### 服务器端字符集设置
+
+```conf
+[mysqld]
+character-set-server=utf8mb4
+```
+
+`​character-set-server​` 这个配置项是配置服务端的字符集。受其影响的有：
+
+* ​`character_set_database​`
+* ​`character_set_server​`
+
+对于客户端设置，应设 `default_character_set​` ​配置项。
+
+```cnf
+[mysql]
+default_character_set=utf8mb4
+
+[client]
+default_character_set=utf8mb4
+```
+
+​`default_character_set​` ​设置，受影响的有：
+
+* ​`character_set_client​`
+* `​`character_set_connection​`
+* `​character_set_results`​
+
+### 关于 UTF8
+
+MySQL 如果在字符集设置时，将值设为 utf8​，那最终在 MySQL 8.x 后，数据库系统同查询到的设置值为 `utf8mb3​`。
+
+原因是 MySQL 在 8.x 版本之前的 utf8，是「残血版」，只支持到三个字节的 utf8。在 8.x 后，这个「残血版」的 utf8 被修订为 `utf8mb3​`，即这里的 3​ ​指的就是「三字节」。真正「满血版」的 utf8，应该为 `utf8mb4`​，即四字节的 utf8。所以在对于 8.x 的 MySQL 配置，应该是配的是 `utf8mb4`​。
 
 因为 8.x 开始，MySQL 已经默认设置服务器端为 `utf8mb4`​，所以真正需要自己手动设置的只有客户端的字符集。所以在 8.x 及以上版本中，`[mysqld]​` ​里的字符集设置是不需要的，即 `character-set-server`​ ​和 `collation_server​` ​已经不用再配了。
 

@@ -4,7 +4,7 @@ tags:
   - PL
   - php
 created: 2023-09-21 23:13:13
-modified: 2024-07-21 12:54:09
+modified: 2024-07-28 12:20:00
 ---
 
 # PHP 笔记
@@ -67,4 +67,6 @@ PECL 是 PHP 笔记的标准扩展，可以补充实际开发中所需的功能�
 
 * [Linux下PHP安装](Linux下PHP安装.md)
 * [Linux下安装配置Apache](Linux下安装配置Apache.md)
+* [PHP 视频清单](PHP_Videos.md)
+* [PHP 扩展笔记](PHP扩展.md)
 * [Docker 笔记](../Docker/Docker_Note.md)

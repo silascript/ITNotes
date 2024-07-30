@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-07-27 03:48:32
+modified: 2024-07-31 03:57:19
 ---
 
 # Linux 笔记
@@ -1746,10 +1746,11 @@ Core 1:        +42.0°C  (high = +82.0°C, crit = +102.0°C)
 
 ## <span id="linux_resource_links">相关资源链接</span>
 
-### 社区
+### 社区网站
 
 * [Linux迷](https://www.linuxmi.com/)
 * [linux-command](https://github.com/jaywcjlove/linux-command)
+* [LinuxStory](https://linuxstory.org)
 
 ### 各种资料
 

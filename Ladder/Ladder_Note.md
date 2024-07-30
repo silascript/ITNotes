@@ -13,7 +13,7 @@ tags:
   - clash
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2024-07-26 11:20:21
+modified: 2024-07-30 23:25:08
 ---
 
 # 梯子笔记
@@ -24,11 +24,13 @@ modified: 2024-07-26 11:20:21
 
 ### 机场
 
+>[!quote] 
+>
 > 机场是从 2019 年以后兴起的新的翻墙技术。它的工作原理和 VPN 不同。VPN 一般是自己有专门开发的软件，和 VPN 厂商提供的服务器进行配合，来满足用户的需求。而机场则是开源软件和自主搭建的服务器进行配合。
 >
 > 最早的机场服务器商用的开源软件基本上都是 Shadowsocks（SS）或者 ShadowsocksR（SSR），他们不开发软件，只搭建 SS 或 SSR 协议许可的服务器，用户只要获得订阅，就可以更新服务器。如果换一个服务商，甚至都不用重新下载 SS 或 SSR，直接换服务器订阅就好了，非常方便。
 > 
->而 SS 和 SSR 的图标，就是一个纸飞机 logo，那么既然软件是纸飞机，提供给软件的服务商就叫机场了。
+> 而 SS 和 SSR 的图标，就是一个纸飞机 logo，那么既然软件是纸飞机，提供给软件的服务商就叫机场了。
 
 ![ssr logo](http://vpchina.oss-ap-southeast-1.aliyuncs.com/uploads/2023/02/image-2-1024x576-1.png)
 
@@ -131,6 +133,10 @@ Trojan 最大缺点是用**443**端口输出。
 #### Trojan-Go
 
 Trojan-Go 相较 [Trojan](#Trojan) 多了些功能：多路复用降低延迟，提升并发性能。
+
+#### Reality
+
+[REALITY](https://github.com/XTLS/REALITY) 目前最安全的 [XRay](#XRay) 代理协议。
 
 #### 协议相关资料
 
@@ -702,17 +708,6 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 > 但节点，香港节点，最低倍率是 3 个倍。1 倍率的美国节点，延迟非常高，这是个坑。估计真只能当高速临时机场用。恶臭！
 > 
 
-### 相关资料
-
-* [机场整理推荐](https://github.com/WallKiller-glitch/V2raySSSSRShare)
-* [Clash 机场推荐（2024 最佳 Clash、Shadowrocket 节点）](https://clashios.com/)
-* [机场推荐！2024年5月大量高性价比机场指南与免费机场汇总集合啦！ - 机场8指南](https://www.jichang8.com/ji-chang/stable-and-good-ji-chang.html)
-* [机场评测表 | VPN中国](https://www.vpn-china.org/%e6%9c%ba%e5%9c%ba%e8%af%84%e6%b5%8b%e8%a1%a8/)
-* [2024最新Clash节点订阅地址链接分享Clash机场推荐购买](https://clashnode.org/)
-* [机场跑路名单（持续更新）-2024 VPN](https://gfwoff.com/jichang-paolu-lists/)
-* [机场推荐（2024年6月20日更新） - 毒奶](https://limbopro.com/865.html)
-* [机场常见问题大全 TOS/SLA/VPN/机场/线路/专线等问题](https://youtu.be/XnuKK9Gnb8Y)
-
 ---
 
 ## 客户端
@@ -868,6 +863,10 @@ function FindProxyForURL(url, host) {
 
 V2Ray 本身不支持 [PAC](#PAC)。
 
+#### XRay
+
+XRay 是 Project X 项目下的一个核心工具也就是现在的 [Xray-core](https://github.com/XTLS/Xray-core)，和 V2Ray-Core 类似主要负责网络协议、路由等网络通信功能的实现，但在功能上是 V2Ray-Core 的超集，[VLess](#VLess) 两者都有，但是 XTLS 只有 XRay 支持。
+
 #### V2ray 客户端
 
 > [!quote] 
@@ -938,14 +937,6 @@ sudo systemctl start v2raya
 
 [surfboard](https://github.com/getsurfboard/surfboard) 是安卓端的网络流量处理工具。
 
-### 相关资料
-
-* [如何使用疾风云机场？-2024 VPN](https://gfwoff.com/how-to-use-jifeng-cloud-vpn/)
-* [Clash Verge Rev官网下载 - Clash Verge](https://clashverge.net/clash-verge-rev/)
-* [toutyrater](https://toutyrater.github.io/)
-* [v2rayA 入门使用教程](https://v2rayn.uuk.app/112)
-* [什么是 SSR、V2ray、Trojan、Clash，什么是机场？ | Yasir Lin 的笔记](https://young1lin.me/2020/10/30/GFW/)
-
 ---
 
 ## 系统相关设置
@@ -985,5 +976,6 @@ export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_pr
 
 ## 相关笔记
 
+* [梯子资料](Ladder_Meterial.md)
 * [Youtube 笔记](Youtube_Note.md)
 * [搭配方案](搭配方案.md)

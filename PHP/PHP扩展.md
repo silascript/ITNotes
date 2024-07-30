@@ -5,7 +5,7 @@ tags:
   - php
   - extension
 created: 2024-07-28 12:14:53
-modified: 2024-07-28 12:19:09
+modified: 2024-07-28 18:26:48
 ---
 
 # PHP 扩展
@@ -28,17 +28,16 @@ PECL 是 <span data-type="text" id="">PHP 笔记</span>的标准扩展，可以�
 
 1. 下载 Composer（安装前请务必确保已经正确安装了 PHP。打开命令行窗口并执行 `php -v`​ 查看是否正确输出版本号。）
 
-   下载安装脚本 － `composer-setup.php`​ － 到当前目录
-
-   ```shell
-   php -r "copy('https://install.phpcomposer.com/installer', 'composer-setup.php');"
-   ```
+	下载安装脚本 － `composer-setup.php`​ － 到当前目录：
+	```shell
+	php -r "copy('https://install.phpcomposer.com/installer', 'composer-setup.php');"
+	```
 
 2. 执行安装过程
 
-   ```shell
-   php composer-setup.php
-   ```
+	```shell
+	php composer-setup.php
+	```
 
 3. 删除安装脚本
 
@@ -58,46 +57,123 @@ PECL 是 <span data-type="text" id="">PHP 笔记</span>的标准扩展，可以�
 
 2. 全局安装
 
-   ​`sudo mv composer.phar /usr/local/bin/composer`​
+	`sudo mv composer.phar /usr/local/bin/composer`​
+	
+	然后通过 composer 就可以使用 composer 了，不管是不是 root 用户，都要加上 sudo
 
-   然后通过 composer 就可以使用 composer 了，不管是不是 root 用户，都要加上 sudo
-
-   > [!info] 
-   > 
-   > 如果在 <span data-type="text" id="">Docker </span>里的 composer 可以不用 `sudo`​
-   >
+	> [!info] 
+	> 	
+	> 如果在 <span data-type="text" id="">Docker </span>里的 composer 可以不用 `sudo`​
+	>
 
    可以通过 `whereis composer` ​来查看当前 composer 的位置，看是不是 `mv` ​成功了。
 
 3. composer 版本升级
 
-   ​`composer selfupdate`​
+	​`composer selfupdate`​
 
 ‍
 
 ### Composer 相关命令
 
-‍
-
-composer 升级：
+#### composer 升级
 
 ```shell
 composer selfupdate
 ```
 
-‍
+#### 包操作
 
-查看全局配置：
+#### 更新所有包
+
+```shell
+composer update
+```
+
+##### 更新指定包
+
+```shell
+composer update 包名
+```
+
+#### 安装包
+
+1. 创建一个 composer.json
+    
+    ```json
+    {
+    	"require":{
+    		"monolog/monolog": "1.0.*"
+    	}
+    }
+    ```
+    
+2. 运行 `composer install`​
+
+#### 清理缓存
+
+```shell
+composer clear
+```
+
+#### 诊断命令
+
+```shell
+composer diagnose
+```
+
+#### 查看全局配置
 
 ```shell
 composer config -gl
 ```
 
 ‍
+### Composer 镜像
 
+#### 全局设置
+
+配置镜像（以阿里为例）：
+
+```shell
+composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
+```
+> [!tip] 
+> 
+> ​config -g​：全局设置
+
+取消镜像：
+
+```shell
+composer config -g --unset repos.packagist
+```
+
+#### 局部配置
+
+配置镜像（以阿里为例）：
+
+```shell
+composer config repo.packagist composer https://mirrors.aliyun.com/composer/
+```
+
+取消配置：
+
+```shell
+composer config --unset repos.packagist
+```
 ‍
 
 ‍
+
+---
+
+## 相关资料
+
+#### 镜像相关
+
+* [中国全量镜像](https://pkg.xyz)
+* [阿里云 Composer 全量镜像](https://developer.aliyun.com/composer)
+* [Composer 国内加速，修改镜像源](https://learnku.com/articles/15977/composer-accelerate-and-modify-mirror-source-in-china)
 
 ---
 

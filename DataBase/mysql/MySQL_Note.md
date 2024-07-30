@@ -2,9 +2,10 @@
 aliases: []
 tags:
   - database
+  - db
   - mysql
 created: 2023-01-30 11:19:11
-modified: 2024-07-27 21:36:35
+modified: 2024-07-30 22:19:49
 ---
 
 # MySQL 笔记

@@ -1,12 +1,14 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - video
+  - db
+  - database
   - mysql
-created: 2023-06-22 7:55:22
-modified: 2023-06-22 7:57:23
+created: 2023-08-18 19:44:52
+modified: 2024-07-30 22:20:52
 ---
+
 # MySQL 视频清单
 
 ---

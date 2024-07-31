@@ -5,7 +5,7 @@ tags:
   - video
   - list
 created: 2023-12-07 11:31:08
-modified: 2024-05-21 17:42:13
+modified: 2024-08-01 03:40:43
 ---
 
 # C++ 视频清单
@@ -19,4 +19,5 @@ modified: 2024-05-21 17:42:13
 * [《C++ Primer Plus》第六版 零基础从头学(2023) ](https://www.bilibili.com/video/BV1sK41127iZ)
 * [最新C++多线程编程--------从入门到实战完整版【C++训练营】2024最新版](https://www.bilibili.com/video/BV1AZ421H7C7)
 * [小学生《趣味C++入门》](https://www.bilibili.com/video/BV1x64y1Q7Vq)
+* [【尚硅谷】2023版C++零基础教程](https://youtu.be/5hHa9sFhlss?list=PLmOn9nNkQxJFgVZJqpMCAOtPlExvpZjpk)
 

@@ -3,8 +3,9 @@ aliases: []
 tags:
   - PL
   - golang
+  - go
 created: 2023-01-31 11:31:14
-modified: 2024-06-12 19:51:30
+modified: 2024-07-31 21:59:47
 ---
 
 # Go 语言笔记
@@ -44,7 +45,11 @@ modified: 2024-06-12 19:51:30
 
 ### 配置
 
+主要就是配 [GOPATH](#GOPATH)。
+
 下载、解压，最后配 `PATH` 环境变量。
+> [!info] 
+> 
 > 如果升级新版本，最后不要用新版直接覆盖旧版，这样容易在安装模块时出问题。最后先把旧版目录删除，新版的目录命令成一样的，复制到一样的路径下。这样升级，不用重新改 `PATH` 环境变量，也能使用 go。
 
 环境变量示例：
@@ -71,6 +76,22 @@ go 的环境配置是存放在 `~/.config/go/` 目录下的 `env` 文件，可�
 > ```
 > 
 > 
+
+### GOPATH
+
+GOPATH 分为三类：
+
+1. Global GOPATH
+2. Project GOPATH
+3. Module GOPATH
+
+#### Global GOPATH
+
+全局 GOPATH，通常第三方库，便于所有项目引用。
+
+#### Project GOPATH
+
+#### Module GOPATH
 
 ---
 
@@ -321,5 +342,6 @@ import (
 
 ## 相关笔记
 
-* [GoLang视频清单](GoLang_Videos.md)
+* [Go语言视频清单](GoLang_Videos.md)
+* [Go语言资料](GoLang_Material.md)
 

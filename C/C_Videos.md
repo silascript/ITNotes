@@ -5,7 +5,7 @@ tags:
   - video
   - list
 created: 2023-09-23 02:04:36
-modified: 2024-05-31 10:10:32
+modified: 2024-08-01 03:39:17
 ---
 
 # C 语言视频清单
@@ -23,6 +23,8 @@ modified: 2024-05-31 10:10:32
 * [C语言 第三阶段 文件IO](https://www.bilibili.com/video/BV1vv411k78H)
 * [C语言零基础入门C语言初学者小白C语言程序设计](https://www.bilibili.com/video/BV1sH4y1Y7jt)
 * [膜拜！油管大佬竟把C语言讲的如此通俗易懂！（2024版）草履虫都能听懂！](https://www.bilibili.com/video/BV1Js421K75Q)
+* [【尚硅谷】康师傅C语言精讲](https://youtu.be/mK1r-vuXQZA?list=PLmOn9nNkQxJFL4l5k1_KUBzJroRc0QtOU)
+* [千锋_2020最新_C语言视频教程（全家桶）](https://youtu.be/j-CQ9mNHT8Y?list=PLwDQt7s1o9J6SPesLFQK_GaXryx8R5aYZ)
 
 ### 李慧芹系列
 

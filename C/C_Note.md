@@ -356,6 +356,6 @@ typedef 返回类型 (*函数指针类型名)(参数列表)
 
 ## 相关笔记
 
-* [C语言资料](C_Meterial.md)
+* [C语言资料](C_Material.md)
 * [C语言视频清单](C_Videos.md)
 

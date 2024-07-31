@@ -1,7 +1,7 @@
 ---
 aliases: []
 tags:
-  - meterial
+  - material
   - ladder
   - ss
   - ssr
@@ -14,7 +14,7 @@ tags:
   - 机场
   - list
 created: 2024-07-30 23:20:26
-modified: 2024-07-30 23:29:59
+modified: 2024-07-31 10:07:04
 ---
 
 # 梯子资料

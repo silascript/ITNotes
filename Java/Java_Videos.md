@@ -6,7 +6,7 @@ tags:
   - tutorial
   - list
 created: 2023-06-24 01:08:17
-modified: 2024-07-08 12:13:56
+modified: 2024-07-31 18:56:20
 ---
 
 # Java 视频清单
@@ -22,6 +22,7 @@ modified: 2024-07-08 12:13:56
 * [黑马Java基础进阶教程，轻松掌握java高级技术-单元测试、反射、注解、动态代理](https://www.bilibili.com/video/BV1Pu411N7fH)
 * [java操作xml方法,总有适合你的](https://www.bilibili.com/video/BV15T4y1P7nM)
 * [2024全套java教程，零基础入门到精通，2小时快速入门](https://www.bilibili.com/video/BV11z421f7HJ)
+* [2024黑马程序员Java+AI智能辅助编程全套视频教程](https://www.bilibili.com/video/BV1gb42177hm)
 
 ### IO
 

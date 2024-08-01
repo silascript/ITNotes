@@ -4,18 +4,30 @@ tags:
   - formatter
   - prettier
 created: 2024-05-24 09:59:11
-modified: 2024-05-24 11:16:52
+modified: 2024-08-02 03:23:59
 ---
 
 # Prettier 笔记
 
 ---
 
+## 简介
+
+[Prettier](https://prettier.io) 是一个格式化工具。
+
 ## 基本
 
-用户目录下，`prettierrc.json` 或 `.prettierrc.yml` 文件，是 prettier 的默认全局配置文件。
+### 全局配置
 
-如果 `Prettierrc.json` 在项目下，那就是项目级别的配置。
+用户目录下， `.prettierrc` ，是 prettier 的默认全局配置文件。
+> [!tip] 
+> 
+> 支持 `.yaml`、`.yml`、`.json` 及 `。js` 后缀。
+> 
+> 也就是说你可以将全局配置文件命名为 `.prettierrc.json` 或 `.prettierrc.yaml` 等。
+> 
+
+如果配置文件在项目下，那就是项目级别的配置。
 
 #### 常用配置项
 
@@ -51,4 +63,7 @@ embeddedLanguageFormatting: 'auto', // 对引用代码进行格式化
 
 * [代码美化神器——Prettier使用详解 - 掘金](https://juejin.cn/post/6970267363845341220)
 * [史上最全Preitter指南(含option中文解释) - 知乎](https://zhuanlan.zhihu.com/p/356654434)
+* [VSCode的全局配置与项目单独配置 - 掘金](https://juejin.cn/post/7290740395913691177)
+* [详解prettier使用以及与主流IDE的配合 - w4ngzhen - 博客园](https://www.cnblogs.com/w4ngzhen/p/17559689.html)
+* [prettier configuration doc](https://prettier.nodejs.cn/docs/en/configuration.html)
 

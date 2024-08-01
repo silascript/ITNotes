@@ -3,9 +3,10 @@ aliases: []
 tags:
   - editor
   - vscode
+  - vscodium
   - vscode-extension
 created: 2023-08-10 15:44:32 
-modified: 2024-07-09 20:50:16
+modified: 2024-08-02 03:25:22
 
 ---
 
@@ -218,15 +219,15 @@ easymotion 更出名，因为就 easymotion 功能就大致说下常用的使用
 
 easymotion 常用功能列表：
 
-| 功能  |  快捷键  |
-|:---:| :---: |
-| 行级向上跳转 | \<leader>\<leader> k |
-| 行级向下跳转  | \<leader>\<leader> j |
-| 行内向前  | \<leader>\<leader> h |
-| 行内向后 | \<leader> \<leader> l |
-| 按单词向后跳 | \<leader>\<leader> w |
-| 按单词向前跳 | \<leader>\<leader> b|
-| 搜索式跳 | \<leader>\<leader> s 输入要搜索的字符|
+|     功能     |                快捷键                 |
+|:------------:|:-------------------------------------:|
+| 行级向上跳转 |         \<leader>\<leader> k          |
+| 行级向下跳转 |         \<leader>\<leader> j          |
+|   行内向前   |         \<leader>\<leader> h          |
+|   行内向后   |         \<leader> \<leader> l         |
+| 按单词向后跳 |         \<leader>\<leader> w          |
+| 按单词向前跳 |         \<leader>\<leader> b          |
+|   搜索式跳   | \<leader>\<leader> s 输入要搜索的字符 |
 
 ###### vim 插件的问题
 
@@ -357,6 +358,8 @@ Arch 系：
 ```shell
 sudo pacman -S llvm clang lld lldb libc++
 ```
+> [!info] 
+> 
 > 其他 Linux 系统可使用自已的包管理器安装 **llvm**、**clang**、**lld**、**lldb** 及 **libc++** 程序及组件。
 
 装完那些程序后，检测下是不是安装成功：
@@ -450,8 +453,24 @@ VSCode 已经内置了大名鼎鼎的 [Emmet](https://emmet.io) （[Emmet Wiki](
 
 ---
 
+### 
+
+### <span id="vscode_extensions_format">格式化</span>
+
+#### <span id="vscode_extensions_format_prettier">Prettier</span>
+
+[Prettier](../Format/Prettier_Note.md) 是一个格式化器。
+
+在 [VSCode](VSCode_Note.md) 也有着相应的插件：[prettier-vscode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) [![prettier-vscode repo](https://img.shields.io/github/stars/prettier/prettier-vscode
+)](https://github.com/prettier/prettier-vscode)。
+
+装完这插件后，默认情况使用这插件格式化时，如果项目中没有相应的配置文件，会搜寻用户目录下的 [全局配置](../Format/Prettier_Note.md#全局配置) 文件，即 `.prettierrc` 或 `.prettierrc.json`。
+
+---
+
 ## <span id="vscode_about_notes">其他相关笔记</span>
 
 * [VSCode 笔记](VSCode_Note.md)
 * [文本编辑器笔记](Editors_Note.md)
+* [Prettier 笔记](../Format/Prettier_Note.md)
 

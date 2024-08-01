@@ -5,7 +5,7 @@ tags:
   - golang
   - go
 created: 2023-01-31 11:31:14
-modified: 2024-07-31 21:59:47
+modified: 2024-08-01 16:53:22
 ---
 
 # Go 语言笔记
@@ -38,6 +38,7 @@ modified: 2024-07-31 21:59:47
 ### 安装包下载
 
 官网 [https://golang.org/](https://golang.org/) 偶尔会访问不了，可以使用国内镜像网站下载 Go 的安装文件：
+
 * [https://golang.google.cn/dl/](https://golang.google.cn/dl/)
 * [https://gomirrors.org/](https://gomirrors.org/)
 
@@ -100,6 +101,8 @@ GOPATH 分为三类：
 #### <span id="golang_setup_proxy_goproxy">GOPROXY 设置</span>
 
 [goproxy.io](https://goproxy.io) 国内代理网站。
+> [!info] 
+> 
 > 或者： [另一个域名](https://proxy.golang.com.cn)
 
 在 `env` 文件中配置以下代码：
@@ -109,6 +112,7 @@ GO111MODULE=on
 GOPROXY=https://proxy.golang.com.cn,direct
 ```
 > [!tip]
+> 
 > `GO111MODULE` 是指 Go 1.11 后的版本使用 Module 方式
 
 也可以使用命令进行配置：
@@ -129,6 +133,8 @@ go env -w GOPROXY=https://goproxy.cn,https://proxy.golang.com.cn,https://goproxy
 国内 Go 代理：
 
 * [Goproxy 中国](https://goproxy.cn/) [![goproxy.cn Repo](https://img.shields.io/github/stars/goproxy/goproxy.cn?style=social)](https://github.com/goproxy/goproxy.cn)
+>[!tip] 
+>
 > Goproxy.cn 是布置在 [七牛云](https://www.qiniu.com/) 上，所以稳定性应该可以保证。
 * [GoProxy.io](https://goproxy.io/) [![goproxy.io Repo](https://img.shields.io/github/stars/goproxyio/goproxy?style=social)](https://github.com/goproxyio/goproxy)
 > [!tip] 关于 GoProxy.io
@@ -139,6 +145,7 @@ go env -w GOPROXY=https://goproxy.cn,https://proxy.golang.com.cn,https://goproxy
 * [阿里 Go代理](https://mirrors.aliyun.com/goproxy/)
 
 > [!info]
+> 
 > 下载的模块内容会缓存在 `$GOPATH/pkg/mod`
 
 > [!tip] 清理模块缓存
@@ -156,6 +163,7 @@ go env -w GOPROXY=https://goproxy.cn,https://proxy.golang.com.cn,https://goproxy
 [sum.golang.google.cn](https://sum.golang.google.cn) 这是国内的 GOSUMDB 代理网址。
 
 通过以下命令就能完成代理设置：
+
 ```shell
 go env -w GOSUMDB=sum.golang.google.cn
 ```
@@ -165,11 +173,13 @@ go env -w GOSUMDB=sum.golang.google.cn
 ### <span id="golang_setup_modules">安装模块</span>
 
 示例：
+
 ```shell
 go install golang.org/x/tools/gopls@latest
 ```
 
 ---
+
 ## Go 命令
 
 查看 go 版本：

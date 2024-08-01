@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2024-07-31 18:00:33
+modified: 2024-08-02 01:47:48
 ---
 
 # 梯子笔记
@@ -832,7 +832,8 @@ function FindProxyForURL(url, host) {
 		"www.zdic.net",
 		"mirrors.tuna.tsinghua.edu.cn",
 		"www.shuge.org",
-		"www.tmp.link"
+		"www.tmp.link",
+		// "update.code.visualstudio.com"
 		
 		//"10.11.12.13",
 	
@@ -853,6 +854,7 @@ function FindProxyForURL(url, host) {
 > [!info] 
 > 
 > 最重要的是 `directList` 这块代码函数。其中是要直链的网站地址列表。
+> `update.code.visualstudio.com` 这是 [VSCode](../Editors/VSCode_Note.md) 插件安装更新，按需添加或注释。
 >  
 >  相关文档
 > 

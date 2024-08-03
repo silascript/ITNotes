@@ -6,7 +6,7 @@ tags:
   - vscodium
   - vscode-extension
 created: 2023-08-10 15:44:32 
-modified: 2024-08-02 03:25:22
+modified: 2024-08-03 20:06:54
 
 ---
 
@@ -53,6 +53,7 @@ VSCode 的语言包。
 * syncing 设置
 
 `ctrl+shift+p` 唤出 Syncing 配置文件：
+
 ```json
 {
     "id": "", 
@@ -61,6 +62,7 @@ VSCode 的语言包。
     "auto_sync": false
 }
 ```
+
 `id` gist 的 id；`token` 刚新建的 token
 
 设置完全 `id` 和 `token`，就能同步配置了。

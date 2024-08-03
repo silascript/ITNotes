@@ -5,7 +5,7 @@ tags:
   - vscode
   - vscodium
 created: 2023-01-30 11:19:11
-modified: 2024-07-09 03:10:46
+modified: 2024-08-03 03:15:58
 ---
 # VSCode 笔记
 
@@ -35,6 +35,19 @@ modified: 2024-07-09 03:10:46
 
 * [Windows 版本](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
 * [Linux](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
+
+### 快捷键小问题
+
+1. `Ctrl+J` 无法切换终端面板
+> [!tip] 
+> 
+> vim 的快捷键占用了。VScode 中 vim 的 `Ctrl+J` 是光标移动到下一行。
+>
+> 建议将切换终端面板的快捷键设为 `Ctrl+meta+J`（`mata` 或者叫 `超键`，就是 `Win` 键）
+
+### 快捷键资料
+
+* [vscode + vim 操作备忘录 - 星落的日志](https://dkpluto.com/index.php/archives/3/)
 
 ---
 
@@ -335,6 +348,7 @@ Profile 是包括了 [Settings](#vscode_config_settings)、插件、snippet 等�
 	网上网友的分享，也证明官方的同步方案是挺「香」，但还是存在一个问题：不同操作系统的差异性，官方同步不能像 [VSCode-Syncing](Editors_Note.md#editors_vscode_extensions_syncing) 插件那样，不同平台下各自设不同的 [gist](https://gist.github.com/) 来适配相应的平台。但无论如何，整体而已，官方内置的「同步」功能确实非常优秀。
 
 > [!tip] 关于同步的各种网络资料
+> 
 > * [VSCode同步扩展插件的3种方法](https://segmentfault.com/a/1190000039769766)
 > * [VSCode官方的配置同步方案](https://juejin.cn/post/7066622158184644621)
 

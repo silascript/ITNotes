@@ -4,7 +4,7 @@ tags:
   - formatter
   - prettier
 created: 2024-05-24 09:59:11
-modified: 2024-08-02 03:23:59
+modified: 2024-08-02 11:31:19
 ---
 
 # Prettier 笔记
@@ -63,7 +63,12 @@ embeddedLanguageFormatting: 'auto', // 对引用代码进行格式化
 
 * [代码美化神器——Prettier使用详解 - 掘金](https://juejin.cn/post/6970267363845341220)
 * [史上最全Preitter指南(含option中文解释) - 知乎](https://zhuanlan.zhihu.com/p/356654434)
-* [VSCode的全局配置与项目单独配置 - 掘金](https://juejin.cn/post/7290740395913691177)
 * [详解prettier使用以及与主流IDE的配合 - w4ngzhen - 博客园](https://www.cnblogs.com/w4ngzhen/p/17559689.html)
 * [prettier configuration doc](https://prettier.nodejs.cn/docs/en/configuration.html)
+
+### 与编辑器结合
+
+* [VSCode的全局配置与项目单独配置 - 掘金](https://juejin.cn/post/7290740395913691177)
+* [彻底搞懂ESLint与Prettier在vscode中的代码自动格式化 - 掘金](https://juejin.cn/post/7156893291726782500)
+* [Prettier-Code Formater代码格式化插件使用教程 - 虚伪渲染敷衍 - 博客园](https://www.cnblogs.com/fitzlovecode/p/code_formater.html)
 

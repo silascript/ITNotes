@@ -6,18 +6,18 @@ tags:
   - video
   - list
 created: 2023-04-17 11:33:37
-modified: 2024-03-23 21:30:53
----
-# Git 教程相关
-
+modified: 2024-08-04 17:44:43
 ---
 
-## 视频教程清单
+# Git 教程视频清单
+
+---
 
 * [全方位入门git](https://www.imooc.com/learn/1278)
 * [尚硅谷Git快速入门](https://www.bilibili.com/video/BV1wm4y1z7Dg)
 * [Git自学教程](https://www.bilibili.com/video/BV1BP411v7U2)
 * [Git,你真的会用了吗？](https://www.bilibili.com/video/BV1yH4y1j7hQ)
+* [git企业级项目开发工作流实战讲解](https://www.bilibili.com/video/BV1zmvkeeEoM)
 
 ---
 

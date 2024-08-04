@@ -5,9 +5,10 @@ tags:
   - javaweb
   - spring
   - springboot
+  - list
   - video
 created: 2023-08-18 19:44:52
-modified: 2024-05-04 20:31:20
+modified: 2024-08-04 18:42:58
 ---
 
 # Spring 视频清单
@@ -24,3 +25,12 @@ modified: 2024-05-04 20:31:20
 
 * [1天搞定SpringBoot+Vue全栈开发！](https://www.bilibili.com/video/BV1WH4y1S7EV)
 * [【2024最新】Spring Boot零基础入门小白到精通，全套教程完整版通俗易懂](https://www.bilibili.com/video/BV1gp42197HU)
+* [Spring动画2024最新版](https://www.bilibili.com/video/BV1vLaceeEMY)
+
+---
+
+## 相关笔记
+
+* [Java 笔记](../Java_Note.md)
+* [Java 视频清单](../Java_Videos.md)
+* [Spring 笔记1](Spring_Note_1.md)

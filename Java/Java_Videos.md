@@ -6,7 +6,7 @@ tags:
   - tutorial
   - list
 created: 2023-06-24 01:08:17
-modified: 2024-07-31 18:56:20
+modified: 2024-08-07 02:35:12
 ---
 
 # Java 视频清单
@@ -61,6 +61,13 @@ modified: 2024-07-31 18:56:20
 * [黑马程序员RabbitMQ入门到实战教程](https://www.bilibili.com/video/BV1mN4y1Z7t9)
 * [尚硅谷RabbitMQ教程丨快速掌握MQ消息中间件rabbitmq](https://www.bilibili.com/video/BV1cb4y1o7zz)
 * [RabbitMQ 消息队列 理论与实战 已完结（2023最新版）](https://www.bilibili.com/video/BV1Sh411579p)
+
+### 字节码
+
+* [字节码规范](https://www.bilibili.com/video/BV194421Z7Xv)
+* [一个视频学会asm](https://www.bilibili.com/video/BV1sW42197eG)
+* [javaassist字节码工具介绍](https://www.bilibili.com/video/BV1Gw41157Jx)
+* [ByteBuddy杂谈](https://www.bilibili.com/video/BV13m42137Ct)
 
 ---
 

@@ -1,9 +1,12 @@
 ---
 aliases: []
-tags: []
+tags:
+  - node
+  - nodejs
 created: 2023-08-19 23:06:10
-modified: 2024-07-12 02:10:20
+modified: 2024-08-06 20:46:38
 ---
+
 # NodeJS 笔记
 
 ---

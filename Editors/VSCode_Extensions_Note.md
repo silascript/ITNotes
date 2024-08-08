@@ -5,8 +5,9 @@ tags:
   - vscode
   - vscodium
   - vscode-extension
+  - list
 created: 2023-08-10 15:44:32 
-modified: 2024-08-08 10:47:49
+modified: 2024-08-09 03:31:42
 
 ---
 
@@ -29,6 +30,7 @@ VSCode 或 VSCodium 新版本内置的功能已实现部分插件功能，所以
 ```
 
 ### <span id="vscode_extensions_local">本地化插件</span>
+
 VSCode 的语言包。
 
 [vscode-language-pack-zh-hans](https://open-vsx.org/extension/MS-CEINTL/vscode-language-pack-zh-hans)
@@ -164,6 +166,7 @@ VSCode 有很多漂亮的 Theme 和 icon，可以根据自己喜好添加。
 [Rainglow](https://open-vsx.org/extension/daylerees/rainglow) [![Rainglow Repo](https://img.shields.io/github/stars/rainglow/vscode?style=social)](https://github.com/rainglow/vscode) 这是一个 theme 集合，包含了 300 多个语法本色和 主题。 喜欢没事换 theme 的人可以用下这个主题包。
 
 如果想修改状态栏样式可以参考以下代码：
+
 ```json
 "workbench.colorCustomizations": {
     "statusBar.background": "#333",
@@ -341,7 +344,7 @@ Foam 常用功能及命令
 
 ---
 
-### <span id="vscode_extensions_python">Python</span>
+### <span id="vscode_extensions_devenv_python">Python 开发环境</span>
 
 VSCodium 原装只内置了 `Python Language Basics`，这个内置插件只有语法高亮等基础功能。想要更强的功能推荐装 [Python](https://open-vsx.org/extension/ms-python/python) [![](https://img.shields.io/github/stars/Microsoft/vscode-python?style=social)](https://github.com/Microsoft/vscode-python) 这个插件。
 
@@ -352,7 +355,21 @@ VSCodium 原装只内置了 `Python Language Basics`，这个内置插件只有�
 
 ---
 
-### <span id="vscode_cpp_devenv">VSCode 配置 C、C++ 开发环境</span>
+### <span id="vscode_extensions_devenv_java">Java 开发环境</span>
+
+#### Redhat-Java
+
+[RedHat-Java](https://marketplace.visualstudio.com/items?itemName=redhat.java)  [![RedHat-Java Repo](https://img.shields.io/github/stars/redhat-developer/vscode-java
+)](https://github.com/redhat-developer/vscode-java) 这是 RedHat 出的 Java 的插件。这是在 [oracle-java插件](#oracle-java) 出来之前，最好的 vscode 上最主要并具备「官方」背景的 Java 插件。
+
+#### Oracle-Java
+
+[Oracle-Java](https://marketplace.visualstudio.com/items?itemName=Oracle.oracle-java) [![Oracle-java repo](https://img.shields.io/github/stars/oracle/javavscode
+)](https://github.com/oracle/javavscode) 是 Oracle 官方出的 Java 插件。
+
+---
+
+### <span id="vscode_devenv_cpp">C、C++ 开发环境</span>
 
 操作系统得先安装 LLVM、Clang 等工具。
 
@@ -487,6 +504,7 @@ VSCode 已经内置了大名鼎鼎的 [Emmet](https://emmet.io) （[Emmet Wiki](
 * [在Visual Studio Code中使用 Code Runner 编译C/C++程序 - NaCl技术分享](https://nacldragon.top/2023/mingw-VSCode/)
 * [VSCode中插件Code Spell Checker - IT皮皮蟹 - 博客园](https://www.cnblogs.com/AAFlyingFish/p/14559446.html)
 * [相见恨晚！解决很难发现的 bug ——单词拼写错误，一款 vscode 插件 code spell checker - 掘金](https://juejin.cn/post/7370008254720639015)
+* [Oracle发布支持Vscode的Java插件 - 极道](https://www.jdon.com/69168.html)
 
 ---
 

@@ -6,7 +6,7 @@ tags:
   - vscodium
   - vscode-extension
 created: 2023-08-10 15:44:32 
-modified: 2024-08-03 20:06:54
+modified: 2024-08-08 10:47:49
 
 ---
 
@@ -357,6 +357,7 @@ VSCodium 原装只内置了 `Python Language Basics`，这个内置插件只有�
 操作系统得先安装 LLVM、Clang 等工具。
 
 Arch 系：
+
 ```shell
 sudo pacman -S llvm clang lld lldb libc++
 ```
@@ -431,6 +432,8 @@ VSCode 已经内置了大名鼎鼎的 [Emmet](https://emmet.io) （[Emmet Wiki](
  ```shell
  npm install vls -g
  ```
+> [!tip] 
+> 
 > Vue LSP 但能在 VSCode 使用，也能让其他编辑器使用，如 vim 等。  
 > 关于 [LSP](../vim/Vim_LSP_Complete.md#about_lsp)
 
@@ -455,11 +458,9 @@ VSCode 已经内置了大名鼎鼎的 [Emmet](https://emmet.io) （[Emmet Wiki](
 
 ---
 
-### 
-
 ### <span id="vscode_extensions_format">格式化</span>
 
-#### <span id="vscode_extensions_format_prettier">Prettier</span>
+#### Prettier
 
 [Prettier](../Format/Prettier_Note.md) 是一个格式化器。
 
@@ -467,6 +468,25 @@ VSCode 已经内置了大名鼎鼎的 [Emmet](https://emmet.io) （[Emmet Wiki](
 )](https://github.com/prettier/prettier-vscode)。
 
 装完这插件后，默认情况使用这插件格式化时，如果项目中没有相应的配置文件，会搜寻用户目录下的 [全局配置](../Format/Prettier_Note.md#全局配置) 文件，即 `.prettierrc` 或 `.prettierrc.json`。
+
+---
+
+### <span id="vscode_extensions_misc">杂项</span>
+
+#### Code-Spell-Checker
+
+[Code-Spell-Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) [![code-spell-checker repo](https://img.shields.io/github/stars/streetsidesoftware/vscode-spell-checker
+)](https://github.com/streetsidesoftware/vscode-spell-checker) 是一个拼写检查插件。
+
+![code-spell-checker screenshot](https://raw.githubusercontent.com/streetsidesoftware/vscode-spell-checker/main/images/suggestions.gif)
+
+---
+
+## 相关资料
+
+* [在Visual Studio Code中使用 Code Runner 编译C/C++程序 - NaCl技术分享](https://nacldragon.top/2023/mingw-VSCode/)
+* [VSCode中插件Code Spell Checker - IT皮皮蟹 - 博客园](https://www.cnblogs.com/AAFlyingFish/p/14559446.html)
+* [相见恨晚！解决很难发现的 bug ——单词拼写错误，一款 vscode 插件 code spell checker - 掘金](https://juejin.cn/post/7370008254720639015)
 
 ---
 

@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2024-08-09 21:20:09
+modified: 2024-08-10 04:12:19
 ---
 
 # Shell 笔记
@@ -372,6 +372,14 @@ echo ${#list1[@]}
 
 `${!arr[*]}` 或 `${!arr[@]}` 是查看已赋值元素的下标。
 
+> [!info] 
+> 
+> `@` 跟 `*` 的区别：
+> 
+> * 变量使用 `*` 时，变量被 `""` 包裹，会当成一串字符串处理。
+> * 变量使用 `@` 时，变量被 `""` 包裹，依然当做数组处理。
+> * 变量在没有被 `""` 包裹的情况下，`@` 跟 `*` 是等效的.
+
 ### 示例
 
 #### 1. 读取文件并将数据存放到数组中
@@ -389,6 +397,14 @@ do
 done
 
 ```
+
+> [!info] 
+> 
+> `grep -v` 表示反向选择。
+> 
+> `^$` 与 `^\#` 都是 [正则表达式](Linux_Note.md#正则表达式) 的东西。`^$` 表示空行，`^\#` 表示以 `#` 符号开始的行。
+>
+>`grep -v ^$ | grep -v ^\#` 表示就是选项非空行及非使用 `#`「标记」的行。
 
 #### 2. 遍历数组
 
@@ -533,6 +549,9 @@ fi
 * [shell 把一个数组赋给另一个数组 - CSDN文库](https://wenku.csdn.net/answer/46wz4kkdau)
 * [shell中的if判定数组是否为空 - CSDN文库](https://wenku.csdn.net/answer/3mcmw497j1)
 * [shell判断数组是否为空 - 新速特源码](https://www.nyv.cn/blogs/ym/6451.html)
+* [Shell 数组使用（ 及 @ 跟 \* 的区别） - 掘金](https://juejin.cn/post/7054806534487801886)
+* [软件开发|Bash 基础知识系列 #5：在 Bash 中使用数组](https://linux.cn/article-16016-1.html)
+* [shell中文件读取存入数组后数组长度为0的问题与解决方法\_shell bash 变量数组为0-CSDN博客](https://blog.csdn.net/inrgihc/article/details/105764952)
 
 ---
 

@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2024-08-09 03:31:42
+modified: 2024-08-09 12:41:00
 
 ---
 
@@ -323,7 +323,9 @@ markdown 插件有很多，而 VSCode、VSCodiume 本身内置了 markdown 基�
 常用操作：
 * `ctrl+k v`：在侧边显示预览
 * `ctrl+shift-v`：预览
-> 侧边预览的快捷键与 vim 插件冲突
+  >[!tip] 
+  >
+  > 侧边预览的快捷键与 vim 插件冲突
 
 > [!bug] 预览插件存在的问题
 > 
@@ -357,15 +359,126 @@ VSCodium 原装只内置了 `Python Language Basics`，这个内置插件只有�
 
 ### <span id="vscode_extensions_devenv_java">Java 开发环境</span>
 
-#### Redhat-Java
+#### RedHat-Java
 
 [RedHat-Java](https://marketplace.visualstudio.com/items?itemName=redhat.java)  [![RedHat-Java Repo](https://img.shields.io/github/stars/redhat-developer/vscode-java
 )](https://github.com/redhat-developer/vscode-java) 这是 RedHat 出的 Java 的插件。这是在 [oracle-java插件](#oracle-java) 出来之前，最好的 vscode 上最主要并具备「官方」背景的 Java 插件。
+
+这个插件是 VSCode 中众多 [Java](../Java/Java_Note.md) 插件的「**基础**」插件。
+
+简单配置：
+
+```json
+"java.configuration.runtimes": [
+	{
+		"name": "JavaSE-17",
+		"path": "/home/silascript/.sdkman/candidates/java/17.0.12-tem",
+	},
+	{
+		"name": "JavaSE-21",
+		"path": "/home/silascript/.sdkman/candidates/java/current",
+		"default": true
+	},
+],
+
+"java.jdt.ls.java.home": "/home/silascript/.sdkman/candidates/java/current"
+```
+
+Runtime 名称列表：[runtime name](https://github.com/redhat-developer/vscode-java/blob/master/package.json#L793)
 
 #### Oracle-Java
 
 [Oracle-Java](https://marketplace.visualstudio.com/items?itemName=Oracle.oracle-java) [![Oracle-java repo](https://img.shields.io/github/stars/oracle/javavscode
 )](https://github.com/oracle/javavscode) 是 Oracle 官方出的 Java 插件。
+> [!info] 
+> 
+> Oracle 这个插件出得太晚，[VSCode](VSCode_Note.md) 上 [Java](../Java/Java_Note.md) 相关插件，大部分都是 [RedHat-Java](#RedHat-Java) 生态圈的。
+
+配置 JDK：
+
+```json
+// Oracle Java 插件
+"jdk.jdkhome": "/home/silascript/.sdkman/candidates/java/current",
+```
+
+#### Maven for Java
+
+[Maven for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-maven)[![Maven for Java](https://img.shields.io/github/stars/microsoft/vscode-maven
+)](https://github.com/microsoft/vscode-maven) 是 微软开发的 [Maven](../Java/Maven/Maven_Note.md) 插件。
+
+#### Debugger for Java
+
+[Debugger for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug) [![Debugger for Java Repo](https://img.shields.io/github/stars/Microsoft/java-debug
+)](https://github.com/Microsoft/java-debug) 是一个 微软开发的 [Java](../Java/Java_Note.md)debug 插件。
+
+装了这插件后，在代码页面，可执行方法（如 `main` 方法）上会显示 `Run|Debug` 字样，可以快捷运行或 Debug 方法。
+> [!tip] 
+> 
+> 在右上角上也会显示运行及调试 Java 的「三角形」标志。
+
+> [!important] 
+> 
+> 这个插件依赖 [RedHat-Java](#RedHat-Java) 插件。
+
+#### Java Test Runner
+
+[Java Test Runner](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-test) [![Java Test Runner Repo](https://img.shields.io/github/stars/Microsoft/vscode-java-test
+)](https://github.com/Microsoft/vscode-java-test) 是 Java 测试插件，同样也是微软的作品。
+
+> [!important] 
+> 
+> 这个插件依赖 [RedHat-Java](#RedHat-Java) 及 [Debugger for Java](#Debugger%20for%20Java) 两个插件
+
+#### Spring Boot Extension Pack
+
+[Spring Boot Extension Pack](https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack) [![Spring Boot Extension Pack Repo](https://img.shields.io/github/stars/spring-projects/sts4
+)](https://github.com/spring-projects/sts4) 这是一个插件集合包，它包括了：
+
+* [Spring Initializr java](#Spring%20Initializr%20java)
+* [Spring Boot Dashboard](#Spring%20Boot%20Dashboard)
+* [Spring Boot Tools](#Spring%20Boot%20Tools)
+
+#### Spring Initializr java
+
+[Spring Initializr java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-spring-initializr) [![Spring Initializr java Repo](https://img.shields.io/github/stars/Microsoft/vscode-spring-initializr
+)](https://github.com/Microsoft/vscode-spring-initializr) 是一个轻量级用于生成 [SpringBoot](../Java/Spring/SpringBoot_Note.md) 项目的插件。
+
+![Spring Initializr Java screenshot](https://raw.githubusercontent.com/Microsoft/vscode-spring-initializr/0b841cbf698f8a3c48204a54216dba366e4a6555/images/spring-initializr-vsc.gif)
+
+功能：
+
+* Generate a Maven/Gradle Spring Boot project
+* Customize configurations for a new project (language, Java version, group id, artifact id, boot version and dependencies)
+* Search for dependencies
+* Quickstart with last settings
+* Edit Spring Boot dependencies of an existing Maven Spring Boot project
+
+#### Spring Boot Dashboard
+
+[Spring Boot Dashboard](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-spring-boot-dashboard)  [![Spring Boot Dashboard Repo](https://img.shields.io/github/stars/Microsoft/vscode-spring-boot-dashboard
+)](https://github.com/Microsoft/vscode-spring-boot-dashboard) 是 [SpringBoot](../Java/Spring/SpringBoot_Note.md) 的插件。
+
+功能：
+
+* View Spring Boot apps in workspace
+* Start / Stop a Spring Boot app
+* Debug a Spring Boot app
+* Open a Spring Boot app in browser
+* List beans/endpoint mappings
+* View bean dependencies
+
+![Spring Boot Dashboard screenshot](https://github.com/microsoft/vscode-spring-boot-dashboard/raw/main/images/boot-dashboard-vsc.gif)
+
+> [!important] 
+> 
+> Spring Boot Dashboard 依赖 [Debugger for Java](#Debugger%20for%20Java) 及 [Spring Boot Tools](#Spring%20Boot%20Tools) 插件。
+
+#### Spring Boot Tools
+
+[Spring Boot Tools](https://marketplace.visualstudio.com/items?itemName=vmware.vscode-spring-boot)  [![Spring Boot Tools Repo](https://img.shields.io/github/stars/spring-projects/sts4
+)](https://github.com/spring-projects/sts4) 是一个 [SpringBoot](../Java/Spring/SpringBoot_Note.md)**语言服务器**（[LSP](../Protocols/LSP_Note.md)）插件。
+
+这个插件是基于 [RedHat-Java](#RedHat-Java) 插件的，所以
 
 ---
 
@@ -505,6 +618,8 @@ VSCode 已经内置了大名鼎鼎的 [Emmet](https://emmet.io) （[Emmet Wiki](
 * [VSCode中插件Code Spell Checker - IT皮皮蟹 - 博客园](https://www.cnblogs.com/AAFlyingFish/p/14559446.html)
 * [相见恨晚！解决很难发现的 bug ——单词拼写错误，一款 vscode 插件 code spell checker - 掘金](https://juejin.cn/post/7370008254720639015)
 * [Oracle发布支持Vscode的Java插件 - 极道](https://www.jdon.com/69168.html)
+* [vscode开发java环境配置，很细 - 掘金](https://juejin.cn/post/7386916905008054287)
+* [vscode推荐的Java插件](https://blog.51cto.com/u_16213343/7450444)
 
 ---
 

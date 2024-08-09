@@ -5,7 +5,7 @@ tags:
   - vscode
   - vscodium
 created: 2023-01-30 11:19:11
-modified: 2024-08-03 03:15:58
+modified: 2024-08-09 12:46:29
 ---
 # VSCode 笔记
 
@@ -128,110 +128,68 @@ VSCode 中的 Settings 是分为 [全局 Settings](#vscode_config_settings_appli
 
 ```json
 {
-"workbench.startupEditor": "none",
-
-"workbench.colorTheme": "Catppuccin Macchiato",
-
-"workbench.iconTheme": "catppuccin-perfect-macchiato",
-
-"catppuccin.accentColor": "teal",
-
-// 窗口样式
-
-"window.menuBarVisibility": "toggle",
-
-"window.titleBarStyle": "custom",
-
-"window.zoomLevel": 1,
-
-// vim
-
-"vim.easymotion": true,
-
-"vim.highlightedyank.enable": true,
-
-"vim.showMarksInGutter": true,
-
-"vim.smartRelativeLine": true,
-
-// 字体
-
-"editor.fontFamily": "'Meslo LG S', 'JetBrains Mono', 'Fira Code', 'Cascadia Mono PL', 'Droid Sans Mono', 'monospace'",
-
-"editor.fontSize": 20,
-
-"editor.fontWeight": "350",
-
-"debug.console.fontSize": 18,
-
-"terminal.integrated.fontFamily": "'CaskaydiaCove Nerd Font Mono','Cascadia Mono PL'",
-
-// minimap
-
-"editor.minimap.maxColumn": 80,
-
-"editor.minimap.autohide": true,
-
-  
-
-// 格式化
-
-"[json]": {
-
-"editor.defaultFormatter": "esbenp.prettier-vscode"
-
-},
-
-  
-
-"[javascript]": {
-
-"editor.defaultFormatter": "esbenp.prettier-vscode"
-
-},
-
-  
-
-"[jsonc]": {
-
-"editor.defaultFormatter": "esbenp.prettier-vscode"
-
-},
-
-"prettier.useTabs": true,
-
-// 将哪些配置应用到所有Profile中
-
-"workbench.settings.applyToAllProfiles": [
-
-"editor.fontSize",
-
-"editor.fontFamily",
-
-"editor.fontWeight",
-
-"debug.console.fontSize",
-
-"terminal.integrated.fontFamily",
-
-"editor.minimap.maxColumn",
-
-"editor.minimap.autohide",
-
-"window.zoomLevel",
-
-"vim.easymotion",
-
-"vim.highlightedyank.enable",
-
-"vim.showMarksInGutter",
-
-"vim.smartRelativeLine",
-
-"prettier.useTabs"
-
-]
-
+	"workbench.startupEditor": "none",
+	"workbench.colorTheme": "Catppuccin Macchiato",
+	"workbench.iconTheme": "catppuccin-perfect-macchiato",
+	"catppuccin.accentColor": "teal",
+	
+	// 窗口样式
+	"window.menuBarVisibility": "toggle",
+	"window.titleBarStyle": "custom",
+	"window.zoomLevel": 1,
+	
+	// vim
+	"vim.easymotion": true,
+	"vim.highlightedyank.enable": true,
+	"vim.showMarksInGutter": true,
+	"vim.smartRelativeLine": true,
+	
+	// 字体
+	
+	"editor.fontFamily": "'Meslo LG S', 'JetBrains Mono', 'Fira Code', 'Cascadia Mono PL', 'Droid Sans Mono', 'monospace'",
+	"editor.fontSize": 20,
+	"editor.fontWeight": "350",
+	"debug.console.fontSize": 18,
+	"terminal.integrated.fontFamily": "'CaskaydiaCove Nerd Font Mono','Cascadia Mono PL'",
+	
+	// minimap
+	"editor.minimap.maxColumn": 80,
+	"editor.minimap.autohide": true,
+	
+	// 格式化
+	
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	
+	"[jsonc]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	
+	"prettier.useTabs": true,
+	
+	// 将哪些配置应用到所有Profile中
+	
+	"workbench.settings.applyToAllProfiles": [
+		"editor.fontSize",
+		"editor.fontFamily",
+		"editor.fontWeight",
+		"debug.console.fontSize",
+		"terminal.integrated.fontFamily",
+		"editor.minimap.maxColumn",
+		"editor.minimap.autohide",
+		"window.zoomLevel",
+		"vim.easymotion",
+		"vim.highlightedyank.enable",
+		"vim.showMarksInGutter",
+		"vim.smartRelativeLine",
+		"prettier.useTabs"
+	]
+	
 }
 ```
 

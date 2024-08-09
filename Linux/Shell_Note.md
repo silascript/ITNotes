@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2024-07-27 04:07:09
+modified: 2024-08-09 21:20:09
 ---
 
 # Shell 笔记
@@ -412,7 +412,6 @@ done
 方式 2：
 
 ```shell
-
 for i in ${!json_data_arr[@]}
 do
 	echo ${json_data_arr[$i]}
@@ -447,7 +446,7 @@ array_name=("${#array_name[@]}" value1 value2 ... valueN)
 > 
 > 双引号不能省略，否则数组中存在包含空格的元素时会按空格将元素拆分成多个。
 > 
-> 不能将 `@` 替换为 `*`，如果替换为 `*`，不加双引号时与 `@` 的表现一致，加双引号时，会将数组 array_name 中的所有元素作为一个元素添加到数组中。
+> 不能将 `@` 替换为 `*`，如果替换为 `*`，不加双引号时与 `@` 的表现一致，加双引号时，会将数组 array_name 中的所有元素作为一个元素添加到数组中。这规则在 [字符串](#字符串) 中也同样适合。
 
 4. 使用 `+=` 直接添加，待添加元素必须用 `()` 包围起来，并且多个元素用空格分隔
 ```shell
@@ -489,12 +488,51 @@ local ads_array=($@)
 > 也就是说，函数内接收数组，其实是初始化了一个数组用来接收。
 > 
 
+#### 5. 判断数组是否为空
+
+##### 方式 1
+
+通过 `${#数组[@]}` 语法获取数组元素的个数来判断：
+
+```shell
+arr1=()
+if [ ${#arr1[@]} -eq 0 ];then
+	echo "数组为空"
+else
+	echo "数组不为空"
+fi
+
+```
+
+##### 方式 2
+
+通过 `${数组[@]}` 语法获取数组所有元素，如果返回一个空值，则表明此数组为空：
+
+```shell
+arr1=()
+isEmpty=true
+for element in "${arr1[@]}"; do
+    isEmpty=false
+    break
+done
+
+if $isEmpty; then
+    echo "Array is empty"
+fi
+```
+
+> [!info] 
+> 
+> 最「笨」的方式就是遍历数组，设个结果变量，判断每一个元素。
+
 ### 数组相关资料
 
 * [shell 数组与函数之间的传参 - 知己一语 - 博客园](https://www.cnblogs.com/zhijiyiyu/p/15038939.html)
 * [shell 数组和算法 - YhtWeirdo - 博客园](https://www.cnblogs.com/yhtweirdo/p/15036737.html)
 * [Shell——数组 - peiqy - 博客园](https://www.cnblogs.com/peiqingyi/p/15039051.html)
 * [shell 把一个数组赋给另一个数组 - CSDN文库](https://wenku.csdn.net/answer/46wz4kkdau)
+* [shell中的if判定数组是否为空 - CSDN文库](https://wenku.csdn.net/answer/3mcmw497j1)
+* [shell判断数组是否为空 - 新速特源码](https://www.nyv.cn/blogs/ym/6451.html)
 
 ---
 
@@ -651,6 +689,20 @@ fi
 ###### for 实现
 
 ```shell
+
+for 变量名 in 循环列表
+do
+  命令集
+done
+    
+```
+> [!info] 
+> 
+> 这种 `for` 循环语句语法中，`for` 关键字后面会有一个「变量名」，变量名依次获取 `in` 关键字后面的变量取值列表内容（以空格分隔），每次仅取一个，然后进入循环（`do` 和 `done` 之间的部分）执行循环内的所有指令，当执行到 `done` 时结束本次循环。
+> 
+> 之后，「变量名」再继续获取变量列表里的下一个变量值，继续执行循环内的所有指令，当执行到 `done` 时结束返回，以此类推，直到取完变量列表里的最后一个值并进入循环执行到 `done` 结束为止。
+
+```shell
 for line in `cat xxx.txt`
 do
 	echo $line
@@ -708,6 +760,7 @@ function get_dl_url(){
 ### 循环相关资料
 
 * [Shell while循环详解 - zhouyuqiang - 博客园](https://www.cnblogs.com/qiangyuzhou/p/10806851.html)
+* [十二、Shell之for循环 - yaowx - 博客园](https://www.cnblogs.com/yaokaka/p/13813543.html)
 
 ---
 

@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-07-31 03:57:19
+modified: 2024-08-10 03:10:09
 ---
 
 # Linux 笔记
@@ -683,6 +683,10 @@ grep 全称是 「**global search regular expression and print out the line**」
 grep 是一个程序族，包括了 **grep**、**egrep** 和 **fgrep**。
 
 Linux 中使用的 GNU 版本的 grep ，可以直接通过 `-G`、`-E` 和 `-F` 命令选项来使用 grep、egrep 和 fgrep 的功能。
+
+#### 常用参数
+
+* `-v` 或 `--invert-match`：反向查找，即打印出*不符合条件行*的内容。
 
 #### ripgrep
 
@@ -1754,5 +1758,5 @@ Core 1:        +42.0°C  (high = +82.0°C, crit = +102.0°C)
 
 ### 各种资料
 
-* [linux修改文件或目录的所有者(chown)和用户组(chgrp)-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1627599)
+* [Linux 资料清单](Linux_Material.md)
 

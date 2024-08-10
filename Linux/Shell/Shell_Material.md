@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2024-08-11 02:18:14
+modified: 2024-08-11 03:01:29
 ---
 
 # Shell 资料清单
@@ -65,6 +65,10 @@ modified: 2024-08-11 02:18:14
 
 * [shell脚本——如何获取函数的返回值](https://blog.csdn.net/qq_31598113/article/details/80611480)
 * [Shell函数（函数定义、函数变量、函数调用、函数传参、函数返回值、获取函数返回值）](https://blog.csdn.net/xhaimail/article/details/103208901) 
+
+## 颜色
+
+* [shell bash终端中输出的颜色和格式详解（超详细）-云社区-华为云](https://bbs.huaweicloud.com/blogs/323329)
 
 ---
 

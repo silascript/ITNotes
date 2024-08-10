@@ -230,7 +230,7 @@ docker exec -it d_php81 sh -c "php $*"
 > 
 > `sh -c`：里有 `sh` 是 [sh 命令](../Linux/Linux_Note.md#sh%20命令)，`-c` 参数是让 `sh` 命令接收一个**字符串**作为参数。
 > 
-> `php $*` 就是一个参数的实参。其中 `$*` 同样也也是个 [Shell](../Linux/Shell_Note.md) 语法元素，表示接收一个 [参数](../Linux/Shell_Note.md#参数) 列表。在这里的意思就是，让脚本能接收各种参数，以完成 php 各种调用需求。
+> `php $*` 就是一个参数的实参。其中 `$*` 同样也也是个 [Shell](../Linux/Shell/Shell_Note.md) 语法元素，表示接收一个 [参数](../Linux/Shell/Shell_Note.md#参数) 列表。在这里的意思就是，让脚本能接收各种参数，以完成 php 各种调用需求。
 > 
 > 
 

@@ -447,7 +447,7 @@ npm install vls -g
 
 #### bash-language-server
 
-[bash-language-server](https://github.com/bash-lsp/bash-language-server) 顾名思义这是一款 [Bash](../Linux/Shell_Note.md#Bash) 的 LSP。
+[bash-language-server](https://github.com/bash-lsp/bash-language-server) 顾名思义这是一款 [Bash](../Linux/Shell/Shell_Note.md#Bash) 的 LSP。
 
 使用 [nodejs](../Node/NodeJS_Note.md) 安装：
 
@@ -468,7 +468,7 @@ npm i -g bash-language-server
 * 诊断
 * 格式化
 
-这个 LSP 对于那些没有专门的 LSP 的编程语言，如 [Shell](../Linux/Shell_Note.md)，是非常好的补充，至少有个 LSP 可用的。
+这个 LSP 对于那些没有专门的 LSP 的编程语言，如 [Shell](../Linux/Shell/Shell_Note.md)，是非常好的补充，至少有个 LSP 可用的。
 
 ```shell
 npm install diagnostic-languageserver -g

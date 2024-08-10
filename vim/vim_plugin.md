@@ -368,7 +368,7 @@ g:neoformat_sh_shfmt = {
 
 > [!tip] 
 > 
-> 如果像 [Shell](../Linux/Shell_Note.md) 只有一个默认格式化器 [shfmt](../Linux/Shell_Note.md#shfmt)，可以只设置 shfmt，不用再 `enabled` 了。
+> 如果像 [Shell](../Linux/Shell/Shell_Note.md) 只有一个默认格式化器 [shfmt](../Linux/Shell/Shell_Note.md#shfmt)，可以只设置 shfmt，不用再 `enabled` 了。
 
 > [!info] 相关资料
 > 

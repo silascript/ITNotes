@@ -5,8 +5,9 @@ tags:
   - linux
   - example
 created: 2023-09-23 01:34:32
-modified: 2024-03-03 22:48:34
+modified: 2024-08-11 02:23:14
 ---
+
 # Shell 脚本示例笔记
 
 ---
@@ -21,6 +22,7 @@ modified: 2024-03-03 22:48:34
 
 ### 遍历
 
+* 示例 1
 ```shell
 # 遍历 data 目录下txt文件并备份，备份文件名称加上年月日为后缀
 # 1.txt -> 1.txt_20230923
@@ -33,6 +35,18 @@ do
 done
 ```
 
+* 示例 2
+```shell
+local exuid_arr=()
+
+# 过滤掉空行及使用#注释的行
+for line in $(cat $exlist_path | grep -v ^$ | grep -v ^\#); do
+	# 把每行扩展的 uid 存储进数组中
+	exuid_arr+=($line)
+done
+
+```
+
 ### 判断参数个数
 
 ```shell
@@ -41,3 +55,13 @@ if [[ $# -eq 0 ]]; then
 	return
 fi
 ```
+
+---
+
+## 相关笔记
+
+* [Shell 笔记](Shell_Note.md)
+* [Shell 资料清单](Shell_Material.md)
+* [Shell 视频清单](Shell_Videos.md)
+* [Linux 笔记](../Linux_Note.md)
+

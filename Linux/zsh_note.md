@@ -555,5 +555,5 @@ zinit snippet https://github.com/docker/cli/blob/master/contrib/completion/zsh/_
 ## 其他笔记
 
 * [Linux 笔记](Linux_Note.md)
-* [Shell 笔记](Shell_Note.md)
-* [Shell 示例笔记](Shell_Example.md)
+* [Shell 笔记](Shell/Shell_Note.md)
+* [Shell 示例笔记](Shell/Shell_Example.md)

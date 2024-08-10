@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-10 03:06:48
-modified: 2024-08-10 03:10:02
+modified: 2024-08-11 02:01:32
 ---
 
 # Linux 资料清单
@@ -25,4 +25,4 @@ modified: 2024-08-10 03:10:02
 ## 相关笔记
 
 * [Linux笔记](Linux_Note.md)
-
+* [Shell资料清单](Shell/Shell_Material.md)

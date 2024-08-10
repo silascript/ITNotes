@@ -46,7 +46,7 @@ lua 默认将所有变量注册在全局环境表中。默认除了三种情况�
 
 #### local
 
-`local` 关键字定义局部变量，这与 [Shell](../Linux/Shell_Note.md) 还有 [Vimscript 9](../vim/Vimscript9_Note.md) 的语法一样。
+`local` 关键字定义局部变量，这与 [Shell](../Linux/Shell/Shell_Note.md) 还有 [Vimscript 9](../vim/Vimscript9_Note.md) 的语法一样。
 
 `local` 关键字不但能修饰变量，还能修饰 [函数](#函数)。
 

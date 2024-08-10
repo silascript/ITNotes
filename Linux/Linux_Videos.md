@@ -57,6 +57,6 @@ modified: 2024-07-11 20:18:23
 ## 相关笔记
 
 * [Linux 笔记](Linux_Note.md)
-* [Shell 视频清单](Shell_Videos.md)
-* [Shell 笔记](Shell_Note.md)
+* [Shell 视频清单](Shell/Shell_Videos.md)
+* [Shell 笔记](Shell/Shell_Note.md)
 

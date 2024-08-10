@@ -275,15 +275,15 @@ SublimeText 基本设置：
 
 ### <span id="sublime_plugins_formatter">格式化</span>
 
-源码格式化，在安装了 [LSP](#LSP%20相关) 后，很多都自带有格式化器，但有些语言的 LSP 没有带，比如 [Shell](../Linux/Shell_Note.md)，所以就得单独安装。
+源码格式化，在安装了 [LSP](#LSP%20相关) 后，很多都自带有格式化器，但有些语言的 LSP 没有带，比如 [Shell](../Linux/Shell/Shell_Note.md)，所以就得单独安装。
 
 #### <span id="sublime_plugins_formatter_sh">Shell 格式化</span>
 
-[Sublime-Pretty-Shell](https://github.com/aerobounce/Sublime-Pretty-Shell) 是使用了 [shfmt](../Linux/Shell_Note.md#shfmt) 作为格式化工具的插件。所以本机得先安装 [ shfmt](https://github.com/mvdan/sh)。
+[Sublime-Pretty-Shell](https://github.com/aerobounce/Sublime-Pretty-Shell) 是使用了 [shfmt](../Linux/Shell/Shell_Note.md#shfmt) 作为格式化工具的插件。所以本机得先安装 [ shfmt](https://github.com/mvdan/sh)。
 
 ##### 设置
 
-Pretty-Shell 这插件没多少设置，基本都是基于 [shfmt](../Linux/Shell_Note.md#shfmt) 本身的设置。
+Pretty-Shell 这插件没多少设置，基本都是基于 [shfmt](../Linux/Shell/Shell_Note.md#shfmt) 本身的设置。
 
 ```json
 // 是否保存文件时自动格式化

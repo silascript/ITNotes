@@ -374,7 +374,7 @@ busybox   Busybox base image.   325       [OK]
 
 ##### 搜索镜像时列出该镜像的 TAG
 
- ~~以下 [Shell](../Linux/Shell_Note.md) 脚本实现了列出镜像 tag 的功能：~~
+ ~~以下 [Shell](../Linux/Shell/Shell_Note.md) 脚本实现了列出镜像 tag 的功能：~~
 
 ```shell
 #!/bin/bash

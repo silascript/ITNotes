@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2024-08-10 12:20:52
+modified: 2024-08-11 02:15:19
 ---
 
 # Shell 笔记
@@ -105,18 +105,9 @@ $ echo $0
 	* **图形终端**下打开的命令窗口。
 	* 自动执行的 shell 脚本。
 
-#### 相关资料
 
-##### 资料链接
 
-* [linux之登录式shell和非登录式shell - 知乎](https://zhuanlan.zhihu.com/p/415152910)
-* [什么是 Linux 中的登录 Shell？ - Linux迷](https://www.linuxmi.com/linux-login-shell.html)
-* [Linux文件 profile、bashrc、bash\_profile区别 - 知乎](https://zhuanlan.zhihu.com/p/405174594)
-* [Linux 交互/非交互/登录/非登录 shell 的区别](https://blog.csdn.net/weixin_44648216/article/details/104056712)
-* [shell 编程的，登录 shell 和非登录 shell 的区别是什么 ？- 知乎](https://www.zhihu.com/question/628721272)
-* [千万别混淆 Bash/Zsh 的四种运行模式 - 知乎](https://zhuanlan.zhihu.com/p/47819029)
-
-Sell 语法相关的内容请查看： [Shell 笔记](./Shell_Note.md)
+Sell 语法相关的内容请查看： [Shell 笔记](Shell_Note.md)
 
 ---
 
@@ -417,6 +408,12 @@ do
 	echo $arr_temp
 done
 
+# 或者写成这样
+for arr_temp in ${addrs_arr[@]}
+do
+	echo $arr_temp
+done
+
 ```
 
 > [!tip] 遍历说明
@@ -556,23 +553,6 @@ fi
 > 
 > 最「笨」的方式就是遍历数组，设个结果变量，判断每一个元素。
 
-### 数组相关资料
-
-* [Shell脚本之数组 - 风夏呀 - 博客园](https://www.cnblogs.com/fengxia6/p/16839351.html)
-* [shell函数数组](https://blog.51cto.com/u_15381682/4907258)
-* [shell 数组与函数之间的传参 - 知己一语 - 博客园](https://www.cnblogs.com/zhijiyiyu/p/15038939.html)
-* [shell 数组和算法 - YhtWeirdo - 博客园](https://www.cnblogs.com/yhtweirdo/p/15036737.html)
-* [Shell——数组 - peiqy - 博客园](https://www.cnblogs.com/peiqingyi/p/15039051.html)
-* [shell 把一个数组赋给另一个数组 - CSDN文库](https://wenku.csdn.net/answer/46wz4kkdau)
-* [shell中的if判定数组是否为空 - CSDN文库](https://wenku.csdn.net/answer/3mcmw497j1)
-* [shell判断数组是否为空 - 新速特源码](https://www.nyv.cn/blogs/ym/6451.html)
-* [Shell 数组使用（ 及 @ 跟 \* 的区别） - 掘金](https://juejin.cn/post/7054806534487801886)
-* [软件开发|Bash 基础知识系列 #5：在 Bash 中使用数组](https://linux.cn/article-16016-1.html)
-* [shell中文件读取存入数组后数组长度为0的问题与解决方法\_shell bash 变量数组为0-CSDN博客](https://blog.csdn.net/inrgihc/article/details/105764952)
-* [shell 数组与函数之间的传参 - 知己一语 - 博客园](https://www.cnblogs.com/zhijiyiyu/p/15038939.html)
-* [第三章、shell变量和数组 - lucky\_light - 博客园](https://www.cnblogs.com/lucky-light/p/16413925.html#_label3_3)
-* [shell 向函数传递数组和从函数返回数组的一个细节问题\_shell 函数返回数组-CSDN博客](https://blog.csdn.net/guizaijianchic/article/details/78012179)
-
 ---
 
 ## <span>运算</span>
@@ -586,11 +566,6 @@ echo num1
 ```
 
 当然还有更便捷的方式，使用 `(())` 来进行整数运算。
-
-### 相关资料
-
-* [Shell整数运算-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1770000)
-* [Shell中的算术运算](https://xstarcd.github.io/wiki/shell/expr.html)
 
 ---
 
@@ -720,11 +695,6 @@ fi
 
 `while` 相对于 `for` 的读取能更好的还原数据原始性。
 
-###### 相关资料
-
-* [SHELL 读取文件的每一行内容并输出 | 菜鸟教程](https://www.runoob.com/w3cnote/shell-read-line.html)
-* [shell读取文件](https://blog.csdn.net/qq_26620783/article/details/87430195)
-
 ###### for 实现
 
 ```shell
@@ -796,11 +766,6 @@ function get_dl_url(){
 }
 ```
 
-### 循环相关资料
-
-* [Shell while循环详解 - zhouyuqiang - 博客园](https://www.cnblogs.com/qiangyuzhou/p/10806851.html)
-* [十二、Shell之for循环 - yaowx - 博客园](https://www.cnblogs.com/yaokaka/p/13813543.html)
-
 ---
 
 ## <span span id="shell_function">函数</span>
@@ -815,7 +780,7 @@ function 函数名(){
 
 > [!info] 语法解释
 > 
-> 跟 [Javascript](../JS/JS_Note.md) 等语言很像。
+> 跟 [Javascript](../../JS/JS_Note.md) 等语言很像。
 
 ### <span id="shell_function_parameter">参数</span>
 
@@ -921,11 +886,6 @@ r_arr=($an_arr)
 echo ${r_arr[@]}
 ```
 
-### 相关资料
-
-* [shell脚本——如何获取函数的返回值](https://blog.csdn.net/qq_31598113/article/details/80611480)
-* [Shell函数（函数定义、函数变量、函数调用、函数传参、函数返回值、获取函数返回值）](https://blog.csdn.net/xhaimail/article/details/103208901) 
-
 ---
 
 ## 常用命令
@@ -970,10 +930,6 @@ $ echo $?
 4
 ```
 
-### 相关资料
-
-* [shell 命令之：getopt - 法杰拉 - 博客园](https://www.cnblogs.com/hit-joseph/p/12060376.html)
-
 ---
 
 ## 相关工具
@@ -992,7 +948,7 @@ pacman -S shellcheck
 
 [shfmt](https://github.com/mvdan/sh) 是一款 shell 脚本格式化工具。
 
-这工具可以与多款 [文本编辑器](../Editors/Editors_Note.md) 的 shell 格式化插件配合使用。
+这工具可以与多款 [文本编辑器](../../Editors/Editors_Note.md) 的 shell 格式化插件配合使用。
 
 > [!info] 
 > 
@@ -1013,13 +969,6 @@ shfmt -l -w script.sh
 
 Google 风格：[Style guides for Google-originated open-source projects](https://google.github.io/styleguide/shellguide.html#indentation)
 
-> [!note] 相关资料
-> * [如何在 Linux 中使用 Shfmt 格式化 Shell 程序 – Digitalixy.com](https://digitalixy.com/linux/505871.html)
-> * [使用 shfmt 更好地格式化 Shell 脚本 - Linux迷](https://www.linuxmi.com/shfmt-format-shell.html)
-> * [Shell 代码规范：ShellCheck 与 shfmt 自动检查 - 知乎](https://zhuanlan.zhihu.com/p/408651010)
-> * [如何在 Linux 中使用 Shfmt 格式化 Shell 程序 – Dbigr.com](https://dbigr.com/article/481199/) 
-> * [格式化 Shell 脚本利器，轻松理解复杂代码-编写shell脚本的工具](https://www.51cto.com/article/705054.html)
-
 ### json 相关工具
 
  #json
@@ -1030,7 +979,7 @@ shell 下有多款 json 小工具：
 * `JSON.sh`、`jsonv.sh`：shell 脚本，能在 bash、zsh 等中解析 JSON。
 * `JSON.awk`：JSON 解析器 awk 脚本。
 * `json.tool`：python 模块。
-* `undercore-cli`：基于 [NodeJS](../Node/NodeJS_Note.md) 或 [JS](../JS/JS_Note.md) 的 json 工具。
+* `undercore-cli`：基于 [NodeJS](../../Node/NodeJS_Note.md) 或 [JS](../../JS/JS_Note.md) 的 json 工具。
 
 #### jq
 
@@ -1071,27 +1020,6 @@ curl http://hub-mirror.c.163.com/v2/library/${image}/tags/list | jq --arg tstr $
 > * `jq --arg` 是定义变量的选项
 > * `jq --arg tstr $tagstr`： `tstr` 为形参变量，是 jq 内部使用；而 `$tagstr` 是实参，外部传进来的。要使用形参时，使用 `$` 打头，跟普通 shell 变量使用一致。
 
-#### 相关资料
-
-* [如何用 Linux 命令行工具解析和格式化输出 JSON - 知乎](https://zhuanlan.zhihu.com/p/77177160)
-* [Shell：如何解析json - 知乎](https://zhuanlan.zhihu.com/p/675809200)
-* [Linux 命令行工具之 jq 最佳实践 - 知乎](https://zhuanlan.zhihu.com/p/606945462)
-* [Linux jq 命令讲解与实战操作（json字符串解析工具）- 博客园](https://www.cnblogs.com/liugp/p/17613011.html)
-* [jq manual](https://jqlang.github.io/jq/manual/)
-* [Linux shell jq工具操作文档（jq --help使用示例）-CSDN博客](https://blog.csdn.net/Dontla/article/details/135473677)
-
----
-
-## 视频清单
-
-* [2023年最通俗易懂的Shell教程](https://www.bilibili.com/video/BV1Tu411W7Up)
-* [2023年最新Shell自动化开发全套顶级天花板教程](https://www.bilibili.com/video/BV1494y1i7ca)
-* [Shell脚本从入门到实战](https://www.bilibili.com/video/BV1k94y1W7cJ)
-* [B站第一的Shell脚本的学习方法，每天只需30分钟让你效率保障99倍](https://www.bilibili.com/video/BV1sT4y1b7si)
-* [2024年最新Shell脚本顶级天花板教程，血赚！](https://www.bilibili.com/video/BV17S421P7fa)
-* [Linux的第4个剑客，使用jq命令处理json](https://www.bilibili.com/video/BV1Dj421R7fr)
-* [279个拿来就能用的shell脚本 助你秒变Linux高手](https://www.bilibili.com/video/BV1vM4m197ZT)
-
 ---
 
 ## 相关笔记及资料
@@ -1115,25 +1043,13 @@ curl http://hub-mirror.c.163.com/v2/library/${image}/tags/list | jq --arg tstr $
 * [shell echo 显示颜色 - 知乎](https://zhuanlan.zhihu.com/p/181609730)
 * [实现shell脚本中的转圈、进度条等一些效果 · 艾莉亚的猫](https://yangtze736.github.io/%E6%8A%80%E6%9C%AF/2018/05/02/shell-tips/)
 
-### 杂项资料
-
-* [执行Shell脚本的三种方式 - 掘金](https://juejin.cn/post/7087583630314176526)
-* [Shell脚本调用另一个脚本的三种方法](https://blog.51cto.com/u_15060461/4074877)
-* [sh命令 – shell命令语言解释器 – Linux命令大全(手册)](https://www.linuxcool.com/sh)
-* [【Linux篇】Shell脚本语法 - 掘金](https://juejin.cn/post/7241020073480994872)
-
-#### 读取文件
-
-* [在Shell脚本中逐行读取文件的命令方法-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1910386)
-* [shell逐行读取文件的坑 | 守望的个人博客](https://www.yanbinghu.com/2021/06/05/57932.html)
-* [一文搞定shell文件读取的所有用法 - 掘金](https://juejin.cn/post/7251786381483573303)
-* [Shell脚本循环读取文件中每一行，可以逐行读取 - 掘金](https://juejin.cn/post/6949498425582829581)
-
 ---
 
 ## 其他笔记
 
 * [Shell 视频清单](Shell_Videos.md)
+* [Shell 资料清单](Shell_Material.md)
+* [Shell 示例](Shell_Example.md)
 * [Linux 笔记](Linux_Note.md)
 * [Linux 视频清单](Linux_Videos.md)
 

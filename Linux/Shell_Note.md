@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2024-08-10 04:12:19
+modified: 2024-08-10 12:20:52
 ---
 
 # Shell 笔记
@@ -470,7 +470,22 @@ array_name+=(value1 value2 ... valueN)
 ```
 > [!important] 
 > 
-> 待添加元素必须用“()”包围起来，并且多个元素用空格分隔
+> 待添加元素必须用 `()` 包围起来，并且多个元素用空格分隔
+> 
+>
+> `()` 对于数组而言，是**构建数组的关键**。如获取一相函数返回的数组，如果没有 `()`，将被 Shell 当成字符串处理，这时使用 `${#array[@]}` 来获取数组长度将只会是 `1`，因为虽然函数使用 `echo ${array[@]}` 返回了一个数组，但接收方会将这货当成一个字符串处理，因为 Shell 中实际都是字符，因为 Shell 或 [Linux](Linux_Note.md) 大部分工具，实质是都是针对处理文本而生的，所以字符或字符串才是其本质。
+> 
+> ```shell
+> function test1(){
+> 	local array1=(2 5 22 32 18)
+> 	echo ${array1[@]}
+> }
+> # 获取返回值次构建为数组
+> r_arr=($(test1))
+>
+> echo ${#r_arr[@]}
+> ```
+> 
 
 #### 4. 函数中的数组使用
 
@@ -543,6 +558,8 @@ fi
 
 ### 数组相关资料
 
+* [Shell脚本之数组 - 风夏呀 - 博客园](https://www.cnblogs.com/fengxia6/p/16839351.html)
+* [shell函数数组](https://blog.51cto.com/u_15381682/4907258)
 * [shell 数组与函数之间的传参 - 知己一语 - 博客园](https://www.cnblogs.com/zhijiyiyu/p/15038939.html)
 * [shell 数组和算法 - YhtWeirdo - 博客园](https://www.cnblogs.com/yhtweirdo/p/15036737.html)
 * [Shell——数组 - peiqy - 博客园](https://www.cnblogs.com/peiqingyi/p/15039051.html)
@@ -552,6 +569,9 @@ fi
 * [Shell 数组使用（ 及 @ 跟 \* 的区别） - 掘金](https://juejin.cn/post/7054806534487801886)
 * [软件开发|Bash 基础知识系列 #5：在 Bash 中使用数组](https://linux.cn/article-16016-1.html)
 * [shell中文件读取存入数组后数组长度为0的问题与解决方法\_shell bash 变量数组为0-CSDN博客](https://blog.csdn.net/inrgihc/article/details/105764952)
+* [shell 数组与函数之间的传参 - 知己一语 - 博客园](https://www.cnblogs.com/zhijiyiyu/p/15038939.html)
+* [第三章、shell变量和数组 - lucky\_light - 博客园](https://www.cnblogs.com/lucky-light/p/16413925.html#_label3_3)
+* [shell 向函数传递数组和从函数返回数组的一个细节问题\_shell 函数返回数组-CSDN博客](https://blog.csdn.net/guizaijianchic/article/details/78012179)
 
 ---
 
@@ -1100,6 +1120,14 @@ curl http://hub-mirror.c.163.com/v2/library/${image}/tags/list | jq --arg tstr $
 * [执行Shell脚本的三种方式 - 掘金](https://juejin.cn/post/7087583630314176526)
 * [Shell脚本调用另一个脚本的三种方法](https://blog.51cto.com/u_15060461/4074877)
 * [sh命令 – shell命令语言解释器 – Linux命令大全(手册)](https://www.linuxcool.com/sh)
+* [【Linux篇】Shell脚本语法 - 掘金](https://juejin.cn/post/7241020073480994872)
+
+#### 读取文件
+
+* [在Shell脚本中逐行读取文件的命令方法-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1910386)
+* [shell逐行读取文件的坑 | 守望的个人博客](https://www.yanbinghu.com/2021/06/05/57932.html)
+* [一文搞定shell文件读取的所有用法 - 掘金](https://juejin.cn/post/7251786381483573303)
+* [Shell脚本循环读取文件中每一行，可以逐行读取 - 掘金](https://juejin.cn/post/6949498425582829581)
 
 ---
 

@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2024-08-09 12:41:00
+modified: 2024-08-13 03:41:08
 
 ---
 
@@ -401,6 +401,19 @@ Runtime 名称列表：[runtime name](https://github.com/redhat-developer/vscode
 "jdk.jdkhome": "/home/silascript/.sdkman/candidates/java/current",
 ```
 
+#### Project Manager for Java
+
+[Project Manager for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-dependency) [![Project Manager for Java Repo](https://img.shields.io/github/stars/Microsoft/vscode-java-dependency
+)](https://github.com/Microsoft/vscode-java-dependency) 微软出的 Java 项目管理插件。
+
+![Project Manager for Java screenshot 1](https://raw.githubusercontent.com/Microsoft/vscode-java-dependency/main/images/project-explorer.png)
+
+![Project Manager for Java screenshot 2](https://raw.githubusercontent.com/Microsoft/vscode-java-dependency/main/images/create-project.png)
+
+![Project Manager for Java screenshot 3](https://raw.githubusercontent.com/Microsoft/vscode-java-dependency/main/images/manage-dependencies.gif)
+
+此插件需要依赖 [RedHat-Java](#RedHat-Java) 插件。
+
 #### Maven for Java
 
 [Maven for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-maven)[![Maven for Java](https://img.shields.io/github/stars/microsoft/vscode-maven
@@ -409,7 +422,7 @@ Runtime 名称列表：[runtime name](https://github.com/redhat-developer/vscode
 #### Debugger for Java
 
 [Debugger for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug) [![Debugger for Java Repo](https://img.shields.io/github/stars/Microsoft/java-debug
-)](https://github.com/Microsoft/java-debug) 是一个 微软开发的 [Java](../Java/Java_Note.md)debug 插件。
+)](https://github.com/Microsoft/java-debug) 是一个 微软开发的 [Java](../Java/Java_Note.md) 运行及 debug 插件。
 
 装了这插件后，在代码页面，可执行方法（如 `main` 方法）上会显示 `Run|Debug` 字样，可以快捷运行或 Debug 方法。
 > [!tip] 
@@ -437,6 +450,15 @@ Runtime 名称列表：[runtime name](https://github.com/redhat-developer/vscode
 * [Spring Initializr java](#Spring%20Initializr%20java)
 * [Spring Boot Dashboard](#Spring%20Boot%20Dashboard)
 * [Spring Boot Tools](#Spring%20Boot%20Tools)
+
+#### Spring Boot Tools
+
+[Spring Boot Tools](https://marketplace.visualstudio.com/items?itemName=vmware.vscode-spring-boot)  [![Spring Boot Tools Repo](https://img.shields.io/github/stars/spring-projects/sts4
+)](https://github.com/spring-projects/sts4) 是一个 [SpringBoot](../Java/Spring/SpringBoot_Note.md)**语言服务器**（[LSP](../Protocols/LSP_Note.md)）插件。
+
+> [!important] 
+> 
+> 这个插件是基于 [RedHat-Java](#RedHat-Java) 插件的。
 
 #### Spring Initializr java
 
@@ -473,12 +495,22 @@ Runtime 名称列表：[runtime name](https://github.com/redhat-developer/vscode
 > 
 > Spring Boot Dashboard 依赖 [Debugger for Java](#Debugger%20for%20Java) 及 [Spring Boot Tools](#Spring%20Boot%20Tools) 插件。
 
-#### Spring Boot Tools
+#### Gradle for java
 
-[Spring Boot Tools](https://marketplace.visualstudio.com/items?itemName=vmware.vscode-spring-boot)  [![Spring Boot Tools Repo](https://img.shields.io/github/stars/spring-projects/sts4
-)](https://github.com/spring-projects/sts4) 是一个 [SpringBoot](../Java/Spring/SpringBoot_Note.md)**语言服务器**（[LSP](../Protocols/LSP_Note.md)）插件。
+[Gradle for java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-gradle) [![Gradle for java Repo](https://img.shields.io/github/stars/microsoft/vscode-gradle
+)](https://github.com/microsoft/vscode-gradle) 同样是微软出的 Gradle 插件。
 
-这个插件是基于 [RedHat-Java](#RedHat-Java) 插件的，所以
+这个插件兼容 [RedHat-Java](#RedHat-Java) 插件。
+
+#### XML Language Support by Red Hat
+
+[XML Language Support by Red Hat](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-xml)  [![Redhat VSCode XML Repo](https://img.shields.io/github/stars/redhat-developer/vscode-xml
+)](https://github.com/redhat-developer/vscode-xml)Redhat 出的 XML 插件，新版本不再需要依赖 [Java](../Java/Java_Note.md) 了。 
+
+#### MybatisX
+
+[MybatisX](https://marketplace.visualstudio.com/items?itemName=yangbaopan.vscode-java-ibatisx) [![MybatisX Repo](https://img.shields.io/github/stars/Carson-yy/vscode-mybatis
+)](https://github.com/Carson-yy/vscode-mybatis)
 
 ---
 

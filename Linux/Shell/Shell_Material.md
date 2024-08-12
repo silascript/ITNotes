@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2024-08-11 03:01:29
+modified: 2024-08-11 21:13:14
 ---
 
 # Shell 资料清单
@@ -65,6 +65,12 @@ modified: 2024-08-11 03:01:29
 
 * [shell脚本——如何获取函数的返回值](https://blog.csdn.net/qq_31598113/article/details/80611480)
 * [Shell函数（函数定义、函数变量、函数调用、函数传参、函数返回值、获取函数返回值）](https://blog.csdn.net/xhaimail/article/details/103208901) 
+
+### sleep 和 wait
+
+* [shell wait 和sleep 对比 - CSDN博客](https://blog.csdn.net/qq_31382921/article/details/79817072)
+* [Linux学习笔记：shell sleep睡眠 - Hider1214 - 博客园](https://www.cnblogs.com/hider/p/17048231.html)
+* [Linux Shell中的延时函数 sleep_蓝白天际线-华为云开发者空间](https://huaweicloud.csdn.net/635617d7d3efff3090b59ddf.html)
 
 ## 颜色
 

@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2024-08-13 12:14:15
+modified: 2024-08-13 18:58:57
 
 ---
 
@@ -571,11 +571,20 @@ clang++ --version
 clangd --version
 ```
 
-安装 VSCode 相关插件：
+#### VSCode C/C++ 相关插件
 
-* [clangd](https://open-vsx.org/extension/llvm-vs-code-extensions/vscode-clangd) [![Clangd Repo](https://img.shields.io/github/stars/clangd/vscode-clangd?style=social)](https://github.com/clangd/vscode-clangd) 如果要使用 Clang 来作语言服务，这个插件是必装的。
+##### Clangd
 
-* [code runner](https://open-vsx.org/extension/formulahendry/code-runner) [![Code Runner Repo](https://img.shields.io/github/stars/formulahendry/vscode-code-runner?style=social)](https://github.com/formulahendry/vscode-code-runner) 这个是代码运行插件，能跑 C、C++、Java、Python 等众多语言。
+[clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd) [![Clangd Repo](https://img.shields.io/github/stars/clangd/vscode-clangd?style=social)](https://github.com/clangd/vscode-clangd) 如果要使用 Clang 来作语言服务，这个插件是必装的。
+
+##### Code Runner
+
+[code runner](https://open-vsx.org/extension/formulahendry/code-runner) [![Code Runner Repo](https://img.shields.io/github/stars/formulahendry/vscode-code-runner?style=social)](https://github.com/formulahendry/vscode-code-runner) 这个是代码运行插件，能跑 [C](../C/C_Note.md)、[C++](../C/CPP_Note.md)、[Java](../Java/Java_Note.md)、[Python](../Python/Python_Note.md) 等众多语言。
+
+##### CMake
+
+[CMake](https://marketplace.visualstudio.com/items?itemName=twxs.cmake) [![CMake Repo](https://img.shields.io/github/stars/twxs/vs.language.cmake
+)](https://github.com/twxs/vs.language.cmake) CMake 插件。
 
 ---
 
@@ -663,12 +672,7 @@ VSCode 已经内置了大名鼎鼎的 [Emmet](https://emmet.io) （[Emmet Wiki](
 
 ## 相关资料
 
-* [在Visual Studio Code中使用 Code Runner 编译C/C++程序 - NaCl技术分享](https://nacldragon.top/2023/mingw-VSCode/)
-* [VSCode中插件Code Spell Checker - IT皮皮蟹 - 博客园](https://www.cnblogs.com/AAFlyingFish/p/14559446.html)
-* [相见恨晚！解决很难发现的 bug ——单词拼写错误，一款 vscode 插件 code spell checker - 掘金](https://juejin.cn/post/7370008254720639015)
-* [Oracle发布支持Vscode的Java插件 - 极道](https://www.jdon.com/69168.html)
-* [vscode开发java环境配置，很细 - 掘金](https://juejin.cn/post/7386916905008054287)
-* [vscode推荐的Java插件](https://blog.51cto.com/u_16213343/7450444)
+* [VSCode 资料清单](VSCode_Material.md)
 
 ---
 

@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2024-08-13 03:41:08
+modified: 2024-08-13 12:14:15
 
 ---
 
@@ -354,6 +354,23 @@ VSCodium 原装只内置了 `Python Language Basics`，这个内置插件只有�
 * [jupyter](https://open-vsx.org/extension/ms-toolsai/jupyter) 
 * [jupyter-keymap](https://open-vsx.org/extension/ms-toolsai/jupyter-keymap) 
 * [jupyter-renderers](https://open-vsx.org/extension/ms-toolsai/jupyter-renderers)
+
+#### VSCode-Python
+
+[VSCode-Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) [![VSCode-Python Repo](https://img.shields.io/github/stars/Microsoft/vscode-python
+)](https://github.com/Microsoft/vscode-python) 是 [Python](../Python/Python_Note.md) 主要插件。
+
+#### Python Debugger
+
+[Python Debugger](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy) [![Python Debugger Repo](https://img.shields.io/github/stars/microsoft/vscode-python-debugger
+)](https://github.com/microsoft/vscode-python-debugger) [Python](../Python/Python_Note.md) Debug 插件。
+
+#### 
+
+[Python Environment Manager](https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-environment-manager) 是 [Python环境](../Python/Python_Note.md#python_virtualenvironments) [![Python Environment Manager Repo](https://img.shields.io/github/stars/DonJayamanne/vscode-python-manager
+)](https://github.com/DonJayamanne/vscode-python-manager) 管理插件。
+
+![Python Environment Manager screenshot 1](https://raw.githubusercontent.com/DonJayamanne/vscode-python-manager/environmentManager/resources/demo.gif)
 
 ---
 

@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-13 18:49:29
-modified: 2024-08-16 00:32:45
+modified: 2024-08-16 03:21:05
 ---
 
 # VSCode 资料清单
@@ -32,6 +32,7 @@ modified: 2024-08-16 00:32:45
 * [VSCode中插件Code Spell Checker - IT皮皮蟹 - 博客园](https://www.cnblogs.com/AAFlyingFish/p/14559446.html)
 * [相见恨晚！解决很难发现的 bug ——单词拼写错误，一款 vscode 插件 code spell checker - 掘金](https://juejin.cn/post/7370008254720639015)
 * [vscode更改代码提示快捷键-CSDN博客](https://blog.csdn.net/qq_36623595/article/details/109289530)
+* [VSCode的全局配置与项目单独配置VSCode代码格式化插件及配置 格式化插件 Prettier - Code for - 掘金](https://juejin.cn/post/7290740395913691177)
 
 ---
 

@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2024-08-16 00:24:00
+modified: 2024-08-16 03:45:36
 
 ---
 
@@ -645,7 +645,7 @@ VSCode 已经内置了大名鼎鼎的 [Emmet](https://emmet.io) （[Emmet Wiki](
 
 #### <span id="vscode_extensions_frontend_vetur">Vetur</span>
 
-[Vetur](https://marketplace.visualstudio.com/items?itemName=Vue.volar) [![Vetur Repo](https://img.shields.io/github/stars/vuejs/vetur?style=social)](https://github.com/vuejs/vetur) 是 Vue 的插件。
+[Vetur](https://marketplace.visualstudio.com/items?itemName=Vue.volar) [![Vetur Repo](https://img.shields.io/github/stars/vuejs/vetur?style=social)](https://github.com/vuejs/vetur) [ Vue.js官方](https://vuejs.org/) 出品的是 VSCode 的 Vue 插件。
 
 这插件包含两个组件：
 
@@ -690,7 +690,10 @@ VSCode 已经内置了大名鼎鼎的 [Emmet](https://emmet.io) （[Emmet Wiki](
 在 [VSCode](VSCode_Note.md) 也有着相应的插件：[prettier-vscode](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) [![prettier-vscode repo](https://img.shields.io/github/stars/prettier/prettier-vscode
 )](https://github.com/prettier/prettier-vscode)。
 
-装完这插件后，默认情况使用这插件格式化时，如果项目中没有相应的配置文件，会搜寻用户目录下的 [全局配置](../Format/Prettier_Note.md#全局配置) 文件，即 `.prettierrc` 或 `.prettierrc.json`。
+装完这插件后，默认情况使用这插件格式化时，如果项目中没有相应的配置文件，会搜寻用户目录下的 [全局配置](../Format/Prettier_Note.md#全局配置) 文件，即 `.prettierrc` 或 `.prettier.json`。
+> [!tip] 
+> 
+> `.prettierrc` 及 `.prettier.json` 的名字必须是 `prettier` 打头的，不然 VSCode 认不出这全局配置，就只能用 VSCode [Prettier插件](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) 的配置。
 
 ---
 

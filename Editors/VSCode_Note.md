@@ -5,7 +5,7 @@ tags:
   - vscode
   - vscodium
 created: 2023-01-30 11:19:11
-modified: 2024-08-09 12:46:29
+modified: 2024-08-16 00:13:48
 ---
 # VSCode 笔记
 
@@ -363,5 +363,7 @@ code --install-extension publisher.extension
 ## 其他相关笔记
 
 * [VSCode 插件笔记](VSCode_Extensions_Note.md)
+* [VSCode 资料清单](VSCode_Material.md)
+* [VSCode 视频清单](VSCode_Videos.md)
 * [文本编辑器笔记](Editors_Note.md)
 

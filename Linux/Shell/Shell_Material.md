@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2024-08-15 18:09:04
+modified: 2024-08-15 20:30:49
 ---
 
 # Shell 资料清单
@@ -51,6 +51,7 @@ modified: 2024-08-15 18:09:04
 * [Shell脚本之数组 - 风夏呀 - 博客园](https://www.cnblogs.com/fengxia6/p/16839351.html)
 * [shell函数数组](https://blog.51cto.com/u_15381682/4907258)
 * [Shell数组的增删改查 - 唐胜伟 - 博客园](https://www.cnblogs.com/tangshengwei/p/5446315.html)
+* [Shell系列（38）- 数组操作→取值、遍历、替换、删除 - 葛老头 - 博客园](https://www.cnblogs.com/gltou/p/15130263.html)
 * [shell 判断字符串是否存在数组中 - CSDN博客](https://blog.csdn.net/m0_37886429/article/details/106545946)
 * [Bash数组-判断某个元素是否在数组内的几种方法 - That's\_it - 博客园](https://www.cnblogs.com/thatsit/p/bash-shu-zupan-duan-mou-ge-yuan-su-shi-fou-zai-shu.html)
 * [shell 判断某个元素是否在数组中，查看某个key是否存在 · GitHub](https://gist.github.com/likohank/5dec12b808d6b3577dd9d8b3bb6a22b5)

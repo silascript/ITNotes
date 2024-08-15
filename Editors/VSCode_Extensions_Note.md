@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2024-08-15 10:22:33
+modified: 2024-08-16 00:24:00
 
 ---
 
@@ -204,6 +204,17 @@ VSCode 除了能添加主题外，还能添加 Icon，这个图标一般应用�
 )](https://github.com/thang-nm/Catppuccin-Perfect-Icons) 是 [Catppuccin icons](#editors_vscode_extensions_theme_icon_catppuccin) 的衍生品。
 
 ![Catppuccin Perfect icons shotcut](https://raw.githubusercontent.com/thang-nm/Catppuccin-Perfect-Icons/main/assets/previews/mocha-icons@2x.png)
+
+---
+
+### <span id="vscode_extensions_colours">颜色增强</span>
+
+#### Rainbow CSV
+
+[Rainbow CSV](https://marketplace.visualstudio.com/items?itemName=mechatroner.rainbow-csv) [![Rainbow CSV Repo](https://img.shields.io/github/stars/mechatroner/vscode_rainbow_csv
+)](https://github.com/mechatroner/vscode_rainbow_csv) 用于给 CSV 文件上色的插件。
+
+![Rainbow CSV screenshot](https://i.imgur.com/ryjBI1R.png)
 
 ---
 
@@ -601,6 +612,26 @@ VSCode 已经内置了大名鼎鼎的 [Emmet](https://emmet.io) （[Emmet Wiki](
 
 ---
 
+#### <span id="vscode_extensions_frontend_CSS">CSS</span>
+
+##### <span id="vscode_extensions_frontend_CSS_CSSPeek">CSS Peek</span>
+
+[CSS Peek](https://marketplace.visualstudio.com/items?itemName=pranaygp.vscode-css-peek) [![CSS Peek Repo](https://img.shields.io/github/stars/pranaygp/vscode-css-peek
+)](https://github.com/pranaygp/vscode-css-peek) 是一个帮助前端开发者，在 [HTML](../Frontend/Html_Note.md) 和 [JavaScript](../JS/JS_Note.md) 文件快速导航和编辑外部样式表中定义的 [CSS样式](../Frontend/Css_Note.md) 定义的插件。
+
+![CSS Peek screenshot](https://github.com/pranaygp/vscode-css-peek/raw/master/readme/working.gif)
+
+##### <span id="vscode_extensions_frontend_CSS_support">HTML CSS Support</span>
+
+[HTML CSS Support](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css) [![HTML CSS Support Repo](https://img.shields.io/github/stars/ecmel/vscode-html-css
+)](https://github.com/ecmel/vscode-html-css) 是一个 CSS 的辅助插件，它能让开发者在 [HTML](../Frontend/Html_Note.md) 标签中 `id` 或 `class` 属性设置时，快速选择已在 [CSS](../Frontend/Css_Note.md) 样式文件中定义好的相关样式。
+
+```json
+"css.enabledLanguages": [
+	"html"
+]
+```
+
 #### <span id="vscode_extensions_frontend_LiveServer">LiveServer</span> 
 
 [LiveServer](https://open-vsx.org/extension/ritwickdey/LiveServer) [![LiveServer Repo](https://img.shields.io/github/stars/ritwickdey/vscode-live-server?style=social)](https://github.com/ritwickdey/vscode-live-server) 是让 VSCode 开启一个静态服务器，用于测试前端页面。
@@ -683,6 +714,8 @@ VSCode 已经内置了大名鼎鼎的 [Emmet](https://emmet.io) （[Emmet Wiki](
 ## <span id="vscode_about_notes">其他相关笔记</span>
 
 * [VSCode 笔记](VSCode_Note.md)
+* [VSCode 资料清单](VSCode_Material.md)
+* [VSCode 视频清单](VSCode_Videos.md)
 * [文本编辑器笔记](Editors_Note.md)
 * [Prettier 笔记](../Format/Prettier_Note.md)
 

@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2024-08-13 18:58:57
+modified: 2024-08-15 10:22:33
 
 ---
 
@@ -17,7 +17,10 @@ modified: 2024-08-13 18:58:57
 
 ## <span id="vscode_extensions">常用插件</span>
 
-以下插件都以 [Open-VSX](https://open-vsx.org) 市场的插件为例，微软那个 [Marketplace](https://marketplace.visualstudio.com/vscode) 的一样。
+有两个插件市场：
+
+ * [Open-VSX](https://open-vsx.org) 
+* [Marketplace](https://marketplace.visualstudio.com/vscode) 
 
 VSCode 或 VSCodium 新版本内置的功能已实现部分插件功能，所以网上部分插件推荐应该已经过时了。
 
@@ -130,13 +133,13 @@ Bookmarks 快捷键：
 
 #### <span id="vscode_extensions_git_githistory">Git History</span>
 
-[Git History](https://open-vsx.org/extension/donjayamanne/githistory) [![Git History Repository](https://img.shields.io/github/stars/DonJayamanne/gitHistoryVSCode?style=social)](https://github.com/DonJayamanne/gitHistoryVSCode) Git 历史插件。
+[Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory) [![Git History Repository](https://img.shields.io/github/stars/DonJayamanne/gitHistoryVSCode?style=social)](https://github.com/DonJayamanne/gitHistoryVSCode) Git 历史插件。
 
 此插件能查看提交历史。
 
 #### <span id="vscode_extensions_git_gitgraph">Git Graph</span>
 
-[Git-Graph](https://open-vsx.org/extension/mhutchie/git-graph) [![git graph Repository](https://img.shields.io/github/stars/mhutchie/vscode-git-graph?style=social)](https://github.com/mhutchie/vscode-git-graph.git) Git 提交记录图形化插件。
+[Git-Graph](https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph) [![git graph Repository](https://img.shields.io/github/stars/mhutchie/vscode-git-graph?style=social)](https://github.com/mhutchie/vscode-git-graph.git) Git 提交记录图形化插件。
 
 ---
 
@@ -220,7 +223,7 @@ vim 插件除了「模拟」了 vim 的基本功能外，还「模拟」了部�
 
 easymotion 更出名，因为就 easymotion 功能就大致说下常用的使用技巧。
 
-默认情况下，easymotion 快揵键都是 \<leader> 起头的，而默认 \<leader> 是 **\\**。而配合 vim 本身的 `j`、`k`、`h``l` 等就能实现行级、行内等方式跳转，这是对原生的 vim 移动的重要补充。
+默认情况下，easymotion 快揵键都是 \<leader> 起头的，而默认 \<leader> 是 **\\**。而配合 vim 本身的 `j`、`k`、`h`、`l` 等就能实现行级、行内等方式跳转，这是对原生的 vim 移动的重要补充。
 
 easymotion 常用功能列表：
 
@@ -229,7 +232,7 @@ easymotion 常用功能列表：
 | 行级向上跳转 |         \<leader>\<leader> k          |
 | 行级向下跳转 |         \<leader>\<leader> j          |
 |   行内向前   |         \<leader>\<leader> h          |
-|   行内向后   |         \<leader> \<leader> l         |
+|   行内向后   |         \<leader>\<leader> l          |
 | 按单词向后跳 |         \<leader>\<leader> w          |
 | 按单词向前跳 |         \<leader>\<leader> b          |
 |   搜索式跳   | \<leader>\<leader> s 输入要搜索的字符 |
@@ -611,7 +614,7 @@ VSCode 已经内置了大名鼎鼎的 [Emmet](https://emmet.io) （[Emmet Wiki](
 
 #### <span id="vscode_extensions_frontend_vetur">Vetur</span>
 
-[Vetur](https://open-vsx.org/extension/octref/vetur) [![Vetur Repo](https://img.shields.io/github/stars/vuejs/vetur?style=social)](https://github.com/vuejs/vetur) 是 Vue 的插件。
+[Vetur](https://marketplace.visualstudio.com/items?itemName=Vue.volar) [![Vetur Repo](https://img.shields.io/github/stars/vuejs/vetur?style=social)](https://github.com/vuejs/vetur) 是 Vue 的插件。
 
 这插件包含两个组件：
 
@@ -629,7 +632,8 @@ VSCode 已经内置了大名鼎鼎的 [Emmet](https://emmet.io) （[Emmet Wiki](
 
 #### <span id="vscode_extensions_frontend_open-in-default-browser">Open In Default Browser</span>
 
-[Open In Default Browser](https://github.com/peakchen90/vscode-open-in-default-browser) 是一个使用默认 [浏览器](../Browsers/Browser_Note.md) 打开页面的插件。
+ [Open In Default Browser](https://marketplace.visualstudio.com/items?itemName=peakchen90.open-html-in-browser#overview) [![Open In Default Browser Repo](https://img.shields.io/github/stars/peakchen90/vscode-open-in-default-browser
+)](https://github.com/peakchen90/vscode-open-in-default-browser) 是一个使用默认 [浏览器](../Browsers/Browser_Note.md) 打开页面的插件。
 
 ![open-in-default-browser screenshot](https://github.com/peakchen90/vscode-open-in-default-browser/raw/master/public/preview.gif)
 

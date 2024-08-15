@@ -6,7 +6,7 @@ tags:
   - video
   - list
 created: 2023-05-26 11:00:13
-modified: 2024-07-26 02:15:18
+modified: 2024-08-14 21:49:45
 ---
 
 # Javascript 视频清单
@@ -53,6 +53,10 @@ modified: 2024-07-26 02:15:18
 ---
 
 ## 各种主题
+
+### 模块化
+
+* [一小时速通JavaScript模块化，涵盖CommonJS与ES6模块化](https://www.bilibili.com/video/BV13W42197jR)
 
 ### 异步
 

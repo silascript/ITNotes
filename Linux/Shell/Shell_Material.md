@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2024-08-11 21:13:14
+modified: 2024-08-15 18:09:04
 ---
 
 # Shell 资料清单
@@ -26,19 +26,34 @@ modified: 2024-08-11 21:13:14
 
 ## 语法
 
+### 布尔值
+
+* [Linux教程 - 在Shell脚本中声明和使用布尔变量示例-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1770351)
+* [如何在Bash中使用布尔值布尔值可以包含两种类型的数据。Bash不支持布尔值，但任何bash变量都可以包含0或 "真"和 - 掘金](https://juejin.cn/post/7126514931008012296)
+
 ### 条件判断
 
 * [Shell脚本中if条件判断的写法实例 - root-123 - 博客园](https://www.cnblogs.com/root-123/p/16665299.html)
 
 ### 循环
 
+#### while
+
 * [Shell while循环详解 - zhouyuqiang - 博客园](https://www.cnblogs.com/qiangyuzhou/p/10806851.html)
+* [Shell while循环详解 - zhouyuqiang - 博客园](https://www.cnblogs.com/qiangyuzhou/p/10806851.html)
+
+#### for
+
 * [十二、Shell之for循环 - yaowx - 博客园](https://www.cnblogs.com/yaokaka/p/13813543.html)
 
 ### 数组
 
 * [Shell脚本之数组 - 风夏呀 - 博客园](https://www.cnblogs.com/fengxia6/p/16839351.html)
 * [shell函数数组](https://blog.51cto.com/u_15381682/4907258)
+* [Shell数组的增删改查 - 唐胜伟 - 博客园](https://www.cnblogs.com/tangshengwei/p/5446315.html)
+* [shell 判断字符串是否存在数组中 - CSDN博客](https://blog.csdn.net/m0_37886429/article/details/106545946)
+* [Bash数组-判断某个元素是否在数组内的几种方法 - That's\_it - 博客园](https://www.cnblogs.com/thatsit/p/bash-shu-zupan-duan-mou-ge-yuan-su-shi-fou-zai-shu.html)
+* [shell 判断某个元素是否在数组中，查看某个key是否存在 · GitHub](https://gist.github.com/likohank/5dec12b808d6b3577dd9d8b3bb6a22b5)
 * [shell 数组与函数之间的传参 - 知己一语 - 博客园](https://www.cnblogs.com/zhijiyiyu/p/15038939.html)
 * [shell 数组和算法 - YhtWeirdo - 博客园](https://www.cnblogs.com/yhtweirdo/p/15036737.html)
 * [Shell——数组 - peiqy - 博客园](https://www.cnblogs.com/peiqingyi/p/15039051.html)
@@ -52,7 +67,22 @@ modified: 2024-08-11 21:13:14
 * [第三章、shell变量和数组 - lucky\_light - 博客园](https://www.cnblogs.com/lucky-light/p/16413925.html#_label3_3)
 * [shell 向函数传递数组和从函数返回数组的一个细节问题\_shell 函数返回数组-CSDN博客](https://blog.csdn.net/guizaijianchic/article/details/78012179)
 
-### 读取文件
+#### 遍历数组
+
+* [shell 数组遍历的3种方法 - cnblogUn - 博客园](https://www.cnblogs.com/Unna/p/16053846.html)
+
+### 字符串
+
+* [02 字符串处理之常用操作 — ZshGuide latest 文档](https://zshguide.readthedocs.io/zh/latest/content/ch02.html)
+
+### 函数
+
+* [shell脚本——如何获取函数的返回值](https://blog.csdn.net/qq_31598113/article/details/80611480)
+* [Shell函数（函数定义、函数变量、函数调用、函数传参、函数返回值、获取函数返回值）](https://blog.csdn.net/xhaimail/article/details/103208901) 
+
+### 文件路径
+
+#### 读取文件
 
 * [在Shell脚本中逐行读取文件的命令方法-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1910386)
 * [shell逐行读取文件的坑 | 守望的个人博客](https://www.yanbinghu.com/2021/06/05/57932.html)
@@ -61,10 +91,11 @@ modified: 2024-08-11 21:13:14
 * [SHELL 读取文件的每一行内容并输出 | 菜鸟教程](https://www.runoob.com/w3cnote/shell-read-line.html)
 * [shell读取文件](https://blog.csdn.net/qq_26620783/article/details/87430195)
 
-### 函数
+#### 路径
 
-* [shell脚本——如何获取函数的返回值](https://blog.csdn.net/qq_31598113/article/details/80611480)
-* [Shell函数（函数定义、函数变量、函数调用、函数传参、函数返回值、获取函数返回值）](https://blog.csdn.net/xhaimail/article/details/103208901) 
+* [Linux: Shell脚本中处理文件路径参数,兼容相对路径与绝对路径在编写Shell脚本时，处理文件路径参数是一个常 - 掘金](https://juejin.cn/post/7374986809476382731)
+* [相对路径 与 绝对路径之间的转换](https://tiandezhen.wordpress.com/2010/01/26/%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84-%E4%B8%8E-%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2/)
+* [使用Bash将给定的当前目录的绝对路径转换为相对路径-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/ask/sof/29631/answer/102124272)
 
 ### sleep 和 wait
 

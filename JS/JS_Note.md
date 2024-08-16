@@ -1,29 +1,34 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - javascript
   - js
+  - es
+  - ecmascript
 created: 2023-01-31 11:31:14
-modified: 2023-07-12 21:02:56
+modified: 2024-08-16 10:38:13
 ---
+
 # JavaScript 笔记
 
 ## 目录
 
-* [基础语法](#jsn_basic)
-  * [变量](#jsn_basic_variable)
-* [数据类型](#jsn_datatype)
-  * [Undefined](#jsn_datatype_undefined)
-  * [Null](#jsn_datatype_null)
-  * [Boolean](#jsn_datatype_boolean)
-  * [Number](#jsn_datatype_number)
-    * [值的范围](#jsn_datatype_number_range)
-    * [NaN](#jsn_datatype_number_NaN)
-* [面向对象](#jsn_oop)
+* [语法](#语法)
+	* [基础语法](#jsn_basic)
+	  * [变量](#jsn_basic_variable)
+	* [数据类型](#jsn_datatype)
+	  * [Undefined](#jsn_datatype_undefined)
+	  * [Null](#jsn_datatype_null)
+	  * [Boolean](#jsn_datatype_boolean)
+	  * [Number](#jsn_datatype_number)
+	    * [值的范围](#jsn_datatype_number_range)
+	    * [NaN](#jsn_datatype_number_NaN)
+	* [面向对象](#jsn_oop)
 * [DOM 笔记](./DOM_Note.md)
 
 ---
+
+## 语法
 
 ### <span id="jsn_basic">基础语法</span>
 
@@ -172,8 +177,33 @@ ECMAScript 提供了 **isNaN()** 函数，用来判断传入的参数是否「�
 
 ---
 
+## ESLint
+
+[ESLint](https://eslint.org) 是 JavaScript 的一个 Linter 工具，即「代码检查工具」。
+
+### 安装
+
+全局安装：
+
+```shell
+npm install eslint --global
+```
+
+### 相关文档
+
+* [Getting Started with ESLint](https://eslint.org/docs/latest/use/getting-started)
+* [配置文件 - ESLint 中文文档](https://nodejs.cn/eslint/configuring/configuration-files/)
+
+---
+
+## 相关笔记
+
+* [JS 资料清单](JS_Material.md)
+* [JS 视频清单](JS_Videos.md)
+
+---
+
 ## <span id="jsn_aboutlinks">相关链接</span>
 
 * [JavaScript 文档 - MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)
-* [JS视频清单](./JS_Videos.md)
 

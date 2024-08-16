@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2024-08-16 03:45:36
+modified: 2024-08-16 11:19:59
 
 ---
 
@@ -599,6 +599,31 @@ clangd --version
 
 [CMake](https://marketplace.visualstudio.com/items?itemName=twxs.cmake) [![CMake Repo](https://img.shields.io/github/stars/twxs/vs.language.cmake
 )](https://github.com/twxs/vs.language.cmake) CMake 插件。
+
+---
+
+### <span id="vscode_extensions_golang">Go 语言开发环境</span>
+
+[Go for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=golang.Go) [![Go for VSCode Repo](https://img.shields.io/github/stars/golang/vscode-go
+)](https://github.com/golang/vscode-go) 这是 [Golang 官方](https://go.dev/) 出品的插件。
+
+---
+
+### <span id="vscode_extensions_php">PHP 开发环境</span>
+
+#### PHP Intelephense
+
+[PHP Intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client) [![PHP Intelephense Repo](https://img.shields.io/github/stars/bmewburn/vscode-intelephense
+)](https://github.com/bmewburn/vscode-intelephense) [PHP](../PHP/PHP_Note.md) 的代码插件。
+
+##### 配置
+
+最重要的就是配置 `php.validate.executablePath` 这个属性，这是指定 [PHP](../PHP/PHP_Note.md) 的可执行文件路径，要给出「绝对路径」。
+
+#### PHP Debug
+
+[PHP Debug](https://marketplace.visualstudio.com/items?itemName=xdebug.php-debug) [![PHP Debug Repo](https://img.shields.io/github/stars/xdebug/vscode-php-debug
+)](https://github.com/xdebug/vscode-php-debug) 是 [PHP](../PHP/PHP_Note.md) 的 Debug 插件，PHP 得开启 `xdebug` 功能。
 
 ---
 

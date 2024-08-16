@@ -4,7 +4,7 @@ tags:
   - PL
   - php
 created: 2023-09-21 23:13:13
-modified: 2024-07-28 12:20:00
+modified: 2024-08-16 11:28:11
 ---
 
 # PHP 笔记
@@ -60,6 +60,12 @@ PECL 是 PHP 笔记的标准扩展，可以补充实际开发中所需的功能�
 
 * [安装PHP的GD扩展 - 易文杰 - 博客园](https://www.cnblogs.com/ywjcqq/p/14717328.html)
 * [GD 安装与配置 - Manual](https://www.php.net/manual/zh/image.installation.php)
+
+---
+
+## 相关资料
+
+* [Phpstorm Xdebug 远程调试代码 – Zgao's blog](https://zgao.top/phpstorm-xdebug-%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E4%BB%A3%E7%A0%81/)
 
 ---
 

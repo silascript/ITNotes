@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2024-07-27 04:09:13
+modified: 2024-08-16 11:49:17
 ---
 
 # Docker 示例
@@ -252,6 +252,10 @@ VSCode [intelephense](https://marketplace.visualstudio.com/items?itemName=bmewbu
 > [!tip] 
 > 
 > ​`php -S`​ 这是指定 ip 及端口，注意示例中的 **172.21.0.30**​ 为当前容器的 ip，不能使用 **localhost**​ 来替代，不然宿主环境下是访问不了的。
+>
+>> [!tip] 
+>> 这个 IP 地址，可以通过 [查询容器 IP](Docker_Note.md#查询容器%20IP) 得到。
+>> 
 > 
 > `-t`​ 是指定 PHP 发布页面的目录路径，如果不指定，访问时是找不到相应页面的。
 > 
@@ -260,6 +264,7 @@ VSCode [intelephense](https://marketplace.visualstudio.com/items?itemName=bmewbu
 > ```shell
 > ./docker_cmds/docker_php.sh -S 172.21.0.30:8088 -t /var/www/html/​
 > ```
+> 
 > 
 4. 在浏览器页面访问 `http://172.21.0.30:8088/xxx.php​`。如果访问成功，php 页面能正常解析，那 PHP 容器就是 `run` 成功了。
 
@@ -284,6 +289,12 @@ docker-php-ext-enable xdebug
 完成上述操作后，使用 `php -m` 命令查看是否安装成功。
 
 如果安装成功，显示 `[Zend Modules] Xdebug`​。
+
+[VSCode](../Editors/VSCode_Note.md) 使用 xdebug，只需要配置 `php.debug.executablePath` 属性就可以，此属性同样是找 [PHP](../PHP/PHP_Note.md) 的可执行程序，只是端口号不同：
+
+```json
+"php.debug.executablePath": "/home/silascript/docker_cmds/docker_php.sh"
+```
 
 #### 安装 GD 扩展
 

@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-13 18:49:29
-modified: 2024-08-16 03:21:05
+modified: 2024-08-16 11:43:34
 ---
 
 # VSCode 资料清单
@@ -26,6 +26,18 @@ modified: 2024-08-16 03:21:05
 * [Oracle发布支持Vscode的Java插件 - 极道](https://www.jdon.com/69168.html)
 * [vscode开发java环境配置，很细 - 掘金](https://juejin.cn/post/7386916905008054287)
 * [vscode推荐的Java插件](https://blog.51cto.com/u_16213343/7450444)
+
+## PHP
+
+* [vsCode 使用 PHP Intelephense插件函数跳转跟踪 - 一个人的孤独自白 - 博客园](https://www.cnblogs.com/-mrl/p/12214252.html)
+* [Visual Studio Code +PHP开发 推荐插件 - hdlan - 博客园](https://www.cnblogs.com/hdlan/p/16758847.html)
+* [使用 Visual Studio Code 进行 PHP 编程 - VSCode 中文](https://vscode.js.cn/docs/languages/php)
+* [VS Code 配置 PHP XDebug](https://segmentfault.com/a/1190000041594981)
+* [使用Visual Studio Code开发php，并打开debug模式，打开断点调试 - 会飞的鹏 - 博客园](https://www.cnblogs.com/hfdp/p/17939885)
+
+## ESLint
+
+* [ESLint](../JS/JS_Material.md#ESLint)
 
 ## 其他
 

@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2024-08-16 11:19:59
+modified: 2024-08-17 03:56:20
 
 ---
 
@@ -15,9 +15,18 @@ modified: 2024-08-16 11:19:59
 
 ---
 
+## 目录
+
+* [常用插件](#常用插件)
+* [相关资料](#相关资料)
+
+---
+
 ## <span id="vscode_extensions">常用插件</span>
 
-有两个插件市场：
+网上有很多资料博客介绍 [VSCode](VSCode_Note.md) 插件，而很多插件都是 VSCode 早期出现的，因为那时 VSCode 功能太弱，必须得靠插件去补充。但因为 VSCode 的发展，很多插件的功能都已经被 VSCode 内置了，所以现在其实不用装太多插件。
+
+### 插件市场
 
  * [Open-VSX](https://open-vsx.org) 
 * [Marketplace](https://marketplace.visualstudio.com/vscode) 
@@ -473,6 +482,25 @@ Runtime 名称列表：[runtime name](https://github.com/redhat-developer/vscode
 > 
 > 这个插件依赖 [RedHat-Java](#RedHat-Java) 及 [Debugger for Java](#Debugger%20for%20Java) 两个插件
 
+#### Code Generator For Java
+
+[Code Generator For Java](https://marketplace.visualstudio.com/items?itemName=sohibe.java-generate-setters-getters)  [![Code Generator For Java](https://img.shields.io/github/stars/sohibegit/vscode-java-code-generator
+)](https://github.com/sohibegit/vscode-java-code-generator) 是一个生成 [Java](../Java/Java_Note.md) 代码的插件。
+
+此插件功能：
+
+* Generator GUI
+* Generate Setters & Getters
+* Generate toString()
+* Generate Constructor
+* Generate Constructor Using Fields
+* Generate Equals And HashCode
+* Generate Fluent Setters
+* Generate Logger Debug
+* Generate SerialVersionUID
+
+![Code Generator For Java](https://github.com/sohibegit/vscode-java-code-generator/raw/HEAD/images/usagev4.gif)
+
 #### Spring Boot Extension Pack
 
 [Spring Boot Extension Pack](https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack) [![Spring Boot Extension Pack Repo](https://img.shields.io/github/stars/spring-projects/sts4
@@ -602,10 +630,33 @@ clangd --version
 
 ---
 
-### <span id="vscode_extensions_golang">Go 语言开发环境</span>
+### <span id="vscode_extensions_golang">Go 开发环境</span>
 
 [Go for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=golang.Go) [![Go for VSCode Repo](https://img.shields.io/github/stars/golang/vscode-go
 )](https://github.com/golang/vscode-go) 这是 [Golang 官方](https://go.dev/) 出品的插件。
+
+### <span id="vscode_extensions_rust"> Rust 开发环境</span>
+
+### rust-analyzer
+
+[rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) [![rust-analyzer Repo](https://img.shields.io/github/stars/rust-lang/rust-analyzer
+)](https://github.com/rust-lang/rust-analyzer) 是 VSCode 上 [Rust](../Rust/Rust_Note.md) 的语言服务插件，也是 Rust 插件的核心。
+
+### Even Better TOML
+
+[Even Better TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml)  [![Even Better TOML Repo](https://img.shields.io/github/stars/tamasfe/taplo
+)](https://github.com/tamasfe/taplo) 是一个 [Toml](../Rust/Rust_Note.md#toml) 的插件。
+
+#### Crates
+
+[Crates](https://marketplace.visualstudio.com/items?itemName=serayuzgur.crates) [![Crates Repo](https://img.shields.io/github/stars/serayuzgur/crates
+)](https://github.com/serayuzgur/crates) 是 [Rust](../Rust/Rust_Note.md) 依赖管理插件。
+
+![Crates screenshot](https://github.com/serayuzgur/crates/raw/master/screenshots/tooltip.png)
+
+> [!important] 
+> 
+> 这插件从 2024 年 6 月就停止更新了，官方建议使用 [Dependi](#Dependi) 来代替。
 
 ---
 
@@ -720,6 +771,27 @@ VSCode 已经内置了大名鼎鼎的 [Emmet](https://emmet.io) （[Emmet Wiki](
 > 
 > `.prettierrc` 及 `.prettier.json` 的名字必须是 `prettier` 打头的，不然 VSCode 认不出这全局配置，就只能用 VSCode [Prettier插件](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) 的配置。
 
+VSCode Prettier 插件设置：
+
+```json
+// 设置prettier的配置文件路径
+"prettier.configPath":""
+
+// 配置哪些文件使用 prettier 插件进行格式化
+"[html]": {
+"editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+
+"[jsonc]": {
+"editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+
+"[css]": {
+"editor.defaultFormatter": "esbenp.prettier-vscode"
+}
+
+```
+
 ---
 
 ### <span id="vscode_extensions_misc">杂项</span>
@@ -730,6 +802,56 @@ VSCode 已经内置了大名鼎鼎的 [Emmet](https://emmet.io) （[Emmet Wiki](
 )](https://github.com/streetsidesoftware/vscode-spell-checker) 是一个拼写检查插件。
 
 ![code-spell-checker screenshot](https://raw.githubusercontent.com/streetsidesoftware/vscode-spell-checker/main/images/suggestions.gif)
+
+#### <span id="vscode_extensions_misc_semicolon">分号补全</span>
+
+##### Smart Semicolon
+
+[Smart Semicolon](https://marketplace.visualstudio.com/items?itemName=seunghwan.smartsemicolon)  [![Smart Semicolon Repo](https://img.shields.io/github/stars/seunghwanh/smartsemicolon-vscode
+)](https://github.com/seunghwanh/smartsemicolon-vscode) 是一个添加分号 `;` 的小插件。
+
+![Smart Semicolon screenshot 1](https://raw.githubusercontent.com/seunghwanh/vscode-smartsemicolon/master/images/basic_feature.gif)
+
+![Smart Semicolon screenshot 2](https://raw.githubusercontent.com/seunghwanh/vscode-smartsemicolon/master/images/line_comment_detection.gif)
+
+![Smart Semicolon screenshot 3](https://raw.githubusercontent.com/seunghwanh/vscode-smartsemicolon/master/images/bracket_detection.gif)
+
+![Smart Semicolon screenshot 4](https://raw.githubusercontent.com/seunghwanh/vscode-smartsemicolon/master/images/auto_line_change_basic.gif)
+
+##### Smarter Semicolon
+
+[Smarter Semicolon](https://marketplace.visualstudio.com/items?itemName=IrishBruse.smartersemicolon) [![Smarter Semicolon Repo](https://img.shields.io/github/stars/IrishBruse/Smarter-Semicolon
+)](https://github.com/IrishBruse/Smarter-Semicolon) 同样也是一个补分号的插件，不过更新一点。
+
+> [!tip] 
+> 
+> 这个插件同样不支持 [PHP](../PHP/PHP_Note.md)！
+
+![Smarter Semicolon screenshot](https://raw.githubusercontent.com/IrishBruse/Smarter-Semicolon/main/images/basic_feature.gif)
+
+##### Auto Semicolon
+
+[Auto Semicolon](https://marketplace.visualstudio.com/items?itemName=myaaghubi.auto-semicolon-vscode) [![Auto Semicolon Repo](https://img.shields.io/github/stars/myaaghubi/Auto-Semicolon-VSCode
+)](https://github.com/myaaghubi/Auto-Semicolon-VSCode) 同样也是一个分号补全插件。
+
+这是最新的分号补全插件，最近还更新。最重要的是这插件支持的语言比之前都要多。
+
+> [!tip] 
+> 
+> 这插件支持 [PHP](../PHP/PHP_Note.md)  [JavaScript](../JS/JS_Note.md), [TypeScript](../JS/TypeScript/TypeScript_Note.md),[C](../C/C_Note.md)/ [CPP](../C/CPP_Note.md), [Java](../Java/Java_Note.md), `perl`, `dart`, `swift`,  [Python](../Python/Python_Note.md), [Go](../GoLang/GoLang_Note.md), [Bash](../Linux/Shell/Shell_Note.md), `scala`, `kotlin`, `r` 等语言。
+
+![Auto Semicolon screenshot 1](https://github.com/myaaghubi/Auto-Semicolon-VSCode/raw/main/assets/auto-semicolon1.gif)
+
+![Auto Semicolon screenshot 2](https://github.com/myaaghubi/Auto-Semicolon-VSCode/raw/main/assets/auto-semicolon2.gif)
+
+![Auto Semicolon screenshot 3](https://github.com/myaaghubi/Auto-Semicolon-VSCode/raw/main/assets/auto-semicolon3.gif)
+
+#### Dependi
+
+[Dependi](https://marketplace.visualstudio.com/items?itemName=fill-labs.dependi) [![Dependi Repo](https://img.shields.io/github/stars/filllabs/dependi
+)](https://github.com/filllabs/dependi) 是新一代的依赖管理插件。它支持 [Rust](../Rust/Rust_Note.md)、[Go](../GoLang/GoLang_Note.md)、[Python](../Python/Python_Note.md)、[NodeJS](../Node/NodeJS_Note.md) 及 [PHP](../PHP/PHP_Note.md) 多种语言。
+
+![Dependi screenshot](https://camo.githubusercontent.com/1fa31026e7474ab3f08041ab2d444795b75df54b2ce8888aa6d4d4e45065c756/68747470733a2f2f7777772e646570656e64692e696f2f73637265656e73686f74732f746f6f6c7469702e706e67)
 
 ---
 

@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2024-08-17 03:56:20
+modified: 2024-08-17 12:03:59
 
 ---
 
@@ -163,15 +163,11 @@ VSCode 有很多漂亮的 Theme 和 icon，可以根据自己喜好添加。
 
 ![gm-vsc-dark-hard-flat](https://gitlab.com/sainnhe/img/-/raw/master/gm-vsc-dark-hard-flat.png)
 
----
-
 #### <span id="vscode_extensions_theme_obsidian">Obsidian Dark</span>
 
 [Obsidian-Dark](https://open-vsx.org/extension/Hamza-Aziane/obsidian-dark) [![Obsidian Dark Theme Repo](https://img.shields.io/github/stars/Hamza-Aziane/obsidian-dark?style=social)](https://github.com/Hamza-Aziane/obsidian-dark) 这个主题，个人觉得也挺不错的。
 
 ![obsidian-dark-theme](https://raw.githubusercontent.com/Hamza-Aziane/obsidian-dark/main/images/obsidian-dark-theme.png)
-
----
 
 #### <span id="vscode_extensions_theme_rainglow">Rainglow</span>
 
@@ -188,6 +184,13 @@ VSCode 有很多漂亮的 Theme 和 icon，可以根据自己喜好添加。
 }
 ```
 
+#### <span id="vscode_extensions_theme_bearded">Bearded Theme</span>
+
+[Bearded Theme](https://marketplace.visualstudio.com/items?itemName=BeardedBear.beardedtheme) [![Bearded Theme Repo](https://img.shields.io/github/stars/BeardedBear/bearded-theme
+)](https://github.com/BeardedBear/bearded-theme) 主题有多种颜色可选。
+
+![Bearded Theme screenshot 1](https://raw.githubusercontent.com/BeardedBear/bearded-theme/master/assets/themes.png)
+
 ---
 
 #### <span id="vscode_extensions_theme_icon">图标</span>
@@ -196,23 +199,43 @@ VSCode 除了能添加主题外，还能添加 Icon，这个图标一般应用�
 
 ##### <span id="vscode_extensions_theme_icon_material">Material-icon</span>
 
-个人喜欢 [material-icon-theme](https://open-vsx.org/extension/PKief/material-icon-theme) [![material-icon-theme Repo](https://img.shields.io/github/stars/PKief/vscode-material-icon-theme?style=social)](https://github.com/PKief/vscode-material-icon-theme) 这个 icon 包。
+个人喜欢 [material-icon-theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme) [![material-icon-theme Repo](https://img.shields.io/github/stars/PKief/vscode-material-icon-theme?style=social)](https://github.com/PKief/vscode-material-icon-theme) 这个 icon 包。
 
 ![material-icon-theme fileIcons](https://raw.githubusercontent.com/PKief/vscode-material-icon-theme/main/images/fileIcons.png)
+
+##### <span id="vscode_extensions_theme_icon_material-free">Material Theme Icons — Free</span>
+
+[Material Theme Icons — Free](https://marketplace.visualstudio.com/items?itemName=Equinusocio.vsc-material-theme-icons) [![Material Theme Icons — Free Repo](https://img.shields.io/github/stars/material-theme/vsc-material-theme-icons
+)](https://github.com/material-theme/vsc-material-theme-icons)
+
+![Material Theme Icons Free screenshot](https://camo.githubusercontent.com/09f959ac2ba8018f62e300812649dce8d78da4533ca6bb9e5b4313c5b1dad4b9/68747470733a2f2f72617763646e2e6769746861636b2e636f6d2f6d6174657269616c2d7468656d652f7673632d6d6174657269616c2d7468656d652d69636f6e732f666365363532626666383765643236613261623039346536343032376435316631316663363733362f707265766965772e706e67)
 
 ##### <span id="vscode_extensions_theme_icon_catppuccin">Catppuccin icons</span>
 
 [Catppuccin icons](https://marketplace.visualstudio.com/items?itemName=Catppuccin.catppuccin-vsc-icons) [![Catppuccin icons Repo](https://img.shields.io/github/stars/catppuccin/vscode-icons?style=social
 )](https://github.com/catppuccin/vscode-icons) 这是配合 [Catppuccin 主题]() 使用的图标套件。
 
-![Catppuccin icons shotcut](https://raw.github.com/catppuccin/vscode-icons/main/assets/previews/mocha.png)
+![Catppuccin icons shotcut](https://github.com/catppuccin/vscode-icons/raw/HEAD/assets/mocha.webp)
 
 ##### <span id="vscode_extensions_theme_icon_catppuccin_perfect">Catppuccin Perfect icons</span>
 
 [Catppuccin Perfect icons](https://marketplace.visualstudio.com/items?itemName=thang-nm.catppuccin-perfect-icons) [![Catppuccin Perfect icons Repo](https://img.shields.io/github/stars/thang-nm/Catppuccin-Perfect-Icons?style=social
 )](https://github.com/thang-nm/Catppuccin-Perfect-Icons) 是 [Catppuccin icons](#editors_vscode_extensions_theme_icon_catppuccin) 的衍生品。
 
-![Catppuccin Perfect icons shotcut](https://raw.githubusercontent.com/thang-nm/Catppuccin-Perfect-Icons/main/assets/previews/mocha-icons@2x.png)
+![Catppuccin Perfect icons shotcut](https://raw.githubusercontent.com/thang-nm/Catppuccin-Perfect-Icons/main/assets/previews/mocha-icons@2x.png?t=20230915)
+
+##### <span id="vscode_extensions_theme_icon_vscode">VSCode icons</span>
+
+[VSCode-icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons) [![VSCode-icons Repo](https://img.shields.io/github/stars/vscode-icons/vscode-icons
+)](https://github.com/vscode-icons/vscode-icons) 
+
+![VSCode-icons screenshot](https://raw.githubusercontent.com/vscode-icons/vscode-icons/master/images/screenshot.gif)
+
+##### <span id="vscode_extensions_theme_icon_monokaipro">Monokai pro icons</span>
+
+[Monokai pro icons](https://marketplace.visualstudio.com/items?itemName=monokai.theme-monokai-pro-vscode) 这是主题 +icon 的插件。
+
+![Monokai pro icons screenshot](https://raw.githubusercontent.com/Monokai/monokai-pro-vscode/master/img/monokai-pro-icons.png)
 
 ---
 

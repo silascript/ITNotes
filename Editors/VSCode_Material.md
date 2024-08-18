@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-13 18:49:29
-modified: 2024-08-18 17:38:29
+modified: 2024-08-18 19:09:35
 ---
 
 # VSCode 资料清单
@@ -47,6 +47,10 @@ modified: 2024-08-18 17:38:29
 ## 数据库
 
 * [好用的 VScode 数据库管理插件 - SQLTools](https://www.51cto.com/article/711290.html)
+
+## 同步
+
+* [VSCode官方的配置同步方案这几天在迁移电脑工作环境，对于VSCode，我实在不想从头做下载插件、配置代码规则这样的事 - 掘金](https://juejin.cn/post/7066622158184644621)
 
 ## 其他
 

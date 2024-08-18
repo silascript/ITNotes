@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2024-08-18 17:43:49
+modified: 2024-08-18 21:37:37
 
 ---
 
@@ -715,6 +715,8 @@ clangd --version
 安装其实就是安装对应的数据库驱动，比如要想在 [VSCode](VSCode_Note.md) 中管理 [MySQL](../DataBase/mysql/MySQL_Note.md) 数据库，那么我们就选择安装对应的插件即可：[SQLTools Driver MySQL](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools-driver-mysql) [![SQLTools Driver MySQL Repo](https://img.shields.io/github/stars/mtxr/vscode-sqltools
 )](https://github.com/mtxr/vscode-sqltools/tree/dev/packages/driver.mysql)。
 
+安装完插件后，点击在 VSCode 的侧边栏上「SQLTools」图标，出现的面板中，有一个「CONNECTIONS」栏，新建一个链接，链接类型，如果是 MySQL 就选择 MySQL，如果是 MariaDB 就选 MariaDB，然后在出现的「Settings」面板中，输入数据库地址、账号名及密码，测试能不能连上，如果能就保存这个 Connection，就完成了全部安装。
+
 ---
 
 ### <span id="vscode_extensions_frontend">前端插件</span>
@@ -876,12 +878,25 @@ VSCode Prettier 插件设置：
 > [!tip] 
 > 
 > 这插件支持 [PHP](../PHP/PHP_Note.md)  [JavaScript](../JS/JS_Note.md), [TypeScript](../JS/TypeScript/TypeScript_Note.md),[C](../C/C_Note.md)/ [CPP](../C/CPP_Note.md), [Java](../Java/Java_Note.md), `perl`, `dart`, `swift`,  [Python](../Python/Python_Note.md), [Go](../GoLang/GoLang_Note.md), [Bash](../Linux/Shell/Shell_Note.md), `scala`, `kotlin`, `r` 等语言。
+> 
+> 甚至能在配置中添加语言，只要在 `autoSemicolon.supportedLanguageId.autoInsertSemicolon` 属性中，将要支持的编程语言添加进属性值中，语言间使用 `,` 隔开。
+> 
+> 示例如下：
+> ```json
+> 
+> "autoSemicolon.supportedLanguageId.autoInsertSemicolon": "javascript,typescript,php,perl,c,objective-c,cpp,objective-cpp,csharp,dart,java,swift,ruby,rust"
+> ```
 
 ![Auto Semicolon screenshot 1](https://github.com/myaaghubi/Auto-Semicolon-VSCode/raw/main/assets/auto-semicolon1.gif)
 
 ![Auto Semicolon screenshot 2](https://github.com/myaaghubi/Auto-Semicolon-VSCode/raw/main/assets/auto-semicolon2.gif)
 
 ![Auto Semicolon screenshot 3](https://github.com/myaaghubi/Auto-Semicolon-VSCode/raw/main/assets/auto-semicolon3.gif)
+
+使用
+
+1. 在光标非字符串位置，按 `；`，会在最后添加分号。
+2. 光标处在字符串中，按二次 `Alt+;` 光标会跳到结尾处，这样就可以输入 `;` 了。
 
 #### Dependi
 

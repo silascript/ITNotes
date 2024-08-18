@@ -6,12 +6,17 @@ tags:
   - material
   - list
 created: 2024-08-13 18:49:29
-modified: 2024-08-16 11:43:34
+modified: 2024-08-18 17:38:29
 ---
 
 # VSCode 资料清单
 
 ---
+
+## 主题和图标
+
+* [产品图标主题 | Visual Studio Code 扩展 API - VSCode 中文](https://vscode.js.cn/api/extension-guides/product-icon-theme)
+* [🗂 让你的 VSCode 文件图标更好看的10个文件图标主题一个好用的文件图标主题除了能够愉悦身心之外，对于开发的效率 - 掘金](https://juejin.cn/post/7247569496696389691)
 
 ## C、C++
 
@@ -38,6 +43,10 @@ modified: 2024-08-16 11:43:34
 ## ESLint
 
 * [ESLint](../JS/JS_Material.md#ESLint)
+
+## 数据库
+
+* [好用的 VScode 数据库管理插件 - SQLTools](https://www.51cto.com/article/711290.html)
 
 ## 其他
 

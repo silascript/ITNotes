@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2024-08-17 12:03:59
+modified: 2024-08-18 17:43:49
 
 ---
 
@@ -701,6 +701,22 @@ clangd --version
 
 ---
 
+### <span id="vscode_extensions_datababse">数据库插件</span>
+
+#### SQLTools
+
+[SQLTools](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools) [![SQLTools Repo](https://img.shields.io/github/stars/mtxr/vscode-sqltools
+)](https://github.com/mtxr/vscode-sqltools) 是一个通用数据库插件。
+
+这插件支持 [MySQL](../DataBase/mysql/MySQL_Note.md)、SQLServer、PostgreSQL、SQLite 等多种数据库。
+
+##### 安装使用
+
+安装其实就是安装对应的数据库驱动，比如要想在 [VSCode](VSCode_Note.md) 中管理 [MySQL](../DataBase/mysql/MySQL_Note.md) 数据库，那么我们就选择安装对应的插件即可：[SQLTools Driver MySQL](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools-driver-mysql) [![SQLTools Driver MySQL Repo](https://img.shields.io/github/stars/mtxr/vscode-sqltools
+)](https://github.com/mtxr/vscode-sqltools/tree/dev/packages/driver.mysql)。
+
+---
+
 ### <span id="vscode_extensions_frontend">前端插件</span>
 
 VSCode 最初出来的时候，主要是用在前端开发的，所以 VSCode 积累了大量的前端开发的插件。
@@ -708,8 +724,6 @@ VSCode 最初出来的时候，主要是用在前端开发的，所以 VSCode �
 而这些前端插件主要是围绕着 Html、CSS、Javascript 及各种前端框架的补全、检测、调试、格式化等功能而设的。
 
 VSCode 已经内置了大名鼎鼎的 [Emmet](https://emmet.io) （[Emmet Wiki](https://zh.wikipedia.org/wiki/Emmet)），有了这货，很多前端插件都可以省了。
-
----
 
 #### <span id="vscode_extensions_frontend_CSS">CSS</span>
 
@@ -739,8 +753,6 @@ VSCode 已经内置了大名鼎鼎的 [Emmet](https://emmet.io) （[Emmet Wiki](
 
 此插件在状态栏显示状态：
 ![LiveServer Statusbar](https://github.com/ritwickdey/vscode-live-server/blob/master/images/Screenshot/vscode-live-server-statusbar-3.jpg)
-
----
 
 #### <span id="vscode_extensions_frontend_vetur">Vetur</span>
 
@@ -793,6 +805,8 @@ VSCode 已经内置了大名鼎鼎的 [Emmet](https://emmet.io) （[Emmet Wiki](
 > [!tip] 
 > 
 > `.prettierrc` 及 `.prettier.json` 的名字必须是 `prettier` 打头的，不然 VSCode 认不出这全局配置，就只能用 VSCode [Prettier插件](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) 的配置。
+> 
+> VSCode 默认使用的是 `.prettierrc`，如果使用 `.prettier.json`VSCode 默认会使用本身设定。
 
 VSCode Prettier 插件设置：
 

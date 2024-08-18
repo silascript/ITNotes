@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-08-10 03:26:55
+modified: 2024-08-17 18:28:31
 ---
 
 # Linux 笔记
@@ -1638,6 +1638,7 @@ xdg-mime default org.gnome.Nautilus.desktop inode/directory
 curl cheat.sh
 ```
 > [!tip]
+> 
 > 也可以缩写成这样：`curl cht.sh`
 
 如查询 [awk](#awk) 的使用，可以敲入这个命令：`curl cheat.sh/awk`，就会显示 awk 使用示例。
@@ -1645,6 +1646,21 @@ curl cheat.sh
 ### FileManager-Actions
 
 FileManager-Actions 这个工具可以方便更改右键菜单。
+
+### 取色器
+
+#### Gcolor3
+
+[Gcolor3](https://www.hjdskes.nl/projects/gcolor3/) [![Gcolor3 Repo](https://img.shields.io/github/stars/Hjdskes/gcolor3
+)](https://github.com/Hjdskes/gcolor3) 是一个使用 GTK+3 制作的取色小工具。
+
+![Gcolor3 screenshot](https://www.hjdskes.nl/img/projects/gcolor3/picker.png)
+
+使用包管理器安装，以 [ArchLinux](ArchLinux_Note.md) 为例：
+
+```shell
+yay -S extra/gcolor3
+```
 
 ### 彩色命令行
 

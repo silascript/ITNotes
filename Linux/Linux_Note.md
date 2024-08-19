@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-08-17 18:28:31
+modified: 2024-08-20 03:16:08
 ---
 
 # Linux 笔记
@@ -160,6 +160,18 @@ lsb 其他选项和参数：
  
 > [!tip] path 变量路径
 > 路径末尾不能以 **\/** 结尾，否则将导致整个 PATH 变量出错。
+
+---
+
+## <span id="linux_environment">环境变量</span>
+
+### env
+
+`env` 命令是用于显示系统中已存在的环境变量，以及在定义的环境中执行指令。
+
+> [!info] 
+> 
+> [Shell](Shell/Shell_Note.md) 文件开头的那个 `#!/usr/bin/env bash` 命令，意思就是使用 `env` 去找 [Bash](Shell/Shell_Note.md#Bash) 解析器来解析当前的 Shell 脚本。
 
 ---
 

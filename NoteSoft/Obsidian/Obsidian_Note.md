@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2024-07-12 20:04:39
+modified: 2024-08-19 20:09:31
 ---
 
 # Obsidian 笔记
@@ -272,21 +272,15 @@ $ cat MyNotes/ITNotes/.obsidian/themes/AnuPpuccin/manifest.json
 > 
 > 默认时候，新建标签按钮都是放在右侧，如果将「Diable new tab button right alignment」这个选项开启，那新建标签页按钮就会跑到最后的一个标签后后面，这方便点击新建标签页。
 
----
-
 ### <span id="obn_themes_catppuccin">Catppuccin</span>
 
 [Catppuccin](https://github.com/catppuccin/obsidian) 这也是一个非常好看的主题，同样也配合 [Style settings](obn_plugins_style-settings) 插件做到更多细节的美化设置。
-
----
 
 ### <span id="obn_themes_shibainu">Shiba-inu</span>
 
 [Obsidian-shiba-inu-theme](https://github.com/faroukx/Obsidian-shiba-inu-theme) 这个主题也非常好看，同样的也能配置 [Style Settings](#obn_plugins_style-settings) 实现更多的美化细节设置。
 
 ![shiba-iun screenshot](https://github.com/faroukx/Obsidian-shiba-inu-theme/raw/main/shibainubackgroundshowcase.png?raw=true)
-
----
 
 ### <span id="obn_themes_bluetopaz">Blue Topaz</span>
 
@@ -296,13 +290,17 @@ $ cat MyNotes/ITNotes/.obsidian/themes/AnuPpuccin/manifest.json
 
 [Blue-topaz-examples](https://github.com/cumany/Blue-topaz-examples) 这是一个示例库。
 
----
-
 ### <span id="obn_themes_minimal">Minimal</span>
 
 [Minimal](https://github.com/kepano/obsidian-minimal) 是一款有点「朴素」的主题。
 
 它支持 [Style-Settings](obn_plugins_style-settings)，而且大部分设置都在 Style-Settings 中实现。但大部分设置都没有预设，得用户自己一个个设。所以有一款插件将这「缺陷」补上了：[Minimal Settings](#obn_plugins_minimal_settings)。
+
+### <span id="obn_themes_underwater">UnderWater</span>
+
+[Underwater](https://github.com/Seniblue/Underwater) 这个主题配色也非常不错，内置了 everforest、[Catppuccin](#Catppuccin) 、Nord 等流行配色。配合 [Style Settings](#Style%20Settings) 插件使用更佳。
+
+![UnderWater screenshot](https://github.com/Seniblue/Underwater/raw/main/img/colorschemes.png)
 
 ---
 

@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2024-08-15 20:30:49
+modified: 2024-08-20 02:35:21
 ---
 
 # Shell 资料清单
@@ -21,6 +21,10 @@ modified: 2024-08-15 20:30:49
 * [Linux 交互/非交互/登录/非登录 shell 的区别](https://blog.csdn.net/weixin_44648216/article/details/104056712)
 * [shell 编程的，登录 shell 和非登录 shell 的区别是什么 ？- 知乎](https://www.zhihu.com/question/628721272)
 * [千万别混淆 Bash/Zsh 的四种运行模式 - 知乎](https://zhuanlan.zhihu.com/p/47819029)
+
+### Shell 相关
+
+* [#!/bin/bash 和 #!/usr/bin/env bash 的区别-CSDN博客](https://blog.csdn.net/qq_37164975/article/details/106181500)
 
 ---
 
@@ -135,6 +139,10 @@ modified: 2024-08-15 20:30:49
 * [Linux jq 命令讲解与实战操作（json字符串解析工具）- 博客园](https://www.cnblogs.com/liugp/p/17613011.html)
 * [jq manual](https://jqlang.github.io/jq/manual/)
 * [Linux shell jq工具操作文档（jq --help使用示例）-CSDN博客](https://blog.csdn.net/Dontla/article/details/135473677)
+
+### shellcheck
+
+* [一个提升你 Shell 脚本编写质量的工具，建议运维人手必备的神器](https://segmentfault.com/a/1190000044920431)
 
 ---
 

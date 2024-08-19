@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-13 18:49:29
-modified: 2024-08-18 19:09:35
+modified: 2024-08-19 11:40:59
 ---
 
 # VSCode 资料清单
@@ -25,6 +25,8 @@ modified: 2024-08-18 19:09:35
 * [用Visual Studio Code配置一套“舒适的”C/C++开发环境 - MWX の 花田](https://dkrain.com/posts/%E7%94%A8visual-studio-code%E9%85%8D%E7%BD%AE%E4%B8%80%E5%A5%97%E8%88%92%E9%80%82%E7%9A%84c-cpp%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/)
 * [VSCode配置Clang C/C++开发环境 \[+clangd代码静态检查配置\] - Lee-zq - 博客园](https://www.cnblogs.com/lee-zq/p/17779315.html)
 * [为vscode配置clangd - 掘金](https://juejin.cn/post/7126880493668139021)
+* [window下使用vscode和cmake开发编译cpp代码 - yongfengnice - 博客园](https://www.cnblogs.com/yongfengnice/p/18157071)
+* [CMake 入门学习2 使用VSCode cmake插件](https://blog.51cto.com/u_4029519/5423807)
 
 ## Java
 
@@ -55,6 +57,9 @@ modified: 2024-08-18 19:09:35
 ## 其他
 
 * [VSCode中插件Code Spell Checker - IT皮皮蟹 - 博客园](https://www.cnblogs.com/AAFlyingFish/p/14559446.html)
+* [vscode代码拼写错误检测插件闲话少说，本文介绍如何使用code-spell-checker插件对代码进行拼写错误检查 - 掘金](https://juejin.cn/post/7122381878706831374)
+* [软件开发中好用的拼写检查工具-鸿蒙开发者社区-51CTO.COM](https://ost.51cto.com/posts/18282)
+* [VSCode 插件: Code Spell Checker - Raindew Tech](https://floiges.top/2020/03/12/VSCode-%E6%8F%92%E4%BB%B6-Code-Spell-Checker/)
 * [相见恨晚！解决很难发现的 bug ——单词拼写错误，一款 vscode 插件 code spell checker - 掘金](https://juejin.cn/post/7370008254720639015)
 * [vscode更改代码提示快捷键-CSDN博客](https://blog.csdn.net/qq_36623595/article/details/109289530)
 * [VSCode的全局配置与项目单独配置VSCode代码格式化插件及配置 格式化插件 Prettier - Code for - 掘金](https://juejin.cn/post/7290740395913691177)

@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2024-08-18 21:37:37
+modified: 2024-08-19 12:33:21
 
 ---
 
@@ -119,7 +119,7 @@ Bookmarks 快捷键：
 
 ### <span id="vscode_extensions_snippetsranger">Snippets Ranger</span>
 
-[Snippets Ranger](https://open-vsx.org/extension/robole/snippets-ranger) [![Snippets Ranger Repo](https://img.shields.io/github/stars/robole/vscode-snippets-ranger?style=social)](https://github.com/robole/vscode-snippets-ranger) 这是一个 snippet 管理插件。
+[Snippets Ranger](https://marketplace.visualstudio.com/items?itemName=robole.snippets-ranger) [![Snippets Ranger Repo](https://img.shields.io/github/stars/robole/vscode-snippets-ranger?style=social)](https://github.com/robole/vscode-snippets-ranger) 这是一个 snippet 管理插件。
 
 这个插件除了新建添加自己的 snippet 这个常规功能外，最最重要的是它能用一种更直观的方式查看当前 vscode/vscodium 中已经存在的哪些 snippet。
 
@@ -841,6 +841,21 @@ VSCode Prettier 插件设置：
 )](https://github.com/streetsidesoftware/vscode-spell-checker) 是一个拼写检查插件。
 
 ![code-spell-checker screenshot](https://raw.githubusercontent.com/streetsidesoftware/vscode-spell-checker/main/images/suggestions.gif)
+
+简单配置：
+
+```json
+"cSpell.diagnosticLevel": "Hint",
+"cSpell.ignorePaths": [
+	"package-lock.json",
+	"node_modules",
+	"vscode-extension",
+	".git/objects",
+	".vscode",
+	".vscode-insiders",
+	"**/settings.json"
+]
+```
 
 #### <span id="vscode_extensions_misc_semicolon">分号补全</span>
 

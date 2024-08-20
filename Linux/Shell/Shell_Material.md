@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2024-08-20 02:35:21
+modified: 2024-08-20 10:56:03
 ---
 
 # Shell 资料清单
@@ -108,6 +108,10 @@ modified: 2024-08-20 02:35:21
 * [Linux学习笔记：shell sleep睡眠 - Hider1214 - 博客园](https://www.cnblogs.com/hider/p/17048231.html)
 * [Linux Shell中的延时函数 sleep_蓝白天际线-华为云开发者空间](https://huaweicloud.csdn.net/635617d7d3efff3090b59ddf.html)
 
+### 引号
+
+* [shell中的 单引号' '、双引号 " " 和 反引号\` \` - 哑吧 - 博客园](https://www.cnblogs.com/zhangxl1016/articles/14807800.html)
+
 ## 颜色
 
 * [shell bash终端中输出的颜色和格式详解（超详细）-云社区-华为云](https://bbs.huaweicloud.com/blogs/323329)
@@ -143,6 +147,10 @@ modified: 2024-08-20 02:35:21
 ### shellcheck
 
 * [一个提升你 Shell 脚本编写质量的工具，建议运维人手必备的神器](https://segmentfault.com/a/1190000044920431)
+* [shellcheck 帮助你写出更好的脚本 - zqb-all - 博客园](https://www.cnblogs.com/zqb-all/p/10054594.html)
+* [写shell必备辅助神器ShellCheck - sll0917 - 博客园](https://www.cnblogs.com/sll0917/p/16607010.html)
+* [Linux-Shell脚本](http://masikkk.com/article/Linux-Shell/)
+* [ShellCheck报出的各种错误及解决 - CSDN博客](https://blog.csdn.net/phmatthaus/article/details/127299059)
 
 ---
 

@@ -8,7 +8,7 @@ tags:
   - ime
 date created: 2022-11-08 11:32
 created: 2023-08-18 19:44:52
-modified: 2024-07-26 23:06:45
+modified: 2024-08-21 18:31:28
 ---
 
 # ArchLinux 笔记
@@ -292,6 +292,25 @@ desktop 规范：[Desktop Entry Specification](https://specifications.freedeskto
 ### 相关资料
 
 * [桌面项](https://wiki.archlinuxcn.org/wiki/%E6%A1%8C%E9%9D%A2%E9%A1%B9)
+
+---
+
+## 小工具
+
+### Archlinux-java
+
+archlinux-java 这个工具是用来查看当前系统 [Java](../Java/Java_Note.md) 环境情况的。
+
+安装 直接用包管理器装：
+
+```
+pacman -S archlinux-java
+```
+
+#### 常用命令
+
+* `archlinux-java status` ：命令查看当前系统的 [Java](../Java/Java_Note.md) 环境。
+* `sudo archlinux-java set java-21-openjdk`：设置默认 jdk。
 
 ---
 

@@ -8,7 +8,7 @@ tags:
   - ubuntu
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2024-07-22 03:24:34
+modified: 2024-08-22 01:40:16
 ---
 
 # Docker 笔记
@@ -1405,16 +1405,9 @@ docker stats 容器ID
 
 ---
 
-## 相关资料
-
-* [Docker 操作指令](https://docker.shujuwajue.com/docker-de-shi-yong/docker-ke-hu-duan-chang-yong-ming-ling/docker-cao-zuo-zhi-ling)
-* [docker容器之run命令 - 进击的davis - 博客园](https://www.cnblogs.com/davis12/p/14467421.html)
-* [docker run常用参数-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/2246184)
-
----
-
 ## 相关笔记
 
 * [Docker & K8s 视频清单](./Docker_Videos.md)
 * [Docker 示例笔记](Docker_Examples.md)
+* [Docker 资料清单](Docker_Material.md)
 

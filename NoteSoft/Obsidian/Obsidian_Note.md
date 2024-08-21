@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2024-08-19 20:09:31
+modified: 2024-08-21 11:44:14
 ---
 
 # Obsidian 笔记
@@ -295,6 +295,12 @@ $ cat MyNotes/ITNotes/.obsidian/themes/AnuPpuccin/manifest.json
 [Minimal](https://github.com/kepano/obsidian-minimal) 是一款有点「朴素」的主题。
 
 它支持 [Style-Settings](obn_plugins_style-settings)，而且大部分设置都在 Style-Settings 中实现。但大部分设置都没有预设，得用户自己一个个设。所以有一款插件将这「缺陷」补上了：[Minimal Settings](#obn_plugins_minimal_settings)。
+
+### <span id="obn_themes_flexoki">Flexoki</span>
+
+[Flexoki](https://github.com/kepano/flexoki-obsidian) 是一款简洁的主题配色。
+
+![Flexoki screenshot](https://github.com/kepano/flexoki-obsidian/raw/main/screenshot.png)
 
 ### <span id="obn_themes_underwater">UnderWater</span>
 

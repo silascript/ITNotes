@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-13 18:49:29
-modified: 2024-08-19 11:40:59
+modified: 2024-08-20 13:20:29
 ---
 
 # VSCode 资料清单
@@ -53,6 +53,8 @@ modified: 2024-08-19 11:40:59
 ## 同步
 
 * [VSCode官方的配置同步方案这几天在迁移电脑工作环境，对于VSCode，我实在不想从头做下载插件、配置代码规则这样的事 - 掘金](https://juejin.cn/post/7066622158184644621)
+* [\`settingsSync.ignoredSettings\` no longer accepts \`window.zoomLevel\`? · Issue #116046 · microsoft/vscode · GitHub](https://github.com/microsoft/vscode/issues/116046)
+* [Settings Sync syncs zoom level · Issue #114013 · microsoft/vscode · GitHub](https://github.com/microsoft/vscode/issues/114013)
 
 ## 其他
 

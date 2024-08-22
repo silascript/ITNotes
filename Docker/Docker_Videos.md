@@ -6,7 +6,7 @@ tags:
   - video
   - list
 created: 2023-08-18 19:44:52
-modified: 2024-08-22 01:38:13
+modified: 2024-08-23 00:53:26
 ---
 
 # Docker & K8s 视频清单
@@ -31,6 +31,7 @@ modified: 2024-08-22 01:38:13
 * [2024年吃透Docker+k8s实战教程，7天学完23个Docker+k8s核心知识点](https://www.bilibili.com/video/BV1fS411c729)
 * [Docker 1小时快速上手教程，从零学会Docker教程](https://www.bilibili.com/video/BV1Pi421Y7BF)
 * [🅷 2024最新版Linux运维高手必学](https://www.bilibili.com/video/BV1MW421d77H)
+* [Docker零基础入门到精通教程（全34集）](https://www.bilibili.com/video/BV1YRWse1ESD)
 
 * [2024吃透.NET架构师系统教学视频](https://www.bilibili.com/video/BV1V2421Z766)
 * [2024年B站最强的C#/.NET进阶教程](https://www.bilibili.com/video/BV13w4m197ij)
@@ -38,6 +39,10 @@ modified: 2024-08-22 01:38:13
 ## 进阶
 
 * [使用Docker部署前后端分离项目，命令即拿即用](https://www.bilibili.com/video/BV1gXpZeAEb7/?spm_id_from=333.1007.tianma.1-2-2.click&vd_source=c21c159a0a3043896d4783651e714a1a)
+
+## k8s
+
+* [【k8s教程】薪享宏福Kubernetes v1.29 |2024最新版！B站最强！百万播放汪洋授课，轻松拿捏k8s](https://www.bilibili.com/video/BV1PbeueyE8V/?spm_id_from=333.1007.tianma.1-1-1.click&vd_source=c21c159a0a3043896d4783651e714a1a)
 
 ---
 

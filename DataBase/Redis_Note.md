@@ -1,16 +1,15 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - nosql
   - redis
-created: 2023-06-20 9:04:40
-modified: 2023-06-20 9:06:31
+created: 2023-08-18 19:44:52
+modified: 2024-08-23 12:39:57
 ---
 # Redis 笔记
 
 ---
 
-## 视频清单
+## 相关笔记
 
-* [【GeekHour】一小时Redis教程](https://www.bilibili.com/video/BV1Jj411D7oG)
+* [Redis 视频清单](Redis_Videos.md)

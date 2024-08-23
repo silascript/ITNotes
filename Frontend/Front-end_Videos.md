@@ -10,7 +10,7 @@ tags:
   - video
   - list
 created: 2023-08-18 19:44:52
-modified: 2024-07-26 02:16:31
+modified: 2024-08-23 12:32:29
 ---
 # 前端教程视频清单
 
@@ -32,6 +32,7 @@ modified: 2024-07-26 02:16:31
 * [前端小姐姐讲解超详细的HTML5&CSS3&JS教学](https://www.bilibili.com/video/BV19g4y127S5)
 * [前端弹性布局实战](https://www.bilibili.com/video/BV1su4y1L7Ue)
 * [2024前端入门教学（HTML5+CSS3+JavaScript+Vue+移动端H5开发）零基础必备教程](https://www.bilibili.com/video/BV1ZM4m117Es)
+* [2024最新版Web前端开发HTML5+CSS3+Js+Vue视频教程，web前端入门首选，小白信手拈来](https://www.bilibili.com/video/BV1vCWneqE8k)
 
 ### 案例
 

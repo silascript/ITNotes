@@ -11,7 +11,7 @@ tags:
   - ts
   - typerscript
 created: 2024-03-12 02:32:12
-modified: 2024-07-20 17:11:38
+modified: 2024-08-23 12:30:58
 ---
 
 # Vue 视频清单
@@ -32,6 +32,7 @@ modified: 2024-07-20 17:11:38
 * [【2024最新版】Vue3从入门到精通，零基础小白也能学得会，web前端快速入门教程](https://www.bilibili.com/video/BV1Di421274i)
 * [【2024最新】一天学会Vue3！从入门到精通(基础+进阶+案例）零基础小白也能听得懂，写得出，web前端快速入门教程](https://www.bilibili.com/video/BV12i421Y77B)
 * [【2024最新版】Vue3从入门到精通，零基础小白也能听得懂，写得出，web前端快速入门实战课程](https://www.bilibili.com/video/BV1Y1421k714)
+* [【2024最新】一天学会Vue3！从入门到精通(基础+进阶+案例）零基础小白也能听得懂，写得出，web前端快速入门教程](https://www.bilibili.com/video/BV1bi421a7TR)
 
 ---
 

@@ -4,7 +4,7 @@ tags:
   - node
   - nodejs
 created: 2023-08-19 23:06:10
-modified: 2024-08-06 20:46:38
+modified: 2024-08-23 12:35:34
 ---
 
 # NodeJS 笔记
@@ -103,3 +103,9 @@ npm ERR!   dest: '/opt/NodeJS/node-v20/lib/node_modules/.corepack-o8GX3Rw6'
 > [!info] 相关资料
 > 
 > * [npm下载权限不足问题解决 - nobody阿欣 - 博客园](https://www.cnblogs.com/lixin-nobody/p/14051905.html)
+
+---
+
+## 相关笔记
+
+* [NodeJS 视频清单](NodeJS_Videos.md)

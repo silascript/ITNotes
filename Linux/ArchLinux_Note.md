@@ -8,7 +8,7 @@ tags:
   - ime
 date created: 2022-11-08 11:32
 created: 2023-08-18 19:44:52
-modified: 2024-08-21 18:31:28
+modified: 2024-08-23 22:41:43
 ---
 
 # ArchLinux 笔记
@@ -311,6 +311,22 @@ pacman -S archlinux-java
 
 * `archlinux-java status` ：命令查看当前系统的 [Java](../Java/Java_Note.md) 环境。
 * `sudo archlinux-java set java-21-openjdk`：设置默认 jdk。
+
+### NetworkManager
+
+安装：
+
+```shell
+yay -S networkmanager
+```
+
+NetWorkManager 的执行程序是：`nmcli`。
+
+查看无线网络：
+
+```shell
+nmcli device wifi
+```
 
 ---
 

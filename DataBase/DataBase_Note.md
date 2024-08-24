@@ -1,18 +1,20 @@
 ---
 aliases: []
 tags:
+  - db
   - database
   - mysql
   - oracle
   - sqlserver
   - postgresql
+  - sqlite
   - db2
   - redis
   - sybase
   - navicat
   - dbeaver
 created: 2023-08-18 19:44:52
-modified: 2024-07-20 04:00:51
+modified: 2024-08-23 12:43:33
 ---
 
 # 数据库笔记
@@ -25,6 +27,7 @@ modified: 2024-07-20 04:00:51
 * [Oracle](#Oracle)
 * [SQLSERVER](#SQLSERVER)
 * [POSTgreSQL](#POSTgreSQL)
+* [SQLite](#SQLite)
 * [数据库客户端](#database_client)
 	* [NaviCat](#NaviCat)
 	* [DBeaver](#DBeaver)
@@ -46,6 +49,12 @@ modified: 2024-07-20 04:00:51
 ---
 
 ## POSTgreSQL
+
+---
+
+## SQLite
+
+[SQLite 笔记](SQLite/SQLite_Note.md)
 
 --- 
 
@@ -99,7 +108,7 @@ DBeaver 使用 [Maven_Note](../Java/Maven/Maven_Note.md) 下载驱动。要知�
 
 ## 相关笔记
 
-* [SQL 视频清单](SQL_Videos.md)
+* [SQL笔记](SQL_Note.md)
 * [MySQL_Note](mysql/MySQL_Note.md)
 * [MySQL常用操作](mysql/MySQL常用操作.md)
 

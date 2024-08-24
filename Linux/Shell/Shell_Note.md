@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2024-08-15 18:10:34
+modified: 2024-08-24 11:38:07
 ---
 
 # Shell 笔记
@@ -114,6 +114,35 @@ Sell 语法相关的内容请查看： [Shell 笔记](Shell_Note.md)
 ### Bash-It
 
 * [bash-it](https://github.com/Bash-it/bash-it.git) 是 [Bash](#Bash) 的配置框架，可以认为是 bash 版本的 [oh-my-zsh](zsh_note.md#zsh_plugins_mgs_ohmyzsh)。
+
+---
+
+## <span id="shell_command_type">Shell 命令种类</span>
+
+[Linux](../Linux_Note.md)Shell 可执行的命令有 3 种：
+
+* 内建命令
+* Shell[函数](#函数)
+* 外部命令
+
+### 内建命令
+
+这些命令集成在 Shell 解释器中，一种是改变 Shell 本身的属性设置；另一种是 I/O 命令，如 `echo` 命令。
+
+### 外部命令
+
+是独立于 Shell 的可执行程序，如 [find](../Linux_Note.md#find)、[grep](../Linux_Note.md#linux_textprocessing_grep) 等。
+
+外部命令执行过程：
+
+1. 调用 POSIX 系统的 `fork` 函数接口，创建珍上命令行 Shell 进程的复制（子进程）
+2. 在子进程中，寻找外部命令
+3. 在子进程中，执行寻找到的外部命令，此时父进程牌休眠，等待子进程执行完毕
+4. 子进程执行完毕，父进程接着执行下一条命令
+
+> [!tip] 
+> 
+> 使用 `source` 执行 Shell 脚本时，不会创建子进程，而是在父进程中直接执行。所以要修改当前 Shell 本身环境变量，是使用 `source` 命令。
 
 ---
 

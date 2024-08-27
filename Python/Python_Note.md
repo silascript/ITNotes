@@ -6,7 +6,7 @@ tags:
   - pip
   - conda
 created: 2023-08-18 19:44:52
-modified: 2024-06-26 21:26:07
+modified: 2024-08-28 03:23:40
 ---
 
 # Python 笔记
@@ -31,7 +31,7 @@ modified: 2024-06-26 21:26:07
 * [文档](#python_resource)
 	* [相关文档](#python_resource_doc)
 	* [相关网站](#python_resource_links)
-* [Python 教程视频](#python_course_videos)
+* [相关笔记](#相关笔记)
 
 ---
 
@@ -104,11 +104,9 @@ python -m ensurepip
 > 
 >> [!info] 相关资料
 >> 
->> * [Anaconda环境中pip命令找不到解决方案](https://blog.csdn.net/weixin_33566282/article/details/115447064)
+>> * [问题及解决](Python_Material.md#问题及解决)
+>> * [pip](Python_Material.md#pip)
 >>   
->> * [Conda下ModuleNotFoundError:No module named 'pip'](https://blog.csdn.net/Pin_BOY/article/details/120402542)
->>   
->>  * [PIP 更新后不能使用的使用 提示： No module named 'pip'问题解决 - Bush - 博客园](https://www.cnblogs.com/bushLing/p/17030223.html)
 
 ### pip 换源
 
@@ -218,8 +216,7 @@ Python 有多种多样的虚拟环境，如 `Virtualenv`、自带的 `venv`，�
 
 ### 相关资料
 
-* [Python虚拟环境（pipenv、venv、conda一网打尽）-腾讯云](https://cloud.tencent.com/developer/article/2124483)
-* [最全的Python虚拟环境使用方法 - 知乎](https://zhuanlan.zhihu.com/p/60647332)
+* [虚拟环境](Python_Material.md#虚拟环境)
 
 ---
 
@@ -415,10 +412,7 @@ custom_channels:
 > 
 >> [!info] 相关资料
 >> 
->> * [2023年最新conda和pip国内镜像源 - 知乎](https://zhuanlan.zhihu.com/p/628870519)
->> * [关于国内anaconda镜像站点看这一篇就够啦 - 知乎](https://zhuanlan.zhihu.com/p/584580420)
->>  * [Conda Channel 介绍与配置-CSDN博客](https://blog.csdn.net/bluishglc/article/details/133803301)
->>  * [**conda 官方配置文档**](https://docs.conda.io/projects/conda/en/stable/configuration.html)
+>> [Conda](Python_Material.md#Conda)
 
 > [!info] 关于 channel 配置
 > 
@@ -642,9 +636,7 @@ conda update python
 
 > [!info] 相关资料
 > 
-> * [在 Anaconda 中更改 Python 版本](https://www.delftstack.com/zh/howto/python/change-python-version-in-anaconda/)
-> 
->  * [如何将Anaconda安装时默认的python版本改成其他版本](https://blog.csdn.net/qq_56520755/article/details/130489115)
+> [Conda 使用](Python_Material.md#Conda%20使用)
 
 #### 强行升级
 
@@ -672,10 +664,8 @@ conda update --force conda
 ```
 
 > [!note] 相关资料
-> 
-> * [解决问题](https://blog.csdn.net/qq_43145926/article/details/104237817)
-> * [更新conda update conda 遇到的问题 - 知乎](https://zhuanlan.zhihu.com/p/133365134)
-> * [python - RemoveError: 'setuptools' 是 conda 的依赖项，无法从 conda 的运行环境中移除 - SegmentFault 思否](https://segmentfault.com/q/1010000043259290)
+>
+> [问题及解决](Python_Material.md#问题及解决) 
 
 ### <span id="python_conda_pip">conda 中的 pip</span>
 
@@ -764,10 +754,6 @@ pip install pipx
 python -m pip install --user pipx
 ```
 
-> [!info] 相关资料
-> 
-> * [Pipx：在隔离环境中安装和运行 Python 应用 - 知乎](https://zhuanlan.zhihu.com/p/73675447)
-
 将 `pipx` 添加到 PATH 中，方便任何地方访问它：
 
 ```shell
@@ -776,7 +762,7 @@ pipx ensurepath
 
 > [!tip] 相关资料
 > 
-> * [在 Linux 中安装和使用 pipx - 知乎](https://zhuanlan.zhihu.com/p/637791135)
+> [pipx](Python_Material.md#pipx) 
 
 如果在 [conda](#conda) 中不使用 [pip](#pip) 安装 pipx，可以直接使用 `conda install` 来安装，但前提是先将 conda-forget 在 conda 的 channel 中配置上了。不确定能不能用 conda 直接装，可以先搜索下：`conda search --full --name pipx`，如果能搜到，就通过 `conda install pipx` 进行安装。
 
@@ -1055,7 +1041,8 @@ Python 的集合特点：
 
 ---
 
-## <span id="python_course_videos">Python 教程视频</span>
+## 相关笔记
 
-[Python 视频清单](Python_Videos.md)
+* [Python 资料清单](Python_Material.md)
+* [Python 视频清单](Python_Videos.md)
 

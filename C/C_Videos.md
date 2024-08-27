@@ -5,7 +5,7 @@ tags:
   - video
   - list
 created: 2023-09-23 02:04:36
-modified: 2024-08-01 03:39:17
+modified: 2024-08-26 18:51:21
 ---
 
 # C 语言视频清单
@@ -45,6 +45,7 @@ modified: 2024-08-01 03:39:17
 #### 函数
 
 * [C语言进阶专题：C语言函数知识全解！](https://www.bilibili.com/video/BV1am411y7So)
+* [03-C语言进阶](https://www.bilibili.com/video/BV14teFeWEpg)
 
 #### 指针
 

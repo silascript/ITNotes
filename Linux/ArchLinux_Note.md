@@ -8,7 +8,7 @@ tags:
   - ime
 date created: 2022-11-08 11:32
 created: 2023-08-18 19:44:52
-modified: 2024-08-23 22:41:43
+modified: 2024-08-27 10:50:09
 ---
 
 # ArchLinux 笔记
@@ -322,8 +322,15 @@ yay -S networkmanager
 
 NetWorkManager 的执行程序是：`nmcli`。
 
-查看无线网络：
+#### 常用命令
 
+* 查看所有链接
+```shell
+# 也可以使用简写 nmcli d
+nmcli device
+```
+
+* 查看无线网络
 ```shell
 nmcli device wifi
 ```

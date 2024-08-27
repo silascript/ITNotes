@@ -7,7 +7,7 @@ tags:
   - Eclipse
   - dbeaver
 created: 2023-01-30 11:19:11
-modified: 2024-06-18 18:13:14
+modified: 2024-08-28 02:59:32
 ---
 
 # Java 笔记
@@ -419,7 +419,10 @@ Marketplace 是 Eclipse 的插件市场，通过它可以更方便地搜索和�
 
 #### Bracketeer
 
-[Bracketeer](https://marketplace.eclipse.org/content/bracketeer-java-jdt) 是一个使用注释方式标识出匹配大括号的插件。Eclipse 插件市场中的 Bracketeer 插件的地址已经失效了，应自行通过 「Install new Software」 这个方式添加插件安装地址。安装地址：[https://chookapp.github.io/ChookappUpdateSite/](https://chookapp.github.io/ChookappUpdateSite/)
+[Bracketeer](https://marketplace.eclipse.org/content/bracketeer-java-jdt) 是一个使用注释方式标识出匹配大括号的插件。Eclipse 插件市场中的 Bracketeer 插件的地址已经失效了，应自行通过 「Install new Software」 这个方式添加插件安装地址。~~安装地址：[https://chookapp.github.io/ChookappUpdateSite/](https://chookapp.github.io/ChookappUpdateSite/)~~
+> [!tip] 
+> 
+> Bracketeer 的地址也已经失效，因为 Bracketeer2.x 版本已经在插件市场上架了，之前的老版本应该要淘汰了。
 
 #### Eclipse explorer
 

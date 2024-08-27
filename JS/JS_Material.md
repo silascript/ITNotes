@@ -8,12 +8,16 @@ tags:
   - material
   - list
 created: 2024-08-16 10:08:24
-modified: 2024-08-16 10:36:46
+modified: 2024-08-26 22:09:43
 ---
 
 # JS 资料清单
 
 ---
+
+## JS
+
+* [简介 - JavaScript教程 - 廖雪峰的官方网站](https://liaoxuefeng.com/books/javascript/introduction/index.html)
 
 ## ESLint
 

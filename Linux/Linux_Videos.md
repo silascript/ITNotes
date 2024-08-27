@@ -10,7 +10,7 @@ tags:
   - tutorial
   - list
 created: 2023-08-18 19:44:52
-modified: 2024-07-11 20:18:23
+modified: 2024-08-26 11:06:02
 ---
 
 # Linux 视频清单
@@ -25,6 +25,7 @@ modified: 2024-07-11 20:18:23
 * [Linux学习教程](https://www.bilibili.com/video/BV1P4421U7Ky)
 * [黑客萌妹_HackMM视频合集](https://space.bilibili.com/3494364789607153/channel/series)
 * [全方位讲解Linux操作系统](https://www.bilibili.com/video/BV1Kf421q7S3)
+* [🅷 【2024】乌班图(Ubuntu)，包含运维岗位分析系统命令/云服务器，零基础也能轻松学会!](https://www.bilibili.com/video/BV13PeqevESA)
 
 ---
 

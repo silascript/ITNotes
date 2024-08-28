@@ -6,7 +6,7 @@ tags:
   - pip
   - conda
 created: 2023-08-18 19:44:52
-modified: 2024-08-28 03:23:40
+modified: 2024-08-28 03:27:55
 ---
 
 # Python 笔记
@@ -53,7 +53,7 @@ modified: 2024-08-28 03:23:40
 
 > [!tip]
 > 
->Python 每一个主版本的从**release**到**EOF**，整个生命周期是 5 年。
+> Python 每一个主版本的从**release**到**EOF**，整个生命周期是 5 年。
 
 ---
 

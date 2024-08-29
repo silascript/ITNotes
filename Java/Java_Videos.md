@@ -6,7 +6,7 @@ tags:
   - tutorial
   - list
 created: 2023-06-24 01:08:17
-modified: 2024-08-07 02:35:12
+modified: 2024-08-29 11:49:39
 ---
 
 # Java 视频清单
@@ -23,6 +23,7 @@ modified: 2024-08-07 02:35:12
 * [java操作xml方法,总有适合你的](https://www.bilibili.com/video/BV15T4y1P7nM)
 * [2024全套java教程，零基础入门到精通，2小时快速入门](https://www.bilibili.com/video/BV11z421f7HJ)
 * [2024黑马程序员Java+AI智能辅助编程全套视频教程](https://www.bilibili.com/video/BV1gb42177hm)
+* [【挑战不可能】7天零基础快速学会Java](https://www.bilibili.com/video/BV1sk4y1M7ru)
 
 ### IO
 
@@ -38,6 +39,10 @@ modified: 2024-08-07 02:35:12
 ### log
 
 * [混而不乱的java日志体系-log4j,jul,jcl,slf4j和logback](https://www.bilibili.com/video/BV13A41137Tc)
+
+### RMI
+
+* [Java反序列化RMI专题-没有人比我更懂RMI](https://www.bilibili.com/video/BV1L3411a7ax)
 
 ---
 

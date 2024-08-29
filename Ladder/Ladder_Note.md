@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2024-08-22 10:30:33
+modified: 2024-08-30 01:06:00
 ---
 
 # 梯子笔记
@@ -994,3 +994,4 @@ export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_pr
 * [梯子资料](Ladder_Material.md)
 * [Youtube 笔记](Youtube_Note.md)
 * [搭配方案](搭配方案.md)
+* [网络笔记](../Network/Network_Note.md)

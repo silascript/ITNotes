@@ -7,7 +7,7 @@ tags:
   - lux
   - google
 created: 2023-08-18 19:44:52
-modified: 2024-07-15 04:29:17
+modified: 2024-09-01 11:27:25
 ---
 
 # 常用小工具笔记
@@ -466,6 +466,28 @@ f2 内置了一些变量，能够快速实现常用功能：
 
 * [2023-2024 最新可用Google镜像地址 长期更新 - 哔哩哔哩](https://www.bilibili.com/opus/886060167271022609)
 * [谷歌镜像，谷歌学术镜像——2024年1月最新 - 知乎](https://zhuanlan.zhihu.com/p/607795300?utm_id=0&wd=&eqid=a982987d007d0be9000000056583f3f6)
+
+---
+
+## WakaTime
+
+[WakaTime](https://wakatime.com) 是一款记录你 Coding 历史的小工具。
+
+免费账号保存一周的历史记录。
+
+### API key
+
+WakaTime 的 api key 就是 WakaTime 与编辑器或支持 WakaTime 的关键。
+
+`~/.wakatime.cfg` 配置文件下记录着 WakaTime 的 key。
+
+### 相关资料
+
+* [使用Wakatime记录你的Coding数据 - 张小凯的博客](https://jasonkayzk.github.io/2020/08/28/%E4%BD%BF%E7%94%A8Wakatime%E8%AE%B0%E5%BD%95%E4%BD%A0%E7%9A%84Coding%E6%95%B0%E6%8D%AE/)
+* [WakaTime数据同步展示工具WakaTime 是一款可以记录你的编码时间的工具 - 掘金](https://juejin.cn/post/6844903763514228749)
+* [WakaTime的使用(vscode,idea,hbuilder)简介 wakatime能够记录打代码的时长，方便自己了 - 掘金](https://juejin.cn/post/6981098690312142861)
+* [waka-box - 公开展示你的每周编程统计信息-CSDN博客](https://blog.csdn.net/gitblog_00051/article/details/138840152)
+* [透過 WakaTime 幫助來紀錄自己做了哪些事，並製作獨特的 GitHub Profile | omegaatt](https://www.omegaatt.com/blogs/develop/2023/wakatime_experience/)
 
 ---
 

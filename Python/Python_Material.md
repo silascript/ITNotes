@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2024-08-28 03:21:33
+modified: 2024-09-03 03:53:51
 ---
 
 # Python 资料清单
@@ -46,6 +46,11 @@ modified: 2024-08-28 03:21:33
 * [解决问题](https://blog.csdn.net/qq_43145926/article/details/104237817)
 * [更新conda update conda 遇到的问题 - 知乎](https://zhuanlan.zhihu.com/p/133365134)
 * [python - RemoveError: 'setuptools' 是 conda 的依赖项，无法从 conda 的运行环境中移除 - SegmentFault 思否](https://segmentfault.com/q/1010000043259290)
+
+## ruff
+
+* [（数据科学学习手札159）使用ruff对Python代码进行自动美化 - 费弗里 - 博客园](https://www.cnblogs.com/feffery/p/18128958)
+* [大一统的 Ruff: All-in-One Linter & Formatter for Python | DavidZ's Blog](https://blog.davidz.cn/post/aio-ruff)
 
 ---
 

@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2024-08-19 12:33:21
+modified: 2024-09-03 04:01:45
 
 ---
 
@@ -411,12 +411,17 @@ VSCodium 原装只内置了 `Python Language Basics`，这个内置插件只有�
 [Python Debugger](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy) [![Python Debugger Repo](https://img.shields.io/github/stars/microsoft/vscode-python-debugger
 )](https://github.com/microsoft/vscode-python-debugger) [Python](../Python/Python_Note.md) Debug 插件。
 
-#### 
+#### Python Environment Manager
 
 [Python Environment Manager](https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-environment-manager) 是 [Python环境](../Python/Python_Note.md#python_virtualenvironments) [![Python Environment Manager Repo](https://img.shields.io/github/stars/DonJayamanne/vscode-python-manager
 )](https://github.com/DonJayamanne/vscode-python-manager) 管理插件。
 
 ![Python Environment Manager screenshot 1](https://raw.githubusercontent.com/DonJayamanne/vscode-python-manager/environmentManager/resources/demo.gif)
+
+#### Ruff for VSCode
+
+[Ruff for Vscode](https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff) [![ruff-vscode Repo](https://img.shields.io/github/stars/astral-sh/ruff-vscode
+)](https://github.com/astral-sh/ruff-vscode) 是 [ruff](../Protocols/LSP_Note.md#ruff) 在 VSCode 上的插件。
 
 ---
 

@@ -7,7 +7,7 @@ tags:
   - tutorial
   - list
 created: 2023-02-12 11:23:37
-modified: 2024-07-30 18:58:11
+modified: 2024-09-03 18:16:44
 ---
 
 # Python 视频清单
@@ -55,6 +55,7 @@ python 相关视频汇集整理。
 
 * [【Python面向对象】究竟什么是面向对象？](https://www.bilibili.com/video/BV1zH4y1p76G)
 * [【Python】1小时搞懂面向对象编程 | 面向过程vs面向对象](https://www.bilibili.com/video/BV1Wz421k7QP)
+* [在 20 分钟内学习 Python 面向对象](https://www.bilibili.com/video/BV1uHHYeWEvg)
 
 ### 100 Days of Code
 

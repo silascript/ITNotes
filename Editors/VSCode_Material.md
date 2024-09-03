@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-13 18:49:29
-modified: 2024-08-20 13:20:29
+modified: 2024-09-03 10:05:31
 ---
 
 # VSCode 资料清单
@@ -18,6 +18,8 @@ modified: 2024-08-20 13:20:29
 * [产品图标主题 | Visual Studio Code 扩展 API - VSCode 中文](https://vscode.js.cn/api/extension-guides/product-icon-theme)
 * [🗂 让你的 VSCode 文件图标更好看的10个文件图标主题一个好用的文件图标主题除了能够愉悦身心之外，对于开发的效率 - 掘金](https://juejin.cn/post/7247569496696389691)
 
+---
+
 ## C、C++
 
 * [在Visual Studio Code中使用 Code Runner 编译C/C++程序 - NaCl技术分享](https://nacldragon.top/2023/mingw-VSCode/)
@@ -28,11 +30,15 @@ modified: 2024-08-20 13:20:29
 * [window下使用vscode和cmake开发编译cpp代码 - yongfengnice - 博客园](https://www.cnblogs.com/yongfengnice/p/18157071)
 * [CMake 入门学习2 使用VSCode cmake插件](https://blog.51cto.com/u_4029519/5423807)
 
+---
+
 ## Java
 
 * [Oracle发布支持Vscode的Java插件 - 极道](https://www.jdon.com/69168.html)
 * [vscode开发java环境配置，很细 - 掘金](https://juejin.cn/post/7386916905008054287)
 * [vscode推荐的Java插件](https://blog.51cto.com/u_16213343/7450444)
+
+---
 
 ## PHP
 
@@ -42,19 +48,38 @@ modified: 2024-08-20 13:20:29
 * [VS Code 配置 PHP XDebug](https://segmentfault.com/a/1190000041594981)
 * [使用Visual Studio Code开发php，并打开debug模式，打开断点调试 - 会飞的鹏 - 博客园](https://www.cnblogs.com/hfdp/p/17939885)
 
+---
+
+## Python
+
+* [Python 语法检查、格式化工具 Ruff 的各项配置 - 那个白熊 - 博客园](https://www.cnblogs.com/amnotgcs/p/18117492)
+
+### 相关资料
+
+* [Python 资料清单](../Python/Python_Material.md)
+* [LSP 笔记](../Protocols/LSP_Note.md)
+
+---
+
 ## ESLint
 
 * [ESLint](../JS/JS_Material.md#ESLint)
 
+---
+
 ## 数据库
 
 * [好用的 VScode 数据库管理插件 - SQLTools](https://www.51cto.com/article/711290.html)
+
+---
 
 ## 同步
 
 * [VSCode官方的配置同步方案这几天在迁移电脑工作环境，对于VSCode，我实在不想从头做下载插件、配置代码规则这样的事 - 掘金](https://juejin.cn/post/7066622158184644621)
 * [\`settingsSync.ignoredSettings\` no longer accepts \`window.zoomLevel\`? · Issue #116046 · microsoft/vscode · GitHub](https://github.com/microsoft/vscode/issues/116046)
 * [Settings Sync syncs zoom level · Issue #114013 · microsoft/vscode · GitHub](https://github.com/microsoft/vscode/issues/114013)
+
+---
 
 ## 其他
 

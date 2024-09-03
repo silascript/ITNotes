@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-08-25 10:27:09
+modified: 2024-09-03 18:40:29
 ---
 
 # Linux 笔记
@@ -61,6 +61,10 @@ modified: 2024-08-25 10:27:09
 
 ## <span id="linux_versions">版本</span>
 
+### 内核版本
+
+可以到内核官网查看内核信息：[Linux Kernel](https://kernel.org)
+
 ### <span id="linux_versions_query">查询系统版本</span>
 
 #### cat 方式
@@ -98,11 +102,16 @@ uname -r
 
 ```
 
+> [!tip] 
+> 
+> `uname` 可以看到当前系统用到的 [内核版本](#内核版本)。
+
 #### lsb_release
 
 LSB 是 **Linux Standard Base**（Linux 标准库）的缩写， `lsb_release` 命令 用来与具体 Linux 发行版相关的 Linux 标准库信息。
 
 > [!info] LSB 译法
+> 
 > LSB 的译法有 Linux 标准库，Linux 标准规范
 
 显示所有版本信息：

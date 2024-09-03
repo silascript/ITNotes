@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2024-09-03 10:07:45
+modified: 2024-09-03 20:37:09
 ---
 
 # Python 资料清单
@@ -56,6 +56,9 @@ modified: 2024-09-03 10:07:45
 * [（数据科学学习手札159）使用ruff对Python代码进行自动美化 - 费弗里 - 博客园](https://www.cnblogs.com/feffery/p/18128958)
 * [大一统的 Ruff: All-in-One Linter & Formatter for Python | DavidZ's Blog](https://blog.davidz.cn/post/aio-ruff)
 * [Python 開發：Ruff Linter、Formatter 介紹 + 設定教學 - Code and Me](https://blog.kyomind.tw/ruff/)
+* [比其他工具快 10 到 100 倍！Rust 编写的 py 代码格式化工具 | 开源日报 No.339](https://osguider.com/blog/post/daily/daily-339/)
+* [（数据科学学习手札159）使用ruff对Python代码进行自动美化-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/2407965)
+* [【Python 軍火庫🧨 - Ruff】更加豐富強大的Python Linter](https://vocus.cc/article/65390855fd89780001fe7001)
 
 ### 相关资料
 

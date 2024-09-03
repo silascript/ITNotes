@@ -6,7 +6,7 @@ tags:
   - tutorial
   - list
 created: 2023-06-24 01:08:17
-modified: 2024-08-29 11:49:39
+modified: 2024-09-03 19:59:18
 ---
 
 # Java 视频清单
@@ -43,6 +43,10 @@ modified: 2024-08-29 11:49:39
 ### RMI
 
 * [Java反序列化RMI专题-没有人比我更懂RMI](https://www.bilibili.com/video/BV1L3411a7ax)
+
+### 分布式
+
+* [新版Java分布式核心技术Redis&FastDFS&RabbitMQ教程](https://www.bilibili.com/video/BV1Ui421h78R)
 
 ---
 

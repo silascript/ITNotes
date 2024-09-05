@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-10 03:06:48
-modified: 2024-08-26 17:48:45
+modified: 2024-09-05 20:54:11
 ---
 
 # Linux 资料清单
@@ -15,6 +15,7 @@ modified: 2024-08-26 17:48:45
 ## 用户及权限
 
 * [linux修改文件或目录的所有者(chown)和用户组(chgrp)-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1627599)
+* [usermod 命令，Linux usermod 命令详解：用于修改用户的基本信息 - Linux 命令搜索引擎](https://wangchujiang.com/linux-command/c/usermod.html)
 
 ## grep
 

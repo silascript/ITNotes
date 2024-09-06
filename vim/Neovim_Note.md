@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2024-08-21 18:51:39
+modified: 2024-09-06 11:45:05
 ---
 
 # NeoVim 笔记
@@ -1718,7 +1718,9 @@ neovim 并没有自动补全功能，它的补全是通过 `omnifunc` 绑定来�
 		lspconfig.cssls.setup {
 			capabilities = capabilities
 		}
-		lspconfig.tsserver.setup {}
+		
+		-- lspconfig.tsserver.setup {}
+		lspconfig.ts_ls.setup {}
 
 		-- golang
 		lspconfig.gopls.setup {}
@@ -2943,6 +2945,7 @@ AstroNvim 实际配置目录是跟插件安装目录放到 `~/.local/share/` 目
 * [nvim代码格式化插件formatter.nvim](https://blog.csdn.net/lxyoucan/article/details/120411901)
 * [懒惰的Neovim](https://xfyuan.github.io/2023/02/lazy-neovim/)
 * [Neovim下java 开发的最佳实践 - Zorch's Blog](https://zorchp.github.io/java/Neovim%E4%B8%8BJava-%E5%BC%80%E5%8F%91%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/)
+* [neovim配置记录笔记 | 狂想写作本](https://unusebamboo.top/vim/vim-neovim-config/index.html)
 
 ### 各种文档
 

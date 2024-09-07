@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2024-08-20 10:56:03
+modified: 2024-09-07 19:38:55
 ---
 
 # Shell 资料清单
@@ -25,6 +25,9 @@ modified: 2024-08-20 10:56:03
 ### Shell 相关
 
 * [#!/bin/bash 和 #!/usr/bin/env bash 的区别-CSDN博客](https://blog.csdn.net/qq_37164975/article/details/106181500)
+* [执行Shell脚本的三种方式执行Shell脚本的三种方式 脚本 首先我们创建一个test.bash文件，test.bas - 掘金](https://juejin.cn/post/7087583630314176526)
+* [linux中sh -c的作用 - 百度文库](https://wenku.baidu.com/view/24f86bb88aeb172ded630b1c59eef8c75ebf9503.html?_wkts_=1725708838370&bdQuery=hell%E5%91%BD%E4%BB%A4sh+-c)
+* [\`sh -c\`命令——解决命令权限问题、一条命令中执行多个指令\_shell sh -c-CSDN博客](https://blog.csdn.net/weixin_53389944/article/details/136560945)
 
 ---
 

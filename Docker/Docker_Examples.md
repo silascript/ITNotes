@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2024-08-16 11:49:17
+modified: 2024-09-07 20:25:22
 ---
 
 # Docker 示例
@@ -233,6 +233,15 @@ docker exec -it d_php81 sh -c "php $*"
 > `php $*` 就是一个参数的实参。其中 `$*` 同样也也是个 [Shell](../Linux/Shell/Shell_Note.md) 语法元素，表示接收一个 [参数](../Linux/Shell/Shell_Note.md#参数) 列表。在这里的意思就是，让脚本能接收各种参数，以完成 php 各种调用需求。
 > 
 > 
+
+如果想更「自由」执行容器中 `/usr/local/bin` 下所有可执行程序，可以将脚本改成这样：
+
+```shell
+exebin="/usr/local/bin/*"
+docker exec -it d_php83 sh -c "$exebin $*"
+```
+
+这样，不但能在宿主机通过这个脚本调用执行 `php`，还能执行如 `composer` 等程序（如果安装了）。
 
 VSCode [intelephense](https://marketplace.visualstudio.com/items?itemName=bmewburn.vscode-intelephense-client) 插件关于 [PHP](../PHP/PHP_Note.md) 可执行文件设置：
 

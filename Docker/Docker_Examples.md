@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2024-09-07 20:25:22
+modified: 2024-09-08 02:23:36
 ---
 
 # Docker 示例
@@ -318,6 +318,41 @@ docker-php-ext-enable xdebug
 
 1. 进 PHP 容器内安装：`docker-php-ext-install mysqli`
 2. 重启 PHP 容器
+
+#### 安装 OPCache
+
+1. 配置 `php.ini` 文件
+	复制 `/usr/local/etc/php/` 目录下的 `php.ini-development` 或 `php.ini-production` 出一份，命名为 `php.ini`，然后再进行以下配置：
+	
+	将以下选项的注释取消：
+	* `opcache.enable=1`
+	* `opcache.enable_cli=0`
+	* `opcache.memory_consumption=128`
+	* `opcache.interned_strings_buffer=8`
+	* `opcache.max_accelerated_files=10000`
+	> [!tip] 
+	> 
+	> 如果要开启 JIT 功能，就在配置文件中 `opcache.max_accelerated_files=10000` 选项下面添加以下两行配置：
+	> 
+	> * `opcache.jit=tracing`
+	> * `opcache.jit_buffer_size=100M`
+
+	配置完成后，重启 [Docker服务](Docker_Note.md#dk_comm_commands) 及重启容器。
+2. 进入容器中，执行以下安装代码：
+```shell
+docker-php-ext-configure opcache --enable-opcache && docker-php-ext-install opcache
+```
+
+> [!info] 
+> 
+> 执行 `php -m`，看下是否已经安装上了。
+> 
+> ```shell
+> [Zend Modules]
+> Zend OPcache
+> ```
+
+3. 再次 [Docker服务](Docker_Note.md#dk_comm_commands) 及重启容器。使用 `phpinof()` 查看 OPCache 是否启用成功。
 
 ---
 

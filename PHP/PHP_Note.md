@@ -4,7 +4,7 @@ tags:
   - PL
   - php
 created: 2023-09-21 23:13:13
-modified: 2024-08-16 11:28:11
+modified: 2024-09-07 22:27:06
 ---
 
 # PHP 笔记
@@ -56,16 +56,9 @@ PHP 扩展社区库（英语：The PHP Extension Community Library，简称 PECL
 
 PECL 是 PHP 笔记的标准扩展，可以补充实际开发中所需的功能，所有的扩展都需要安装，在 Windows 下面以.dll 文件的形式出现，而在 Linux 下面，需要单独进行编译，它的表现形式为：根据 PHP 官方的标准，用 C 或 C++ 语言写成，尽管源码开放，但是一般人无法随意更改源码。
 
-### 扩展相关资料
-
-* [安装PHP的GD扩展 - 易文杰 - 博客园](https://www.cnblogs.com/ywjcqq/p/14717328.html)
-* [GD 安装与配置 - Manual](https://www.php.net/manual/zh/image.installation.php)
-
 ---
 
-## 相关资料
-
-* [Phpstorm Xdebug 远程调试代码 – Zgao's blog](https://zgao.top/phpstorm-xdebug-%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E4%BB%A3%E7%A0%81/)
+## 语法
 
 ---
 
@@ -74,5 +67,6 @@ PECL 是 PHP 笔记的标准扩展，可以补充实际开发中所需的功能�
 * [Linux下PHP安装](Linux下PHP安装.md)
 * [Linux下安装配置Apache](Linux下安装配置Apache.md)
 * [PHP 视频清单](PHP_Videos.md)
+* [PHP 资料清单](PHP_Material.md)
 * [PHP 扩展笔记](PHP扩展.md)
 * [Docker 笔记](../Docker/Docker_Note.md)

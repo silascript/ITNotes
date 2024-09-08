@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2024-09-08 11:24:55
+modified: 2024-09-09 03:59:14
 ---
 
 # Docker 示例
@@ -318,6 +318,34 @@ docker-php-ext-enable xdebug
 
 1. 进 PHP 容器内安装：`docker-php-ext-install mysqli`
 2. 重启 PHP 容器
+
+#### 安装 pdo_mysql
+
+```shell
+docker-php-ext-install pdo_mysql
+```
+
+#### 安装 exif
+
+```shell
+docker-php-ext-install exif
+```
+
+#### 安装 bcmath
+
+```shell
+docker-php-ext-install bcmath
+```
+
+#### 安装 zip 模块
+
+​zip​模块依赖 libzip-dev​，所以得先在容器中的系统的包管理器安装此依赖。
+
+```shell
+apt-get install libzip-dev
+
+docker-php-ext-install zip
+```
 
 #### 安装 OPCache
 

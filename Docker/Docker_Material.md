@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-22 01:36:41
-modified: 2024-09-08 23:15:26
+modified: 2024-09-09 02:25:50
 ---
 
 # Docker 资料清单
@@ -24,10 +24,12 @@ modified: 2024-09-08 23:15:26
 * [Docker Volume - 目录挂载以及文件共享 | Zach Ke's Notes](https://kebingzao.com/2019/02/25/docker-volume/)
 * [关于Docker目录挂载的总结 - iVictor - 博客园](https://www.cnblogs.com/ivictor/p/4834864.html)
 * [Docker -v 挂载主机目录到容器中（及数据卷容器）一、简单挂载 使用 Docker 的过程中，经常需要挂载主机上的 - 掘金](https://juejin.cn/post/7259668108649545783)
+* [Docker存储Volume,Docker数据持久化](http://m.tnblog.net/aojiancc2/article/details/7723)
 * [解决docker通过volumes挂载文件，宿主机修改后容器内不同步，重启服务才能同步\_docker 外面的文件更新后不能实时生效 重启docker才生效-CSDN博客](https://blog.csdn.net/weixin_49415186/article/details/123115832)
 * [解密 Docker 挂载文件，宿主机修改后容器里文件没有修改-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1708294)
 * [Docker挂载的文件与主机不同步问题](https://www.yuewatch.com/archives/1699412207030)
 * [Docker -v | volume 挂载宿主机目录导致容器内文件被覆盖问题 - 二柒的博客 - 博客园](https://www.cnblogs.com/EQ1024/p/15660909.html)
+* [\[Docker\] - 解决挂载时容器内数据被覆盖问题 | ༄༊࿆咸鱼の家ོྂཾ࿆࿐](https://blog.kamasylvia.com/p/f0281425/)
 
 ## Docker 示例资料
 

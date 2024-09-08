@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2024-09-09 03:59:14
+modified: 2024-09-09 04:13:15
 ---
 
 # Docker 示例
@@ -279,6 +279,28 @@ VSCode [intelephense](https://marketplace.visualstudio.com/items?itemName=bmewbu
 
 ### 安装模块及扩展
 
+安装模块或扩展，就会在 `/usr/local/etc/php/conf.d/​` ​目录下生成相应的配置文件：
+
+```shell
+root@c05f9bedea7f:~# ls -al /usr/local/etc/php/conf.d/
+total 40
+drwxr-xr-x 1 root root 4096 Sep  8 19:47 .
+drwxr-xr-x 1 root root 4096 Sep  5 00:05 ..
+-rw-r--r-- 1 root root   96 Sep  5 00:05 docker-fpm.ini
+-rw-r--r-- 1 root root   20 Sep  8 19:47 docker-php-ext-bcmath.ini
+-rw-r--r-- 1 root root   18 Sep  8 19:45 docker-php-ext-exif.ini
+-rw-r--r-- 1 root root   16 Sep  8 19:35 docker-php-ext-gd.ini
+-rw-r--r-- 1 root root   20 Sep  8 19:40 docker-php-ext-mysqli.ini
+-rw-r--r-- 1 root root   23 Sep  8 19:43 docker-php-ext-pdo_mysql.ini
+-rw-r--r-- 1 root root   17 Sep  5 00:05 docker-php-ext-sodium.ini
+```
+
+而且在 phpinfo()​ ​页面中 Additional .ini files parsed​ ​这一栏中，会显示各扩展或模块的配置文件完整路径。
+
+| 选项                         | 值                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Additional .ini files parsed | /usr/local/etc/php/conf.d/docker-fpm.ini, <br > /usr/local/etc/php/conf.d/docker-php-ext-bcmath.ini, <br > /usr/local/etc/php/conf.d/docker-php-ext-exif.ini, <br >/usr/local/etc/php/conf.d/docker-php-ext-gd.ini, <br > /usr/local/etc/php/conf.d/docker-php-ext-mysqli.ini, <br >/usr/local/etc/php/conf.d/docker-php-ext-opcache.ini, <br > /usr/local/etc/php/conf.d/docker-php-ext-pdo_mysql.ini, <br > /usr/local/etc/php/conf.d/docker-php-ext-sodium.ini, <br > /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini, <br > /usr/local/etc/php/conf.d/docker-php-ext-zip.ini |
+
 #### 安装 xdebug
 
 先检测下 xdebug 安装没：`php -m | grep xdebug​`
@@ -297,7 +319,7 @@ docker-php-ext-enable xdebug
 
 完成上述操作后，使用 `php -m` 命令查看是否安装成功。
 
-如果安装成功，显示 `[Zend Modules] Xdebug`​。
+如果安装成功，显示 `[Zend Modules] Xdebug`​，并且在 `/usr/local/etc/php/conf.d/` 下生成相应的配置文件 `docker-php-ext-xdebug.ini`。
 
 [VSCode](../Editors/VSCode_Note.md) 使用 xdebug，只需要配置 `php.debug.executablePath` 属性就可以，此属性同样是找 [PHP](../PHP/PHP_Note.md) 的可执行程序，只是端口号不同：
 

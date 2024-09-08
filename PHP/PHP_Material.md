@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-09-07 22:23:16
-modified: 2024-09-07 23:16:12
+modified: 2024-09-09 04:40:34
 ---
 
 # PHP 资料清单
@@ -18,11 +18,18 @@ modified: 2024-09-07 23:16:12
 
 ## 配置
 
+### OPCache
+
+* [《让PHP扩展开拓编程前路》 之 性能优化利器 OPcache | PHP 技术论坛](https://learnku.com/articles/84314)
+
 ### JIT
 
 * [PHP8开启JIT - 童年的回忆 - 博客园](https://www.cnblogs.com/cx850116/p/17502271.html)
 * [PHP8.0 JIT介绍，及如何在PHP 8中设置JIT | Lenix Blog](https://blog.p2hp.com/archives/7577)
 * [php8.2开启jit,配置jit,如何在PHP8.2中设置开启JIT – Kissnimami.top](https://www.kissnimami.top/p/211.html)
+* [PHP 8新特性之JIT简介 - 风雪之隅](https://www.laruence.com/2020/06/27/5963.html)
+* [php:开启jit(php 8.2.5) - 刘宏缔的架构森林 - 博客园](https://www.cnblogs.com/architectforest/p/17674247.html)
+* [深入了解PHP8 opcache JIT(即时编译)功能 - 星云惊蛰 - 博客园](https://www.cnblogs.com/jzxy/articles/17264878.html)
 
 ## 扩展
 

@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-22 01:36:41
-modified: 2024-09-08 03:17:01
+modified: 2024-09-08 11:26:32
 ---
 
 # Docker 资料清单
@@ -18,8 +18,13 @@ modified: 2024-09-08 03:17:01
 * [docker容器之run命令 - 进击的davis - 博客园](https://www.cnblogs.com/davis12/p/14467421.html)
 * [docker run常用参数-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/2246184)
 * [Warning: Stopping docker.service, but it can still be activated by: docker.socket-CSDN博客](https://blog.csdn.net/qq_42533216/article/details/121489855)
+
+### 挂载
+
 * [解决docker通过volumes挂载文件，宿主机修改后容器内不同步，重启服务才能同步\_docker 外面的文件更新后不能实时生效 重启docker才生效-CSDN博客](https://blog.csdn.net/weixin_49415186/article/details/123115832)
 * [解密 Docker 挂载文件，宿主机修改后容器里文件没有修改-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1708294)
+* [关于Docker目录挂载的总结 - iVictor - 博客园](https://www.cnblogs.com/ivictor/p/4834864.html)
+* [Docker挂载的文件与主机不同步问题](https://www.yuewatch.com/archives/1699412207030)
 
 ## Docker 示例资料
 
@@ -31,6 +36,8 @@ modified: 2024-09-08 03:17:01
 * [PHP开启opcache缓存\_docker php81-opcache-CSDN博客](https://blog.csdn.net/ai147258150/article/details/115002322)
 * [PHP 在docker 中的扩展问题PHP 容器配置 从官方基础版本构建 FROM php:7.2-fpm 官方版本默认 - 掘金](https://juejin.cn/post/6959357869233799182)
 * [使用docker安装php7.3-fpm服务 - 第一夫人 - 博客园](https://www.cnblogs.com/firstlady/p/17636034.html)
+* [基于Docker搭建PHP开发环境 - X-Wolf - 博客园](https://www.cnblogs.com/xingxia/p/docker_php.html)
+* [php - 'Opcache'无法在Docker中安装-6ren](http://123.56.139.157:8082/article/23/6843018/detail.html)
 
 ## Docker Compose
 

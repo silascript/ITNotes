@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2024-09-08 02:23:36
+modified: 2024-09-08 11:24:55
 ---
 
 # Docker 示例
@@ -321,19 +321,40 @@ docker-php-ext-enable xdebug
 
 #### 安装 OPCache
 
-1. 配置 `php.ini` 文件
-	复制 `/usr/local/etc/php/` 目录下的 `php.ini-development` 或 `php.ini-production` 出一份，命名为 `php.ini`，然后再进行以下配置：
+1. 配置文件
+
+	> [!info] 
+	> 
+	> 传统的是配置 `php.ini` 文件。
+	> 
+	> 复制 `/usr/local/etc/php/` 目录下的 `php.ini-development` 或 `php.ini-production` 出一份，命名为 `php.ini`，然后再进行以下配置：
+	>
+	> 将以下选项的注释取消：
+	> * `opcache.enable=1`
+	> * `opcache.enable_cli=0`
+	> * `opcache.memory_consumption=128`
+	> * `opcache.interned_strings_buffer=8`
+	> * `opcache.max_accelerated_files=10000`
+	>> [!tip] 
+	>> 
+	>> 如果要开启 JIT 功能，就在配置文件中 `opcache.max_accelerated_files=10000` 选项下面添加以下两行配置：
+	>> 
+	>> * `opcache.jit=tracing`
+	>> * `opcache.jit_buffer_size=100M`
 	
-	将以下选项的注释取消：
-	* `opcache.enable=1`
+	但在 Docker 中配置，并不是直接配置 `php.ini`，而是 `/usr/local/etc/php/conf.d/` 目录下各配置文件中配置。
+	OPCache 配置文件：`/usr/local/etc/php/conf.d/docker-php-ext-opcache.ini`。
+	将以下选项在此配置文件中添加：
+
+    * `opcache.enable=1`
 	* `opcache.enable_cli=0`
 	* `opcache.memory_consumption=128`
 	* `opcache.interned_strings_buffer=8`
 	* `opcache.max_accelerated_files=10000`
 	> [!tip] 
-	> 
-	> 如果要开启 JIT 功能，就在配置文件中 `opcache.max_accelerated_files=10000` 选项下面添加以下两行配置：
-	> 
+	>  
+	>  同样的，如果要开启 JIT，同样得添加以下选项进 `/usr/local/etc/php/conf.d/docker-php-ext-opcache.ini` 中：
+	>  
 	> * `opcache.jit=tracing`
 	> * `opcache.jit_buffer_size=100M`
 

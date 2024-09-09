@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-09-07 22:23:16
-modified: 2024-09-09 04:40:34
+modified: 2024-09-09 12:44:26
 ---
 
 # PHP 资料清单
@@ -21,6 +21,7 @@ modified: 2024-09-09 04:40:34
 ### OPCache
 
 * [《让PHP扩展开拓编程前路》 之 性能优化利器 OPcache | PHP 技术论坛](https://learnku.com/articles/84314)
+* [PHP: OPCache 配置 - Manual](https://www.php.net/manual/zh/opcache.configuration.php)
 
 ### JIT
 

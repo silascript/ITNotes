@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-22 01:36:41
-modified: 2024-09-09 02:25:50
+modified: 2024-09-09 12:51:24
 ---
 
 # Docker 资料清单
@@ -44,6 +44,7 @@ modified: 2024-09-09 02:25:50
 * [基于Docker搭建PHP开发环境 - X-Wolf - 博客园](https://www.cnblogs.com/xingxia/p/docker_php.html)
 * [php - 'Opcache'无法在Docker中安装-6ren](http://123.56.139.157:8082/article/23/6843018/detail.html)
 * [【Docker系列】单独部署nginx容器和php-fpm容器容易忽略的问题 – Hunter's blog](http://www.hunterkou.com/?p=402)
+* [docker php-fpm php.ini,docker 的官方PHP镜像 如何修改 php.ini 配置-CSDN博客](https://blog.csdn.net/weixin_32101377/article/details/116038853)
 
 ## Docker Compose
 

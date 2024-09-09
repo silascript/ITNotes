@@ -5,10 +5,21 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2024-09-03 20:37:09
+modified: 2024-09-09 10:57:18
 ---
 
 # Python 资料清单
+
+---
+
+## pip
+
+* [PIP 更新后不能使用的使用 提示： No module named 'pip'问题解决 - Bush - 博客园](https://www.cnblogs.com/bushLing/p/17030223.html)
+
+## pipx
+
+* [Pipx：在隔离环境中安装和运行 Python 应用 - 知乎](https://zhuanlan.zhihu.com/p/73675447)
+* [在 Linux 中安装和使用 pipx - 知乎](https://zhuanlan.zhihu.com/p/637791135)
 
 ---
 
@@ -17,17 +28,9 @@ modified: 2024-09-03 20:37:09
 * [Python虚拟环境（pipenv、venv、conda一网打尽）-腾讯云](https://cloud.tencent.com/developer/article/2124483)
 * [最全的Python虚拟环境使用方法 - 知乎](https://zhuanlan.zhihu.com/p/60647332)
 
-### pip
-
-* [PIP 更新后不能使用的使用 提示： No module named 'pip'问题解决 - Bush - 博客园](https://www.cnblogs.com/bushLing/p/17030223.html)
-
-### pipx
-
-* [Pipx：在隔离环境中安装和运行 Python 应用 - 知乎](https://zhuanlan.zhihu.com/p/73675447)
-* [在 Linux 中安装和使用 pipx - 知乎](https://zhuanlan.zhihu.com/p/637791135)
-
 ### Conda
 
+* [推荐：国内Conda镜像源合集](https://baijiahao.baidu.com/s?id=1806873673157444151&wfr=spider&for=pc)
 * [如何用Conda优雅的管理Python环境 | About\_conda](https://ckfanzhe.github.io/About_conda/)
 * [2023年最新conda和pip国内镜像源 - 知乎](https://zhuanlan.zhihu.com/p/628870519)
 * [关于国内anaconda镜像站点看这一篇就够啦 - 知乎](https://zhuanlan.zhihu.com/p/584580420)

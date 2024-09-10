@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-09-07 22:23:16
-modified: 2024-09-09 12:44:26
+modified: 2024-09-10 19:02:43
 ---
 
 # PHP 资料清单
@@ -31,6 +31,7 @@ modified: 2024-09-09 12:44:26
 * [PHP 8新特性之JIT简介 - 风雪之隅](https://www.laruence.com/2020/06/27/5963.html)
 * [php:开启jit(php 8.2.5) - 刘宏缔的架构森林 - 博客园](https://www.cnblogs.com/architectforest/p/17674247.html)
 * [深入了解PHP8 opcache JIT(即时编译)功能 - 星云惊蛰 - 博客园](https://www.cnblogs.com/jzxy/articles/17264878.html)
+* [PHP8开启JIT，PHP8开启JIT的执行速度 - LNMP|WAMP - 大潇博客 - 杨宇潇博客](https://www.daxiao.show/blog/technology/lnmp/188-885.html)
 
 ## 扩展
 
@@ -40,6 +41,11 @@ modified: 2024-09-09 12:44:26
 ### xdebug
 
 * [Phpstorm Xdebug 远程调试代码 – Zgao's blog](https://zgao.top/phpstorm-xdebug-%E8%BF%9C%E7%A8%8B%E8%B0%83%E8%AF%95%E4%BB%A3%E7%A0%81/)
+
+### composer
+
+* [正确的 Composer 扩展包安装方法 | PHP 技术论坛](https://learnku.com/php/t/1901/correct-method-for-installing-composer-expansion-pack)
+* [linux环境下composer的安装与使用 - 戴玉金--php - 博客园](https://www.cnblogs.com/dyj--php/p/11611983.html)
 
 ## 性能相关
 

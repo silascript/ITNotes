@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-09-07 22:23:16
-modified: 2024-09-10 19:02:43
+modified: 2024-09-10 23:22:10
 ---
 
 # PHP 资料清单
@@ -44,8 +44,10 @@ modified: 2024-09-10 19:02:43
 
 ### composer
 
+* [Composer中文网 / Packagist中国全量镜像](https://www.phpcomposer.com)
 * [正确的 Composer 扩展包安装方法 | PHP 技术论坛](https://learnku.com/php/t/1901/correct-method-for-installing-composer-expansion-pack)
 * [linux环境下composer的安装与使用 - 戴玉金--php - 博客园](https://www.cnblogs.com/dyj--php/p/11611983.html)
+* [Composer 国内全量镜像大全 | PHP 技术论坛](https://learnku.com/articles/30258)
 
 ## 性能相关
 

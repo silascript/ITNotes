@@ -4,7 +4,7 @@ tags:
   - PL
   - php
 created: 2023-09-21 23:13:13
-modified: 2024-09-10 22:49:01
+modified: 2024-09-10 23:19:53
 ---
 
 # PHP 笔记
@@ -93,9 +93,11 @@ PECL 是 PHP 笔记的标准扩展，可以补充实际开发中所需的功能�
 #### 全局安装
 
 ​`sudo mv composer.phar /usr/local/bin/composer​`
-    
-然后通过 composer 就可以使用 composer 了，不管是不是 root 用户，都要加上 sudo
-    
+
+将当前目录中的 `composer.phar` 这个可执行文件移动到 `/usr/local/bin` 目录下，并更名为 `composer`，这是为了方便在系统任何地方都能调用 composer。
+
+这样操作之后，就可以通过 `composer` 命令使用 composer 了 -- 当前因为放到了根目录下，所以使用 `sudo`。
+
 > [!info] 
 > 
 > 如果在 [Docker](../Docker/Docker_Note.md) 里的 composer 可以不用 `sudo​`
@@ -187,6 +189,30 @@ composer config repo.packagist composer https://mirrors.aliyun.com/composer/
 ```shell
 composer config --unset repos.packagist
 ```
+
+#### 常用镜像
+
+* 阿里云 Composer 全量镜像
+	* 镜像地址：[https://mirrors.aliyun.com/composer/](https://mirrors.aliyun.com/composer/)
+	* 官方地址：[https://developer.aliyun.com/composer](https://developer.aliyun.com/composer)
+* Packagist / Composer 中国全量镜像
+	* 镜像地址：[https://packagist.phpcomposer.com](https://packagist.phpcomposer.com)
+	* 官方地址：[https://pkg.phpcomposer.com](https://pkg.phpcomposer.com)
+* Composer / Packagist 中国全量镜像
+	* 镜像地址：[https://php.cnpkg.org](https://php.cnpkg.org)
+	* 官方地址：[https://php.cnpkg.org](https://php.cnpkg.org)
+* Packagist / JP
+	* 镜像地址：[https://packagist.jp](https://packagist.jp)
+	* 官方地址：[https://packagist.jp](https://packagist.jp)
+* Packagist Mirror
+	* 镜像地址：[https://packagist.mirrors.sjtug.sjtu.edu.cn](https://packagist.mirrors.sjtug.sjtu.edu.cn)
+	* 官方地址：[https://mirrors.sjtug.sjtu.edu.cn/packagist](https://mirrors.sjtug.sjtu.edu.cn/packagist/)
+* Laravel China Composer 全量镜像
+	* 镜像地址：[https://packagist.laravel-china.org](https://packagist.laravel-china.org)
+	* 官方地址：[https://learnku.com/laravel](https://learnku.com/laravel)
+	> [!info] 
+	> 
+	> 说明：这个就不多了，国内 PHP 开发者使用量最多的 composer 镜像，同步速度快、稳定，推荐使用。
 
 ---
 

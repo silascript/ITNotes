@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2024-09-10 11:39:16
+modified: 2024-09-10 12:42:05
 ---
 
 # Docker 示例
@@ -237,8 +237,8 @@ docker exec -it d_php81 sh -c "php $*"
 如果想更「自由」执行容器中 `/usr/local/bin` 下所有可执行程序，可以将脚本改成这样：
 
 ```shell
-exebin="/usr/local/bin/*"
-docker exec -it d_php83 sh -c "$exebin $*"
+cmd_str="/usr/local/bin/"
+docker exec -it d_php83 sh -c "$cmd_str/$*"
 ```
 
 这样，不但能在宿主机通过这个脚本调用执行 `php`，还能执行如 `composer` 等程序（如果安装了）。

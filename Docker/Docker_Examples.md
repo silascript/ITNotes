@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2024-09-09 04:13:15
+modified: 2024-09-10 11:39:16
 ---
 
 # Docker 示例
@@ -327,6 +327,14 @@ docker-php-ext-enable xdebug
 "php.debug.executablePath": "/home/silascript/docker_cmds/docker_php.sh"
 ```
 
+> [!important] 
+> 
+> xdebug 功能与 [JIT](#JIT) 不兼容。如果需要使用 JIT，则需要 [关闭 xdebug](#关闭%20xdebug)，不然 JIT 就算配置正确，也是会开启失败的。
+
+##### 关闭 xdebug
+
+如果要关闭 xdebug 功能，只需要在 `/usr/local/etc/php/conf.d/` 目录下的 xdebug 的配置文件中，如 `docker-php-ext-xdebug.ini`，将 `zend_extension=xdebug` 这句配置**注释**掉就行了。
+
 #### 安装 GD 扩展
 
 1. 进到 PHP 容器内安装：
@@ -401,12 +409,6 @@ docker-php-ext-install zip
 	* `opcache.memory_consumption=128`
 	* `opcache.interned_strings_buffer=8`
 	* `opcache.max_accelerated_files=10000`
-	> [!tip] 
-	>  
-	>  同样的，如果要开启 JIT，同样得添加以下选项进 `/usr/local/etc/php/conf.d/docker-php-ext-opcache.ini` 中：
-	>  
-	> * `opcache.jit=tracing`
-	> * `opcache.jit_buffer_size=100M`
 
 	配置完成后，重启 [Docker服务](Docker_Note.md#dk_comm_commands) 及重启容器。
 2. 进入容器中，执行以下安装代码：
@@ -424,6 +426,20 @@ docker-php-ext-configure opcache --enable-opcache && docker-php-ext-install opca
 > ```
 
 3. 再次 [Docker服务](Docker_Note.md#dk_comm_commands) 及重启容器。使用 `phpinof()` 查看 OPCache 是否启用成功。
+
+##### JIT
+
+JIT 是在开启 [OPCache](#安装%20OPCache) 基础上开启的。
+
+如果要开启 JIT，同样得添加以下选项进 `/usr/local/etc/php/conf.d/docker-php-ext-opcache.ini` 中：  
+* `opcache.jit=tracing`
+ * `opcache.jit_buffer_size=100M`
+
+> [!important] 
+> 
+> JIT 与 [xdebug](#安装%20xdebug) 不兼容，如果同时开启两者，JIT 会开启失败，报 `JIT is incompatible with third party extensions that override zend_execute_ex(). JIT disabled. in Unknown on line 0` 这样的错误！
+
+OPCache 与 JIT 配置项详情可查询官方文档：[OPCache Configuration - Manual](https://www.php.net/manual/zh/opcache.configuration.php)
 
 ---
 

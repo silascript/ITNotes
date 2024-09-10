@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-22 01:36:41
-modified: 2024-09-09 12:51:24
+modified: 2024-09-09 19:36:12
 ---
 
 # Docker 资料清单
@@ -45,6 +45,9 @@ modified: 2024-09-09 12:51:24
 * [php - 'Opcache'无法在Docker中安装-6ren](http://123.56.139.157:8082/article/23/6843018/detail.html)
 * [【Docker系列】单独部署nginx容器和php-fpm容器容易忽略的问题 – Hunter's blog](http://www.hunterkou.com/?p=402)
 * [docker php-fpm php.ini,docker 的官方PHP镜像 如何修改 php.ini 配置-CSDN博客](https://blog.csdn.net/weixin_32101377/article/details/116038853)
+* [快速修改PHP镜像中的php.ini并生效 - wuuconix's blog](https://wuuconix.link/2021/09/04/php-ini/)
+* [haveyb/php](https://hub.docker.com/r/haveyb/php)
+* [PHP 8.0 is here! How to turn on JIT compiling - DEV Community](https://dev.to/tugboatqa/php-8-0-is-almost-here-how-to-turn-on-jit-compiling-1l6l)
 
 ## Docker Compose
 

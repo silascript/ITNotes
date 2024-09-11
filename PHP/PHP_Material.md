@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-09-07 22:23:16
-modified: 2024-09-10 23:22:10
+modified: 2024-09-12 03:29:30
 ---
 
 # PHP 资料清单
@@ -16,6 +16,10 @@ modified: 2024-09-10 23:22:10
 
 * [PHP 8 教程 - 小白教程](https://www.xiaobai.wang/index.php?title=PHP_%E6%95%99%E7%A8%8B)
 
+## 历史及版本
+
+* [PHP5-8各版本特性详解汇总 PHP5.1： autoload PDO MySQLi 类型约束 PHP5.2： JSO - 掘金](https://juejin.cn/post/7408747421281091620)
+
 ## 配置
 
 ### OPCache
@@ -23,7 +27,7 @@ modified: 2024-09-10 23:22:10
 * [《让PHP扩展开拓编程前路》 之 性能优化利器 OPcache | PHP 技术论坛](https://learnku.com/articles/84314)
 * [PHP: OPCache 配置 - Manual](https://www.php.net/manual/zh/opcache.configuration.php)
 
-### JIT
+#### JIT
 
 * [PHP8开启JIT - 童年的回忆 - 博客园](https://www.cnblogs.com/cx850116/p/17502271.html)
 * [PHP8.0 JIT介绍，及如何在PHP 8中设置JIT | Lenix Blog](https://blog.p2hp.com/archives/7577)
@@ -32,6 +36,7 @@ modified: 2024-09-10 23:22:10
 * [php:开启jit(php 8.2.5) - 刘宏缔的架构森林 - 博客园](https://www.cnblogs.com/architectforest/p/17674247.html)
 * [深入了解PHP8 opcache JIT(即时编译)功能 - 星云惊蛰 - 博客园](https://www.cnblogs.com/jzxy/articles/17264878.html)
 * [PHP8开启JIT，PHP8开启JIT的执行速度 - LNMP|WAMP - 大潇博客 - 杨宇潇博客](https://www.daxiao.show/blog/technology/lnmp/188-885.html)
+* [用 PHP 處理 10 億行大挑戰！](https://codelove.tw/@tony/post/RqzkAx)
 
 ## 扩展
 

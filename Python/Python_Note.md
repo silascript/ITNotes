@@ -6,7 +6,7 @@ tags:
   - pip
   - conda
 created: 2023-08-18 19:44:52
-modified: 2024-09-12 02:00:35
+modified: 2024-09-12 03:57:20
 ---
 
 # Python 笔记
@@ -940,6 +940,16 @@ pipx uninstall-all
 [结巴分词](https://github.com/fxsjy/jieba) 是一个 Python 的中文分词组件。
 
 Obsidan 中 [中文分词插件](../NoteSoft/Obsidian/Obsidian_Note.md#obn_plugins_wordsplitting_ch) 就有可能用到这个组件。
+
+### pipdeptree
+
+[pipdeptree](https://github.com/tox-dev/pipdeptree) 是一个 [pip](#pip) 依赖管理小工具。因为它是有入口程序，所以它是可以使用 [pipx](#pipx) 安装的。
+
+#### 常用命令
+
+* `pipdeptree`：查看所有包依赖关系
+* `pipdeptree -p <package_name>`：可以查看特定包的依赖关系
+* `pipdeptree -r -p <package_name>`： 可以查看哪些包依赖于特定包
 
 ---
 

@@ -6,7 +6,7 @@ tags:
   - pip
   - conda
 created: 2023-08-18 19:44:52
-modified: 2024-09-12 01:52:05
+modified: 2024-09-12 02:00:35
 ---
 
 # Python 笔记
@@ -701,6 +701,12 @@ CondaValueError: You have chosen a non-default solver backend (libmamba) but it 
 
 ```shell
 conda install --solver=classic conda-forge::conda-libmamba-solver conda-forge::libmamba conda-forge::libmambapy conda-forge::libarchive
+```
+
+#### 错误 2
+
+```shell
+CondaHTTPError: HTTP 000 CONNECTION FAILED for url <https://mirrors.pku.edu.cn/anaconda/cloud/conda-forge/linux-64/repodata.json>
 ```
 
 ---

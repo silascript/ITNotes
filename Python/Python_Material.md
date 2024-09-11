@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2024-09-12 01:24:50
+modified: 2024-09-12 02:03:28
 ---
 
 # Python 资料清单
@@ -60,6 +60,11 @@ modified: 2024-09-12 01:24:50
 * [Error while loading conda entry point: conda-libmamba-solver\_error while loading conda entry point: anaconda-cl-CSDN博客](https://blog.csdn.net/qq_52804277/article/details/137241406)
 * [Error while loading conda entry point: conda-libmamba-solver (libarchive.so.19: cannot open shared object file: No such file or directory) 报错消息解决方法 - hs3434 - 博客园](https://www.cnblogs.com/hs3434/p/17748111.html)
 
+### https 问题
+
+* [Anaconda建立新的环境，出现CondaHTTPError: HTTP 000 CONNECTION FAILED for url ...... 解决过程 - tianlang25 - 博客园](https://www.cnblogs.com/tianlang25/p/12433025.html)
+* [CondaHTTPError: HTTP 000 CONNECTION FAILED · Issue #11367 · conda/conda · GitHub](https://github.com/conda/conda/issues/11367)
+
 ---
 
 ## 工具
@@ -82,4 +87,5 @@ modified: 2024-09-12 01:24:50
 ## 相关笔记
 
 * [Python 笔记](Python_Note.md)
+* [镜像清单](../Linux/Mirror_Address.md)
 

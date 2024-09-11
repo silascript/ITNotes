@@ -6,7 +6,7 @@ tags:
   - pip
   - conda
 created: 2023-08-18 19:44:52
-modified: 2024-09-12 01:43:27
+modified: 2024-09-12 01:52:05
 ---
 
 # Python 笔记
@@ -371,37 +371,28 @@ custom_channels:
 > 
 >> [!info]
 >> 
->> ```text
+>> ```yaml
 >> channels:
->> - defaults
+>>   - defaults
 >> default_channels:
->> - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
->> - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
->> - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+>>   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+>>   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+>>   - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
 >>
 >> ```
-> `channels` 节点下那个 `defaults` 是引用 `default_channels` 这个节点定义的 channel 的。
+> `channels` 节点下那个 `defaults` 是引用 `default_channels` 这个节点定义的 channel 的。强调引用名称叫 `defaults`，不要少了**s**！
 > 
 >> [!info] 
 >> 
->> ```text
+>> ```yaml
 >> Channels:
->> - defaults
->> - https://repo.anaconda.com/pkgs/main
+>>   - defaults
+>>   - https://repo.anaconda.com/pkgs/main
 >>
 >>``` 
 >
-> 所以建议还是使用如下配置：
 > 
-> ```text
-> channels:
-> - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
-> - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
-> - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
->    
-> ``` 
-> 
-> 还有，网上一些教程，那些主 channel，是 `free` 的，这个 channel 的 python 太老了，不要用了，换成 `main`。-- [anaconda](https://www.anaconda.com/) 官方从 4.7 版本就已经移除了 free 这个 channel 了。
+> 网上一些教程，那些主 channel，是 `free` 的，这个 channel 的 python 太老了，不要用了，换成 `main`。-- [anaconda](https://www.anaconda.com/) 官方从 4.7 版本就已经移除了 free 这个 channel 了。
 >
 >> [!qoute]
 >> 
@@ -418,12 +409,12 @@ custom_channels:
 
  完整配置可如下：
 
-```text
+```yaml
 channels:
-- https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
-- https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge
-- https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
-- https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
 channel_alias: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
 show_channel_urls: true
 ```

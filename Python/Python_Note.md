@@ -6,7 +6,7 @@ tags:
   - pip
   - conda
 created: 2023-08-18 19:44:52
-modified: 2024-09-11 23:29:32
+modified: 2024-09-12 01:43:27
 ---
 
 # Python 笔记
@@ -1065,6 +1065,7 @@ Python 的集合特点：
 
 * [Python中文网](https://www.cnpython.com/)
 * [Python123 - 编程更简单](https://python123.io)
+* [Python 技术分享](https://suyin-blog.cn)
 
 ---
 

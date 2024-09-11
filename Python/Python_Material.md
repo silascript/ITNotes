@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2024-09-11 23:25:49
+modified: 2024-09-12 01:24:50
 ---
 
 # Python 资料清单
@@ -42,6 +42,7 @@ modified: 2024-09-11 23:25:49
 * [Anaconda Miniconda conda 安装-换源-使用命令等 - DuoRuaiMi4567 - 博客园](https://www.cnblogs.com/duoruaimi4/p/17815127.html)
 * [基础知识：Conda镜像源配置，阿里云，清华源！ – 托尼不是塔克](https://www.tonyisstark.com/1261.html)
 * [安装anaconda及修改conda config 的channels/default\_channels\_anaconda更改default channel-CSDN博客](https://blog.csdn.net/k7arm/article/details/77799092)
+* [如何更新 Anaconda 镜像源？ | Python 技术分享](https://suyin-blog.cn/2024/3DAAWHV/)
 
 #### Conda 使用
 

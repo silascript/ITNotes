@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2024-09-11 11:53:43
+modified: 2024-09-11 23:25:49
 ---
 
 # Python 资料清单
@@ -30,6 +30,8 @@ modified: 2024-09-11 11:53:43
 
 ### Conda
 
+#### 镜像相关
+
 * [推荐：国内Conda镜像源合集](https://baijiahao.baidu.com/s?id=1806873673157444151&wfr=spider&for=pc)
 * [如何用Conda优雅的管理Python环境 | About\_conda](https://ckfanzhe.github.io/About_conda/)
 * [2023年最新conda和pip国内镜像源 - 知乎](https://zhuanlan.zhihu.com/p/628870519)
@@ -37,11 +39,15 @@ modified: 2024-09-11 11:53:43
 * [Conda Channel 介绍与配置-CSDN博客](https://blog.csdn.net/bluishglc/article/details/133803301)
 * [**conda 官方配置文档**](https://docs.conda.io/projects/conda/en/stable/configuration.html)
 * [Anaconda 软件仓库镜像使用帮助 - MirrorZ Help](https://help.mirrors.cernet.edu.cn/anaconda/#%E9%85%8D%E7%BD%AE)
+* [Anaconda Miniconda conda 安装-换源-使用命令等 - DuoRuaiMi4567 - 博客园](https://www.cnblogs.com/duoruaimi4/p/17815127.html)
+* [基础知识：Conda镜像源配置，阿里云，清华源！ – 托尼不是塔克](https://www.tonyisstark.com/1261.html)
+* [安装anaconda及修改conda config 的channels/default\_channels\_anaconda更改default channel-CSDN博客](https://blog.csdn.net/k7arm/article/details/77799092)
 
 #### Conda 使用
 
 * [在 Anaconda 中更改 Python 版本](https://www.delftstack.com/zh/howto/python/change-python-version-in-anaconda/)
 * [如何将Anaconda安装时默认的python版本改成其他版本](https://blog.csdn.net/qq_56520755/article/details/130489115)
+* [再谈Anaconda的使用](https://www.solarck.com/post/about-conda-again/)
 
 ### 问题及解决
 
@@ -50,6 +56,8 @@ modified: 2024-09-11 11:53:43
 * [解决问题](https://blog.csdn.net/qq_43145926/article/details/104237817)
 * [更新conda update conda 遇到的问题 - 知乎](https://zhuanlan.zhihu.com/p/133365134)
 * [python - RemoveError: 'setuptools' 是 conda 的依赖项，无法从 conda 的运行环境中移除 - SegmentFault 思否](https://segmentfault.com/q/1010000043259290)
+* [Error while loading conda entry point: conda-libmamba-solver\_error while loading conda entry point: anaconda-cl-CSDN博客](https://blog.csdn.net/qq_52804277/article/details/137241406)
+* [Error while loading conda entry point: conda-libmamba-solver (libarchive.so.19: cannot open shared object file: No such file or directory) 报错消息解决方法 - hs3434 - 博客园](https://www.cnblogs.com/hs3434/p/17748111.html)
 
 ---
 

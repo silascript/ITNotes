@@ -6,7 +6,7 @@ tags:
   - pip
   - conda
 created: 2023-08-18 19:44:52
-modified: 2024-08-28 03:27:55
+modified: 2024-09-11 23:29:32
 ---
 
 # Python 笔记
@@ -369,21 +369,18 @@ custom_channels:
 
 > [!info] 关于 condarc 注意点
 > 
-> 最好把配置文件中 `default_channels` 项中的 `default` 去掉，不然在每次安装软件时，都会到默认的镜像源里找。
-> 最好将 `default_channels` 也改为 `channels`，因为使用 default_channels 后，无论是否使用 `channels` 节点进行「引用」，即如下配置：
 >> [!info]
 >> 
 >> ```text
 >> channels:
 >> - defaults
 >> default_channels:
->>  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+>> - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
 >> - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
 >> - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
 >>
 >> ```
->
-> 在使用时，还是会使用到 default，如使用 `conda update --all` 更新时，会显示如下信息：
+> `channels` 节点下那个 `defaults` 是引用 `default_channels` 这个节点定义的 channel 的。
 > 
 >> [!info] 
 >> 
@@ -444,6 +441,18 @@ show_channel_urls: true
 * `pkgs/msys2`：windows 下 msys2 相关的包
 
 * `Conda-Forge`：由社区维护的最常用的 Channel，包含的包很全，更新也非常即时
+
+`conda install python` 安装 python，会连带以下包：
+
+```shell
+  ca-certificates    anaconda/pkgs/main/linux-64::ca-certificates-2024.7.2-h06a4308_0 
+  libgcc-ng          conda-forge/linux-64::libgcc-ng-14.1.0-h69a702a_1 
+  libuuid            anaconda/pkgs/main/linux-64::libuuid-1.41.5-h5eee18b_0 
+  openssl            anaconda/pkgs/main/linux-64::openssl-3.0.15-h5eee18b_0 
+  pip                anaconda/pkgs/main/linux-64::pip-24.2-py312h06a4308_0 
+  setuptools         anaconda/pkgs/main/linux-64::setuptools-72.1.0-py312h06a4308_0 
+  wheel              anaconda/pkgs/main/linux-64::wheel-0.43.0-py312h06a4308_0 
+```
 
 ---
 
@@ -684,6 +693,24 @@ pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 > 在 conda 中使用 pip 安装模块，其模块是安装在 `~/minicoda/envs/虚拟环境/bin/` 目录下的，所以只在 `activate` 此环境才能使用。
 > 
 > 而且这里的优先级高于 `.local/bin` 下，即高于非 conda 环境下或使用 [pipx](#python_pipx) 安装的同名模块。
+
+### Conda 问题
+
+#### 错误 1
+
+```shell
+Error while loading conda entry point: conda-libmamba-solver (libarchive.so.20: cannot open shared object file: No such file or directory)
+
+CondaValueError: You have chosen a non-default solver backend (libmamba) but it was not recognized. Choose one of: classic
+```
+
+原因是这些包必须来自同一通道。
+
+解决方案：
+
+```shell
+conda install --solver=classic conda-forge::conda-libmamba-solver conda-forge::libmamba conda-forge::libmambapy conda-forge::libarchive
+```
 
 ---
 

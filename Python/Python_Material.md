@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2024-09-09 10:57:18
+modified: 2024-09-11 11:53:43
 ---
 
 # Python 资料清单
@@ -36,6 +36,7 @@ modified: 2024-09-09 10:57:18
 * [关于国内anaconda镜像站点看这一篇就够啦 - 知乎](https://zhuanlan.zhihu.com/p/584580420)
 * [Conda Channel 介绍与配置-CSDN博客](https://blog.csdn.net/bluishglc/article/details/133803301)
 * [**conda 官方配置文档**](https://docs.conda.io/projects/conda/en/stable/configuration.html)
+* [Anaconda 软件仓库镜像使用帮助 - MirrorZ Help](https://help.mirrors.cernet.edu.cn/anaconda/#%E9%85%8D%E7%BD%AE)
 
 #### Conda 使用
 

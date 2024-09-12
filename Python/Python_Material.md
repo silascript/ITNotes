@@ -2,10 +2,12 @@
 aliases: []
 tags:
   - python
+  - pip
+  - conda
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2024-09-12 11:33:52
+modified: 2024-09-12 17:50:00
 ---
 
 # Python 资料清单

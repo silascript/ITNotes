@@ -4,7 +4,7 @@ tags:
   - PL
   - ruby
 created: 2023-08-18 19:44:52
-modified: 2024-03-01 23:14:24
+modified: 2024-09-12 20:51:28
 ---
 # Ruby 笔记
 
@@ -366,6 +366,8 @@ frum 有个配置目录，默认是在 `~/.frum`，可以使用 `echo $FRUM_DIR`
 > ==> Building Ruby 3.2.2
 > ```
 > 只有在 `Downloading` 中显示出指定的镜像 url，才证明使用 `--ruby-build-mirror` 已经生效了。
+> 
+> 中国镜像地址：[https://cache.ruby-china.com/pub/ruby/](https://cache.ruby-china.com/pub/ruby/)
 >
 * `frum uninstall 版本号`：卸载指定版本的 ruby。
 

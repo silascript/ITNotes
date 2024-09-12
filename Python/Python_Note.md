@@ -4,9 +4,10 @@ tags:
   - PL
   - python
   - pip
+  - pipx
   - conda
 created: 2023-08-18 19:44:52
-modified: 2024-09-12 11:23:44
+modified: 2024-09-12 19:40:11
 ---
 
 # Python 笔记
@@ -162,6 +163,7 @@ index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 ### pip 搜索
 
 由于 `pip search` 命令不能用，所以使用「pip-search」这个包来实现搜索功能。
+
 ```shell
 # 安装 pip-search
 pip install pip-search
@@ -186,9 +188,17 @@ pip_search 要搜索的包
 
 `pipdeptree` 这个工具可以显示 pip 中各模块依赖「关系树」。有了这工具，删除模块时就可以更有「自信」了。
 
+因为它是有入口程序，所以它是可以使用 [pipx](#pipx) 安装的。
+
 ```shell
 pip install pipdeptree
 ```
+
+##### pipdeptree 使用
+
+* `pipdeptree`：查看所有包依赖关系
+* `pipdeptree -p <package_name>`：可以查看特定包的依赖关系
+* `pipdeptree -r -p <package_name>`： 可以查看哪些包依赖于特定包
 
 #### pip-autoremove
 
@@ -426,6 +436,10 @@ show_channel_urls: true
 ```shell
 conda config --remove-key channels
 ```
+
+#### 常用镜像
+
+[Anaconda 软件仓库镜像使用帮助 - MirrorZ Help](https://help.mirrors.cernet.edu.cn/anaconda/)
 
 ### <span id="python_conda_uninstall">conda 卸载</span>
 
@@ -959,16 +973,6 @@ pipx uninstall-all
 [结巴分词](https://github.com/fxsjy/jieba) 是一个 Python 的中文分词组件。
 
 Obsidan 中 [中文分词插件](../NoteSoft/Obsidian/Obsidian_Note.md#obn_plugins_wordsplitting_ch) 就有可能用到这个组件。
-
-### pipdeptree
-
-[pipdeptree](https://github.com/tox-dev/pipdeptree) 是一个 [pip](#pip) 依赖管理小工具。因为它是有入口程序，所以它是可以使用 [pipx](#pipx) 安装的。
-
-#### 常用命令
-
-* `pipdeptree`：查看所有包依赖关系
-* `pipdeptree -p <package_name>`：可以查看特定包的依赖关系
-* `pipdeptree -r -p <package_name>`： 可以查看哪些包依赖于特定包
 
 ---
 

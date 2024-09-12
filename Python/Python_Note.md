@@ -6,7 +6,7 @@ tags:
   - pip
   - conda
 created: 2023-08-18 19:44:52
-modified: 2024-09-12 10:46:52
+modified: 2024-09-12 11:23:44
 ---
 
 # Python 笔记
@@ -723,6 +723,10 @@ CondaHTTPError: HTTP 000 CONNECTION FAILED for url <https://mirrors.pku.edu.cn/a
 ```
 
 连接超时，原因不明。据说将 `https` 改成 `http` 就能改善连接慢的的问题。
+
+> [!info] 
+> 
+> 也有可能的原因是包损坏，所以使用 `conda clean --packages --tarballs` 清理损坏的包，可能就会正常了。
 
 ---
 

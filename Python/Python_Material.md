@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2024-09-12 10:35:55
+modified: 2024-09-12 11:33:52
 ---
 
 # Python 资料清单
@@ -44,6 +44,8 @@ modified: 2024-09-12 10:35:55
 * [安装anaconda及修改conda config 的channels/default\_channels\_anaconda更改default channel-CSDN博客](https://blog.csdn.net/k7arm/article/details/77799092)
 * [如何更新 Anaconda 镜像源？ | Python 技术分享](https://suyin-blog.cn/2024/3DAAWHV/)
 * [Anaconda 换用清华园后安装速度依然很慢，或者安装包出错 - 易如鱼 - 博客园](https://www.cnblogs.com/-ifrush/p/13879078.html)
+* [conda常见报错以及解决方法](https://blog.51cto.com/tony/5885006)
+* [处女座如何优化conda镜像的体验 - 简书](https://www.jianshu.com/p/67981914f365)
 
 #### Conda 使用
 

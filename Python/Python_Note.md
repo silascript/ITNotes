@@ -6,7 +6,7 @@ tags:
   - pip
   - conda
 created: 2023-08-18 19:44:52
-modified: 2024-09-12 03:57:20
+modified: 2024-09-12 10:46:52
 ---
 
 # Python 笔记
@@ -310,36 +310,12 @@ unset __conda_setup
 
 ### <span id="python_conda_chsources">conda 换源</span>
 
-### <span id="python_conda_uninstall">conda 卸载</span>
-
-查看 conda 环境：
-
-```shell
-conda info --envs
-```
-
-将环境一个个地 `remove`（删除到只剩个 base 就行了）：
-
-```shell
-conda remove -n 环境名称 --all
-```
-
-删除 `.profle`、`.xprofile`、`.bashrc` 或 `.zshrc` 等配置文件中 conda 相关的 配置。
-
-删除相应目录及配置文件：
-* `rm -rf ~/.conda`
-* `rm -rf ~/.condarc`
-
-> [!info] 相关资料
-> 
-> * [linux卸载conda环境\_千锋教育](http://www.mobiletrain.org/about/BBS/150422.html)
-> 
-
 #### 生成 conda 配置文件
 
 以清华源为例：
 
 刚装完的 conda，是没有 `.condarc` 配置文件的，可以执行以下命令，生成 `.condarc` 文件：
+
 ```shell
 conda config --set show_channel_urls yes
 ```
@@ -445,13 +421,46 @@ show_channel_urls: true
   wheel              anaconda/pkgs/main/linux-64::wheel-0.43.0-py312h06a4308_0 
 ```
 
+#### 恢复官方默认源
+
+```shell
+conda config --remove-key channels
+```
+
+### <span id="python_conda_uninstall">conda 卸载</span>
+
+查看 conda 环境：
+
+```shell
+conda info --envs
+```
+
+将环境一个个地 `remove`（删除到只剩个 base 就行了）：
+
+```shell
+conda remove -n 环境名称 --all
+```
+
+删除 `.profle`、`.xprofile`、`.bashrc` 或 `.zshrc` 等配置文件中 conda 相关的 配置。
+
+删除相应目录及配置文件：
+* `rm -rf ~/.conda`
+* `rm -rf ~/.condarc`
+
+> [!info] 相关资料
+> 
+> * [linux卸载conda环境\_千锋教育](http://www.mobiletrain.org/about/BBS/150422.html)
+> 
+
 ---
 
 ### <span id="python_conda_commands">conda 常用命令</span>
 
 #### <span id="python_conda_commands_config">配置</span>
 
-`conda config` 是 conda 配置命令。
+##### 命令配置
+
+`conda config` 是 conda 配置命令。此组命令可以在终端中对 conda 进行配置。
 
 * `conda config --show`：查看当前配置
 * `conda config --show-sources`：查看当前配置所有源
@@ -463,6 +472,10 @@ show_channel_urls: true
 * `conda config --set channel_priority strict`：设置 channel 解析优先级
 
 config 相关参数可以使用 `conda config --help` 查看。
+
+##### 手动配置
+
+conda 所有配置，都是在 `.condarc` 配置文件中保存，所以可以手动对 `.condarc` 文件进行编辑，同样可以达到配置 conda 的目的。
 
 #### <span id="python_conda_commands_remove">删除</span>
 
@@ -708,6 +721,8 @@ conda install --solver=classic conda-forge::conda-libmamba-solver conda-forge::l
 ```shell
 CondaHTTPError: HTTP 000 CONNECTION FAILED for url <https://mirrors.pku.edu.cn/anaconda/cloud/conda-forge/linux-64/repodata.json>
 ```
+
+连接超时，原因不明。据说将 `https` 改成 `http` 就能改善连接慢的的问题。
 
 ---
 

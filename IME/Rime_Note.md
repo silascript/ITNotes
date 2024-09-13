@@ -5,7 +5,7 @@ tags:
   - yaml
   - ime
 created: 2023-08-18 19:44:52
-modified: 2024-04-25 03:30:10
+modified: 2024-09-14 03:23:43
 ---
 # Rime 笔记
 
@@ -133,7 +133,7 @@ app_opsions:
 
 #### 莫名激活缩放功能
 
-默认情况，使用 `Ctrl+`` 快捷键用来切换不同 [方案](#方案切换) 的。但在某些软件中使用这个快捷键切换方案，会使得另一些软件的缩放功能被激活。
+默认情况，使用 **Ctrl+\`** 快捷键用来切换不同 [方案](#方案切换) 的。但在某些软件中使用这个快捷键切换方案，会使得另一些软件的缩放功能被激活。
 
 在 [SublimeText](../Editors/Editors_Note.md#editors_sublime) 和 gedit 中，进行 [方案切换](#方案切换) 操作，就会使得各浏览器、目录窗口的缩放功能被激活，如果这时在浏览器或目录窗口中，滚动鼠标中键，那就不是页面的上下滚动，而且是页面的放大缩小，只有再按一次 `Ctrl+``，缩放功能才关闭。
 
@@ -144,6 +144,10 @@ app_opsions:
 > [!bug] 
 > 
 > [很奇怪的现象 · Issue #1533 · rime/home · GitHub](https://github.com/rime/home/issues/1533)
+
+`F4` 快捷键与 **Ctrl+\`** 快捷键作用一样，所以尽量使用 `F4` 快捷键 -- 而且**Ctrl+\`** 快捷键也与如 [VSCode](../Editors/VSCode_Note.md) 的调出终端快捷键冲突，所以尽量避免使用 **Ctrl+\`**。
+
+当然禁用这个快捷键是最好的选择。`.config/ibus/rime/default.yaml` 配置文件中，`switcher` 节点中，`hotkeys` 节点下，`- Control+grave`，这个就是 **Ctrl+\`** 快捷键的配置，将其注释就可以了（yaml 文件使用 `#` 来注释）。
 
 ---
 
@@ -177,6 +181,12 @@ app_opsions:
 * [rime英语音标输入方案。](https://github.com/mapleafly/rime-ipa-english)
 * [IPA / 國際音標輸入方案](https://github.com/rime/rime-ipa)
 * 
+
+---
+
+## 相关资料
+
+* [解决VScode与Linux Rime中州韵输入法CTRL+~热键冲突](https://spaceack.com/20210120-%E8%A7%A3%E5%86%B3vscode%E4%B8%8Elinuxrime%E4%B8%AD%E5%B7%9E%E9%9F%B5%E8%BE%93%E5%85%A5%E6%B3%95ctrl-~%E7%83%AD%E9%94%AE%E5%86%B2%E7%AA%81/)
 
 ---
 

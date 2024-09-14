@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2024-09-07 19:38:55
+modified: 2024-09-15 02:31:24
 ---
 
 # Shell 资料清单
@@ -111,6 +111,10 @@ modified: 2024-09-07 19:38:55
 * [Linux学习笔记：shell sleep睡眠 - Hider1214 - 博客园](https://www.cnblogs.com/hider/p/17048231.html)
 * [Linux Shell中的延时函数 sleep_蓝白天际线-华为云开发者空间](https://huaweicloud.csdn.net/635617d7d3efff3090b59ddf.html)
 
+### nohup
+
+* [nohup 详解 - 今孝 - 博客园](https://www.cnblogs.com/jinxiao-pu/p/9131057.html)
+
 ### 引号
 
 * [shell中的 单引号' '、双引号 " " 和 反引号\` \` - 哑吧 - 博客园](https://www.cnblogs.com/zhangxl1016/articles/14807800.html)
@@ -154,6 +158,11 @@ modified: 2024-09-07 19:38:55
 * [写shell必备辅助神器ShellCheck - sll0917 - 博客园](https://www.cnblogs.com/sll0917/p/16607010.html)
 * [Linux-Shell脚本](http://masikkk.com/article/Linux-Shell/)
 * [ShellCheck报出的各种错误及解决 - CSDN博客](https://blog.csdn.net/phmatthaus/article/details/127299059)
+
+### inotify-tools
+
+* [如何用 Shell 监控文件变化](https://segmentfault.com/a/1190000038351925)
+* [Linux 中通过 inotify-tools 实现监控文件变化 | 行云流水](https://weizhimiao.github.io/2016/10/29/Linux%E4%B8%AD%E9%80%9A%E8%BF%87inotify-tools%E5%AE%9E%E7%8E%B0%E7%9B%91%E6%8E%A7%E6%96%87%E4%BB%B6%E5%8F%98%E5%8C%96/)
 
 ---
 

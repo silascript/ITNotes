@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2024-08-24 22:06:00
+modified: 2024-09-15 03:07:49
 ---
 
 # Shell 笔记
@@ -1023,6 +1023,27 @@ shfmt -l -w script.sh
 `kp`：对齐
 
 Google 风格：[Style guides for Google-originated open-source projects](https://google.github.io/styleguide/shellguide.html#indentation)
+
+### inotify-tools
+
+这是一个可以监控目录变化的小工具。
+
+|     事件      |                   解释                   |
+|:-------------:|:----------------------------------------:|
+|    access     |             文件或者目录被读             |
+|    modify     |             文件或目录被写入             |
+|    attrib     |          文件或者目录属性被更改          |
+|  close_write  |     文件或目录关闭，在写模式下打开后     |
+| close_nowrite |     文件或目录关闭，在只读模式打开后     |
+|     close     |    文件或目录关闭，而不管是读/写模式     |
+|     open      |             文件或目录被打开             |
+|   moved_to    |        文件或者目录移动到监视目录        |
+|  moved_from   |         文件或者目录移出监视目录         |
+|     move      |        文件或目录移出或者移入目录        |
+|    create     |        文件或目录被创建在监视目录        |
+|    delete     |       文件或者目录被删除在监视目录       |
+|  delete_self  | 文件或目录移除，之后不再监听此文件或目录 |
+|    unmount    | 文件系统取消挂载，之后不再监听此文件系统 |
 
 ### json 相关工具
 

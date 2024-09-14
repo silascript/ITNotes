@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2024-09-15 02:31:24
+modified: 2024-09-15 03:38:11
 ---
 
 # Shell 资料清单
@@ -163,6 +163,7 @@ modified: 2024-09-15 02:31:24
 
 * [如何用 Shell 监控文件变化](https://segmentfault.com/a/1190000038351925)
 * [Linux 中通过 inotify-tools 实现监控文件变化 | 行云流水](https://weizhimiao.github.io/2016/10/29/Linux%E4%B8%AD%E9%80%9A%E8%BF%87inotify-tools%E5%AE%9E%E7%8E%B0%E7%9B%91%E6%8E%A7%E6%96%87%E4%BB%B6%E5%8F%98%E5%8C%96/)
+* [inotify使用 - Onns Blog](https://onns.xyz/blog/2021/01/03/inotify-usage/)
 
 ---
 

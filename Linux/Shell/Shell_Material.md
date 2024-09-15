@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2024-09-15 03:38:11
+modified: 2024-09-15 20:29:06
 ---
 
 # Shell 资料清单
@@ -47,7 +47,7 @@ modified: 2024-09-15 03:38:11
 #### while
 
 * [Shell while循环详解 - zhouyuqiang - 博客园](https://www.cnblogs.com/qiangyuzhou/p/10806851.html)
-* [Shell while循环详解 - zhouyuqiang - 博客园](https://www.cnblogs.com/qiangyuzhou/p/10806851.html)
+* [Linux之shell脚本for、while、case语句的高级用法 - 峰哥ge - 博客园](https://www.cnblogs.com/FengGeBlog/p/10397243.html)
 
 #### for
 
@@ -138,6 +138,11 @@ modified: 2024-09-15 03:38:11
 * [Shell整数运算-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1770000)
 * [Shell中的算术运算](https://xstarcd.github.io/wiki/shell/expr.html)
 
+## 进程
+
+* [第 9 章 Linux 进程和信号](https://brinnatt.com/primary/%E7%AC%AC-9-%E7%AB%A0-%E8%BF%9B%E7%A8%8B%E5%92%8C%E4%BF%A1%E5%8F%B7/)
+* [Shell多进程执行任务 - Joyven - 博客园](https://www.cnblogs.com/joyven/p/11727845.html)
+
 ---
 
 ## Shell 工具
@@ -164,6 +169,7 @@ modified: 2024-09-15 03:38:11
 * [如何用 Shell 监控文件变化](https://segmentfault.com/a/1190000038351925)
 * [Linux 中通过 inotify-tools 实现监控文件变化 | 行云流水](https://weizhimiao.github.io/2016/10/29/Linux%E4%B8%AD%E9%80%9A%E8%BF%87inotify-tools%E5%AE%9E%E7%8E%B0%E7%9B%91%E6%8E%A7%E6%96%87%E4%BB%B6%E5%8F%98%E5%8C%96/)
 * [inotify使用 - Onns Blog](https://onns.xyz/blog/2021/01/03/inotify-usage/)
+* [inotifywait命令\_Linux inotifywait 命令用法详解：异步文件系统监控机制](http://man.it69.net/inotifywait)
 
 ---
 

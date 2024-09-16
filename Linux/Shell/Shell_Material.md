@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2024-09-16 11:30:44
+modified: 2024-09-17 02:58:47
 ---
 
 # Shell 资料清单
@@ -31,7 +31,7 @@ modified: 2024-09-16 11:30:44
 
 ---
 
-## 语法
+## 基础语法
 
 ### 布尔值
 
@@ -41,6 +41,13 @@ modified: 2024-09-16 11:30:44
 ### 条件判断
 
 * [Shell脚本中if条件判断的写法实例 - root-123 - 博客园](https://www.cnblogs.com/root-123/p/16665299.html)
+* [shell脚本编程之测试和条件语句if;case;echo;正则表达式;位置锚定条件语句 条件语句测试 操作符： -d： - 掘金](https://juejin.cn/post/7266463919140814863)
+* [shell script 在if 的判断条件正则表达式=\~中引号问题 - gaomatlab - 博客园](https://www.cnblogs.com/gaochsh/p/6901807.html)
+* [Shell条件表达式的正则匹配-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1397980)
+
+#### case
+
+* [shell中的case详解,语法说明,示例,case in 和正则表达式](https://blog.51cto.com/zaishu/5137243)
 
 ### 循环
 
@@ -125,6 +132,10 @@ modified: 2024-09-16 11:30:44
 ## 颜色
 
 * [shell bash终端中输出的颜色和格式详解（超详细）-云社区-华为云](https://bbs.huaweicloud.com/blogs/323329)
+
+## 正则
+
+* [shell基础 -- 基本正则表达式 - tongye - 博客园](https://www.cnblogs.com/tongye/p/9727147.html)
 
 ---
 

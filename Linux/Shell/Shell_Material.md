@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2024-09-15 20:29:06
+modified: 2024-09-16 11:30:44
 ---
 
 # Shell 资料清单
@@ -110,10 +110,13 @@ modified: 2024-09-15 20:29:06
 * [shell wait 和sleep 对比 - CSDN博客](https://blog.csdn.net/qq_31382921/article/details/79817072)
 * [Linux学习笔记：shell sleep睡眠 - Hider1214 - 博客园](https://www.cnblogs.com/hider/p/17048231.html)
 * [Linux Shell中的延时函数 sleep_蓝白天际线-华为云开发者空间](https://huaweicloud.csdn.net/635617d7d3efff3090b59ddf.html)
+* [Linux后台执行命令并获取pid，使用pid文件杀死进程\_linux 取上次命令pid-CSDN博客](https://blog.csdn.net/wsdc0521/article/details/107538825)
+* [Shell 拉起进程后获得 pid](https://blog.kelu.org/tech/2017/04/15/shell-get-the-pid-when-program-start.html)
 
-### nohup
+### 后台运行
 
 * [nohup 详解 - 今孝 - 博客园](https://www.cnblogs.com/jinxiao-pu/p/9131057.html)
+* [nohup和&后台运行，进程查看及终止 - 慕尘 - 博客园](https://www.cnblogs.com/baby123/p/6477429.html)
 
 ### 引号
 
@@ -143,6 +146,12 @@ modified: 2024-09-15 20:29:06
 * [第 9 章 Linux 进程和信号](https://brinnatt.com/primary/%E7%AC%AC-9-%E7%AB%A0-%E8%BF%9B%E7%A8%8B%E5%92%8C%E4%BF%A1%E5%8F%B7/)
 * [Shell多进程执行任务 - Joyven - 博客园](https://www.cnblogs.com/joyven/p/11727845.html)
 
+### kill
+
+* [Linux命令200例：kill用来终止或者结束进程（常用）\_kill命令-CSDN博客](https://blog.csdn.net/qq_40647372/article/details/132708020)
+* [Linux中kill进程杀不掉的原因有哪些](https://www.yisu.com/ask/19482746.html)
+* [【Linux随笔】Killall 、Kill 、Pkill三个命令之间的区别-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1847239)
+
 ---
 
 ## Shell 工具
@@ -164,12 +173,14 @@ modified: 2024-09-15 20:29:06
 * [Linux-Shell脚本](http://masikkk.com/article/Linux-Shell/)
 * [ShellCheck报出的各种错误及解决 - CSDN博客](https://blog.csdn.net/phmatthaus/article/details/127299059)
 
-### inotify-tools
+### inotify
 
 * [如何用 Shell 监控文件变化](https://segmentfault.com/a/1190000038351925)
 * [Linux 中通过 inotify-tools 实现监控文件变化 | 行云流水](https://weizhimiao.github.io/2016/10/29/Linux%E4%B8%AD%E9%80%9A%E8%BF%87inotify-tools%E5%AE%9E%E7%8E%B0%E7%9B%91%E6%8E%A7%E6%96%87%E4%BB%B6%E5%8F%98%E5%8C%96/)
-* [inotify使用 - Onns Blog](https://onns.xyz/blog/2021/01/03/inotify-usage/)
 * [inotifywait命令\_Linux inotifywait 命令用法详解：异步文件系统监控机制](http://man.it69.net/inotifywait)
+* [inotify使用 - Onns Blog](https://onns.xyz/blog/2021/01/03/inotify-usage/)
+* [shell脚本之inotify实时监控 - 墨天轮](https://www.modb.pro/db/1821347339086422016)
+* [inotify+rsync+shell 脚本实现实时数据同步\_inotifywait shell脚本-CSDN博客](https://blog.csdn.net/m0_60758951/article/details/137879396)
 
 ---
 

@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2024-09-15 03:07:49
+modified: 2024-09-16 17:37:26
 ---
 
 # Shell 笔记
@@ -1028,6 +1028,15 @@ Google 风格：[Style guides for Google-originated open-source projects](https:
 
 这是一个可以监控目录变化的小工具。
 
+#### 主要参数
+
+* `r`：即 `recursive`，递归查询目录。
+* `m`：即 `monitor`，始终保持监听，如果没有这个参数，`inotifywait` 在接收一次事件之后就会退出。
+* `q`：即 `quiet`，就是只打印事件，最小化输出。
+* `e`：即 `event`，我们要监听的事件类型，多个事件用 `,` 分隔。
+
+##### 事件列表
+
 |     事件      |                   解释                   |
 |:-------------:|:----------------------------------------:|
 |    access     |             文件或者目录被读             |
@@ -1044,6 +1053,36 @@ Google 风格：[Style guides for Google-originated open-source projects](https:
 |    delete     |       文件或者目录被删除在监视目录       |
 |  delete_self  | 文件或目录移除，之后不再监听此文件或目录 |
 |    unmount    | 文件系统取消挂载，之后不再监听此文件系统 |
+
+##### format
+
+`--format` ：参数也会用到，是控制输出格式的。
+
+* `%w`： 表示发生事件的目录
+* `%f`：  表示发生事件的文件
+* `%e`：  表示发生的事件
+* `%Xe`：  事件以“X”分隔
+* `%T` ： 使用由 [timefmt](#timefmt) 定义的时间格式
+
+##### timefmt
+
+`--timefmt`：时间格式
+
+示例及说明：
+
+```shell
+file_dir=$1
+
+inotifywait -mrq --timefmt "%d/%m/%y %H:%M" --format "%T %w%f %e" -e create,delete,modify $file_dir | while read date time dirfile event
+```
+
+> [!info] 
+> 
+> `while read` 后四个变量 `date`、`time`、`dirfile` 和 `event`，这是自定义的变量，用来获取 inotifywait 输出的信息。
+> 
+> 能获取几个 inotifywait 输入信息，主要看 `--format` 这个参数。这个参数是 inotifywait 的输出格式。其中的参数值以空格分隔。如例子中 `%T %w%f %e`，能获取三块信息 `%T`，即时间信息，`%w%f` 目录或文件路径信息，`%e` 事件信息。而 `%T` 能获取几个时间信息，又是由 `--timefmt` 这个参数决定的。如例子中 `%d/%m/%y %H:%M`，使用了一个空格分隔，所以实际能获取到的时间信息是两块，所以接收这个信息的变量个数应该非常注意，如果少了或多了，那就获取到错误部分的信息了。
+>
+> 另外，`%w` 和 `%f`，这两个，虽然一个为目录，一个为文件，但最好不要使用空格隔开，妄想使用这种方式分别获取目录和文件，最终效果是，如果触发事件的目标是一个目录，那结果是路径最后的子目录会被当成文件来获取（因为没有真的文件存在嘛）。-- 其实对于 [Linux](../Linux_Note.md) 而言，所有东西都是文件，目录与文件区分，只是人们为了方便而区分的。在 Linux 的目录树中，常看到用 `d` 来标识其中那些为目录的「文件」，而 inotifywait 触发事件中，那些目录触发的事件问题带着 `ISDIR` 标识，这与 Linux 的 `d` 标识的设计逻辑是一致的。
 
 ### json 相关工具
 

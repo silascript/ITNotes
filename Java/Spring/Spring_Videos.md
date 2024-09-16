@@ -8,8 +8,9 @@ tags:
   - springboot
   - list
   - video
+  - tutorial
 created: 2023-08-18 19:44:52
-modified: 2024-08-25 10:20:15
+modified: 2024-09-16 20:51:15
 ---
 
 # Spring 视频清单
@@ -21,6 +22,7 @@ modified: 2024-08-25 10:20:15
 * [尚硅谷新版SSM框架全套视频教程，Spring6+SpringBoot3最新SSM企业级开发](https://www.bilibili.com/video/BV1AP411s7D7/)
 * [spring教程全套视频](https://www.bilibili.com/video/BV1T34y1N7CS)
 * [2023新版SpringMVC从入门到精通视频教程（26集全）](https://www.bilibili.com/video/BV1zc411B7Y9)
+* [2024最新最全最详细的 Spring+SpringBoot+springmvc+springcloud面试系列教程丨3天彻底吃透Spring全家桶，涨薪8K！](https://www.bilibili.com/video/BV1Dr42147su)
 
 ## SpringBoot
 
@@ -28,6 +30,7 @@ modified: 2024-08-25 10:20:15
 * [【2024最新】Spring Boot零基础入门小白到精通，全套教程完整版通俗易懂](https://www.bilibili.com/video/BV1gp42197HU)
 * [Spring动画2024最新版](https://www.bilibili.com/video/BV1vLaceeEMY)
 * [这绝对是目前B站讲的最好的SpringBoot教程，一小时带你从0到1实现一个SpringBoot项目开发！](https://www.bilibili.com/video/BV1Zw4m1r78j)
+* [【精华版】2024吃透SpringBoot3全套视频教程，全程干货，拿走不谢，允许白嫖！！](https://www.bilibili.com/video/BV1SnpEeDEfJ)
 
 ---
 
@@ -36,3 +39,4 @@ modified: 2024-08-25 10:20:15
 * [Java 笔记](../Java_Note.md)
 * [Java 视频清单](../Java_Videos.md)
 * [Spring 笔记1](Spring_Note_1.md)
+* [MyBatis 视频清单](../MyBatis_Videos.md)

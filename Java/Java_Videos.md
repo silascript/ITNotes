@@ -6,7 +6,7 @@ tags:
   - tutorial
   - list
 created: 2023-06-24 01:08:17
-modified: 2024-09-03 19:59:18
+modified: 2024-09-16 20:47:56
 ---
 
 # Java 视频清单
@@ -99,6 +99,13 @@ modified: 2024-09-03 19:59:18
 ## 项目
 
 * [2024最新版Java中级项目实战-快递E栈](https://www.bilibili.com/video/BV1wu4m1w7LJ)
+
+---
+
+## 框架及类库
+
+* [MyBatis 视频清单](MyBatis_Videos.md)
+* [Spring 视频清单](Spring/Spring_Videos.md)
 
 ---
 

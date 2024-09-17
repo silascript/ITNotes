@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2024-09-16 17:37:26
+modified: 2024-09-18 02:36:20
 ---
 
 # Shell 笔记
@@ -984,6 +984,18 @@ $ getopt -T
 $ echo $?
 4
 ```
+
+### read
+
+`read` 命令是 Shell 非常重要而常用的命令。
+
+`read` 有时需要与一个环境变量配置使用，如 `IFS` 分隔符：
+
+```shell
+inotifywait -mrq --timefmt "%d/%m/%y#%H:%M" --format '%T#%w#%f#%e' -e create,delete,modify,attrib "$config_dir" | while IFS=\# read date time dir file event; do
+```
+
+这是一个段使用 [inotify-tools](#inotify-tools) 监控某个目录的代码，其实 `while IFS=\# read date time dir file event` 这是将监控信息读取到各个变量中，默认情况，是使用空格来分隔各个信息的，如时间 `%T`、`%w` 是事件触发的目录、`%f` 事件触发的文件及 `%e` 事件本身，但由于某些情况，监控的目录中有些目录的目录名或文件的文件名包含了空格，那这就给获取 `%w` 的值带来麻烦（指的就是 [Sublime](../../Editors/Sublime_Note.md) 的配置目录，其中有个 `Installed Packages` 目录及文件 `Package Control.sublime-package`，都存在空格）,所以不得已，必须另外指定分隔符。例子中就使用 `#` 当分隔符，使用 `IFS` 来指定分隔符。
 
 ---
 

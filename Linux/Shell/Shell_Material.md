@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2024-09-17 02:58:47
+modified: 2024-09-18 02:49:13
 ---
 
 # Shell 资料清单
@@ -33,6 +33,10 @@ modified: 2024-09-17 02:58:47
 
 ## 基础语法
 
+### 引号
+
+* [shell中的 单引号' '、双引号 " " 和 反引号\` \` - 哑吧 - 博客园](https://www.cnblogs.com/zhangxl1016/articles/14807800.html)
+
 ### 布尔值
 
 * [Linux教程 - 在Shell脚本中声明和使用布尔变量示例-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1770351)
@@ -44,6 +48,7 @@ modified: 2024-09-17 02:58:47
 * [shell脚本编程之测试和条件语句if;case;echo;正则表达式;位置锚定条件语句 条件语句测试 操作符： -d： - 掘金](https://juejin.cn/post/7266463919140814863)
 * [shell script 在if 的判断条件正则表达式=\~中引号问题 - gaomatlab - 博客园](https://www.cnblogs.com/gaochsh/p/6901807.html)
 * [Shell条件表达式的正则匹配-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1397980)
+* [Shell 中test 单中括号\[\] 双中括号\[\[\]\] 的区别 - AndyBlog - 博客园](https://www.cnblogs.com/zeweiwu/p/5485711.html)
 
 #### case
 
@@ -89,28 +94,53 @@ modified: 2024-09-17 02:58:47
 ### 字符串
 
 * [02 字符串处理之常用操作 — ZshGuide latest 文档](https://zshguide.readthedocs.io/zh/latest/content/ch02.html)
+* [如何获取shell中字符串的最后一个字符？-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/ask/sof/88528)
+* [Shell字符串截取（非常详细） - 粉色纽扣 - 博客园](https://www.cnblogs.com/wutao-007/p/17022419.html)
+* [shell脚本--逻辑判断与字符串比较 - 寻觅beyond - 博客园](https://www.cnblogs.com/-beyond/p/8262265.html)
 
 ### 函数
 
 * [shell脚本——如何获取函数的返回值](https://blog.csdn.net/qq_31598113/article/details/80611480)
 * [Shell函数（函数定义、函数变量、函数调用、函数传参、函数返回值、获取函数返回值）](https://blog.csdn.net/xhaimail/article/details/103208901) 
 
-### 文件路径
+---
 
-#### 读取文件
+## 常用命令
 
+### read
+
+* [Linux read 命令 | 菜鸟教程](https://www.runoob.com/linux/linux-comm-read.html)
 * [在Shell脚本中逐行读取文件的命令方法-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1910386)
 * [shell逐行读取文件的坑 | 守望的个人博客](https://www.yanbinghu.com/2021/06/05/57932.html)
 * [一文搞定shell文件读取的所有用法 - 掘金](https://juejin.cn/post/7251786381483573303)
 * [Shell脚本循环读取文件中每一行，可以逐行读取 - 掘金](https://juejin.cn/post/6949498425582829581)
 * [SHELL 读取文件的每一行内容并输出 | 菜鸟教程](https://www.runoob.com/w3cnote/shell-read-line.html)
 * [shell读取文件](https://blog.csdn.net/qq_26620783/article/details/87430195)
+* [Shell中按指定分隔符读取文件字段 - 字节之上](https://www.topbyte.cn/2020/04/shell-read-file-with-delimiter/)
+* [Linux中read命令的用法—（6/30） - konglingbin - 博客园](https://www.cnblogs.com/klb561/p/9245696.html)
 
-#### 路径
+---
+
+## 文件路径
+
+### 路径
 
 * [Linux: Shell脚本中处理文件路径参数,兼容相对路径与绝对路径在编写Shell脚本时，处理文件路径参数是一个常 - 掘金](https://juejin.cn/post/7374986809476382731)
 * [相对路径 与 绝对路径之间的转换](https://tiandezhen.wordpress.com/2010/01/26/%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84-%E4%B8%8E-%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2/)
 * [使用Bash将给定的当前目录的绝对路径转换为相对路径-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/ask/sof/29631/answer/102124272)
+
+---
+
+## 进程
+
+* [第 9 章 Linux 进程和信号](https://brinnatt.com/primary/%E7%AC%AC-9-%E7%AB%A0-%E8%BF%9B%E7%A8%8B%E5%92%8C%E4%BF%A1%E5%8F%B7/)
+* [Shell多进程执行任务 - Joyven - 博客园](https://www.cnblogs.com/joyven/p/11727845.html)
+
+### kill
+
+* [Linux命令200例：kill用来终止或者结束进程（常用）\_kill命令-CSDN博客](https://blog.csdn.net/qq_40647372/article/details/132708020)
+* [Linux中kill进程杀不掉的原因有哪些](https://www.yisu.com/ask/19482746.html)
+* [【Linux随笔】Killall 、Kill 、Pkill三个命令之间的区别-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1847239)
 
 ### sleep 和 wait
 
@@ -125,17 +155,20 @@ modified: 2024-09-17 02:58:47
 * [nohup 详解 - 今孝 - 博客园](https://www.cnblogs.com/jinxiao-pu/p/9131057.html)
 * [nohup和&后台运行，进程查看及终止 - 慕尘 - 博客园](https://www.cnblogs.com/baby123/p/6477429.html)
 
-### 引号
-
-* [shell中的 单引号' '、双引号 " " 和 反引号\` \` - 哑吧 - 博客园](https://www.cnblogs.com/zhangxl1016/articles/14807800.html)
+---
 
 ## 颜色
 
 * [shell bash终端中输出的颜色和格式详解（超详细）-云社区-华为云](https://bbs.huaweicloud.com/blogs/323329)
+* [shell脚本输出带文本颜色背景颜色自定义样式格式内容 - 熊仔其人 - 博客园](https://www.cnblogs.com/xiongzaiqiren/p/16895162.html)
+
+---
 
 ## 正则
 
 * [shell基础 -- 基本正则表达式 - tongye - 博客园](https://www.cnblogs.com/tongye/p/9727147.html)
+* [正则表达式 与通配符 shell 大全 - redrobot - 博客园](https://www.cnblogs.com/rebrobot/p/15929285.html)
+* [Shell三连(二)：如何使用正则获取变量 | Voyager-1](https://alanli7991.github.io/2018/12/02/Shell%E4%B8%89%E8%BF%9E02%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E6%AD%A3%E5%88%99%E8%8E%B7%E5%8F%96%E5%8F%98%E9%87%8F/)
 
 ---
 
@@ -147,21 +180,12 @@ modified: 2024-09-17 02:58:47
 * [如何在 Linux 中使用 Shfmt 格式化 Shell 程序 – Dbigr.com](https://dbigr.com/article/481199/) 
 * [格式化 Shell 脚本利器，轻松理解复杂代码-编写shell脚本的工具](https://www.51cto.com/article/705054.html)
 
+---
+
 ## 运算
 
 * [Shell整数运算-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1770000)
 * [Shell中的算术运算](https://xstarcd.github.io/wiki/shell/expr.html)
-
-## 进程
-
-* [第 9 章 Linux 进程和信号](https://brinnatt.com/primary/%E7%AC%AC-9-%E7%AB%A0-%E8%BF%9B%E7%A8%8B%E5%92%8C%E4%BF%A1%E5%8F%B7/)
-* [Shell多进程执行任务 - Joyven - 博客园](https://www.cnblogs.com/joyven/p/11727845.html)
-
-### kill
-
-* [Linux命令200例：kill用来终止或者结束进程（常用）\_kill命令-CSDN博客](https://blog.csdn.net/qq_40647372/article/details/132708020)
-* [Linux中kill进程杀不掉的原因有哪些](https://www.yisu.com/ask/19482746.html)
-* [【Linux随笔】Killall 、Kill 、Pkill三个命令之间的区别-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1847239)
 
 ---
 
@@ -192,6 +216,7 @@ modified: 2024-09-17 02:58:47
 * [inotify使用 - Onns Blog](https://onns.xyz/blog/2021/01/03/inotify-usage/)
 * [shell脚本之inotify实时监控 - 墨天轮](https://www.modb.pro/db/1821347339086422016)
 * [inotify+rsync+shell 脚本实现实时数据同步\_inotifywait shell脚本-CSDN博客](https://blog.csdn.net/m0_60758951/article/details/137879396)
+* [CentOS7.4安装inotify-tools及使用\_inotify-tools离线安装-CSDN博客](https://blog.csdn.net/zz_aiytag/article/details/107826135)
 
 ---
 

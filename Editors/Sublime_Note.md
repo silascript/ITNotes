@@ -5,7 +5,7 @@ tags:
   - sublimetext
   - editor
 created: 2024-07-09 18:50:20
-modified: 2024-07-09 19:09:41
+modified: 2024-09-18 12:55:11
 ---
 
 # Sublime 笔记
@@ -579,3 +579,4 @@ Sublime 要使用 markmark 这个 LSP，是没有对应的特定 LSClient，而�
 ## 相关笔记
 
 * [文本编辑器笔记](Editors_Note.md)
+* [Sublime 资料清单](Sublime_Mterial.md)

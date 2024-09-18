@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2024-09-18 02:36:20
+modified: 2024-09-18 10:56:22
 ---
 
 # Shell 笔记
@@ -129,9 +129,20 @@ Sell 语法相关的内容请查看： [Shell 笔记](Shell_Note.md)
 
 这些命令集成在 Shell 解释器中，一种是改变 Shell 本身的属性设置；另一种是 I/O 命令，如 `echo` 命令。
 
+使用 `type` 命令可以判断命令是内建命令还是 [外部命令](#外部命令)。
+
+```shell
+$ type cd
+cd is a shell builtin
+```
+
+内建命令会显示「builtin」字样。
+
 ### 外部命令
 
 是独立于 Shell 的可执行程序，如 [find](../Linux_Note.md#find)、[grep](../Linux_Note.md#linux_textprocessing_grep) 等。
+
+对于外部命令，Shell 会创建一个新的进程来执行命令。
 
 外部命令执行过程：
 

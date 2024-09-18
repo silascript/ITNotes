@@ -8,7 +8,7 @@ tags:
   - scite
   - lsp
 created: 2023-01-30 11:19:11
-modified: 2024-07-09 18:59:05
+modified: 2024-09-18 13:01:51
 ---
 
 # 编辑器笔记
@@ -174,6 +174,12 @@ style.*.34=fore:#6eb87b,bold,back:#ebeef3
 # 括号不匹配
 style.*.35=italics,back:#ebeef3
 ```
+
+---
+
+## <span id="editors_zed">Zed</span>
+
+[Zed](https://zed.dev) 是用 [Rust](../Rust/Rust_Note.md) 写的新一代文本编辑器。
 
 ---
 

@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-09-07 19:36:17
+modified: 2024-09-19 21:57:17
 ---
 
 # Linux 笔记
@@ -398,9 +398,104 @@ zip -q -r xxx ./xxx/*.txt
 
 `unzip -v xxx.zip`：不解压查看压缩包中的目录。
 
+```shell
+$ unzip -v SwitchWindow-0.5.0.zip 
+Archive:  SwitchWindow-0.5.0.zip
+649c8df77df115f9de7635553523d61874df9e1b
+ Length   Method    Size  Cmpr    Date    Time   CRC-32   Name
+--------  ------  ------- ---- ---------- ----- --------  ----
+       0  Stored        0   0% 2023-08-08 00:51 00000000  SwitchWindow-0.5.0/
+      19  Stored       19   0% 2023-08-08 00:51 a7e541a5  SwitchWindow-0.5.0/.gitattributes
+      16  Stored       16   0% 2023-08-08 00:51 79d3c83b  SwitchWindow-0.5.0/.gitignore
+       3  Stored        3   0% 2023-08-08 00:51 fa693369  SwitchWindow-0.5.0/.python-version
+     248  Defl:N      135  46% 2023-08-08 00:51 d765ba2c  SwitchWindow-0.5.0/Default (Linux).sublime-keymap
+     248  Defl:N      135  46% 2023-08-08 00:51 d765ba2c  SwitchWindow-0.5.0/Default (OSX).sublime-keymap
+     248  Defl:N      135  46% 2023-08-08 00:51 d765ba2c  SwitchWindow-0.5.0/Default (Windows).sublime-keymap
+     493  Defl:N      249  50% 2023-08-08 00:51 66341975  SwitchWindow-0.5.0/Default.sublime-commands
+    1087  Defl:N      630  42% 2023-08-08 00:51 cf152373  SwitchWindow-0.5.0/LICENSE
+     743  Defl:N      318  57% 2023-08-08 00:51 9ba993f2  SwitchWindow-0.5.0/Main.sublime-menu
+    2560  Defl:N     1047  59% 2023-08-08 00:51 ffa06466  SwitchWindow-0.5.0/README.md
+    4603  Defl:N     1326  71% 2023-08-08 00:51 5bba7037  SwitchWindow-0.5.0/plugin.py
+--------          -------  ---                            -------
+   10268             4013  61%                            12 files
+```
+
 `unzip -l xxx.zip`：列出压缩包的的文件信息，比 `unzip -v` 显示的信息更简洁一些。
 
-`zipinfo -s xxx.zip`：使用 `zipinfo` 同样也能查看压缩包中的信息。
+```shell
+$ unzip -l SwitchWindow-0.5.0.zip                   
+Archive:  SwitchWindow-0.5.0.zip
+649c8df77df115f9de7635553523d61874df9e1b
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+        0  2023-08-08 00:51   SwitchWindow-0.5.0/
+       19  2023-08-08 00:51   SwitchWindow-0.5.0/.gitattributes
+       16  2023-08-08 00:51   SwitchWindow-0.5.0/.gitignore
+        3  2023-08-08 00:51   SwitchWindow-0.5.0/.python-version
+      248  2023-08-08 00:51   SwitchWindow-0.5.0/Default (Linux).sublime-keymap
+      248  2023-08-08 00:51   SwitchWindow-0.5.0/Default (OSX).sublime-keymap
+      248  2023-08-08 00:51   SwitchWindow-0.5.0/Default (Windows).sublime-keymap
+      493  2023-08-08 00:51   SwitchWindow-0.5.0/Default.sublime-commands
+     1087  2023-08-08 00:51   SwitchWindow-0.5.0/LICENSE
+      743  2023-08-08 00:51   SwitchWindow-0.5.0/Main.sublime-menu
+     2560  2023-08-08 00:51   SwitchWindow-0.5.0/README.md
+     4603  2023-08-08 00:51   SwitchWindow-0.5.0/plugin.py
+---------                     -------
+    10268                     12 files
+```
+
+`unzip -j`：只保存文件名称及其内容，而不存放任何目录名称，即去掉目录，是所有目录，包括子目录，只留文件，**慎用**。
+
+`unzip -o xxx.zip -d xx`：强制解压到 xx 目录，并覆盖原有内容。
+
+`unzip -n xxx.zip -d xx`：解压到 xx 目录，如果目录已存在则跳过解压。
+
+###### zipinfo
+
+`zipinfo -s xxx.zip`：使用 `zipinfo` 能查看压缩包中的信息。不过信息的样式与 `unzip -v` 或 `unzip -l` 有所区别。
+
+最大区别就是多了一栏 `Zip file`，显示了文件类型及读写情况，这非常适合进一步对 zip 包中目录或文件的统计操作。
+
+```shell
+$ zipinfo SwitchWindow-0.5.0.zip 
+Archive:  SwitchWindow-0.5.0.zip
+Zip file size: 6049 bytes, number of entries: 12
+drwx---     0.0 fat        0 bx stor 23-Aug-08 00:51 SwitchWindow-0.5.0/
+-rw----     0.0 fat       19 tx stor 23-Aug-08 00:51 SwitchWindow-0.5.0/.gitattributes
+-rw----     0.0 fat       16 tx stor 23-Aug-08 00:51 SwitchWindow-0.5.0/.gitignore
+-rw----     0.0 fat        3 tx stor 23-Aug-08 00:51 SwitchWindow-0.5.0/.python-version
+-rw----     0.0 fat      248 tx defN 23-Aug-08 00:51 SwitchWindow-0.5.0/Default (Linux).sublime-keymap
+-rw----     0.0 fat      248 tx defN 23-Aug-08 00:51 SwitchWindow-0.5.0/Default (OSX).sublime-keymap
+-rw----     0.0 fat      248 tx defN 23-Aug-08 00:51 SwitchWindow-0.5.0/Default (Windows).sublime-keymap
+-rw----     0.0 fat      493 tx defN 23-Aug-08 00:51 SwitchWindow-0.5.0/Default.sublime-commands
+-rw----     0.0 fat     1087 tx defN 23-Aug-08 00:51 SwitchWindow-0.5.0/LICENSE
+-rw----     0.0 fat      743 tx defN 23-Aug-08 00:51 SwitchWindow-0.5.0/Main.sublime-menu
+-rw----     0.0 fat     2560 tx defN 23-Aug-08 00:51 SwitchWindow-0.5.0/README.md
+-rw----     0.0 fat     4603 tx defN 23-Aug-08 00:51 SwitchWindow-0.5.0/plugin.py
+12 files, 10268 bytes uncompressed, 4013 bytes compressed:  60.9%
+
+```
+
+配合 Linux 其他命令，可以作进一步信息的查看，如查看目录情况：
+
+```shell
+$ zipinfo AFileIcon-3.28.0.zip | grep "^d"        
+drwx---     0.0 fat        0 bx stor 24-Jun-16 23:38 AFileIcon-3.28.0/
+drwx---     0.0 fat        0 bx stor 24-Jun-16 23:38 AFileIcon-3.28.0/core/
+drwx---     0.0 fat        0 bx stor 24-Jun-16 23:38 AFileIcon-3.28.0/core/utils/
+drwx---     0.0 fat        0 bx stor 24-Jun-16 23:38 AFileIcon-3.28.0/core/vendor/
+drwx---     0.0 fat        0 bx stor 24-Jun-16 23:38 AFileIcon-3.28.0/icons/
+drwx---     0.0 fat        0 bx stor 24-Jun-16 23:38 AFileIcon-3.28.0/icons/multi/
+drwx---     0.0 fat        0 bx stor 24-Jun-16 23:38 AFileIcon-3.28.0/icons/single/
+drwx---     0.0 fat        0 bx stor 24-Jun-16 23:38 AFileIcon-3.28.0/media/
+drwx---     0.0 fat        0 bx stor 24-Jun-16 23:38 AFileIcon-3.28.0/preferences/
+```
+
+ 统计包中目录的数量：
+
+```shell
+zipinfo xxx.zip | grep "^d" | wc -l
+```
 
 ---
 
@@ -1776,6 +1871,7 @@ Core 1:        +42.0°C  (high = +82.0°C, crit = +102.0°C)
 * [Linux 视频清单](./Linux_Videos.md)
 * [Shell 视频清单](Shell/Shell_Videos.md)
 * [Ranger相关](Ranger相关.md)
+* [AWK 笔记](AWK_Note.md)
 
 ---
 

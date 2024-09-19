@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2024-09-18 02:49:13
+modified: 2024-09-19 21:27:36
 ---
 
 # Shell 资料清单
@@ -179,6 +179,10 @@ modified: 2024-09-18 02:49:13
 * [Shell 代码规范：ShellCheck 与 shfmt 自动检查 - 知乎](https://zhuanlan.zhihu.com/p/408651010)
 * [如何在 Linux 中使用 Shfmt 格式化 Shell 程序 – Dbigr.com](https://dbigr.com/article/481199/) 
 * [格式化 Shell 脚本利器，轻松理解复杂代码-编写shell脚本的工具](https://www.51cto.com/article/705054.html)
+
+### 去重
+
+* [shell脚本去重的几种方法 - RICH-ATONE - 博客园](https://www.cnblogs.com/-courage/p/16928680.html)
 
 ---
 

@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-10 03:06:48
-modified: 2024-09-05 20:54:11
+modified: 2024-09-19 21:56:23
 ---
 
 # Linux 资料清单
@@ -16,6 +16,14 @@ modified: 2024-09-05 20:54:11
 
 * [linux修改文件或目录的所有者(chown)和用户组(chgrp)-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1627599)
 * [usermod 命令，Linux usermod 命令详解：用于修改用户的基本信息 - Linux 命令搜索引擎](https://wangchujiang.com/linux-command/c/usermod.html)
+
+## 目录文件
+
+* [shell 查看文件夹/文件大小、目录/文件数量\_shell 文件夹大小-CSDN博客](https://blog.csdn.net/qq_27003337/article/details/108282745)
+
+## 查看信息
+
+* [linux查看文件前几行和后几行的命令 - 白露\~ - 博客园](https://www.cnblogs.com/shoshana-kong/p/11106526.html)
 
 ## grep
 
@@ -31,6 +39,14 @@ modified: 2024-09-05 20:54:11
 
 * [Linux系统Intel AX210无线网卡故障排除指南 · nanmu42](https://nanmu.me/zh-cn/posts/2022/get-ax210-working-on-linux/)
 * [英特尔®无线适配器的 Linux* 支持](https://www.intel.cn/content/www/cn/zh/support/articles/000005511/wireless.html)
+
+## 压缩和解压
+
+* [Linux常用命令-解压缩篇 | 守望的个人博客](https://www.yanbinghu.com/2018/10/19/64149.html)
+* [linux下解压缩zip包:unzip命令](https://blog.51cto.com/u_14900374/2521185)
+* [Linux下查看压缩文件内容的 10 种方法 | 时鹏亮的Blog](https://shipengliang.com/program-code/linux%E4%B8%8B%E6%9F%A5%E7%9C%8B%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E7%9A%84-10-%E7%A7%8D%E6%96%B9%E6%B3%95.html)
+* [Linux 下zip包的压缩与解压 - 傻瓜乐园 - 博客园](https://www.cnblogs.com/Anidot/articles/7761158.html)
+* [zipinfo - 列出关于某个ZIP压缩包的详细信息 - 樊伟胜 - 博客园](https://www.cnblogs.com/fanweisheng/p/11102706.html)
 
 ---
 

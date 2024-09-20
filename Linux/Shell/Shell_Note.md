@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2024-09-20 22:50:24
+modified: 2024-09-20 22:53:25
 ---
 
 # Shell 笔记
@@ -1162,7 +1162,7 @@ curl http://hub-mirror.c.163.com/v2/library/${image}/tags/list | jq --arg tstr $
 
 #### yq
 
-[yq](https://github.com/mikefarah/yq) 是类似于 [jq](#jq) 的小工具，不过它用来解析 [YAML](../../YAML/YAML_Note.md) 的，是一个轻量级的便携式命令行 YAML 处理器。它是 python 写的，所以可以通过 [pip](../../Python/Python_Note.md#python_pip) 来安装。
+[yq](https://github.com/mikefarah/yq) 是类似于 [jq](#jq) 的小工具，不过它用来解析 [YAML](../../YAML/YAML_Note.md) 的，是一个轻量级的便携式命令行 YAML 处理器。它所以可以通过 [pip](../../Python/Python_Note.md#python_pip) 来安装。
 
 因为 `yq` 是有入口程序的，所以也可以使用 [pipx](../../Python/Python_Note.md#python_pipx") 来安装：
 
@@ -1170,7 +1170,9 @@ curl http://hub-mirror.c.163.com/v2/library/${image}/tags/list | jq --arg tstr $
 pipx install yq
 ```
 
-当然 yq 也有 go 语言版本，可以通过系统的包管理器安装：
+当然 yq 通过系统的包管理器安装：
+
+（[ArchLinux_Note](../ArchLinux_Note.md) 上包管理器中的 `yq` 是 python 版本，而 go 版的是叫 `go-yq`）
 
 ```shell
 pacman -S go-yq

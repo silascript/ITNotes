@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2024-09-20 11:00:56
+modified: 2024-09-20 22:36:22
 ---
 
 # Shell 资料清单
@@ -86,6 +86,8 @@ modified: 2024-09-20 11:00:56
 * [shell 数组与函数之间的传参 - 知己一语 - 博客园](https://www.cnblogs.com/zhijiyiyu/p/15038939.html)
 * [第三章、shell变量和数组 - lucky\_light - 博客园](https://www.cnblogs.com/lucky-light/p/16413925.html#_label3_3)
 * [shell 向函数传递数组和从函数返回数组的一个细节问题\_shell 函数返回数组-CSDN博客](https://blog.csdn.net/guizaijianchic/article/details/78012179)
+* [shell数组中字符串元素含有空格处理\_shell里面写带空格的字符串-CSDN博客](https://blog.csdn.net/coolwaterld/article/details/130951808)
+* [Shell中通过参数传递带空格的字符串数组并正确遍历-七秒鱼笔记](http://www.yu7s.com/article/20230518151458352.html)
 
 #### 遍历数组
 
@@ -118,6 +120,8 @@ modified: 2024-09-20 11:00:56
 * [shell读取文件](https://blog.csdn.net/qq_26620783/article/details/87430195)
 * [Shell中按指定分隔符读取文件字段 - 字节之上](https://www.topbyte.cn/2020/04/shell-read-file-with-delimiter/)
 * [Linux中read命令的用法—（6/30） - konglingbin - 博客园](https://www.cnblogs.com/klb561/p/9245696.html)
+* [Shell脚本循环读取文件中每一行，可以逐行读取shell脚本读取txt文本： 1. 使用for是以空格作为分隔的。 2 - 掘金](https://juejin.cn/post/6949498425582829581)
+* [shell中while与for空行取值区别 - 小阿峰 - 博客园](https://www.cnblogs.com/xiaofeng666/p/12776345.html)
 
 ---
 
@@ -212,6 +216,10 @@ modified: 2024-09-20 11:00:56
 * [jq常用操作 - Surpassme - 博客园](https://www.cnblogs.com/surpassme/p/16523053.html)
 * [Shell-常用JQ命令详解 - 小喜\_ww - 博客园](https://www.cnblogs.com/xiaoxi-3-/p/15773924.html)
 * [处理JSON最强命令jq使用详解\_jq json-CSDN博客](https://blog.csdn.net/w727655308/article/details/121207345)
+
+### yq
+
+* [YAML处理工具yq之读写篇 | 云原生知识星球](https://lyyao09.github.io/2019/08/02/tools/The-usage-of-yq-read-write/)
 
 ### shellcheck
 

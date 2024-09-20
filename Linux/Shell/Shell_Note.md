@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2024-09-18 10:56:22
+modified: 2024-09-20 22:50:24
 ---
 
 # Shell 笔记
@@ -1157,6 +1157,24 @@ curl http://hub-mirror.c.163.com/v2/library/${image}/tags/list | jq --arg tstr $
 > 
 > * `jq --arg` 是定义变量的选项
 > * `jq --arg tstr $tagstr`： `tstr` 为形参变量，是 jq 内部使用；而 `$tagstr` 是实参，外部传进来的。要使用形参时，使用 `$` 打头，跟普通 shell 变量使用一致。
+
+### 其他小工具
+
+#### yq
+
+[yq](https://github.com/mikefarah/yq) 是类似于 [jq](#jq) 的小工具，不过它用来解析 [YAML](../../YAML/YAML_Note.md) 的，是一个轻量级的便携式命令行 YAML 处理器。它是 python 写的，所以可以通过 [pip](../../Python/Python_Note.md#python_pip) 来安装。
+
+因为 `yq` 是有入口程序的，所以也可以使用 [pipx](../../Python/Python_Note.md#python_pipx") 来安装：
+
+```shell
+pipx install yq
+```
+
+当然 yq 也有 go 语言版本，可以通过系统的包管理器安装：
+
+```shell
+pacman -S go-yq
+```
 
 ---
 

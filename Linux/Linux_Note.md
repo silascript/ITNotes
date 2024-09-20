@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-09-19 21:57:17
+modified: 2024-09-19 23:03:22
 ---
 
 # Linux 笔记
@@ -450,7 +450,7 @@ Archive:  SwitchWindow-0.5.0.zip
 
 `unzip -n xxx.zip -d xx`：解压到 xx 目录，如果目录已存在则跳过解压。
 
-###### zipinfo
+##### zipinfo
 
 `zipinfo -s xxx.zip`：使用 `zipinfo` 能查看压缩包中的信息。不过信息的样式与 `unzip -v` 或 `unzip -l` 有所区别。
 
@@ -476,6 +476,33 @@ drwx---     0.0 fat        0 bx stor 23-Aug-08 00:51 SwitchWindow-0.5.0/
 
 ```
 
+zipinfo 也有短格式：
+
+```shell
+$ zipinfo -s zip_tmp.zip
+Archive:  zip_tmp.zip
+Zip file size: 9868321 bytes, number of entries: 17
+drwxr-xr-x  2.0 unx        0 bx stor 24-Sep-18 23:18 tmp/
+-rw-r--r--  2.0 unx  1305313 bX defN 24-Jun-16 23:42 tmp/A File Icon.sublime-package
+-rw-r--r--  2.0 unx   655376 bX defN 24-Sep-18 21:15 tmp/CommandsBrowser.sublime-package
+-rw-r--r--  2.0 unx   200864 bX defN 24-Sep-18 21:14 tmp/ConvertToUTF8.sublime-package
+-rw-r--r--  2.0 unx   132169 bX defN 21-Dec-07 14:44 tmp/Emmet.sublime-package
+-rw-r--r--  2.0 unx  3623354 bX defN 24-Sep-18 21:14 tmp/gruvbox.sublime-package
+-rw-r--r--  2.0 unx    99791 bX defN 24-Sep-18 21:15 tmp/Less.sublime-package
+-rw-r--r--  2.0 unx  3884049 bX defN 24-Sep-18 21:14 tmp/NeoVintageous.sublime-package
+-rw-r--r--  2.0 unx    14464 bX defN 24-Sep-18 21:14 tmp/NeoVintageousHighlightLine.sublime-package
+-rw-r--r--  2.0 unx   306208 bX defN 24-Sep-18 21:14 tmp/SideBarTools.sublime-package
+-rw-r--r--  2.0 unx   228092 bX defN 24-Feb-14 03:52 tmp/ST4_DoxyDoxygen.sublime-package
+-rw-r--r--  2.0 unx     5563 bX defN 23-Aug-08 03:56 tmp/Switch Window.sublime-package
+-rw-r--r--  2.0 unx    12366 bX defN 24-Sep-18 21:15 tmp/Terminal.sublime-package
+-rw-r--r--  2.0 unx   116812 bX defN 24-Sep-18 21:15 tmp/Terminus.sublime-package
+drwxr-xr-x  2.0 unx        0 bx stor 24-Sep-19 10:42 zip_tmp/
+-rwxr-xr-x  2.0 unx      416 bX defN 24-Feb-29 11:15 4169_cracked_untested.sh
+-rwxr-xr-x  2.0 unx      623 bX defN 24-Sep-14 03:37 4180_cracked_untested.sh
+17 files, 10585460 bytes uncompressed, 9864875 bytes compressed:  6.8%
+
+```
+
 配合 Linux 其他命令，可以作进一步信息的查看，如查看目录情况：
 
 ```shell
@@ -491,11 +518,55 @@ drwx---     0.0 fat        0 bx stor 24-Jun-16 23:38 AFileIcon-3.28.0/media/
 drwx---     0.0 fat        0 bx stor 24-Jun-16 23:38 AFileIcon-3.28.0/preferences/
 ```
 
- 统计包中目录的数量：
+只显示文件名：
+
+```shell
+$ zipinfo -1 zip_tmp.zip
+tmp/
+tmp/A File Icon.sublime-package
+tmp/CommandsBrowser.sublime-package
+tmp/ConvertToUTF8.sublime-package
+tmp/Emmet.sublime-package
+tmp/gruvbox.sublime-package
+tmp/Less.sublime-package
+tmp/NeoVintageous.sublime-package
+tmp/NeoVintageousHighlightLine.sublime-package
+tmp/SideBarTools.sublime-package
+tmp/ST4_DoxyDoxygen.sublime-package
+tmp/Switch Window.sublime-package
+tmp/Terminal.sublime-package
+tmp/Terminus.sublime-package
+zip_tmp/
+4169_cracked_untested.sh
+4180_cracked_untested.sh
+
+```
+
+###### zipinfo 示例
+
+ 1. 统计包中目录的数量
 
 ```shell
 zipinfo xxx.zip | grep "^d" | wc -l
 ```
+
+2. 列出包中一级文件（包括目录）
+
+```shell
+zipinfo -1 zip_tmp.zip | awk 'BEGIN{FS="/"}{print $1}' | uniq
+```
+
+或者写成这样：
+
+```shell
+zipinfo -1 AFileIcon-3.28.0.zip | awk -F "/" '{print $1}' | uniq
+```
+
+> [!info] 
+> 
+> `awk 'BEGIN{FS="/"}'` 这是改变分隔符为斜杠 `/`，`{print $1}` 取出第一列，就是一级文件。
+> 
+> `uniq` 很简单去重，把相同一级目录都去掉重复，就知道 zip 包中一级文件与目录有多少了。
 
 ---
 

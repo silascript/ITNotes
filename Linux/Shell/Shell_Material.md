@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2024-09-19 21:27:36
+modified: 2024-09-20 11:00:56
 ---
 
 # Shell 资料清单
@@ -197,12 +197,21 @@ modified: 2024-09-19 21:27:36
 
 ### Jq
 
+* [GitHub - alingse/jq-manual-cn: jq 中文手册](https://github.com/alingse/jq-manual-cn)
 * [如何用 Linux 命令行工具解析和格式化输出 JSON - 知乎](https://zhuanlan.zhihu.com/p/77177160)
 * [Shell：如何解析json - 知乎](https://zhuanlan.zhihu.com/p/675809200)
+* [Linux 中的 JQ 命令使用实例 | 《Linux就该这么学》](https://www.linuxprobe.com/linux-jq-json.html)
+* [Jq命令使用详解 - SoulChild随笔记](https://www.soulchild.cn/post/jq%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/)
 * [Linux 命令行工具之 jq 最佳实践 - 知乎](https://zhuanlan.zhihu.com/p/606945462)
 * [Linux jq 命令讲解与实战操作（json字符串解析工具）- 博客园](https://www.cnblogs.com/liugp/p/17613011.html)
 * [jq manual](https://jqlang.github.io/jq/manual/)
 * [Linux shell jq工具操作文档（jq --help使用示例）-CSDN博客](https://blog.csdn.net/Dontla/article/details/135473677)
+* [JSON神器之jq使用指南指北 - sunsky303 - 博客园](https://www.cnblogs.com/sunsky303/p/16437766.html)
+* [jq命令用法总结](https://segmentfault.com/a/1190000041912631)
+* [jq常见报错 - 酷盾](https://www.kdun.com/ask/291945.html)
+* [jq常用操作 - Surpassme - 博客园](https://www.cnblogs.com/surpassme/p/16523053.html)
+* [Shell-常用JQ命令详解 - 小喜\_ww - 博客园](https://www.cnblogs.com/xiaoxi-3-/p/15773924.html)
+* [处理JSON最强命令jq使用详解\_jq json-CSDN博客](https://blog.csdn.net/w727655308/article/details/121207345)
 
 ### shellcheck
 

@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-10 03:06:48
-modified: 2024-09-21 23:22:26
+modified: 2024-09-21 23:37:32
 ---
 
 # Linux 资料清单
@@ -60,6 +60,7 @@ modified: 2024-09-21 23:22:26
 * [每天一个linux命令（61）：wget命令 - peida - 博客园](https://www.cnblogs.com/peida/archive/2013/03/18/2965369.html)
 * [shell命令：wget下载文件](https://blog.51cto.com/u_15275035/4025257)
 * [shell命令：wget下载文件 - xuejianbest - 博客园](https://www.cnblogs.com/xuejianbest/p/10285218.html)
+* [linux wget指定下载目录和重命名 - brady-wang - 博客园](https://www.cnblogs.com/brady-wang/p/12812458.html)
 
 ---
 

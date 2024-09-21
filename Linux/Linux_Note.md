@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-09-19 23:03:22
+modified: 2024-09-21 23:48:48
 ---
 
 # Linux 笔记
@@ -1071,18 +1071,40 @@ wget http://xxx.com
 ```
   由无参这种 **默认** 方式，wget 是直接下载文件，就能看出 wget 重点是放在下载上的。
 
+1. 重命名
+
+`-o` 或 `-O` 是重命名下载文件的文件名。
+
+> [!tip] 
+> 
+> 这操作实际已经包含指定目录的操作，即包含了 `-P` 的操作，如果重命名时，目录不存在，会像 `-P` 一样先创建目录，然后才开始下载然后对下载文件进行重命名。
+
  ```shell
  # 大O 下载并重命令文件
  # 相当于 curl 的小o参数的操作
  # 如果当前目录已存在同名文件将覆盖
+ 
  wget -O rename.zip http://xxxx.com/xxx.xxx
+ 
+ # 小o与大O类似，就是重命名文件
+ # 区别是小o不显示下载过程
+ wget -o rename.zip http://xxxx.com/xxx.xxx
 ```
+
+2. 指定目录
+
+`-P` 操作非常单纯，就是指定要下载到哪个目录。
+
+如果只是想指定下载目录，可以使用这个参数，但如果同时想进行重命名，那就应该使用 `-o` 或 `-O` 参数。
 
 ```shell
 # 指定下载到哪目录
 # 文件名使用下载地址最后部分
+# -P 指定的目录如果不存在则自动创建
 wget -P /home/test http://xxxx
 ```
+
+3. 断点续传
 
 ```shell
 # 断点下续传
@@ -1096,15 +1118,21 @@ wget -c http://xxx.com
  wget -c -O miniconda_py39_4.12.0.sh https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh
 ```
 
+4. 限速
+
 ```shell
 # --limit-rate= 使用来限速的
 wget --limit-rate=400k URL
 ```
 
+5. 检测连接
+
 ```shell
 # 检测连接
 wget –-spider URL
 ```
+
+6. 关闭详细输出信息
 
 ```shell
 # 关闭详尽输出，但不进入安静模式

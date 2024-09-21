@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-10 03:06:48
-modified: 2024-09-19 21:56:23
+modified: 2024-09-21 23:22:26
 ---
 
 # Linux 资料清单
@@ -47,6 +47,19 @@ modified: 2024-09-19 21:56:23
 * [Linux下查看压缩文件内容的 10 种方法 | 时鹏亮的Blog](https://shipengliang.com/program-code/linux%E4%B8%8B%E6%9F%A5%E7%9C%8B%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E7%9A%84-10-%E7%A7%8D%E6%96%B9%E6%B3%95.html)
 * [Linux 下zip包的压缩与解压 - 傻瓜乐园 - 博客园](https://www.cnblogs.com/Anidot/articles/7761158.html)
 * [zipinfo - 列出关于某个ZIP压缩包的详细信息 - 樊伟胜 - 博客园](https://www.cnblogs.com/fanweisheng/p/11102706.html)
+
+## 网络与下载
+
+* [shell利用curl和wget下载文件 | 陋室博客](http://bolg.malu.me/html/2011/1786.html)
+* [技术|2 种从 Linux 终端下载文件的方法](https://linux.cn/article-12752-1.html)
+* [后渗透之文件下载(Linux篇) – fushulingのblog](https://fushuling.com/index.php/2023/10/21/%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BDlinux%E7%AF%87/)
+* [Linux使用curl访问网页和wget下载文件\_linux shell\_脚本之家](https://www.jb51.net/article/250111.htm)
+
+### wget
+
+* [每天一个linux命令（61）：wget命令 - peida - 博客园](https://www.cnblogs.com/peida/archive/2013/03/18/2965369.html)
+* [shell命令：wget下载文件](https://blog.51cto.com/u_15275035/4025257)
+* [shell命令：wget下载文件 - xuejianbest - 博客园](https://www.cnblogs.com/xuejianbest/p/10285218.html)
 
 ---
 

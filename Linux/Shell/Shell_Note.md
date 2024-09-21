@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2024-09-20 22:53:25
+modified: 2024-09-21 18:47:40
 ---
 
 # Shell 笔记
@@ -637,6 +637,27 @@ echo num1
 
 ## <span id="shell_string">字符串</span>
 
+### 切割
+
+#### 方式 1
+
+语法：`${parameter//pattern/string}`
+
+用 string 来**替换** parameter 变量中所有匹配的 pattern
+
+```shell
+s1="hello,shell,split,test"  
+array=(${s1//,/ })
+```
+
+> [!info] 
+> 
+> `s1` 字符串原有使用 `,` 来分隔，而经过 `${s1//,/ }` 后，就是将 `,` 替换成空格，利用 [数组](#数组) 构建时默认按空格分隔的规则，这些子串就被替换成使用空格来分隔，那最后构建成数组时，子串自动变成数组的各个元素。
+>> [!important] 
+>> 
+>> 注意最后的是 `/ ` 斜杠后是有一个空格的，如果少了，就相当于将原有的分隔符 `,` 给「移除」了，那些原来用 `,` 分隔的子串，就会合并成一起了！-- 当然如果有这种将子串合并成一个字符串的需求，可以使用这种方式来对字符串进行合并。
+> 
+
 ### 截取
 
 #### 示例 1
@@ -852,7 +873,7 @@ function 函数名(){
 
 Shell 脚本内，传递参数格式为 `$n`，**1**为执行脚本的第一个参数，**2**为执行脚本的第二个参数，以此类推。
 
-* `$#`：传递到脚本的参数个数
+* `$#`：传递到脚本的参数个数。
 * `$*`：以一个单字符串显示所有向脚本传递的参数。
 > [!tip] 
 > 
@@ -1157,6 +1178,19 @@ curl http://hub-mirror.c.163.com/v2/library/${image}/tags/list | jq --arg tstr $
 > 
 > * `jq --arg` 是定义变量的选项
 > * `jq --arg tstr $tagstr`： `tstr` 为形参变量，是 jq 内部使用；而 `$tagstr` 是实参，外部传进来的。要使用形参时，使用 `$` 打头，跟普通 shell 变量使用一致。
+
+传多个参数：
+
+```shell
+dl_url=$(curl $channel_json_v3 | jq -r --arg pkg_name $package_name --arg pkg_version "$package_version" '.packages_cache.[].[]| select(.name==$pkg_name)|.releases[]| select(.version==$pkg_version).url')
+```
+
+> [!info] 
+> 
+> 注意，`select(.name==$pkg_name)` 或 `select(.version==$pkg_version)`，引用「形参」时，不要加双引号，而且 `==` 不要加空格。
+> 
+> 「实参」`"$package_version"` 这个可以加双引号，防止传进来的字符串带有空格，被「自动切割」。
+> 
 
 ### 其他小工具
 

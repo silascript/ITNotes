@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2024-09-20 22:36:22
+modified: 2024-09-21 18:44:56
 ---
 
 # Shell 资料清单
@@ -99,11 +99,21 @@ modified: 2024-09-20 22:36:22
 * [如何获取shell中字符串的最后一个字符？-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/ask/sof/88528)
 * [Shell字符串截取（非常详细） - 粉色纽扣 - 博客园](https://www.cnblogs.com/wutao-007/p/17022419.html)
 * [shell脚本--逻辑判断与字符串比较 - 寻觅beyond - 博客园](https://www.cnblogs.com/-beyond/p/8262265.html)
+* [shell脚本学习之6小时搞定(3)-str&array - 进击的davis - 博客园](https://www.cnblogs.com/davis12/p/14250318.html)
+* [【shell】shell字符串分割|文件分割|剪切|截取\_shell 字符串分割-CSDN博客](https://blog.csdn.net/bandaoyu/article/details/120659630)
+
+#### 转数组
+
+* [shell 字符串转数组 - anobscureretreat - 博客园](https://www.cnblogs.com/sea-stream/p/11403174.html)
+* [Shell中将分隔符的字符串转为数组的几种方法\_shell 逗号分割成数组-CSDN博客](https://blog.csdn.net/Jerry_1126/article/details/83930956)
+* [Shell中将分隔符的字符串转为数组的几种方法-菜鸟笔记](https://www.coonote.com/shell-note/convert-shell-string-array.html)
+* [在Bash中如何将字符串分割成数组当你在Linux系统中编写bash脚本时，你可能会发现自己在很多情况下必须将字符串值分 - 掘金](https://juejin.cn/post/7122700152774590500)
 
 ### 函数
 
 * [shell脚本——如何获取函数的返回值](https://blog.csdn.net/qq_31598113/article/details/80611480)
 * [Shell函数（函数定义、函数变量、函数调用、函数传参、函数返回值、获取函数返回值）](https://blog.csdn.net/xhaimail/article/details/103208901) 
+* [linux脚本：shell, 判断输入参数的个数（命令行） - oucaijun - 博客园](https://www.cnblogs.com/mylinux/p/4834332.html)
 
 ---
 
@@ -216,6 +226,9 @@ modified: 2024-09-20 22:36:22
 * [jq常用操作 - Surpassme - 博客园](https://www.cnblogs.com/surpassme/p/16523053.html)
 * [Shell-常用JQ命令详解 - 小喜\_ww - 博客园](https://www.cnblogs.com/xiaoxi-3-/p/15773924.html)
 * [处理JSON最强命令jq使用详解\_jq json-CSDN博客](https://blog.csdn.net/w727655308/article/details/121207345)
+* [jq 命令，Linux jq 命令详解：一个灵活的轻量级命令行JSON处理器 - Linux 命令搜索引擎](https://wangchujiang.com/linux-command/c/jq.html)
+* [jq命令用法总结 - 扣钉日记 - 博客园](https://www.cnblogs.com/codelogs/p/16324928.html)
+* [Using Variables in shell script · Issue #626 · jqlang/jq · GitHub](https://github.com/jqlang/jq/issues/626)
 
 ### yq
 

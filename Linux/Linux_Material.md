@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-10 03:06:48
-modified: 2024-09-21 23:37:32
+modified: 2024-09-22 21:25:17
 ---
 
 # Linux 资料清单
@@ -47,6 +47,7 @@ modified: 2024-09-21 23:37:32
 * [Linux下查看压缩文件内容的 10 种方法 | 时鹏亮的Blog](https://shipengliang.com/program-code/linux%E4%B8%8B%E6%9F%A5%E7%9C%8B%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E7%9A%84-10-%E7%A7%8D%E6%96%B9%E6%B3%95.html)
 * [Linux 下zip包的压缩与解压 - 傻瓜乐园 - 博客园](https://www.cnblogs.com/Anidot/articles/7761158.html)
 * [zipinfo - 列出关于某个ZIP压缩包的详细信息 - 樊伟胜 - 博客园](https://www.cnblogs.com/fanweisheng/p/11102706.html)
+* [Linux下zip命令-不打包目标文件目录\_zip -j-CSDN博客](https://blog.csdn.net/LJS109/article/details/58592021)
 
 ## 网络与下载
 

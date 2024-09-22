@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2024-09-21 18:44:56
+modified: 2024-09-22 13:05:27
 ---
 
 # Shell 资料清单
@@ -114,6 +114,11 @@ modified: 2024-09-21 18:44:56
 * [shell脚本——如何获取函数的返回值](https://blog.csdn.net/qq_31598113/article/details/80611480)
 * [Shell函数（函数定义、函数变量、函数调用、函数传参、函数返回值、获取函数返回值）](https://blog.csdn.net/xhaimail/article/details/103208901) 
 * [linux脚本：shell, 判断输入参数的个数（命令行） - oucaijun - 博客园](https://www.cnblogs.com/mylinux/p/4834332.html)
+
+#### 返回值
+
+* [shell函数（调用、返回值，返回值获取） - duanxz - 博客园](https://www.cnblogs.com/duanxz/p/4661767.html)
+* [shell 脚本中如何获取java 执行后的最后一行打印值 shell获取执行结果](https://blog.51cto.com/u_12195/11039081)
 
 ---
 

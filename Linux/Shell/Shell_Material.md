@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2024-09-22 13:05:27
+modified: 2024-09-26 03:10:41
 ---
 
 # Shell 资料清单
@@ -237,7 +237,7 @@ modified: 2024-09-22 13:05:27
 
 ### yq
 
-* [YAML处理工具yq之读写篇 | 云原生知识星球](https://lyyao09.github.io/2019/08/02/tools/The-usage-of-yq-read-write/)
+* [yq](../../YAML/YAML_Material.md#yq)
 
 ### shellcheck
 

@@ -2,10 +2,11 @@
 aliases: []
 tags:
   - yaml
+  - yq
   - material
   - list
 created: 2024-09-20 23:23:38
-modified: 2024-09-26 03:37:29
+modified: 2024-09-26 12:54:29
 ---
 
 # YAML 资料清单
@@ -28,3 +29,5 @@ modified: 2024-09-26 03:37:29
 * [yq:命令行操作yaml文件yq: Command-line YAML/XML/TOML processor - jq - 掘金](https://juejin.cn/post/7271542727350730787)
 * [yq使用示例](https://blog.51cto.com/zhangxueliang/6164244)
 * [yq 命令行解析 yaml-谢先斌的博客](https://www.xiexianbin.cn/linux/commands/yq/index.html)
+* [yq ——一个轻量级和可移植的命令行YAML、JSON和XML处理器 - WorldLink资源网](https://www.worldlink.com.cn/zh_tw/osdir/yq.html)
+* [Working with TOML | yq](https://mikefarah.gitbook.io/yq/usage/toml)

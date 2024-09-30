@@ -699,7 +699,15 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 
 #### Needay
 
-[Needay](https://needay.xyz) （[新域名](https://needay2.729388.xyz)，又换 [新新域名](https://needay03.729388.xyz)）性价比套餐有蛮多款：
+[Needay](https://needay.xyz) 
+
+官网域名：
+
+* [直连域名](https://needay04.729388.xyz)
+* [需代理域名](https://needay03.729388.xyz)
+
+
+性价比套餐有蛮多款：
 
 1. 月付 3.99/月，每月 1000G，直连，不限客户端数
 2. 年付 49/年，每月 1TB，直连，不限客户端数

@@ -4,7 +4,7 @@ tags:
   - yaml
   - yml
 created: 2023-08-18 19:44:52
-modified: 2024-09-25 20:55:44
+modified: 2024-09-27 02:34:41
 ---
 
 # YAML 笔记
@@ -61,6 +61,80 @@ address: Shanghai,
 > yaml 字符串默认不使用引号表示。如果字符串之中包含空格或特殊字符，需要放在引号之中。
 > 
 > yaml 中的字符串引号，正好与 [Shell](../Linux/Shell/Shell_Note.md) 相反，它是双引号 `"` 不转义，单引号 `'` 转义。
+
+### 对象
+
+```yaml
+person:
+  name: 陈皮
+  age: 18
+  man: true
+```
+
+也可以写成这样：
+
+```yaml
+person: {name: 陈皮, age: 18, man: true}
+```
+
+### 数组
+
+用**短横杆**加**空格** `-` 开头的行，组成数组的每一个元素：
+
+```yaml
+address:
+  - 深圳
+  - 北京
+  - 广州
+```
+
+当然也可以写成这样：
+
+```yaml
+address: [深圳, 北京, 广州]
+```
+
+#### 数组里嵌套数组
+
+```yaml
+twoArr:  
+    -  
+      - 2  
+      - 3  
+      - 1  
+    -  
+      - 10  
+      - 12  
+      - 30
+```
+
+#### 数组中嵌套对象
+
+```yaml
+childs:
+  -
+    name: 小红
+    age: 10
+  -
+    name: 小王
+    age: 15
+```
+
+或者写成这样：
+
+```yaml
+childs:
+  - name: 小红
+    age: 10
+  - name: 小王
+    age: 15
+```
+
+或缩成一行：
+
+```yaml
+childs: [{name: 小红, age: 10}, {name: 小王, age: 15}]
+```
 
 ---
 

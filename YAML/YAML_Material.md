@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-09-20 23:23:38
-modified: 2024-09-26 12:54:29
+modified: 2024-09-27 02:19:45
 ---
 
 # YAML 资料清单
@@ -17,10 +17,13 @@ modified: 2024-09-26 12:54:29
 * [YAML 语言教程 - 阮一峰的网络日志](https://www.ruanyifeng.com/blog/2016/07/yaml.html)
 * [YAML入门教程](https://wsgzao.github.io/post/yaml/)
 * [YAML 入门教程 - runoob.com](https://www.runoob.com/w3cnote/yaml-intro.html)
+* [YAML文件的这些骚操作，你都会了吗？ - 墨天轮](https://www.modb.pro/db/139090)
 * [梭梭带你彻底搞懂YAML序列化语言 - 梭梭666 - 博客园](https://www.cnblogs.com/shiwei1930/p/17921347.html)
 * [如何在Yaml文件引用其他Yaml文件(使用python Pyyaml) - robynn - 博客园](https://www.cnblogs.com/robynn/p/8253783.html)
 * [ansible10：include说明 - loosenc - 博客园](https://www.cnblogs.com/ccbloom/p/15508703.html)
 * [YAML文件(.yml)中的键(key)通过变量引用来设置 - i江湖中人 - 博客园](https://www.cnblogs.com/haycheng/p/13299183.html)
+* [【译】你真的了解 Y(A)ML 吗？❗ 😵你真的了解 Y(A)ML 吗？❗ 😵 感谢你能来阅读这篇关于 YAML 文 - 掘金](https://juejin.cn/post/7021380596077166622)
+* [How can I include a YAML file inside another?](https://stackoverflow.com/questions/528281/how-can-i-include-a-yaml-file-inside-another)
 
 ## yq
 

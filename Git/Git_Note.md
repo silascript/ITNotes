@@ -5,7 +5,7 @@ tags:
   - github
   - gist
 created: 2023-01-30 11:19:11
-modified: 2024-07-21 17:47:07
+modified: 2024-09-30 20:24:24
 ---
 
 # Git 笔记
@@ -912,6 +912,7 @@ github 已经不允许使用账号密码方式 pull 代码，可以使用 token�
 > * [Github要求使用基于令牌的身份验证](https://zhuanlan.zhihu.com/p/401978754)
 > *[git push时鉴权失败](https://juejin.cn/post/7099019037706813471)
 > * [caching-your-github-credentials-in-git#github-cli](https://docs.github.com/zh/get-started/getting-started-with-git/caching-your-github-credentials-in-git#github-cli)
+> * [\[Git\] 一次搞定：Github 2FA(Two-Factor Authentication/两因素认证) - 千千寰宇 - 博客园](https://www.cnblogs.com/johnnyzen/p/17880870.html)
 
 ---
 

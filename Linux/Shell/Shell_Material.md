@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2024-09-26 03:10:41
+modified: 2024-10-10 12:16:54
 ---
 
 # Shell 资料清单
@@ -88,6 +88,7 @@ modified: 2024-09-26 03:10:41
 * [shell 向函数传递数组和从函数返回数组的一个细节问题\_shell 函数返回数组-CSDN博客](https://blog.csdn.net/guizaijianchic/article/details/78012179)
 * [shell数组中字符串元素含有空格处理\_shell里面写带空格的字符串-CSDN博客](https://blog.csdn.net/coolwaterld/article/details/130951808)
 * [Shell中通过参数传递带空格的字符串数组并正确遍历-七秒鱼笔记](http://www.yu7s.com/article/20230518151458352.html)
+* [shell数组中元素含有空格处理\_shell脚本数组元素包含空格,数组长度变-CSDN博客](https://blog.csdn.net/u010094569/article/details/108647502)
 
 #### 遍历数组
 
@@ -101,6 +102,7 @@ modified: 2024-09-26 03:10:41
 * [shell脚本--逻辑判断与字符串比较 - 寻觅beyond - 博客园](https://www.cnblogs.com/-beyond/p/8262265.html)
 * [shell脚本学习之6小时搞定(3)-str&array - 进击的davis - 博客园](https://www.cnblogs.com/davis12/p/14250318.html)
 * [【shell】shell字符串分割|文件分割|剪切|截取\_shell 字符串分割-CSDN博客](https://blog.csdn.net/bandaoyu/article/details/120659630)
+* [shell字符串处理，解决传入参数有空格的问题](https://blog.51cto.com/u_4820306/5425019)
 
 #### 转数组
 
@@ -137,6 +139,7 @@ modified: 2024-09-26 03:10:41
 * [Linux中read命令的用法—（6/30） - konglingbin - 博客园](https://www.cnblogs.com/klb561/p/9245696.html)
 * [Shell脚本循环读取文件中每一行，可以逐行读取shell脚本读取txt文本： 1. 使用for是以空格作为分隔的。 2 - 掘金](https://juejin.cn/post/6949498425582829581)
 * [shell中while与for空行取值区别 - 小阿峰 - 博客园](https://www.cnblogs.com/xiaofeng666/p/12776345.html)
+* [linux 中 read -a 和 -r选项 - 小鲨鱼2018 - 博客园](https://www.cnblogs.com/liujiaxin2018/p/18020718)
 
 ---
 

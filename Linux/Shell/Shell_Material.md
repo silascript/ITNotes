@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2024-10-10 12:16:54
+modified: 2024-10-13 01:10:29
 ---
 
 # Shell 资料清单
@@ -49,6 +49,7 @@ modified: 2024-10-10 12:16:54
 * [shell script 在if 的判断条件正则表达式=\~中引号问题 - gaomatlab - 博客园](https://www.cnblogs.com/gaochsh/p/6901807.html)
 * [Shell条件表达式的正则匹配-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1397980)
 * [Shell 中test 单中括号\[\] 双中括号\[\[\]\] 的区别 - AndyBlog - 博客园](https://www.cnblogs.com/zeweiwu/p/5485711.html)
+* [条件判断 - Bash 脚本教程 - 网道](https://wangdoc.com/bash/condition)
 
 #### case
 
@@ -103,6 +104,7 @@ modified: 2024-10-10 12:16:54
 * [shell脚本学习之6小时搞定(3)-str&array - 进击的davis - 博客园](https://www.cnblogs.com/davis12/p/14250318.html)
 * [【shell】shell字符串分割|文件分割|剪切|截取\_shell 字符串分割-CSDN博客](https://blog.csdn.net/bandaoyu/article/details/120659630)
 * [shell字符串处理，解决传入参数有空格的问题](https://blog.51cto.com/u_4820306/5425019)
+* [shell判断文件后缀名是否为特定字符串 - 无边身尊者 - 博客园](https://www.cnblogs.com/noxy/p/9831985.html)
 
 #### 转数组
 

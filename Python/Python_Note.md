@@ -7,7 +7,7 @@ tags:
   - pipx
   - conda
 created: 2023-08-18 19:44:52
-modified: 2024-09-12 19:40:11
+modified: 2024-10-18 12:32:39
 ---
 
 # Python 笔记
@@ -741,6 +741,26 @@ CondaHTTPError: HTTP 000 CONNECTION FAILED for url <https://mirrors.pku.edu.cn/a
 > [!info] 
 > 
 > 也有可能的原因是包损坏，所以使用 `conda clean --packages --tarballs` 清理损坏的包，可能就会正常了。
+
+#### 错误 3
+
+[conda](#conda) 进行 `conda update --all` 时，有时会出现以下提示信息：
+
+```shell
+==> WARNING: A newer version of conda exists. <==
+    current version: 24.9.1
+    latest version: 24.9.2
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+```
+
+即便根据提示执行 `conda update -n base -c defaults conda` 代码同样还是会提示有更新的版本，那么可以通过指定版本号来「升级」（`install`） [conda](#conda) 本身：
+
+```shell
+conda install -n base -c defaults conda=版本号
+```
 
 ---
 

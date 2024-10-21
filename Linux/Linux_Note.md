@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-09-23 03:11:52
+modified: 2024-10-21 18:13:21
 ---
 
 # Linux 笔记
@@ -1837,6 +1837,10 @@ curl cheat.sh
 > 也可以缩写成这样：`curl cht.sh`
 
 如查询 [awk](#awk) 的使用，可以敲入这个命令：`curl cheat.sh/awk`，就会显示 awk 使用示例。
+
+### navi
+
+[navi](https://github.com/denisidoro/navi) 功能与 [cheat.sh](#cheat.sh) 类似，就是命令行查询，它是使用 [Rust](../Rust/Rust_Note.md) 写的。
 
 ### FileManager-Actions
 

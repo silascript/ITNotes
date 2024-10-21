@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-10 03:06:48
-modified: 2024-09-22 21:25:17
+modified: 2024-10-21 18:10:30
 ---
 
 # Linux 资料清单
@@ -62,6 +62,12 @@ modified: 2024-09-22 21:25:17
 * [shell命令：wget下载文件](https://blog.51cto.com/u_15275035/4025257)
 * [shell命令：wget下载文件 - xuejianbest - 博客园](https://www.cnblogs.com/xuejianbest/p/10285218.html)
 * [linux wget指定下载目录和重命名 - brady-wang - 博客园](https://www.cnblogs.com/brady-wang/p/12812458.html)
+
+## 其他小工具
+
+### 命令行命令查询
+
+* [navi | x-cmd pkg | 用于命令行的交互式备忘单工具](https://cn.x-cmd.com/pkg/navi)
 
 ---
 

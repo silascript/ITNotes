@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2024-10-02 11:11:37
+modified: 2024-11-07 21:05:54
 ---
 
 # 梯子笔记
@@ -713,6 +713,16 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 * [直连域名](https://needay04.729388.xyz)
 * [需代理域名](https://needay03.729388.xyz)
 
+订阅域名 2024 年 11 月 2 日更新： 
+
+* [https://needay11.needay.xyz](https://needay11.needay.xyz)
+* [https://needay10.needay.xyz](https://needay10.needay.xyz)
+* [https://needay09.needay.xyz](https://needay09.needay.xyz)
+* [https://needay08.729388.xyz](https://needay08.729388.xyz)
+* [https://needay07.729388.xyz](https://needay07.729388.xyz)
+* [https://needay06.729388.xyz](https://needay06.729388.xyz)
+* [https://needay05.729388.xyz](https://needay05.729388.xyz)
+
 性价比套餐有蛮多款：
 
 1. 月付 3.99/月，每月 1000G，直连，不限客户端数
@@ -824,6 +834,14 @@ Linux 版本的相关目录：
 > 
 > * [简介 | Clash Nyanpasu](https://nyanpasu.elaina.moe/zh-CN/introduction#%E4%BB%80%E4%B9%88%E6%98%AF-clash-nyanpasu)
 > * [请问该项目与clash-verge-rev的关系](https://github.com/LibNyanpasu/clash-nyanpasu/issues/17)
+
+### FLClash
+
+[FLClash](https://github.com/chen08209/FlClash) 也是一个多平台的客户端。
+
+#### 设置
+
+下载好了按照这个步骤操作点开 「工具」>「覆写」>「基础」> 把第二个「UA」改成 `clash-verge/v1.6.6`
 
 #### PAC
 

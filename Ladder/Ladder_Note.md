@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2024-11-07 21:05:54
+modified: 2024-11-25 10:14:09
 ---
 
 # 梯子笔记
@@ -352,8 +352,8 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 
 [三分机场](https://shop.sanfen.co) 入门套餐：
 
-1. 年付 9.5 元/年，每月 200G，不限速不限客户端数，[Vmess](#Vmess) 协议，部分地区可能无法使用（福建福州 泉州 湖南及河南大部分地区此套餐可能无法使用）。
-2. 月付 5 元/月，每月 5000G，不限速不限客户端数，[Vmess](#Vmess) 协议，部分地区可能无法使用（福建福州 泉州 湖南及河南大部分地区此套餐可能无法使用）。
+1. 年付 9.5 元/年，每月 200G，[直连](#直连) 套餐，不限速不限客户端数， [VLess](#VLess) +[Reality](#Reality) 协议，部分地区可能无法使用（福建福州 泉州 湖南及河南大部分地区此套餐可能无法使用）。
+2. 月付 5 元/月，每月 5000G，[直连](#直连) 套餐，不限速不限客户端数，[VLess](#VLess) +[Reality](#Reality) 协议，部分地区可能无法使用（福建福州 泉州 湖南及河南大部分地区此套餐可能无法使用）。
 
 这个机场比 [超悦](#超悦机场) 一样有超值的年付套餐，但更具性价比，年付才**9.5**，每月 200G 流量也比 [超悦](#超悦机场) 大，最重要是它有香港台湾日本这些大陆周边节点。可以是 [超悦](#超悦机场) 的平替。
 
@@ -362,6 +362,8 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 > [!tip] 
 > 
 > 有网友反映三分卡，估计跟 [超悦](#超悦机场) 一样，主打就一个「保底」，真是一分钱一分货，没办法。
+> 
+> 这机场连购买套餐结算都会断链接，不推荐。
 
 #### 三毛机场
 
@@ -835,14 +837,6 @@ Linux 版本的相关目录：
 > * [简介 | Clash Nyanpasu](https://nyanpasu.elaina.moe/zh-CN/introduction#%E4%BB%80%E4%B9%88%E6%98%AF-clash-nyanpasu)
 > * [请问该项目与clash-verge-rev的关系](https://github.com/LibNyanpasu/clash-nyanpasu/issues/17)
 
-### FLClash
-
-[FLClash](https://github.com/chen08209/FlClash) 也是一个多平台的客户端。
-
-#### 设置
-
-下载好了按照这个步骤操作点开 「工具」>「覆写」>「基础」> 把第二个「UA」改成 `clash-verge/v1.6.6`
-
 #### PAC
 
 通过开启 `PAC模式` 对国内网站进行直链设置。
@@ -912,6 +906,20 @@ function FindProxyForURL(url, host) {
 [V2Ray](https://www.v2ray.com/) 是 ProjectV 下的一个工具。V2Ray 是一个与 Shadowsocks 类似的代理软件。
 
 V2Ray 本身不支持 [PAC](#PAC)。
+
+### FLClash
+
+[FLClash](https://github.com/chen08209/FlClash) 也是一个多平台的客户端。
+
+#### 设置
+
+下载好了按照这个步骤操作点开 「工具」>「覆写」>「基础」> 把第二个「UA」改成 `clash-verge/v1.6.6`
+
+FLClash 的端口默认为 `7890`，这软件连复制环境变量的功能都没有，只能手动敲以下代码在 [terminal](../Linux/Linux_Note.md#terminal%20相关) 中执行：`export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890`
+
+### V2Fly
+
+因为 [V2ray](#V2ray) 的创始人失联，V2Ray 的更新已经由新的社区 [V2Fly](https://www.v2fly.org) 负责。
 
 #### XRay
 

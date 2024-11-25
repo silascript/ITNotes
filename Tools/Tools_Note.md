@@ -7,7 +7,7 @@ tags:
   - lux
   - google
 created: 2023-08-18 19:44:52
-modified: 2024-09-01 11:27:25
+modified: 2024-11-16 20:56:46
 ---
 
 # 常用小工具笔记
@@ -366,6 +366,7 @@ pipx install you-get
 > 
 > 这个选项对于使用 [机场](../Ladder/Ladder_Note.md) 下载 [Youtube](../Ladder/Youtube_Note.md) 的视频是非常重要的。
 * `--itag`：这是指定下载某个格式或分辨率选项，类似 [lux](#lux) 的 `-f` 选项。
+* `--debug`：开启 debug 模式，可以检查错误原因。示例：`you-get -i 'https://youtu.be/93wkx9vhJlo' --debug`
 
 更多的选项参数请参考 [官方中文说明](https://github.com/soimort/you-get/wiki/%E4%B8%AD%E6%96%87%E8%AF%B4%E6%98%8E)。
 

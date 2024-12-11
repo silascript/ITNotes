@@ -7,7 +7,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2024-09-12 17:50:00
+modified: 2024-12-06 20:35:49
 ---
 
 # Python 资料清单
@@ -62,8 +62,11 @@ modified: 2024-09-12 17:50:00
 * [解决问题](https://blog.csdn.net/qq_43145926/article/details/104237817)
 * [更新conda update conda 遇到的问题 - 知乎](https://zhuanlan.zhihu.com/p/133365134)
 * [python - RemoveError: 'setuptools' 是 conda 的依赖项，无法从 conda 的运行环境中移除 - SegmentFault 思否](https://segmentfault.com/q/1010000043259290)
+
 * [Error while loading conda entry point: conda-libmamba-solver\_error while loading conda entry point: anaconda-cl-CSDN博客](https://blog.csdn.net/qq_52804277/article/details/137241406)
 * [Error while loading conda entry point: conda-libmamba-solver (libarchive.so.19: cannot open shared object file: No such file or directory) 报错消息解决方法 - hs3434 - 博客园](https://www.cnblogs.com/hs3434/p/17748111.html)
+* [解决Error while loading conda entry point: conda-libmamba-solver (libarchive.so.19: cannot open shared-CSDN博客](https://blog.csdn.net/May_myz/article/details/134611233)
+* [【Conda报错】(libarchive.so.20: cannot open shared object file: No such file or directory)-CSDN博客](https://blog.csdn.net/qq_44246618/article/details/142928837)
 
 ### https 问题
 

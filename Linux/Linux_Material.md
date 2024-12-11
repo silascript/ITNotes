@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-10 03:06:48
-modified: 2024-12-05 12:14:24
+modified: 2024-12-05 12:39:55
 ---
 
 # Linux 资料清单
@@ -67,6 +67,7 @@ modified: 2024-12-05 12:14:24
 
 * [Manjaro的软件安装方式 - 二十七画生](https://dustwind.ink/2024/01/31/Manjaro%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F/#%E4%BA%94-%E9%80%9A%E8%BF%87-AppImage-%E5%8C%85%E5%AE%89%E8%A3%85)
 * [用 AppImage 文件创建快捷图标（Desktop Entry）和软连接 - Librarookie - 博客园](https://www.cnblogs.com/librarookie/p/15127991.html)
+* [在Ubuntu中运行和管理AppImage - fenggwsx - 博客园](https://www.cnblogs.com/fenggwsx/p/16578263.html)
 
 ## 其他小工具
 

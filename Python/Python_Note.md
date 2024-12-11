@@ -730,6 +730,13 @@ CondaValueError: You have chosen a non-default solver backend (libmamba) but it 
 conda install --solver=classic conda-forge::conda-libmamba-solver conda-forge::libmamba conda-forge::libmambapy conda-forge::libarchive
 ```
 
+
+```shell
+conda update conda --solver=classic
+conda install mamba -n base -c conda-forge
+```
+
+
 #### 错误 2
 
 ```shell

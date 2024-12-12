@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-10 03:06:48
-modified: 2024-12-05 12:39:55
+modified: 2024-12-12 18:08:47
 ---
 
 # Linux 资料清单
@@ -34,6 +34,10 @@ modified: 2024-12-05 12:39:55
 * [env 命令，Linux env 命令详解：显示系统中已存在的环境变量 - Linux 命令搜索引擎](https://wangchujiang.com/linux-command/c/env.html)
 * [Linux命令之env的用法 - 小码果 - 博客园](https://www.cnblogs.com/lsxs-wy/p/7011696.html)
 * [Linux env 命令 command not found env 未找到命令 env 命令详解 env 命令未找到 env 命令安装 - CommandNotFound ⚡️ 坑否](https://commandnotfound.cn/linux/1/289/env-%E5%91%BD%E4%BB%A4)
+
+## GUI
+
+* [Ubuntu 桌面卡死不重启的几种恢复方法 - 逍遥叹wan - 博客园](https://www.cnblogs.com/freedom-wan/p/13379354.html)
 
 ## 驱动
 

@@ -7,7 +7,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2024-12-06 20:35:49
+modified: 2024-12-13 02:37:08
 ---
 
 # Python 资料清单
@@ -54,6 +54,7 @@ modified: 2024-12-06 20:35:49
 * [在 Anaconda 中更改 Python 版本](https://www.delftstack.com/zh/howto/python/change-python-version-in-anaconda/)
 * [如何将Anaconda安装时默认的python版本改成其他版本](https://blog.csdn.net/qq_56520755/article/details/130489115)
 * [再谈Anaconda的使用](https://www.solarck.com/post/about-conda-again/)
+* [conda channel - 蝈蝈俊 - 博客园](https://www.cnblogs.com/ghj1976/p/conda-channel.html)
 
 ### 问题及解决
 

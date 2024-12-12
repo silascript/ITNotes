@@ -7,7 +7,7 @@ tags:
   - pipx
   - conda
 created: 2023-08-18 19:44:52
-modified: 2024-10-18 12:32:39
+modified: 2024-12-13 02:49:32
 ---
 
 # Python 笔记
@@ -411,7 +411,9 @@ show_channel_urls: true
 > 
 > 配完源，使用 `conda update --all` 更下，看能显示出刚配的**channel**，如果没有，就是配置文件存在问题。
 
-##### channel 分类
+##### channel
+
+channel，通道，顾名思义，就是软件或叫模块的来源。
 
 * `pkgs/main`：python 最基础的包
 * `pkgs/r`：提供 R 语言使用的包
@@ -637,11 +639,7 @@ conda env create -n env_name -f environment.yml
 
 #### <span id="python_conda_environment_package">conda 中的包</span>
 
-安装包：
-
-`conda install 包名`
-
-#### 升级更换环境包
+#### 搜索包
 
 搜索某模块可选版本，以 python 为例：
 
@@ -649,11 +647,87 @@ conda env create -n env_name -f environment.yml
 conda search --full --name python
 ```
 
+#### 安装
+
+安装语法：`conda install 包名`
+
+如果要指定包的版本可以使用：`conda install 包名=版本号`
+
+使用 `install` 语法，无论当前 [环境](#环境) 是否已经安装该包，都会为该环境安装上此包。
+
+`install` 语法在不同情景下，有不同的理解：
+
+* 如果已经安装了，就相当于重装安装去替代原有的
+* 如果已安装的版本高于将要安装的版本，相当于「降级」
+* 如果已安装的版本低于将要安装的版本，就相当于升级
+> [!info] 
+> 当然如果只是单纯是想要升级，也可以直接使用 [升级](#升级) 语法。
+
+> [!important] 
+> 
+> 整体而言，`install` 语法就不是简单从字面上只是安装，而更准确应该是「更换」。
+
 更换当前环境下某模块版本，仍以 python 为例：
 
 ```shell
 conda install python=3.11.5
 ```
+
+##### 指定 channel
+
+语法：`conda install -c <channel> <software>`
+
+> [!tip] 
+> 
+> `-c` 参数是指定使用哪个 [channel](#channel)，不使用此参数，默认使用 `default`。
+> 
+> 这在使用 `conda search ` 搜索时，结果最后一栏就是这个 channel 了。如下示例显示：
+> 
+> ```shell
+> Loading channels: done
+> # Name                       Version           Build  Channel             
+> python                        3.11.0 h10a6764_1_cpython  conda-forge         
+> python                        3.11.0 h582c2e5_0_cpython  conda-forge         
+> python                        3.11.0      h7a1cb2a_2  anaconda/pkgs/main  
+> python                        3.11.0      h7a1cb2a_3  anaconda/pkgs/main  
+> python                        3.11.0 ha86cf86_0_cpython  conda-forge         
+> python                        3.11.0 he550d4f_1_cpython  conda-forge         
+> python                        3.11.1 h2755cc3_0_cpython  conda-forge         
+> python                        3.11.2 h2755cc3_0_cpython  conda-forge         
+> python                        3.11.2      h7a1cb2a_0  anaconda/pkgs/main  
+> python                        3.11.3 h2755cc3_0_cpython  conda-forge         
+> python                        3.11.3      h7a1cb2a_0  anaconda/pkgs/main  
+> python                        3.11.3      h955ad1f_1  anaconda/pkgs/main  
+> python                        3.11.4      h7a1cb2a_0  anaconda/pkgs/main  
+> python                        3.11.4      h955ad1f_0  anaconda/pkgs/main  
+> python                        3.11.4 hab00c5b_0_cpython  conda-forge         
+> python                        3.11.5      h7a1cb2a_0  anaconda/pkgs/main  
+> python                        3.11.5      h955ad1f_0  anaconda/pkgs/main  
+> python                        3.11.5 hab00c5b_0_cpython  conda-forge         
+> python                        3.11.6 hab00c5b_0_cpython  conda-forge         
+> python                        3.11.7      h955ad1f_0  anaconda/pkgs/main  
+> python                        3.11.7 hab00c5b_0_cpython  conda-forge         
+> python                        3.11.7 hab00c5b_1_cpython  conda-forge         
+> python                        3.11.8      h955ad1f_0  anaconda/pkgs/main  
+> python                        3.11.8 hab00c5b_0_cpython  conda-forge         
+> python                        3.11.9      h955ad1f_0  anaconda/pkgs/main  
+> python                        3.11.9 hb806964_0_cpython  conda-forge         
+> python                       3.11.10 hc5c86c4_0_cpython  conda-forge         
+> python                       3.11.10 hc5c86c4_1_cpython  conda-forge         
+> python                       3.11.10 hc5c86c4_2_cpython  conda-forge         
+> python                       3.11.10 hc5c86c4_3_cpython  conda-forge         
+> python                       3.11.10      he870216_0  anaconda/pkgs/main  
+> python                       3.11.11 h9e4cc4f_1_cpython  conda-forge         
+> python                       3.11.11      he870216_0  anaconda/pkgs/main  
+> ```
+
+示例 安装或升级 python 到指定版本，并指定使用的 [channel](#channel) 为 `conda-forge`：
+
+```shell
+conda install python=3.11.11 -c conda-forge
+```
+
+##### 升级
 
 升级模块到最新版本，以 python 为 例：
 
@@ -730,12 +804,10 @@ CondaValueError: You have chosen a non-default solver backend (libmamba) but it 
 conda install --solver=classic conda-forge::conda-libmamba-solver conda-forge::libmamba conda-forge::libmambapy conda-forge::libarchive
 ```
 
-
 ```shell
 conda update conda --solver=classic
 conda install mamba -n base -c conda-forge
 ```
-
 
 #### 错误 2
 

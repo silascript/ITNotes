@@ -8,7 +8,7 @@ tags:
   - ime
 date created: 2022-11-08 11:32
 created: 2023-08-18 19:44:52
-modified: 2024-08-27 10:50:09
+modified: 2024-12-13 10:33:56
 ---
 
 # ArchLinux 笔记
@@ -351,6 +351,7 @@ nmcli device wifi
 ## 相关资料
 
 * [Linux 日常操作与基础知识 | archlinux 简明指南](https://arch.icekylin.online/guide/advanced/system-ctl)
+* [ArchLinux使用记录 - ArchLinux](https://yuanmxc.site/Archlinux/ArchLinux%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/)
 
 ---
 

@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2024-08-21 11:44:14
+modified: 2024-12-13 11:09:07
 ---
 
 # Obsidian 笔记
@@ -14,6 +14,7 @@ modified: 2024-08-21 11:44:14
 
 ## 目录
 
+* [安装](#obn_install)
 * [基础设置](#基础设置)
 	* [文件与链接](#文件与链接)
 		* [设置内部链接类型](#设置内部链接类型)
@@ -48,6 +49,34 @@ modified: 2024-08-21 11:44:14
 	* [Callout Blocks](#obn_syntax_calloutblocks)
 
 ---
+
+## <span id="obn_install">安装</span>
+
+### AppImage 方式
+
+使用 AppImage 方式安装，很简单，只要把 AppImage 文件下载下来，放到一个目录下，改下权限就能使用了。
+
+为了方便，得为这个 AppImage 写个 [desktop](../../Linux/Linux_Note.md#linux_soft_install_desktop)，示例如下：
+
+```desktop
+[Desktop Entry]
+Name=Obsidian
+Exec=/home/silascript/myappimages/Obsidian-1.7.7.AppImage --no-sandbox %U
+Terminal=false
+Type=Application
+Icon=/home/silascript/myappimages/icons/obsidian.png
+StartupWMClass=obsidian
+X-AppImage-Version=1.7.7
+Comment=Obsidian
+MimeType=text/html;x-scheme-handler/obsidian;
+Categories=Office;
+```
+
+> [!tip] 
+> 
+> 图标文件到 [Obsidian官网](https://obsidian.md) 找，放到一个自定义目录就好了。
+
+写完 desktop，使用 `update-desktop-database` 刷新下，如果还不行，就重启系统吧。
 
 ## <span id="obn_config_settings_basice">基础设置</span>
 

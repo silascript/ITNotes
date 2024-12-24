@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-10-21 18:13:21
+modified: 2024-12-24 23:03:28
 ---
 
 # Linux 笔记
@@ -1978,7 +1978,7 @@ Core 1:        +42.0°C  (high = +82.0°C, crit = +102.0°C)
 * [Shell 笔记](Shell/Shell_Note.md)
 * [Linux 视频清单](./Linux_Videos.md)
 * [Shell 视频清单](Shell/Shell_Videos.md)
-* [Ranger相关](Ranger相关.md)
+* [Ranger 相关笔记](Ranger_Note.md)
 * [AWK 笔记](AWK_Note.md)
 
 ---

@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-10 03:06:48
-modified: 2024-12-12 18:08:47
+modified: 2024-12-24 23:06:44
 ---
 
 # Linux 资料清单
@@ -72,6 +72,19 @@ modified: 2024-12-12 18:08:47
 * [Manjaro的软件安装方式 - 二十七画生](https://dustwind.ink/2024/01/31/Manjaro%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F/#%E4%BA%94-%E9%80%9A%E8%BF%87-AppImage-%E5%8C%85%E5%AE%89%E8%A3%85)
 * [用 AppImage 文件创建快捷图标（Desktop Entry）和软连接 - Librarookie - 博客园](https://www.cnblogs.com/librarookie/p/15127991.html)
 * [在Ubuntu中运行和管理AppImage - fenggwsx - 博客园](https://www.cnblogs.com/fenggwsx/p/16578263.html)
+
+## ranger
+
+* [ranger配置和使用](https://www.zssnp.top/2021/06/03/ranger/)
+
+### Joshuto
+
+* [Joshuto 文档](https://github.com/kamiyaa/joshuto/tree/main/docs)
+
+### yazi
+
+* [5K+ Star！终端命令行版文件管理器 - 知乎](https://zhuanlan.zhihu.com/p/677949849#:~:text=%E8%BF%99%E6%A0%B7%E6%AF%8F%E6%AC%A1%E4%BD%BF%E7%94%A8%E6%97%B6%E5%8F%AA,%E3%80%8D%E5%91%BD%E4%BB%A4%E5%8F%AF%E4%BB%A5%E9%80%80%E5%87%BA%E3%80%82)
+* [ Yazi Doc Quick Start](https://yazi-rs.github.io/docs/quick-start)
 
 ## 其他小工具
 

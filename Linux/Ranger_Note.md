@@ -4,9 +4,11 @@ tags:
   - linux
   - ranger
   - joshuto
+  - yazi
 created: 2023-08-18 19:44:52
-modified: 2024-02-19 03:35:23
+modified: 2024-12-24 23:06:59
 ---
+
 # Ranger 相关
 
 ---
@@ -154,21 +156,11 @@ Ranger 的操作与 [Vim](../vim/Vim_Note.md) 操作相近，用了很多的 vim
 
 ---
 
-## Ranger 相关资料连接
-
-* [ranger配置和使用](https://www.zssnp.top/2021/06/03/ranger/)
-
----
-
 ## Joshuto
 
 [Joshuto](https://github.com/kamiyaa/joshuto) 是一款使用 [Rust](../Rust/Rust_Note.md) 写的「类 Ranger」终端文件管理器。可以认为这货就是 「Rust 版的 [Ranger ](#Ranger%20相关)--「 [ranger](https://github.com/ranger/ranger)-like terminal file manager written in Rust.」
 
 Joshuto 有个文档来对比各家终端文件管理器：[nnn, ranger, lf, joshuto, yazi, which is your choice? · kamiyaa/joshuto · Discussion #454 · GitHub](https://github.com/kamiyaa/joshuto/discussions/454)，不知道选哪个的可以看下参考下。
-
-### 相关资料
-
-[Joshuto 文档](https://github.com/kamiyaa/joshuto/tree/main/docs)
 
 ---
 
@@ -178,8 +170,10 @@ Joshuto 有个文档来对比各家终端文件管理器：[nnn, ranger, lf, jos
 
 yazi 使用 [Ueberzug++](https://github.com/jstkdng/ueberzugpp) 来作图片组件。这货是 [ueberzug](https://github.com/seebye/ueberzug) 的「平替版」，因为 ueberzug 已经不维护了。
 
-### 相关资料
+---
 
-* [5K+ Star！终端命令行版文件管理器 - 知乎](https://zhuanlan.zhihu.com/p/677949849#:~:text=%E8%BF%99%E6%A0%B7%E6%AF%8F%E6%AC%A1%E4%BD%BF%E7%94%A8%E6%97%B6%E5%8F%AA,%E3%80%8D%E5%91%BD%E4%BB%A4%E5%8F%AF%E4%BB%A5%E9%80%80%E5%87%BA%E3%80%82)
-* [ Yazi Doc Quick Start](https://yazi-rs.github.io/docs/quick-start)
+## 相关笔记
+
+* [Linux 笔记](Linux_Note.md)
+* [Linux 资料](Linux_Material.md)
 

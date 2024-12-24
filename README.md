@@ -41,7 +41,7 @@ modified: 2024-01-25 00:23:03
 ## Linux
 
 * [Linux命令行常用小技巧](Linux/Linux命令行常用小技巧.md)
-* [Ranger相关](Linux/Ranger相关.md)
+* [Ranger_Note](Linux/Ranger_Note.md)
 
 ---
 

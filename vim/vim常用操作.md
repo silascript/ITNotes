@@ -4,7 +4,7 @@ tags:
   - vim
   - editor
 created: 2023-08-18 19:44:52
-modified: 2024-04-10 21:16:32
+modified: 2024-12-24 18:00:59
 ---
 # VIM 常用操作
 
@@ -27,6 +27,7 @@ modified: 2024-04-10 21:16:32
 		* [窗口](#op_normal_windows)
 		* [Buffer](#op_normal_buffer)
 	* [从Insert模式回到Normal模式](#op_normal_intonor)
+	* [杂项](#op_normal_misc)
 * [Insert模式操作](#op_insert)
 	* [从normal模式进入insert模式](#op_insert_nortoin)
 * [Visual模式操作](#op_visual)
@@ -407,6 +408,10 @@ vim -p 文档1 文档2 ....
 `Ctrl+[`：切换到普通模式
 
 `Ctrl+o`：切换到「插入 - 普通模式」
+
+### <span id="op_normal_misc">杂项</span>
+
+`Ctrl+g`：显示*文档名*、*总共行数*及*光标位置*
 
 ---
 

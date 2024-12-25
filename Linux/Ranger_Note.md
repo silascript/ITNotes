@@ -6,7 +6,7 @@ tags:
   - joshuto
   - yazi
 created: 2023-08-18 19:44:52
-modified: 2024-12-24 23:06:59
+modified: 2024-12-25 21:46:10
 ---
 
 # Ranger 相关
@@ -169,6 +169,30 @@ Joshuto 有个文档来对比各家终端文件管理器：[nnn, ranger, lf, jos
 [yazi](https://github.com/sxyazi/yazi) 跟 [Joshuto](#Joshuto) 一样，是使用 [Rust](../Rust/Rust_Note.md) 编写的终端文件管理器。
 
 yazi 使用 [Ueberzug++](https://github.com/jstkdng/ueberzugpp) 来作图片组件。这货是 [ueberzug](https://github.com/seebye/ueberzug) 的「平替版」，因为 ueberzug 已经不维护了。
+
+### 配置
+
+#### 配置目录
+
+Linux 下，yazi 的配置目录是 `~/.config/yazi/` 。
+
+> [!info] 
+> 
+> 当然这个目录也是可以修改的，使用命令 `env` 对其修改，如 `env "YAZI_CONFIG_HOME=~/.config/yazi-alt" yazi`
+
+#### 模板及分类
+
+配置模板：[https://github.com/sxyazi/yazi/tree/shipped/yazi-config/preset](https://github.com/sxyazi/yazi/tree/shipped/yazi-config/preset)
+
+配置文件分三种：
+
+* `yazi.tom`：主配置
+* `keymap.toml`：快捷键配置
+* `theme.toml`：样式配置
+
+自定义配置，在配置目录下根据需要新建 `yazi.toml` 或 `keymap.toml` 或 `theme.toml`。
+
+更多的使用及配置请参考文档：[Installation \| Yazi](https://yazi-rs.github.io/docs/installation/)
 
 ---
 

@@ -6,7 +6,7 @@ tags:
   - joshuto
   - yazi
 created: 2023-08-18 19:44:52
-modified: 2024-12-25 21:46:10
+modified: 2024-12-25 21:54:39
 ---
 
 # Ranger 相关
@@ -192,7 +192,15 @@ Linux 下，yazi 的配置目录是 `~/.config/yazi/` 。
 
 自定义配置，在配置目录下根据需要新建 `yazi.toml` 或 `keymap.toml` 或 `theme.toml`。
 
-更多的使用及配置请参考文档：[Installation \| Yazi](https://yazi-rs.github.io/docs/installation/)
+#### 配置文件详解
+
+各配置文件配置文档
+
+* [yazi.toml config doc](https://yazi-rs.github.io/docs/configuration/yazi)
+* [keymap.toml config doc](https://yazi-rs.github.io/docs/configuration/keymap)
+* [theme.toml config doc](https://yazi-rs.github.io/docs/configuration/theme)
+
+更多的使用及配置请参考文档：[yazi docs](https://yazi-rs.github.io/docs/installation/)
 
 ---
 

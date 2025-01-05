@@ -9,7 +9,7 @@ tags:
   - vim-plugin
   - list
 created: 2023-01-30 11:19:11
-modified: 2024-03-25 04:25:57
+modified: 2025-01-05 20:07:37
 ---
 
 # vim 常用插件清单
@@ -40,7 +40,9 @@ modified: 2024-03-25 04:25:57
 	* [预览插件](#vimplugin_preview)
 	
 	* [小工具](#vimplugin_tools)
-	  * [高亮](#vimplugin_hightlight)
+		* [光标样式切换](#vimplugin_tools_cursortoggle)
+			* [vim-togglecursor](#vim-togglecursor)
+	* [高亮](#vimplugin_hightlight)
 		* [vim-highlightedyank](#vimplugin_hlyank)
 	  * [mark 相关](#vimplugin_mark)
 		* [vim-signature](#vimplugin_mk_signature)
@@ -889,6 +891,14 @@ Plug 'shime/vim-livedown',{'on':['LivedownPreview','LivedownToggle','LivedownKil
 ![startuptime screenshot](https://github.com/dstein64/media/blob/main/vim-startuptime/screenshot.png?raw=true)
 
 这是个一个测试 vim 各组件、插件占用启动时长的小工具。
+
+#### <span id="vimplugin_tools_cursortoggle">光标样式切换</span>
+
+默认情况 [Vim](Vim_Note.md)[普通模式](Vim_Note.md#普通模式) 与 [插入模式](Vim_Note.md#插入模式) 的光标没有区别，为了使这两种模式光标样式有区别，可以使用一些插件实现。
+
+##### vim-togglecursor
+
+[jszakmeister/vim-togglecursor](https://github.com/jszakmeister/vim-togglecursor) 这个插件配置好就能用了。如果插件更新时出**error**，大概率是 [GitHub](../Git/Git_Note.md#git_github) 的主分支 `main` 与 `master` 的问题造成的，所以注释掉插件，插件管理中使用 `Clear` 命令清理下，再去注释，重装插件就正常了。
 
 ---
 

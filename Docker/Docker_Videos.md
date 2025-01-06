@@ -6,7 +6,7 @@ tags:
   - video
   - list
 created: 2023-08-18 19:44:52
-modified: 2024-08-23 00:53:26
+modified: 2025-01-06 20:18:01
 ---
 
 # Docker & K8s 视频清单
@@ -32,9 +32,7 @@ modified: 2024-08-23 00:53:26
 * [Docker 1小时快速上手教程，从零学会Docker教程](https://www.bilibili.com/video/BV1Pi421Y7BF)
 * [🅷 2024最新版Linux运维高手必学](https://www.bilibili.com/video/BV1MW421d77H)
 * [Docker零基础入门到精通教程（全34集）](https://www.bilibili.com/video/BV1YRWse1ESD)
-
-* [2024吃透.NET架构师系统教学视频](https://www.bilibili.com/video/BV1V2421Z766)
-* [2024年B站最强的C#/.NET进阶教程](https://www.bilibili.com/video/BV13w4m197ij)
+* [Docker-daemon.json解释](https://www.bilibili.com/video/BV1EpBjY2EWB)
 
 ## 进阶
 

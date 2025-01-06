@@ -9,7 +9,7 @@ tags:
   - list
   - video
 created: 2024-05-01 03:10:27
-modified: 2024-07-18 17:34:00
+modified: 2025-01-06 20:17:35
 ---
 
 # Dotnet 视频清单
@@ -23,6 +23,9 @@ modified: 2024-07-18 17:34:00
 * [【2024年最新录制】C#进阶语法专题-泛型、反射、特性、委托、事件、Lambda、Linq（.NET8/C#12）](https://www.bilibili.com/video/BV1tD421H7DK)
 * [[中文字幕\]C#/.NET 训练营：基础知识（OOP、LINQ、测试自动化 + 更多）](https://www.bilibili.com/video/BV1SK421e76o)
 * [【2024年】C#进阶语法专题-泛型、反射、特性、委托、事件、Lambda、Linq（.NET8/C#12）B1318](https://www.bilibili.com/video/BV16ugWenEZu)
+
+* [2024吃透.NET架构师系统教学视频](https://www.bilibili.com/video/BV1V2421Z766)
+* [2024年B站最强的C#/.NET进阶教程](https://www.bilibili.com/video/BV13w4m197ij)
 
 ## WPF
 

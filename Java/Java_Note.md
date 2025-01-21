@@ -7,7 +7,7 @@ tags:
   - Eclipse
   - dbeaver
 created: 2023-01-30 11:19:11
-modified: 2024-08-28 23:41:56
+modified: 2025-01-21 11:03:54
 ---
 
 # Java 笔记
@@ -416,6 +416,8 @@ Marketplace 是 Eclipse 的插件市场，通过它可以更方便地搜索和�
 #### colortheme
 
 [colortheme](https://marketplace.eclipse.org/content/eclipse-color-theme) 这个与上面那个不同，这是插件是针对编辑区的配色插件。 Eclipse 市场中的 color-theme 插件地址已经失效。 请到 [这个](https://eclipse-color-theme.github.io/update/) 页面，其中有个链接： [download this update site as a zip archive](https://eclipse-color-theme.github.io/update/eclipse-color-theme-update-site.zip)，下载这个压缩包。将其中的 `features` 和 `plugins` 两个目录提取出来放到一个你自定义名称的目录中，如「color-theme」，将这个包括有 `features` 和 `plugins` 的目录放到 Eclipse 安装目录下的 `dropins` 目录中，重启 Eclipse ，这个插件就能生效了！
+
+可以到：[eclise color-theme](https://eclipse-color-themes.web.app) 网站下配色。
 
 #### Bracketeer
 

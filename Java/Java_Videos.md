@@ -6,7 +6,7 @@ tags:
   - tutorial
   - list
 created: 2023-06-24 01:08:17
-modified: 2024-09-16 20:47:56
+modified: 2025-01-27 01:35:45
 ---
 
 # Java 视频清单
@@ -106,6 +106,12 @@ modified: 2024-09-16 20:47:56
 
 * [MyBatis 视频清单](MyBatis_Videos.md)
 * [Spring 视频清单](Spring/Spring_Videos.md)
+
+---
+
+## 面试
+
+* [【面试精选】2025吃透Java热门场景题合集，全程干货7天刷完](https://www.bilibili.com/video/BV1UTrjYqExy)
 
 ---
 

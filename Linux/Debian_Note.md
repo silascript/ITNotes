@@ -4,7 +4,7 @@ tags:
   - linux
   - debian
 created: 2023-08-18 19:44:52
-modified: 2023-12-16 02:01:04
+modified: 2025-01-26 11:39:13
 ---
 # Debian 笔记
 
@@ -24,13 +24,22 @@ Debian 官网：[https://www.debian.org/](https://www.debian.org/)
 
 ### <span id="debian_introduction_version">版本</span>
 
-[Debian 的发行版](https://www.debian.org/releases/) 分成三支：**稳定版（Stable）**、**测试版（testing）**和**不稳定版（unstable）**。
+[Debian 的发行版](https://www.debian.org/releases/) 分成三支：**稳定版（[Stable](#debian_introduction_version_stable)）**、**测试版（testing）**和**不稳定版（unstable）**。
 
 其中不稳定版的代号永远为「**sid**」。
 
+### <span id="debian_introduction_version_stable">Stable</span>
+
+稳定版是官方最近一次发行的软件包。
+
+Debian 稳定版本的生命周期为五年：
+
+1. 三年的完整支持
+2. 两年的长期支持（LTS）。
+
 ### <span id="debian_introduction_version_lts">LTS</span>
 
-[LTS ](https://wiki.debian.org/LTS)（Long Term Support），既长期支持版本，实际是一个对 Debian 稳定版的扩展支持，扩展至少 5 年。
+[LTS ](https://wiki.debian.org/LTS)（Long Term Support），既长期支持版本，实际是一个对 Debian [稳定版](#debian_introduction_version_stable) 的扩展支持，扩展至少 5 年。
 
 #### 各 LTS 版本
 

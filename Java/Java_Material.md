@@ -6,7 +6,7 @@ tags:
   - jdk
   - list
 created: 2024-08-28 23:40:22
-modified: 2024-09-13 18:21:51
+modified: 2025-02-02 20:33:55
 ---
 
 # Java 资料清单
@@ -14,6 +14,9 @@ modified: 2024-09-13 18:21:51
 ---
 
 ## JDK
+
+* [JDK 集合](https://www.injdk.cn/)
+* [Java中有那么多JDK，应该选择哪一个呢？](https://www.bilibili.com/video/BV1wp421X7hu)
 
 ### 历史
 

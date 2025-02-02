@@ -7,7 +7,7 @@ tags:
   - Eclipse
   - dbeaver
 created: 2023-01-30 11:19:11
-modified: 2025-01-21 11:03:54
+modified: 2025-02-02 20:49:47
 ---
 
 # Java 笔记
@@ -18,6 +18,8 @@ modified: 2025-01-21 11:03:54
 
 * [JDK](#java_jdk)
 	* [Open JDK](#OpenJDK)
+* [JRE](#java_jre)
+* [JVM](#java_jvm)
 * [Java相关的配置](#java_config)
 	* [Eclipse相关](#java_eclipse)
 * [SDKMan](#java_sdkman)
@@ -111,16 +113,44 @@ Temurin JDK 清华镜像：[https://mirror.tuna.tsinghua.edu.cn/Adoptium/](https
 
 ### JDK17
 
-### 相关资料
+### JDK21
 
-* [JDK 集合](https://www.injdk.cn/)
-* [Java中有那么多JDK，应该选择哪一个呢？](https://www.bilibili.com/video/BV1wp421X7hu)
+---
+
+##  <span id="java_jre">JRE</span>
+
+Java Runtime Environment：Java 运行时环境。
+
+JRE 是运行 Java 程序的必备环境，包含 JVM 和类库，确保 Java 程序在不同平台上顺利执行。
+
+Java 的 JRE（Java Runtime Environment）用于运行 Java 应用程序。它包含以下主要组件：
+
+1. Java 虚拟机（[JVM](#JVM)） 
+   * 负责执行 Java 字节码，确保 Java 程序跨平台运行。
+2. Java 类库（Java Class Library）
+   * 提供标准库，支持文件操作、网络通信、数据结构等功能。
+3. 其他支持文件 
+   * 包括配置文件、资源文件等，确保 Java 程序正常运行。
+
+### 主要功能
+
+* **运行 Java 程序**：JRE 提供执行 Java 应用程序所需的环境。
+* **跨平台支持**：通过 [JVM](#JVM) 实现「一次编写，到处运行」。
+
+### 与 JDK 的区别
+
+* **JRE**：仅用于运行 Java 程序。
+* **JDK**：包含 JRE 及开发工具（如编译器、调试器），用于开发和编译 Java 程序。
+
+---
+
+## <span id="java_jvm">JVM</span>
+
+JVM Java 虚拟机。
 
 ---
 
 ## <span id="java_config">Java 相关的配置</span>
-
----
 
 ### Java11 生成 JRE
 
@@ -132,13 +162,11 @@ sudo ./bin/jlink --module-path jmods --add-modules java.desktop --output jre
 
 >[!info] 
 >
-> 把 jmodes 目录所有模块都生成 jre：
+> 把 jmodes 目录所有模块都生成 [JRE](#JRE)：
 >
 > ```shell
 > sudo ./bin/jlink --module-path jmods --add-modules ALL-MODULE-PATH --output jre
 > ```
->
->
 
 ---
 
@@ -292,7 +320,7 @@ StartupNotify=true
 
 ### <span id="java_eclipse_settings">Eclipse 简单设置</span>
 
-1. 代码揭示
+4. 代码揭示
 在「Editor」 -「 Content Assist」 -「Auto activation triggers for Java」中添加 26 字母：`abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`
 
 ---
@@ -379,17 +407,17 @@ StartupNotify=true
 
 ##### getter 和 setter 生成
 
-1. `Shift+Alt+S`，呼出「Source」菜单 如果装了 [Vrapper](#Vrapper) 插件并装了 [Java extensions](#^491eb0) 子扩展，那就可以使用 `gm` 快捷键呼出「Source」菜单。
-2. 按 `r`，呼出 getter 和 setter 配置菜单
-3. 选择要生成 getter 和 setter 的属性，全选： `Alt+A`；取消所有： `Alt+D`；选择所有的 getter：`Alt+G`；选择所有 setter：`Alt+L`。
-4. 回车生成 getter 和 setter 如果 `Generate` 按钮失去焦点，就按 `Alt+G`。
+5. `Shift+Alt+S`，呼出「Source」菜单 如果装了 [Vrapper](#Vrapper) 插件并装了 [Java extensions](#^491eb0) 子扩展，那就可以使用 `gm` 快捷键呼出「Source」菜单。
+6. 按 `r`，呼出 getter 和 setter 配置菜单
+7. 选择要生成 getter 和 setter 的属性，全选： `Alt+A`；取消所有： `Alt+D`；选择所有的 getter：`Alt+G`；选择所有 setter：`Alt+L`。
+8. 回车生成 getter 和 setter 如果 `Generate` 按钮失去焦点，就按 `Alt+G`。
 
 ##### 生成构造方法
 
-1. `Shift+Alt+S`，呼出「Source」菜单，跟 [getter 和 setter 生成](#getter%20和%20setter%20生成) 完全一样
-2. 按 `o`，呼出构造方法配置菜单
-3. 选择构造方法所需的属性，如果全选就 `Alt+A`，取消所有选择就按 `Alt+D`
-4. 回车确认生成构造方法
+9. `Shift+Alt+S`，呼出「Source」菜单，跟 [getter 和 setter 生成](#getter%20和%20setter%20生成) 完全一样
+10. 按 `o`，呼出构造方法配置菜单
+11. 选择构造方法所需的属性，如果全选就 `Alt+A`，取消所有选择就按 `Alt+D`
+12. 回车确认生成构造方法
 
 ---
 
@@ -457,13 +485,13 @@ Marketplace 是 Eclipse 的插件市场，通过它可以更方便地搜索和�
 
 ##### 设置
 
-1. 将 Eclipse 内置的行号功能关闭。
+13. 将 Eclipse 内置的行号功能关闭。
 
 > [!tip]
 > 
 > `General`->`Editors`->`Text Editors`->`Show line numbers`
 
-2. `Relative Number Ruler` 设置项中，勾选 `Show absolute value for current line number`，这样能显示光标所在行的绝对行号！
+14. `Relative Number Ruler` 设置项中，勾选 `Show absolute value for current line number`，这样能显示光标所在行的绝对行号！
 
 #### freemarker
 
@@ -773,9 +801,9 @@ public class Test05{
 
 使用的大致步骤：
 
-1. 先使用 `javac -g Test05.java` 来编译，如上述所讲的，如果不加 `-g` 来编译，使用 `javap` 时，将不会显示「局部变量表」的信息。
+15. 先使用 `javac -g Test05.java` 来编译，如上述所讲的，如果不加 `-g` 来编译，使用 `javap` 时，将不会显示「局部变量表」的信息。
 
-2. 使用 `javap -v Test05` 后显示的内容：
+16. 使用 `javap -v Test05` 后显示的内容：
 
 ```shell
 

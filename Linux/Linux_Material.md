@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-10 03:06:48
-modified: 2024-12-24 23:06:44
+modified: 2025-02-03 20:49:15
 ---
 
 # Linux 资料清单
@@ -86,11 +86,19 @@ modified: 2024-12-24 23:06:44
 * [5K+ Star！终端命令行版文件管理器 - 知乎](https://zhuanlan.zhihu.com/p/677949849#:~:text=%E8%BF%99%E6%A0%B7%E6%AF%8F%E6%AC%A1%E4%BD%BF%E7%94%A8%E6%97%B6%E5%8F%AA,%E3%80%8D%E5%91%BD%E4%BB%A4%E5%8F%AF%E4%BB%A5%E9%80%80%E5%87%BA%E3%80%82)
 * [ Yazi Doc Quick Start](https://yazi-rs.github.io/docs/quick-start)
 
+---
+
 ## 其他小工具
 
 ### 命令行命令查询
 
 * [navi | x-cmd pkg | 用于命令行的交互式备忘单工具](https://cn.x-cmd.com/pkg/navi)
+
+---
+
+## Linux 软件清单
+
+ * [Awesome-Linux-Software-zh](https://github.com/zhiiwg/Awesome-Linux-Software-zh_CN?tab=readme-ov-file#%E9%9F%B3%E9%A2%91)
 
 ---
 

@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2025-01-30 17:01:02
+modified: 2025-02-04 20:42:37
 ---
 
 # 梯子笔记
@@ -911,6 +911,7 @@ function FindProxyForURL(url, host) {
 		"mirrors.tuna.tsinghua.edu.cn",
 		"www.shuge.org",
 		"www.tmp.link",
+		"www.lingshulian.com",
 
 		// 影视
 		// "update.code.visualstudio.com"

@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2024-12-24 23:03:28
+modified: 2025-02-05 11:35:52
 ---
 
 # Linux 笔记
@@ -193,6 +193,7 @@ lsb 其他选项和参数：
 更改用户组：
 
 ```shell
+# -R 选项是表示递归文件或目录
 chgrp -R 用户名 目录名
 ```
 
@@ -203,6 +204,7 @@ chgrp -R 用户名 目录名
 更改用户名： ^linux-chown
 
 ```shell
+# -R 选项是表示递归文件或目录
 chown -R 用户名 文件名
 # 连同用户组一起改
 chown -R 用户名:用户组名 文件名
@@ -1599,6 +1601,22 @@ Shell 语言相关内容：[Shell笔记](Shell/Shell_Note.md)
 > Terminal=false 是否使用启用终端  
 > StartupNotify=true 
 
+示例：
+
+```desktop
+[Desktop Entry]
+Name=Watt Toolkit
+Comment=A cross-platform Steam toolbox.
+Comment[zh_CN]=一个开源跨平台的多功能Steam工具箱。
+Type=Application
+Exec=/opt/SteamPP/Steam++.sh
+Icon=/opt/SteamPP/Icons/Watt-Toolkit.png
+# Terminal=false
+StartupNotify=true
+Categories=Network;Utility
+Keywords=Steam;Steam++;SteamTools;WattToolkit
+```
+
 3. 刷新
 ```shell
 # 刷用户目录
@@ -1614,24 +1632,24 @@ sudo update-desktop-database /usr/share/applications
 
 ### <span id="linux_soft_install_komodo">Komodo Edit 安装 </span>
 
-1. 下载
+4. 下载
 ```shell
 wget https://downloads.activestate.com/Komodo/releases/12.0.1/Komodo-Edit-12.0.1-18441-linux-x86_64.tar.gz
 ```
 
-2. 解压
+5. 解压
 ```shell
 tar -zxvf xxx.tar.gz
 ```
 
-3. 安装
+6. 安装
 
 转到新解压的目录，开始安装：
 ```shell
 sudo ./install.sh -I /opt/KomodoEdit
 ```
 
-4. 添加 PATH 变量 
+7. 添加 PATH 变量 
 
 `.bashrc` 或 `.bash_profile` 文件中添加
 ```shell
@@ -1639,7 +1657,7 @@ export PATH=$PATH:/opt/KomodoEdit/bin
 ```
 source `.bashrc` 或 `.bash_profile` 
 
-5. 如果需要在终端中调，可以添加软链：
+8. 如果需要在终端中调，可以添加软链：
 ```shell
 sudo ln -s /opt/KomodoEdit/bin/komodo /usr/local/bin/komodo
 ```
@@ -1690,12 +1708,12 @@ wayland 模式下，系统是不会加载 `.profile` 或 `.xprofile` 文件的�
 
 ###### 解决方案 1
 
-1. 将环境变量集中到自定义的配置文件中，比如 `.local_profile`，配置文件的文件名可以自己取，当然为了延续习惯，还是叫 `xxprofile` 好点。
-2. 如果使用 [Zsh_note](zsh_note.md)，可以在 `.zshrc` 文件中 `source` 自定义的配置文件。如果只使用 [Bash](Shell/Shell_Note.md#Bash)，就在 `.bashrc` 或 `.bash_profile` 中 `source` 自定义配置文件。
+9. 将环境变量集中到自定义的配置文件中，比如 `.local_profile`，配置文件的文件名可以自己取，当然为了延续习惯，还是叫 `xxprofile` 好点。
+10. 如果使用 [Zsh_note](zsh_note.md)，可以在 `.zshrc` 文件中 `source` 自定义的配置文件。如果只使用 [Bash](Shell/Shell_Note.md#Bash)，就在 `.bashrc` 或 `.bash_profile` 中 `source` 自定义配置文件。
 > [!note] 
 > 
 > 如果使用 [Zsh](zsh_note.md)，只要在 `.zshrc` 中 `source` 下，连 [Bash](Shell/Shell_Note.md#Bash) 也生效。
-3. 如果当前是 [Xorg](#Xorg)，类似的，在 `.xprofile` 或 `.profile` 中 `source` 自定义的配置文件。
+11. 如果当前是 [Xorg](#Xorg)，类似的，在 `.xprofile` 或 `.profile` 中 `source` 自定义的配置文件。
 
 > [!note] 
 > 

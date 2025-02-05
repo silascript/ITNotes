@@ -6,7 +6,7 @@ tags:
   - jdk
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-02-02 20:33:55
+modified: 2025-02-05 20:26:47
 ---
 
 # Java 资料清单
@@ -45,4 +45,5 @@ modified: 2025-02-02 20:33:55
 ## 相关笔记
 
 * [Java 笔记](Java_Note.md)
+* [Gradle资料](Groovy_Gradle/Gradle_Material.md)
 

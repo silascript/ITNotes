@@ -1523,13 +1523,11 @@ Available Commands:
 
 ---
 
-##  Obsidian 相关资料
+##  Obsidian 相关笔记
 
 * [Obsidian 部分插件笔记](Obsidian_Plugins_Note.md)
 * [Obsidian 常用插件清单](Obsidian_Plugins_List.md)
 * [Obsidian视频清单](Obsidian_Videos.md)
-* [awesome-obsidian](https://github.com/kmaasrud/awesome-obsidian)
-* [obsidian-snippets](https://github.com/deathau/obsidian-snippets)
-* [Obsidian文档咖啡豆版](https://coffeetea.top)
 * [Markdown 笔记](../../Markdown/Markdown_Note.md)
+
 

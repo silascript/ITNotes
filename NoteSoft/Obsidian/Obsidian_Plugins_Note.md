@@ -5,7 +5,7 @@ tags:
   - obsidian
   - plugin
 created: 2023-06-28 17:02:25
-modified: 2024-06-14 19:07:42
+modified: 2025-02-07 05:33:58
 ---
 
 # Obsidian 部分插件笔记
@@ -24,6 +24,21 @@ modified: 2024-06-14 19:07:42
 
 [Dataview](https://github.com/blacksmithgu/obsidian-dataview) 是一个数据查询插件。用它来整理数据资料非常方便。
 
+### 设置
+
+将「Date format」和「Date+time format」就是日期和时间两个设置设置成习惯的样式好了。
+
+个人喜欢将其设置成以下这样：
+
+* `YYYY-MM-DD`
+* `YYYY-MM-DD HH:mm:ss`
+
+> [!tip] 
+> 
+> 如果有使用 [Linter](Obsidian_Note.md#obn_plugins_commp_linter) 插件，建议将日期及时间格式保持两个插件相同的样式设置，免得如果要 dataview 在对 [front matter](Obsidian_Note.md#obn_advanced_frontmatter) 格式化后，Dataview 根据日期条件筛选到的数据不准确。
+
+### 语法
+
 它使用代码块来实现相应的功能：
 
 dataview 语法：
@@ -37,6 +52,8 @@ FROM <来源>
 <LIMIT> <限定显示记录数>
 <FLATTEN> <拆分表达式>
 ```
+
+更多细节参考： [Dataview document](https://blacksmithgu.github.io/obsidian-dataview/#/)
 
 ---
 
@@ -305,4 +322,5 @@ tp.system.suggester(text_items: string[] ⎮ ((item: T) => string), items: T[], 
 * [Obsidian 笔记](Obsidian_Note.md)
 * [Obsidian常用插件清单](Obsidian_Plugins_List.md)
 * [Obsidian 相关视频](Obsidian_Videos.md)
+* [Obsidian资料](Obsidian_Material.md)
 * [Markdown笔记](../../Markdown/Markdown_Note.md)

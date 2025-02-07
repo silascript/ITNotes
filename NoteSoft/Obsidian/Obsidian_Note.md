@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2024-12-13 11:09:07
+modified: 2025-02-07 23:08:14
 ---
 
 # Obsidian 笔记
@@ -1393,6 +1393,18 @@ Obsdian 原生有三个属性：[`tags`](#obn_advanced_frontmatter_tag)、`alias
 
 ## <span id="obn_syntax">Obsidian 专用语法</span>
 
+Obsidan 专用语法，基本核心思想，都是在原生 [Markdown](../../Markdown/Markdown_Note.md) 语法基础上进行小幅扩展。
+
+### <span id="obn_syntax_imgsize">图片大小</span>
+
+语法： `![xxxx|长x宽](图片地址)`
+
+> [!tip] 
+> 
+> 其实是就是在原生的 [Markdown](../../Markdown/Markdown_Note.md) 图片语法里前面的「中括号」添加一个 `|` 符，并在其后面加上「长宽」数值，就能对图片的尺寸进行控制，长和宽数值间使用 `x` 来分隔。
+> 
+> 示例：![|60x50](https://markdown.com.cn/assets/img/philly-magic-garden.9c0b4415.jpg) 这是一个没有给图片替代文本，只给了长宽数值的图片。
+
 ### <span id="obn_syntax_calloutblocks">Callout Blocks</span>
 
 Obsidian 的 「Callout Blocks」 语法实质是对原生 Markdown 引用语法的扩展，让引用块显示得更美观。
@@ -1529,5 +1541,4 @@ Available Commands:
 * [Obsidian 常用插件清单](Obsidian_Plugins_List.md)
 * [Obsidian视频清单](Obsidian_Videos.md)
 * [Markdown 笔记](../../Markdown/Markdown_Note.md)
-
 

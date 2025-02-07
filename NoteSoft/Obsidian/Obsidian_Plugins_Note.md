@@ -5,7 +5,7 @@ tags:
   - obsidian
   - plugin
 created: 2023-06-28 17:02:25
-modified: 2025-02-07 21:32:57
+modified: 2025-02-07 23:26:04
 ---
 
 # Obsidian 部分插件笔记
@@ -56,6 +56,16 @@ FROM <来源>
 <LIMIT> <限定显示记录数>
 <FLATTEN> <拆分表达式>
 ```
+
+### front-matter 检索
+
+## 图片
+
+如果 front-matter 中使用到图片，语法如下：
+
+`key: "![xxx](图片地址)"`
+
+其实就是将 [Markdown_Note](../../Markdown/Markdown_Note.md) 图片的值用双引号 `"` 括起来，而这个图片值中是可以支持 [Obsidian 专用语法](Obsidian_Note.md#obn_syntax) 中对 [图片大小进行控制的语法](Obsidian_Note.md#obn_syntax_imgsize)。
 
 更多细节参考： [Dataview document](https://blacksmithgu.github.io/obsidian-dataview/#/)
 

@@ -1,8 +1,10 @@
 ---
 aliases: []
-tags: []
+tags:
+  - books
+  - list
 created: 2025-02-07 04:09:45
-modified: 2025-02-07 21:13:08
+modified: 2025-02-07 21:37:52
 ---
 
 # IT 书籍清单
@@ -19,7 +21,8 @@ Table without ID
 	booklocalname as 本地化书名,
 	versions as 书籍版本,
 	bookautor as 作者,
-	translator as 译者
+	translator as 译者,
+	publication_date as 出版日期
 From ""
 Where econtains(booksdb, "BooksList")
 ```

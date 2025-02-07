@@ -5,7 +5,7 @@ tags:
   - obsidian
   - plugin
 created: 2023-06-28 17:02:25
-modified: 2025-02-07 05:33:58
+modified: 2025-02-07 21:32:57
 ---
 
 # Obsidian 部分插件笔记
@@ -30,8 +30,12 @@ modified: 2025-02-07 05:33:58
 
 个人喜欢将其设置成以下这样：
 
-* `YYYY-MM-DD`
-* `YYYY-MM-DD HH:mm:ss`
+* `yyyy-MM-dd`
+* `yyyy-MM-dd HH:mm:ss`
+
+> [!important] 
+> 
+> 别把日期中 `yyyy` 和 `dd` 打成大写的，会造成显示错误的
 
 > [!tip] 
 > 

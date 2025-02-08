@@ -6,7 +6,7 @@ tags:
   - books
   - brief
 created: 2025-02-07 04:12:59
-modified: 2025-02-08 12:10:03
+modified: 2025-02-08 19:49:39
 booksdb: BooksList
 
 cover: "![JavaScript 高级程序设计 4th cover|60x70](https://img9.doubanio.com/view/subject/l/public/s33703494.jpg)"
@@ -20,15 +20,13 @@ cover: "![JavaScript 高级程序设计 4th cover|60x70](https://img9.doubanio.c
 
 [原版书名:: Professional JavaScript for Web Developers]
 
-versions:: 第四版
+[版本:: 第四版]
 
-bookautor::
-  * Matt Frisbie
+[作者:: Matt Frisbie]
 
-translator::
-  * 李松峰
+[译者:: 李松峰]
   
-publication_date:: 2020-08-01
+[出版日期:: 2020-08]
 
  ![JavaScript 高级程序设计 4th cover|600x700](https://img9.doubanio.com/view/subject/l/public/s33703494.jpg)
 

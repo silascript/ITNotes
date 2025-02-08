@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2025-02-07 05:28:08
-modified: 2025-02-07 05:33:38
+modified: 2025-02-08 18:24:45
 ---
 
 # Obsidian 资料清单
@@ -17,6 +17,7 @@ modified: 2025-02-07 05:33:38
 * [awesome-obsidian](https://github.com/kmaasrud/awesome-obsidian)
 * [obsidian-snippets](https://github.com/deathau/obsidian-snippets)
 * [Obsidian文档咖啡豆版](https://coffeetea.top)
+[Obsdian TTRPG Tutorials](https://obsidianttrpgtutorials.com/Obsidian+TTRPG+Tutorials/Getting+Started/Getting+Started)
 
 ## DataView 相关
 

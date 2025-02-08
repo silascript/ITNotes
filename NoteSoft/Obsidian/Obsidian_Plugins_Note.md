@@ -5,7 +5,7 @@ tags:
   - obsidian
   - plugin
 created: 2023-06-28 17:02:25
-modified: 2025-02-07 23:29:42
+modified: 2025-02-09 01:28:13
 ---
 
 # Obsidian 部分插件笔记
@@ -59,7 +59,7 @@ FROM <来源>
 
 ### front-matter 检索
 
-## 图片
+#### 图片
 
 如果 [front matter](Obsidian_Note.md#obn_advanced_frontmatter) 中使用到图片，语法如下：
 

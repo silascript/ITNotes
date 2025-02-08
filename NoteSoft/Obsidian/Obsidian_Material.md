@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2025-02-07 05:28:08
-modified: 2025-02-08 18:24:45
+modified: 2025-02-09 01:22:38
 ---
 
 # Obsidian 资料清单
@@ -19,10 +19,16 @@ modified: 2025-02-08 18:24:45
 * [Obsidian文档咖啡豆版](https://coffeetea.top)
 [Obsdian TTRPG Tutorials](https://obsidianttrpgtutorials.com/Obsidian+TTRPG+Tutorials/Getting+Started/Getting+Started)
 
-## DataView 相关
+### 插件
+
+#### DataView
 
 * [Dataview document](https://blacksmithgu.github.io/obsidian-dataview/#/)
 * [Filtering Dataview with Obsidian Properties of type list containing links - Help - Obsidian Forum](https://forum.obsidian.md/t/filtering-dataview-with-obsidian-properties-of-type-list-containing-links/75200/2)
+
+#### Templater
+
+* [PKMer\_Obsidian 插件：Templater 可以替代核心模板插件的效率神器](https://pkmer.cn/Pkmer-Docs/10-obsidian/obsidian%E7%A4%BE%E5%8C%BA%E6%8F%92%E4%BB%B6/templater/templater-obsidian/)
 
 ---
 

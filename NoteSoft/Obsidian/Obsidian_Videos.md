@@ -6,7 +6,7 @@ tags:
   - video
   - list
 created: 2023-05-19 20:49:18
-modified: 2024-07-12 20:10:16
+modified: 2025-02-09 01:10:55
 ---
 
 # Obsidian 视频清单
@@ -49,6 +49,7 @@ modified: 2024-07-12 20:10:16
 ## 相关笔记
 
 * [Obsidian 笔记](Obsidian_Note.md)
+* [Obsidian资料](Obsidian_Material.md)
 * [Obsidian 推荐插件清单](Obsidian_Plugins_List.md)
 * [Obsidian 部分插件笔记](Obsidian_Plugins_Note.md)
 * [笔记软件笔记](../NoteSoft_Note.md)

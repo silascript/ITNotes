@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2025-02-07 23:08:14
+modified: 2025-02-09 01:15:31
 ---
 
 # Obsidian 笔记
@@ -1539,6 +1539,7 @@ Available Commands:
 
 * [Obsidian 部分插件笔记](Obsidian_Plugins_Note.md)
 * [Obsidian 常用插件清单](Obsidian_Plugins_List.md)
+* [Obsidian资料](Obsidian_Material.md)
 * [Obsidian视频清单](Obsidian_Videos.md)
 * [Markdown 笔记](../../Markdown/Markdown_Note.md)
 

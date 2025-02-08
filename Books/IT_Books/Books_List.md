@@ -4,7 +4,7 @@ tags:
   - books
   - list
 created: 2025-02-07 04:09:45
-modified: 2025-02-08 21:22:11
+modified: 2025-02-08 21:28:52
 ---
 
 # IT 书籍清单
@@ -24,6 +24,7 @@ Table without ID
 	译者,
 	出版日期,
 	ISBN,
+	category as 分类,
 	cover as 封面
 From ""
 Where econtains(booksdb, "BooksList")

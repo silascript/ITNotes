@@ -2,8 +2,11 @@
 aliases: []
 tags: []
 created: 2025-02-07 05:01:37
-modified: 2025-02-08 21:23:10
+modified: 2025-02-08 21:31:20
 booksdb: BooksList
+category:
+  - JS
+  - 前端
 cover: "![JavaScript 语言精髓与编程实践 3th cover|60x70](https://img9.doubanio.com/view/subject/l/public/s33657095.jpg)"
 ---
 

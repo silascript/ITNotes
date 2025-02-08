@@ -6,7 +6,7 @@ tags:
   - books
   - brief
 created: 2025-02-07 04:12:59
-modified: 2025-02-08 19:49:39
+modified: 2025-02-08 21:21:51
 booksdb: BooksList
 
 cover: "![JavaScript 高级程序设计 4th cover|60x70](https://img9.doubanio.com/view/subject/l/public/s33703494.jpg)"
@@ -28,5 +28,7 @@ cover: "![JavaScript 高级程序设计 4th cover|60x70](https://img9.doubanio.c
   
 [出版日期:: 2020-08]
 
- ![JavaScript 高级程序设计 4th cover|600x700](https://img9.doubanio.com/view/subject/l/public/s33703494.jpg)
+[ISBN:: 9787115545381]
+
+ ![JavaScript 高级程序设计 4th cover|520x600](https://img9.doubanio.com/view/subject/l/public/s33703494.jpg)
 

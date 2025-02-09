@@ -5,7 +5,7 @@ tags:
   - obsidian
   - plugin
 created: 2023-06-28 17:02:25
-modified: 2025-02-09 01:28:13
+modified: 2025-02-10 03:53:10
 ---
 
 # Obsidian 部分插件笔记
@@ -75,7 +75,24 @@ FROM <来源>
 
 ## <span id="obp_templater">Templater</span>
 
+### <span id="obp_templater_commands">命令</span>
+
+Templater 中提供了几个命令来快速操作：
+
+* **Template**: Open Insert Template modal `Alt + E`
+* **Template**: Jump to next cursor `Alt + Tab`
+* **Template**: Create new note from template `Alt + N`
+* **Template**: Replace templates in the active file `Alt + R`
+
+> [!info] 
+> 
+> 个人用得最多的是 `Alt+N` 这个，根据模板新建一个笔记。
+
 ### <span id="obp_templater_settings">设置</span>
+
+#### 快捷键
+
+默认光标跳转快捷键为 `Alt + Tab`，这与系统中和系统切换窗口的快捷键冲突了，所以只能将其修改成其他快捷键，个人设成 `Alt + ;`
 
 #### 不同目录指定特定的模板
 

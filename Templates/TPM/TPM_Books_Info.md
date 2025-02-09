@@ -27,7 +27,7 @@ await tp.file.move(inputDir+file_title)
 
 -%>
 ---
-booksdb: 
+booksdb: <% tp.file.cursor(1) %>
 cover: 
 category: 
 
@@ -37,19 +37,19 @@ category:
 
 ---
 
-[书名:: ] 
+[书名:: <% tp.file.cursor(2) %>] 
 
-[原版书名:: ]
+[原版书名:: <% tp.file.cursor(3) %>]
 
-[版本:: ]
+[版本:: <% tp.file.cursor(4) %>]
 
-[作者:: ]
+[作者:: <% tp.file.cursor(5) %>]
 
-[译者:: ]
+[译者:: <% tp.file.cursor(6) %>]
   
-[出版日期:: ]
+[出版日期:: <% tp.file.cursor(7) %>]
 
-[ISBN:: ]
+[ISBN:: <% tp.file.cursor(8) %>]
 
- ![|520x600]()
+ ![|520x600](<% tp.file.cursor(9) %>)
 

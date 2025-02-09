@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2025-02-07 05:28:08
-modified: 2025-02-09 01:22:38
+modified: 2025-02-09 19:29:34
 ---
 
 # Obsidian 资料清单
@@ -29,6 +29,8 @@ modified: 2025-02-09 01:22:38
 #### Templater
 
 * [PKMer\_Obsidian 插件：Templater 可以替代核心模板插件的效率神器](https://pkmer.cn/Pkmer-Docs/10-obsidian/obsidian%E7%A4%BE%E5%8C%BA%E6%8F%92%E4%BB%B6/templater/templater-obsidian/)
+* [Templater插件简介和基础语法 \| obsidian文档咖啡豆版](https://obsidian.vip/zh/plugins-templater/templater-a.html#_3-%E6%8F%92%E5%85%A5%E6%A8%A1%E6%9D%BF%E7%9A%84%E4%B8%80%E8%88%AC%E6%B5%81%E7%A8%8B)
+* [Obsidian 达人成长之路 5：使用 Templater 减少重复工作 - 掘金](https://juejin.cn/post/7381347654767804425)
 
 ---
 

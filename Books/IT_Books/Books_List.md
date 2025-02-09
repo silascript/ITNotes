@@ -4,7 +4,7 @@ tags:
   - books
   - list
 created: 2025-02-07 04:09:45
-modified: 2025-02-08 21:28:52
+modified: 2025-02-09 03:02:47
 ---
 
 # IT 书籍清单
@@ -28,5 +28,6 @@ Table without ID
 	cover as 封面
 From ""
 Where econtains(booksdb, "BooksList")
+AND contains(file.path,"Templates")=false
 ```
 

@@ -8,16 +8,17 @@ let defaultFileName = "Defualt_Book_Info";
 // 如果没输入任何文件名则赋个默认文件名
 file_title == ""?(file_title=defaultFileName) : (await tp.file.rename(file_title));
 
-// 获取文件存在的目录
-let inputDir = await tp.system.prompt(" 目录地址 ",defaultFileName);
-// 判断是否以 / 结束
-inputDir = inputDir.endsWith("/")?inputDir:inputDir+"/";
 // 默认书籍目录路径
 let defaultDir="/Books/";
+// 获取文件存在的目录
+let inputDir = await tp.system.prompt(" 目录地址 ",defaultDir);
 // 如果没有输入任何目录则赋个默认目录路径
 if(inputDir == ""){
-	inputDir = defaultDir;
+	inputDir = defaultDir+"/Books_Temp";
 }
+
+// 判断是否以 / 结束
+inputDir = inputDir.endsWith("/")?inputDir:inputDir+"/";
 
 // 重新组装文件路径 
 // let fileFullPath = tp.file.exists((inputDir+inputFileName)+".md")?  : (inputDir+inputFileName)
@@ -25,7 +26,6 @@ if(inputDir == ""){
 await tp.file.move(inputDir+file_title)
 
 -%>
-
 ---
 booksdb: 
 cover: 

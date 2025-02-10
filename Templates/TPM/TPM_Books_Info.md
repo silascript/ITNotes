@@ -18,20 +18,16 @@ let defaultDir="/Books/";
 const vaultRoot = app.vault.getRoot()
 
 // 所有目录
-// 即vault库根目录的所有子目录
-// const folders = vaultRoot.children.filter(child => child.children)
+// 即vault库的所有目录
 // const folders = app.vault.getAllFolders(true)
+// 取出目录路径
 const folders = app.vault.getAllFolders(true).map(f=>f.path)
-// const folders = app.vault.getFolders()
 
 // 列出所有目录
 // 获取目录对象
-// let selectedFolder = await tp.system.suggester( (e) => e.name,folders,false,"选择目录")
-// let selectedFolder = await tp.system.suggester( (e) => e.path,folders,false,"选择存放的目录")
 let selectedFolder = await tp.system.suggester( (e) => e,folders,false,"选择存放的目录")
 
-console.log("目录路径："+selectedFolder)
-
+// console.log("目录路径："+selectedFolder)
 
 let tempDir = defaultDir
 if(selectedFolder != ""){

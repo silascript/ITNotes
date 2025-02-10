@@ -5,7 +5,7 @@ tags:
   - obsidian
   - plugin
 created: 2023-06-28 17:02:25
-modified: 2025-02-10 03:53:10
+modified: 2025-02-10 23:18:58
 ---
 
 # Obsidian 部分插件笔记
@@ -273,6 +273,18 @@ tp.file.exists(filename: string)
 >>> await tp.file.move( await tp.file.exists(fileFullPath+".md")? (inputFileName == today?fileFullPath+"_"+tp.date.now("HHmmss"): fileFullPath+"_"+tp.date.now("YYYYMMDDHHmmss")) : fileFullPath)
 >>> ```
 
+###### 光标跳转
+
+```javascript
+tp.file.cursor(order?: number)
+```
+
+插入模板后，将光标设置到此位置。
+
+可以在 [Obsidian](Obsidian_Note.md) 配置 [快捷键](Obsidian_Plugins_Note.md#obp_templater_settings) 在不同的光标之间导航。
+
+* `order`：不同光标的跳转顺序，例如从 1 到 2 到 3，依此类推。
+
 ---
 
 ##### <span id="obp_templater_functions_internal_system">系统</span>
@@ -292,7 +304,8 @@ tp.system.prompt(prompt_text?: string, default_value?: string, throw_on_cancel: 
 > 第三个参数：确定如果取消输入返回值。默认是 `false`，
 > 
 > 可以看下 [Templater 相关源码](https://github.com/SilentVoid13/Templater/blob/master/src/core/functions/internal_functions/system/InternalModuleSystem.ts)
-> ```
+> ```javascipt
+>
 >  try {
 >                return await promise;
 >            } catch (error) {
@@ -340,6 +353,117 @@ tp.system.suggester(text_items: string[] ⎮ ((item: T) => string), items: T[], 
 > 
 > ```
 > 
+
+使用 DeepSeek 生成的 `suggester` 函数说明：
+
+###### 函数定义
+
+`tp.system.suggester(options, values, placeholder, throwOnCancel)`
+
+参数说明：
+
+1. **`options`** (数组，必需)  
+    这是一个字符串数组，表示**显示给用户**的选择项（即用户看到的选项列表）。  
+    例如：`["选项1", "选项2", "选项3"]`。
+    
+2. **`values`** (数组，必需)  
+    这是一个与 `options` 对应的数组，表示每个选项的**实际返回值**。  
+    例如：如果 `options` 是 `["A", "B", "C"]`，`values` 可以是 `["value1", "value2", "value3"]`。  
+    用户选择 "A" 时，函数会返回 `"value1"`。
+    
+    * 如果 `values` 未提供，则默认使用 `options` 作为返回值。
+        
+    * 如果 `values` 是函数，则会对每个选项调用该函数，将其返回值作为实际值。
+        
+3. **`placeholder`** (字符串，可选)  
+    这是选择器的占位符文本，显示在选择器的输入框中。  
+    例如：`"请选择一个选项"`。
+    
+4. **`throwOnCancel`** (布尔值，可选)  
+    如果设置为 `true`，当用户取消选择（例如点击外部或按 Esc 键）时，函数会抛出一个错误。  
+    如果设置为 `false`（默认），取消选择时会返回 `null`。
+
+###### 返回值
+
+* 如果用户选择了一个选项，函数会返回对应的 `values` 中的值。
+    
+* 如果用户取消选择，函数返回 `null`（除非 `throwOnCancel` 设置为 `true`）。
+
+###### 使用示例
+
+示例 1：基本用法
+
+```javascript
+<%*
+const options = ["选项A", "选项B", "选项C"];
+const values = ["value1", "value2", "value3"];
+
+const selectedValue = await tp.system.suggester(options, values, "请选择一个选项");
+tR += `你选择的是: ${selectedValue}`;
+%>
+
+```
+
+* 用户会看到一个下拉菜单，显示 `["选项A", "选项B", "选项C"]`。
+    
+* 如果用户选择 " 选项 A"，函数会返回 `"value1"`。
+
+示例 2：简化用法
+
+如果 `options` 和 `values` 相同，可以省略 `values` 参数：
+
+```javascript
+<%*
+const options = ["文件夹1", "文件夹2", "文件夹3"];
+const selectedFolder = await tp.system.suggester(options, null, "请选择一个文件夹");
+tR += `你选择的文件夹是: ${selectedFolder}`;
+%>
+```
+
+* 用户选择 " 文件夹 1" 时，函数会直接返回 `"文件夹1"`。
+
+---
+
+示例 3：动态生成选项
+
+```javascript
+<%*
+// 获取所有文件夹的名称
+const folders = app.vault.getFolders().map(folder => folder.path);
+
+// 让用户选择一个文件夹
+const selectedFolder = await tp.system.suggester(folders, null, "请选择一个文件夹");
+tR += `你选择的文件夹是: ${selectedFolder}`;
+%>
+```
+
+动态列出 Obsidian 库中的所有文件夹，并让用户选择一个。
+
+示例 4：处理取消选择
+
+```javascipt
+<%*
+const options = ["保存", "取消"];
+const selectedAction = await tp.system.suggester(options, null, "请选择一个操作", false);
+
+if (selectedAction === null) {
+    tR += "操作已取消。";
+} else {
+    tR += `你选择了: ${selectedAction}`;
+}
+%>
+
+```
+
+* 如果用户取消选择，会输出 " 操作已取消 "。
+
+注意事项
+
+1. **异步函数**：`tp.system.suggester` 是一个异步函数，必须使用 `await` 调用。
+    
+2. **返回值**：返回值是 `values` 数组中对应的值，而不是 `options` 中的显示文本。
+    
+3. **用户交互**：该函数会阻塞脚本执行，直到用户做出选择或取消。
 
 ---
 

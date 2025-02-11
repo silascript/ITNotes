@@ -5,7 +5,7 @@ tags:
   - obsidian
   - plugin
 created: 2023-06-28 17:02:25
-modified: 2025-02-11 00:56:17
+modified: 2025-02-12 02:17:10
 ---
 
 # Obsidian 部分插件笔记
@@ -461,6 +461,128 @@ if (selectedAction === null) {
 3. **用户交互**：该函数会阻塞脚本执行，直到用户做出选择或取消。
 
 ---
+
+##### 其他
+
+###### 取消生成笔记
+
+在 Obsidian 的 Templater 插件中，如果你想在某些条件下放弃生成笔记（即停止模板的执行），可以通过以下方式实现：
+
+* 方法 1：使用 `tp.frontmatter.cancel` 函数
+
+`tp.frontmatter.cancel` 是 Templater 提供的一个函数，用于取消当前模板的执行。调用该函数后，模板会立即停止运行，并且不会生成新的笔记。
+
+示例代码
+
+```javascript
+<%*
+// 检查某个条件
+const shouldCancel = true; // 这里可以根据实际条件设置
+
+if (shouldCancel) {
+    // 取消生成笔记
+    tp.frontmatter.cancel("操作已取消，未生成笔记。");
+} else {
+    // 继续生成笔记
+    tR += "正在生成笔记...";
+}
+%>
+```
+
+运行效果
+* 如果 `shouldCancel` 为 `true`，模板会停止执行，并显示消息 `"操作已取消，未生成笔记。"`。
+* 如果 `shouldCancel` 为 `false`，模板会继续执行，并输出 `"正在生成笔记..."`。
+
+* 方法 2：使用 `return` 提前退出
+
+如果你不想使用 `tp.frontmatter.cancel`，也可以通过 `return` 语句提前退出模板的执行。
+
+示例代码
+
+```javascript
+<%*
+// 检查某个条件
+const shouldCancel = true; // 这里可以根据实际条件设置
+
+if (shouldCancel) {
+    // 提前退出
+    return "操作已取消，未生成笔记。";
+}
+
+// 继续生成笔记
+tR += "正在生成笔记...";
+%>
+```
+
+运行效果
+
+* 如果 `shouldCancel` 为 `true`，模板会提前退出，并返回消息 `"操作已取消，未生成笔记。"`。
+* 如果 `shouldCancel` 为 `false`，模板会继续执行，并输出 `"正在生成笔记..."`。
+
+* 方法 3：结合用户交互
+
+你可以结合 `tp.system.prompt` 或 `tp.system.confirm` 实现动态判断是否放弃生成笔记。
+
+示例代码
+
+```javascript
+<%*
+// 询问用户是否继续
+const shouldContinue = await tp.system.confirm("是否生成笔记？");
+
+if (!shouldContinue) {
+    // 取消生成笔记
+    tp.frontmatter.cancel("用户取消了操作，未生成笔记。");
+} else {
+    // 继续生成笔记
+    tR += "正在生成笔记...";
+}
+%>
+```
+
+运行效果
+
+* 如果用户点击“否”，模板会停止执行，并显示消息 `"用户取消了操作，未生成笔记。"`。
+* 如果用户点击“是”，模板会继续执行，并输出 `"正在生成笔记..."`。
+
+* 方法 4：结合目录检测
+
+如果你想在检测到某个目录不存在时放弃生成笔记，可以结合 `app.vault.getFolderByPath` 实现。
+
+示例代码
+
+```javascript
+<%*
+// 定义要检测的目录路径
+const folderPath = "Notes/Projects"; // 替换为你的目录路径
+
+// 检测目录是否存在
+const folder = app.vault.getFolderByPath(folderPath);
+
+if (!folder) {
+    // 目录不存在，取消生成笔记
+    tp.frontmatter.cancel(`目录 "${folderPath}" 不存在，未生成笔记。`);
+} else {
+    // 继续生成笔记
+    tR += `目录 "${folderPath}" 存在，正在生成笔记...`;
+}
+%>
+```
+
+运行效果
+
+* 如果目录不存在，模板会停止执行，并显示消息 `"目录 "Notes/Projects" 不存在，未生成笔记。"`。
+* 如果目录存在，模板会继续执行，并输出 `"目录 "Notes/Projects" 存在，正在生成笔记..."`。
+
+总结
+
+在 Templater 插件中，放弃生成笔记可以通过以下方式实现：
+1. 使用 `tp.frontmatter.cancel` 函数直接取消模板执行。
+2. 使用 `return` 语句提前退出模板。
+3. 结合用户交互（如 `tp.system.confirm`）动态判断是否放弃生成笔记。
+4. 结合目录检测或其他条件判断是否放弃生成笔记。
+
+根据你的需求选择合适的方法即可！
 
 ### <span id="obp_templater_docs">相关文档链接</span>
 

@@ -1,17 +1,7 @@
 <%* 
 
 	// 此模板用于生成书籍信息笔记
-	
-	let file_title= tp.file.title;
-	// 默认文件名
-	let defaultFileName = "Defualt_Book_Info";
-	
-	// 检测是否已命名 
-	file_title = ( file_title.includes("未命名") || file_title.toLowerCase().includes("untitled") ) ? (file_title=await tp.system.prompt("请输入要创建的文件名")) : file_title;
-	// 如果没输入任何文件名则赋个默认文件名
-	file_title == ""?(file_title=defaultFileName) : (await tp.file.rename(file_title));
 
-	///////////////////////////////////////
 	// 检测目录路径是否存在
 	// false 目录不存在
 	// true 目录存在
@@ -21,8 +11,7 @@
 		// return app.vault.getFolderByPath(dirpath) == null?false:true;
 		// console.log(app.vault.getFolderByPath(dirpath));
 		let dir = app.vault.getFolderByPath(dirpath)
-
-		console.log(dir);
+		// console.log(dir);
 		if( dir == null){
 			return false;
 		}else{
@@ -35,6 +24,8 @@
 	
 		// console.log(dirpath);
 		let isConfirmed = confirm(`是否创建${dirpath}目录？`)
+
+		console.log("isConfirmed："+isConfirmed);
 	
 		if(isConfirmed){
 			// 创建目录
@@ -46,8 +37,18 @@
 		}
 	
 	}
+
+	////////////////////////////////////////////////////////////////
+
+	let file_title= tp.file.title;
+	// 默认文件名
+	let defaultFileName = "Defualt_Book_Info";
 	
-	
+	// 检测是否已命名 
+	file_title = ( file_title.includes("未命名") || file_title.toLowerCase().includes("untitled") ) ? (file_title=await tp.system.prompt("请输入要创建的文件名")) : file_title;
+	// 如果没输入任何文件名则赋个默认文件名
+	file_title == ""?(file_title=defaultFileName) : (await tp.file.rename(file_title));
+
 	// 默认书籍目录路径
 	let defaultDir="/Books/";
 	
@@ -81,25 +82,26 @@
 		inputDir = defaultDir+"/Books_Temp";
 	}
 
-
-	console.log(inputDir);
-	// console.log(validateDirExist(inputDir))
-	let validateResult=validateDirExist(inputDir);
-	// console.log(validateResult);
+	// console.log(inputDir);
+	// let validateResult=validateDirExist(inputDir);
 	// 检测目录路径是否存在
-	if(!validateResult){
+	if(!validateDirExist(inputDir)){
 		// 目录不存在将创建目录
 		// let isCreate = createDirbyPath(inputDir);
-		createDirbyPath(inputDir);
+		// createDirbyPath(inputDir);
+		if(createDirbyPath(inputDir)){
+			// 判断是否以 / 结束
+			inputDir = inputDir.endsWith("/")?inputDir:inputDir+"/";
+
+			// 重新组装文件路径 
+			// let fileFullPath = tp.file.exists((inputDir+inputFileName)+".md")?  : (inputDir+inputFileName)
+			// 移动文件到指定目录
+			await tp.file.move(inputDir+file_title);
+		}else{
+			// 放弃生成笔记
+			return;
+		}
 	}
-
-	// 判断是否以 / 结束
-	inputDir = inputDir.endsWith("/")?inputDir:inputDir+"/";
-
-	// 重新组装文件路径 
-	// let fileFullPath = tp.file.exists((inputDir+inputFileName)+".md")?  : (inputDir+inputFileName)
-	// 移动文件到指定目录
-	await tp.file.move(inputDir+file_title)
 
 -%>
 ---

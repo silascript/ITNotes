@@ -7,7 +7,7 @@ tags:
   - tutorial
   - list
 created: 2023-02-12 11:23:37
-modified: 2024-09-03 18:16:44
+modified: 2025-02-11 02:20:58
 ---
 
 # Python 视频清单
@@ -66,6 +66,10 @@ python 相关视频汇集整理。
 ## 框架
 
 * [【Flask框架】Python从入门到精通之Flask框架详细教程](https://www.bilibili.com/video/BV1c7421T7Ki)
+
+## 项目实战
+
+* [【2025】python108个项目](https://www.bilibili.com/video/BV1kQN7efEZm)
 
 ---
 

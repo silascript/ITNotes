@@ -5,7 +5,7 @@ tags:
   - obsidian
   - plugin
 created: 2023-06-28 17:02:25
-modified: 2025-02-10 23:18:58
+modified: 2025-02-11 00:56:17
 ---
 
 # Obsidian 部分插件笔记
@@ -352,7 +352,6 @@ tp.system.suggester(text_items: string[] ⎮ ((item: T) => string), items: T[], 
 > let selectedFolder = await tp.system.suggester( (e) => e.name,folders,false," 选择目录 ")
 > 
 > ```
-> 
 
 使用 DeepSeek 生成的 `suggester` 函数说明：
 
@@ -386,7 +385,6 @@ tp.system.suggester(text_items: string[] ⎮ ((item: T) => string), items: T[], 
 ###### 返回值
 
 * 如果用户选择了一个选项，函数会返回对应的 `values` 中的值。
-    
 * 如果用户取消选择，函数返回 `null`（除非 `throwOnCancel` 设置为 `true`）。
 
 ###### 使用示例
@@ -405,7 +403,6 @@ tR += `你选择的是: ${selectedValue}`;
 ```
 
 * 用户会看到一个下拉菜单，显示 `["选项A", "选项B", "选项C"]`。
-    
 * 如果用户选择 " 选项 A"，函数会返回 `"value1"`。
 
 示例 2：简化用法
@@ -420,7 +417,7 @@ tR += `你选择的文件夹是: ${selectedFolder}`;
 %>
 ```
 
-* 用户选择 " 文件夹 1" 时，函数会直接返回 `"文件夹1"`。
+* 用户选择 「文件夹 1」 时，函数会直接返回 `"文件夹1"`。
 
 ---
 
@@ -460,9 +457,7 @@ if (selectedAction === null) {
 注意事项
 
 1. **异步函数**：`tp.system.suggester` 是一个异步函数，必须使用 `await` 调用。
-    
 2. **返回值**：返回值是 `values` 数组中对应的值，而不是 `options` 中的显示文本。
-    
 3. **用户交互**：该函数会阻塞脚本执行，直到用户做出选择或取消。
 
 ---

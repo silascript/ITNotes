@@ -1,5 +1,7 @@
 <%* 
 
+// 此模板用于生成书籍信息笔记
+
 let file_title= tp.file.title;
 // 默认文件名
 let defaultFileName = "Defualt_Book_Info";
@@ -10,6 +12,37 @@ file_title = ( file_title.includes("未命名") || file_title.toLowerCase().incl
 file_title == ""?(file_title=defaultFileName) : (await tp.file.rename(file_title));
 
 ///////////////////////////////////////
+// 检测目录路径是否存在
+// false 目录不存在
+// true 目录存在
+function validateDirExist(dirpath){
+
+	// console.log(dirpath);
+	// return app.vault.getFolderByPath(dirpath) == null?false:true;
+	if(app.vault.getFolderByPath(dirpath) == null){
+		return false;
+	}else{
+		return true;	
+	}
+}
+
+// 创建目录
+function createDirbyPath(dirpath){
+
+	console.log(dirpath);
+	const isConfirmed = confirm(`是否创建${dirpath}目录？`)
+
+	if(isConfirmed){
+		// 创建目录
+		validateDirExist(dirpath) ? alert(`${dirpath}目录已存在，无须创建！`) : app.vault.createFolder(dirpath);
+		return true;
+	}else{
+		// 放弃创建目录
+		return false;
+	}
+
+}
+
 
 // 默认书籍目录路径
 let defaultDir="/Books/";
@@ -21,33 +54,50 @@ const vaultRoot = app.vault.getRoot()
 // 即vault库的所有目录
 // const folders = app.vault.getAllFolders(true)
 // 取出目录路径
-const folders = app.vault.getAllFolders(true).map(f=>f.path)
+let folders = app.vault.getAllFolders(true).map(f=>f.path)
 
 // 列出所有目录
 // 获取目录对象
-let selectedFolder = await tp.system.suggester( (e) => e,folders,false,"选择存放的目录")
+let selectedFolder = await tp.system.suggester(e=>e,folders,false,"选择存放的目录")
 
 // console.log("目录路径："+selectedFolder)
-
 let tempDir = defaultDir
 if(selectedFolder != ""){
 	tempDir="/"+selectedFolder
 }
 
-// 获取文件存在的目录
+// 输入将保存书籍笔记的目录路径
 let inputDir = await tp.system.prompt("请输入目录地址",tempDir);
 // 如果没有输入任何目录则赋个默认目录路径
 if(inputDir == ""){
 	inputDir = defaultDir+"/Books_Temp";
 }
 
-// 判断是否以 / 结束
-inputDir = inputDir.endsWith("/")?inputDir:inputDir+"/";
 
-// 重新组装文件路径 
-// let fileFullPath = tp.file.exists((inputDir+inputFileName)+".md")?  : (inputDir+inputFileName)
-// 移动文件到指定目录
-await tp.file.move(inputDir+file_title)
+// console.log(inputDir);
+// console.log(validateDirExist(inputDir))
+
+// 检测目录路径是否存在
+if(!validateDirExist(inputDir)){
+
+	// console.log("yes");
+
+	// 目录不存在将创建目录
+	let isCreate = createDirbyPath(inputDir);
+
+	// 已创建不存在的目录
+	if(isCreate){
+		
+		// 判断是否以 / 结束
+		inputDir = inputDir.endsWith("/")?inputDir:inputDir+"/";
+	
+		// 重新组装文件路径 
+		// let fileFullPath = tp.file.exists((inputDir+inputFileName)+".md")?  : (inputDir+inputFileName)
+		// 移动文件到指定目录
+		await tp.file.move(inputDir+file_title)
+	}
+}
+
 
 -%>
 ---

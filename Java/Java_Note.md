@@ -7,7 +7,7 @@ tags:
   - Eclipse
   - dbeaver
 created: 2023-01-30 11:19:11
-modified: 2025-02-11 20:19:27
+modified: 2025-02-11 20:25:58
 ---
 
 # Java 笔记
@@ -632,7 +632,7 @@ DBeaver 插件版也独立安装版功能一致，具体信息可以参考 [DBea
 |  Kepler  |      开普勒      |    4.3     | 2013 年 6 月 26 日  |    JDK 1.6    |   N/A    |
 |   Luna   |       月神       |    4.4     | 2014 年 6 月 24 日  |    JDK 1.6    |   N/A    |
 |   Mars   |       火星       |    4.5     | 2015 年 6 月 24 日  |    JDK 1.7    |   N/A    |
-|   Neon   |      霓虹灯      |    4.6     | 2016 年 6 月 22 日  |    JDK 1.7    |   N/A    |
+|   Neon   |      霓虹灯      |    4.6     | 2016 年 6 月 22 日  |    JDK 1.8    |   N/A    |
 |  Oxygen  |       氧气       |    4.7     | 2017 年 6 月 28 日  |    JDK 1.8    |   N/A    |
 |  Photon  |       光子       |    4.8     | 2018 年 6 月 27 日  |    JDK 1.8    |   N/A    |
 | 2018-09  |       N/A        |    4.9     | 2018 年 9 月 19 日  |    JDK 1.8    |   N/A    |
@@ -668,12 +668,12 @@ DBeaver 插件版也独立安装版功能一致，具体信息可以参考 [DBea
 
 > [!summary] 
 > 
-> * **Eclipse 4.30 及以上** 需要 [JDK17](#JDK17)。
-> * **Eclipse 4.19 至 4.29** 需要 [JDK11](#JDK11)。
->* **Eclipse 4.7 至 4.18** 需要 [JDK8](#JDK8)。
-> * **Eclipse 4.6 及以下** 需要 **JDK 7** 或更低版本
+> * **Eclipse 4.25 及以上** 需要 [JDK17](#JDK17)。
+> * **Eclipse 4.17 至 4.24** 需要 [JDK11](#JDK11)。
+>* **Eclipse 4.6 至 4.18** 需要 [JDK8](#JDK8)。
+> * **Eclipse 4.6 以下** 需要 **JDK 7** 或更低版本
 >   
-> 详细信息：[Eclipse/Installation - Eclipsepedia](https://wiki.eclipse.org/Eclipse/Installation/#Eclipse_4.18_.282020-12.29)
+> 详细信息：[Eclipse/Installation - Eclipsepedia](https://wiki.eclipse.org/Eclipse/Installation/)
 > 
 
 ---

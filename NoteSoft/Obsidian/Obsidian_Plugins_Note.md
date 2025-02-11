@@ -438,7 +438,7 @@ tR += `你选择的文件夹是: ${selectedFolder}`;
 
 示例 4：处理取消选择
 
-```javascipt
+```javascript
 <%*
 const options = ["保存", "取消"];
 const selectedAction = await tp.system.suggester(options, null, "请选择一个操作", false);

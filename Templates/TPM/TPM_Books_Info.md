@@ -25,7 +25,7 @@
 		// console.log(dirpath);
 		let isConfirmed = confirm(`是否创建${dirpath}目录？`)
 
-		console.log("isConfirmed："+isConfirmed);
+		// console.log("isConfirmed："+isConfirmed);
 	
 		if(isConfirmed){
 			// 创建目录

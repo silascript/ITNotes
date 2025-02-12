@@ -3,11 +3,14 @@ aliases: []
 tags:
   - front-end
   - html
+  - html5
+  - h5
+  - xhtml
   - dom
   - w3c
   - whatwg
 created: 2023-08-18 19:44:52
-modified: 2024-07-13 18:09:28
+modified: 2025-02-12 12:41:53
 ---
 
 # Html 笔记
@@ -44,11 +47,13 @@ modified: 2024-07-13 18:09:28
 * 1999 年 12 月 24 日 HTML 4.01 作为 [W3C](https://www.w3.org) 推荐标准发布。
 * 2014 年 10 月 28 日 HTML 5 作为 [W3C](https://www.w3.org) 推荐标准发布。
 
+### HTML4
+
 ### <span id="html_introducton_xhtml">XHTML</span>
 
  #xhtml
 
-**XHTML** 是 「3 种 HTML 4 文件根据 XML 1.0 标准重组」而成的。
+**XHTML** 是 「3 种 [HTML4](#HTML4) 文件根据 XML 1.0 标准重组」而成的。
 
 HTML 语法比较的「自由奔放」，所以在不同的浏览器渲染出现不同的表现。W3C 想要把 HTML 标准纳入 XML 标准中，让「严格」的 XML 来 「规范」HTML，所以就有了 XHTML 这货。
 

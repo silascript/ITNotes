@@ -6,7 +6,7 @@ tags:
   - es
   - ecmascript
 created: 2023-01-31 11:31:14
-modified: 2024-08-16 10:38:13
+modified: 2025-02-12 12:49:12
 ---
 
 # JavaScript 笔记
@@ -29,6 +29,22 @@ modified: 2024-08-16 10:38:13
 ---
 
 ## 语法
+
+### 标签
+
+`<script>` 标签有一些现在很少用到的特性（attribute）,在老的 [HTML4](../Frontend/Html_Note.md#HTML4) 中是要求 `script` 标签要有 `type` 属性，通常是 `type="text/javascript"`。现代 [HTML](../Frontend/Html_Note.md#HTML5) 标准已经不需要这样的属性声明了。
+
+#### 外部 JS
+
+```javascript
+<script src=".../...js"></script>
+```
+
+> [!tip] 
+> 
+> 如果设置了 `src` 特性，`script` 标签内容将会被忽略。
+>
+> 也就是说设置了 `src` 属性的 `script` 标签失去了普通 `script` 标签的「包裹」代码的功能，它的唯一功能就是**引入**外部 JS 文件。
 
 ### <span id="jsn_basic">基础语法</span>
 

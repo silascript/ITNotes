@@ -38,6 +38,28 @@
 	
 	}
 
+	// 生成书籍信息笔记文件
+	// 参数 dirpth 将要存放笔记的目录路径
+	async function createNoteFile(dirpath){
+	// 判断是否以 / 结束
+		// 尾部没有目录分隔符/就补上
+		dirpath = dirpath.endsWith("/")?dirpath:dirpath+"/";
+		// 加上根路径，无论当前焦点位于什么目录，都从根定位选择或输入的目录路径
+		dirpath = dirpath.startsWith("/")?dirpath:"/"+dirpath;
+
+		// console.log(dirpath);
+		// 重新组装文件路径 
+		// let fileFullPath = tp.file.exists((inputDir+inputFileName)+".md")?  : (inputDir+inputFileName)
+		// 文件完整路径
+		let fileFullPath = dirpath+file_title;
+		// console.log(fileFullPath);
+		// 移动文件到指定目录
+		await tp.file.move(fileFullPath);
+	
+	}
+
+
+
 	////////////////////////////////////////////////////////////////
 
 	let file_title= tp.file.title;
@@ -54,6 +76,7 @@
 	
 	// vault库的根目录
 	// const vaultRoot = app.vault.getRoot()
+	// console.log(vaultRoot);
 	
 	// 所有目录
 	// 即vault库的所有目录
@@ -89,19 +112,16 @@
 		// 目录不存在将创建目录
 		// let isCreate = createDirbyPath(inputDir);
 		// createDirbyPath(inputDir);
-		if(createDirbyPath(inputDir)){
-			// 判断是否以 / 结束
-			inputDir = inputDir.endsWith("/")?inputDir:inputDir+"/";
-
-			// 重新组装文件路径 
-			// let fileFullPath = tp.file.exists((inputDir+inputFileName)+".md")?  : (inputDir+inputFileName)
-			// 移动文件到指定目录
-			await tp.file.move(inputDir+file_title);
-		}else{
+		if(!createDirbyPath(inputDir)){
 			// 放弃生成笔记
 			return;
 		}
 	}
+
+	// console.log(inputDir);
+	// 生成笔记
+	await createNoteFile(inputDir);
+		
 
 -%>
 ---

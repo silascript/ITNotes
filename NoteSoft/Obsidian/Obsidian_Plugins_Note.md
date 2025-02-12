@@ -5,7 +5,7 @@ tags:
   - obsidian
   - plugin
 created: 2023-06-28 17:02:25
-modified: 2025-02-12 02:17:10
+modified: 2025-02-12 19:18:48
 ---
 
 # Obsidian 部分插件笔记
@@ -247,10 +247,42 @@ tp.file.rename(new_title: string)
 ```javascript
 tp.file.move(new_path: string, file_to_move?: TFile)
 ```
+
 > [!info] move 函数解析
+> 
 > 第一个参数：目标路径，不需要带后缀名，如 `.md`
 > 
 > move 函数，如果目标路径中的文件名出现更改，就相当于拥有了 [重命名](#重命名) 的功能。
+> 
+
+> [!important] 
+> 
+> 还有一点提一下，就是这个函数是异步的得使用 `await` 关键字调用，而如果这个函数被自定义的函数「包装」使用时，自定义函数得使用 `async` 关键字声明，而调用这个自定义函数时，也得使用 `await` 关键字修饰。
+> 
+> 示例：
+> 
+> ```javascript
+>	// 生成书籍信息笔记文件
+>	// 参数 dirpth 将要存放笔记的目录路径
+>	async function createNoteFile(dirpath){
+>		// 判断是否以 / 结束
+>		// 尾部没有目录分隔符/就补上
+>		dirpath = dirpath.endsWith("/")?dirpath:dirpath+"/";
+>		// 加上根路径，无论当前焦点位于什么目录，都从根定位选择或输入的目录路径
+>		dirpath = dirpath.startsWith("/")?dirpath:"/"+dirpath;
+>
+>		// 文件完整路径
+>		let fileFullPath = dirpath+file_title;
+>		// 移动文件到指定目录
+>		await tp.file.move(fileFullPath);
+>	
+>	}
+> 
+> 	// 生成笔记
+>	await createNoteFile(inputDir);
+> 
+> ```
+> 
 
 ###### 检测文件是否存在
 

@@ -7,7 +7,7 @@ tags:
   - Eclipse
   - dbeaver
 created: 2023-01-30 11:19:11
-modified: 2025-02-11 20:25:58
+modified: 2025-02-15 20:07:44
 ---
 
 # Java 笔记
@@ -612,6 +612,19 @@ DBeaver 插件版也独立安装版功能一致，具体信息可以参考 [DBea
 
 ![Dali Java Persistence Tools 1](./Java_Note.assets/Eclipse_Dali_Persistence_1.png)
 
+#### JBoss-Tools
+
+[JBoss](https://www.jboss.org) 出的一套 Java 开发的插件包。
+
+[JBoss-Tools](https://tools.jboss.org) 安装方式：
+1. 通过 [Marketplace](#Marketplace) 安装
+2. 也可以到 [官网](https://tools.jboss.org/downloads/) 下载插件包在本地安装。
+3. 添加安装 URL 来安装。
+> [!info] 
+> 
+> * 4.29.1： [https://download.jboss.org/jbosstools/photon/stable/updates/](https://download.jboss.org/jbosstools/photon/stable/updates/)
+> * 4.30.x：[https://download.jboss.org/jbosstools/photon/snapshots/updates/](https://download.jboss.org/jbosstools/photon/snapshots/updates/)
+
 ---
 
 ### Eclipse 各版本与 JDK 对应关系
@@ -814,9 +827,9 @@ public class Test05{
 
 使用的大致步骤：
 
-15. 先使用 `javac -g Test05.java` 来编译，如上述所讲的，如果不加 `-g` 来编译，使用 `javap` 时，将不会显示「局部变量表」的信息。
+4. 先使用 `javac -g Test05.java` 来编译，如上述所讲的，如果不加 `-g` 来编译，使用 `javap` 时，将不会显示「局部变量表」的信息。
 
-16. 使用 `javap -v Test05` 后显示的内容：
+5. 使用 `javap -v Test05` 后显示的内容：
 
 ```shell
 

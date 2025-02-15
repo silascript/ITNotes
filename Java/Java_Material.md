@@ -6,7 +6,7 @@ tags:
   - jdk
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-02-05 20:26:47
+modified: 2025-02-15 19:48:04
 ---
 
 # Java 资料清单
@@ -39,6 +39,12 @@ modified: 2025-02-05 20:26:47
 
 * [重载和重写的底层原理——虚拟机字节码执行引擎-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/2228945)
 * [从JVM字节码执行看重载和重写 - 冬日降临 - 博客园](https://www.cnblogs.com/winterfells/p/7923241.html)
+
+## Web
+
+### JBoss
+
+* [深入解析JBoss Tools：全方位开发工具集成的艺术-易源AI资讯](https://www.showapi.com/news/article/66bc25624ddd79f11a002aa2)
 
 ---
 

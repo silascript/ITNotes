@@ -1,6 +1,5 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - java
   - tomcat
@@ -11,6 +10,8 @@ tags:
   - web
   - javaweb
   - container
+created: 2023-08-18 19:44:52
+modified: 2025-02-15 11:30:09
 ---
 
 # Tomcat 笔记
@@ -25,9 +26,13 @@ tags:
 
 ## <span id="tomcat_versions">Tomcat 版本</span>
 
+### 兼容性
+
 Tomcat 版本与 Java 版本、Servlet 版本、JSP 版本等对应关系：[wichversion](https://tomcat.apache.org/whichversion.html) 。
 
-支持 Java8 最后一个版本是 10.0.* 版本。从 10.1.* 版本是要求 Java 11，而 Tomcat 11.0 版本要求 Java 17。 
+支持 [JDK8](../Java_Note.md#JDK8) 最后一个版本是 10.0.* 版本。
+
+从 10.1.* 版本是要求 [JDK11](../Java_Note.md#JDK11)，而 Tomcat 11.0 版本要求 [JDK17](../Java_Note.md#JDK17)。 
 
 ---
 

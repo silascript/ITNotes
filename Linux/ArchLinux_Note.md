@@ -8,7 +8,7 @@ tags:
   - ime
 date created: 2022-11-08 11:32
 created: 2023-08-18 19:44:52
-modified: 2024-12-13 10:33:56
+modified: 2025-02-12 21:04:06
 ---
 
 # ArchLinux 笔记
@@ -160,10 +160,11 @@ paru 是使用 [Rust语言](../Rust/Rust_Note.md) 编写的。
 
 * `pacman -Ss 字符串`：根据字符串在库中搜索相关软件包。
 * `pacman -Sl`：该软件库的软件清单。
-* `pacman -Qi 软件包`：查询该软件包的信息。
+* `pacman -Qi 软件包`：查看软件包的信息
 * `pacman -Ql 软件包`：列出已安装的软件包的文件列表，如安装目录什么的。
 * `pacman -Qs 软件包`：查询已安装的软件
 * `pacman -Qo /path/.../file`：查询文件系统中某个文件属于哪个软件包
+* `pacman -Si 软件包`：查看软件包的信息
 > [!example] 
 > 
 > ```shell

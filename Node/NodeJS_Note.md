@@ -7,7 +7,7 @@ tags:
   - fnm
   - npm
 created: 2023-08-19 23:06:10
-modified: 2025-02-18 03:41:40
+modified: 2025-02-18 04:17:46
 ---
 
 # NodeJS 笔记
@@ -27,6 +27,8 @@ modified: 2025-02-18 03:41:40
 ---
 
 ## <span id="node_insetings">安装和配置</span>
+
+### npm
 
 ### <span id="node_install">安装</span>
 
@@ -118,6 +120,23 @@ npm ERR!   dest: '/opt/NodeJS/node-v20/lib/node_modules/.corepack-o8GX3Rw6'
 > 
 > * [npm下载权限不足问题解决 - nobody阿欣 - 博客园](https://www.cnblogs.com/lixin-nobody/p/14051905.html)
 
+#### 配置环境变量
+
+示例：
+
+```shell
+NODE_HOME=/opt/NodeJS/node-v22
+NODE_PATH=$HOME/nodejs/node_global/bin
+PATH=$PATH:$NODE_PATH:$NODE_HOME/bin
+```
+
+> [!info] 
+> 
+> 1. `NODE_HOME` 是 Node 的安装根目录。
+> 2. `NODE_PATH` 是全局模块，就是上面 `npm config` 配置的 [全局目录](#配置全局目录及缓存目录) 下的 `bin` 目录
+> 3. 把上述两个变量加入 `PATH` 路径中，source 相关 `rc` 或 `profile`，或者重启电脑，让其生效，配置就完成了。
+> 
+
 ---
 
 ## 版本管理
@@ -196,6 +215,41 @@ fnm env --use-on-cd | Out-String | Invoke-Expression
 > 
 > * `~\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1`
 > * `~\Documents\PowerShell\Microsoft.PowerShell_profile.ps1` 
+
+#### 全局模块
+
+另外，如果要调全局模块，还是得配 `NODE_PATH` 的：
+
+```shell
+
+# nodejs
+# 根据不同版本自行修改路径
+# NODE_HOME=/opt/NodeJS/node-v20
+# NODE_HOME=/opt/NodeJS/node-v22
+NODE_PATH=$HOME/nodejs/node_global/bin
+# 使用fnm等版本管理工具就不用将nodejs安装目录放进PATH路径中了
+PATH=$PATH:$NODE_PATH
+# PATH=$PATH:$NODE_PATH:$NODE_HOME/bin
+
+# 使用fnm对Node进行版本管理
+eval "$(fnm env --use-on-cd)"
+```
+
+`whereis` 命令查看 `node` 及 `npm`[相关目录](#相关目录)：
+
+> [!info] 
+> 
+> ```shell
+> # silascript @ (base) in ~ [4:04:52] 
+> $ whereis npm
+> npm: /home/silascript/.local/share/fnm/node-versions/v22.13.1/installation/bin/npm /home/silascript/nodejs/node_global/bin/npm
+> 
+> # silascript @ (base) in ~ [4:04:59] 
+> $ whereis node
+> node: /home/silascript/.local/share/fnm/node-versions/v22.13.1/installation/bin/node
+>
+> ```
+> 可以看到，不用再配 `NODE_HOME` 了，不用把 node 的安装目录手动加进 `PATH` 路径，fnm 已经帮你完成这些配置。
 
 #### 相关目录
 

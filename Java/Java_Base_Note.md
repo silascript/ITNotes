@@ -3,8 +3,12 @@ aliases: []
 tags:
   - java
   - base
+  - collection
+  - list
+  - map
+  - set
 created: 2024-07-13 10:28:47
-modified: 2024-07-13 10:39:49
+modified: 2025-02-16 23:05:19
 ---
 
 # Java 基础笔记
@@ -16,6 +20,28 @@ modified: 2024-07-13 10:39:49
 > [!info] 相关资料
 > 
 > * [理解Java的强引用、软引用、弱引用和虚引用 - 掘金](https://juejin.cn/post/6844903665241686029)
+
+## 数组
+
+## 集合
+
+
+
+```mermaid
+
+
+
+
+```
+
+
+
+
+### List
+
+### Set
+
+### Map
 
 ---
 

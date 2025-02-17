@@ -4,7 +4,7 @@ tags:
   - PL
   - ruby
 created: 2023-08-18 19:44:52
-modified: 2024-09-12 20:51:28
+modified: 2025-02-17 21:00:51
 ---
 # Ruby 笔记
 
@@ -311,7 +311,7 @@ export RUBY_BUILD_HTTP_CLIENT=wget
 
 #### Frum
 
-[frum](https://github.com/tako8ki/frum) 是一款使用 [Rust](../Rust/Rust_Note.md) 写的 ruby 版本管理器。
+[frum](https://github.com/tako8ki/frum) 是一款使用 [Rust](../Rust/Rust_Note.md) 写的 ruby 版本管理器。与 [NodeJS](../Node/NodeJS_Note.md) 下的 [fnm](../Node/NodeJS_Note.md#fnm) 类似。
 
 ##### 安装及配置
 

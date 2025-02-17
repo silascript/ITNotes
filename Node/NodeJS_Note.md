@@ -3,8 +3,11 @@ aliases: []
 tags:
   - node
   - nodejs
+  - nvm
+  - fnm
+  - npm
 created: 2023-08-19 23:06:10
-modified: 2024-08-23 12:35:34
+modified: 2025-02-17 21:12:28
 ---
 
 # NodeJS 笔记
@@ -12,9 +15,15 @@ modified: 2024-08-23 12:35:34
 ---
 
 ## 目录
+
 * [安装和配置](#node_insetings)
     * [安装](#node_install)
     * [配置](#node_settings)
+* [版本管理](#版本管理)
+	* [nvm](#nvm)
+	* [fnm](#fnm)
+	* [nodenv](#nodenv)
+ 
 ---
 
 ## <span id="node_insetings">安装和配置</span>
@@ -73,11 +82,16 @@ Windows 下安装，可以下安装包，也可以下压缩包，解压后，手
 > 
 > 这里同样得注意淘宝的镜像过时问题。
 
-参考资料：
+参考资料：[NodeJS资料： Electron](NodeJS_Material.md#Electron)
 
-* [正确设置 ELECTRON_MIRROR](https://newsn.net/say/electron-mirror.html)
-* [Electron 环境配置 - 知乎](https://zhuanlan.zhihu.com/p/676814265)
-* [npm安装Electron项目失败报错问题和解决方法](https://blog.csdn.net/weixin_46525113/article/details/132299107)
+`.npmrc` 配置示例：
+
+```npmrc
+prefix=~/nodejs/node_global/
+cache=~/nodejs/node_cache/
+registry=https://registry.npmmirror.com
+ELECTRON_MIRROR=https://npmmirror.com/mirrors/electron/
+```
 
 #### 问题
 
@@ -106,6 +120,72 @@ npm ERR!   dest: '/opt/NodeJS/node-v20/lib/node_modules/.corepack-o8GX3Rw6'
 
 ---
 
+## 版本管理
+
+NodeJS 下有多款版本管理工具：
+
+* [nvm](#nvm)
+* [fnm](#fnm)
+* [nodenv](#nodenv)
+
+### nvm
+
+[nvm](https://github.com/nvm-sh/nvm) 是在 [Linux](../Linux/Linux_Note.md) 下使用 [Shell](../Linux/Shell/Shell_Note.md) 写一款 NodeJS 版本管理工具。
+
+> [!tip] 
+> 
+> Windows 版：[nvm-windows](https://github.com/coreybutler/nvm-windows)。
+
+### fnm
+
+[fnm](https://github.com/Schniz/fnm) 这是使用 [Rust](../Rust/Rust_Note.md) 写的 NodeJS 版本管理工具。跟 [Ruby](../Ruby/Ruby_Note.md) 那个 [Frum](../Ruby/Ruby_Note.md#Frum) 类似的东西。
+
+fnm 有两特点：
+1. 特点就是快
+2. 跨平台。不像 [nvm](#nvm) 是 [Linux](../Linux/Linux_Note.md) 的，后来为了适配 Windows 又另外弄出一个 [nvm-windows](https://github.com/coreybutler/nvm-windows)。
+
+![fnm screenshot](https://github.com/Schniz/fnm/raw/master/docs/fnm.svg)
+
+#### 安装
+
+[Linux](../Linux/Linux_Note.md) 下可以使用各自的包管理器安装。以 [ArchLinux](../Linux/ArchLinux_Note.md) 为例：
+
+```shell
+yay -S fnm
+```
+
+Windows 下推荐使用 [Scoop](../Scoop/Scoop_Note.md) 来安装：
+
+```powershell
+scoop install fnm
+```
+
+#### 常用参数及选项
+
+```shell
+list-remote  List all remote Node.js versions [aliases: ls-remote]
+list         List all locally installed Node.js versions [aliases: ls]
+install      Install a new Node.js version [aliases: i]
+use          Change Node.js version
+env          Print and set up required environment variables for fnm
+unalias      Remove an alias definition
+default      Set a version as the default version
+current      Print the current Node.js version
+uninstall    Uninstall a Node.js version [aliases: uni]
+
+```
+
+### nodenv
+
+[GitHub - nodenv/nodenv: Manage multiple NodeJS versions.](https://github.com/nodenv/nodenv) 这个同样是使用 [Shell](../Linuxl/Shell_Note.md) 写的。
+
+> [!info] 
+> 
+> 看名字，就知道跟 [Ruby](../Ruby/Ruby_Note.md) 那个 [rbenv](../Ruby/Ruby_Note.md#rbenv) 有所渊源。它确实是从 rbenv 分叉出来的 Node.js 的版本管理工具。
+
+---
+
 ## 相关笔记
 
+* [NodeJS资料](NodeJS_Material.md)
 * [NodeJS 视频清单](NodeJS_Videos.md)

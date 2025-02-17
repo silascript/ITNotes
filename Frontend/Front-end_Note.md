@@ -1,10 +1,10 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - front-end
-created: 2022-11-7 2:50:13
-modified: 2023-05-12 2:15:41
+  - 前端
+created: 2023-08-18 19:44:52
+modified: 2025-02-18 03:59:33
 ---
 # 前端笔记
 
@@ -18,5 +18,6 @@ modified: 2023-05-12 2:15:41
 
 ## 相关链接
 
+* [前端资料](Front-end_Material.md)
 * [前端教程视频清单](Front-end_Videos.md)
 

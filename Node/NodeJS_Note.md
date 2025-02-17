@@ -7,7 +7,7 @@ tags:
   - fnm
   - npm
 created: 2023-08-19 23:06:10
-modified: 2025-02-17 21:12:28
+modified: 2025-02-18 03:41:40
 ---
 
 # NodeJS 笔记
@@ -136,6 +136,8 @@ NodeJS 下有多款版本管理工具：
 > 
 > Windows 版：[nvm-windows](https://github.com/coreybutler/nvm-windows)。
 
+---
+
 ### fnm
 
 [fnm](https://github.com/Schniz/fnm) 这是使用 [Rust](../Rust/Rust_Note.md) 写的 NodeJS 版本管理工具。跟 [Ruby](../Ruby/Ruby_Note.md) 那个 [Frum](../Ruby/Ruby_Note.md#Frum) 类似的东西。
@@ -160,6 +162,82 @@ Windows 下推荐使用 [Scoop](../Scoop/Scoop_Note.md) 来安装：
 scoop install fnm
 ```
 
+#### 配置
+
+安装完了就可以使用 `fnm` 命令调用。但想要切换版本，就需要在相关配置文件中配置。
+
+> [!tip] 
+> 
+> 如果在 [切换版本](#切换版本) 时出现 `We can't find the necessary environment variables to replace the Node version.` 这个错误提示，并在终端中使用 `node` 命令时，是找不到这个命令的，就证明相关环境还没配置好。
+
+##### Linux  
+
+在 `.bashrc`、`.zshrc` 等配置文件中添加以下代码：
+
+```shell
+eval "$(fnm env --use-on-cd)"
+```
+
+> [!quote] 官方说明
+> 
+> [GitHub - Schniz/fnm: 🚀 Fast and simple Node.js version manager, built in Rust](https://github.com/Schniz/fnm?tab=readme-ov-file#shell-setup)
+
+##### Windows
+
+PowerShell，在 `Microsoft.PowerShell_profile.ps1` 中添加以下代码：
+
+```pwsh
+fnm env --use-on-cd | Out-String | Invoke-Expression
+```
+
+> [!info] 
+> 
+> 不同的 PowerShell 版本有不同目录：
+> 
+> * `~\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1`
+> * `~\Documents\PowerShell\Microsoft.PowerShell_profile.ps1` 
+
+#### 相关目录
+
+nodejs 版本安装在 `~/.local/share/fnm` 目录下的 `node-versions` 目录中：
+
+```shell
+$ ll .local/share/fnm 
+Permissions Size User       Group      Date Modified    Name
+drwxr-xr-x     - silascript silascript 2025-02-17 20:47 .
+drwx------     - silascript silascript 2025-02-17 23:20 ..
+drwxr-xr-x     - silascript silascript 2025-02-17 20:47 aliases
+drwxr-xr-x     - silascript silascript 2025-02-17 20:47 node-versions
+
+```
+
+已安装的版本存放在 `node-versions` 目录下，以其版本号为目录名的子目录中：
+
+```shell
+# silascript @ (base) in ~ [3:30:52] 
+$ ll .local/share/fnm/node-versions 
+Permissions Size User       Group      Date Modified    Name
+drwxr-xr-x     - silascript silascript 2025-02-18 03:06 .
+drwxr-xr-x     - silascript silascript 2025-02-17 20:47 ..
+drwxr-xr-x     - silascript silascript 2025-02-18 03:06 .downloads
+drwxr-xr-x     - silascript silascript 2025-02-18 02:54 v22.13.1
+drwxr-xr-x     - silascript silascript 2025-02-18 03:06 v23.8.0
+
+# silascript @ (base) in ~ [3:34:00] 
+$ ll .local/share/fnm/node-versions/v22.13.1/installation 
+Permissions Size User       Group      Date Modified    Name
+drwxr-xr-x     - silascript silascript 2025-02-18 02:54 .
+drwxr-xr-x     - silascript silascript 2025-02-18 02:54 ..
+drwxr-xr-x     - silascript silascript 2025-02-18 02:54 bin
+.rw-r--r--  454k silascript silascript 2025-01-21 08:55 CHANGELOG.md
+drwxr-xr-x     - silascript silascript 2025-02-18 02:54 include
+drwxr-xr-x     - silascript silascript 2025-02-18 02:54 lib
+.rw-r--r--  140k silascript silascript 2025-01-21 08:55 LICENSE
+.rw-r--r--   40k silascript silascript 2025-01-21 08:55 README.md
+drwxr-xr-x     - silascript silascript 2025-02-18 02:53 share
+
+```
+
 #### 常用参数及选项
 
 ```shell
@@ -174,6 +252,119 @@ current      Print the current Node.js version
 uninstall    Uninstall a Node.js version [aliases: uni]
 
 ```
+
+##### 使用示例
+
+###### 列出可安装的版本
+
+```shell
+list-remote
+```
+
+或
+
+```shell
+ls-remote
+```
+
+如果是 LTS 版本，版本号后会有「代号名」：
+
+```shell
+v22.11.0 (Jod)
+v22.12.0 (Jod)
+v22.13.0 (Jod)
+v22.13.1 (Jod)
+v22.14.0 (Jod)
+v23.0.0
+v23.1.0
+v23.2.0
+v23.3.0
+v23.4.0
+v23.5.0
+v23.6.0
+v23.6.1
+v23.7.0
+v23.8.0
+```
+
+###### 列出已装的版本
+
+```shell
+list
+```
+
+```shell
+$ fnm list           
+* v22.13.1 default
+* system
+```
+
+> [!info]
+> 
+> #默认版本
+> 
+> 版本号后的 `default` 是默认版本，无论使用 `fnm use` 命令 [切换](#切换版本) 到什么版本，有 `default` 标识的就是默认版本
+
+###### 列出当前版本
+
+使用 `fnm current` 命令就能显示当前的版本了。
+
+示例：
+
+```shell
+$ fnm current
+v23.8.0
+```
+
+###### 安装
+
+```shell
+fnm install 版本号
+```
+
+![fnm install screenshot |1200x193](./NodeJS_Note.assets/fnm_install.png)
+
+###### 切换版本
+
+```shell
+fnm use 版本号
+```
+
+```shell
+
+$ fnm use 23.8.0
+Using Node v23.8.0
+
+```
+切换成功后，使用 `list` 命令 [列出已装的版本](#列出已装的版本)，高亮的版本既是当前版本：
+```shell
+$ fnm list      
+* v22.13.1 default
+* v23.8.0
+* system
+
+```
+
+###### 切换默认版本
+
+```shell
+fnm default 版本号
+```
+
+示例：
+
+```shell
+# silascript @ (base) in ~ [3:27:10] 
+$ fnm default 23.8.0
+
+# silascript @ (base) in ~ [3:27:19] 
+$ fnm list          
+* v22.13.1
+* v23.8.0 default
+* system
+```
+
+---
 
 ### nodenv
 

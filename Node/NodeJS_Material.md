@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2025-02-17 01:53:10
-modified: 2025-02-17 21:09:15
+modified: 2025-02-18 03:52:53
 ---
 
 # NodeJS 资料清单
@@ -16,8 +16,17 @@ modified: 2025-02-17 21:09:15
 ## 版本管理
 
 * [Nodejs 常见版本管理工具（nvm、n、fnm、nvs、nodenv）-阿里云开发者社区](https://developer.aliyun.com/article/1293862)
+
+### fnm
+
+* [fnm configuration document](https://github.com/Schniz/fnm/blob/master/docs/configuration.md)
+
 * [fnm vs nvm：选择最合适的 Node 版本管理器在管理多个 Node.js 项目（每个项目都可能需要不同的 No - 掘金](https://juejin.cn/post/7433738421472231434)
 * [nvm替代者——fnm - 玖亖伍](https://gsw945.com/index.php/archives/69/)
+* [【折磨自己】记fnm版本管理工具的使用 - 资源荟萃 - LINUX DO](https://linux.do/t/topic/93048)
+* [fnm，好用的nodejs版本管理工具](https://www.kelen.cc/posts/fnm)
+* [再见 nvm，改用 fnm 了 - 哔哩哔哩](https://www.bilibili.com/opus/756431229515989029)
+* [命令行工具 \| 冰可乐的前端笔记](https://note.bingkele.cc/workflow/terminal/toolkit#%E6%96%B9%E6%A1%88%E4%B8%80-%E9%85%8D%E7%BD%AE%E7%BB%9F%E4%B8%80%E7%9A%84%E5%85%A8%E5%B1%80%E6%A8%A1%E5%9D%97%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84)
 
 ### Electron
 

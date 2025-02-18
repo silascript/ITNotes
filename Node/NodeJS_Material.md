@@ -6,12 +6,16 @@ tags:
   - material
   - list
 created: 2025-02-17 01:53:10
-modified: 2025-02-18 03:52:53
+modified: 2025-02-18 18:14:03
 ---
 
 # NodeJS 资料清单
 
 ---
+
+## npm
+
+* [npm知识（三）— npx、npm包全局安装和局部安装,执行包命令有什么不同、使用nvm后包位置改变 · Issue #28 · LightXJ/blog](https://github.com/LightXJ/blog/issues/28)
 
 ## 版本管理
 

@@ -7,7 +7,7 @@ tags:
   - fnm
   - npm
 created: 2023-08-19 23:06:10
-modified: 2025-02-18 04:17:46
+modified: 2025-02-18 18:28:44
 ---
 
 # NodeJS 笔记
@@ -139,6 +139,20 @@ PATH=$PATH:$NODE_PATH:$NODE_HOME/bin
 
 ---
 
+## 版本
+
+Node 的版本是有发布计划的：[Node.js Release Working Group](https://github.com/nodejs/release#release-schedule)。
+
+### LTS
+
+「偶数版本」都是 LTS 版，或者将是 LTS 版，其生命周期是 3 年，并且这些版本都有代码名称（codename）。
+
+### 非 LTS
+
+非 LTS 版本生命周期一般只有半年，带有实验性质。
+
+---
+
 ## 版本管理
 
 NodeJS 下有多款版本管理工具：
@@ -223,16 +237,21 @@ fnm env --use-on-cd | Out-String | Invoke-Expression
 ```shell
 
 # nodejs
+# 使用fnm对Node进行版本管理
+eval "$(fnm env --use-on-cd)"
+
+# nodejs
 # 根据不同版本自行修改路径
 # NODE_HOME=/opt/NodeJS/node-v20
 # NODE_HOME=/opt/NodeJS/node-v22
+
+# 全局模块目录
 NODE_PATH=$HOME/nodejs/node_global/bin
 # 使用fnm等版本管理工具就不用将nodejs安装目录放进PATH路径中了
-PATH=$PATH:$NODE_PATH
+# 防止node安装目录中的npm放在PATH前面，所以将NODE_PATH加在原有PATH之前
+PATH=$NODE_PATH:$PATH
 # PATH=$PATH:$NODE_PATH:$NODE_HOME/bin
 
-# 使用fnm对Node进行版本管理
-eval "$(fnm env --use-on-cd)"
 ```
 
 `whereis` 命令查看 `node` 及 `npm`[相关目录](#相关目录)：
@@ -242,7 +261,7 @@ eval "$(fnm env --use-on-cd)"
 > ```shell
 > # silascript @ (base) in ~ [4:04:52] 
 > $ whereis npm
-> npm: /home/silascript/.local/share/fnm/node-versions/v22.13.1/installation/bin/npm /home/silascript/nodejs/node_global/bin/npm
+npm: /home/silascript/nodejs/node_global/bin/npm /home/silascript/.local/share/fnm/node-versions/v22.13.1/installation/bin/npm
 > 
 > # silascript @ (base) in ~ [4:04:59] 
 > $ whereis node
@@ -250,6 +269,10 @@ eval "$(fnm env --use-on-cd)"
 >
 > ```
 > 可以看到，不用再配 `NODE_HOME` 了，不用把 node 的安装目录手动加进 `PATH` 路径，fnm 已经帮你完成这些配置。
+>
+>> [!important] 
+>> 
+>> 注意一点，[全局模块](#全局模块)中的`npm`应保证其在node安装目录中那个自带的`npm`之前，因为[全局模块](#全局模块)的`npm`版本更新，而且能随时更新。
 
 #### 相关目录
 
@@ -321,7 +344,7 @@ list-remote
 ls-remote
 ```
 
-如果是 LTS 版本，版本号后会有「代号名」：
+如果是 [LTS](#LTS) 版本，版本号后会有「代号名」：
 
 ```shell
 v22.11.0 (Jod)
@@ -344,8 +367,10 @@ v23.8.0
 ###### 列出已装的版本
 
 ```shell
-list
+fnm list
 ```
+
+示例：
 
 ```shell
 $ fnm list           
@@ -378,19 +403,33 @@ fnm install 版本号
 
 ![fnm install screenshot |1200x193](./NodeJS_Note.assets/fnm_install.png)
 
+安装时还能指定安装源：
+
+```shell
+fnm install 版本号 --node-dist-mirror=https://npmmirror.com/mirrors/node
+```
+
+安装最新的 [LTS](#LTS) 版本：
+
+```shell
+fnm install --lts
+```
+
 ###### 切换版本
 
 ```shell
 fnm use 版本号
 ```
 
-```shell
+示例：
 
+```shell
 $ fnm use 23.8.0
 Using Node v23.8.0
-
 ```
+
 切换成功后，使用 `list` 命令 [列出已装的版本](#列出已装的版本)，高亮的版本既是当前版本：
+
 ```shell
 $ fnm list      
 * v22.13.1 default
@@ -416,6 +455,12 @@ $ fnm list
 * v22.13.1
 * v23.8.0 default
 * system
+```
+
+###### 卸载版本
+
+```shell
+fnm uninstall 版本号
 ```
 
 ---

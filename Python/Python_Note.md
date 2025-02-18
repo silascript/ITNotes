@@ -7,7 +7,7 @@ tags:
   - pipx
   - conda
 created: 2023-08-18 19:44:52
-modified: 2024-12-13 02:49:32
+modified: 2025-02-18 21:46:55
 ---
 
 # Python 笔记
@@ -976,6 +976,10 @@ pipx                      1.2.1              pyhd8ed1ab_0    conda-forge
 > 3. 如果使用 `python -m pip install --user pipx` 命令安装，该环境下使用 `conda list` 是没有 pipx 的，只能在 `pip list` 查看到。
 > 
 > **推荐使用 `conda install pipx` 方式安装 pipx**。
+
+> [!important] 
+> 
+> 如果 conda 某环境更新 python 版本，那 pipx 最好使用 `pipx reinstall-all` 命令重新安装相应的模块，不然进行 `pipx upgrade-all` 时会报 `FileNotFoundError: [Errno 2] No such file or directory` 类似的错误。
 
 ### 安装模块
 

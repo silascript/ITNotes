@@ -7,7 +7,7 @@ tags:
   - Eclipse
   - dbeaver
 created: 2023-01-30 11:19:11
-modified: 2025-02-16 22:00:29
+modified: 2025-02-18 21:24:52
 ---
 
 # Java 笔记
@@ -24,7 +24,7 @@ modified: 2025-02-16 22:00:29
 	* [Eclipse相关](#java_eclipse)
 * [SDKMan](#java_sdkman)
 * [IO 相关](#java_io)
-* [Lambda 相关](#java_lambda)
+* [函数编程相关](#java_functaional)
 
 ---
 
@@ -789,9 +789,9 @@ sudo chmod -R 755 tomcat-9.0.62
 
 ---
 
-## <span id="java_lambda">Lambda 相关</span>
+## <span id="java_functional">Lambda 相关</span>
 
-### <span id="java_lambda_functionalinterface">函数式接口</span>
+[Java 函数式编程](Java_Funcational_Note.md)
 
 ---
 

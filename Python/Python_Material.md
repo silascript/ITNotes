@@ -7,7 +7,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2024-12-13 02:37:08
+modified: 2025-02-18 21:47:53
 ---
 
 # Python 资料清单
@@ -22,6 +22,7 @@ modified: 2024-12-13 02:37:08
 
 * [Pipx：在隔离环境中安装和运行 Python 应用 - 知乎](https://zhuanlan.zhihu.com/p/73675447)
 * [在 Linux 中安装和使用 pipx - 知乎](https://zhuanlan.zhihu.com/p/637791135)
+* [Pipx和改变系统Python版本时的一个问题我在我的工作笔记本上使用pipx - 掘金](https://juejin.cn/post/7166487638784868389)
 
 ---
 

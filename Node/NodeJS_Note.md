@@ -7,7 +7,7 @@ tags:
   - fnm
   - npm
 created: 2023-08-19 23:06:10
-modified: 2025-02-18 18:28:44
+modified: 2025-02-18 18:52:39
 ---
 
 # NodeJS 笔记
@@ -368,6 +368,12 @@ v23.8.0
 
 ```shell
 fnm list
+```
+
+或者：
+
+```shell
+fnm ls
 ```
 
 示例：

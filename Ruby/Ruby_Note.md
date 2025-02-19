@@ -3,9 +3,11 @@ aliases: []
 tags:
   - PL
   - ruby
+  - gem
 created: 2023-08-18 19:44:52
-modified: 2025-02-17 21:00:51
+modified: 2025-02-19 20:51:41
 ---
+
 # Ruby 笔记
 
 ---
@@ -381,32 +383,88 @@ frum 有个配置目录，默认是在 `~/.frum`，可以使用 `echo $FRUM_DIR`
 
 ## <span id="ruby_gem">Gem</span>
 
+Gem 是 Ruby 模块的包管理器，类似于 [Python](../Python/Python_Note.md) 中的 [pip](../Python/Python_Note.md#pip)。
+
 ### <span id="ruby_gem_chsources">换源</span>
 
 使用 [RubyGems 镜像](https://gems.ruby-china.com/) 来替换官方的源。
 
-查看当前源：
+#### 查看当前源
 
 ```shell
 gem sources -l
 ```
 
-删除原来的源：
+#### 删除原来的源
 
 ```shell
 gem source -r https://rubygems.org/
 ```
 
-添加新源：
+#### 添加新源
 
 ```shell
 gem source -r https://gems.ruby-china.com/
 ```
 
-可以一行代码完成：
+> [!info] 
+> 
+> 可以一行代码完成：
+> 
+>```shell
+> gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/
+>```
+
+### <span id="ruby_gem_commands">常用命令</span>
+
+gem 命令用于构建、上传、下载及安装 Gem 包。
+
+#### 安装
 
 ```shell
-gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/
+gem install 包名
+```
+
+#### 卸载
+
+```shell
+gem uninstall 包名
+```
+
+#### 列出
+
+##### 列出已安装的 gem
+
+```shell
+gem list --local
+```
+
+##### 列出可用的 gem
+
+```shell
+gem list --remote
+```
+
+#### 搜索
+
+```shell
+gem search xxx --remote
+```
+
+#### 下载
+
+下载一个 gem，但不安装：
+
+```shell
+gem fetch xxx
+```
+
+#### 更新
+
+更新 RubyGems：
+
+```shell
+gem update --system
 ```
 
 ---

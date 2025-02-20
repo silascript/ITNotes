@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-22 01:36:41
-modified: 2024-09-09 19:36:12
+modified: 2025-02-21 03:15:34
 ---
 
 # Docker 资料清单
@@ -48,6 +48,7 @@ modified: 2024-09-09 19:36:12
 * [快速修改PHP镜像中的php.ini并生效 - wuuconix's blog](https://wuuconix.link/2021/09/04/php-ini/)
 * [haveyb/php](https://hub.docker.com/r/haveyb/php)
 * [PHP 8.0 is here! How to turn on JIT compiling - DEV Community](https://dev.to/tugboatqa/php-8-0-is-almost-here-how-to-turn-on-jit-compiling-1l6l)
+* [docker如何升级php \| PingCode智库](https://docs.pingcode.com/baike/3472543)
 
 ## Docker Compose
 

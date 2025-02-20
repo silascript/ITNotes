@@ -6,7 +6,7 @@ tags:
   - jdk
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-02-15 19:48:04
+modified: 2025-02-20 18:17:47
 ---
 
 # Java 资料清单
@@ -45,6 +45,10 @@ modified: 2025-02-15 19:48:04
 ### JBoss
 
 * [深入解析JBoss Tools：全方位开发工具集成的艺术-易源AI资讯](https://www.showapi.com/news/article/66bc25624ddd79f11a002aa2)
+
+## 学习规划
+
+* [【2025最新】Java自学路线一条龙版，就学这些，多一点都不学](https://www.bilibili.com/video/BV17oNoefERw)
 
 ---
 

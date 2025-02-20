@@ -4,8 +4,9 @@ tags:
   - linux
   - debian
 created: 2023-08-18 19:44:52
-modified: 2025-01-26 11:39:13
+modified: 2025-02-21 04:26:02
 ---
+
 # Debian 笔记
 
 ---
@@ -149,9 +150,12 @@ deb http://mirrors.ustc.edu.cn/debian-security/ stable-security main non-free co
 
 装完，使用 `mkpasswk --help` 来测试下，`mkpasswd` 是不是已经能用了！
 
-## <span id="debian_links">相关连接<span>
+---
+
+## <span id="debian_links">相关连接</span>
 
 * [Linux笔记](Linux_Note.md)
+* [Linux资料](Linux_Material.md)
 * [Ubuntu笔记](Ubuntu_Note.md)
 * [ArchLinux笔记](ArchLinux_Note.md)
 * [Fedora笔记](Fedora_Note.md)

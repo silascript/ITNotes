@@ -2,10 +2,12 @@
 aliases: []
 tags:
   - php
+  - xdebug
+  - composer
   - material
   - list
 created: 2024-09-07 22:23:16
-modified: 2024-09-12 03:29:30
+modified: 2025-02-21 04:12:43
 ---
 
 # PHP 资料清单
@@ -19,6 +21,12 @@ modified: 2024-09-12 03:29:30
 ## 历史及版本
 
 * [PHP5-8各版本特性详解汇总 PHP5.1： autoload PDO MySQLi 类型约束 PHP5.2： JSO - 掘金](https://juejin.cn/post/7408747421281091620)
+
+## 安装和升级
+
+* [升级 PHP \| Pterodactyl-China](https://pterodactyl.top/guides/php_upgrade.html#%E5%AE%89%E8%A3%85-php)
+* [如何在 Ubuntu 和 Debian 上安装升级 PHP 8.3 \| 日思录](https://www.tubring.cn/articles/php-83-install-upgrade-on-debian-ubuntu)
+* [How to Install PHP 8.3 on Debian 12, 11 or 10](https://linuxcapable.com/how-to-install-php-8-3-on-debian-linux/)
 
 ## 配置
 

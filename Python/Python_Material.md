@@ -7,12 +7,16 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2025-02-18 21:47:53
+modified: 2025-02-20 18:50:47
 ---
 
 # Python 资料清单
 
 ---
+
+## 基础
+
+* [如何在 Ubuntu 24.04 LTS 中安装 Python 3.12 或指定版本](https://www.sysgeek.cn/install-python-ubuntu/)
 
 ## pip
 

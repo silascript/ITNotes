@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-10 03:06:48
-modified: 2025-02-05 11:44:16
+modified: 2025-02-21 04:24:12
 ---
 
 # Linux 资料清单
@@ -105,6 +105,14 @@ modified: 2025-02-05 11:44:16
 ## Linux 软件清单
 
  * [Awesome-Linux-Software-zh](https://github.com/zhiiwg/Awesome-Linux-Software-zh_CN?tab=readme-ov-file#%E9%9F%B3%E9%A2%91)
+
+---
+
+## Debian 系
+
+* [在 Debian 上添加 PPA 并安装软件包](https://blog.skk.moe/post/add-ppa-to-debian/)
+* [添加PPA](https://juejin.cn/post/7110145821185671204)
+* [Ubuntu 中的 PPA 终极指南 - 兔子教程](https://www.11343.com/6183.html)
 
 ---
 

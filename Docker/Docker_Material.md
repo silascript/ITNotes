@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-22 01:36:41
-modified: 2025-02-21 03:15:34
+modified: 2025-02-22 04:22:21
 ---
 
 # Docker 资料清单
@@ -49,6 +49,10 @@ modified: 2025-02-21 03:15:34
 * [haveyb/php](https://hub.docker.com/r/haveyb/php)
 * [PHP 8.0 is here! How to turn on JIT compiling - DEV Community](https://dev.to/tugboatqa/php-8-0-is-almost-here-how-to-turn-on-jit-compiling-1l6l)
 * [docker如何升级php \| PingCode智库](https://docs.pingcode.com/baike/3472543)
+
+### 问题
+
+* [docker +nginx环境下php文件无法识别File not found. - OSCHINA - 中文开源技术交流社区](https://my.oschina.net/boringblue/blog/5474892)
 
 ## Docker Compose
 

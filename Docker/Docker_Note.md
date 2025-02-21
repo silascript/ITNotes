@@ -8,7 +8,7 @@ tags:
   - ubuntu
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2024-08-22 01:40:16
+modified: 2025-02-21 04:34:54
 ---
 
 # Docker 笔记
@@ -1323,6 +1323,27 @@ function docker_ports_allcontainers(){
 	docker inspect --format='{{.Name}} - {{range $conf := .HostConfig.PortBindings}}{{(index $conf 0).HostPort}} {{end}}' $(docker ps -aq)
 }
 ```
+
+> [!info] 
+> 
+> 查询 [容器](#容器) 已用的 ip 及端口效果如下：
+>
+>```shell
+> # silascript @ (base) in ~ [4:31:22] 
+> $ docker_ipv4_allcontainers 
+> /d_php83: 172.21.0.30
+> /d_mysql80: 172.21.0.20
+> /d_nginx: 172.21.0.31
+> /d_debian12: 172.21.0.10
+>
+> # silascript @ (base) in ~ [4:31:30] 
+> $ docker_ports_allcontainers 
+> /d_php83: 9000 
+> /d_mysql80: 3356 
+> /d_nginx: 8899 
+> /d_debian12: 2225 
+>
+>```
 
 ---
 

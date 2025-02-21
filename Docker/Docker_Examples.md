@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2024-09-10 12:45:54
+modified: 2025-02-22 04:51:05
 ---
 
 # Docker 示例
@@ -27,13 +27,22 @@ docker run -d --name d_nginx -p 8899:80 nginx:stable
 > 
 > 在执行以下操作前，应先 run 一个没有挂载目录的 nginx，然后将 default.conf 和 nginx.conf 这两个配置文件复制到宿主机目录中。  
 > 复制容器中的文件使用 `docker cp` 命令，语法：`docker cp 容器名称: 容器中文件路径 宿主机存放路径`  。
->> [!Example] 示例：
+> 
+>> [!Example] 
+>> 
+>> 复制配置目录及文件：
+>> 
 >> ```shell
 >> docker cp d_nginx:/etc/nginx/conf.d Docker_Mount/nginx_m/etc/conf.d/
 >> docker cp d_nginx:/etc/nginx/nginx.conf Docker_Mount/nginx_m/etc
+>>```
 >>
->>```shell
-docker run --name d_nginx -d -p 8899:80 -v /home/silascript/Docker_Mount/nginx_m/etc/conf.d:/etc/nginx/conf.d -v /home/silascript/Docker_Mount/nginx_m/html:/usr/share/nginx/html -v /home/silascript/Docker_Mount/nginx_m/log:/var/log/ngixn nginx:stable
+>>复制配置成功后，就可以 [停止容器](Docker_Note.md#停止容器)，然后 [删除容器](Docker_Note.md#删除容器)。
+>>
+>> 重新 run 个容器：
+>> 
+>> ```shell
+>> docker run --name d_nginx -d -p 8899:80 -v /home/silascript/Docker_Mount/nginx_m/etc/conf.d:/etc/nginx/conf.d -v /home/silascript/Docker_Mount/nginx_m/html:/usr/share/nginx/html -v /home/silascript/Docker_Mount/nginx_m/log:/var/log/ngixn nginx:stable
 >> ```
 >
 > `/etc/nginx/conf.d` 这是个目录，这个目录下有一个 `default.conf`。
@@ -73,15 +82,38 @@ server {
     }
 ```
 
-而如果是导入到 `nginx.conf` 的方式，即导入 `conf.d` 目录中的配置，在 `nginx.conf` 文件的 `server` 节点中使用 `include /etc/nginx/conf.d/*.conf;`。而在 `conf.d` 目录中众多配置文件，又以 `default.conf` 文件的优先级更高。  
+而如果是导入到 `nginx.conf` 的方式，即导入 `conf.d` 目录中的配置，在 `nginx.conf` 文件的 `server` 节点中使用 `include /etc/nginx/conf.d/*.conf;`。
 
-如果要使用 `default.conf` 配置文件，最好先把 `default.conf` 「backup」下，因为 `conf.d/default.conf` 这个文件，实际只是 nginx 配置文件的模板文件，一般来说不会动到这个文件，而如果真要用到这文件作配置文件，还是先备份下好点。
+而在 ` /etc/nginx/conf.d​` 目录下，众多配置文件中，那个 `default.conf`​ 文件，可以看成是一个「模板文件」， ​这个配置文件，如果不用的话，应该将其「备份」成另外的后缀名文件，防止干扰正常的配置。
+
+如我个人配置与 [PHP容器 ](#示例%202%20：PHP) 通信时，会在 `confi.d` 目录单独开一份配置，而 `default.conf` 这个文件就将其后缀名更改为 `backup`，防止对其他配置干扰 -- 因为在上一级目录那个 `nginx.conf` 核心配置文件中 `include` 这个目录下所有子配置文件时，`default.conf` 的配置可能与自定义的其他配置产生冲突，最典型的就是解析 php 文件时，没有解析 php 文件，而是「下载 php 文件」的错误。
+
+```shell
+# silascript @ (base) in ~/Docker_Mount/nginx_m/etc/conf.d [4:34:38] 
+$ ll
+Permissions Size User       Group      Date Modified    Name
+drwxr-xr-x     - silascript silascript 2025-02-22 04:34 .
+drwxr-xr-x     - silascript silascript 2025-02-22 04:28 ..
+.rw-r--r--  1.1k silascript silascript 2025-02-22 04:28 default.conf.backup
+.rw-r--r--  1.4k silascript silascript 2025-02-22 04:34 php.conf
+
+```
 
 指定自定义网桥和 ip 生成容器：
 
 ```shell
 docker run -itd --name d_nginx --network 网桥名 --ip 172.20.0.9 -p 8899:80 -v /home/silascript/Docker_Mount/nginx_m/etc/conf.d:/etc/nginx/conf.d -v /home/silascript/DevWorkSpace/PHPExercise:/usr/share/nginx/html -v /home/silascript/Docker_Mount/nginx_m/log:/var/log/ngixn nginx:stable
 ```
+
+多挂载个 log 目录，容器中的路径为：`/var/log/nginx`：
+
+```shell
+docker run -itd --name d_nginx --network mybridge --ip 172.21.0.31 -p 8899:80 -v /home/silascript/Docker_Mount/nginx_m/etc/nginx.conf:/etc/nginx/nginx.conf -v /home/silascript/Docker_Mount/nginx_m/etc/conf.d:/etc/nginx/conf.d -v /home/silascript/Docker_Mount/nginx_m/log:/var/nginx -v /home/silascript/DevWorkSpace/PHPExercise:/usr/share/nginx/html nginx:1.27.4
+```
+
+> [!info] 
+> 
+> `-v /home/silascript/Docker_Mount/nginx_m/log:/var/nginx` log 目录挂载，可以宿主目录可以不用预先创建 `log` 目录，[Docker](Docker_Note.md) 挂载时，如果要挂载的宿主目录不存在，会自动创建相应目录再挂载。
 
 ---
 
@@ -98,8 +130,7 @@ docker run --name php81 -p 9000:9000 -v /home/silascript/Docker_Mount/nginx_m/ht
 docker inspect php81 |grep '"IPAddress"'
 ```
 
-检测 PHP-FPM 是否开启：
-使用 `docker exec` 命令进入 PHP 容器，执行以下命令：
+检测 PHP-FPM 是否开启， 使用 `docker exec` 命令进入 PHP 容器，执行以下命令：
 
 ```shell
 ps -ef|grep php

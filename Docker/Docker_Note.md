@@ -8,7 +8,7 @@ tags:
   - ubuntu
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2025-02-22 11:46:34
+modified: 2025-02-23 02:00:58
 ---
 
 # Docker 笔记
@@ -1197,7 +1197,7 @@ docker network disconnect 网络名
 
 * 查询网络的详细信息：
 ```shell
-docker network inspect 网络名
+docker network inspect 网桥名
 ```
 > [!info]
 > 

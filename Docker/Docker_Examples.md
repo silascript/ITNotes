@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2025-02-22 21:46:03
+modified: 2025-02-23 02:11:15
 ---
 
 # Docker 示例
@@ -695,7 +695,7 @@ mysql 与其他镜像区别的是，mysql 的数据目录，使用了「**bing m
 如生成一个什么目录都不挂载的 mysql 容器：
 
 ```shell
-docker run -d --name d_mysql8 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql:8.0.28-debian
+docker run -d --name d_mysql80 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql:8.0.28-debian
 ```
 
 通过 `docker volume ls` 命令可以看到一个 「**匿名挂载**」的 volume：
@@ -715,7 +715,7 @@ Docker MySQL 挂载方案：
 大概步骤：
 1. 创建一个「临时」容器。
 ```shell
-docker run -d --name d_mysql8 -e MYSQL_ROOT_PASSWORD=123456 mysql:8.0.28-debian
+docker run -d --name d_mysql80 -e MYSQL_ROOT_PASSWORD=123456 mysql:8.0.28-debian
 ```
 
 2. 将容器中 `/etc/mysql` 目录复制到宿主指定的目录
@@ -733,7 +733,7 @@ docker cp d_mysql80:/etc/mysql /home/silascript/Docker_Mount/mysql_m/config
 3. [停止容器](Docker_Note.md#dk_container_stop) 和 [删除容器](Docker_Note.md#dk_container_delete) 并 [清理volume](Docker_Note.md#清理无主%20volume)。
 4. 新建一个指定挂载宿主机路径的 MySQL 容器
 ```shell
-docker run -d --name d_mysql8 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/mysql8_m/config:/etc/mysql -v /home/silascript/Docker_Mount/mysql8_m/data:/var/lib/mysql mysql:8.0.28-debian
+docker run -d --name d_mysql80 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/mysql8_m/config:/etc/mysql -v /home/silascript/Docker_Mount/mysql8_m/data:/var/lib/mysql mysql:8.0.28-debian
 ```
 > [!info]
 > 
@@ -783,13 +783,14 @@ performance_schema = off
 > 内存占用优化挺明显的。  
 > `performan_schema` 关不关可根据需要。这货是 5.7 及以上版本才默认开启的。
 
----
-
-MySQL 其他设置及操作请参考：
-
-* [MySQL笔记](../DataBase/mysql/MySQL_Note.md)
-* [MySQL常用操作](../DataBase/mysql/MySQL常用操作.md)
-* [Linux下安装MySQL](../DataBase/mysql/Linux下安装MySQL.md)
+> [!info] 
+> 
+> MySQL 其他设置及操作请参考：
+>
+> * [MySQL笔记](../DataBase/mysql/MySQL_Note.md)
+> * [MySQL配置笔记](../DataBase/mysql/MySQL_Config_Note.md)
+> * [MySQL常用操作](../DataBase/mysql/MySQL常用操作.md)
+> * [Linux下安装MySQL](../DataBase/mysql/Linux下安装MySQL.md)
 
 ---
 

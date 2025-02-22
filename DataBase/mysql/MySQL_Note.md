@@ -5,7 +5,7 @@ tags:
   - db
   - mysql
 created: 2023-01-30 11:19:11
-modified: 2025-02-22 20:24:50
+modified: 2025-02-23 02:10:08
 ---
 
 # MySQL 笔记
@@ -116,5 +116,6 @@ LTS 版本将遵循 [Oracle 终身支持政策](https://link.zhihu.com/?target=
 * [MySQL资料](MySQL_Material.md)
 * [Linux 下安装 MySQL](Linux下安装MySQL.md)
 * [MySQL常用操作](MySQL常用操作.md)
+* [MySQL配置笔记](MySQL_Config_Note.md)
 * [Docker 安装 MySQL](../../Docker/Docker_Note.md#dk_softc_demo_mysql)
 * [MySQL 视频清单](MySQL_Videos.md)

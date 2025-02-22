@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2025-02-23 02:11:15
+modified: 2025-02-23 03:34:57
 ---
 
 # Docker 示例
@@ -729,17 +729,23 @@ docker cp d_mysql80:/etc/mysql /home/silascript/Docker_Mount/mysql_m/config
 > 
 > 这个目录是未来在正式 [MySQL](../DataBase/mysql/MySQL_Note.md) 容器 `run` 时要挂载的宿主目录。
 > 
+> 但是后续正式 `run` MySQL 容器时，我们的 run 命令中的挂载是这么写的 `-v /home/silascript/Docker_Mount/mysql_m/config:/etc/mysql`，就是将宿主机的 `config` 目录与容器中的 `/etc/mysql` 目录「绑定」，而容器原本那些配置文件是在 `/etc/mysql` 目录下，之前 `cp` 时，是将整个 `/etc/mysql` 目录都复制到 `config` 目录下的，如果还是使用 `-v /home/silascript/Docker_Mount/mysql_m/config:/etc/mysql` 这种写法，那正式容器中的配置文件目录路径就会出现 `/etc/mysql/mysql` 这种「奇葩」现象，这就会使配置文件生效，所以有两种处理方式：
+>
+> 1. 改挂载命令，将原有的命令改成 `-v /home/silascript/Docker_Mount/mysql_m/config/mysql:/etc/mysql`，就是将 `config` 下的 `mysql` 目录与容器中 `/etc/mysql` 目录「绑定」
+> 2. 把已 `cp` 到宿主机 `config` 目录下的 `mysql` 目录中的所有配置文件都复制到 `config` 目录下
+> 
 
-3. [停止容器](Docker_Note.md#dk_container_stop) 和 [删除容器](Docker_Note.md#dk_container_delete) 并 [清理volume](Docker_Note.md#清理无主%20volume)。
-4. 新建一个指定挂载宿主机路径的 MySQL 容器
+1. [停止容器](Docker_Note.md#dk_container_stop) 和 [删除容器](Docker_Note.md#dk_container_delete) 并 [清理volume](Docker_Note.md#清理无主%20volume)。
+2. 新建一个指定挂载宿主机路径的 MySQL 容器
 ```shell
-docker run -d --name d_mysql80 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/mysql8_m/config:/etc/mysql -v /home/silascript/Docker_Mount/mysql8_m/data:/var/lib/mysql mysql:8.0.28-debian
+docker run -d --name d_mysql80 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/mysql8_m/config/mysql:/etc/mysql -v /home/silascript/Docker_Mount/mysql8_m/data:/var/lib/mysql mysql:8.0.28-debian
 ```
+
 > [!info]
 > 
 > 因为之前已经将配置文件数据已经复制到要挂载的目录中，这样就不会因为宿主机目录为空，而使容器启动不了了。
 > 
-> 至于数据目录 `/var/lib/mysql`，因为 MySQL 镜像 的「特性」会自动复制数据到要挂载的目录，所以能直接挂载到指定路径。
+> 另外还有一个目录也非常重要，就是 MySQL 的数据目录，即 `/var/lib/mysql` 目录，只不过这个目录不用自己手动 `cp`，因为 MySQL 镜像 的「特性」会自动复制数据到要挂载的目录，所以能直接挂载到指定路径。
 > 
 > 这个方案的 **核心** 就是解决配置文件目录的挂载问题。
 
@@ -748,7 +754,7 @@ docker run -d --name d_mysql80 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /ho
 > 如果要指定网桥及 ip，可以用以下方式创建 MySQL 容器：
 >
 >```shell
-> docker run -d --name d_mysql80 --network mybridge --ip 172.21.0.20 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/mysql_m/config:/etc/mysql -v /home/silascript/Docker_Mount/mysql_m/data:/var/lib/mysql mysql:8.0.38
+> docker run -d --name d_mysql80 --network mybridge --ip 172.21.0.20 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/mysql_m/config/mysql:/etc/mysql -v /home/silascript/Docker_Mount/mysql_m/data:/var/lib/mysql mysql:8.0.38
 >```
 
 如果要在 `run` 时设置默认字符集，可以加上 `--character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci` 参数。
@@ -758,7 +764,7 @@ docker run -d --name d_mysql80 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /ho
 > 带 [字符集设置](#字符集设置) 的 `run` 容器：
 > 
 >```shell
-> docker run -d --name d_mysql80 --network mybridge --ip 172.21.0.20 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/mysql_m/config:/etc/mysql -v /home/silascript/Docker_Mount/mysql_m/data:/var/lib/mysql mysql:8.0.38 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+> docker run -d --name d_mysql80 --network mybridge --ip 172.21.0.20 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/mysql_m/config/mysql:/etc/mysql -v /home/silascript/Docker_Mount/mysql_m/data:/var/lib/mysql mysql:8.0.41-debian --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
 > ```
 
 ### 配置

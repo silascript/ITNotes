@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-22 01:36:41
-modified: 2025-02-22 18:50:24
+modified: 2025-02-23 02:36:19
 ---
 
 # Docker 资料清单
@@ -51,9 +51,15 @@ modified: 2025-02-22 18:50:24
 * [PHP 8.0 is here! How to turn on JIT compiling - DEV Community](https://dev.to/tugboatqa/php-8-0-is-almost-here-how-to-turn-on-jit-compiling-1l6l)
 * [docker如何升级php \| PingCode智库](https://docs.pingcode.com/baike/3472543)
 
-### 问题
+#### 问题
 
 * [docker +nginx环境下php文件无法识别File not found. - OSCHINA - 中文开源技术交流社区](https://my.oschina.net/boringblue/blog/5474892)
+
+### MySQL
+
+* [Mysql容器设置字符集 - 运维笔记](http://zongming.net/read-1232/)
+* [修改Docker MySQL官方镜像字符集UTF8 - CSDN博客](https://blog.csdn.net/Three_dog/article/details/91415268)
+* [docker 文件方式修改mysql配置（时区+字符集）永久修改Docker容器中mysql的时区 对mysql doc - 掘金](https://juejin.cn/post/7113921256717549575)
 
 ## Docker Compose
 

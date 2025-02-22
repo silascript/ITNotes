@@ -3,7 +3,7 @@ aliases: []
 tags:
   - nginx
 created: 2024-07-22 11:39:02
-modified: 2024-07-22 19:43:39
+modified: 2025-02-22 11:06:53
 ---
 
 # Nginx 笔记
@@ -23,11 +23,6 @@ modified: 2024-07-22 19:43:39
 [OpenResty](https://openresty.org) [![openresty repo](https://img.shields.io/github/stars/openresty/openresty
 )](https://github.com/openresty/openresty)
 
-### 相关资料
-
-* [Nginx|OpenResty|Tengine--到底该爱谁 - 掘金](https://juejin.cn/post/6918044485586780000)
-* [nginx多conf文件配置 - 掘金](https://juejin.cn/post/7004032621143392269)
-
 ---
 
 ## 相关链接
@@ -39,5 +34,6 @@ modified: 2024-07-22 19:43:39
 
 ## 相关笔记
 
+* [Nginx资料](Nginx_Material.md)
 * [Nginx 视频清单](Nginx_Videos.md)
 

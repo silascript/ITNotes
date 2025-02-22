@@ -8,7 +8,7 @@ tags:
   - ubuntu
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2025-02-21 04:34:54
+modified: 2025-02-22 11:46:34
 ---
 
 # Docker 笔记
@@ -553,9 +553,11 @@ docker pull 镜像名[:tag]
 
 查看已存在的镜像：
 
-```shell
-docker images
-```
+三种都可以：
+
+* `docker image list`
+* `docker image ls`
+* `docker images`
 
 删除镜像：
 

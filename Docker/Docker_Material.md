@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-22 01:36:41
-modified: 2025-02-22 04:22:21
+modified: 2025-02-22 18:50:24
 ---
 
 # Docker 资料清单
@@ -30,7 +30,7 @@ modified: 2025-02-22 04:22:21
 * [Docker挂载的文件与主机不同步问题](https://www.yuewatch.com/archives/1699412207030)
 * [Docker -v | volume 挂载宿主机目录导致容器内文件被覆盖问题 - 二柒的博客 - 博客园](https://www.cnblogs.com/EQ1024/p/15660909.html)
 * [\[Docker\] - 解决挂载时容器内数据被覆盖问题 | ༄༊࿆咸鱼の家ོྂཾ࿆࿐](https://blog.kamasylvia.com/p/f0281425/)
-
+* [docker挂载单文件问题 - ytZhang - 博客园](https://www.cnblogs.com/ZYTZ/p/13047948.html)
 ## Docker 示例资料
 
 ### PHP
@@ -42,6 +42,7 @@ modified: 2025-02-22 04:22:21
 * [PHP 在docker 中的扩展问题PHP 容器配置 从官方基础版本构建 FROM php:7.2-fpm 官方版本默认 - 掘金](https://juejin.cn/post/6959357869233799182)
 * [使用docker安装php7.3-fpm服务 - 第一夫人 - 博客园](https://www.cnblogs.com/firstlady/p/17636034.html)
 * [基于Docker搭建PHP开发环境 - X-Wolf - 博客园](https://www.cnblogs.com/xingxia/p/docker_php.html)
+* [基于 Docker 搭建 PHP 开发环境 - 掘金](https://juejin.cn/post/6943062993823334407)
 * [php - 'Opcache'无法在Docker中安装-6ren](http://123.56.139.157:8082/article/23/6843018/detail.html)
 * [【Docker系列】单独部署nginx容器和php-fpm容器容易忽略的问题 – Hunter's blog](http://www.hunterkou.com/?p=402)
 * [docker php-fpm php.ini,docker 的官方PHP镜像 如何修改 php.ini 配置-CSDN博客](https://blog.csdn.net/weixin_32101377/article/details/116038853)

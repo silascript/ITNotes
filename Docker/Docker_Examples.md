@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2025-02-22 04:51:05
+modified: 2025-02-22 21:46:03
 ---
 
 # Docker 示例
@@ -666,7 +666,7 @@ phpinfo();
 
 > [!info] 
 > 
-> 8.0.38 之后，官方镜像全转向使用 Oracle Linux。
+> 8.0.38 之后，官方镜像默认使用自家的 Oracle Linux。
 
 ```shell
 # 不指定挂载目录
@@ -719,6 +719,10 @@ docker run -d --name d_mysql8 -e MYSQL_ROOT_PASSWORD=123456 mysql:8.0.28-debian
 ```
 
 2. 将容器中 `/etc/mysql` 目录复制到宿主指定的目录
+```shell
+docker cp d_mysql80:/etc/mysql /home/silascript/Docker_Mount/mysql_m/config 
+```
+
 > [!info] 
 > 
 > 这个复制非常重要，如果不先复制到宿主目录，未在在正式容器中再使用 `-v` 直接挂载，因为宿主目录是空的，所以容器中 `/etc/mysql` 这个配置目录被「覆盖」掉，致使容器启动失败。
@@ -726,8 +730,8 @@ docker run -d --name d_mysql8 -e MYSQL_ROOT_PASSWORD=123456 mysql:8.0.28-debian
 > 这个目录是未来在正式 [MySQL](../DataBase/mysql/MySQL_Note.md) 容器 `run` 时要挂载的宿主目录。
 > 
 
-3. 停止容器和删除容器并清理托管的 volume
-6. 新建一个指定挂载宿主机路径的 MySQL 容器
+3. [停止容器](Docker_Note.md#dk_container_stop) 和 [删除容器](Docker_Note.md#dk_container_delete) 并 [清理volume](Docker_Note.md#清理无主%20volume)。
+4. 新建一个指定挂载宿主机路径的 MySQL 容器
 ```shell
 docker run -d --name d_mysql8 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/mysql8_m/config:/etc/mysql -v /home/silascript/Docker_Mount/mysql8_m/data:/var/lib/mysql mysql:8.0.28-debian
 ```
@@ -746,6 +750,16 @@ docker run -d --name d_mysql8 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /hom
 >```shell
 > docker run -d --name d_mysql80 --network mybridge --ip 172.21.0.20 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/mysql_m/config:/etc/mysql -v /home/silascript/Docker_Mount/mysql_m/data:/var/lib/mysql mysql:8.0.38
 >```
+
+如果要在 `run` 时设置默认字符集，可以加上 `--character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci` 参数。
+
+> [!example] 
+> 
+> 带 [字符集设置](#字符集设置) 的 `run` 容器：
+> 
+>```shell
+> docker run -d --name d_mysql80 --network mybridge --ip 172.21.0.20 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/mysql_m/config:/etc/mysql -v /home/silascript/Docker_Mount/mysql_m/data:/var/lib/mysql mysql:8.0.38 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+> ```
 
 ### 配置
 
@@ -944,8 +958,8 @@ Unable to determine time zone: No such file or directory (os error 2)
 
 ---
 
-### 示例相关资料
+## 相关笔记
 
-* [基于 Docker 搭建 PHP 开发环境 - 掘金](https://juejin.cn/post/6943062993823334407)
-* [docker挂载单文件问题 - ytZhang - 博客园](https://www.cnblogs.com/ZYTZ/p/13047948.html)
+* [Docker笔记](Docker_Note.md)
+* [Docker资料](Docker_Material.md)
 

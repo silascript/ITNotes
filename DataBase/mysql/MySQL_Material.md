@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2025-02-22 20:01:30
-modified: 2025-02-22 20:25:07
+modified: 2025-02-23 12:57:01
 ---
 
 # MySQL 资料清单
@@ -28,4 +28,6 @@ modified: 2025-02-22 20:25:07
 ## 相关笔记
 
 * [MySQL笔记](MySQL_Note.md)
+* [数据库资料](DataBase_Material.md)
+* [数据库笔记](../DataBase_Note.md)
 

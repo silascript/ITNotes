@@ -82,6 +82,25 @@ status
 	* `select version();`
 	> 还有上面的 `status` 命令也能看到 MySQL 的版本号信息
 
+
+---
+
+## DML
+
+
+## 创建数据库
+
+创建库并设置字符集：
+
+```sql
+CREATE DATABASE 库名
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_general_ci;
+```
+
+
+
+
 ---
 
 ## 相关笔记

@@ -6,7 +6,7 @@ tags:
   - db2
   - database
 created: 2023-08-18 19:44:52
-modified: 2024-07-24 18:54:20
+modified: 2025-02-23 04:24:00
 ---
 
 # Linux 下安装 MySQL5.7
@@ -220,12 +220,12 @@ MySQL 8.0+ 版本，创建用户和授权应分开。
 > 创建用户和授权都应先切换到 mysql 数据库（`use mysql;`）。
 
 1. 创建用户
-```mysql
+```sql
 create user '用户名'@'访问主机' identified by '密码';
 ```
 
 2. 授权
-```mysql
+```sql
 grant 权限列表 on 数据库 to '用户名'@'访问主机' with grant option;
 
 -- 例子:
@@ -238,7 +238,7 @@ GRANT ALL PRIVILEGES ON *.* TO 'remote'@'%' WITH GRANT OPTION;
 
 > [!info] 添加用户完整示例
 > 
-> ```mysql
+> ```sql
 > create user 'silasc'@'%' identified by '123456';
 >
 > grant all privileges on *.* to 'silasc'@'%' with grant option; 
@@ -254,7 +254,7 @@ GRANT ALL PRIVILEGES ON *.* TO 'remote'@'%' WITH GRANT OPTION;
 >
 > 所以先选择库再查询表
 >
->```shell
+>```sql
 > use mysql;
 >
 > select user,host,authentication_string from user;
@@ -265,17 +265,22 @@ GRANT ALL PRIVILEGES ON *.* TO 'remote'@'%' WITH GRANT OPTION;
 >
 > ![image-20201130080857639](linux下安装mysql.assets/image-20201130080857639.png)
 
-##### 其他账号操作：
+##### 其他账号操作
 
-添加新账号:
-```shell
+添加新账号：
+
+```sql
 create user zhangsan identified by 'zhangsan';
-
 ```
+
 删除账号：
+
 ```shell
 DROP USER '用户名'@'连接地址';
 ```
+
+> [!tip] 
+> 
 > `DROP USER 'root'@'%';`
 
 #### Misc

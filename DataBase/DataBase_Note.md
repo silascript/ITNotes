@@ -14,7 +14,7 @@ tags:
   - navicat
   - dbeaver
 created: 2023-08-18 19:44:52
-modified: 2024-08-23 12:43:33
+modified: 2025-02-23 13:09:20
 ---
 
 # 数据库笔记
@@ -79,6 +79,7 @@ DBeaver 除了独立安装版还有 [Eclipse 插件版](Java_Note.md#DBeaver) �
 ##### 驱动设置
 
 ###### 本地文件夹
+
 「本地文件夹」是用来设置驱动保存的目标目录。
 
 设置方式：
@@ -99,16 +100,22 @@ DBeaver 使用 [Maven_Note](../Java/Maven/Maven_Note.md) 下载驱动。要知�
 > 
 > 如上图中，「本地文件夹」设置的路径下，`maven` 下有两目录，一个是 maven 的 [中央仓库](../Java/Maven/Maven_Note.md#中央仓库)，而另一个是自行添加的阿里的源。
 
-#### DBeaver 资料
+#### 链接设置
 
-* [DBeaver 显示 系统数据库 方法 - 中国DBA社区](https://www.cndba.cn/dave/article/131425)
-* [DBeaver常用操作 - monkey6 - 博客园](https://www.cnblogs.com/monkey6/p/17943444)
+有一些比较常用的连接设置：
+
+* `allowMultiQueries`：允许执行多条查询语句
+> [!tip] 
+> 
+> 这个设置默认是 `false`，所以会出现「执行 SQL 脚本」没错，但选择多条 SQL 语句点「执行 SQL 语句」时，就会出现 `1064` 的错误，提示是语法错误，但事实语法是没错的，就是这个设置禁止了多条 SQL 语句的执行才造成的。
 
 ---
 
 ## 相关笔记
 
 * [SQL笔记](SQL_Note.md)
-* [MySQL_Note](mysql/MySQL_Note.md)
+* [MySQL笔记](mysql/MySQL_Note.md)
+* [数据库资料](mysql/DataBase_Material.md)
+* [MySQL资料](mysql/MySQL_Material.md)
 * [MySQL常用操作](mysql/MySQL常用操作.md)
 

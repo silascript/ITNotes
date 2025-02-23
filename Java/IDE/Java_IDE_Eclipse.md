@@ -5,7 +5,7 @@ tags:
   - ide
   - eclipse
 created: 2025-02-23 21:17:37
-modified: 2025-02-23 21:29:19
+modified: 2025-02-23 21:39:59
 ---
 
 # Eclipse 笔记
@@ -30,7 +30,7 @@ modified: 2025-02-23 21:29:19
 
 可以通过 Eclipse 右上角那个按钮「Open Perspective」 来查看各种透视图。
 
-![Eclipse Perspective](./Java_Note.assets/Eclipse_Perspective.png)
+![Eclipse Perspective](Java_IDE_Eclipse.assets/Eclipse_Perspective.png)
 
 ---
 
@@ -307,9 +307,9 @@ Data Tools Platform 是一套数据库管理插件组，能在 Eclipse 中进行
 * **Data Tools Platform Connectivity**
 * **Data Tools Platform SQL Development Tools**
 
-![Data Tools Platform Connectivity](./Java_Note.assets/Eclipse_dtp_1.png)
+![Data Tools Platform Connectivity](Java_IDE_Eclipse.assets/Eclipse_dtp_1.png)
 
-![Data Tools Platform Connectivity2](./Java_Note.assets/Eclipse_dtp_1_1.png)
+![Data Tools Platform Connectivity2](Java_IDE_Eclipse.assets/Eclipse_dtp_1_1.png)
 
 > [!info] 
 > 
@@ -322,7 +322,7 @@ Data Tools Platform 是一套数据库管理插件组，能在 Eclipse 中进行
 Data Tools Platform Enablement 是一个对各大数据库连接支持的插件。
 
 勾选「Data Tools Platform Enablement for MySQL」后安装相应插件后，就会在新建链接时出现以下的选项：
-![Eclipse DTP Enablement 1](./Java_Note.assets/Eclipse_dtp_enablement_1.png)
+![Eclipse DTP Enablement 1](Java_IDE_Eclipse.assets/Eclipse_dtp_enablement_1.png)
 
 > [!tip] Enablement for MySQL
 > 在未装「Data Tools Platform Enablement for MySQL」时，只有「Generic JDBC」这个，装了这插件后就多了 MySQL 相关连接驱动可选。
@@ -331,19 +331,19 @@ Data Tools Platform Enablement 是一个对各大数据库连接支持的插件�
 
 「SQL Development Tools Data Functions」主要功能是在数据库 Model 及 DDL 相关的。
 
-![SQL Development Tools Data Functions](./Java_Note.assets/Eclipse_dtp_SQL_1.png)
+![SQL Development Tools Data Functions](Java_IDE_Eclipse.assets/Eclipse_dtp_SQL_1.png)
 
 ##### SQL Query Builder
 
 「SQL Query Builder」 这个插件依赖 [SQL Parsers](#SQL%20Parsers) 插件，拟勾选「SQL Query Builder」时，会连 [SQL Parsers](#SQL%20Parsers) 插件也一起装了。
 
-![Eclipse DTP SQL Builder 1](./Java_Note.assets/Eclipse_dtp_SQL_Builder_1.png)
+![Eclipse DTP SQL Builder 1](Java_IDE_Eclipse.assets/Eclipse_dtp_SQL_Builder_1.png)
 
 ##### SQL Parsers
 
 SQL Parsers 这是跟 Model 相关的，应该是模型转换器。
 
-![Eclise DTP SQL Parsers 1](./Java_Note.assets/Eclise_dtp_SQL_Parsers_1.png)
+![Eclise DTP SQL Parsers 1](Java_IDE_Eclipse.assets/Eclise_dtp_SQL_Parsers_1.png)
 
 ##### Open Data Access Designer
 
@@ -373,7 +373,7 @@ DBeaver 插件版也独立安装版功能一致，具体信息可以参考 [DBea
 
 [Dali Java Persistence Tools](https://projects.eclipse.org/projects/webtools.dali) 这是一个持久化插件。同样是跟数据库相关的，所以装它时，会将 [Data Tools Platform](#Data%20Tools%20Platform) 相关的插件也一并装了。
 
-![Dali Java Persistence Tools 1](./Java_Note.assets/Eclipse_Dali_Persistence_1.png)
+![Dali Java Persistence Tools 1](Java_IDE_Eclipse.assets/Eclipse_Dali_Persistence_1.png)
 
 #### JBoss-Tools
 

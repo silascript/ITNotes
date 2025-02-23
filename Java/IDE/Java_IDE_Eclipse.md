@@ -5,7 +5,7 @@ tags:
   - ide
   - eclipse
 created: 2025-02-23 21:17:37
-modified: 2025-02-23 21:24:38
+modified: 2025-02-23 21:29:19
 ---
 
 # Eclipse 笔记
@@ -483,17 +483,19 @@ DBeaver 插件版也独立安装版功能一致，具体信息可以参考 [DBea
 >
 >
 
-### Tomcat 配置出问题
+#### Tomcat 配置出问题
 
->配置 tomcat 时，提示“eclipse tomcat unknown version of tomcat was specified”
+> [!info] 
+> 
+> 配置 tomcat 时，提示“eclipse tomcat unknown version of tomcat was specified”
 >
->因为配置 tomcat 需要访问 tomcat 目录下的 lib 库,而访问此目录需要相应的权限
+> 因为配置 tomcat 需要访问 tomcat 目录下的 lib 库,而访问此目录需要相应的权限
 >
->所以得修改 lib 目录的权限:
+> 所以得修改 lib 目录的权限:
 >
->```shell
->chmod -R 777 apache-tomcat-xxx/lib
->```
+> ```shell
+> chmod -R 777 apache-tomcat-xxx/lib
+> ```
 
 无独有偶，[VSCode](https://code.visualstudio.com/) 下，使用 [Tomcat to Java](https://marketplace.visualstudio.com/items?itemName=adashen.vscode-tomcat) 插件，添加 Tomcat ，可能会添加失败，报 `Please make sure you select a valid Tomcat Directory.` 错误，同样也是权限问题。
 
@@ -502,13 +504,13 @@ DBeaver 插件版也独立安装版功能一致，具体信息可以参考 [DBea
 sudo chmod -R 755 tomcat-9.0.62
 ```
 
-#### 启动 Tomcat 后 404
+##### 启动 Tomcat 后 404
 
 ![](Java相关.assets/eclipse_tomcat_publish.png)
 
 > [!info] 
 >
->要选第二项，就是将项目复制一份到 tomcat 安装目录下的 `wtpwebapps` 目录中进行发布
+> 要选第二项，就是将项目复制一份到 tomcat 安装目录下的 `wtpwebapps` 目录中进行发布
 
 ---
 

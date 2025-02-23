@@ -7,7 +7,7 @@ tags:
   - Eclipse
   - dbeaver
 created: 2023-01-30 11:19:11
-modified: 2025-02-23 21:27:36
+modified: 2025-02-23 21:31:37
 ---
 
 # Java 笔记
@@ -296,10 +296,6 @@ SDKMane 语法 `sdk <command> [candidate] [version]`。
 `Identifier` 栏是标识符，用于安装时指定的。就是 `sdk <command> [candidate] [version]` 命令语法中最后那个 `version` 的值。
 
 #### install 命令
-
----
-
-## <span id="java_eclipse">Eclipse 相关</span>
 
 ---
 

@@ -6,7 +6,7 @@ tags:
   - jdk
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-02-20 18:17:47
+modified: 2025-02-23 20:49:29
 ---
 
 # Java 资料清单
@@ -25,6 +25,13 @@ modified: 2025-02-20 18:17:47
 
 * [JDK11删除功能和选项-CSDN博客](https://blog.csdn.net/weixin_33786077/article/details/89621390)
 * [Java卸载工具：几个JDK自带命令与可视化工具 - 指尖上的代码go - 博客园](https://www.cnblogs.com/cqqfboy/p/15406109.html)
+
+## Eclipse
+
+### 插件
+
+* [IDE中下载JDK的插件：可视化自由选择下载特定版本的JDK - 极道](https://www.jdon.com/56931.html)
+* [Disco API 使用教程-CSDN博客](https://blog.csdn.net/gitblog_00470/article/details/141801343)
 
 ## RMI
 

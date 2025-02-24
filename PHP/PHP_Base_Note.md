@@ -5,7 +5,7 @@ tags:
   - php
   - base
 created: 2025-02-25 03:33:52
-modified: 2025-02-25 05:30:55
+modified: 2025-02-25 05:31:40
 ---
 
 # PHP 基础语法
@@ -266,6 +266,7 @@ echo $myCar->getDescription(); // 输出: This car is a black BMW X5.
   ```
 
 ### 5. 其他常用函数
+
 * **date($format, $timestamp)**: 格式化本地日期和时间。
   ```php
   echo date("Y-m-d H:i:s"); // 输出当前日期和时间

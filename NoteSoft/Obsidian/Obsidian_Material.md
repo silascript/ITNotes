@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2025-02-07 05:28:08
-modified: 2025-02-25 02:10:12
+modified: 2025-02-25 04:43:40
 ---
 
 # Obsidian 资料清单
@@ -26,6 +26,7 @@ modified: 2025-02-25 02:10:12
 * [两款AI插件，让Obsidian更强大](https://medium.com/@huangyihe/%E4%B8%A4%E6%AC%BEai%E6%8F%92%E4%BB%B6-%E8%AE%A9obsidian%E6%9B%B4%E5%BC%BA%E5%A4%A7-cf72f7a5bd02)
 * [10+ChatGPT插件赋能Obsidian （AI插件合集） - 经验分享 - Obsidian 中文论坛](https://forum-zh.obsidian.md/t/topic/16422)
 * [几个 AI 插件 Text Generator, Smart Connections, Copilot 的简单调查 - 经验分享 - Obsidian 中文论坛](https://forum-zh.obsidian.md/t/topic/31483)
+* [在obsidian中使用deepseek](https://zhuanlan.zhihu.com/p/22025416547)
 
 ### DataView
 

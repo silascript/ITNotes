@@ -4,7 +4,7 @@ tags:
   - PL
   - php
 created: 2023-09-21 23:13:13
-modified: 2024-09-10 23:19:53
+modified: 2025-02-25 03:56:26
 ---
 
 # PHP 笔记
@@ -216,10 +216,6 @@ composer config --unset repos.packagist
 
 ---
 
-## 语法
-
----
-
 ## 其他相关笔记
 
 * [Linux下PHP安装](Linux下PHP安装.md)
@@ -227,4 +223,5 @@ composer config --unset repos.packagist
 * [PHP 视频清单](PHP_Videos.md)
 * [PHP 资料清单](PHP_Material.md)
 * [PHP 扩展笔记](PHP扩展.md)
+* [PHP 基础语法笔记](PHP_Base_Note.md)
 * [Docker 笔记](../Docker/Docker_Note.md)

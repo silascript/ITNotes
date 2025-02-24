@@ -4,7 +4,7 @@ tags:
   - siyuan
   - notesoft
 created: 2024-06-24 01:28:18
-modified: 2024-07-06 23:17:56
+modified: 2025-02-24 20:42:47
 ---
 
 # 思源笔记软件笔记
@@ -194,6 +194,10 @@ git push -u origin "master"
 
 ---
 
+## AI
+
+---
+
 ## 集市
 
 ### 插件
@@ -206,18 +210,9 @@ git push -u origin "master"
 
 ---
 
-## 相关资料
-
-* [思源笔记快速上手指南 - 掘金](https://juejin.cn/post/7309755128852365364)
-* [思源笔记·学习资源](https://flowus.cn/hub001/share/7f64c804-79c1-443f-929d-240066953b41)
-* [基于思源笔记的数据库使用分享 - 少数派](https://sspai.com/post/87423)
-* [思源笔记使用心得 - 哔哩哔哩](https://www.bilibili.com/read/cv21936410/)
-* [【Achuan-2】思源笔记教程和心得分享](https://www.yuque.com/achuan-2/siyuan)
-
----
-
 ## 相关笔记
 
+* [思源笔记资料](SiYuan_Material.md)
 * [思源笔记视频清单](SiYuan_Videos.md)
 * [笔记软件笔记](../NoteSoft_Note.md)
 * [Logseq笔记](../Logseq/Logseq_Note.md)

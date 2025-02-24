@@ -3,10 +3,11 @@ aliases: []
 tags:
   - java
   - orm
+  - framework
   - hibernate
   - jboss
 created: 2025-02-15 20:12:53
-modified: 2025-02-15 20:20:30
+modified: 2025-02-25 01:26:49
 ---
 
 # Hibernate 笔记

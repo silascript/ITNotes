@@ -5,7 +5,7 @@ tags:
   - obsidian
   - plugin
 created: 2023-06-28 17:02:25
-modified: 2025-02-12 19:18:48
+modified: 2025-02-25 02:05:08
 ---
 
 # Obsidian 部分插件笔记
@@ -628,5 +628,5 @@ if (!folder) {
 * [Obsidian 笔记](Obsidian_Note.md)
 * [Obsidian常用插件清单](Obsidian_Plugins_List.md)
 * [Obsidian 相关视频](Obsidian_Videos.md)
-* [Obsidian资料](Obsidian_Material.md)
+* [Obsidian 资料](Obsidian_Material.md)
 * [Markdown笔记](../../Markdown/Markdown_Note.md)

@@ -6,7 +6,7 @@ tags:
   - vocabulary
   - word
 created: 2023-08-18 19:44:52
-modified: 2024-06-13 22:58:04
+modified: 2025-02-25 18:16:14
 ---
 
 # IT 英文词汇
@@ -49,6 +49,9 @@ modified: 2024-06-13 22:58:04
 * certification：证明；鉴定；证书
 
 * snowflake：雪花
+
+* concurrency：[kən'kʌrənsɪ] 并发
+* parallesim：[pəˈræləlɪzəm‌] 并行
 
 ---
 

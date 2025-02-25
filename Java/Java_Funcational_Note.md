@@ -6,7 +6,7 @@ tags:
   - stream
   - optional
 created: 2025-02-16 20:08:35
-modified: 2025-02-16 21:56:10
+modified: 2025-02-25 11:03:06
 ---
 
 # Java 函数式编程
@@ -24,6 +24,8 @@ Functional Interface：函数接口，这是 [JDK8](Java_Note.md#JDK8) 提供新
 函数接口可以用 `@FunctionalInterface` 注解来标识函数接口。
 
 但无论是否用 `@FunctionalInterface` 标识接口，只要此接口有且只有一个抽象方法，那此接口便是「函数接口」。
+
+---
 
 ## Lambda
 

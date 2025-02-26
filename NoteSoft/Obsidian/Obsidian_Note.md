@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2025-02-09 01:15:31
+modified: 2025-02-27 03:14:54
 ---
 
 # Obsidian 笔记
@@ -343,24 +343,25 @@ $ cat MyNotes/ITNotes/.obsidian/themes/AnuPpuccin/manifest.json
 
 ### <span id="obn_default_hotkeys">常用默认快捷键</span>
 
-|     快捷键     |                      功能                      |
-|:--------------:|:----------------------------------------------:|
-|       F2       |                   文件重命名                   |
-|     Ctrl+,     |                    打开设置                    |
-|     Ctrl+g     |                  打开关系图谱                  |
-|     Ctrl+o     | 打开 [快速切换](#obn_basic_quickswitcher) 面板 |
-|     Ctrl+p     |                  打开命令面板                  |
-|     Ctrl+e     |       当前文件页面编辑模式与阅读模式切换       |
-|     Ctrl+w     |                 关闭当前标签页                 |
-|     Ctrl+f     |                 在当前文件搜索                 |
-|  Ctrl+Shift+f  |                  所有文件搜索                  |
-|     Ctrl+k     |                  插入一个链接                  |
-|     Ctrl+t     |                   新建标签页                   |
-|     Ctrl+n     |                    新建笔记                    |
-|     Ctrl+/     |                 注释或取消注释                 |
-|     Ctrl+B     |                 加粗或取消加粗                 |
-|    Ctrl+Tab    |                   标签页切换                   |
-| Ctrl+ 鼠标中键 |                  字体放大缩小                  |
+|        快捷键         |                      功能                      |
+|:---------------------:|:----------------------------------------------:|
+|         `F2`          |                   文件重命名                   |
+|       `Ctrl+,`        |                    打开设置                    |
+|       `Ctrl+g`        |                  打开关系图谱                  |
+|       `Ctrl+o`        | 打开 [快速切换](#obn_basic_quickswitcher) 面板 |
+|       `Ctrl+p`        |                  打开命令面板                  |
+|       `Ctrl+e`        |       当前文件页面编辑模式与阅读模式切换       |
+|       `Ctrl+w`        |                 关闭当前标签页                 |
+|       `Ctrl+f`        |                 在当前文件搜索                 |
+|    `Ctrl+Shift+f`     |                  所有文件搜索                  |
+|       `Ctrl+k`        |                  插入一个链接                  |
+|       `Ctrl+t`        |                   新建标签页                   |
+|       `Ctrl+n`        |                    新建笔记                    |
+|       `Ctrl+/`        |                 注释或取消注释                 |
+|       `Ctrl+B`        |                 加粗或取消加粗                 |
+|      `Ctrl+Tab`       |                   标签页切换                   |
+|   `Ctrl + 鼠标中键`   |                  字体放大缩小                  |
+| `Ctrl + 鼠标左键点击` |              在新的标签页打开笔记              |
 
 > [!bug] 标签页切换问题
 >
@@ -598,6 +599,24 @@ Obsidian 的插件分为 [核心插件](#obn_plugins_core) 和 [第三方插件]
 [Keyboard-Analyzer](https://github.com/cogscides/obsidian-keyboard-analyzer) 是一个以图谱方式查看快捷键设置的插件。
 
 通过这个插件的图谱，可以快速查看指定按键设置了哪个相关的快捷键。
+
+---
+
+##### <span id="obn_plugins_commp_new-tab-default-page">new-tab-default-page</span>
+
+[new-tab-default-page](https://github.com/chrisgrieser/new-tab-default-page) 这个插件可以使得点击笔记在新的标签页打开（obsidian 的默认操作，是在当前标签页打开，如果新标签页打开得加个 [`Ctrl`](#常用默认快捷键)）。
+
+> [!tip] 
+> 
+> 这插件有时还是会生效！
+
+---
+
+##### <span id="obn_plugins_commp_obsidian-new-tab-plus">obsidian-new-tab-plus</span>
+
+[obsidian-new-tab-plus](https://github.com/Raphlette/obsidian-new-tab-plus) 与 [new-tab-default-page](#new-tab-default-page) 插件功能类似，就是点击笔记在新的标签页打开。
+
+另外，此插件还加了个小功能：如果点击的笔记已经打开了，就会将焦点移动到此笔记上。
 
 ---
 

@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2025-02-05 17:37:30
+modified: 2025-02-27 02:14:37
 ---
 
 # 梯子笔记
@@ -1066,6 +1066,7 @@ export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_pr
 > * [终端使用代理加速的正确方式（Clash） | Ln's Blog](https://weilining.github.io/294.html)
 > * [终端使用代理 - faf4r - 博客园](https://www.cnblogs.com/faf4r/p/17765134.html)
 > * [在 Linux 中使用 Clash | AISYUN's Blog](https://blog.cyida.com/2023/32KRQRV.html#%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86)
+> * [2025年稳定好用的机场推荐（2025-2更新） - Kerry的学习笔记](https://kerrynotes.com/best-ssr-v2ray-proxy/)
 
 ---
 

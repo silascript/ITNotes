@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2025-02-27 17:57:17
+modified: 2025-02-28 20:27:49
 ---
 
 # 梯子笔记
@@ -957,13 +957,19 @@ V2Ray 本身不支持 [PAC](#PAC)。
 
 ### FLClash
 
-[FLClash](https://github.com/chen08209/FlClash) 也是一个多平台的客户端。
+[FLClash](https://github.com/chen08209/FlClash) 也是一个基于 [Clash-Meta](#Clash-Meta) 的多平台客户端。
 
 #### 设置
 
 下载好了按照这个步骤操作点开 「工具」>「覆写」>「基础」> 把第二个「UA」改成 `clash-verge/v1.6.6`
 
 FLClash 的端口默认为 `7890`，这软件连复制环境变量的功能都没有，只能手动敲以下代码在 [terminal](../Linux/Linux_Note.md#terminal%20相关) 中执行：`export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890`
+
+> [!info] 
+> 
+> 因为 FLClash 是基于 [Clash-Meta](#Clash-Meta)，所以机场的订阅时得注意是否支持。
+> 
+> [Clash-Meta](#Clash-Meta) 与通用订阅链接相比，只是后面多了个参数：`&flag=clashmeta`
 
 ### V2Fly
 

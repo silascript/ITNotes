@@ -5,7 +5,7 @@ tags:
   - github
   - gist
 created: 2023-01-30 11:19:11
-modified: 2024-09-30 20:24:24
+modified: 2025-02-27 18:15:35
 ---
 
 # Git 笔记
@@ -1040,16 +1040,8 @@ yay -S community/rabbitvcs-nautilus
 * [Git的奇技淫巧](https://github.com/jackfrued/git-tips)
 * [git - 简明指南](https://rogerdudler.github.io/git-guide/index.zh.html)
 
-### 相关资料
-
-* [Git 目录结构](https://xiaowenxia.github.io/git-inside/2021/02/16/git-layout/index.html)
-* [Git基础-查看当前文件状态、跟踪新文件、暂存文件、忽略文件、提交更新、移除文件、移动文件 - sandy.simple - 博客园](https://www.cnblogs.com/wangwenhui/p/10555261.html)
-
-#### 常见问题
-
-* [把git的默认分支master修改成main - 掘金](https://juejin.cn/post/7051873701305778207)
-
 ### 其他笔记
 
-* [Git 教程资源笔记](Git_Videos.md)
+* [Git 视频](Git_Videos.md)
+* [Git 资料清单](Git_Material.md)
 

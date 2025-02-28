@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2025-02-27 02:14:37
+modified: 2025-02-27 17:57:17
 ---
 
 # 梯子笔记
@@ -33,7 +33,7 @@ modified: 2025-02-27 02:14:37
 > 
 > 而 SS 和 SSR 的图标，就是一个纸飞机 logo，那么既然软件是纸飞机，提供给软件的服务商就叫机场了。
 
-![ssr logo](http://vpchina.oss-ap-southeast-1.aliyuncs.com/uploads/2023/02/image-2-1024x576-1.png)
+![ssr logo | 200x200](http://vpchina.oss-ap-southeast-1.aliyuncs.com/uploads/2023/02/image-2-1024x576-1.png)
 
 > [!info] 相关资料
 > 
@@ -709,7 +709,7 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 
 > [!info] 
 > 
-> ![cloudfisher screenshot](https://t.tutu.to/img/mOcjQ)
+> ![cloudfisher screenshot | 800x600](https://t.tutu.to/img/mOcjQ)
 > 
 > 看上述几个套餐，如果是专线的话，5 元 150G，性价比还不错。如果要与其他机场搭配使用，建议还是入手不限时 35 元 300G，就当是其他直连机场在高峰时段「全红」后的保底。
 
@@ -852,7 +852,7 @@ Clash-Verge 的数据目录：`~/.local/share/clash-verge`
 
 两者 logo 不一样，clash-verge-rev：
 
-![clash-verge-rev logo](https://github.com/clash-verge-rev/clash-verge-rev/raw/main/src-tauri/icons/icon.png)
+![clash-verge-rev logo |80x80](https://github.com/clash-verge-rev/clash-verge-rev/raw/main/src-tauri/icons/icon.png)
 
 > [!info] 
 > 

@@ -6,7 +6,7 @@ tags:
   - terminator
   - ghostty
 created: 2023-08-30 17:30:47
-modified: 2025-02-27 05:55:52
+modified: 2025-02-27 11:24:12
 ---
 # 终端笔记
 
@@ -104,6 +104,8 @@ drwx------     - silascript silascript 2025-02-27 03:27 ..
 > 当然，也可以到 [Ghostty Docs](https://ghostty.org/docs) 查看文档。
 
 Ghostty 的配置文件使用「键值对」格式。
+
+[Ghostty Config](https://ghostty.zerebos.com) 是一个可视化配置并可以导入导出 Ghostty 配置的网站。
 
 #### 配置相关操作
 

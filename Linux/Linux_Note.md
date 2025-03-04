@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2025-02-05 11:35:52
+modified: 2025-03-04 21:31:12
 ---
 
 # Linux 笔记
@@ -1692,6 +1692,14 @@ grub 模板：`/etc/default/grub`
 
 ```shell
 echo $XDG_SESSION_TYPE
+```
+
+示例：
+
+```shell
+# silascript @ (base) in ~ [21:28:21] 
+$ echo $XDG_SESSION_TYPE 
+wayland
 ```
 
 #### Xorg

@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2025-02-27 03:14:54
+modified: 2025-03-05 01:15:52
 ---
 
 # Obsidian 笔记
@@ -1276,6 +1276,17 @@ note 类型
 [obsidian-power-mode](https://github.com/zhouhua/obsidian-power-mode) 就是那个曾经在 [文本编辑器](../../Editors/Editors_Note.md) 圈子流行过一个「小玩意」插件，就是在输入时，加点「特效」，以改善输入的「无聊度」。
 
 ![power mode screenshot](https://github.com/zhouhua/obsidian-power-mode/raw/master/screenshots/powermode.gif)
+
+#### obsidian-lazy-plugins
+
+[obsidian-lazy-plugins](https://github.com/alangrainger/obsidian-lazy-plugins) 是一个能够使插件延迟加载的插件。
+
+有四个延迟设置档：
+
+* `Disable plugins`：禁止改插件启动
+* `Instant`：随着 Obsidian 打开，立刻启动
+* `Short Delay`：根据你设置的 Short Delay 时间进行延迟对应插件的启动
+* `Long Delay`：根据你设置的 Long Delay 时间进行延迟对应插件的启动
 
 #### <span id="obn_plugins_outside_community">未在社区插件库的插件</span>
 

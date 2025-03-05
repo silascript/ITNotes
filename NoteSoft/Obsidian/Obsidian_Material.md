@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2025-02-07 05:28:08
-modified: 2025-02-25 04:43:40
+modified: 2025-03-05 01:08:35
 ---
 
 # Obsidian 资料清单
@@ -20,6 +20,8 @@ modified: 2025-02-25 04:43:40
 [Obsdian TTRPG Tutorials](https://obsidianttrpgtutorials.com/Obsidian+TTRPG+Tutorials/Getting+Started/Getting+Started)
 
 ## 插件
+
+* [PKMer\_Obsidian 插件：Lazy Plugin Loader 插件重度用户的福音，Obsidian 启动缓慢终结者](https://pkmer.cn/Pkmer-Docs/10-obsidian/obsidian%E7%A4%BE%E5%8C%BA%E6%8F%92%E4%BB%B6/lazy-plugins/)
 
 ### AI
 

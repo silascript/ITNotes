@@ -1,12 +1,11 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - java
   - maven
   - jdk
 created: 2023-01-31 11:31:14
-modified: 2023-08-24 11:42:04
+modified: 2025-03-06 00:00:16
 ---
 # Maven 笔记
 
@@ -288,6 +287,43 @@ java17：
 		</plugin>
 	</plugins>
 </build>
+```
+
+示例，最简单的 maven 项目：
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+<modelVersion>4.0.0</modelVersion>
+
+	<groupId>silascript.exercise.func</groupId>
+	<artifactId>func_exercise</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	
+	<properties>
+		<maven.compiler.source>21</maven.compiler.source>
+		<maven.compiler.target>21</maven.compiler.target>
+	</properties>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.14.0</version>
+				<configuration>
+				<release>21</release>
+				<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
 ```
 
 ---

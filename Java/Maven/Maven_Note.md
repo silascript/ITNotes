@@ -5,15 +5,17 @@ tags:
   - maven
   - jdk
 created: 2023-01-31 11:31:14
-modified: 2025-03-06 00:00:16
+modified: 2025-03-08 19:09:14
 ---
+
 # Maven 笔记
 
 ---
 
 ## 目录
-* [配置](mvn_settings)
-	* [本地仓库](mvn_settings_localRepo)
+
+* [配置](#mvn_settings)
+	* [本地仓库](#mvn_settings_localRepo)
 * [Maven 项目](#mvn_project)
 	* [JDK 版本指定](#mvn_project_jdk_version)
 
@@ -269,6 +271,7 @@ java17：
 <properties>
 	<maven.compiler.source>11</maven.compiler.source>
 	<maven.compiler.target>11</maven.compiler.target>
+	<maven.compiler.compilerVersion>11</maven.compiler.compilerVersion>
 </properties>
 ```
 
@@ -307,6 +310,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	<properties>
 		<maven.compiler.source>21</maven.compiler.source>
 		<maven.compiler.target>21</maven.compiler.target>
+		<maven.compiler.compilerVersion>21</maven.compiler.compilerVersion>
 	</properties>
 	
 	<build>
@@ -346,7 +350,8 @@ mvn dependency:tree
 
 ---
 
-## <span id="mvn_aboutlinks">相关链接</span>
+## 相关笔记
 
-* [maven 视频清单](./Maven_Videos.md)
+* [Maven 资料清单](Maven_Material.md)
+* [Maven 视频清单](./Maven_Videos.md)
 

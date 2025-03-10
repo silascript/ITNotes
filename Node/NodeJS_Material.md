@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2025-02-17 01:53:10
-modified: 2025-02-18 18:14:03
+modified: 2025-03-10 21:48:39
 ---
 
 # NodeJS 资料清单
@@ -37,6 +37,8 @@ modified: 2025-02-18 18:14:03
 * [正确设置 ELECTRON_MIRROR](https://newsn.net/say/electron-mirror.html)
 * [Electron 环境配置 - 知乎](https://zhuanlan.zhihu.com/p/676814265)
 * [npm安装Electron项目失败报错问题和解决方法](https://blog.csdn.net/weixin_46525113/article/details/132299107)
+* [electron 淘宝镜像配置 .npmrc 文件 \| 李钟意讲前端](https://docs.ffffee.com/electron/electron-npmrc.html)
+* [electron 国内代理源配置完全指南npm/pnpm/yarn、electron、 安装electron、国内仓库、 - 掘金](https://juejin.cn/post/7329785321626353674)
 
 ---
 

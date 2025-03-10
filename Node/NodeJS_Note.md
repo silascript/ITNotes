@@ -7,7 +7,7 @@ tags:
   - fnm
   - npm
 created: 2023-08-19 23:06:10
-modified: 2025-02-18 18:52:39
+modified: 2025-03-10 21:54:44
 ---
 
 # NodeJS 笔记
@@ -94,6 +94,12 @@ cache=~/nodejs/node_cache/
 registry=https://registry.npmmirror.com
 ELECTRON_MIRROR=https://npmmirror.com/mirrors/electron/
 ```
+
+> [!info] 
+> 
+> [https://registry.npmmirror.com/binary.html](https://registry.npmmirror.com/binary.html) 不同的二进制包放在不同目录。
+> 
+> 配置语法：`https://npmmirror.com/mirrors/二进制包的名称/`
 
 #### 问题
 

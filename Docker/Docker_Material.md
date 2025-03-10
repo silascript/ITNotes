@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-22 01:36:41
-modified: 2025-02-23 02:36:19
+modified: 2025-03-10 09:42:45
 ---
 
 # Docker 资料清单
@@ -18,6 +18,10 @@ modified: 2025-02-23 02:36:19
 * [docker容器之run命令 - 进击的davis - 博客园](https://www.cnblogs.com/davis12/p/14467421.html)
 * [docker run常用参数-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/2246184)
 * [Warning: Stopping docker.service, but it can still be activated by: docker.socket-CSDN博客](https://blog.csdn.net/qq_42533216/article/details/121489855)
+
+### 杂项
+
+* [如何在 Docker 容器中使用 systemctl\_HiFeng's Blog](https://www.hicairo.com/post/56.html)
 
 ### 挂载
 

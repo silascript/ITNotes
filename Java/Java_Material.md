@@ -6,7 +6,7 @@ tags:
   - jdk
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-03-11 20:55:17
+modified: 2025-03-11 22:03:04
 ---
 
 # Java 资料清单
@@ -40,6 +40,12 @@ modified: 2025-03-11 20:55:17
 * [Eclipse中servers框中右击Tomcat有个profile栏选项 - 假程序猿 - 博客园](https://www.cnblogs.com/straybirds/p/8953324.html)
 * [java - Eclipse Tomcat Error: "Could not launch in profiling mode because no profilers are configured." - Stack Overflow](https://stackoverflow.com/questions/40729817/eclipse-tomcat-error-could-not-launch-in-profiling-mode-because-no-profilers-a)
 
+## IDEA
+
+* [2023.3 Idea配置Tomcat环境](https://www.cnblogs.com/bktown/p/17636156.html)
+* [Idea 配置Tomcat - Merray - 博客园](https://www.cnblogs.com/merray/p/12698810.html)
+* [Intellij IDEA系列教材 （七）- 基础 - 配置Tomcat](https://how2j.cn/k/idea/idea-tomcat/1361.html)
+
 ## RMI
 
 * [关于Java中RMI的个人拙见 | 沉铝汤的破站](https://chenlvtang.top/2021/07/09/%E5%85%B3%E4%BA%8EJava%E4%B8%ADRMI%E7%9A%84%E4%B8%AA%E4%BA%BA%E6%8B%99%E8%A7%81/)
@@ -63,6 +69,12 @@ modified: 2025-03-11 20:55:17
 ## 学习规划
 
 * [【2025最新】Java自学路线一条龙版，就学这些，多一点都不学](https://www.bilibili.com/video/BV17oNoefERw)
+
+---
+
+## 相关教程
+
+* [How2J 的 Java教程](https://how2j.cn)
 
 ---
 

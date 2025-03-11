@@ -5,7 +5,7 @@ tags:
   - ide
   - eclipse
 created: 2025-02-23 21:17:37
-modified: 2025-02-23 21:39:59
+modified: 2025-03-11 20:58:33
 ---
 
 # Eclipse 笔记
@@ -85,6 +85,14 @@ StartupNotify=true
 
 1. 代码揭示
 在「Editor」 -「 Content Assist」 -「Auto activation triggers for Java」中添加 26 字母：`abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`
+
+#### Server
+
+##### Tomcat 适配
+
+如果在 「**Server**」新建 Server 时，没有 [Tomcat_Note](../Tomcat/Tomcat_Note.md) 适配器，可以到 「**Install New Software**」 中的 [Eclipse 官方扩展](#Eclipse%20官方扩展) 中 「**Web, XML, Java EE and OSGi Enterprise Development**」 分类里找 「**JST Sever Adapters Extensions(Apache Tomcat)**」 这个扩展安装：
+
+![Eclipse Tomcat](Java_IDE_Eclipse.assets/Eclipse_Server_Tomcat.png)
 
 ---
 
@@ -189,6 +197,10 @@ StartupNotify=true
 #### Marketplace
 
 Marketplace 是 Eclipse 的插件市场，通过它可以更方便地搜索和安装插件。
+
+#### Eclipse 官方扩展
+
+[https://download.eclipse.org/releases/latest](https://download.eclipse.org/releases/latest)
 
 ---
 
@@ -481,7 +493,6 @@ DBeaver 插件版也独立安装版功能一致，具体信息可以参考 [DBea
 > * `java.sql`
 > * `java.sql.rowset`
 >
->
 
 #### Tomcat 配置出问题
 
@@ -512,10 +523,29 @@ sudo chmod -R 755 tomcat-9.0.62
 >
 > 要选第二项，就是将项目复制一份到 tomcat 安装目录下的 `wtpwebapps` 目录中进行发布
 
+##### Tomcat 配置
+
+新建完 Server 后，相要配置 Profile：
+
+> [!tip] 
+> 
+> 启动 Tomcat 后，`webapp` 指定错误出现 [404](#启动%20Tomcat%20后%20404) 问题，那就得配置下 Server 的 Profile。
+
+![Tomcat Profile](Java_IDE_Eclipse.assets/Eclispe_Tomcat_Profile.png)
+
+双击后，如果出现 `Could not launch in profiling mode because no profilers are configured.` 错误。
+
+而且下方面板中没有「Servers」选项卡，如下所示：
+
+![Tomcat Server](Java_IDE_Eclipse.assets/Eclipse_Tomcat_Server.png)
+
+证明当前 [视图](#视图) 不是「Java EE」切实，应切换到「Java EE」视图再进行 Profile 的配置操作。
+
 ---
 
 ## 相关笔记
 
 * [Java 笔记](../Java_Note.md)
 * [Java 资料](../Java_Material.md)
+* [Tomcat 笔记](../Tomcat/Tomcat_Note.md)
 

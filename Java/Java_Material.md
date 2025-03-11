@@ -6,7 +6,7 @@ tags:
   - jdk
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-03-11 12:07:43
+modified: 2025-03-11 20:55:17
 ---
 
 # Java 资料清单
@@ -34,6 +34,11 @@ modified: 2025-03-11 12:07:43
 
 * [IDE中下载JDK的插件：可视化自由选择下载特定版本的JDK - 极道](https://www.jdon.com/56931.html)
 * [Disco API 使用教程-CSDN博客](https://blog.csdn.net/gitblog_00470/article/details/141801343)
+
+### Server
+
+* [Eclipse中servers框中右击Tomcat有个profile栏选项 - 假程序猿 - 博客园](https://www.cnblogs.com/straybirds/p/8953324.html)
+* [java - Eclipse Tomcat Error: "Could not launch in profiling mode because no profilers are configured." - Stack Overflow](https://stackoverflow.com/questions/40729817/eclipse-tomcat-error-could-not-launch-in-profiling-mode-because-no-profilers-a)
 
 ## RMI
 

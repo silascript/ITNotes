@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-13 18:49:29
-modified: 2024-09-05 10:32:13
+modified: 2025-03-12 00:13:34
 ---
 
 # VSCode 资料清单
@@ -37,6 +37,8 @@ modified: 2024-09-05 10:32:13
 * [Oracle发布支持Vscode的Java插件 - 极道](https://www.jdon.com/69168.html)
 * [vscode开发java环境配置，很细 - 掘金](https://juejin.cn/post/7386916905008054287)
 * [vscode推荐的Java插件](https://blog.51cto.com/u_16213343/7450444)
+* [VSCode中配置Java必须要JDK17+吗No you don't. 从插件的文档了解以下插件对环境的要求，其实只要 - 掘金](https://juejin.cn/post/7316202786173796378)
+* [VS Code中的JDK设置\_vscode配置jdk-CSDN博客](https://blog.csdn.net/oscar999/article/details/136122844)
 
 ---
 

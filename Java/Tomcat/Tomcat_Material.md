@@ -7,7 +7,7 @@ tags:
   - material
   - list
 created: 2025-03-11 06:18:21
-modified: 2025-03-11 07:06:50
+modified: 2025-03-11 23:48:40
 ---
 
 # Tomcat 资料清单
@@ -21,6 +21,10 @@ modified: 2025-03-11 07:06:50
 * [Tomcat的启动与关闭：详解启动类Bootstrap和Catalina](https://blog.51cto.com/stefanxfy/5083421)
 
 * [Tomcat 使用笔记](http://devgou.com/article/Apache-Tomcat/)
+
+## VSCode 集成
+
+* [Visual Studio Code配置Tomcat运行Java Web项目使用Visual Studio Code工具 - 掘金](https://juejin.cn/post/7282692942719713338)
 
 ---
 

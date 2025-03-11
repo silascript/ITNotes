@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2024-09-03 04:01:45
+modified: 2025-03-12 06:15:20
 
 ---
 
@@ -189,7 +189,7 @@ VSCode 有很多漂亮的 Theme 和 icon，可以根据自己喜好添加。
 [Bearded Theme](https://marketplace.visualstudio.com/items?itemName=BeardedBear.beardedtheme) [![Bearded Theme Repo](https://img.shields.io/github/stars/BeardedBear/bearded-theme
 )](https://github.com/BeardedBear/bearded-theme) 主题有多种颜色可选。
 
-![Bearded Theme screenshot 1](https://raw.githubusercontent.com/BeardedBear/bearded-theme/master/assets/themes.png)
+![Bearded Theme screenshot 1 | 1024x7671](https://raw.githubusercontent.com/BeardedBear/bearded-theme/master/assets/themes.png)
 
 ---
 
@@ -598,6 +598,31 @@ Runtime 名称列表：[runtime name](https://github.com/redhat-developer/vscode
 
 [MybatisX](https://marketplace.visualstudio.com/items?itemName=yangbaopan.vscode-java-ibatisx) [![MybatisX Repo](https://img.shields.io/github/stars/Carson-yy/vscode-mybatis
 )](https://github.com/Carson-yy/vscode-mybatis)
+
+#### Community-Server-Connector
+
+[Community-Server-Connector](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-community-server-connector) [![Community-Server-Connector Repo](https://img.shields.io/github/stars/redhat-developer/rsp-server-community
+)](https://github.com/redhat-developer/rsp-server-community) 是一个 Java 的服务器管理插件。
+
+这插件依赖 [Runtime Server Protocol UI](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-rsp-ui) 插件。
+
+最简单配置：
+
+```json
+"java.configuration.updateBuildConfiguration": "automatic",
+"rsp-ui.rsp.java.home": "/home/silascript/.sdkman/candidates/java/current",
+"rsp-ui.enableStartServerOnActivation": [
+	{	
+	"id": "redhat.vscode-community-server-connector",
+	"name": "Community Server Connector",
+	"startOnActivation": true	
+	}
+]
+```
+
+> [!tip] 
+> 
+> `rsp-ui.rsp.java.home`：这个是配置 [JDK](../Java/Java_Note.md#java_jdk) 目录，这个跟 [RedHat-Java](#RedHat-Java) 中的那个 `java.configuration.runtimes` 并不能共用，那个是编写程序时用的，这个是给 [Tomcat](../Java/Tomcat/Tomcat_Note.md)、Glassfish 这些 Server 用的。
 
 ---
 

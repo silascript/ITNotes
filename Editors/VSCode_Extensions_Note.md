@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2025-03-12 06:15:20
+modified: 2025-03-12 06:31:58
 
 ---
 
@@ -360,7 +360,7 @@ markdown 插件有很多，而 VSCode、VSCodiume 本身内置了 markdown 基�
 
 ![table-formatter](https://github.com/yzhang-gh/vscode-markdown/raw/master/images/gifs/table-formatter.gif)
 
-![section-numbers](https://github.com/yzhang-gh/vscode-markdown/raw/master/images/gifs/section-numbers.gif)
+![section-numbers  | 900x500](https://github.com/yzhang-gh/vscode-markdown/raw/master/images/gifs/section-numbers.gif)
 
 #### <span id="vscode_extensions_markdown-preview-enhanced">Markdown Preview Enhanced</span>
 
@@ -416,7 +416,7 @@ VSCodium 原装只内置了 `Python Language Basics`，这个内置插件只有�
 [Python Environment Manager](https://marketplace.visualstudio.com/items?itemName=donjayamanne.python-environment-manager) 是 [Python环境](../Python/Python_Note.md#python_virtualenvironments) [![Python Environment Manager Repo](https://img.shields.io/github/stars/DonJayamanne/vscode-python-manager
 )](https://github.com/DonJayamanne/vscode-python-manager) 管理插件。
 
-![Python Environment Manager screenshot 1](https://raw.githubusercontent.com/DonJayamanne/vscode-python-manager/environmentManager/resources/demo.gif)
+![Python Environment Manager screenshot 1 | 1200x700](https://raw.githubusercontent.com/DonJayamanne/vscode-python-manager/environmentManager/resources/demo.gif)
 
 #### Ruff for VSCode
 
@@ -576,7 +576,7 @@ Runtime 名称列表：[runtime name](https://github.com/redhat-developer/vscode
 * List beans/endpoint mappings
 * View bean dependencies
 
-![Spring Boot Dashboard screenshot](https://github.com/microsoft/vscode-spring-boot-dashboard/raw/main/images/boot-dashboard-vsc.gif)
+![Spring Boot Dashboard screenshot | 1024x600](https://github.com/microsoft/vscode-spring-boot-dashboard/raw/main/images/boot-dashboard-vsc.gif)
 
 > [!important] 
 > 
@@ -809,7 +809,7 @@ VSCode 已经内置了大名鼎鼎的 [Emmet](https://emmet.io) （[Emmet Wiki](
  [Open In Default Browser](https://marketplace.visualstudio.com/items?itemName=peakchen90.open-html-in-browser#overview) [![Open In Default Browser Repo](https://img.shields.io/github/stars/peakchen90/vscode-open-in-default-browser
 )](https://github.com/peakchen90/vscode-open-in-default-browser) 是一个使用默认 [浏览器](../Browsers/Browser_Note.md) 打开页面的插件。
 
-![open-in-default-browser screenshot](https://github.com/peakchen90/vscode-open-in-default-browser/raw/master/public/preview.gif)
+![open-in-default-browser screenshot | 1200x700](https://github.com/peakchen90/vscode-open-in-default-browser/raw/master/public/preview.gif)
 
 ---
 

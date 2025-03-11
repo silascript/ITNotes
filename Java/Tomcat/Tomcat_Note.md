@@ -11,7 +11,7 @@ tags:
   - javaweb
   - container
 created: 2023-08-18 19:44:52
-modified: 2025-02-15 11:30:09
+modified: 2025-03-11 06:52:10
 ---
 
 # Tomcat 笔记
@@ -68,3 +68,53 @@ tomcat 的配置文件都放在 `conf` 目录下。
 ```
 
 ---
+
+## 启动
+
+tomcat 三种启动方式：
+
+### 直接启动
+
+直接执行 `bin` 目录中的 `startup.sh`（如果是 Windows 则是 `startup.bat`）。
+
+这种启动方式，在终端中没有任何响应信息，鬼知道启动是否成功，得访问页面时才知道。
+
+其实可以查看 `startup.sh` 脚本，它实质最终是这样的：`catalina.sh start "$@"`，调了 [catalina](#catalina) 脚本来启动。
+
+### catalina
+
+#### 前台启动
+
+通过执行 `bin` 目录下的 `catalina.sh` 脚本，并给一个参数 `run` 来启动：`./catalina.sh run`。
+
+这种启动，可以有终端中显示启动信息。
+
+> [!info] 
+> 
+> 只要看到 `11-Mar-2025 06:25:52.662 信息 [main] org.apache.catalina.startup.Catalina.start [1132]毫秒后服务器启动`，就证明 Tomcat 启动成功了！
+
+此种方式启动，属于「前台」启动，所以终端会被「阻塞」，当前终端窗口就不能执行其他命令了。而停止 Tomcat，也相对「粗暴」，就是使用 `Ctrl+c` 快捷键。
+
+#### 后台启动
+
+如果想要在后台启动 Tomcat，则可以使用 `catalina.sh start` 命令。
+> [!tip] 
+> 
+> 类似的可以执行 `catalina.sh jpda start`，以 JPDA 调试方式来启动 Tomcat。
+
+执行完此命令，终端不会被「阻塞」，可以在终端使用其他命令。
+
+要停止 Tomcat 运行可以使用：`catalina.sh stop` 命令。
+
+### 服务启动
+
+执行：`nohup ./startup.sh &` ，Tomcat 将以后台服务的方式启动。
+
+---
+
+## 相关笔记
+
+* [Tomcat 资料清单](Tomcat_Material.md) 
+* [Java Web 笔记](../Java_Web_Note.md)
+* [Java 笔记](../Java_Note.md)
+

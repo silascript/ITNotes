@@ -6,7 +6,7 @@ tags:
   - jdk
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-02-23 20:49:29
+modified: 2025-03-11 12:07:43
 ---
 
 # Java 资料清单
@@ -27,6 +27,8 @@ modified: 2025-02-23 20:49:29
 * [Java卸载工具：几个JDK自带命令与可视化工具 - 指尖上的代码go - 博客园](https://www.cnblogs.com/cqqfboy/p/15406109.html)
 
 ## Eclipse
+
+* [Linux下通过设置代理以在线方式为eclipse安装CDT插件 - AzYet - 博客园](https://www.cnblogs.com/azyet/p/3633865.html)
 
 ### 插件
 

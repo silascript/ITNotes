@@ -6,7 +6,7 @@ tags:
   - jdk
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-03-11 22:03:04
+modified: 2025-03-13 00:03:04
 ---
 
 # Java 资料清单
@@ -61,6 +61,12 @@ modified: 2025-03-11 22:03:04
 * [从JVM字节码执行看重载和重写 - 冬日降临 - 博客园](https://www.cnblogs.com/winterfells/p/7923241.html)
 
 ## Web
+
+### JDBC
+
+* [JDBC driver连接MySQL运行报错The server time zone value - JohnTesla - 博客园](https://www.cnblogs.com/JohnTeslaaa/p/10334679.html)
+* [JDBC(mysql)显式设置serverTimezone的原因和方法\_jdbc servertimezone-CSDN博客](https://blog.csdn.net/autumn9909/article/details/130334715)
+* [Jdbc Driver驱动和ServerTimeZone时区的的问题 - 听风是雨 - 博客园](https://www.cnblogs.com/july-sunny/p/11888270.html)
 
 ### JBoss
 

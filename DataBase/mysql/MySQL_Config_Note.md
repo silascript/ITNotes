@@ -6,7 +6,7 @@ tags:
   - database
   - config
 created: 2024-07-24 18:49:11
-modified: 2025-02-23 02:10:36
+modified: 2025-03-12 23:58:43
 ---
 
 # MySQL 配置笔记
@@ -280,6 +280,39 @@ alter table 表名 character set utf8mb4;
 
 ```sql
 alter table 表名 change 列名 列名 varchar(10) character set utf8mb4;
+```
+
+## 其他配置
+
+### Time-zone
+
+[MySQL8](MySQL_Note.md) 中存在时区设置问题。
+
+可以使用 `show variables like '%time_zone%'` 语句查询当前数据库是否已经设置时区为 `UTC`。
+
+```shell
+mysql> show variables like '%time_zone%';
++------------------+--------+
+| Variable_name    | Value  |
++------------------+--------+
+| system_time_zone | UTC    |
+| time_zone        | SYSTEM |
++------------------+--------+
+2 rows in set (0.01 sec)
+
+```
+
+#### 方式 1
+
+如果是使用 [Java](../../Java/Java_Note.md) 的 [JDBC](../../Java/Java_Web_Note.md#JDBC) 访问 MySQL 时，可以通过在「访问 URL」中添加参数解决时区问题，如：`jdbc:mysql://localhost:3356/xxx?serverTimezone=UTC`。
+
+#### 方式 2
+
+直接在 mysql 的配置文件设置。在 `mysqld` 节点中添加以下配置：
+
+```ini
+[mysqld]
+default-time-zone='UTC'
 ```
 
 ---

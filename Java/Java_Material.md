@@ -6,7 +6,7 @@ tags:
   - jdk
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-03-13 01:58:25
+modified: 2025-03-13 02:09:49
 ---
 
 # Java 资料清单
@@ -69,6 +69,7 @@ modified: 2025-03-13 01:58:25
 * [Jdbc Driver驱动和ServerTimeZone时区的的问题 - 听风是雨 - 博客园](https://www.cnblogs.com/july-sunny/p/11888270.html)
 * [【数据库】时区及JDBC的时区设置 - 马儿跑 - 博客园](https://www.cnblogs.com/maerpao/p/17426980.html)
 * [MySQL 时区全解，如何修改数据库时区，JDBC 时区不一致时怎么办？ \| 老郭种树](https://guozh.net/mysql-time-zone-2/)
+* [Mysql设置时区的多种解决方法](https://blog.iyume.top/java/110.html)
 
 ### JBoss
 

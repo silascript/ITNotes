@@ -6,7 +6,7 @@ tags:
   - database
   - config
 created: 2024-07-24 18:49:11
-modified: 2025-03-13 01:49:43
+modified: 2025-03-13 02:01:22
 ---
 
 # MySQL 配置笔记
@@ -305,6 +305,20 @@ mysql> show variables like '%time_zone%';
 默认 `time_zone` 被设置成 `UTC`，而使用 `serverTimezone=UTC` 会导致数据的时间保存到数据库时比传入的时间少 8 小时。
 
 所以我们得重设时区：`serverTimezone=Asia/Shanghai`
+
+#### 常用时区列表
+
+|       时区       |     时区标识      |
+|:----------------:|:-----------------:|
+|   中国标准时间   |   Asia/Shanghai   |
+| 美国东部标准时间 | America/New_York  |
+| 澳大利亚悉尼时间 | Australia/Sydney  |
+|   印度标准时间   |   Asia/Kolkata    |
+| 英国格林尼治时间 |   Europe/London   |
+| 加拿大多伦多时间 |  America/Toronto  |
+|  巴西圣保罗时间  | America/Sao_Paulo |
+|   韩国标准时间   |    Asia/Seoul     |
+| 俄罗斯莫斯科时间 |   Europe/Moscow   |
 
 #### 方式 1
 

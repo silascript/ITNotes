@@ -6,7 +6,7 @@ tags:
   - database
   - config
 created: 2024-07-24 18:49:11
-modified: 2025-03-12 23:58:43
+modified: 2025-03-13 01:49:43
 ---
 
 # MySQL 配置笔记
@@ -288,7 +288,7 @@ alter table 表名 change 列名 列名 varchar(10) character set utf8mb4;
 
 [MySQL8](MySQL_Note.md) 中存在时区设置问题。
 
-可以使用 `show variables like '%time_zone%'` 语句查询当前数据库是否已经设置时区为 `UTC`。
+可以使用 `show variables like '%time_zone%'` 语句查询当前数据库是否已经设置时区：
 
 ```shell
 mysql> show variables like '%time_zone%';
@@ -302,9 +302,13 @@ mysql> show variables like '%time_zone%';
 
 ```
 
+默认 `time_zone` 被设置成 `UTC`，而使用 `serverTimezone=UTC` 会导致数据的时间保存到数据库时比传入的时间少 8 小时。
+
+所以我们得重设时区：`serverTimezone=Asia/Shanghai`
+
 #### 方式 1
 
-如果是使用 [Java](../../Java/Java_Note.md) 的 [JDBC](../../Java/Java_Web_Note.md#JDBC) 访问 MySQL 时，可以通过在「访问 URL」中添加参数解决时区问题，如：`jdbc:mysql://localhost:3356/xxx?serverTimezone=UTC`。
+如果是使用 [Java](../../Java/Java_Note.md) 的 [JDBC](../../Java/Java_Web_Note.md#JDBC) 访问 MySQL 时，可以通过在「访问 URL」中添加参数解决时区问题，如：`jdbc:mysql://localhost:3356/xxx?serverTimezone=Asia/Shanghai`。
 
 #### 方式 2
 
@@ -312,7 +316,7 @@ mysql> show variables like '%time_zone%';
 
 ```ini
 [mysqld]
-default-time-zone='UTC'
+default-time-zone='Asia/Shanghai'
 ```
 
 ---

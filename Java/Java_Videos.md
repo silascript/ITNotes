@@ -6,7 +6,7 @@ tags:
   - tutorial
   - list
 created: 2023-06-24 01:08:17
-modified: 2025-01-27 01:35:45
+modified: 2025-03-13 01:58:10
 ---
 
 # Java 视频清单
@@ -24,6 +24,7 @@ modified: 2025-01-27 01:35:45
 * [2024全套java教程，零基础入门到精通，2小时快速入门](https://www.bilibili.com/video/BV11z421f7HJ)
 * [2024黑马程序员Java+AI智能辅助编程全套视频教程](https://www.bilibili.com/video/BV1gb42177hm)
 * [【挑战不可能】7天零基础快速学会Java](https://www.bilibili.com/video/BV1sk4y1M7ru)
+* [【2025最新】Java自学路线一条龙版，就学这些，多一点都不学](https://www.bilibili.com/video/BV17oNoefERw)
 
 ### IO
 

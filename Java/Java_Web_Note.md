@@ -6,7 +6,7 @@ tags:
   - jdbc
   - http
 created: 2023-01-31 11:31:14
-modified: 2025-03-12 23:58:38
+modified: 2025-03-13 01:59:00
 ---
 
 # Java Web 笔记
@@ -66,6 +66,6 @@ maven 依赖：
 ## <span id="java_web_about">相关笔记</span>
 
 * [Spring 笔记 1](./Spring/Spring_Note_1.md) 
-* [Java资料清单](Java_Material.md)
-* [Java笔记](Java_Note.md)
+* [Java 资料清单](Java_Material.md)
+* [Java 笔记](Java_Note.md)
 

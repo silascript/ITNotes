@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2025-02-22 20:01:30
-modified: 2025-02-23 12:57:01
+modified: 2025-03-13 01:56:31
 ---
 
 # MySQL 资料清单
@@ -22,6 +22,10 @@ modified: 2025-02-23 12:57:01
 * [如何选择适合的 MySQL Connector/J 版本](https://segmentfault.com/a/1190000044667101)
 * [MySQL版本历史与主要特性 – orczhou.com](https://www.orczhou.com/index.php/2023/05/mysql-version-history/)
 * [MySQL版本现状与选择 – orczhou.com](https://www.orczhou.com/index.php/how-to-choose-the-right-mysql-version/)
+
+## Timezone
+
+* [mysql serverTimezone 可用时区](https://blog.51cto.com/u_16175498/7059069)
 
 ---
 

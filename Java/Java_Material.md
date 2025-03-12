@@ -6,7 +6,7 @@ tags:
   - jdk
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-03-13 00:03:04
+modified: 2025-03-13 01:58:25
 ---
 
 # Java 资料清单
@@ -67,14 +67,12 @@ modified: 2025-03-13 00:03:04
 * [JDBC driver连接MySQL运行报错The server time zone value - JohnTesla - 博客园](https://www.cnblogs.com/JohnTeslaaa/p/10334679.html)
 * [JDBC(mysql)显式设置serverTimezone的原因和方法\_jdbc servertimezone-CSDN博客](https://blog.csdn.net/autumn9909/article/details/130334715)
 * [Jdbc Driver驱动和ServerTimeZone时区的的问题 - 听风是雨 - 博客园](https://www.cnblogs.com/july-sunny/p/11888270.html)
+* [【数据库】时区及JDBC的时区设置 - 马儿跑 - 博客园](https://www.cnblogs.com/maerpao/p/17426980.html)
+* [MySQL 时区全解，如何修改数据库时区，JDBC 时区不一致时怎么办？ \| 老郭种树](https://guozh.net/mysql-time-zone-2/)
 
 ### JBoss
 
 * [深入解析JBoss Tools：全方位开发工具集成的艺术-易源AI资讯](https://www.showapi.com/news/article/66bc25624ddd79f11a002aa2)
-
-## 学习规划
-
-* [【2025最新】Java自学路线一条龙版，就学这些，多一点都不学](https://www.bilibili.com/video/BV17oNoefERw)
 
 ---
 
@@ -87,5 +85,6 @@ modified: 2025-03-13 00:03:04
 ## 相关笔记
 
 * [Java 笔记](Java_Note.md)
-* [Gradle资料](Groovy_Gradle/Gradle_Material.md)
+* [Gradle 资料清单](Groovy_Gradle/Gradle_Material.md)
+* [MySQL 资料清单](../DataBase/mysql/MySQL_Material.md)
 

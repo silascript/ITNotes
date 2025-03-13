@@ -5,8 +5,9 @@ tags:
   - yaml
   - ime
 created: 2023-08-18 19:44:52
-modified: 2024-09-14 03:23:43
+modified: 2025-03-14 02:34:55
 ---
+
 # Rime 笔记
 
 [Rime](https://rime.im) 是一个输入法引擎。
@@ -29,22 +30,32 @@ Linux 下安装 Rime 有基于「IBus」框架和「Fcitx」框架两种。
 基于 IBus 框架：
 
 #### ArchLinux
+
 ```shell
 pacman -S ibus-rime
 ```
 
 #### Ubuntu
+
 ```shell
 sudo apt-get install ibus-rime
 ```
 
+#### ibus 相关命令
+
+重启 ibus 服务：
+
+```shell
+ibus restart
+```
+
 ---
 
-## 一些概念
+## 概念
 
 ### 方案
 
-方案就是包括码表在内的一套输入方案。
+「**方案**」就是包括码表在内的一套输入方案。
 
 ## <span id="rime_input">打字操作</span>
 
@@ -184,9 +195,11 @@ app_opsions:
 
 ---
 
-## 相关资料
+## 相关笔记
 
-* [解决VScode与Linux Rime中州韵输入法CTRL+~热键冲突](https://spaceack.com/20210120-%E8%A7%A3%E5%86%B3vscode%E4%B8%8Elinuxrime%E4%B8%AD%E5%B7%9E%E9%9F%B5%E8%BE%93%E5%85%A5%E6%B3%95ctrl-~%E7%83%AD%E9%94%AE%E5%86%B2%E7%AA%81/)
+* [输入法笔记](IME_Note.md)
+* [输入法资料清单](IME_Material.md)
+* [Linux 笔记](../Linux/Linux_Note.md)
 
 ---
 

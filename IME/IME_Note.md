@@ -1,12 +1,11 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - ime
   - ibus
   - rime
-created: 2022-11-7 2:50:13
-modified: 2023-06-5 1:31:48
+created: 2023-08-18 19:44:52
+modified: 2025-03-14 02:32:09
 ---
 # 输入法笔记
 
@@ -32,11 +31,13 @@ modified: 2023-06-5 1:31:48
 
 与这插件相关的，还有 [IBus-Theme-Hub](https://github.com/openSUSE/IBus-Theme-Hub) 这个 theme 集合，有多种主题可选择。
 > [!tip] 主题的更换
+> 
 > 通过 [IBus-Theme-Tools](https://github.com/openSUSE/IBus-Theme-Tools) 这个工具可能方便生成主题。
 
 ---
 
-## Rime
+## 相关笔记
 
-[Rime 笔记](Rime_Note.md)
+* [输入法资料清单](IME_Material.md)
+* [Rime 笔记](Rime_Note.md)
 

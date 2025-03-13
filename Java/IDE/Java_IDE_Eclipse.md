@@ -5,7 +5,7 @@ tags:
   - ide
   - eclipse
 created: 2025-02-23 21:17:37
-modified: 2025-03-13 21:52:15
+modified: 2025-03-14 02:06:13
 ---
 
 # Eclipse 笔记
@@ -181,7 +181,7 @@ StartupNotify=true
 2. `Shift+Alt+S`，呼出「Source」菜单 如果装了 [Vrapper](#Vrapper) 插件并装了 [Java extensions](#^491eb0) 子扩展，那就可以使用 `gm` 快捷键呼出「Source」菜单。
 3. 按 `r`，呼出 getter 和 setter 配置菜单
 4. 选择要生成 getter 和 setter 的属性，全选： `Alt+A`；取消所有： `Alt+D`；选择所有的 getter：`Alt+G`；选择所有 setter：`Alt+L`。
-5. 回车生成 getter 和 setter 如果 `Generate` 按钮失去焦点，就按 `Alt+G`。
+5. 回车生成 getter 和 setter 如果 `Generate` 按钮失去焦点，就按 `Alt+R`。
 
 ##### 生成构造方法
 
@@ -201,6 +201,10 @@ Marketplace 是 Eclipse 的插件市场，通过它可以更方便地搜索和�
 #### Eclipse 官方扩展
 
 [https://download.eclipse.org/releases/latest](https://download.eclipse.org/releases/latest)
+
+#### JustJ
+
+[Eclipse JustJ](https://projects.eclipse.org/projects/technology.justj) 是一组开源的 Eclipse 插件，其内置了各个版本、各个平台的 [JRE](../Java_Note.md#JRE)。
 
 ---
 
@@ -374,7 +378,7 @@ SQL Parsers 这是跟 Model 相关的，应该是模型转换器。
 
 DBeaver 插件版是 [DBeaver](../DataBase/DataBase_Note.md#DBeaver) 的插件形式。
 
-这比 [Data Tools Platform](#Data%20Tools%20Platform) 系列插件强太多，建议使用些插件替代 **DTP**。
+这比 [Data Tools Platform](#Data%20Tools%20Platform) 系列插件强太多，建议使用些插件替代。
 
 此插件安装地址：[https://dbeaver.io/update/latest/](https://dbeaver.io/update/latest/)，可以通过添加这个址安装，当然也可以通过 [Marketplace](#Marketplace) ：[https://marketplace.eclipse.org/content/dbeaver](https://marketplace.eclipse.org/content/dbeaver) 来安装。
 
@@ -420,6 +424,10 @@ STS 三种安装方式：
 > * Eclipse 4.34: https://cdn.spring.io/spring-tools/release/TOOLS/sts4/update/e4.34/
 > * Eclipse 4.33: https://cdn.spring.io/spring-tools/release/TOOLS/sts4/update/e4.33/
 3. 通过 [Marketplace](#Marketplace) 安装
+
+> [!tip] 
+> 
+> 更多的安装细节请参考：[官方文档](https://github.com/spring-projects/sts4/wiki/Installation)
 
 ---
 

@@ -4,9 +4,11 @@ tags:
   - material
   - java
   - jdk
+  - ide
+  - eclipse
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-03-13 02:09:49
+modified: 2025-03-13 04:59:44
 ---
 
 # Java 资料清单
@@ -26,9 +28,15 @@ modified: 2025-03-13 02:09:49
 * [JDK11删除功能和选项-CSDN博客](https://blog.csdn.net/weixin_33786077/article/details/89621390)
 * [Java卸载工具：几个JDK自带命令与可视化工具 - 指尖上的代码go - 博客园](https://www.cnblogs.com/cqqfboy/p/15406109.html)
 
+---
+
 ## Eclipse
 
 * [Linux下通过设置代理以在线方式为eclipse安装CDT插件 - AzYet - 博客园](https://www.cnblogs.com/azyet/p/3633865.html)
+* [Eclipse - Arch Linux 中文维基](https://wiki.archlinuxcn.org/wiki/Eclipse)
+* [教你轻松安装Eclipse IDE于Linux系统全攻略 - OSCHINA - 中文开源技术交流社区](https://my.oschina.net/emacs_8823476/blog/17350483)
+* [转载-【使用Eclipse Installer安装Eclipse】\_eclipseinstaller-CSDN博客](https://blog.csdn.net/qq_34932433/article/details/136187944)
+* [在Linux上安装Eclipse，Windows通用 - Biem - 博客园](https://www.cnblogs.com/biem/p/12923263.html)
 
 ### 插件
 
@@ -39,6 +47,8 @@ modified: 2025-03-13 02:09:49
 
 * [Eclipse中servers框中右击Tomcat有个profile栏选项 - 假程序猿 - 博客园](https://www.cnblogs.com/straybirds/p/8953324.html)
 * [java - Eclipse Tomcat Error: "Could not launch in profiling mode because no profilers are configured." - Stack Overflow](https://stackoverflow.com/questions/40729817/eclipse-tomcat-error-could-not-launch-in-profiling-mode-because-no-profilers-a)
+
+---
 
 ## IDEA
 
@@ -59,6 +69,8 @@ modified: 2025-03-13 02:09:49
 
 * [重载和重写的底层原理——虚拟机字节码执行引擎-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/2228945)
 * [从JVM字节码执行看重载和重写 - 冬日降临 - 博客园](https://www.cnblogs.com/winterfells/p/7923241.html)
+
+---
 
 ## Web
 
@@ -86,6 +98,7 @@ modified: 2025-03-13 02:09:49
 ## 相关笔记
 
 * [Java 笔记](Java_Note.md)
+* [Eclipse 笔记](IDE/Java_IDE_Eclipse.md)
 * [Gradle 资料清单](Groovy_Gradle/Gradle_Material.md)
 * [MySQL 资料清单](../DataBase/mysql/MySQL_Material.md)
 

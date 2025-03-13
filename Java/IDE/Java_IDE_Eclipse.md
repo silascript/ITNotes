@@ -5,7 +5,7 @@ tags:
   - ide
   - eclipse
 created: 2025-02-23 21:17:37
-modified: 2025-03-11 20:58:33
+modified: 2025-03-13 21:52:15
 ---
 
 # Eclipse 笔记
@@ -218,7 +218,7 @@ Marketplace 是 Eclipse 的插件市场，通过它可以更方便地搜索和�
 
 #### colortheme
 
-[colortheme](https://marketplace.eclipse.org/content/eclipse-color-theme) 这个与上面那个不同，这是插件是针对编辑区的配色插件。 Eclipse 市场中的 color-theme 插件地址已经失效。 请到 [这个](https://eclipse-color-theme.github.io/update/) 页面，其中有个链接： [download this update site as a zip archive](https://eclipse-color-theme.github.io/update/eclipse-color-theme-update-site.zip)，下载这个压缩包。将其中的 `features` 和 `plugins` 两个目录提取出来放到一个你自定义名称的目录中，如「color-theme」，将这个包括有 `features` 和 `plugins` 的目录放到 Eclipse 安装目录下的 `dropins` 目录中，重启 Eclipse ，这个插件就能生效了！
+[colortheme](https://marketplace.eclipse.org/content/eclipse-color-theme) 这个与上面那个不同，这是插件是针对编辑区的配色插件。 Eclipse 市场中的 color-theme 插件地址已经失效。 请到 [这个页面](https://eclipse-color-theme.github.io/update/) ，其中有个链接： [download this update site as a zip archive](https://eclipse-color-theme.github.io/update/eclipse-color-theme-update-site.zip)，下载这个压缩包。将其中的 `features` 和 `plugins` 两个目录提取出来放到一个你自定义名称的目录中，如「color-theme」，将这个包括有 `features` 和 `plugins` 的目录放到 Eclipse 安装目录下的 `dropins` 目录中，重启 Eclipse ，这个插件就能生效了！
 
 可以到：[eclise color-theme](https://eclipse-color-themes.web.app) 网站下配色。
 
@@ -325,29 +325,30 @@ Data Tools Platform 是一套数据库管理插件组，能在 Eclipse 中进行
 
 > [!info] 
 > 
-> 从图中可以看出，只装「Data Tools Platform Connectivity」就能实现数据库连接、SQL 等数据库管理的基础功能，其实对于只是「临时」连下数据库，作些简单的数据操作而言，这实际已经够用的了！
+> 从图中可以看出，只装「**Data Tools Platform Connectivity**」就能实现数据库连接、SQL 等数据库管理的基础功能，其实对于只是「临时」连下数据库，作些简单的数据操作而言，这实际已经够用的了！
 > 
-> 不过，实际上，还是没法用的，因为连接这个功能，需要数据库的「连接驱动」，而只装「Connectivity」插件，只有通用 [JDBC](Java_Web_Note.md#JDBC) 可选，所以得安装相应数据库连接驱动的支持。
+> 不过，实际上，还是没法用的，因为连接这个功能，需要数据库的「连接驱动」，而只装「**Connectivity**」插件，只有通用 [JDBC](Java_Web_Note.md#JDBC) 可选，所以得安装相应数据库连接驱动的支持。
 
 ##### Data Tools Platform Enablement
 
 Data Tools Platform Enablement 是一个对各大数据库连接支持的插件。
 
-勾选「Data Tools Platform Enablement for MySQL」后安装相应插件后，就会在新建链接时出现以下的选项：
+勾选「**Data Tools Platform Enablement for MySQL**」后安装相应插件后，就会在新建链接时出现以下的选项：
 ![Eclipse DTP Enablement 1](Java_IDE_Eclipse.assets/Eclipse_dtp_enablement_1.png)
 
 > [!tip] Enablement for MySQL
-> 在未装「Data Tools Platform Enablement for MySQL」时，只有「Generic JDBC」这个，装了这插件后就多了 MySQL 相关连接驱动可选。
+> 
+> 在未装「**Data Tools Platform Enablement for MySQL**」时，只有「**Generic JDBC**」这个，装了这插件后就多了 [MySQL](../../DataBase/mysql/MySQL_Note.md) 相关连接驱动可选。
 
 ##### SQL Development Tools Data Functions
 
-「SQL Development Tools Data Functions」主要功能是在数据库 Model 及 DDL 相关的。
+「**SQL Development Tools Data Functions**」主要功能是在数据库 Model 及 DDL 相关的。
 
 ![SQL Development Tools Data Functions](Java_IDE_Eclipse.assets/Eclipse_dtp_SQL_1.png)
 
 ##### SQL Query Builder
 
-「SQL Query Builder」 这个插件依赖 [SQL Parsers](#SQL%20Parsers) 插件，拟勾选「SQL Query Builder」时，会连 [SQL Parsers](#SQL%20Parsers) 插件也一起装了。
+「**SQL Query Builder**」 这个插件依赖 [SQL Parsers](#SQL%20Parsers) 插件，拟勾选「**SQL Query Builder**」时，会连 [SQL Parsers](#SQL%20Parsers) 插件也一起装了。
 
 ![Eclipse DTP SQL Builder 1](Java_IDE_Eclipse.assets/Eclipse_dtp_SQL_Builder_1.png)
 
@@ -359,7 +360,7 @@ SQL Parsers 这是跟 Model 相关的，应该是模型转换器。
 
 ##### Open Data Access Designer
 
-「Open Data Access Designer」 依赖 「Open Data Access Designer Core」，而「Open Data Access Designer Core」又依赖「Open Data Access Designer Runtime」，所以只用勾选「Open Data Access Designer」就可以将其他两个一起装了。
+「**Open Data Access Designer**」 依赖 「**Open Data Access Designer Core**」，而「**Open Data Access Designer Core**」又依赖「**Open Data Access Designer Runtime**」，所以只用勾选「**Open Data Access Designer**」就可以将其他两个一起装了。
 
 ##### 对于 Eclipse 中使用数据库管理的总结
 
@@ -392,13 +393,33 @@ DBeaver 插件版也独立安装版功能一致，具体信息可以参考 [DBea
 [JBoss](https://www.jboss.org) 出的一套 Java 开发的插件包。
 
 [JBoss-Tools](https://tools.jboss.org) 安装方式：
-12. 通过 [Marketplace](#Marketplace) 安装
-13. 也可以到 [官网](https://tools.jboss.org/downloads/) 下载插件包在本地安装。
-14. 添加安装 URL 来安装。
+
+1. 通过 [Marketplace](#Marketplace) 安装
+2. 也可以到 [官网](https://tools.jboss.org/downloads/) 下载插件包在本地安装。
+3. 添加安装 URL 来安装。
 > [!info] 
 > 
 > * 4.29.1： [https://download.jboss.org/jbosstools/photon/stable/updates/](https://download.jboss.org/jbosstools/photon/stable/updates/)
 > * 4.30.x：[https://download.jboss.org/jbosstools/photon/snapshots/updates/](https://download.jboss.org/jbosstools/photon/snapshots/updates/)
+
+#### Spring Tool Suite
+
+[Spring](https://spring.io) 的开发套件。
+
+除了可以通过下载 Spring 官方集成好的 Spring Tool Suite IDE，还可以在 Eclipse 里自己手动安装插件。
+
+STS 三种安装方式：
+
+1. 下载 STS 的离线安装压缩包，通过「Install New Package」中添加包的方式进行本地安装
+2. 同样是通过「Install New Package」，不过这次是添加 STS 的 url 地址的方式安装
+> [!info] 
+> 
+> 最新几个版本的**URL**：
+>
+> * Eclipse 4.35: https://cdn.spring.io/spring-tools/release/TOOLS/sts4/update/e4.35/
+> * Eclipse 4.34: https://cdn.spring.io/spring-tools/release/TOOLS/sts4/update/e4.34/
+> * Eclipse 4.33: https://cdn.spring.io/spring-tools/release/TOOLS/sts4/update/e4.33/
+3. 通过 [Marketplace](#Marketplace) 安装
 
 ---
 
@@ -449,8 +470,10 @@ DBeaver 插件版也独立安装版功能一致，具体信息可以参考 [DBea
 | 2024-06  |       N/A        |    4.32    |    2024 年 6 月     |    JDK 17     |   N/A    |
 | 2024-09  |       N/A        |    4.33    |    2024 年 9 月     |    JDK 17     |   N/A    |
 | 2024-12  |       N/A        |    4.34    |    2024 年 12 月    |    JDK 17     |   N/A    |
+| 2025-03  |       N/A        |    4.35    |    2025 年 3 月     |    JDK 17     |   N/A    |
 
 > [!tip] 32 位与 64 位
+> 
 > Eclipse 必须与 JRE 相一致，32 位 JRE 只能装 32 位版本的 Eclipse，64 位 JRE 装 64 位 Eclipse。
 > 
 

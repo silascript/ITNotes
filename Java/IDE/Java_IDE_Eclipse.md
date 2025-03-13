@@ -5,7 +5,7 @@ tags:
   - ide
   - eclipse
 created: 2025-02-23 21:17:37
-modified: 2025-03-14 02:06:13
+modified: 2025-03-14 03:58:16
 ---
 
 # Eclipse 笔记
@@ -405,6 +405,16 @@ DBeaver 插件版也独立安装版功能一致，具体信息可以参考 [DBea
 > 
 > * 4.29.1： [https://download.jboss.org/jbosstools/photon/stable/updates/](https://download.jboss.org/jbosstools/photon/stable/updates/)
 > * 4.30.x：[https://download.jboss.org/jbosstools/photon/snapshots/updates/](https://download.jboss.org/jbosstools/photon/snapshots/updates/)
+
+##### 常用组件
+
+###### Tomcat Integration
+
+默认 Eclipse 的 Server 的适配器中没有 Tomcat，而 JBoss Tools 插件包中有一个「**JBoss Tools Apache Tomcat Integration**」插件，便是增加 [Tomcat](../Tomcat/Tomcat_Note.md) 的适配器。
+
+装完这个插件后，在 Add 一个新的 Server 时，在适配器列表中就能看到 Tomcat 了：
+
+![Eclipse JBoss ](Java_IDE_Eclipse.assets/Eclipse_JBoss_Tomcat.png)
 
 #### Spring Tool Suite
 

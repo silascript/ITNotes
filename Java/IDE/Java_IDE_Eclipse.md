@@ -5,7 +5,7 @@ tags:
   - ide
   - eclipse
 created: 2025-02-23 21:17:37
-modified: 2025-03-14 03:58:16
+modified: 2025-03-14 04:30:38
 ---
 
 # Eclipse 笔记
@@ -414,7 +414,13 @@ DBeaver 插件版也独立安装版功能一致，具体信息可以参考 [DBea
 
 装完这个插件后，在 Add 一个新的 Server 时，在适配器列表中就能看到 Tomcat 了：
 
-![Eclipse JBoss ](Java_IDE_Eclipse.assets/Eclipse_JBoss_Tomcat.png)
+![Eclipse JBoss Tomcat Integration](Java_IDE_Eclipse.assets/Eclipse_JBoss_Tomcat.png)
+
+##### Server LaunchBar
+
+「**JBoss Tools Server LaunchBar Integration** 」为工具栏添加 Server 运行整合工具：
+
+![Eclipse JBoss LaunchBar Integration](Java_IDE_Eclipse.assets/Eclipse_JBoss_LaunchBar.png)
 
 #### Spring Tool Suite
 

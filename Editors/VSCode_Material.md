@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-13 18:49:29
-modified: 2025-03-12 00:13:34
+modified: 2025-03-15 02:09:55
 ---
 
 # VSCode 资料清单
@@ -93,6 +93,8 @@ modified: 2025-03-12 00:13:34
 * [vscode更改代码提示快捷键-CSDN博客](https://blog.csdn.net/qq_36623595/article/details/109289530)
 * [VSCode的全局配置与项目单独配置VSCode代码格式化插件及配置 格式化插件 Prettier - Code for - 掘金](https://juejin.cn/post/7290740395913691177)
 * [vscode 两个不起眼的插件竟导致内存占用持续飙升至99% - 菜越香 - 博客园](https://www.cnblogs.com/cyxg/p/18389200)
+
+* [VsCode权限不足问题 - 信2005-2刘海涛 - 博客园](https://www.cnblogs.com/lht020321/p/18631678)
 
 ---
 

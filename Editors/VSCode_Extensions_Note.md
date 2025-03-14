@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2025-03-12 06:31:58
+modified: 2025-03-15 02:55:05
 
 ---
 
@@ -623,6 +623,10 @@ Runtime 名称列表：[runtime name](https://github.com/redhat-developer/vscode
 > [!tip] 
 > 
 > `rsp-ui.rsp.java.home`：这个是配置 [JDK](../Java/Java_Note.md#java_jdk) 目录，这个跟 [RedHat-Java](#RedHat-Java) 中的那个 `java.configuration.runtimes` 并不能共用，那个是编写程序时用的，这个是给 [Tomcat](../Java/Tomcat/Tomcat_Note.md)、Glassfish 这些 Server 用的。
+
+> [!tip] 
+> 
+> 实话 Community-Server-Connector 实用性不好，很难用，项目能布署到 Server，但不能删除已布署的项目，这非常可笑。可以说这个插件非常的鸡肋。
 
 ---
 

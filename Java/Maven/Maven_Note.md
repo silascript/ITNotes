@@ -5,7 +5,7 @@ tags:
   - maven
   - jdk
 created: 2023-01-31 11:31:14
-modified: 2025-03-08 19:09:14
+modified: 2025-03-15 01:59:44
 ---
 
 # Maven 笔记
@@ -320,8 +320,8 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.14.0</version>
 				<configuration>
-				<release>21</release>
-				<encoding>UTF-8</encoding>
+					<release>21</release>
+					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
 		</plugins>

@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-13 18:49:29
-modified: 2025-03-15 02:09:55
+modified: 2025-03-15 03:29:03
 ---
 
 # VSCode 资料清单
@@ -39,6 +39,9 @@ modified: 2025-03-15 02:09:55
 * [vscode推荐的Java插件](https://blog.51cto.com/u_16213343/7450444)
 * [VSCode中配置Java必须要JDK17+吗No you don't. 从插件的文档了解以下插件对环境的要求，其实只要 - 掘金](https://juejin.cn/post/7316202786173796378)
 * [VS Code中的JDK设置\_vscode配置jdk-CSDN博客](https://blog.csdn.net/oscar999/article/details/136122844)
+* [VSCode中如何新建一个JavaWeb项目](https://blog.51cto.com/u_16175434/6597670)
+* [VSCode中如何新建一个JavaWeb项目 vscode创建一个java项目](https://blog.51cto.com/u_16099231/6267891)
+* [vscode部署tomcat后新建project（无maven只适合简单的服务）\_vscode 配置完成后 没有 从maven原型创建项目-CSDN博客](https://blog.csdn.net/qq_42851898/article/details/132837713)
 
 ---
 

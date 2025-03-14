@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2025-03-15 02:55:05
+modified: 2025-03-15 04:02:24
 
 ---
 
@@ -626,7 +626,7 @@ Runtime 名称列表：[runtime name](https://github.com/redhat-developer/vscode
 
 > [!tip] 
 > 
-> 实话 Community-Server-Connector 实用性不好，很难用，项目能布署到 Server，但不能删除已布署的项目，这非常可笑。可以说这个插件非常的鸡肋。
+> 实话 Community-Server-Connector 实用性不好。如将一个 web 项目「Run」（布署）到 Server，运行什么没问题，但不能通过 Server 界面进行「删除」已布署的项目，这非常可笑。想要完成布署和删除布署，只能通过 Server 本身的「Add Deployment」功能实现，其实这跟直接在项目中「Run」是一样的，但「Run」的方式就不能「Remove Deployment」，非常不够灵活。
 
 ---
 

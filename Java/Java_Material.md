@@ -8,7 +8,7 @@ tags:
   - eclipse
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-03-13 04:59:44
+modified: 2025-03-15 04:20:31
 ---
 
 # Java 资料清单
@@ -73,6 +73,10 @@ modified: 2025-03-13 04:59:44
 ---
 
 ## Web
+
+* [不使用maven，建立Servlet项目\_vscode 不用maven建立servlet-CSDN博客](https://blog.csdn.net/nefss_/article/details/104544390)
+* [Tomcat web工程 web.xml 配置详解](https://michaelyb.top/2018/10/Mac-Tomcat-WebXml/)
+* [ Servlet入门 - 使用Maven创建javaweb工程](https://cloud.tencent.com/developer/article/1934637)
 
 ### JDBC
 

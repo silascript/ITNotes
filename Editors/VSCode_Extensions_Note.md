@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2025-03-16 19:02:35
+modified: 2025-03-16 19:11:26
 
 ---
 
@@ -626,7 +626,7 @@ Runtime 名称列表：[runtime name](https://github.com/redhat-developer/vscode
 
 > [!tip] 
 > 
-> 实话 Community-Server-Connector 实用性不好。如将一个 web 项目「Run」（布署）到 Server，运行什么没问题，但不能通过 Server 界面进行「删除」已布署的项目，这非常可笑。想要完成布署和删除布署，只能通过 Server 本身的「Add Deployment」功能实现，其实这跟直接在项目中「Run」是一样的，但「Run」的方式就不能「Remove Deployment」，非常不够灵活。
+> 实话 Community-Server-Connector 实用性不好。如将一个 web 项目「Run」（布署）到 Server，运行什么没问题，但不能通过 Server 界面进行「删除」已部署的项目，这非常可笑。想要完成部署和删除部署，只能通过 Server 本身的「Add Deployment」功能实现，其实这跟直接在项目中「Run」是一样的，但「Run」的方式就不能「Remove Deployment」，非常不够灵活。
 
 ##### 添加服务器
 
@@ -636,12 +636,12 @@ Runtime 名称列表：[runtime name](https://github.com/redhat-developer/vscode
 
 以 [Tomcat](../Java/Tomcat/Tomcat_Note.md) 为例。
 
-Community Server Deployment 有两种布署方式：
+Community Server Deployment 有两种部署方式：
 
 1. war 文件方式
 2. 目录方式
 
-##### 布署 war
+##### 部署 war
 
 1. 在已经 [添加Tomcat](#添加Tomcat) 右键菜单中选择「**Add Deployment**」 
 
@@ -653,20 +653,24 @@ Community Server Deployment 有两种布署方式：
 
 3. 选择 war 文件后，会弹出是否编辑选项选项，选默认的「**No**」后布署操作便完成了
 
-在布署的输出信息中，看到部署过程没有出错，那便是布署成功了：
+在部署的输出信息中，看到部署过程没有出错，那便是布署成功了：
 ```shell
 16-Mar-2025 18:52:37.262 信息 [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR 正在部署web应用程序存档文件[/home/silascript/.sdkman/candidates/tomcat/11.0.5/webapps/exercise01.war]
 
 16-Mar-2025 18:52:37.301 信息 [Catalina-utility-1] org.apache.catalina.startup.HostConfig.deployWAR web应用程序存档文件[/home/silascript/.sdkman/candidates/tomcat/11.0.5/webapps/exercise01.war]的部署已在[39]ms内完成
 ```
 
-到 [Tomcat](../Java/Tomcat/Tomcat_Note.md) 的 `webapp` 目录，可以看到布署的 war 文件及 Tomcat 自动将其解包后的同名目录：
+到 [Tomcat](../Java/Tomcat/Tomcat_Note.md) 的 `webapp` 目录，可以看到部署的 war 文件及 Tomcat 自动将其解包后的同名目录：
 
 ![Tomcat deploy war](../Tomcat/Tomcat_Note.assets/Tomcat_deploy_war.png)
 
 > [!tip] 
 > 
-> 到 Tomcat 的管理页面中点击「**Manager App**」，显示应用程序列表中会显示刚布署的项目，并且「**运行中**」一栏是 `true`，就证明布署没有问题。
+> 到 Tomcat 的管理页面中点击「**Manager App**」，显示应用程序列表中会显示刚部署的项目，并且「**运行中**」一栏是 `true`，就证明布署没有问题。
+
+##### 移除部署应用
+
+选择在已部署的应用右键，在菜单中点击「Remove Deployment」就能将部署的应用从 Tomcat 中移除了。Tomcat 会自动将 war 包及解压后的目录一并移除，不必担心有项目「残留」。
 
 ---
 

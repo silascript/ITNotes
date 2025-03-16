@@ -126,7 +126,7 @@ modified: 2024-01-25 00:23:03
 
 ## XML
 
-* [XML笔记](XML/xml_notes.md)
+* [XML笔记](XML/XML_Note.md)
 
 ---
 

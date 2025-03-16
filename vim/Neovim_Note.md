@@ -1254,7 +1254,7 @@ nvim-treesitter 的命令都是以 `TS` 开头的。
 
 [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag) 是一个自动关闭标签的插件。
 
-对于像 [Html](../Frontend/Html_Note.md)、[XML](../XML/xml_dtd.md) 等标签类型的文件而言，标签输入时自动关闭是必备功能，但对于 [nvim-autopairs](#nvim-autopairs) 只能补全标点符号这种成对补全插件而言，就有点力不从心了。而 nvim-ts-autotag 这个插件就是实现了自动关闭标签功能而存在的。
+对于像 [Html](../Frontend/Html_Note.md)、[XML](../XML/XML_DTD_Note.md) 等标签类型的文件而言，标签输入时自动关闭是必备功能，但对于 [nvim-autopairs](#nvim-autopairs) 只能补全标点符号这种成对补全插件而言，就有点力不从心了。而 nvim-ts-autotag 这个插件就是实现了自动关闭标签功能而存在的。
 
 简单配置就能用：
 

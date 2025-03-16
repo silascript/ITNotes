@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2025-03-16 19:11:26
+modified: 2025-03-16 19:14:50
 
 ---
 
@@ -649,7 +649,7 @@ Community Server Deployment 有两种部署方式：
 
 2. 选择「**file**」，弹出选择 war 文件选择
 
-![vscode community server connector add war file](Editors_Note.assets/vscode_CSC_addwarfile.png)
+![vscode community server connector add war file](Editors_Note.assets/vscode_CSC_deploy_addwarfile.png)
 
 3. 选择 war 文件后，会弹出是否编辑选项选项，选默认的「**No**」后布署操作便完成了
 

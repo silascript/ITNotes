@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-13 18:49:29
-modified: 2025-03-15 04:43:13
+modified: 2025-03-16 09:59:19
 ---
 
 # VSCode 资料清单
@@ -41,8 +41,10 @@ modified: 2025-03-15 04:43:13
 * [VS Code中的JDK设置\_vscode配置jdk-CSDN博客](https://blog.csdn.net/oscar999/article/details/136122844)
 * [VSCode中如何新建一个JavaWeb项目](https://blog.51cto.com/u_16175434/6597670)
 * [VSCode中如何新建一个JavaWeb项目 vscode创建一个java项目](https://blog.51cto.com/u_16099231/6267891)
-* [vscode部署tomcat后新建project（无maven只适合简单的服务）\_vscode 配置完成后 没有 从maven原型创建项目-CSDN博客](https://blog.csdn.net/qq_42851898/article/details/132837713)
-* [VSCode中开发JavaWeb项目（Maven+Tomcat+热部署）\_vscode java项目-CSDN博客](https://blog.csdn.net/tosyh66/article/details/132053883)
+
+### maven
+
+* [Maven 资料清单](../Java/Maven/Maven_Material.md#vscode)
 
 ---
 

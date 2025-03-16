@@ -8,7 +8,7 @@ tags:
   - eclipse
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-03-16 09:51:49
+modified: 2025-03-16 12:11:11
 ---
 
 # Java 资料清单
@@ -78,6 +78,11 @@ modified: 2025-03-16 09:51:49
 * [不使用maven，建立Servlet项目\_vscode 不用maven建立servlet-CSDN博客](https://blog.csdn.net/nefss_/article/details/104544390)
 * [Tomcat web工程 web.xml 配置详解](https://michaelyb.top/2018/10/Mac-Tomcat-WebXml/)
 
+### Servlet
+
+* [Servlet各版本的web.xml头部信息-模板 \| Java 技术论坛](https://learnku.com/articles/55353)
+* [JavaWeb - Servlet - raingray Blog](https://www.raingray.com/archives/4381.html)
+
 ### JDBC
 
 * [JDBC driver连接MySQL运行报错The server time zone value - JohnTesla - 博客园](https://www.cnblogs.com/JohnTeslaaa/p/10334679.html)
@@ -94,6 +99,11 @@ modified: 2025-03-16 09:51:49
 ## maven
 
 [Maven 资料清单](Maven/Maven_Material.md)
+
+### 杂项
+
+* [用filter过滤器处理编码格式为UTF-8\_java filter 增加 utf8-CSDN博客](https://blog.csdn.net/YKYZSYA/article/details/107733414)
+* [java中Filter过滤器处理中文乱码的方法 - 城南少年与猫 - 博客园](https://www.cnblogs.com/charlypage/p/9198452.html)
 
 ---
 

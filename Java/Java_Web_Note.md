@@ -6,7 +6,7 @@ tags:
   - jdbc
   - http
 created: 2023-01-31 11:31:14
-modified: 2025-03-13 01:59:00
+modified: 2025-03-16 12:03:45
 ---
 
 # Java Web 笔记
@@ -21,6 +21,12 @@ modified: 2025-03-13 01:59:00
 ---
 
 ## <span id="java_web_http_wrequest">HTTP 及 Web 请求</span>
+
+---
+
+## Servlet
+
+Tomcat 与 Servlet 版本对应关系：[Apache Tomcat® - Which Version Do I Want?](https://tomcat.apache.org/whichversion.html)
 
 ---
 

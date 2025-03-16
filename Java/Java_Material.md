@@ -8,7 +8,7 @@ tags:
   - eclipse
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-03-15 04:20:31
+modified: 2025-03-16 09:51:49
 ---
 
 # Java 资料清单
@@ -74,9 +74,9 @@ modified: 2025-03-15 04:20:31
 
 ## Web
 
+* [关于web.xml配置的那些事儿 - S3c0ldW4ng - 博客园](https://www.cnblogs.com/natian-ws/p/10827048.html)
 * [不使用maven，建立Servlet项目\_vscode 不用maven建立servlet-CSDN博客](https://blog.csdn.net/nefss_/article/details/104544390)
 * [Tomcat web工程 web.xml 配置详解](https://michaelyb.top/2018/10/Mac-Tomcat-WebXml/)
-* [ Servlet入门 - 使用Maven创建javaweb工程](https://cloud.tencent.com/developer/article/1934637)
 
 ### JDBC
 
@@ -90,6 +90,10 @@ modified: 2025-03-15 04:20:31
 ### JBoss
 
 * [深入解析JBoss Tools：全方位开发工具集成的艺术-易源AI资讯](https://www.showapi.com/news/article/66bc25624ddd79f11a002aa2)
+
+## maven
+
+[Maven 资料清单](Maven/Maven_Material.md)
 
 ---
 

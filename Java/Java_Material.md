@@ -8,7 +8,7 @@ tags:
   - eclipse
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-03-16 12:11:11
+modified: 2025-03-16 23:13:46
 ---
 
 # Java 资料清单
@@ -102,8 +102,13 @@ modified: 2025-03-16 12:11:11
 
 ### 杂项
 
+#### 乱码
+
 * [用filter过滤器处理编码格式为UTF-8\_java filter 增加 utf8-CSDN博客](https://blog.csdn.net/YKYZSYA/article/details/107733414)
 * [java中Filter过滤器处理中文乱码的方法 - 城南少年与猫 - 博客园](https://www.cnblogs.com/charlypage/p/9198452.html)
+* [编码过滤器 \| 解决中文乱码问题 - 望三星 - 博客园](https://www.cnblogs.com/kaml8/p/12375822.html)
+* [16. JSP 过滤器解决Post编码【乱码】问题 - 咸瑜 - 博客园](https://www.cnblogs.com/bi-hu/p/14864230.html)
+* [处理JSP和Servlet中中文乱码的有效方法与技巧 - OSCHINA - 中文开源技术交流社区](https://my.oschina.net/emacs_8501246/blog/16536061)
 
 ---
 

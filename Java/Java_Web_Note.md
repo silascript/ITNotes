@@ -6,7 +6,7 @@ tags:
   - jdbc
   - http
 created: 2023-01-31 11:31:14
-modified: 2025-03-16 12:03:45
+modified: 2025-03-16 23:04:48
 ---
 
 # Java Web 笔记
@@ -27,6 +27,92 @@ modified: 2025-03-16 12:03:45
 ## Servlet
 
 Tomcat 与 Servlet 版本对应关系：[Apache Tomcat® - Which Version Do I Want?](https://tomcat.apache.org/whichversion.html)
+
+### JSP
+
+JSP 本质还是 Servlet。
+
+### Filter
+
+### 乱码
+
+1. [Html](../Frontend/Html_Note.md) 部分设置字符编码：
+
+```html
+<head>
+	<meta charset="UTF-8">
+</head>
+```
+
+2. JSP 页面顶部加入以下代码：
+
+```jsp
+ <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+```
+
+3. 使用 [Filter](#Filter) 来设置请求和响应的字符编码
+
+过滤器相关代码：
+
+```java
+package tools;
+
+import java.io.IOException;
+
+import jakarta.servlet.Filter;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.FilterConfig;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+
+public class CharacterEncoding implements Filter {
+
+	String encoding = null;
+	
+	@Override
+	public void init(FilterConfig filterConfig) throws ServletException {
+		encoding = filterConfig.getInitParameter("encoding");
+	}
+
+	@Override
+	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)
+	throws IOException, ServletException {
+	
+	if (encoding != null) {
+		servletRequest.setCharacterEncoding(encoding);
+		servletResponse.setCharacterEncoding(encoding);
+	}
+	
+	filterChain.doFilter(servletRequest, servletResponse);
+	
+	}
+
+	@Override
+	public void destroy() {
+		encoding = null;
+	}
+
+}
+```
+
+过滤器 `web.xml` 中的设置：
+
+```xml
+<filter>
+	<filter-name>setCharacterEncoding</filter-name>
+	<filter-class>tools.CharacterEncoding</filter-class>
+<init-param>
+	<param-name>encoding</param-name>
+	<param-value>UTF-8</param-value>
+	</init-param>
+</filter>
+
+<filter-mapping>
+	<filter-name>setCharacterEncoding</filter-name>
+	<url-pattern>/*</url-pattern>
+</filter-mapping>
+```
 
 ---
 

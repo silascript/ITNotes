@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2025-03-16 19:14:50
+modified: 2025-03-16 19:17:39
 
 ---
 
@@ -662,7 +662,7 @@ Community Server Deployment 有两种部署方式：
 
 到 [Tomcat](../Java/Tomcat/Tomcat_Note.md) 的 `webapp` 目录，可以看到部署的 war 文件及 Tomcat 自动将其解包后的同名目录：
 
-![Tomcat deploy war](../Tomcat/Tomcat_Note.assets/Tomcat_deploy_war.png)
+![Tomcat deploy war](../Java/Tomcat/Tomcat_Note.assets/Tomcat_deploy_war.png)
 
 > [!tip] 
 > 

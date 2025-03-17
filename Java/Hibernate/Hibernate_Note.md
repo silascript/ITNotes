@@ -27,6 +27,6 @@ modified: 2025-02-25 01:26:49
 ## 相关笔记
 
 * [Java 笔记](../Java_Note.md)
-* [Java Web 笔记](../Java_Web_Note.md)
+* [Java Web 笔记](../Java_Servlet_Note.md)
 * [Java ORM 笔记](../Java_ORM_Note.md)
 

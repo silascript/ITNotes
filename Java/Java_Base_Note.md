@@ -50,6 +50,6 @@ modified: 2025-02-16 23:05:19
 * [Java 笔记](Java_Note.md)
 * [Java IO 笔记](Java_IO_Note.md)
 * [Java Log 笔记](Java_Log_Note.md)
-* [Java Web 笔记](Java_Web_Note.md)
+* [Java Web 笔记](Java_Servlet_Note.md)
 * [i++和++i分析](i++和++i分析.md)
 

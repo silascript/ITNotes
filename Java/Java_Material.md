@@ -6,9 +6,12 @@ tags:
   - jdk
   - ide
   - eclipse
+  - maven
+  - tomcat
+  - jboss
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-03-16 23:13:46
+modified: 2025-03-17 22:57:31
 ---
 
 # Java 资料清单
@@ -72,11 +75,7 @@ modified: 2025-03-16 23:13:46
 
 ---
 
-## Web
-
-* [关于web.xml配置的那些事儿 - S3c0ldW4ng - 博客园](https://www.cnblogs.com/natian-ws/p/10827048.html)
-* [不使用maven，建立Servlet项目\_vscode 不用maven建立servlet-CSDN博客](https://blog.csdn.net/nefss_/article/details/104544390)
-* [Tomcat web工程 web.xml 配置详解](https://michaelyb.top/2018/10/Mac-Tomcat-WebXml/)
+## Java EE
 
 ### Servlet
 
@@ -92,15 +91,37 @@ modified: 2025-03-16 23:13:46
 * [MySQL 时区全解，如何修改数据库时区，JDBC 时区不一致时怎么办？ \| 老郭种树](https://guozh.net/mysql-time-zone-2/)
 * [Mysql设置时区的多种解决方法](https://blog.iyume.top/java/110.html)
 
+### 项目
+
+* [关于web.xml配置的那些事儿 - S3c0ldW4ng - 博客园](https://www.cnblogs.com/natian-ws/p/10827048.html)
+* [不使用maven，建立Servlet项目\_vscode 不用maven建立servlet-CSDN博客](https://blog.csdn.net/nefss_/article/details/104544390)
+* [Tomcat web工程 web.xml 配置详解](https://michaelyb.top/2018/10/Mac-Tomcat-WebXml/)
+
+---
+
+## 容器
+
 ### JBoss
 
 * [深入解析JBoss Tools：全方位开发工具集成的艺术-易源AI资讯](https://www.showapi.com/news/article/66bc25624ddd79f11a002aa2)
 
+### tomcat
+
+* [Tomcat 资料清单](Tomcat/Tomcat_Material.md)
+
+---
+
+## ant
+
+---
+
 ## maven
 
-[Maven 资料清单](Maven/Maven_Material.md)
+* [Maven 资料清单](Maven/Maven_Material.md)
 
-### 杂项
+---
+
+## 杂项
 
 #### 乱码
 

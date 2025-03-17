@@ -31,5 +31,5 @@ modified: 2025-03-11 23:48:40
 ## 相关笔记
 
 * [Tomcat 笔记](Tomcat_Note.md)
-* [Java Web 笔记](../Java_Web_Note.md)
+* [Java Web 笔记](../Java_Servlet_Note.md)
 

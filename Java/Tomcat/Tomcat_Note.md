@@ -115,7 +115,7 @@ tomcat 三种启动方式：
 ## 相关笔记
 
 * [Tomcat 资料清单](Tomcat_Material.md) 
-* [Java Web 笔记](../Java_Web_Note.md)
+* [Java Web 笔记](../Java_Servlet_Note.md)
 * [Java 笔记](../Java_Note.md)
 * [Eclipse 笔记](../IDE/Java_IDE_Eclipse.md)
 

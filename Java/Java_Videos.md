@@ -119,6 +119,6 @@ modified: 2025-03-13 01:58:10
 ## 相关笔记
 
 * [Java笔记](Java_Note.md)
-* [Java Web笔记](Java_Web_Note.md)
+* [Java Web笔记](Java_Servlet_Note.md)
 * [Java IO 笔记](Java_IO_Note.md)
 * [Java Log 笔记](Java_Log_Note.md)

@@ -331,7 +331,7 @@ Data Tools Platform 是一套数据库管理插件组，能在 Eclipse 中进行
 > 
 > 从图中可以看出，只装「**Data Tools Platform Connectivity**」就能实现数据库连接、SQL 等数据库管理的基础功能，其实对于只是「临时」连下数据库，作些简单的数据操作而言，这实际已经够用的了！
 > 
-> 不过，实际上，还是没法用的，因为连接这个功能，需要数据库的「连接驱动」，而只装「**Connectivity**」插件，只有通用 [JDBC](Java_Web_Note.md#JDBC) 可选，所以得安装相应数据库连接驱动的支持。
+> 不过，实际上，还是没法用的，因为连接这个功能，需要数据库的「连接驱动」，而只装「**Connectivity**」插件，只有通用 [JDBC](../Java_Servlet_Note.md#JDBC) 可选，所以得安装相应数据库连接驱动的支持。
 
 ##### Data Tools Platform Enablement
 

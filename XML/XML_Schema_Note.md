@@ -31,7 +31,7 @@ xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/n
 </web-app>
 ```
 
-上面例子时 [Servlet](../Java/Java_Web_Note.md#Servlet) 中的配置文件 `web.xml` 的头部引用。
+上面例子时 [Servlet](../Java/Java_Servlet_Note.md#Servlet) 中的配置文件 `web.xml` 的头部引用。
 
 ``
 

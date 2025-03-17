@@ -322,7 +322,7 @@ mysql> show variables like '%time_zone%';
 
 #### 方式 1
 
-如果是使用 [Java](../../Java/Java_Note.md) 的 [JDBC](../../Java/Java_Web_Note.md#JDBC) 访问 MySQL 时，可以通过在「访问 URL」中添加参数解决时区问题，如：`jdbc:mysql://localhost:3356/xxx?serverTimezone=Asia/Shanghai`。
+如果是使用 [Java](../../Java/Java_Note.md) 的 [JDBC](../../Java/Java_Servlet_Note.md#JDBC) 访问 MySQL 时，可以通过在「访问 URL」中添加参数解决时区问题，如：`jdbc:mysql://localhost:3356/xxx?serverTimezone=Asia/Shanghai`。
 
 #### 方式 2
 

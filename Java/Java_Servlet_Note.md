@@ -4,24 +4,25 @@ tags:
   - java
   - javaweb
   - javaee
+  - servlet
+  - jsp
   - http
 created: 2023-01-31 11:31:14
-modified: 2025-03-17 20:09:22
+modified: 2025-03-17 21:21:28
 ---
 
-# Java Web 笔记
+# Java Servlet 笔记
 
 ---
 
 ## 目录
 
-* [HTTP及Web请求](#java_web_http_wrequest)
+* [HTTP及Web请求](#servlet_http_wrequest)
 * [Servlet](#Servlet)
-* [JDBC](#java_web_jdbc)
-	* [数据库连接池](#java_web_jdbc_dbconnpooling)
+
 ---
 
-## <span id="java_web_http_wrequest">HTTP 及 Web 请求</span>
+## <span id="servlet_http_wrequest">HTTP 及 Web 请求</span>
 
 ---
 
@@ -29,28 +30,34 @@ modified: 2025-03-17 20:09:22
 
 Tomcat 与 Servlet 版本对应关系：[Apache Tomcat® - Which Version Do I Want?](https://tomcat.apache.org/whichversion.html)
 
-### JSP
+---
 
-JSP 本质还是 Servlet。
+## JSP
 
-#### JSP 标签
+JSP 本质还是 [Servlet](#Servlet)。
+
+### JSP 标签
 
 JSP 标签分两类：
 
 * [指令标签](#指令标签)
 * [动作标签](#动作标签)
 
-##### 指令标签
+#### 指令标签
 
 JSP 指令标签是由 JSP 服务器解释并处理的用于设置 JSP 页面的相关属性或执行动作的一种标签，在一下指令标签中可以设置多个属性。这些属性的作用域范围是整个页面。
 
 语法：`<%@指令名称 属性1="属性值" 属性2="属性值"... %>`
 
-##### 动作标签
+#### 动作标签
 
-### Filter
+---
 
-### 乱码
+## Filter
+
+---
+
+## 乱码
 
 1. [Html](../Frontend/Html_Note.md) 部分设置字符编码：
 
@@ -132,10 +139,11 @@ public class CharacterEncoding implements Filter {
 
 ---
 
-## <span id="java_web_about">相关笔记</span>
+## 相关笔记
 
-* [Spring 笔记 1](./Spring/Spring_Note_1.md) 
+* [JAVA EE 笔记](JAVA_EE_Note.md)
 * [JDBC 笔记](Java_JDBC_Note.md)
+* [Spring 笔记 1](./Spring/Spring_Note_1.md) 
 * [Java 资料清单](Java_Material.md)
 * [Java 笔记](Java_Note.md)
 

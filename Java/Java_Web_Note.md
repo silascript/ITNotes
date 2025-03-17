@@ -3,10 +3,11 @@ aliases: []
 tags:
   - java
   - javaweb
+  - javaee
   - jdbc
   - http
 created: 2023-01-31 11:31:14
-modified: 2025-03-16 23:04:48
+modified: 2025-03-17 20:07:33
 ---
 
 # Java Web 笔记
@@ -16,6 +17,7 @@ modified: 2025-03-16 23:04:48
 ## 目录
 
 * [HTTP及Web请求](#java_web_http_wrequest)
+* [Servlet](#Servlet)
 * [JDBC](#java_web_jdbc)
 	* [数据库连接池](#java_web_jdbc_dbconnpooling)
 ---
@@ -32,6 +34,21 @@ Tomcat 与 Servlet 版本对应关系：[Apache Tomcat® - Which Version Do I Wa
 
 JSP 本质还是 Servlet。
 
+#### JSP 标签
+
+JSP 标签分两类：
+
+* [指令标签](#指令标签)
+* [动作标签](#动作标签)
+
+##### 指令标签
+
+JSP 指令标签是由 JSP 服务器解释并处理的用于设置 JSP 页面的相关属性或执行动作的一种标签，在一下指令标签中可以设置多个属性。这些属性的作用域范围是整个页面。
+
+语法：`<%@指令名称 属性1="属性值" 属性2="属性值"... %>`
+
+##### 动作标签
+
 ### Filter
 
 ### 乱码
@@ -47,7 +64,7 @@ JSP 本质还是 Servlet。
 2. JSP 页面顶部加入以下代码：
 
 ```jsp
- <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+ <%@ page pageEncoding="UTF-8"%>
 ```
 
 3. 使用 [Filter](#Filter) 来设置请求和响应的字符编码
@@ -116,48 +133,10 @@ public class CharacterEncoding implements Filter {
 
 ---
 
-## <span id="java_web_jdbc">JDBC</span>
-
-### <span id="java_web_jdbc_newversion">新版 JDBC 相关</span>
-
-配合 [MySQL](../DataBase/mysql/MySQL_Note.md) 8.x 版本，JDBC 的版本也更新为 6.x 及 最新的 8.x 版本，而新版本的一些设置也发生了变化。大概有如下这些：
-
-1. 驱动名称更改为 `com.mysql.cj.jdbc.Driver`。
-2. mysql 8 驱动的 `url` 必须设置时区，即 `serverTimezone=UTC`，否则会报错误。
-   > [!info] 
-   > 
-   > 相关配置：[MySQL Time-zone](../DataBase/mysql/MySQL_Config_Note.md#time-zone)
-   > 
-
-### <span id="java_web_jdbc_dbconnpooling">数据连接池</span>
-
-#### <span id="java_web_jdbc_dbconnpooling_druid">Druid</span>
-
-[druid](https://github.com/alibaba/druid) 是阿里出的一个数据连接池。
-
-maven 依赖：
-
-```xml
-	<dependency>
-		<groupId>com.alibaba</groupId>
-		<artifactId>druid</artifactId>
-		<version>1.2.9</version>
-    </dependency>
-```
-
----
-
-### <span id="java_web_jdbc_dbconnpooling_hikaricp">HikariCP</span>
-
-[HikariCP](https://github.com/brettwooldridge/HikariCP) 是 [Spring](Spring/Spring_Note_1.md) 默认使用的数据链接池。
-
-特点，就如其项目 [ReadMe](https://github.com/brettwooldridge/HikariCP#-hikaricpits-fasterhikari-hikal%C4%93-origin-japanese-light-ray) 中说的那样：「Fast, simple, reliable」。
-
----
-
 ## <span id="java_web_about">相关笔记</span>
 
 * [Spring 笔记 1](./Spring/Spring_Note_1.md) 
+* [JDBC 笔记](Java_JDBC_Note.md)
 * [Java 资料清单](Java_Material.md)
 * [Java 笔记](Java_Note.md)
 

@@ -3,11 +3,12 @@ aliases: []
 tags:
   - java
   - javaee
+  - jakartaee
   - jdbc
   - db
   - database
 created: 2025-03-17 20:02:31
-modified: 2025-03-17 20:08:05
+modified: 2025-03-17 23:21:11
 ---
 
 # JDBC 笔记

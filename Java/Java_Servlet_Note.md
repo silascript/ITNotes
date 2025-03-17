@@ -4,11 +4,12 @@ tags:
   - java
   - javaweb
   - javaee
+  - jakartaee
   - servlet
   - jsp
   - http
 created: 2023-01-31 11:31:14
-modified: 2025-03-17 21:21:28
+modified: 2025-03-17 23:20:54
 ---
 
 # Java Servlet 笔记

@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2025-03-19 07:20:29
+modified: 2025-03-19 07:29:36
 ---
 
 # Linux 笔记
@@ -1600,7 +1600,7 @@ Shell 语言相关内容：[Shell笔记](Shell/Shell_Note.md)
 > Categories=程序的分类标签，多个标签使用; 号分隔 (Application;IDE;Development;Editor)  
 > Terminal=false 是否使用启用终端  
 > StartupNotify=true
-> StartupWMClass=确保程序启动后任务栏图标与 Icon 指定的图标一致，所以指定 WM_Class 值
+> StartupWMClass=指定 WM_Class 值，确保程序启动后任务栏图标与 Icon 指定的图标一致，
 
 示例：
 
@@ -1614,10 +1614,18 @@ Exec=/opt/SteamPP/Steam++.sh
 Icon=/opt/SteamPP/Icons/Watt-Toolkit.png
 # Terminal=false
 StartupNotify=true
-StartupWMClass=
+StartupWMClass=Steam++
 Categories=Network;Utility
 Keywords=Steam;Steam++;SteamTools;WattToolkit
 ```
+>[!info] 
+>
+> `StartupWMClass` 这个属性，指定应用程序在容器管理中的容器类名，确保应用程序在启动后，任务栏或应用切换器中显示的图标与 `.desktop` 文件中的图标一致，即使用 `icon` 指定的桌面图标。
+> 
+> 获取方法：在终端中执行 `xprop WM_CLASS` ，然后点击运行中的窗口 (一般会出现一个鼠标的光标会呈现「十字」,表示「待获取中」，点击窗口后才恢复原状），获取窗口的 `WM_CLASS` 属性。
+> 
+> 如点击 Steam++ 运行中窗口后，终端显示：`WM_CLASS(STRING) = "Steam++", "Steam++"`
+> 
 
 3. 刷新
 ```shell
@@ -1629,13 +1637,6 @@ sudo update-desktop-database /usr/share/applications
 > [!tip] 
 > 
 > 如果 desktop 不生效，可以使用 `desktop-file-validate xxx.desktop` 来检测 desktop 文件是否存在语法错误。
-
->[!info] 
->
-> `StartupWMClass` 这个属性，指定应用程序在容器管理中的容器类名，确保应用程序在启动后，任务栏或应用切换器中显示的图标与 `.desktop` 文件中的图标一致，即使用 `icon` 指定的桌面图标。
-> 
-> 获取方法：执行 `xprop WM_CLASS` ，后点击运行中的窗口，获取窗口的 `WM_CLASS` 属性
-> 
 
 ---
 

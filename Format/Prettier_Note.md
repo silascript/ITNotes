@@ -5,7 +5,7 @@ tags:
   - formatter
   - prettier
 created: 2024-05-24 09:59:11
-modified: 2025-03-18 03:37:15
+modified: 2025-03-18 04:02:49
 ---
 
 # Prettier 笔记
@@ -51,6 +51,10 @@ vueIndentScriptAndStyle: false, // 不对vue中的script及style标签缩进
 endOfLine: 'lf', // 结束行形式
 embeddedLanguageFormatting: 'auto', // 对引用代码进行格式化
 ```
+
+### 插件
+
+对于 Prittier 不支持的语言，可以通过 Plugin 来支持其格式化：[Prittier Plugins](https://prettier.io/docs/plugins#community-plugins)
 
 ---
 

@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-10 03:06:48
-modified: 2025-02-21 04:24:12
+modified: 2025-03-19 07:14:34
 ---
 
 # Linux 资料清单
@@ -78,6 +78,8 @@ modified: 2025-02-21 04:24:12
 ### Desktop
 
 * [Freedesktop那些破事 \| ccat3z.xyz](https://ccat3z.xyz/posts/freedesktop/)
+* [关于Linux系统中桌面图标和任务栏图标保持一致的问题\_startupwmclass-CSDN博客](https://blog.csdn.net/timiki/article/details/141636645)
+* [GNOME-DashToDock中自定义桌面快捷方式无法添加至收藏夹的问题，Add to Favorites 显示问题 - ershoushouji - 博客园](https://www.cnblogs.com/ershoushouji/p/15271031.html)
 
 ## ranger
 

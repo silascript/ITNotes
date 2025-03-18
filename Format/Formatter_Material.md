@@ -6,12 +6,16 @@ tags:
   - material
   - list
 created: 2025-03-18 03:32:00
-modified: 2025-03-18 03:34:33
+modified: 2025-03-18 04:15:09
 ---
 
 # 格式化器资料清单
 
 ---
+
+## 通用
+
+* [HTML代码格式化与缩进高级技巧探讨 - OSCHINA - 中文开源技术交流社区](https://my.oschina.net/emacs_8611949/blog/16770625)
 
 ## Prettier 资料
 

@@ -11,7 +11,7 @@ tags:
   - jboss
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-03-17 22:57:31
+modified: 2025-03-21 02:23:50
 ---
 
 # Java 资料清单
@@ -121,9 +121,18 @@ modified: 2025-03-17 22:57:31
 
 ---
 
+## 框架及库
+
+### 日志
+
+* [java日志发展史 log4j slf4j log4j2 jul jcl 日志和各种桥接包的关系 - 啦啦拉扎尔 - 博客园](https://www.cnblogs.com/lalalazar/p/15694889.html)
+* [log日志框架一篇足以（log4j、JUL、JCL、Slf4j、Logback、Log4j2） - 掘金](https://juejin.cn/post/6964643067747909645)
+
+---
+
 ## 杂项
 
-#### 乱码
+### 乱码
 
 * [用filter过滤器处理编码格式为UTF-8\_java filter 增加 utf8-CSDN博客](https://blog.csdn.net/YKYZSYA/article/details/107733414)
 * [java中Filter过滤器处理中文乱码的方法 - 城南少年与猫 - 博客园](https://www.cnblogs.com/charlypage/p/9198452.html)

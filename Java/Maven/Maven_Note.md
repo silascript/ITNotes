@@ -5,7 +5,7 @@ tags:
   - maven
   - jdk
 created: 2023-01-31 11:31:14
-modified: 2025-03-20 09:27:01
+modified: 2025-03-20 21:07:55
 ---
 
 # Maven 笔记
@@ -37,16 +37,14 @@ maven 版本与 JDK 版本对应请参考：[Maven – Maven Releases History](h
 
 ## <span id="mvn_settings">配置</span>
 
-Maven 配置主要有两块配置：
-1. 配置本地仓库存储位置
-2. 镜像配置
-
-配置文件按官方文档分成两级：
+配置文件按 [官方文档](https://maven.apache.org/settings.html) 分成两级：
 
 1. 用户级（User Level）
 	`~/.m2/` 目录下的 `settings.xml`。
 2. 全局（Global Level）
 	这个全局的配置文件就是放在 maven 安装根目录中的那个 `settings.xml` 文件。
+
+一般建议配置 `~/.m2/` 目录下那个 `settings.xml`。
 
 如果没有 `.m2` 目录，可以运行以下命令：
 
@@ -59,6 +57,10 @@ mvn help:system
 > 生成的 `.m2` 目录，默认在其中生成 `repository` 目录，这是默认的 [本地仓库](#mvn_setttings_localRepo)，可以在 settings.xml 配置中重新自定义别的路径。
 
 生成完全 `.m2` 目录，可以将 maven 安装根目录中那个「全局」配置文件 `settings.xml` 复制到 `.m2` 下，作为「用户级」配置文件，然后再对其进行下一步配置。
+
+Maven 配置主要有两块：
+1. [本地仓库](#本地仓库) 存储位置的配置
+2. [配置镜像](#配置镜像)
 
 ### <span id="mvn_settings_localRepo">本地仓库</span>
 
@@ -351,6 +353,77 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 maven 接口依赖关系图：
 
 ![maven deps shotcut](https://maven.apache.org/ref/3.9.4/images/maven-deps.png)
+
+Maven 插件是下载到 [本地仓库](#本地仓库) 目录下的 `org/apache/maven/plugins` 目录中：
+```shell
+$ ll mvn_repository/org/apache/maven/plugins 
+Permissions Size User       Group      Date Modified    Name
+drwxr-xr-x     - silascript silascript 2025-03-20 20:58 .
+drwxr-xr-x     - silascript silascript 2025-03-16 10:33 ..
+drwxr-xr-x     - silascript silascript 2023-08-24 03:18 maven-antrun-plugin
+drwxr-xr-x     - silascript silascript 2025-03-15 01:49 maven-archetype-plugin
+drwxr-xr-x     - silascript silascript 2025-03-15 02:23 maven-assembly-plugin
+drwxr-xr-x     - silascript silascript 2025-03-15 01:52 maven-clean-plugin
+drwxr-xr-x     - silascript silascript 2025-03-15 01:52 maven-compiler-plugin
+drwxr-xr-x     - silascript silascript 2025-03-15 02:23 maven-dependency-plugin
+drwxr-xr-x     - silascript silascript 2025-03-15 03:51 maven-deploy-plugin
+drwxr-xr-x     - silascript silascript 2025-03-20 20:58 maven-help-plugin
+drwxr-xr-x     - silascript silascript 2025-03-15 03:47 maven-install-plugin
+drwxr-xr-x     - silascript silascript 2025-03-05 23:42 maven-jar-plugin
+.rw-r--r--   14k silascript silascript 2025-03-09 14:39 maven-metadata-apachemaven.xml
+.rw-r--r--    40 silascript silascript 2025-03-20 20:58 maven-metadata-apachemaven.xml.sha1
+.rw-r--r--   14k silascript silascript 2023-08-24 03:18 maven-metadata-central.xml
+.rw-r--r--    40 silascript silascript 2023-08-24 03:18 maven-metadata-central.xml.sha1
+drwxr-xr-x     - silascript silascript 2025-03-15 02:23 maven-plugins
+drwxr-xr-x     - silascript silascript 2023-08-24 03:18 maven-release-plugin
+drwxr-xr-x     - silascript silascript 2025-03-15 01:52 maven-resources-plugin
+drwxr-xr-x     - silascript silascript 2023-08-24 03:18 maven-site-plugin
+drwxr-xr-x     - silascript silascript 2025-03-15 03:52 maven-surefire-plugin
+drwxr-xr-x     - silascript silascript 2025-03-15 03:07 maven-war-plugin
+.rw-r--r--   250 silascript silascript 2025-03-20 20:58 resolver-status.properties
+
+```
+
+如最开始的 `mvn help:system` 命令，实质就是下载了 `maven-help-plugin` 这个插件，这插件包括了 `pom` 文件及 `jar` 包。
+
+```shell
+
+$ mvn help:system
+[INFO] Scanning for projects...
+Downloading from apachemaven: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/3.1.2/maven-install-plugin-3.1.2.pom
+Downloaded from apachemaven: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/3.1.2/maven-install-plugin-3.1.2.pom (8.5 kB at 937 B/s)
+Downloading from apachemaven: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/3.1.2/maven-deploy-plugin-3.1.2.pom
+Downloaded from apachemaven: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/3.1.2/maven-deploy-plugin-3.1.2.pom (9.6 kB at 22 kB/s)
+Downloading from apachemaven: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
+Downloading from apachemaven: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
+Downloaded from apachemaven: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (21 kB at 89 kB/s)
+Downloaded from apachemaven: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (14 kB at 1.3 kB/s)
+Downloading from apachemaven: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-help-plugin/maven-metadata.xml
+Downloaded from apachemaven: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-help-plugin/maven-metadata.xml (807 B at 5.8 kB/s)
+
+$ ll mvn_repository/org/apache/maven/plugins/maven-help-plugin 
+Permissions Size User       Group      Date Modified    Name
+drwxr-xr-x     - silascript silascript 2025-03-20 20:58 .
+drwxr-xr-x     - silascript silascript 2025-03-20 20:58 ..
+drwxr-xr-x     - silascript silascript 2024-02-23 06:46 3.4.0
+drwxr-xr-x     - silascript silascript 2025-03-15 02:24 3.5.1
+.rw-r--r--   807 silascript silascript 2024-10-22 01:52 maven-metadata-apachemaven.xml
+.rw-r--r--    40 silascript silascript 2025-03-20 20:58 maven-metadata-apachemaven.xml.sha1
+.rw-r--r--   714 silascript silascript 2023-08-24 03:18 maven-metadata-central.xml
+.rw-r--r--    40 silascript silascript 2023-08-24 03:18 maven-metadata-central.xml.sha1
+.rw-r--r--   250 silascript silascript 2025-03-20 20:58 resolver-status.properties
+
+$ ll mvn_repository/org/apache/maven/plugins/maven-help-plugin/3.5.1 
+Permissions Size User       Group      Date Modified    Name
+drwxr-xr-x     - silascript silascript 2025-03-15 02:24 .
+drwxr-xr-x     - silascript silascript 2025-03-20 20:58 ..
+.rw-r--r--   222 silascript silascript 2025-03-15 02:24 _remote.repositories
+.rw-r--r--   65k silascript silascript 2024-10-18 18:11 maven-help-plugin-3.5.1.jar
+.rw-r--r--    40 silascript silascript 2025-03-15 02:24 maven-help-plugin-3.5.1.jar.sha1
+.rw-r--r--   10k silascript silascript 2024-10-18 18:11 maven-help-plugin-3.5.1.pom
+.rw-r--r--    40 silascript silascript 2025-03-15 02:24 maven-help-plugin-3.5.1.pom.sha1
+
+```
 
 ### 编译插件
 

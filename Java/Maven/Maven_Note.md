@@ -5,7 +5,7 @@ tags:
   - maven
   - jdk
 created: 2023-01-31 11:31:14
-modified: 2025-03-15 01:59:44
+modified: 2025-03-20 09:27:01
 ---
 
 # Maven 笔记
@@ -28,6 +28,12 @@ maven 版本与 JDK 版本对应请参考：[Maven – Maven Releases History](h
 > [!tip]
 > 
 > **3.9.4**开始最低都是 Java8。
+
+| Maven 版本 | [JDK 版本](../Java_Note.md#java_jdk) |
+|:----------:|:------------------------------------:|
+|    3.8     |               JDK 1.7                |
+|    3.9     |     [JDK8](../Java_Note.md#JDK8)     |
+|    4.0     |    [JDK17](../Java_Note.md#JDK17)    |
 
 ## <span id="mvn_settings">配置</span>
 
@@ -74,7 +80,14 @@ mvn help:system
 
 #### <span id="mvn_settings_remoteRepo_mvnrepository">中央仓库</span>
 
-中央仓库地址：[https://mvnrepository.com/](https://mvnrepository.com/)
+中央仓库地址：
+
+* [https://mvnrepository.com/](https://mvnrepository.com/)
+
+> [!tip] 
+> 
+> 如果是查询 jar 包，除了上面的中央仓库中查还可以到以下网站去查：
+> * [Sonatype Maven Central](https://central.sonatype.com)（老的域名是：[ https://search.maven.org](https://search.maven.org)）
 
 ---
 
@@ -165,6 +178,7 @@ mvn help:system
 > 
 
 检测配置是否成功：
+
 ```shell
 mvn help:system
 ```
@@ -337,6 +351,27 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 maven 接口依赖关系图：
 
 ![maven deps shotcut](https://maven.apache.org/ref/3.9.4/images/maven-deps.png)
+
+### 编译插件
+
+```xml
+<project>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.14.0</version>
+					<configuration>
+					<!-- put your configurations here -->
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>
+```
 
 ---
 

@@ -5,7 +5,7 @@ tags:
   - maven
   - material
 created: 2025-03-08 19:05:30
-modified: 2025-03-16 11:45:33
+modified: 2025-03-20 03:16:03
 ---
 
 # Maven 资料清单
@@ -15,6 +15,10 @@ modified: 2025-03-16 11:45:33
 ## 通用
 
 * [Maven中配置maven-compiler-plugin 插件和jdk 17版本 - 楼兰胡杨 - 博客园](https://www.cnblogs.com/east7/p/13363069.html)
+
+## Maven Daemon
+
+* [Maven构建工具mvnd和mvn 性能对比测试 - 青山小站 \| 一个在帝都搬砖的新时代农民工](https://blog.yanqingshan.com/167.html?scroll=comment-952)
 
 ## Web
 

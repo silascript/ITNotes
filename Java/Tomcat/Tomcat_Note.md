@@ -11,7 +11,7 @@ tags:
   - javaweb
   - container
 created: 2023-08-18 19:44:52
-modified: 2025-03-11 20:58:10
+modified: 2025-03-22 10:06:50
 ---
 
 # Tomcat 笔记
@@ -109,6 +109,55 @@ tomcat 三种启动方式：
 ### 服务启动
 
 执行：`nohup ./startup.sh &` ，Tomcat 将以后台服务的方式启动。
+
+---
+
+## 目录结构
+
+### lib 目录
+
+```shell
+$ ll .sdkman/candidates/tomcat/current/lib 
+Permissions Size User       Group      Date Modified    Name
+drwxr-xr-x     - silascript silascript 2025-02-28 15:54 .
+drwxr-xr-x     - silascript silascript 2025-03-11 20:47 ..
+.rw-r--r--   14k silascript silascript 2025-02-28 15:54 annotations-api.jar
+.rw-r--r--   56k silascript silascript 2025-02-28 15:54 catalina-ant.jar
+.rw-r--r--  127k silascript silascript 2025-02-28 15:54 catalina-ha.jar
+.rw-r--r--   65k silascript silascript 2025-02-28 15:54 catalina-ssi.jar
+.rw-r--r--   81k silascript silascript 2025-02-28 15:54 catalina-storeconfig.jar
+.rw-r--r--  326k silascript silascript 2025-02-28 15:54 catalina-tribes.jar
+.rw-r--r--  1.7M silascript silascript 2025-02-28 15:54 catalina.jar
+.rw-r--r--  3.3M silascript silascript 2025-02-28 15:54 ecj-4.34.jar
+.rw-r--r--   97k silascript silascript 2025-02-28 15:54 el-api.jar
+.rw-r--r--  1.3M silascript silascript 2025-02-28 15:54 jakartaee-migration-1.0.9-shaded.jar
+.rw-r--r--  178k silascript silascript 2025-02-28 15:54 jasper-el.jar
+.rw-r--r--  556k silascript silascript 2025-02-28 15:54 jasper.jar
+.rw-r--r--   28k silascript silascript 2025-02-28 15:54 jaspic-api.jar
+.rw-r--r--   73k silascript silascript 2025-02-28 15:54 jsp-api.jar
+.rw-r--r--  407k silascript silascript 2025-02-28 15:54 servlet-api.jar
+.rw-r--r--   12k silascript silascript 2025-02-28 15:54 tomcat-api.jar
+.rw-r--r--  307k silascript silascript 2025-02-28 15:54 tomcat-coyote-ffm.jar
+.rw-r--r--  929k silascript silascript 2025-02-28 15:54 tomcat-coyote.jar
+.rw-r--r--  342k silascript silascript 2025-02-28 15:54 tomcat-dbcp.jar
+.rw-r--r--   70k silascript silascript 2025-02-28 15:54 tomcat-i18n-cs.jar
+.rw-r--r--   79k silascript silascript 2025-02-28 15:54 tomcat-i18n-de.jar
+.rw-r--r--  107k silascript silascript 2025-02-28 15:54 tomcat-i18n-es.jar
+.rw-r--r--  183k silascript silascript 2025-02-28 15:54 tomcat-i18n-fr.jar
+.rw-r--r--  208k silascript silascript 2025-02-28 15:54 tomcat-i18n-ja.jar
+.rw-r--r--  193k silascript silascript 2025-02-28 15:54 tomcat-i18n-ko.jar
+.rw-r--r--   53k silascript silascript 2025-02-28 15:54 tomcat-i18n-pt-BR.jar
+.rw-r--r--   68k silascript silascript 2025-02-28 15:54 tomcat-i18n-ru.jar
+.rw-r--r--  180k silascript silascript 2025-02-28 15:54 tomcat-i18n-zh-CN.jar
+.rw-r--r--  153k silascript silascript 2025-02-28 15:54 tomcat-jdbc.jar
+.rw-r--r--   16k silascript silascript 2025-02-28 15:54 tomcat-jni.jar
+.rw-r--r--  231k silascript silascript 2025-02-28 15:54 tomcat-util-scan.jar
+.rw-r--r--  205k silascript silascript 2025-02-28 15:54 tomcat-util.jar
+.rw-r--r--  244k silascript silascript 2025-02-28 15:54 tomcat-websocket.jar
+.rw-r--r--   14k silascript silascript 2025-02-28 15:54 websocket-api.jar
+.rw-r--r--   32k silascript silascript 2025-02-28 15:54 websocket-client-api.jar
+
+```
 
 ---
 

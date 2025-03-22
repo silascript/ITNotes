@@ -9,7 +9,7 @@ tags:
   - jsp
   - http
 created: 2023-01-31 11:31:14
-modified: 2025-03-17 23:20:54
+modified: 2025-03-22 10:07:39
 ---
 
 # Java Servlet 笔记
@@ -30,6 +30,60 @@ modified: 2025-03-17 23:20:54
 ## Servlet
 
 Tomcat 与 Servlet 版本对应关系：[Apache Tomcat® - Which Version Do I Want?](https://tomcat.apache.org/whichversion.html)
+
+### HttpServlet
+
+通常开发人员编写的 [Servlet](#Servlet) 其实是 `HttpServlet` 的子类。
+
+示例：
+
+```java
+package servlets;
+
+import java.io.IOException;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+  
+public class HelloServlet extends HttpServlet {
+
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	throws ServletException, IOException {
+		// xxxx
+		super.doGet(request, response);
+	}
+	
+	
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	throws ServletException, IOException {
+		// xxxx
+		super.doPost(request, response);
+	}
+
+}
+```
+
+瞄下源码，看下 `HttpServlet` 的「身世」：
+
+* `HttpServlet` 是一个抽象类，它继承自另一个抽象类 `GenericServlet`： `public abstract class HttpServlet extends GenericServlet`
+* `GenericServlet` 是实现了 `Servlet` 接口的抽象类：`public abstract class GenericServlet implements Servlet, ServletConfig, java.io.Serializable`
+
+可以看到示例中，`import` 引入了 Servlet API 各包，所以要编译 Servlet 类，就必须在 `ClassPath` 中包括相关的类。而如果使用 [Tomcat](Tomcat/Tomcat_Note.md)，这些类则是封装在 Tomcat 目录中的 [lib 子目录](Tomcat/Tomcat_Note.md#lib%20目录) 中的 `servlet-api.jar` 中，而在项目中，得引入这个包。
+
+如果使用 [Maven](Maven/Maven_Note.md) 来构建项目，则在依赖中添加类似依赖：
+
+```xml
+<dependency>
+	<groupId>jakarta.servlet</groupId>
+	<artifactId>jakarta.servlet-api</artifactId>
+	<version>6.1.0</version>
+	<scope>provided</scope>
+</dependency>
+```
 
 ---
 

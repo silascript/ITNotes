@@ -5,7 +5,7 @@ tags:
   - ide
   - eclipse
 created: 2025-02-23 21:17:37
-modified: 2025-03-14 04:30:38
+modified: 2025-03-23 18:50:11
 ---
 
 # Eclipse 笔记
@@ -181,14 +181,14 @@ StartupNotify=true
 2. `Shift+Alt+S`，呼出「Source」菜单 如果装了 [Vrapper](#Vrapper) 插件并装了 [Java extensions](#^491eb0) 子扩展，那就可以使用 `gm` 快捷键呼出「Source」菜单。
 3. 按 `r`，呼出 getter 和 setter 配置菜单
 4. 选择要生成 getter 和 setter 的属性，全选： `Alt+A`；取消所有： `Alt+D`；选择所有的 getter：`Alt+G`；选择所有 setter：`Alt+L`。
-5. 回车生成 getter 和 setter 如果 `Generate` 按钮失去焦点，就按 `Alt+R`。
+5. 回车或 `Alt+R`（如果 `Generate` 按钮失去焦点，就按 `Alt+R`）生成 getter 和 setter 。
 
 ##### 生成构造方法
 
 6. `Shift+Alt+S`，呼出「Source」菜单，跟 [getter 和 setter 生成](#getter%20和%20setter%20生成) 完全一样
 7. 按 `o`，呼出构造方法配置菜单
 8. 选择构造方法所需的属性，如果全选就 `Alt+A`，取消所有选择就按 `Alt+D`
-9. 回车确认生成构造方法
+9. 回车或 `Alt+G`（如果 `Generate` 按钮失去焦点，就按 `Alt+G`）确认生成构造方法
 
 ---
 

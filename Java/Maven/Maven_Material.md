@@ -5,7 +5,7 @@ tags:
   - maven
   - material
 created: 2025-03-08 19:05:30
-modified: 2025-03-20 03:16:03
+modified: 2025-03-23 06:11:58
 ---
 
 # Maven 资料清单
@@ -25,7 +25,13 @@ modified: 2025-03-20 03:16:03
 * [Maven Web项目 - 郑小超 - 博客园](https://www.cnblogs.com/GreenLeaves/p/17427947.html)
 * [Maven系列教材 （九）- 在Eclipse中创建maven风格的java web项目](https://how2j.cn/k/maven/maven-eclipse-web-project/1334.html)
 
-## Deployment
+## project
+
+### create
+
+* [Eclipse下创建Maven风格的Java项目 - 熊猫Panda先生 - 博客园](https://www.cnblogs.com/lihuawei/p/14756111.html)
+
+### Deployment
 
 * [Eclipse中maven项目自动部署到tomcat的方法\_eclipse maven tomcat-CSDN博客](https://blog.csdn.net/qq_26866883/article/details/116142596)
 * [Tomcat结合Web Maven - 温暖了寂寞 - 博客园](https://www.cnblogs.com/ganxiang/p/15936846.html)

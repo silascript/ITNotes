@@ -4,7 +4,7 @@ tags:
   - network
   - http
 created: 2023-08-18 19:44:52
-modified: 2024-08-28 03:00:04
+modified: 2025-03-22 23:17:19
 ---
 
 # Http 笔记
@@ -22,6 +22,13 @@ modified: 2024-08-28 03:00:04
   * [HTTP 解析](#http_parsing)
 
 ---
+
+## 简介
+
+HTTP 有两个特性：
+
+1. 基于请求（Request）/响应（Response）模型
+2. 无状态（Stateless）协议
 
 ## <span id="http_concepts">一些概念</span>
 

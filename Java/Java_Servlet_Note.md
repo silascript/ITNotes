@@ -9,7 +9,7 @@ tags:
   - jsp
   - http
 created: 2023-01-31 11:31:14
-modified: 2025-03-22 10:07:39
+modified: 2025-03-22 23:23:16
 ---
 
 # Java Servlet 笔记
@@ -89,7 +89,7 @@ public class HelloServlet extends HttpServlet {
 
 ## JSP
 
-JSP 本质还是 [Servlet](#Servlet)。
+JSP 本质还是 [Servlet](#Servlet)。JSP 页面会被 [Web 容器](JAVA_EE_Note.md#Web%20容器) 转译为 Servlet 的 `.java` 源文件，并编译为 `.class` 文件，然后加载进容器，所以最后提供服务的还是 Servlet 实例。
 
 ### JSP 标签
 

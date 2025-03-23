@@ -5,7 +5,7 @@ tags:
   - javaee
   - jakartaee
 created: 2025-03-17 20:00:46
-modified: 2025-03-17 23:20:28
+modified: 2025-03-22 23:13:30
 ---
 
 # Java EE 笔记
@@ -43,6 +43,16 @@ Java EE 是一系列技术标准所组成的平台，包括：
 * StAX - Streaming APIs for XML Parsers
 * WS - Web Services
 * Applet - Java Applet
+
+---
+
+## 一些概念
+
+### Web 容器
+
+抽象层面，可以将 Web 容器视为运行 [Servlet](Java_Servlet_Note.md#Servlet)/[JSP](Java_Servlet_Note.md#JSP) 的 [HTTP](../Network/Http_Note.md) 服务器。
+
+Web 容器介于实体 HTTP 服务器与 Servlet 之间。
 
 ---
 

@@ -5,7 +5,7 @@ tags:
   - ide
   - eclipse
 created: 2025-02-23 21:17:37
-modified: 2025-03-23 18:50:11
+modified: 2025-03-24 20:07:44
 ---
 
 # Eclipse 笔记
@@ -219,6 +219,10 @@ Marketplace 是 Eclipse 的插件市场，通过它可以更方便地搜索和�
 > [!tip] 
 > 
 > [Alternative Install · jeeeyul/eclipse-themes Wiki · GitHub](https://github.com/jeeeyul/eclipse-themes/wiki/Alternative-Install)
+
+#### e4-spies
+
+[e4 spies](https://marketplace.eclipse.org/content/e4-spies) 这个可能获取 Eclipse 界面各组件的 CSS ID，配合 [jeeeyuls-eclipse-themes](#jeeeyuls-eclipse-themes) 插件中的 CSS 样式，可以设置 Eclipse 界面样式。
 
 #### colortheme
 
@@ -513,13 +517,40 @@ STS 三种安装方式：
 
 ---
 
-### Eclipse 问题
+## Eclipse 界面
 
-#### 找不到 jre
+界面相关的 [Css](../../Frontend/Css_Note.md) 放在 `plugins/org.eclipse.ui.themes_xxx/css` 目录下：
+
+```shell
+$ ll org.eclipse.ui.themes_1.2.2700.v20250122-1423/css 
+Permissions Size User       Group      Date Modified    Name
+drwxr-xr-x     - silascript silascript 2025-03-06 17:43 .
+drwxr-xr-x     - silascript silascript 2025-03-06 17:43 ..
+drwxr-xr-x     - silascript silascript 2025-03-06 17:43 common
+drwxr-xr-x     - silascript silascript 2025-03-06 17:43 dark
+.rw-r--r--  4.3k silascript silascript 2025-01-23 07:03 e4-dark_linux.css
+.rw-r--r--  3.8k silascript silascript 2025-01-23 07:03 e4-dark_mac.css
+.rw-r--r--  2.8k silascript silascript 2025-01-23 07:03 e4-dark_mac1013.css
+.rw-r--r--  6.8k silascript silascript 2025-01-23 07:03 e4-dark_win.css
+.rw-r--r--  1.2k silascript silascript 2025-01-23 07:03 e4_basestyle.css
+.rw-r--r--  1.8k silascript silascript 2025-01-23 07:03 e4_classic.css
+.rw-r--r--  7.1k silascript silascript 2025-01-23 07:03 e4_default_gtk.css
+.rw-r--r--  6.1k silascript silascript 2025-01-23 07:03 e4_default_mac.css
+.rw-r--r--  6.3k silascript silascript 2025-01-23 07:03 e4_default_win.css
+.rw-r--r--   869 silascript silascript 2025-01-23 07:03 high-contrast.css
+drwxr-xr-x     - silascript silascript 2025-03-06 17:43 light
+
+```
+
+---
+
+## Eclipse 问题
+
+### 找不到 jre
 
 > [!tip] 
 > 
-> 可以将在软件安装目录下建一个软链接指向 jdk 中的 jre（如像 java11+ 的没有预装 **jre**，请用上面的命令生成 **jre**）
+> 可以将在软件安装目录下建一个软链接指向 jdk 中的 jre（如像 [JDK11](../Java_Note.md#JDK11)+ 的没有预装 **jre**，请用上面的命令生成 **jre**）
 >
 > 下面以 **DBeaver** 为例:
 >
@@ -541,7 +572,7 @@ STS 三种安装方式：
 > * `java.sql.rowset`
 >
 
-#### Tomcat 配置出问题
+### Tomcat 配置出问题
 
 > [!info] 
 > 
@@ -558,19 +589,20 @@ STS 三种安装方式：
 无独有偶，[VSCode](https://code.visualstudio.com/) 下，使用 [Tomcat to Java](https://marketplace.visualstudio.com/items?itemName=adashen.vscode-tomcat) 插件，添加 Tomcat ，可能会添加失败，报 `Please make sure you select a valid Tomcat Directory.` 错误，同样也是权限问题。
 
 示例：
+
 ```shell
 sudo chmod -R 755 tomcat-9.0.62
 ```
 
-##### 启动 Tomcat 后 404
+#### 启动 Tomcat 后 404
 
-![](Java相关.assets/eclipse_tomcat_publish.png)
+![eclipse tomcat publish](Java相关.assets/eclipse_tomcat_publish.png)
 
 > [!info] 
 >
 > 要选第二项，就是将项目复制一份到 tomcat 安装目录下的 `wtpwebapps` 目录中进行发布
 
-##### Tomcat 配置
+#### Tomcat 配置
 
 新建完 Server 后，相要配置 Profile：
 
@@ -593,6 +625,6 @@ sudo chmod -R 755 tomcat-9.0.62
 ## 相关笔记
 
 * [Java 笔记](../Java_Note.md)
-* [Java 资料](../Java_Material.md)
+* [Java 资料清单](../Java_Material.md)
 * [Tomcat 笔记](../Tomcat/Tomcat_Note.md)
 

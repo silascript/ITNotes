@@ -11,7 +11,7 @@ tags:
   - jboss
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-03-21 02:23:50
+modified: 2025-03-24 03:50:37
 ---
 
 # Java 资料清单
@@ -50,6 +50,10 @@ modified: 2025-03-21 02:23:50
 
 * [Eclipse中servers框中右击Tomcat有个profile栏选项 - 假程序猿 - 博客园](https://www.cnblogs.com/straybirds/p/8953324.html)
 * [java - Eclipse Tomcat Error: "Could not launch in profiling mode because no profilers are configured." - Stack Overflow](https://stackoverflow.com/questions/40729817/eclipse-tomcat-error-could-not-launch-in-profiling-mode-because-no-profilers-a)
+
+### 界面
+
+* [eclipse中左侧边栏Package Explorer 区域项目字体调整 - 简书](https://www.jianshu.com/p/cccfd3c60022)
 
 ---
 

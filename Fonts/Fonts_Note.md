@@ -5,7 +5,7 @@ tags:
   - unicode
   - cjk
 created: 2023-01-31 11:31:14
-modified: 2025-03-08 23:54:09
+modified: 2025-03-26 17:23:37
 ---
 
 # 字体笔记
@@ -16,12 +16,20 @@ modified: 2025-03-08 23:54:09
 
 ## 目录
 
+* [基本概念](#基本概念)
+	* [字重](#字重)
 * [中文字体](#fonts_zh)
 	* [CJK](#fonts_zh_cjk)
 	* [GB18030](#fonts_zh_gb18030)
 	* [思源字体](#fonts_zh_notofont)
 	* [更纱黑体](#fonts_zh_sarasa)
 * [编程字体](#fonts_program)
+
+---
+
+## 基本概念
+
+### 字重
 
 ---
 

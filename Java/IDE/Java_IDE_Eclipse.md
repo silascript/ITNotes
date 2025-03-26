@@ -5,7 +5,7 @@ tags:
   - ide
   - eclipse
 created: 2025-02-23 21:17:37
-modified: 2025-03-24 20:07:44
+modified: 2025-03-26 17:28:56
 ---
 
 # Eclipse 笔记
@@ -81,10 +81,24 @@ StartupNotify=true
 
 ---
 
-### <span id="java_eclipse_settings">Eclipse 简单设置</span>
+### <span id="java_eclipse_settings">Eclipse 设置</span>
 
 1. 代码揭示
 在「Editor」 -「 Content Assist」 -「Auto activation triggers for Java」中添加 26 字母：`abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ`
+
+#### 字体和颜色
+
+Eclipse 基础的字体和基本的颜色设置基本集中在「General」- 「Appearance」-「Color and Fonts」- 「Basic」选项下：
+
+* `Text Font`：基础字体，主要是代码
+* `Text Editor Block Selection Font`：选中代码字体，一般设置字体时将 [字重](../../Fonts/Fonts_Note.md#字重) 设置为「粗体」。
+* `Dialog Font`：菜单上的字体
+
+* `Content Assist background color`：代码提示窗口背景色
+* `Content Assist foreground color`：代码提示窗口前景色
+
+* `Information background color`：代码信息窗口背景色
+* `Information foreground color`：代码信息窗口前景色
 
 #### Server
 

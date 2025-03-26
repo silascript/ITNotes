@@ -11,7 +11,7 @@ tags:
   - jboss
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-03-24 03:50:37
+modified: 2025-03-26 17:34:01
 ---
 
 # Java 资料清单
@@ -41,6 +41,15 @@ modified: 2025-03-24 03:50:37
 * [转载-【使用Eclipse Installer安装Eclipse】\_eclipseinstaller-CSDN博客](https://blog.csdn.net/qq_34932433/article/details/136187944)
 * [在Linux上安装Eclipse，Windows通用 - Biem - 博客园](https://www.cnblogs.com/biem/p/12923263.html)
 
+### 字体颜色
+
+* [eclipse 中修改提示框（alt+/）背景色或文字颜色\_eclipse alt+鼠标面板提示框颜色设置-CSDN博客](https://blog.csdn.net/whisely/article/details/74012402)
+
+#### 界面
+
+* [eclipse中左侧边栏Package Explorer 区域项目字体调整 - 简书](https://www.jianshu.com/p/cccfd3c60022)
+* [Eclipse e4 概览](https://holbrook.github.io/2014/01/07/eclipse_e4_RCP_quickstart.html)
+
 ### 插件
 
 * [IDE中下载JDK的插件：可视化自由选择下载特定版本的JDK - 极道](https://www.jdon.com/56931.html)
@@ -50,10 +59,6 @@ modified: 2025-03-24 03:50:37
 
 * [Eclipse中servers框中右击Tomcat有个profile栏选项 - 假程序猿 - 博客园](https://www.cnblogs.com/straybirds/p/8953324.html)
 * [java - Eclipse Tomcat Error: "Could not launch in profiling mode because no profilers are configured." - Stack Overflow](https://stackoverflow.com/questions/40729817/eclipse-tomcat-error-could-not-launch-in-profiling-mode-because-no-profilers-a)
-
-### 界面
-
-* [eclipse中左侧边栏Package Explorer 区域项目字体调整 - 简书](https://www.jianshu.com/p/cccfd3c60022)
 
 ---
 

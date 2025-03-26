@@ -5,7 +5,7 @@ tags:
   - ide
   - eclipse
 created: 2025-02-23 21:17:37
-modified: 2025-03-26 17:28:56
+modified: 2025-03-26 18:21:08
 ---
 
 # Eclipse 笔记
@@ -99,6 +99,11 @@ Eclipse 基础的字体和基本的颜色设置基本集中在「General」- 「
 
 * `Information background color`：代码信息窗口背景色
 * `Information foreground color`：代码信息窗口前景色
+
+另外，「General」- 「Appearance」-「Color and Fonts」- 「Java」选项下：
+
+* `javadoc background`：[Java](../Java_Note.md) 文档背景色，默认是使用「Basic」下 `Information background color`
+* `Javadoc text color`：[Java](../Java_Note.md) 文档前景色，默认是使用「Basic」下 `Information foreground color`
 
 #### Server
 

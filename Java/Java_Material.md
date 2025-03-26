@@ -11,7 +11,7 @@ tags:
   - jboss
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-03-26 17:34:01
+modified: 2025-03-26 17:37:46
 ---
 
 # Java 资料清单
@@ -44,11 +44,13 @@ modified: 2025-03-26 17:34:01
 ### 字体颜色
 
 * [eclipse 中修改提示框（alt+/）背景色或文字颜色\_eclipse alt+鼠标面板提示框颜色设置-CSDN博客](https://blog.csdn.net/whisely/article/details/74012402)
+* [Eclipse修改皮肤主题、编辑区、Log区背景/Eclipse修改皮肤主题、编辑区、Log区背景.md at master · chenshouyin/DevNote · GitHub](https://github.com/chenshouyin/DevNote/blob/master/%E5%B7%A5%E5%85%B7%E6%8A%80%E5%B7%A7%E7%AF%87/Eclipse%E4%BF%AE%E6%94%B9%E7%9A%AE%E8%82%A4%E4%B8%BB%E9%A2%98%E3%80%81%E7%BC%96%E8%BE%91%E5%8C%BA%E3%80%81Log%E5%8C%BA%E8%83%8C%E6%99%AF/Eclipse%E4%BF%AE%E6%94%B9%E7%9A%AE%E8%82%A4%E4%B8%BB%E9%A2%98%E3%80%81%E7%BC%96%E8%BE%91%E5%8C%BA%E3%80%81Log%E5%8C%BA%E8%83%8C%E6%99%AF.md)
 
 #### 界面
 
 * [eclipse中左侧边栏Package Explorer 区域项目字体调整 - 简书](https://www.jianshu.com/p/cccfd3c60022)
 * [Eclipse e4 概览](https://holbrook.github.io/2014/01/07/eclipse_e4_RCP_quickstart.html)
+* [Eclipse 4.2 中的轻量级 CSS 编辑器 - OSCHINA - 中文开源技术交流社区](https://www.oschina.net/translate/eclipse4-css?cmp)
 
 ### 插件
 

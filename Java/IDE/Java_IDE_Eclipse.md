@@ -5,7 +5,7 @@ tags:
   - ide
   - eclipse
 created: 2025-02-23 21:17:37
-modified: 2025-03-26 18:21:08
+modified: 2025-03-27 21:01:53
 ---
 
 # Eclipse 笔记
@@ -238,6 +238,133 @@ Marketplace 是 Eclipse 的插件市场，通过它可以更方便地搜索和�
 > [!tip] 
 > 
 > [Alternative Install · jeeeyul/eclipse-themes Wiki · GitHub](https://github.com/jeeeyul/eclipse-themes/wiki/Alternative-Install)
+
+#### 配置
+
+自用的自定义浅色主题：
+
+```css
+
+/*
+ 在内置的Light主题上修改
+ 主要修正 Package Explorer组件中浅色主题下项目名的前景色显示问题
+*/
+
+/* 主界面 */
+Composite,
+Composite > *{
+	background-color: #EBEEF3;
+ 	color:#222;
+}
+
+/* 标签页 */
+CTabItem:selected {
+
+	color: '#org-eclipse-ui-workbench-ACTIVE_TAB_TEXT_COLOR';
+}
+
+
+.MPartStack ,.MPart{
+
+	font-size:16px;
+	color:#000;
+	swt-tabNormalShadow-color:none;
+}
+
+
+.MPartStack *, .MPart *{
+ background-color: #EBEEF3;
+ color:#333;
+}
+
+
+.MPartStack {
+
+	/* tab background */
+	jtab-header-background : #d2dfec #c3d2e0 100%;
+	jtab-border-color : #97a5b3 #97a5b3 100%;
+	
+	
+	/* selected tabs */
+	jtab-selected-tab-background: #ffffff #ffffff 100%;
+	jtab-selected-border-color: #97a5b3 #97a5b3 100%;
+	/*jtab-selected-text-shadow-color: none;*/
+
+	/* unselected tabs */
+	jtab-unselected-tabs-background: none;
+	
+	jtab-unselected-border-color: none;
+	jtab-unselected-text-shadow-color: none;
+	
+	/* hover tabs */
+	jtab-hover-color : #222;
+	jtab-hover-tabs-background: none;
+	
+	jtab-hover-border-color: none;
+	jtab-hover-text-shadow-color: none;
+	
+	jtab-chevron-color: #000000;
+}
+
+
+/* 面板active*/
+.MPartStack.active{
+
+  	jtab-header-background : #d2dfec #c3d2e0 100%;
+	jtab-border-color : #97a5b3 #97a5b3 100%;
+	background : #ffffff;
+	jtab-selected-text-shadow-color: none;
+
+}
+
+
+/* 面板下的组件 */
+.MPartStack.active > CTabItem,
+.MPartStack.active > CTabItem CLabel {
+    background-color: '#org-eclipse-ui-workbench-ACTIVE_TAB_BG_END'; /* HACK for background of CTabFolder inner Toolbars */
+    color: '#org-eclipse-ui-workbench-ACTIVE_TAB_UNSELECTED_TEXT_COLOR';
+}
+
+/* Package Explorer 面板区 */
+CTabFolder Tree,CTabFolder Canvas{
+	background-color:#ebeef3;
+    font-size: 16px;
+    color:#000;
+}
+
+
+/* 表格、树型组件 */
+Table,Tree,RegistryFilteredTree {
+    background-color: #ebeef3;
+    color: #333;
+}
+
+Table,Tree {
+	/*表格头*/
+	swt-header-color: #333;
+	swt-header-background-color: #d2dee9;
+}
+
+/* 表格化Property 相关 */
+TabbedPropertyTitle {
+  swt-backgroundGradientStart-color:  #cbd9e7;
+	swt-backgroundGradientEnd-color:    #cbd9e7;
+}
+
+TabbedPropertyList {
+	swt-tabAreaBackground-color : #eee;
+	swt-tabBackground-color: #eaeaea;
+	color : #333;
+
+}
+
+
+/*内存状态栏*/
+HeapStatus {
+	background-color: #4F5355;
+	color: #EEEEEE;
+}
+```
 
 #### e4-spies
 

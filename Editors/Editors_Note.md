@@ -8,7 +8,7 @@ tags:
   - scite
   - lsp
 created: 2023-01-30 11:19:11
-modified: 2024-09-18 13:01:51
+modified: 2025-03-30 03:28:19
 ---
 
 # 编辑器笔记
@@ -49,10 +49,6 @@ VSCode 主要有几个版本：
 
 * [VSCode 笔记](VSCode_Note.md)
 * [VSCode 插件笔记](VSCode_Extensions_Note.md)
-
----
-
-### <span id="editors_about_links">相关连接</span>
 
 ---
 
@@ -198,6 +194,12 @@ style.*.35=italics,back:#ebeef3
 * [Notepad3ColorTheme](https://github.com/maboroshin/Notepad3ColorTheme)
 * [Notepad3 Themes - Optimize the display of Chinese fonts](https://github.com/F9y4ng/Notepad3-Themes)
 * [Notepad3 One Dark Pro theme](https://github.com/DanRotaru/Notepad3_OneDarkPro)
+
+---
+
+## <span id="editors_bluefish">Bluefish</span>
+
+[Bluefish Editor](https://bluefish.openoffice.nl) 一个轻量级文本编辑器，比 [VSCode](VSCode_Note.md) 轻，比 Gedit 功能强。适合写些 Web，如 [Html](../Frontend/Html_Note.md)、[PHP](../PHP/PHP_Note.md) 或规模小的项目。
 
 ---
 

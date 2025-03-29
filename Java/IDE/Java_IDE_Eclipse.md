@@ -5,7 +5,7 @@ tags:
   - ide
   - eclipse
 created: 2025-02-23 21:17:37
-modified: 2025-03-27 21:01:53
+modified: 2025-03-27 23:07:57
 ---
 
 # Eclipse 笔记
@@ -765,6 +765,12 @@ sudo chmod -R 755 tomcat-9.0.62
 ![Tomcat Server](Java_IDE_Eclipse.assets/Eclipse_Tomcat_Server.png)
 
 证明当前 [视图](#视图) 不是「Java EE」切实，应切换到「Java EE」视图再进行 Profile 的配置操作。
+
+---
+
+## 相关文档
+
+* [Eclipse 官方帮助文档](https://help.eclipse.org)
 
 ---
 

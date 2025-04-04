@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2025-03-16 19:17:39
+modified: 2025-04-05 01:22:29
 
 ---
 
@@ -437,19 +437,21 @@ VSCodium 原装只内置了 `Python Language Basics`，这个内置插件只有�
 简单配置：
 
 ```json
+"java.jdt.ls.java.home":"/home/silascript/.sdkman/candidates/java/current",
+
 "java.configuration.runtimes": [
 	{
-		"name": "JavaSE-17",
-		"path": "/home/silascript/.sdkman/candidates/java/17.0.12-tem",
-	},
-	{
 		"name": "JavaSE-21",
-		"path": "/home/silascript/.sdkman/candidates/java/current",
+		"path": "/home/silascript/.sdkman/candidates/java/21.0.6-tem",
 		"default": true
 	},
+	
+	{
+		"name": "JavaSE-24",
+		"path": "/home/silascript/.sdkman/candidates/java/24-tem"
+	}
 ],
 
-"java.jdt.ls.java.home": "/home/silascript/.sdkman/candidates/java/current"
 ```
 
 Runtime 名称列表：[runtime name](https://github.com/redhat-developer/vscode-java/blob/master/package.json#L793)

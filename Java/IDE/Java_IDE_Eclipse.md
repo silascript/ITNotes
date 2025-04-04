@@ -5,7 +5,7 @@ tags:
   - ide
   - eclipse
 created: 2025-02-23 21:17:37
-modified: 2025-03-27 23:07:57
+modified: 2025-04-04 09:34:30
 ---
 
 # Eclipse 笔记
@@ -665,7 +665,7 @@ STS 三种安装方式：
 
 ## Eclipse 界面
 
-界面相关的 [Css](../../Frontend/Css_Note.md) 放在 `plugins/org.eclipse.ui.themes_xxx/css` 目录下：
+界面相关的 [CSS](../../Frontend/Css_Note.md) 放在 `plugins/org.eclipse.ui.themes_xxx/css` 目录下：
 
 ```shell
 $ ll org.eclipse.ui.themes_1.2.2700.v20250122-1423/css 

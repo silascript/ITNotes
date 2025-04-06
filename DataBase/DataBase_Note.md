@@ -14,7 +14,7 @@ tags:
   - navicat
   - dbeaver
 created: 2023-08-18 19:44:52
-modified: 2025-02-23 13:09:20
+modified: 2025-04-06 21:57:30
 ---
 
 # 数据库笔记
@@ -23,36 +23,48 @@ modified: 2025-02-23 13:09:20
 
 ## 目录
 
-* [MySQL](#MySQL)
-* [Oracle](#Oracle)
-* [SQLSERVER](#SQLSERVER)
-* [POSTgreSQL](#POSTgreSQL)
-* [SQLite](#SQLite)
+* [数据库原理](#数据库原理)
+* [各数据库笔记](#各数据库笔记)
+	* [MySQL](#MySQL)
+	* [Oracle](#Oracle)
+	* [SQLSERVER](#SQLSERVER)
+	* [POSTgreSQL](#POSTgreSQL)
+	* [SQLite](#SQLite)
 * [数据库客户端](#database_client)
 	* [NaviCat](#NaviCat)
 	* [DBeaver](#DBeaver)
 
 ---
 
-## MySQL
+## 数据库原理
+
+### 范式
+
+构造数据库必须遵循一定的规则，在关系型数据库中，这种规则就称为「**范式**」。
+
+按规范化程度从低到高可分为 5 级范式。一般来说，数据库只需要东路第三范式。
+
+#### 第一范式
+
+#### 第二范式
+
+#### 第三范式
+
+---
+
+## 各数据库笔记
+
+### MySQL
 
 [MySQL_Note](mysql/MySQL_Note.md)
 
----
+### Oracle
 
-## Oracle
+### SQLSERVER
 
----
+### POSTgreSQL
 
-## SQLSERVER
-
----
-
-## POSTgreSQL
-
----
-
-## SQLite
+### SQLite
 
 [SQLite 笔记](SQLite/SQLite_Note.md)
 

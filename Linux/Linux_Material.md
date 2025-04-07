@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-10 03:06:48
-modified: 2025-03-22 20:30:47
+modified: 2025-04-08 00:57:50
 ---
 
 # Linux 资料清单
@@ -123,6 +123,8 @@ modified: 2025-03-22 20:30:47
 * [Arch 清除缓存及无用包 - yuanj's blog](https://yuanj.top/posts/o1r3l6y0/)
 * [Arch Linux 软件包的查询及清理 - osoft - 博客园](https://www.cnblogs.com/sztom/p/10652624.html)
 * [Linux 磁盘空间不足时可以删除哪些文件](https://cn.linux-console.net/?p=8614)
+* [Arch Linux 中清理包缓存的推荐方法 – 大大的心](https://www.bigfiil.com/archives/330)
+* [ArchLinux清理根目录磁盘空间](https://www.learnhard.cn/linux/archlinux%E6%B8%85%E7%90%86%E6%A0%B9%E7%9B%AE%E5%BD%95%E7%A3%81%E7%9B%98%E7%A9%BA%E9%97%B4/)
 
 * [Linux 日常操作与基础知识 | archlinux 简明指南](https://arch.icekylin.online/guide/advanced/system-ctl)
 * [ArchLinux使用记录 - ArchLinux](https://yuanmxc.site/Archlinux/ArchLinux%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/)

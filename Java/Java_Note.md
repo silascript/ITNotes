@@ -7,7 +7,7 @@ tags:
   - Eclipse
   - dbeaver
 created: 2023-01-30 11:19:11
-modified: 2025-03-11 22:52:23
+modified: 2025-04-07 02:27:16
 ---
 
 # Java 笔记
@@ -113,7 +113,7 @@ Temurin JDK 清华镜像：[https://mirror.tuna.tsinghua.edu.cn/Adoptium/](https
 
 ##### 默认方法
 
-「默认方法」：又称为「扩展方法」，使用 `default` 关键字进行修饰。
+「默认方法」：又称为「**扩展方法**」，使用 `default` 关键字进行修饰。
 
 默认方法**必须**有方法的实现，即**必须有方法体**。
 

@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2025-03-06 20:35:51
+modified: 2025-04-10 17:43:12
 ---
 
 # 梯子笔记
@@ -360,10 +360,10 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 > [!info] 域名相关
 >
 > 新域名：[https://三分机场.xyz](https://三分机场.xyz)
+> 
+> 域名发布页（备用官网域名）： [https://sanfennetwork.github.io/](https://sanfennetwork.github.io/)
 >
-> [三分官网域名发布页](https://sanfennetwork.github.io)
->
- > [三分机场通知频道](https://t.me/s/sanfenjichang)
+> [三分机场通知频道](https://t.me/s/sanfenjichang)
 
 > [!tip] 
 >

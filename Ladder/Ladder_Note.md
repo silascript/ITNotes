@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2025-04-10 17:51:54
+modified: 2025-04-16 17:44:19
 ---
 
 # 梯子笔记
@@ -509,8 +509,12 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 
 > [!info] 域名
 >
-> * 最新网址：[https://2.feigou.xyz](https://2.feigou.xyz)
-> * 旧网址：[1.mmcks.top](https://1.mmcks.top) **（需要梯子访问）**
+> 最新网址：[https://feigou.idsduf.com](https://feigou.idsduf.com)
+>  
+>  旧网址：
+>  
+> * [https://2.feigou.xyz](https://2.feigou.xyz)
+> * [1.mmcks.top](https://1.mmcks.top) **（需要梯子访问）**
 
 ~~#### Lemon~~
 

@@ -11,7 +11,7 @@ tags:
   - jboss
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-03-26 17:37:46
+modified: 2025-04-22 11:04:09
 ---
 
 # Java 资料清单
@@ -30,6 +30,10 @@ modified: 2025-03-26 17:37:46
 
 * [JDK11删除功能和选项-CSDN博客](https://blog.csdn.net/weixin_33786077/article/details/89621390)
 * [Java卸载工具：几个JDK自带命令与可视化工具 - 指尖上的代码go - 博客园](https://www.cnblogs.com/cqqfboy/p/15406109.html)
+
+### SDKMan
+
+* [使用SDKMAN安装和管理多个JDK版本](https://www.didispace.com/installation-guide/dev-env/sdkman.html)
 
 ---
 

@@ -7,7 +7,7 @@ tags:
   - pipx
   - conda
 created: 2023-08-18 19:44:52
-modified: 2025-02-18 21:46:55
+modified: 2025-05-04 20:31:09
 ---
 
 # Python 笔记
@@ -724,7 +724,7 @@ conda install python=3.11.5
 示例 安装或升级 python 到指定版本，并指定使用的 [channel](#channel) 为 `conda-forge`：
 
 ```shell
-conda install python=3.11.11 -c conda-forge
+conda install python=3.12.10 -c conda-forge
 ```
 
 ##### 升级

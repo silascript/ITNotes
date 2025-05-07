@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2025-05-01 17:53:15
+modified: 2025-05-07 00:38:04
 ---
 
 # 梯子笔记
@@ -920,7 +920,8 @@ function FindProxyForURL(url, host) {
 		"www.tmp.link",
 		"www.lingshulian.com",
 		"www.deepseek.com",
-		"linux.do"
+		"linux.do",
+		"www.e-daixia.com"
 
 		// 影视
 		// "update.code.visualstudio.com"

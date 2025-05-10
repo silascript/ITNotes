@@ -5,7 +5,7 @@ tags:
   - video
   - tools
 created: 2024-07-08 01:11:31
-modified: 2024-07-08 01:57:17
+modified: 2025-05-11 03:13:09
 ---
 
 # Youtube 相关
@@ -31,6 +31,12 @@ modified: 2024-07-08 01:57:17
 #### Y2Down
 
 [Y2DOWN - YouTube 1080p 1440p 4K 8K视频下载器](https://y2down.cc/zh/) 这个网就挺好，不过可选格式没 [yoube4kdownloader](#yoube4kdownloader) 多，不过也够用了。
+
+---
+
+## 资料
+
+* [YouTube下载1080教程 · Alvin9999/new-pac Wiki · GitHub](https://github.com/Alvin9999/new-pac/wiki/YouTube%E4%B8%8B%E8%BD%BD1080%E6%95%99%E7%A8%8B)
 
 ---
 

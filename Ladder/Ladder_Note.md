@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2025-05-07 00:38:04
+modified: 2025-05-17 18:19:27
 ---
 
 # 梯子笔记
@@ -404,6 +404,11 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 #### 三毛机场
 
 ~~[三毛机场](https://三毛机场.com)~~
+
+> [!info] 
+> 
+> * 最新国外地区访问域名：[三毛导航.com](三毛机场.com) 
+> * 最新大陆地区访问域名： [三毛导航.com](https://xn--ehqx35aimmzwv.com/)
 
 [三毛导航](https://三毛导航.com) （[smjcdh](https://www.smjcdh.com)）性价比套餐：
 

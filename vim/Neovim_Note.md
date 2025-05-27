@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2024-09-06 11:45:05
+modified: 2025-05-27 23:27:02
 ---
 
 # NeoVim 笔记
@@ -1237,6 +1237,14 @@ nvim-treesitter 的命令都是以 `TS` 开头的。
 
 * `:TSInstallInfo`： 可以查看语言安装情况。
 * `:TSBufToggle highlight`：开启或关闭高亮
+
+##### 问题
+
+###### 本地没装 tree-sitter
+
+使用 `checkhealth` 命令，查看 nvim 情况，如果出现 `WARNING `tree-sitter` executable not found (parser generator, only needed for :TSInstallFromGrammar, not required for :TSInstall)` 这个警告，证明本地系统没有安装 `tree-sitter` 相关的命令，可以使用 `npm list -g` 查看下 node 全局下是否安装了相关的组件。
+
+可以使用 [npm](../Node/NodeJS_Note.md#npm) 安装下：`npm install -g tree-sitter-cli`。
 
 #### 相关资料
 

@@ -4,7 +4,7 @@ tags:
   - PL
   - lua
 created: 2023-01-31 11:31:14
-modified: 2024-07-18 11:11:37
+modified: 2025-05-28 01:36:56
 ---
 
 # Lua 笔记
@@ -75,14 +75,6 @@ lua 使用 `{}` 来定义一个 table。
 ---
 
 ## 函数
-
----
-
-## 问题
-
-### 相关资料
-
-* [Lua cURL如何获取JSON响应？ | Lua China - Lua 中国开发者社区](https://lua-china.com/posts/14460)
 
 ---
 
@@ -219,10 +211,6 @@ local result = json.decode(data)
 
 需要注意的是,不同的 JSON 解析库可能有不同的使用方式和功能,建议根据具体需求选择合适的库。
 
-### 相关资料
-
-* [Lua 包管理工具 Luarocks 详解](https://segmentfault.com/a/1190000003920034)
-
 ---
 
 ## 相关链接
@@ -234,4 +222,5 @@ local result = json.decode(data)
 ## 其他笔记
 
 * [Lua视频清单](Lua_Videos.md)
+* [Lua 资料清单](Lua_Material.md)
 

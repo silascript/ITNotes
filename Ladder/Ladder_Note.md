@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2025-05-17 18:19:27
+modified: 2025-05-30 03:54:15
 ---
 
 # 梯子笔记
@@ -687,6 +687,15 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 
 [雷霆](https://www.leiting.app) ，这个机场非常特殊，它是按流量计费。
 
+> [!info] 
+> 
+> 网址：
+> 
+> * [GitHub - 雷霆](https://github.com/winston779/leitingjichang)
+> * [www.leiting.io](https://www.leiting.io)
+> * [leiting.lol](https://leiting.lol)
+> * [lt.uniss.me](https://lt.uniss.me)
+
 首次注册送 3G 流量。
 
 账号余额至少 1 元，最低充值 2 元。
@@ -1090,6 +1099,7 @@ export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_pr
 > * [终端使用代理 - faf4r - 博客园](https://www.cnblogs.com/faf4r/p/17765134.html)
 > * [在 Linux 中使用 Clash | AISYUN's Blog](https://blog.cyida.com/2023/32KRQRV.html#%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86)
 > * [2025年稳定好用的机场推荐（2025-2更新） - Kerry的学习笔记](https://kerrynotes.com/best-ssr-v2ray-proxy/)
+> * [2025年性价比机场推荐（持续更新）](https://kerrynotes.com/cost-effective-ss-proxy/)
 
 ---
 

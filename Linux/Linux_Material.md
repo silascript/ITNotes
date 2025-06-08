@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-10 03:06:48
-modified: 2025-04-08 00:57:50
+modified: 2025-06-08 18:23:04
 ---
 
 # Linux 资料清单
@@ -128,6 +128,7 @@ modified: 2025-04-08 00:57:50
 
 * [Linux 日常操作与基础知识 | archlinux 简明指南](https://arch.icekylin.online/guide/advanced/system-ctl)
 * [ArchLinux使用记录 - ArchLinux](https://yuanmxc.site/Archlinux/ArchLinux%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/)
+* [Pacman wiki](https://wiki.archlinuxcn.org/wiki/Pacman)
 
 ---
 

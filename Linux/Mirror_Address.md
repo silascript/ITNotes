@@ -6,7 +6,7 @@ tags:
   - list
   - opensource
 created: 2023-08-18 19:44:52
-modified: 2024-09-11 11:39:11
+modified: 2025-06-09 11:04:26
 ---
 # 开源镜像网址清单
 
@@ -20,6 +20,7 @@ modified: 2024-09-11 11:39:11
 * [上海交通大学 Linux 用户组 软件源镜像服务](https://mirror.sjtu.edu.cn/)
 * [OpenTUNA 开源软件镜像站](https://opentuna.cn/)
 * [清华大学开源软件镜像站 | Tsinghua Open Source Mirror](https://mirrors.tuna.tsinghua.edu.cn/)
+* [北京大学开源镜像站](https://mirrors.pku.edu.cn)
 * [阿里巴巴开源镜像站-OPSX镜像站-阿里云开发者社区](https://developer.aliyun.com/mirror/)
 * [哈尔滨工业大学开源镜像站](https://mirrors.hit.edu.cn/)
 * [浙江大学开源软件镜像站](https://mirrors.zju.edu.cn/)

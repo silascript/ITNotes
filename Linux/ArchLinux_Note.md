@@ -8,7 +8,7 @@ tags:
   - ime
 date created: 2022-11-08 11:32
 created: 2023-08-18 19:44:52
-modified: 2025-06-08 18:21:51
+modified: 2025-06-09 11:02:08
 ---
 
 # ArchLinux 笔记
@@ -51,24 +51,27 @@ Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 ```
 
 > [!tip]
+> 
 > archlinuxcn 只能另一个。
 
 > [!tip] pacman.conf 其他配置
+> 
 > `/etc/pacman.conf` 这个配置中，还有一些常用配置项。如颜色高亮，可以将 `Color` 这个选项的注释去掉。
 
-开源镜像源可在 [开源镜像网址清单](Mirror_Address.md) 中查询。
+开源镜像源可在 [开源镜像网址清单](Mirror_Address.md) 中查询，也可以到 [GitHub - archlinuxcn/mirrorlist-repo: Arch Linux CN Community repo mirrors list](https://github.com/archlinuxcn/mirrorlist-repo) 查询。
 
 #### 更新
 
 做完以上的操作后，就需要更新系统数据库：
+
 ```shell
 sudo pacman -Syyu
 ```
 
-更新系统 签名：
+安装或更新 archlinuxcn GPG key：
+
 ```shell
-sudo pacman -S archlinuxcn-keyring
-sudo pacman -S antergos-keyring
+pacman -Sy archlinuxcn-keyring
 ```
 
 ##### 阻止更新
@@ -172,6 +175,22 @@ pacman -Syyuu
 
 * `pacman -R 软件包名`：删除某软件
 * `pacman -Rs 软件包`：删除指定软件包，以其所有没有被其他已安装软件包使用的依赖关系
+
+#### Pactree
+
+`pactree` 命令是用来查看包依赖树的，格式：`pactree 包名`。
+
+示例：
+
+> [!example] 
+> 
+>```shell
+> pactree qemu-common
+>```
+
+##### 查看被依赖
+
+要检查一个 **已安装**的软件包**被**哪些包**依赖**，可以将递归标识 `-r` 传递给 `pactree`，或者使用 [pkgtools](https://aur.archlinux.org/packages/pkgtools/)AUR 中的 `whoneeds`。例如查看 `qemu-common` 被哪个包依赖可以这样：`pactree -r qemu-common`。
 
 ---
 

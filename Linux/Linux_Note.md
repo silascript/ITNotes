@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2025-03-19 07:29:36
+modified: 2025-06-18 11:13:54
 ---
 
 # Linux 笔记
@@ -1856,6 +1856,15 @@ night-theme-switcher 这个插件其中有个设置，为「日间」和「夜�
 ```shell
 xdg-mime default org.gnome.Nautilus.desktop inode/directory
 ```
+
+### 显示驱动
+
+wayland 仅支持 KMS 驱动。
+
+Inter 显卡：`pacman -Syu mesa`
+
+* Mesa 驱动不支持 2 代及之前的 CPU，`mesa-amber` 可以支持 2 代 cpu
+* 2~4 代 CPU，需要安装 `xf86-video-intel`，因为 `modsettings` 驱动不支持 4 代之前的 CPU。
 
 ---
 

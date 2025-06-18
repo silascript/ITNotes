@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2025-05-30 03:54:15
+modified: 2025-06-18 11:41:11
 ---
 
 # 梯子笔记
@@ -407,7 +407,7 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 
 > [!info] 
 > 
-> * 最新国外地区访问域名：[三毛导航.com](三毛机场.com) 
+> * 最新国外地区访问域名：[三毛导航.com](https://三毛机场.com) 
 > * 最新大陆地区访问域名： [三毛导航.com](https://xn--ehqx35aimmzwv.com/)
 
 [三毛导航](https://三毛导航.com) （[smjcdh](https://www.smjcdh.com)）性价比套餐：
@@ -431,6 +431,9 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 > 其中包括 10 个香港节点（[Hysteria2](https://github.com/apernet/hysteria) 协议的香港节点就有 7 个，另外还有 2 个 Trojan 协议及 1 个 Vmess 协议的香港节点）），3 个日本节点及 2 个韩国节点。
 > 
 > 至于 9.99 元一年那个年付套餐，就看节点情况如何了，如果能达到 [超悦](#超悦机场) 的延迟，是可以平替 [超悦](#超悦机场) 作为基础机场。
+> 
+> 
+> 此机场禁止使用【美国、加拿大】节点下载 bt。发现直接封号处理。
 
 #### 山水云
 
@@ -485,7 +488,7 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 
 [飞狗 ](https://1.mmcks.top) （[新域名](https://na.fgmcks.top)）套餐调整，[直连](#直连) 套餐减少 -- 其实就是变相涨价：
 
-1. 年付 6 元/年，每月 100G，[直连](#直连) 节点，含 [Hysteria2](#Hysteria)，不限客户端数（节点 0.5x 消耗，塞音除使用 200g）
+1. 年付 6 元/年，每月 100G，[直连](#直连) 节点，含 [Hysteria2](#Hysteria)，不限客户端数（节点 0.5x 消耗，相当于能使用 200g）
 ~~2. 季付 6 元/季，每月 500G，港、台 [直连](#直连) 节点，不限客户端数~~
 2. 季付 9 元/季，每月 200G，港、台 [直连](#直连)+[中转](#中转) 节点，不限客户端数
 3. 月付 5 元/月，每月 500G，港、台 [直连](#直连)+[中转](#中转) 节点，不限客户端数
@@ -996,6 +999,10 @@ export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_pr
 > 因为 FLClash 是基于 [Clash-Meta](#Clash-Meta)，所以机场的订阅时得注意是否支持。
 > 
 > [Clash-Meta](#Clash-Meta) 与通用订阅链接相比，只是后面多了个参数：`&flag=clashmeta`
+
+### mihomo-party
+
+[mihomo-party](https://github.com/mihomo-party-org/mihomo-party) mihomo 的客户端。[Clash-Nyanpasu](#Clash-Nyanpasu) 应该也是用了这货。
 
 ### V2Fly
 

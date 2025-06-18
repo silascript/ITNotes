@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2025-06-18 12:04:23
+modified: 2025-06-18 13:03:07
 ---
 
 # 梯子笔记
@@ -1002,7 +1002,7 @@ export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_pr
 
 ### Mihomo-Party
 
-[Mihomo Party](https://mihomo.party)mihomo 的客户端。[Clash-Nyanpasu](#Clash-Nyanpasu) 应该也是用了这货，但这比 [Clash-Nyanpasu](#Clash-Nyanpasu) 支持更新的 mihomo 的内核。
+[Mihomo Party](https://mihomo.party)mihomo 的客户端。
 
 [Mihomo Party github](https://github.com/mihomo-party-org/mihomo-party) 
 

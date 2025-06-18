@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2025-06-18 11:41:11
+modified: 2025-06-18 12:04:23
 ---
 
 # 梯子笔记
@@ -1000,9 +1000,26 @@ export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_pr
 > 
 > [Clash-Meta](#Clash-Meta) 与通用订阅链接相比，只是后面多了个参数：`&flag=clashmeta`
 
-### mihomo-party
+### Mihomo-Party
 
-[mihomo-party](https://github.com/mihomo-party-org/mihomo-party) mihomo 的客户端。[Clash-Nyanpasu](#Clash-Nyanpasu) 应该也是用了这货。
+[Mihomo Party](https://mihomo.party)mihomo 的客户端。[Clash-Nyanpasu](#Clash-Nyanpasu) 应该也是用了这货，但这比 [Clash-Nyanpasu](#Clash-Nyanpasu) 支持更新的 mihomo 的内核。
+
+[Mihomo Party github](https://github.com/mihomo-party-org/mihomo-party) 
+
+#### 安装
+
+```shell
+# 源码包
+paru/yay -S mihomo-party
+# 二进制包
+paru/yay -S mihomo-party-bin
+# Git 版本源码包
+paru/yay -S mihomo-party-git
+# 使用系统electron的源码包
+paru/yay -S mihomo-party-electron
+# 使用系统electron的二进制包
+paru/yay -S mihomo-party-electron-bin
+```
 
 ### V2Fly
 

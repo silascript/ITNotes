@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2025-06-18 13:03:07
+modified: 2025-06-19 03:54:55
 ---
 
 # 梯子笔记
@@ -600,8 +600,8 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 
 [顶级机场](https://顶级机场.com) 性价比套餐：
 
-1. 年付，12 元/年，每月 200G，不限客户端数
-2. 5 元/月，1000G，不限客户端数
+1. 年付，**12** 元/年，每月 **200**G，不限客户端数
+2. **5** 元/月，**1000**G，不限客户端数
 
 不限时套餐：
 
@@ -612,6 +612,19 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 > [!info] 
 > 
 > 看网上某 up 主推荐视频中，晚高峰，大部分节点都「红」了，果然便宜没好货！
+
+#### NanoCloud
+
+* 永久官网❶：[https://cloud.52iplc.com](https://cloud.52iplc.com)
+* 永久官网❷：[https://nanoapi.github.io](https://nanoapi.github.io)
+
+##### 性价比套餐
+
+1. 1.00/月付 **100**G， **100**Mbps，支持**2**台设备同时在线
+
+> [!info] 
+> 
+> 月付 1 元套餐，节点有香港和美国，以 [Vmess](#Vmess) 协议为主。
 
 #### 杜卡迪
 
@@ -1021,6 +1034,12 @@ paru/yay -S mihomo-party-electron
 paru/yay -S mihomo-party-electron-bin
 ```
 
+#### 设置
+
+##### 代理模式
+
+Mihomo-Party 同样也能开启「PAC 模式」并设置，与 [Clash-Verge-Rev](#Clash-Verge-Rev) 的 [PAC](#PAC) 设置完全一致。
+
 ### V2Fly
 
 因为 [V2ray](#V2ray) 的创始人失联，V2Ray 的更新已经由新的社区 [V2Fly](https://www.v2fly.org) 负责。
@@ -1122,8 +1141,6 @@ export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_pr
 > * [终端使用代理加速的正确方式（Clash） | Ln's Blog](https://weilining.github.io/294.html)
 > * [终端使用代理 - faf4r - 博客园](https://www.cnblogs.com/faf4r/p/17765134.html)
 > * [在 Linux 中使用 Clash | AISYUN's Blog](https://blog.cyida.com/2023/32KRQRV.html#%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86)
-> * [2025年稳定好用的机场推荐（2025-2更新） - Kerry的学习笔记](https://kerrynotes.com/best-ssr-v2ray-proxy/)
-> * [2025年性价比机场推荐（持续更新）](https://kerrynotes.com/cost-effective-ss-proxy/)
 
 ---
 
@@ -1135,6 +1152,12 @@ export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_pr
 * [fanqiangdang](https://fanqiangdang.org)
 * [ACL4SSR 在线订阅转换](https://acl4ssr-sub.github.io)
 * [Subscription Converter](https://api.nameless13.com)
+
+### 机场汇集
+
+* [2025年稳定好用的机场推荐（2025-2更新） - Kerry的学习笔记](https://kerrynotes.com/best-ssr-v2ray-proxy/)
+* [2025年性价比机场推荐（持续更新）](https://kerrynotes.com/cost-effective-ss-proxy/)
+* [GitHub - KaWaIDeSuNe/dijiajichang: 2025最新低价机场推荐](https://github.com/KaWaIDeSuNe/dijiajichang)
 
 ---
 

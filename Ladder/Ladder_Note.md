@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2025-06-19 03:54:55
+modified: 2025-06-20 02:33:56
 ---
 
 # 梯子笔记
@@ -615,16 +615,22 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 
 #### NanoCloud
 
-* 永久官网❶：[https://cloud.52iplc.com](https://cloud.52iplc.com)
+域名：[https://edu.360buyimg.men](https://edu.360buyimg.men)
+
+* 最新官网❶：[https://cloud.52iplc.com](https://cloud.52iplc.com)
 * 永久官网❷：[https://nanoapi.github.io](https://nanoapi.github.io)
 
-##### 性价比套餐
+性价比套餐：
 
 1. 1.00/月付 **100**G， **100**Mbps，支持**2**台设备同时在线
 
 > [!info] 
 > 
-> 月付 1 元套餐，节点有香港和美国，以 [Vmess](#Vmess) 协议为主。
+> 月付 1 元套餐，节点有香港和美国，以 [Vmess](#Vmess) 协议为主。价格应该跟 [超悦](#超悦机场) 等 12 元的年付套餐相近，不过这是可以月付的，抗跑路风险更强了！
+> 
+> 速度非常不错，不过流量估计是**2x**，虽然没标识。
+> 
+> 也就是说这个 1 元 100G 套餐，实际流量可能只有 50G，也就是相当于 2 元 100G，这与 [鸡场](#鸡场) 的 2 元 100G 一样。
 
 #### 杜卡迪
 
@@ -836,7 +842,9 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 
 #### Clash-Meta
 
-[Clash Meta](https://github.com/MetaCubeX/mihomo)（现更名为 *mihomo*）是一个基于广受欢迎的开源项目 Clash 的高级版本。它继承了 Clash 的核心功能，保留了原始 Clash 的灵活性和高效性，并增加了一些独特的特性，并包括部分 Clash Premium 核心功能，是目前网络代理和数据流管理最强大的软件。
+#Clash/Mihomo 
+ 
+[Clash Meta](https://github.com/MetaCubeX/mihomo)（现更名为 *Mihomo* ）是一个基于广受欢迎的开源项目 Clash 的高级版本。它继承了 Clash 的核心功能，保留了原始 Clash 的灵活性和高效性，并增加了一些独特的特性，并包括部分 Clash Premium 核心功能，是目前网络代理和数据流管理最强大的软件。 ^mihomo
 
 它与 [Clash-Verge](#Clash-Verge) 、[Clash-Verge-Rev](#Clash-Verge-Rev)、[Clash-Nyanpasu](#Clash-Nyanpasu)、[Clash.Mini](https://github.com/MetaCubeX/Clash.Mini) 等 GUI 客户端一起使用。
 
@@ -1015,7 +1023,7 @@ export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_pr
 
 ### Mihomo-Party
 
-[Mihomo Party](https://mihomo.party)mihomo 的客户端。
+[Mihomo Party](https://mihomo.party)[Mihomo](#^mihomo) 的客户端。
 
 [Mihomo Party github](https://github.com/mihomo-party-org/mihomo-party) 
 

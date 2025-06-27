@@ -8,7 +8,7 @@ tags:
   - scite
   - lsp
 created: 2023-01-30 11:19:11
-modified: 2025-03-30 03:28:19
+modified: 2025-06-28 02:10:25
 ---
 
 # 编辑器笔记
@@ -19,11 +19,12 @@ modified: 2025-03-30 03:28:19
 ## 目录
 
 * [编辑器笔记](#编辑器笔记)
-  * [目录](#目录)
-  * [SublimeText](#editors_sublime)
-	  * [SublimeText相关笔记](#editors_sublime_notes)
-  * [VSCode](#vscode)
-  * [Vim](#vim)
+	* [目录](#目录)
+	* [SublimeText](#editors_sublime)
+		* [SublimeText相关笔记](#editors_sublime_notes)
+* [Lapce](#editors_lapce)
+* [VSCode](#vscode)
+* [Vim](#vim)
 
 ---
 
@@ -176,6 +177,12 @@ style.*.35=italics,back:#ebeef3
 ## <span id="editors_zed">Zed</span>
 
 [Zed](https://zed.dev) 是用 [Rust](../Rust/Rust_Note.md) 写的新一代文本编辑器。
+
+---
+
+## <span id="editors_lapce">Lapce</span>
+
+[Lapce](https://lap.dev/lapce/) 是使用 [Rust](../Rust/Rust_Note.md) 写的文本编辑器。
 
 ---
 

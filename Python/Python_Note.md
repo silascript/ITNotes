@@ -7,7 +7,7 @@ tags:
   - pipx
   - conda
 created: 2023-08-18 19:44:52
-modified: 2025-05-04 20:31:09
+modified: 2025-07-11 01:07:58
 ---
 
 # Python 笔记
@@ -796,7 +796,13 @@ Error while loading conda entry point: conda-libmamba-solver (libarchive.so.20: 
 CondaValueError: You have chosen a non-default solver backend (libmamba) but it was not recognized. Choose one of: classic
 ```
 
-原因是这些包必须来自同一通道。
+或者
+
+```shell
+Error while loading conda entry point: conda-libmamba-solver (libxml2.so.2: cannot open shared object file: No such file or directory)
+```
+
+这些错误的原因都是相同的，就是这些包必须来自同一通道。
 
 解决方案：
 

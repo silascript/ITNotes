@@ -7,7 +7,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2025-03-09 11:00:22
+modified: 2025-07-11 00:57:37
 ---
 
 # Python 资料清单
@@ -74,6 +74,8 @@ modified: 2025-03-09 11:00:22
 * [Error while loading conda entry point: conda-libmamba-solver (libarchive.so.19: cannot open shared object file: No such file or directory) 报错消息解决方法 - hs3434 - 博客园](https://www.cnblogs.com/hs3434/p/17748111.html)
 * [解决Error while loading conda entry point: conda-libmamba-solver (libarchive.so.19: cannot open shared-CSDN博客](https://blog.csdn.net/May_myz/article/details/134611233)
 * [【Conda报错】(libarchive.so.20: cannot open shared object file: No such file or directory)-CSDN博客](https://blog.csdn.net/qq_44246618/article/details/142928837)
+* [error while loading shared libraries: libxml2.so.2: cannot open shared object file 解决方法 - Angry\_Panda - 博客园](https://www.cnblogs.com/xyz/p/17594346.html)
+* [error while loading shared libraries: libxml2.so.2: cannot open shared object file 解决方法-CSDN博客](https://blog.csdn.net/qq_39779233/article/details/128215517)
 
 ### https 问题
 

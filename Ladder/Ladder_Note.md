@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2025-06-24 10:39:59
+modified: 2025-07-12 02:44:27
 ---
 
 # 梯子笔记
@@ -641,7 +641,13 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 #### 杜卡迪
 
 * 杜卡迪官网：[https://www.dukadi.one ](https://www.dukadi.one)
-* 国内可访问官网：[https://dukadi.biz](https://dukadi.biz)  (不定时更新)
+* 国内可访问官网：
+	* [https://dukadi.biz](https://dukadi.biz)  (不定时更新)
+	* [https://dukadi.info](https://dukadi.info) (2024/12/18)  
+	* [https://dukadi.cv](https://dukadi.cv) (2024/12/18)  
+	* [https://dukadi.eu](https://dukadi.eu) (2024/12/18)  
+	* [https://dukadi.sbs](https://dukadi.sbs) (2024/12/18) 
+	* [https://dukadi.shop](https://dukadi.shop) (2024/12/18)
 
 性价比套餐：
 

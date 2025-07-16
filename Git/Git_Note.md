@@ -5,7 +5,7 @@ tags:
   - github
   - gist
 created: 2023-01-30 11:19:11
-modified: 2025-07-16 18:43:36
+modified: 2025-07-16 19:03:02
 ---
 
 # Git 笔记
@@ -913,6 +913,31 @@ github 已经不允许使用账号密码方式 pull 代码，可以使用 token�
 > *[git push时鉴权失败](https://juejin.cn/post/7099019037706813471)
 > * [caching-your-github-credentials-in-git#github-cli](https://docs.github.com/zh/get-started/getting-started-with-git/caching-your-github-credentials-in-git#github-cli)
 > * [\[Git\] 一次搞定：Github 2FA(Two-Factor Authentication/两因素认证) - 千千寰宇 - 博客园](https://www.cnblogs.com/johnnyzen/p/17880870.html)
+
+### <span id="git_github_2FA">GitHub 2FA</span>
+
+`2FA`：Two-Factor Authentication，两因子认证。
+
+#### 恢复码
+
+`Recovery Code` 这是因子生成器生效时的一个「备用钥匙」。一共有 16 个，用一个少一个，所以最好记住大概用了几个，其实可以按顺序使用，使用过的恢复码是不能再用的，所以大概就知道用了几个还剩几个，最好差不多用完时，再生成一次：[generating-a-new-set-of-recovery-codes](https://docs.github.com/zh/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication-recovery-methods#generating-a-new-set-of-recovery-codes)
+
+#### 浏览器扩展
+
+[authenticator](https://authenticator.cc) 这个插件比较流行。
+
+这插件除了生成 2FA 的代码外，还有导出导出备份。备份文件就是普通的 txt 文件。
+
+导出导入的备份格式如下：
+
+```txt
+otpauth://totp/GitHub:账号?secret=xxx&issuer=GitHub
+otpauth://totp/V2EX:账号?secret=xxxx&issuer=V2EX
+```
+
+每一行就是一个生成对象。其中 `secret` 这个参数的值是判断是不是同一个生成对象。
+
+通过备份的导出导入，就可以进行跨浏览器使用。
 
 ---
 

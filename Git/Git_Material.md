@@ -2,10 +2,11 @@
 aliases: []
 tags:
   - git
+  - github
   - material
   - list
 created: 2025-02-27 18:12:38
-modified: 2025-02-27 18:16:04
+modified: 2025-07-16 03:19:55
 ---
 
 # Git 资料清单
@@ -22,6 +23,13 @@ modified: 2025-02-27 18:16:04
 ### github
 
 * [如何解决GitHub推送超过2GB限制问题：完整解决方案 - 阿小信的博客](https://blog.axiaoxin.com/post/git-batch-push/)
+
+#### 2FA 相关
+
+* [2024 GitHub 开启 2FA 双重身份验证教程](https://www.douban.com/note/867200969/?_i=2605357gI52z8I)
+* [记一次个人GitHub账号的找回过程](https://lucumt.info/post/github/recovery-github-code-when-2fa-not-working/)
+* [适合Github授权登录的2FA云同步App推荐](https://zhuanlan.zhihu.com/p/677683437)
+* [一次搞定：Github 2FA(Two-Factor Authentication/两因素认证) - 千千寰宇 - 博客园](https://www.cnblogs.com/johnnyzen/p/17880870.html)
 
 ---
 

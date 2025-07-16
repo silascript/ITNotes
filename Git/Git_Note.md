@@ -5,7 +5,7 @@ tags:
   - github
   - gist
 created: 2023-01-30 11:19:11
-modified: 2025-02-27 18:15:35
+modified: 2025-07-16 18:43:36
 ---
 
 # Git 笔记
@@ -487,7 +487,7 @@ Git 的核心部分是一个简单的键值对数据库 (key-value data store)�
 
 * **index** 文件: 保存暂存区信息
 
-![](Git_Note.assets/2020-12-02 22-37-58 屏幕截图.png)
+![](Git_Note.assets/screenshot_git_dir.png)
 
 #### Git 对象
 
@@ -509,19 +509,19 @@ echo "hello world" | git hash-object --stdin
 
 结果:
 
-![](Git_Note.assets/2020-12-02 22-39-37 屏幕截图.png)
+![](Git_Note.assets/screenshot_git_hashobj_1.png)
 
 如果没有使用**-w** 选项，则在 **objects** 目录中不会生成相应的子目录.如下图:
 
-![](Git_Note.assets/2020-12-02 23-58-00 屏幕截图.png)
+![](Git_Note.assets/screenshot_git_hashobj_2.png)
 
 而使用**-w** 选项后，则会在 **objects** 目录中生成相应的子目录及文件，其目录名为 hash 值最高 **2** 位，剩下 **38** 位为文件名，如下图:
 
-![](Git_Note.assets/2020-12-03 00-01-30 屏幕截图.png)
+![](Git_Note.assets/screenshot_git_hashobj_3.png)
 
 又如：
 
-![](Git_Note.assets/2020-12-06 02-11-45 屏幕截图.png)
+![](Git_Note.assets/screenshot_git_hashobj_4.png)
 
 **cat-file**
 
@@ -533,7 +533,7 @@ echo "hello world" | git hash-object --stdin
 >
 > 如果 hash object 对象没找到则会报异常，如下图所示:
 >
-> ![](Git_Note.assets/2020-12-02 23-54-00 屏幕截图.png)
+> ![](Git_Note.assets/screenshot_git_hashobj_noobj.png)
 >
 > **-t** 选项,可以让 Git 告诉我们其内部存储的任何对象类型
 
@@ -545,11 +545,11 @@ git cat-file -p 3b18e512dba79e4c8300dd08aeb37f8e728b8dad
 
 结果:
 
-![](Git_Note.assets/2020-12-03 00-04-47 屏幕截图.png)
+![](Git_Note.assets/screenshot_git_cat-file-p.png)
 
 #### 树对象
 
-![](Git_Note.assets/2020-12-06 02-14-33 屏幕截图.png)
+![](Git_Note.assets/screenshot_git_treeobj.png)
 
 ---
 

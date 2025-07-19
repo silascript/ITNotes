@@ -5,7 +5,7 @@ tags:
   - ruby
   - gem
 created: 2023-08-18 19:44:52
-modified: 2025-02-19 20:51:41
+modified: 2025-07-18 10:43:05
 ---
 
 # Ruby 笔记
@@ -354,7 +354,7 @@ frum 有个配置目录，默认是在 `~/.frum`，可以使用 `echo $FRUM_DIR`
  * 3.2.3
  ```
  
-* `frum local 版本号`：切换发前 ruby 版本，已安装的版本可以通过 `frum versions` 命令查看。
+* `frum local 版本号`：切换当前 ruby 版本，已安装的版本可以通过 `frum versions` 命令查看。
 * `frum global 版本号`：指定全局 ruby 版本。
 * `frum --ruby-build-mirror `：设定 ruby 下载镜像 url。单独使用没有意义，得配合 `install` 命令一起使用。
 > [!example] 示例

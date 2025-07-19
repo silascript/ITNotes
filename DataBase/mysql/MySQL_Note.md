@@ -5,7 +5,7 @@ tags:
   - db
   - mysql
 created: 2023-01-30 11:19:11
-modified: 2025-02-23 02:10:08
+modified: 2025-07-19 10:19:04
 ---
 
 # MySQL 笔记
@@ -103,7 +103,7 @@ LTS 版本将遵循 [Oracle 终身支持政策](https://link.zhihu.com/?target=
 > 
 > 在 MySQL 的官方规划中，约每隔两年会发布一个新的 LTS（长期稳定版）。
 >
->在一个长期稳定版发布后，则会按季度为单位持续发布创新版，每七个创新版后就会发布一个 LTS 版本。
+> 在一个长期稳定版发布后，则会按季度为单位持续发布创新版，每七个创新版后就会发布一个 LTS 版本。
 
 ![mysql version schedule screenshot](https://developer.qcloudimg.com/http-save/10653659/60a817fc9e60ec8daebd29fe56699ab8.png)
 
@@ -115,6 +115,7 @@ LTS 版本将遵循 [Oracle 终身支持政策](https://link.zhihu.com/?target=
 
 * [MySQL资料](MySQL_Material.md)
 * [Linux 下安装 MySQL](Linux下安装MySQL.md)
+* [Windows 下 MySQL 笔记](MySQL_Windows_Note.md)
 * [MySQL常用操作](MySQL常用操作.md)
 * [MySQL配置笔记](MySQL_Config_Note.md)
 * [Docker 安装 MySQL](../../Docker/Docker_Note.md#dk_softc_demo_mysql)

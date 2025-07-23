@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2025-07-14 01:49:38
+modified: 2025-07-23 17:05:05
 ---
 
 # 梯子笔记
@@ -172,6 +172,10 @@ geoip 是使用 MaxMind 的 [GeoLite2](https://dev.maxmind.com/geoip/geolite2-fr
 > 
 > * [GitHub - Loyalsoldier/geoip: GeoIP 规则文件加强版，同时支持定制 V2Ray dat 格式路由规则文件 geoip.dat 和 MaxMind mmdb 格式文件 Country.mmdb](https://github.com/Loyalsoldier/geoip)
 > * [GitHub - Loyalsoldier/v2ray-rules-dat: V2Ray 路由规则文件加强版，可代替 V2Ray 官方 geoip.dat 和 geosite.dat](https://github.com/Loyalsoldier/v2ray-rules-dat)
+
+#### geosite
+
+#### geodata
 
 #### DNS 分流
 
@@ -1117,6 +1121,14 @@ paru/yay -S mihomo-party-electron-bin
 
 Mihomo-Party 同样也能开启「PAC 模式」并设置，与 [Clash-Verge-Rev](#Clash-Verge-Rev) 的 [PAC](#PAC) 设置完全一致。
 
+#### 问题
+
+##### 规则数据库权限
+
+`.config/mihomo-party/work/rules` 这个目录下是存放着外部资料，规则数据库文件，就是 [geoip](#geoip)、[geosite](#geosite) 这些。有时不知道为什么，会出现权限问题，使用 `ls` 命令可以看到有的库文件所有者变成 `root`，这就造成更新这库时，现出权限问题。
+
+解决这个问题方法很简单，直接删除 `rules` 这个目录。重启 Mihomo-Party，它就会重新生成一个新的 `rules` 目录，这时再使用 `ls` 命令查看，就会发现库文件的所有者就*变回*到当前用户，这就没有权限问题了！
+
 ### V2Fly
 
 因为 [V2ray](#V2ray) 的创始人失联，V2Ray 的更新已经由新的社区 [V2Fly](https://www.v2fly.org) 负责。
@@ -1177,7 +1189,7 @@ sudo systemctl start v2raya
 > 
 > This does NOT impact v2raya.service users.
 
-#### 规则
+#### v2ray 规则设置
 
 [v2ray-rules-dat](https://github.com/Loyalsoldier/v2ray-rules-dat) 是路由规则文件加强版，可代替 V2Ray 官方 `geoip.dat` 和 `geosite.dat`。
 

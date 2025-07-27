@@ -7,7 +7,7 @@ tags:
   - pipx
   - conda
 created: 2023-08-18 19:44:52
-modified: 2025-07-11 01:07:58
+modified: 2025-07-25 03:28:30
 ---
 
 # Python 笔记
@@ -54,7 +54,7 @@ modified: 2025-07-11 01:07:58
 
 > [!tip]
 > 
-> Python 每一个主版本的从**release**到**EOF**，整个生命周期是 5 年。
+> Python 没有官方的 LTS 版本（Long-Term Support，长期支持），Python 每一个主版本的从**release**到**EOF**，整个生命周期是 5 年。
 
 ---
 

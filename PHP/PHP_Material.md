@@ -7,7 +7,7 @@ tags:
   - material
   - list
 created: 2024-09-07 22:23:16
-modified: 2025-02-21 04:12:43
+modified: 2025-07-29 02:26:37
 ---
 
 # PHP 资料清单
@@ -21,6 +21,12 @@ modified: 2025-02-21 04:12:43
 ## 历史及版本
 
 * [PHP5-8各版本特性详解汇总 PHP5.1： autoload PDO MySQLi 类型约束 PHP5.2： JSO - 掘金](https://juejin.cn/post/7408747421281091620)
+* [PHP Supported Versions 支持的版本](https://blog.51cto.com/u_13675550/6171798)
+
+### 版本
+
+* [PHP Versions • PHP.Watch](https://php.watch/versions)
+* [PHP: Supported Versions](https://www.php.net/supported-versions.php)
 
 ## 安装和升级
 

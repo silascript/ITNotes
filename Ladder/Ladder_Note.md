@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2025-07-23 17:05:05
+modified: 2025-07-27 22:00:06
 ---
 
 # 梯子笔记
@@ -38,6 +38,10 @@ modified: 2025-07-23 17:05:05
 > [!info] 相关资料
 > 
 > * [机场的几种协议的历史](https://www.vpn-china.org/history-of-several-airport-agreements/)
+
+#### 订阅
+
+机场中的订阅。
 
 ### 类型
 
@@ -1120,6 +1124,39 @@ paru/yay -S mihomo-party-electron-bin
 ##### 代理模式
 
 Mihomo-Party 同样也能开启「PAC 模式」并设置，与 [Clash-Verge-Rev](#Clash-Verge-Rev) 的 [PAC](#PAC) 设置完全一致。
+
+##### 覆写
+
+覆写格式分为 [YAML](../YAML/YAML_Note.md) 和 [Javascript](../JS/JS_Note.md)。
+
+yaml 格式的覆写文件写法与订阅配置文件相同，只需将需要修改的条目写入即可。
+
+YAML 格式的语法：
+
+```yaml
+# 直接覆盖整个规则
+rules: 
+- DOMAIN,baidu.com,DIRECT
+# 将规则插入到原规则前面
++rules: 
+- DOMAIN,baidu.com,DIRECT
+# 在原规则后面追加规则
+rules+: 
+- DOMAIN,baidu.com,DIRECT
+```
+
+示例：
+
+```yaml
+rules+:
+  - 'DOMAIN-SUFFIX,agedm.vip,DIRECT'
+```
+
+> [!info] 
+> 
+> 如果要追加规则，记得启用「全局启用」，而且要在原规则之前追加，即 `+rules`，有时不生效。
+
+相关文档：[覆写 - Mihomo Party](https://mihomo.party/docs/guide/override)
 
 #### 问题
 

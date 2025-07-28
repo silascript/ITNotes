@@ -5,7 +5,7 @@ tags:
   - ide
   - eclipse
 created: 2025-02-23 21:17:37
-modified: 2025-04-04 09:34:30
+modified: 2025-07-27 21:08:46
 ---
 
 # Eclipse 笔记
@@ -586,9 +586,12 @@ STS 三种安装方式：
 > 
 > 最新几个版本的**URL**：
 >
+> * Eclipse 4.36: https://cdn.spring.io/spring-tools/release/TOOLS/sts4/update/e4.36/
 > * Eclipse 4.35: https://cdn.spring.io/spring-tools/release/TOOLS/sts4/update/e4.35/
 > * Eclipse 4.34: https://cdn.spring.io/spring-tools/release/TOOLS/sts4/update/e4.34/
-> * Eclipse 4.33: https://cdn.spring.io/spring-tools/release/TOOLS/sts4/update/e4.33/
+>   
+>   更多内容请参考：[Installation · spring-projects/spring-tools Wiki · GitHub](https://github.com/spring-projects/spring-tools/wiki/Installation#install-spring-tools-into-an-existing-eclipse-via-a-p2-repo)
+>   
 3. 通过 [Marketplace](#Marketplace) 安装
 
 > [!tip] 

@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-22 01:36:41
-modified: 2025-03-10 09:42:45
+modified: 2025-07-29 02:59:02
 ---
 
 # Docker 资料清单
@@ -18,6 +18,17 @@ modified: 2025-03-10 09:42:45
 * [docker容器之run命令 - 进击的davis - 博客园](https://www.cnblogs.com/davis12/p/14467421.html)
 * [docker run常用参数-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/2246184)
 * [Warning: Stopping docker.service, but it can still be activated by: docker.socket-CSDN博客](https://blog.csdn.net/qq_42533216/article/details/121489855)
+
+### 代理相关
+
+* [Docker Proxy 镜像加速](https://dockerproxy.com/)
+* [mirror.baidubce.com](https://mirror.baidubce.com/)
+* [国内的 Docker Hub 镜像加速器](https://gist.github.com/y0ngb1n/7e8f16af3242c7815e7ca2f0833d3ea6)
+* [怎样才能让我的 docker 走代理 - v2ex](https://v2ex.com/t/874777)
+* [daemon to use a proxy](https://docs.docker.com/config/daemon/proxy/#httphttps-proxy)
+* [docker 设置代理，以及国内加速镜像设置-次世代BUG池](https://neucrack.com/p/286)
+* [【Docker】新手记一次为docker挂代理加速docker pull笔记 – 一桐のBlog](http://ytmc.fun:55555/?p=146)
+* [如何配置docker通过代理服务器拉取镜像 | 自由行](https://www.lfhacks.com/tech/pull-docker-images-behind-proxy/)
 
 ### 杂项
 

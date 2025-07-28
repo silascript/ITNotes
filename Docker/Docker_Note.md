@@ -8,7 +8,7 @@ tags:
   - ubuntu
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2025-02-23 02:00:58
+modified: 2025-07-29 02:59:53
 ---
 
 # Docker 笔记
@@ -291,18 +291,32 @@ BCDEdit /set hypervisorlaunchtype auto
 }
 ```
 
+例：
+
+```json
+{
+  "proxies": {
+    "http-proxy": "http://127.0.0.1:7890",
+    "https-proxy": "http://127.0.0.1:7890"
+  }
+}
+```
+
 配置完了，重载配置文件：`sudo systemctl daemon-reload` 及重启 Docker 服务：`sudo systemctl restart docker`。
 
-#### 代理相关资料
+#### 代理相关问题
 
-* [Docker Proxy 镜像加速](https://dockerproxy.com/)
-* [mirror.baidubce.com](https://mirror.baidubce.com/)
-* [国内的 Docker Hub 镜像加速器](https://gist.github.com/y0ngb1n/7e8f16af3242c7815e7ca2f0833d3ea6)
-* [怎样才能让我的 docker 走代理 - v2ex](https://v2ex.com/t/874777)
-* [daemon to use a proxy](https://docs.docker.com/config/daemon/proxy/#httphttps-proxy)
-* [docker 设置代理，以及国内加速镜像设置-次世代BUG池](https://neucrack.com/p/286)
-* [【Docker】新手记一次为docker挂代理加速docker pull笔记 – 一桐のBlog](http://ytmc.fun:55555/?p=146)
-* [如何配置docker通过代理服务器拉取镜像 | 自由行](https://www.lfhacks.com/tech/pull-docker-images-behind-proxy/)
+`proxyconnect tcp: dial tcp 127.0.0.1:7890: connect: connection refused`，这就是由于 `daemon.json` 配置文件中配置的代理存在问题。
+
+> [!info] 
+> 
+> 当然还有一种可能是使用的如 [Clash-Verge-Rev](../Ladder/Ladder_Note.md#Clash-Verge-Rev) 存在端口被占用造成的。
+> 
+> 最好是未开启代理前，先启动 docker 的服务，再开启代理。
+
+> [!tip] 
+> 
+> [代理相关资料](Docker_Material.md#代理相关)
 
 ### <span id="dk_mirror_magic">镜像网站相关的魔法</span>
 

@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-22 01:36:41
-modified: 2025-07-29 02:59:02
+modified: 2025-07-29 03:00:52
 ---
 
 # Docker 资料清单
@@ -29,6 +29,7 @@ modified: 2025-07-29 02:59:02
 * [docker 设置代理，以及国内加速镜像设置-次世代BUG池](https://neucrack.com/p/286)
 * [【Docker】新手记一次为docker挂代理加速docker pull笔记 – 一桐のBlog](http://ytmc.fun:55555/?p=146)
 * [如何配置docker通过代理服务器拉取镜像 | 自由行](https://www.lfhacks.com/tech/pull-docker-images-behind-proxy/)
+* [开启系统代理后无法拉取docker镜像 · Issue #3488 · clash-verge-rev/clash-verge-rev](https://github.com/clash-verge-rev/clash-verge-rev/issues/3488)
 
 ### 杂项
 

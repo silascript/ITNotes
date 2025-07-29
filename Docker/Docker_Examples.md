@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2025-02-23 03:34:57
+modified: 2025-07-29 23:21:35
 ---
 
 # Docker 示例
@@ -113,7 +113,7 @@ docker run -itd --name d_nginx --network mybridge --ip 172.21.0.31 -p 8899:80 -v
 
 > [!info] 
 > 
-> `-v /home/silascript/Docker_Mount/nginx_m/log:/var/nginx` log 目录挂载，可以宿主目录可以不用预先创建 `log` 目录，[Docker](Docker_Note.md) 挂载时，如果要挂载的宿主目录不存在，会自动创建相应目录再挂载。
+> `-v /home/silascript/Docker_Mount/nginx_m/log:/var/nginx` log 目录挂载，宿主目录可以不用预先创建 `log` 目录，[Docker](Docker_Note.md) 挂载时，如果要挂载的宿主目录不存在，会自动创建相应目录再挂载。
 
 ---
 
@@ -284,6 +284,41 @@ VSCode [intelephense](https://marketplace.visualstudio.com/items?itemName=bmewbu
 > [!important] 
 > 
 > `php.validate.executablePath` 这个属性值必须是使用绝对路径，不能用 `~/xxx/xxx` 这种形式。
+
+### 不挂载配置文件
+
+```shell
+docker run -itd --name d_php84 --network mybridge --ip 172.21.0.30 -p 9000:9000 -v /home/silascript/DevWorkSpace/PHPExercise/:/var/www/html php:8.4.10-fpm
+```
+
+> [!info] 
+> 
+> PHP 容器一般需要挂载的有两个目录：
+> 
+> 
+> 1. ​`/usr/local/etc`​：上面 run​「临时容器」时复制到宿主目录的那个目录，里面都是 php 的配置文件：
+>> [!tip]    
+>> 
+>> （其实这个目录不是必须要挂载的，只是为了方便才挂载到宿主目录，如果懒得挂载，那要修改 php 相关配置，就只好 docker exec​ 进入到容器中去改配置文件）
+>    
+>    ```shell
+>    root@6e27a102e7e6:~# ls -al /usr/local/etc/
+>    total 48
+>    drwxr-xr-x 1 root root 4096 Jul  6 00:46 .
+>    drwxr-xr-x 1 root root 4096 Jul  6 00:46 ..
+>    -rw-r--r-- 1 root root 1195 Jul  6 00:46 pear.conf
+>    drwxr-xr-x 1 root root 4096 Jul  6 00:46 php
+>    -rw-r--r-- 1 root root 5345 Jul  6 00:46 php-fpm.conf
+>    -rw-r--r-- 1 root root 5350 Jul  6 00:46 php-fpm.conf.default
+>    drwxr-xr-x 1 root root 4096 Jul  6 00:46 php-fpm.d
+>    ```
+>    
+> 2. ​`/var/www/html`​：PHP 页面的发布目录，这跟 [Nginx](#示例%201：安装及运行%20Nginx) 的 `/usr/share/nginx/html`​ 挂载到同一个目录，这样 PHP 跟 Nginx 就能结合使用了。
+>  
+>> [!tip]  
+>> 
+>> 这个挂载就是必须的了，如果不挂载到宿主目录，那就没办法跟 Nginx「联动」）
+>
 
 ### 测试 PHP 引擎是否能正常工作
 

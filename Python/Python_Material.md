@@ -7,7 +7,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2025-07-11 00:57:37
+modified: 2025-07-29 20:04:45
 ---
 
 # Python 资料清单
@@ -98,6 +98,14 @@ modified: 2025-07-11 00:57:37
 ### 相关资料
 
 * [VSCode资料清单 - Python部分](../Editors/VSCode_Material.md#Python)
+
+---
+
+## 语法
+
+### 列表
+
+* [python技巧——将list中的每个int元素转换成str\_list int 赚str-CSDN博客](https://blog.csdn.net/google19890102/article/details/80932546)
 
 ---
 

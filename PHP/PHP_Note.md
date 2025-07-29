@@ -4,7 +4,7 @@ tags:
   - PL
   - php
 created: 2023-09-21 23:13:13
-modified: 2025-07-29 02:27:21
+modified: 2025-07-29 23:14:12
 ---
 
 # PHP 笔记
@@ -216,7 +216,7 @@ composer config --unset repos.packagist
 	* 官方地址：[https://learnku.com/laravel](https://learnku.com/laravel)
 	> [!info] 
 	> 
-	> 说明：这个就不多了，国内 PHP 开发者使用量最多的 composer 镜像，同步速度快、稳定，推荐使用。
+	> 说明：这个就不多说了，国内 PHP 开发者使用量最多的 composer 镜像，同步速度快、稳定，推荐使用。
 
 ---
 

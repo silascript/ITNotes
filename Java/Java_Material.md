@@ -11,7 +11,7 @@ tags:
   - jboss
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-04-22 11:04:09
+modified: 2025-07-31 01:02:30
 ---
 
 # Java 资料清单
@@ -65,6 +65,7 @@ modified: 2025-04-22 11:04:09
 
 * [Eclipse中servers框中右击Tomcat有个profile栏选项 - 假程序猿 - 博客园](https://www.cnblogs.com/straybirds/p/8953324.html)
 * [java - Eclipse Tomcat Error: "Could not launch in profiling mode because no profilers are configured." - Stack Overflow](https://stackoverflow.com/questions/40729817/eclipse-tomcat-error-could-not-launch-in-profiling-mode-because-no-profilers-a)
+* [Specifications - Apache Tomcat - Apache Software Foundation](https://cwiki.apache.org/confluence/display/TOMCAT/Specifications)
 
 ---
 
@@ -91,6 +92,8 @@ modified: 2025-04-22 11:04:09
 ---
 
 ## Java EE
+
+* [JSR规范系列（7）——Jakarta EE 10 规范-CSDN博客](https://blog.csdn.net/ni_hao_fan/article/details/128370174)
 
 ### Servlet
 

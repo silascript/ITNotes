@@ -9,7 +9,7 @@ tags:
   - jsp
   - http
 created: 2023-01-31 11:31:14
-modified: 2025-03-22 23:23:16
+modified: 2025-07-30 21:45:19
 ---
 
 # Java Servlet 笔记
@@ -30,6 +30,10 @@ modified: 2025-03-22 23:23:16
 ## Servlet
 
 Tomcat 与 Servlet 版本对应关系：[Apache Tomcat® - Which Version Do I Want?](https://tomcat.apache.org/whichversion.html)
+
+### 版本
+
+Servelt 各版本发布时间：[Jakarta Servlet \| projects.eclipse.org](https://projects.eclipse.org/projects/ee4j.servlet)
 
 ### HttpServlet
 

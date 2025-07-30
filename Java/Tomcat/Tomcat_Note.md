@@ -11,7 +11,7 @@ tags:
   - javaweb
   - container
 created: 2023-08-18 19:44:52
-modified: 2025-03-22 10:06:50
+modified: 2025-07-30 21:40:07
 ---
 
 # Tomcat 笔记
@@ -30,9 +30,13 @@ modified: 2025-03-22 10:06:50
 
 Tomcat 版本与 Java 版本、Servlet 版本、JSP 版本等对应关系：[wichversion](https://tomcat.apache.org/whichversion.html) 。
 
-支持 [JDK8](../Java_Note.md#JDK8) 最后一个版本是 10.0.* 版本。
+支持 [JDK8](../Java_Note.md#JDK8) 最后一个版本是 `10.0.*` 版本。
 
-从 10.1.* 版本是要求 [JDK11](../Java_Note.md#JDK11)，而 Tomcat 11.0 版本要求 [JDK17](../Java_Note.md#JDK17)。 
+从 `10.1.*` 版本是要求 [JDK11](../Java_Note.md#JDK11)，而 Tomcat 11.0 版本要求 [JDK17](../Java_Note.md#JDK17)。 
+
+> [!info] 
+> 
+> 版本相关资料：[版本](Tomcat_Material.md#版本)
 
 ---
 
@@ -72,6 +76,12 @@ tomcat 的配置文件都放在 `conf` 目录下。
 ## 启动
 
 tomcat 三种启动方式：
+
+> [!tip] 
+> 
+> 使用 `bin` 目录下的各脚本启动，需要注意的是，权限问题。如果没有「执行」权限，需要自行修改权限。
+> 
+> 如直接把 `bin` 目录下所有文件都加上可执行权限：`chmod 755 -R bin`
 
 ### 直接启动
 
@@ -158,6 +168,12 @@ drwxr-xr-x     - silascript silascript 2025-03-11 20:47 ..
 .rw-r--r--   32k silascript silascript 2025-02-28 15:54 websocket-client-api.jar
 
 ```
+
+---
+
+## 相关链接
+
+* [Tomcat中文网](https://tomcat.github.net.cn)
 
 ---
 

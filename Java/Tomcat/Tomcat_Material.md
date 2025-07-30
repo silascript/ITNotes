@@ -7,7 +7,7 @@ tags:
   - material
   - list
 created: 2025-03-11 06:18:21
-modified: 2025-03-11 23:48:40
+modified: 2025-07-30 21:34:09
 ---
 
 # Tomcat 资料清单
@@ -21,6 +21,10 @@ modified: 2025-03-11 23:48:40
 * [Tomcat的启动与关闭：详解启动类Bootstrap和Catalina](https://blog.51cto.com/stefanxfy/5083421)
 
 * [Tomcat 使用笔记](http://devgou.com/article/Apache-Tomcat/)
+
+## 版本
+
+* [Apache Tomcat® - 我想要哪个版本？](https://tomcat.github.net.cn/whichversion.html)
 
 ## VSCode 集成
 

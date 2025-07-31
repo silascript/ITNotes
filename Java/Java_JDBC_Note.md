@@ -8,7 +8,7 @@ tags:
   - db
   - database
 created: 2025-03-17 20:02:31
-modified: 2025-03-20 00:02:16
+modified: 2025-07-31 17:41:56
 ---
 
 # JDBC 笔记
@@ -21,7 +21,19 @@ JDBC：Java Database Connectivity 是 Java 程序访问数据库的技术规范�
 
 ---
 
-## <span id="jdbc_newversion">新版 JDBC 相关</span>
+## <span id="jdbc_version">版本</span>
+
+### <span id="jdbc_version_history">历史</span>
+
+JDBC 3.0 随 JDK1.4 发布，JDBC 3.0 开始对应的 JSR 规范（JSR 是 Java Specification Request ，意思是 Java 规范提案）
+
+JDBC 4.0 随 JDK1.6 发布，JDBC 4.0 开始有对应的 JDBC API 规范
+
+JDBC 4.1 随 JDK1.7 发布
+
+JDBC 4.2 随 JDK1.8 发布
+
+### <span id="jdbc_version_new">新版 JDBC 相关</span>
 
 配合 [MySQL](../DataBase/mysql/MySQL_Note.md) 8.x 版本，JDBC 的版本也更新为 6.x 及 最新的 8.x 版本，而新版本的一些设置也发生了变化。大概有如下这些：
 

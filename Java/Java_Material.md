@@ -11,7 +11,7 @@ tags:
   - jboss
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-07-31 01:02:30
+modified: 2025-07-31 17:47:32
 ---
 
 # Java 资料清单
@@ -101,6 +101,14 @@ modified: 2025-07-31 01:02:30
 * [JavaWeb - Servlet - raingray Blog](https://www.raingray.com/archives/4381.html)
 
 ### JDBC
+
+#### 版本
+
+* [JDBC的版本和java sdk的对应关系\_java中jdbc版本-CSDN博客](https://blog.csdn.net/teamlet/article/details/52389665)
+* [掌握JDBC驱动：mysql-connector-java版本对比与应用](https://blog.csdn.net/weixin_30798867/article/details/143525971?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-9-143525971-blog-148031849.235%5Ev43%5Epc_blog_bottom_relevance_base9&spm=1001.2101.3001.4242.6&utm_relevant_index=11)
+* [Java如何查看jdbc驱动版本 \| PingCode智库](https://docs.pingcode.com/baike/269653)
+
+#### 问题解决
 
 * [JDBC driver连接MySQL运行报错The server time zone value - JohnTesla - 博客园](https://www.cnblogs.com/JohnTeslaaa/p/10334679.html)
 * [JDBC(mysql)显式设置serverTimezone的原因和方法\_jdbc servertimezone-CSDN博客](https://blog.csdn.net/autumn9909/article/details/130334715)

@@ -5,7 +5,7 @@ tags:
   - github
   - gist
 created: 2023-01-30 11:19:11
-modified: 2025-07-16 19:03:02
+modified: 2025-07-31 21:41:00
 ---
 
 # Git 笔记
@@ -53,6 +53,13 @@ git config --global user.email "邮箱"
 # 设置默认分支为 main
 git config --global init.defaultBranch main
 
+```
+
+#### 特殊配置
+
+```shell
+# 禁用忽略大小写，即大小写敏感
+git config core.ignorecase false
 ```
 
 ### 基本流程操作

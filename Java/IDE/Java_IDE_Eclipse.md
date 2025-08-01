@@ -5,7 +5,7 @@ tags:
   - ide
   - eclipse
 created: 2025-02-23 21:17:37
-modified: 2025-07-27 21:08:46
+modified: 2025-08-01 20:14:58
 ---
 
 # Eclipse 笔记
@@ -109,7 +109,7 @@ Eclipse 基础的字体和基本的颜色设置基本集中在「General」- 「
 
 ##### Tomcat 适配
 
-如果在 「**Server**」新建 Server 时，没有 [Tomcat_Note](../Tomcat/Tomcat_Note.md) 适配器，可以到 「**Install New Software**」 中的 [Eclipse 官方扩展](#Eclipse%20官方扩展) 中 「**Web, XML, Java EE and OSGi Enterprise Development**」 分类里找 「**JST Sever Adapters Extensions(Apache Tomcat)**」 这个扩展安装：
+如果在 「**Server**」新建 Server 时，没有 [Tomcat](../Tomcat/Tomcat_Note.md) 适配器，可以到 「**Install New Software**」 中的 [Eclipse 官方扩展](#Eclipse%20官方扩展) 中 「**Web, XML, Java EE and OSGi Enterprise Development**」 分类里找 「**JST Sever Adapters Extensions(Apache Tomcat)**」 这个扩展安装：
 
 ![Eclipse Tomcat](Java_IDE_Eclipse.assets/Eclipse_Server_Tomcat.png)
 

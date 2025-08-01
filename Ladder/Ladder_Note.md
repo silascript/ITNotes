@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2025-07-27 22:00:06
+modified: 2025-08-01 11:41:19
 ---
 
 # 梯子笔记
@@ -868,33 +868,40 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 
 #### Needay
 
-[Needay](https://needay.xyz) 
+~~[Needay](https://needay.xyz) ~~
+[NeedayCloud](https://needaycloud.xyz)
 
 官网域名：
 
-* [直连域名](https://needay04.729388.xyz)
-* [需代理域名](https://needay03.729388.xyz)
+~~* [直连域名](https://needay04.729388.xyz)~~
+~~* [需代理域名](https://needay03.729388.xyz)~~
 
-订阅域名 2024 年 12 月 6 日更新： 
+~~订阅域名 2024 年 12 月 6 日更新： ~~
 
-* https://service03.needay.xyz
-* https://service02.needay.xyz
-* https://service01.needay.xyz
+~~* https://service03.needay.xyz~~
+~~* https://service02.needay.xyz~~
+~~* https://service01.needay.xyz~~
+
+> [!info] 
+> 
+> needaycloud 机场 9 折优惠码 ：laoma90off 一次性套餐除外！ 一、活动主题 畅游世界，自由上网 —— 长期福利大放送！ 二、活动时间 2025 年 5 月 5 日 - 2026 年 1 月 1 日 三、9 折优惠码 ：laoma90off 新的订阅域名 ：[https://vip.subscribe-needay.xyz](https://vip.subscribe-needay.xyz)
 
 性价比套餐有蛮多款：
 
 ~~1. 月付 3.99/月，每月 1000G，直连，不限客户端数~~
 ~~2. 年付 49/年，每月 1TB，直连，不限客户端数~~
 
-* 月付 4.99/月，每月 1000G
-* 年付 15/年，每月 300G
+~~* 月付 4.99/月，每月 1000G~~
+~~* 年付 15/年，每月 300G~~
 
 不限时套餐：
 
 ~~* 9 元，1000G，直连~~
 ~~* 50 元，9TB，直连~~
 
-* 13 元，1000G，[Hysteria2](#Hysteria) 节点，部分 [CN2](#CN2) 线路、部分 AS0020 线路、部分移动 CMI 线路。
+* 16 元，400G，部分 [CN2](#CN2) 线路
+
+~~* 13 元，1000G，[Hysteria2](#Hysteria) 节点，部分 [CN2](#CN2) 线路、部分 AS0020 线路、部分移动 CMI 线路。~~
 
 > [!info] 
 > 

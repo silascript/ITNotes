@@ -7,7 +7,7 @@ tags:
   - pipx
   - conda
 created: 2023-08-18 19:44:52
-modified: 2025-08-03 04:14:39
+modified: 2025-08-04 02:48:13
 ---
 
 # Python 笔记
@@ -1112,4 +1112,5 @@ Obsidan 中 [中文分词插件](../NoteSoft/Obsidian/Obsidian_Note.md#obn_plugi
 * [Python 资料清单](Python_Material.md)
 * [Python 语法笔记](Python_Syntax.md)
 * [Python 视频清单](Python_Videos.md)
+* [镜像清单](../Linux/Mirror_Address.md)
 

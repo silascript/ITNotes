@@ -7,7 +7,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2025-07-29 20:04:45
+modified: 2025-08-04 02:47:33
 ---
 
 # Python 资料清单
@@ -103,7 +103,11 @@ modified: 2025-07-29 20:04:45
 
 ## 语法
 
-### 列表
+* [Python-与Java不同点 — 刘伟强(Joinee)](https://liuweiqiang.win/2016/11/01/Python-%E4%B8%8EJava%E4%B8%8D%E5%90%8C%E7%82%B9/#%E5%85%83%E7%BB%84)
+
+### 数所结构
+
+#### 列表
 
 * [python技巧——将list中的每个int元素转换成str\_list int 赚str-CSDN博客](https://blog.csdn.net/google19890102/article/details/80932546)
 
@@ -112,5 +116,6 @@ modified: 2025-07-29 20:04:45
 ## 相关笔记
 
 * [Python 笔记](Python_Note.md)
+* [Python 语法笔记](Python_Syntax.md)
 * [镜像清单](../Linux/Mirror_Address.md)
 

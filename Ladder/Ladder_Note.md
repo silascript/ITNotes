@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2025-08-01 11:41:19
+modified: 2025-08-03 12:41:36
 ---
 
 # 梯子笔记
@@ -659,7 +659,8 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 域名：[https://edu.360buyimg.men](https://edu.360buyimg.men)
 
 * 最新官网❶：[https://cloud.52iplc.com](https://cloud.52iplc.com)
-* 永久官网❷：[https://nanoapi.github.io](https://nanoapi.github.io)
+* 备用官网②:[https://nanoapi.github.io](https://nanoapi.github.io)
+* 永久频道③:[https://nanoceo.github.io](https://nanoceo.github.io)
 
 性价比套餐：
 
@@ -868,7 +869,8 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 
 #### Needay
 
-~~[Needay](https://needay.xyz) ~~
+~~[Needay](https://needay.xyz)~~
+
 [NeedayCloud](https://needaycloud.xyz)
 
 官网域名：

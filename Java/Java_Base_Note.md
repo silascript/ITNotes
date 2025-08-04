@@ -8,7 +8,7 @@ tags:
   - map
   - set
 created: 2024-07-13 10:28:47
-modified: 2025-08-04 20:51:08
+modified: 2025-08-04 22:22:47
 ---
 
 # Java 基础笔记
@@ -27,10 +27,12 @@ modified: 2025-08-04 20:51:08
 
 ```mermaid
 classDiagram
-	class Collection
+	class Collection{
+		<<interface>>
+	}
 	class List
 
-	Collection <-- List
+	Collection <|.. List
 
 ```
 

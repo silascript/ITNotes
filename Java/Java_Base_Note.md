@@ -8,7 +8,7 @@ tags:
   - map
   - set
 created: 2024-07-13 10:28:47
-modified: 2025-02-16 23:05:19
+modified: 2025-08-04 20:51:08
 ---
 
 # Java 基础笔记
@@ -25,17 +25,14 @@ modified: 2025-02-16 23:05:19
 
 ## 集合
 
-
-
 ```mermaid
+classDiagram
+	class Collection
+	class List
 
-
-
+	Collection <-- List
 
 ```
-
-
-
 
 ### List
 

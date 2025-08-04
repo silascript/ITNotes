@@ -6,7 +6,7 @@ tags:
   - vocabulary
   - word
 created: 2023-08-18 19:44:52
-modified: 2025-02-25 18:16:14
+modified: 2025-08-04 20:28:25
 ---
 
 # IT 英文词汇
@@ -51,7 +51,7 @@ modified: 2025-02-25 18:16:14
 * snowflake：雪花
 
 * concurrency：[kən'kʌrənsɪ] 并发
-* parallesim：[pəˈræləlɪzəm‌] 并行
+* parallesim：[ˈpærəlɛlˌɪz.əm] 并行
 
 ---
 
@@ -79,6 +79,12 @@ modified: 2025-02-25 18:16:14
 > 
 
 * backslash：反斜杠（`\`）
+
+## 数据结构相关
+
+* array： [ə'reɪ] 数组
+* queue：[kjuː] 队列
+* deque：['dek] double-ended queue 双向队列
 
 ---
 

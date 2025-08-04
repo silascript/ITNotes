@@ -7,7 +7,7 @@ tags:
   - typora
   - mermaid
 created: 2023-01-13 12:27:45
-modified: 2024-05-24 11:22:29
+modified: 2025-08-04 21:39:34
 ---
 
 # Markdown 笔记
@@ -244,6 +244,7 @@ Mermaid 是一种基于 Javascript 的通过代码创建图表的工具，其使
 在 Markdown 中使用 Mermaid 是通过代码块来实现的，只需在代码块的语言指定中指定为 `mermaid` 就能在 Markdown 中使用 Mermaid 来展示各类图表。
 
 #### Mermaid 图形种类
+
 * 流程图：使用 `flowchart` 或 `graph` 关键字
 * 序列图：使用 `sequenceDiagram` 关键字
 * 甘特图：使用 `gantt` 关键字
@@ -282,7 +283,7 @@ flowchart 流程图的风格偏传统流程图。
 
 然后跟着这个图的方向。
 * T：Top
-* B：Buttom
+* B：Bottom
 * D：Down
 * L：Left
 * R：Right
@@ -301,6 +302,7 @@ Start --> Stop
 ```
 
 ###### graph 流程图
+
 graph 流程图相较 flowchart 最大优点 **语法简单**。
 
 ##### 时序图
@@ -339,6 +341,8 @@ pie
 "仓鼠": 5
 ```
 
+> [!info] 
+> 
 > 更多更详细的 Mermaid 的 [文档](https://mermaid-js.github.io/mermaid/#/) 。
 
 ---
@@ -356,6 +360,8 @@ Font Awesome 使用步骤：
 
 </head>
 ```
+> [!tip] 
+> 
 > 可以找下国内的 CDN。  
 > 常用 CDN：  
 > [bootcdn](https://www.bootcdn.cn)
@@ -364,6 +370,8 @@ Font Awesome 使用步骤：
 
 示例：
 
+> [!info] 
+> 
 > 各版本的写法有区别
 
 5.x
@@ -555,8 +563,8 @@ Obsidian 具体使用请参考：[Obsidian 笔记](../NoteSoft/Obsidian/Obsidian
 
 ---
 
-## 相关资料
+## 相关笔记
 
-* [互联网那些事儿 | 扒一扒互联网Markdown的那些事儿](https://cloud.tencent.com/developer/article/2355142)
-* [unified - 一个用于处理markdown的解析器 - 掘金](https://juejin.cn/post/7193215092316438589)
+* [Markdown 资料清单](Markdown_Material.md)
+* [Obsidian 笔记](../NoteSoft/Obsidian/Obsidian_Note.md)
 

@@ -7,7 +7,7 @@ tags:
   - typora
   - mermaid
 created: 2023-01-13 12:27:45
-modified: 2025-08-05 02:55:38
+modified: 2025-08-05 03:42:12
 ---
 
 # Markdown 笔记
@@ -275,6 +275,45 @@ Mermaid 是一种基于 Javascript 的通过代码创建图表的工具，其使
 | 依赖 | `<..`  | `..>`  |                   表示一种「使用」关系 <br> 参数依赖、局部变量、静态方法/变量依赖                   |
 | 聚合 | `o--`  | `--o`  |                        聚合是一种强关联关系 <br> 在代码语法上与关联无法区分                         |
 | 组合 | `*--`  | `--*`  |                            组合也是一种强关联关系 <br> 比聚合关系还要强                             |
+
+<table>
+<tr>
+<td>关系</td>
+<td>左值</td>
+<td>右值</td>
+<td>描述</td>
+</tr>
+<tr>
+<td>继承</td>
+<td><code><|--</code></td>
+<td><code>--|></code></td>
+<td>类继承另一个类或接品继承另一个接口</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
 
 ###### 类图示例
 

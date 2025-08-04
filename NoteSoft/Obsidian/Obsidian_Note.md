@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2025-03-05 01:15:52
+modified: 2025-08-05 03:43:13
 ---
 
 # Obsidian 笔记
@@ -1562,6 +1562,23 @@ Available Commands:
   search        Searches note in vault
   set-default   Sets default vault
 ```
+
+---
+
+## 问题
+
+### html 相关
+
+#### table 渲染
+
+在 Obsidian 中直接使用 [Html](../../Frontend/Html_Note.md) 标签「定制」表格要注意几个问题：
+
+1. 标签 `<tr>`、`<td>` 等不能有空行
+2. 标签不许缩进
+
+> [!important] 
+> 
+> 如果违反上述两条，Obsidian 内直接使用 [Html](../../Frontend/Html_Note.md) 的表格相关标签将渲染失败。
 
 ---
 

@@ -7,7 +7,7 @@ tags:
   - typora
   - mermaid
 created: 2023-01-13 12:27:45
-modified: 2025-08-04 22:42:23
+modified: 2025-08-05 02:55:38
 ---
 
 # Markdown 笔记
@@ -166,6 +166,7 @@ Markdown 使用 `\` （反斜杠）来对一些特殊字符进行转义。当然
 比如要显示**\`**时，可以写成 **\\\`**，也可以写成 `&#96;`。
 
 > [!tip] 使用 ASII 码的小问题
+> 
 > 如使用 ASII 码显示特殊字符时，最后不要省略分号 `;`，虽然在 [Obsidian](../NoteSoft/Obsidian/Obsidian_Note.md) 是能显示，但像 [Typora](https://typoraio.cn/) 等编辑器中是不能正常显示的，所以为了兼容性，最好把分号加上。
 
 ### <span id="md_basic_qoate">引用</span>
@@ -222,14 +223,6 @@ GFW 支持 5 种引用扩展样式：
 </details>
 
 ```
-
----
-
-## <span id="md_tutorial_links">Markdown 相关教程</span>
-
-* [obsidian 论坛  成雙醬 的Markdown 教程](https://forum-zh.obsidian.md/t/topic/435)
-* [https://www.markdown.cn](https://www.markdown.cn)
-* [Github Markdown 规范](https://gfm.docschina.org/zh-hans/)
 
 ---
 

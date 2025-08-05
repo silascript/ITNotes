@@ -7,7 +7,7 @@ tags:
   - typora
   - mermaid
 created: 2023-01-13 12:27:45
-modified: 2025-08-05 03:42:12
+modified: 2025-08-05 11:51:01
 ---
 
 # Markdown 笔记
@@ -267,51 +267,48 @@ Mermaid 是一种基于 Javascript 的通过代码创建图表的工具，其使
 
 ###### 类图关系线
 
-| 关系 |  左值  |  右值  |                                                描述                                                 |
-|:----:|:------:|:------:|:---------------------------------------------------------------------------------------------------:|
-| 继承 | `<|--` | `--|>` |                                 类继承另一个类或接品继承另一个接口                                  |
-| 实现 | `<|..` | `..|>` |                                             类实现接口                                              |
-| 关联 | `<--`  | `-->`  | 表示一种「拥有」关系 <br> A 类作为 B 类的成员变量 <br> 若 B 类也使用的 A 类作为成员变量则为双向关联 |
-| 依赖 | `<..`  | `..>`  |                   表示一种「使用」关系 <br> 参数依赖、局部变量、静态方法/变量依赖                   |
-| 聚合 | `o--`  | `--o`  |                        聚合是一种强关联关系 <br> 在代码语法上与关联无法区分                         |
-| 组合 | `*--`  | `--*`  |                            组合也是一种强关联关系 <br> 比聚合关系还要强                             |
-
 <table>
-<tr>
+<tr align="center">
 <td>关系</td>
 <td>左值</td>
 <td>右值</td>
 <td>描述</td>
 </tr>
-<tr>
+<tr align="center">
 <td>继承</td>
 <td><code><|--</code></td>
 <td><code>--|></code></td>
 <td>类继承另一个类或接品继承另一个接口</td>
 </tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<tr align="center">
+<td>实现</td>
+<td><code><|..</code></td>
+<td><code>..|></code></td>
+<td>类实现接口</td>
 </tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<tr align="center">
+<td>关联</td>
+<td><code><--</code></td>
+<td><code>--></code></td>
+<td>表示一种「拥有」关系 <br> A 类作为 B 类的成员变量 <br> 若 B 类也使用的 A 类作为成员变量则为双向关联</td>
 </tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<tr align="center">
+<td>依赖</td>
+<td><code><..</code></td>
+<td><code>..></code></td>
+<td>表示一种「使用」关系 <br> 参数依赖、局部变量、静态方法/变量依赖</td>
 </tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<tr align="center">
+<td>聚合</td>
+<td><code>o--</code></td>
+<td><code>--o</code></td>
+<td>聚合是一种强关联关系 <br> 在代码语法上与关联无法区分</td>
+</tr>
+<tr align="center">
+<td>组合</td>
+<td><code>*--</code></td>
+<td><code>--*</code></td>
+<td>组合也是一种强关联关系 <br> 比聚合关系还要强</td>
 </tr>
 </table>
 

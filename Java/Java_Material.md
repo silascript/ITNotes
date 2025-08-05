@@ -11,7 +11,7 @@ tags:
   - jboss
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-07-31 17:47:32
+modified: 2025-08-05 21:59:06
 ---
 
 # Java 资料清单
@@ -84,10 +84,16 @@ modified: 2025-07-31 17:47:32
 
 ## 语法
 
-## 重载和重写
+### 重载和重写
 
 * [重载和重写的底层原理——虚拟机字节码执行引擎-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/2228945)
 * [从JVM字节码执行看重载和重写 - 冬日降临 - 博客园](https://www.cnblogs.com/winterfells/p/7923241.html)
+
+### 集合
+
+#### Spliterator
+
+* [Java8中Spliterator详解-CSDN博客](https://blog.csdn.net/sl1992/article/details/100149187)
 
 ---
 

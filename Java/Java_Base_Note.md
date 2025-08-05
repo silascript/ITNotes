@@ -8,7 +8,7 @@ tags:
   - map
   - set
 created: 2024-07-13 10:28:47
-modified: 2025-08-04 22:22:47
+modified: 2025-08-05 23:47:47
 ---
 
 # Java 基础笔记
@@ -25,16 +25,95 @@ modified: 2025-08-04 22:22:47
 
 ## 集合
 
+[Java](Java_Note.md) 集合相关的接口和类，是放在 `java.base` 这个「模块」（module）中 `java.util` 包（Package）下。
+
 ```mermaid
 classDiagram
+
+
+	class Iterable{
+		<<interface>>
+		default void forEach(Consumer<? super T> action)
+		Interator<T> inerator()
+		default Spliterator<T> spliterator()
+	}
+
 	class Collection{
 		<<interface>>
+		boolean add(E e)
+		boolean addAll(Collection<? extends E> c)
+		void clear()
+		boolean contains(Object o)
+		boolean containsAll(Collection<?> c)
+		boolean isEmpty()
+		boolean remove(Object o)
+		boolean removeAll(Collection<?> c)
+		default boolean removeIf(Predicate<? super E> filter)
+		int size()
+		Object[] toArray()
+		<T> T[] toArray(T[] a)
+		
 	}
-	class List
 
-	Collection <|.. List
+	class Map{
+		<<interface>>
+	}
+
+	class List{
+		<<interface>>
+	}
+
+	class Set{
+		<<interface>>
+	}
+
+	class ArrayList{
+	
+	}
+
+	class LinkedList{
+		
+	}
+
+	class HashSet{
+		
+	}
+
+	class AbstractMap{
+		boolean containsKey(Object key)
+		boolean containsValue(Object value)
+		V get(Object key)
+		boolean isEmpty()
+		Set<K> keySet()
+		Collection<V> values()
+		V put(K key,V value)
+		void putAll(Map<? extends K,? extends V> m)
+		V remove(Object key)
+		int size()
+		
+		
+	}
+
+	class HashMap{
+		
+	}
+
+	Iterable <|-- Collection
+
+	Collection <|-- List 
+	List <|.. ArrayList
+	List <|.. LinkedList
+	Collection <|-- Set
+	Set <|.. HashSet
+
+	Map <|.. AbstractMap
+	AbstractMap <|.. HashMap
+
+	
 
 ```
+
+`Collection` 接口是 `Iterable` 接口的子接口，也就是意味着 `Collection` 接口及其「子孙」接口都拥有「迭代」能力。
 
 ### List
 

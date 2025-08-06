@@ -8,18 +8,28 @@ tags:
   - map
   - set
 created: 2024-07-13 10:28:47
-modified: 2025-08-05 23:47:47
+modified: 2025-08-06 03:04:37
 ---
 
 # Java 基础笔记
 
 ---
 
-## 引用
+## 目录
 
-> [!info] 相关资料
-> 
-> * [理解Java的强引用、软引用、弱引用和虚引用 - 掘金](https://juejin.cn/post/6844903665241686029)
+* [数组](#数组)
+* [集合](#集合)
+
+---
+
+## base 模块
+
+`java.base` 模块，定义 Java SE 平台的基础 API。
+
+这模块分两个包：
+
+* `java`：Java 语言基础 API，包括 `java.io`、`java.nio`、`java.lang`、`java.util` 、`java.net` 等子包。
+* `javax`：有三个子包：`javax.crypto`、`javax.net` 和 `javax.security`。
 
 ## 数组
 
@@ -130,4 +140,5 @@ classDiagram
 * [Java Log 笔记](Java_Log_Note.md)
 * [Java Web 笔记](Java_Servlet_Note.md)
 * [i++和++i分析](i++和++i分析.md)
+* [Java 资料清单](Java_Material.md)
 

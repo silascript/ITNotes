@@ -11,7 +11,7 @@ tags:
   - jboss
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-08-05 21:59:06
+modified: 2025-08-06 10:52:45
 ---
 
 # Java 资料清单
@@ -22,6 +22,10 @@ modified: 2025-08-05 21:59:06
 
 * [JDK 集合](https://www.injdk.cn/)
 * [Java中有那么多JDK，应该选择哪一个呢？](https://www.bilibili.com/video/BV1wp421X7hu)
+
+### 版本新特性
+
+* [Java 20 新特性概览 \| JavaGuide](https://javaguide.cn/java/new-features/java20.html#jep-436-%E8%99%9A%E6%8B%9F%E7%BA%BF%E7%A8%8B-%E7%AC%AC%E4%BA%8C%E6%AC%A1%E9%A2%84%E8%A7%88)
 
 ### 历史
 
@@ -88,6 +92,10 @@ modified: 2025-08-05 21:59:06
 
 * [重载和重写的底层原理——虚拟机字节码执行引擎-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/2228945)
 * [从JVM字节码执行看重载和重写 - 冬日降临 - 博客园](https://www.cnblogs.com/winterfells/p/7923241.html)
+
+### 引用
+
+* [理解Java的强引用、软引用、弱引用和虚引用 - 掘金](https://juejin.cn/post/6844903665241686029)
 
 ### 集合
 
@@ -174,9 +182,10 @@ modified: 2025-08-05 21:59:06
 
 ---
 
-## 相关教程
+## 相关网站
 
 * [How2J 的 Java教程](https://how2j.cn)
+* [Java 面试指南 \| JavaGuide](https://javaguide.cn)
 
 ---
 

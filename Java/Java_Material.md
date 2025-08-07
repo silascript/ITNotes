@@ -11,7 +11,7 @@ tags:
   - jboss
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-08-06 10:52:45
+modified: 2025-08-06 20:45:23
 ---
 
 # Java 资料清单
@@ -102,6 +102,11 @@ modified: 2025-08-06 10:52:45
 #### Spliterator
 
 * [Java8中Spliterator详解-CSDN博客](https://blog.csdn.net/sl1992/article/details/100149187)
+
+#### SequencedCollection
+
+* [【Java 21 新特性】顺序集合（Sequenced Collections）-CSDN博客](https://blog.csdn.net/qq_33589510/article/details/135333916)
+* [java21新特性之顺序集合](https://blog.csdn.net/u022812849/article/details/142872235)
 
 ---
 

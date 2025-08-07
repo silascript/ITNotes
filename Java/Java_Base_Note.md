@@ -8,7 +8,7 @@ tags:
   - map
   - set
 created: 2024-07-13 10:28:47
-modified: 2025-08-06 03:04:37
+modified: 2025-08-06 20:36:30
 ---
 
 # Java 基础笔记
@@ -67,6 +67,28 @@ classDiagram
 
 	class Map{
 		<<interface>>
+		V put(K key,V value)
+		void putAll(Map<? extends K,? extends V> m)
+		V get(Object key)
+		default V getOrDefault(Object key, V defaultValue)
+		V remove(Object key)
+		default boolean remove(Object key, Object value)
+		default void forEach(BiConsumer<? super K, ? super V> action)
+		boolean isEmpty()
+		int size()
+		Collection<V> values()
+	}
+
+
+	class SequencedCollection{
+		<<interface>>
+		default void addFirst(E e)
+		default void addLast(E e)
+		default E getFirst()
+		default E getLast()
+		default E removeFirst()
+		default E removeLast()
+		SequencedCollection<E> reversed()	
 	}
 
 	class List{
@@ -110,7 +132,8 @@ classDiagram
 
 	Iterable <|-- Collection
 
-	Collection <|-- List 
+	Collection <|-- List
+	SequencedCollection <|-- List
 	List <|.. ArrayList
 	List <|.. LinkedList
 	Collection <|-- Set
@@ -126,6 +149,14 @@ classDiagram
 `Collection` 接口是 `Iterable` 接口的子接口，也就是意味着 `Collection` 接口及其「子孙」接口都拥有「迭代」能力。
 
 ### List
+
+从 [JDK21](Java_Note.md#JDK21) 开始，`List` 接口多了一个父接口：`SequencedCollection`。
+
+`List` 接口提供了四种用于按位置（索引）访问列表元素的方法。
+
+* `get(int index)`：通过索引返回元素
+* `getFirst()`：返回 List 中第一个元素，这是 [JDK21](Java_Note.md#JDK21) 新加的
+* `getLast()`：返回 List 中最后一个元素，这是 [JDK21](Java_Note.md#JDK21) 新加的
 
 ### Set
 

@@ -7,12 +7,18 @@ tags:
   - tutorial
   - list
 created: 2023-02-12 11:23:37
-modified: 2025-02-11 02:20:58
+modified: 2025-08-08 18:28:44
 ---
 
 # Python 视频清单
 
 python 相关视频汇集整理。
+
+---
+
+## conda 相关
+
+* [15分钟彻底搞懂！Anaconda Miniconda conda-forge miniforge Mamba](https://www.bilibili.com/video/BV1Fm4ZzDEeY)
 
 ---
 
@@ -70,6 +76,12 @@ python 相关视频汇集整理。
 ## 项目实战
 
 * [【2025】python108个项目](https://www.bilibili.com/video/BV1kQN7efEZm)
+
+## 杂项
+
+### 虚拟环境
+
+* [从pip到uv：一口气梳理现代Python项目管理全流程！](https://www.bilibili.com/video/BV13WGHz8EEz)
 
 ---
 

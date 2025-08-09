@@ -5,7 +5,7 @@ tags:
   - golang
   - go
 created: 2023-01-31 11:31:14
-modified: 2024-08-01 16:53:22
+modified: 2025-08-10 04:28:22
 ---
 
 # Go 语言笔记
@@ -75,7 +75,6 @@ go 的环境配置是存放在 `~/.config/go/` 目录下的 `env` 文件，可�
 > export PATH=$PATH:$GOROOT/bin
 > export PATH=$PATH:$(go env GOPATH)/bin
 > ```
-> 
 > 
 
 ### GOPATH
@@ -262,6 +261,121 @@ go 1.21.3
 
 ---
 
+## 多版本管理
+
+### goenv
+
+[goenv](https://github.com/go-nv/goenv)
+
+#### 安装和配置
+
+安装很简使用系统的包管理器装：以 [ArchLinux](../Linux/ArchLinux_Note.md) 为例：`yay -S goenv`
+
+装完 goenv 后，最好在终端上跑下 `goenv` 命令，这样会在 `HOME` 目录下生成 `.goenv` 目录，这是当前用户 goenv 的根目录，下面配置 goenv 的环境变量时会配到这个目录。
+
+##### 配置
+
+在你的各种 `rc` 或 `profile` 文件中添加以下配置：
+
+```shell
+# 使用goenv来管理go
+export GOENV_ROOT="$HOME/.goenv"
+export PATH=$PATH:$GOENV_ROOT
+eval "$(goenv init -)"
+```
+
+#### goenv 命令
+
+```shell
+
+local       Set or show the local application-specific Go version
+global      Set or show the global Go version
+shell       Set or show the shell-specific Go version
+install     Install a Go version using go-build
+uninstall   Uninstall a specific Go version
+rehash      Rehash goenv shims (run this after installing executables)
+version     Show the current Go version and its origin
+versions    List all Go versions available to goenv
+which       Display the full path to an executable
+whence      List all Go versions that contain the given executable
+```
+
+* `local`：是查看当前正在使用的 go 版本
+* `global`：全局 go 版本
+* `install`：安装指定版本的 go
+* `uninstall`：卸载指定版本的 go
+* `version`：显示当前 go 的版本
+* `versions`：列出已经安装的所有 go 的版本
+* `which`：显示版本的安装的完整路径
+
+> [!info] 
+> 
+> 跟 [rbenv](../Ruby/Ruby_Note.md#rbenv) 真的很像啊。
+> 
+> 更详细的命令请参考官方文档：[goenv/COMMANDS.md](https://github.com/go-nv/goenv/blob/master/COMMANDS.md)
+
+##### 示例
+
+`goenv install`：
+
+```shell
+# 安装指定版本的go
+goenv install 1.24.6
+```
+
+`vesion`：
+
+```shell
+$ goenv versions       
+  1.23.12
+  1.24.6
+```
+
+`goenv global`：
+
+```shell
+
+$ goenv global 1.23.12
+
+$ goenv global        
+1.23.12
+
+$ goenv versions      
+* 1.23.12 (set by /home/silascript/.goenv/version)
+  1.24.6
+
+```
+
+> [!tip] 
+> 
+> 如果之前没有指定全局版本，那 `goenv global` 命令敲完后，是不显示任何版本的，同样 `goenv versions` 中版本也是没有任何版本前带 `*` 号标示。
+
+### GVM
+
+[gvm](https://github.com/moovweb/gvm)
+
+### version-manager
+
+[version-manager](https://github.com/gvcgo/version-manager) 这个不单单是给 Go 语言多版本管理的工具，而是「多语言」的多版本管理工具。
+
+> [!quote] 
+> 
+>  这是官方文档介绍：
+>  
+> VMR 是一款**简单**，**跨平台**，且经过**良好设计**的版本管理器，用于管理多种 SDK 以及其他工具。它完全是为了通用目的而创建的。
+>
+> 你可能已经听说过 fnm，gvm，nvm，pyenv，phpenv 等 SDK 版本管理工具。然而，它们很多都不能管理多种编程语言。像 asdf-vm 这样的管理器支持多种语言，但只适用于类 unix 系统，并且看起来非常复杂。因此，VMR 的出现主要就是为了解决这些问题。
+
+### g
+
+[g](https://github.com/voidint/g) 这是一个类似 [Ruby](../Ruby/Ruby_Note.md) 中 [Frum](../Ruby/Ruby_Note.md#Frum) 或 [NodeJS](../Node/NodeJS_Note.md) 中 [fnm](../Node/NodeJS_Note.md#fnm) 的 GoLang 多版本管理工具。
+
+它跟 [Frum](../Ruby/Ruby_Note.md#Frum) 和 [fnm](../Node/NodeJS_Note.md#fnm) 一样，可以列出远程可以安装的版本，这省去了另开网页去找版本的步骤。
+
+缺点：就是在 [zsh](../Linux/zsh_note.md) 中可能与 [Git](../Git/Git_Note.md) 的「别名」冲突，所以使用 zsh 的人，最好不要设置 git 的别名为 `g`。
+
+---
+
 ## go 项目
 
 ### 项目结构
@@ -335,13 +449,11 @@ import (
 
 ---
 
-## Go 相关的资料
-
-### 教程
+## 教程和文档
 
 * [Go 语言简明教程| 极客兔兔](https://geektutu.com/post/quick-golang.html)
 
-### 文档 
+### 文档
 
 * [golang 官网](https://go.dev/)
 * [Go社区 Wiki](https://learnku.com/go/wikis)

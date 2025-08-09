@@ -6,7 +6,7 @@ tags:
   - vocabulary
   - word
 created: 2023-08-18 19:44:52
-modified: 2025-08-04 20:28:25
+modified: 2025-08-09 12:29:30
 ---
 
 # IT 英文词汇
@@ -114,3 +114,11 @@ modified: 2025-08-04 20:28:25
 
 * [Cambridge Dictionary](https://dictionary.cambridge.org/)
 * [Oxford Learner's Dictionaries](https://www.oxfordlearnersdictionaries.com/)
+
+---
+
+## 相关资料
+
+* [英文標點符號大解析：你知道這些符號怎麼唸嗎？－FUNDAY](https://funday.asia/blogDesktop/blog.asp?blog=47)
+* [英文標點只認識逗點和句點？小老鼠「＠」該怎麼唸？－FUNDAY](https://funday.asia/blogDesktop/blog.asp?blog=46)
+

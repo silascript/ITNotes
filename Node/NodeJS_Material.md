@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2025-02-17 01:53:10
-modified: 2025-03-10 21:48:39
+modified: 2025-08-10 21:11:46
 ---
 
 # NodeJS 资料清单
@@ -31,6 +31,7 @@ modified: 2025-03-10 21:48:39
 * [fnm，好用的nodejs版本管理工具](https://www.kelen.cc/posts/fnm)
 * [再见 nvm，改用 fnm 了 - 哔哩哔哩](https://www.bilibili.com/opus/756431229515989029)
 * [命令行工具 \| 冰可乐的前端笔记](https://note.bingkele.cc/workflow/terminal/toolkit#%E6%96%B9%E6%A1%88%E4%B8%80-%E9%85%8D%E7%BD%AE%E7%BB%9F%E4%B8%80%E7%9A%84%E5%85%A8%E5%B1%80%E6%A8%A1%E5%9D%97%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84)
+* [fnm安装及配置，Linux中实现node.js版本管理 - 灯火阑珊c - 博客园](https://www.cnblogs.com/dgyong/p/18406666)
 
 ### Electron
 

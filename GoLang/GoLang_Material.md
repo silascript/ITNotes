@@ -6,7 +6,7 @@ tags:
   - list
   - material
 created: 2024-07-31 21:50:14
-modified: 2025-08-10 04:20:54
+modified: 2025-08-10 19:56:31
 ---
 
 # Go 语言资料
@@ -18,6 +18,10 @@ modified: 2025-08-10 04:20:54
 ## 安装与配置
 
 * [Go 语言的GOPATH与gomod，新手坑 \| Go 技术论坛](https://learnku.com/articles/62372)
+
+## 镜像
+
+* [Go 国内加速：Go 国内加速镜像 \| Go 技术论坛](https://learnku.com/go/wikis/38122)
 
 ## 多版本
 

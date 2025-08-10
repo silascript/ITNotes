@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-10 03:06:48
-modified: 2025-08-10 19:48:57
+modified: 2025-08-10 19:52:10
 ---
 
 # Linux 资料清单
@@ -35,6 +35,8 @@ modified: 2025-08-10 19:48:57
 * [Linux命令之env的用法 - 小码果 - 博客园](https://www.cnblogs.com/lsxs-wy/p/7011696.html)
 * [Linux env 命令 command not found env 未找到命令 env 命令详解 env 命令未找到 env 命令安装 - CommandNotFound ⚡️ 坑否](https://commandnotfound.cn/linux/1/289/env-%E5%91%BD%E4%BB%A4)
 * [设置环境变量加不加export有什么区别？](https://segmentfault.com/q/1010000041260955)
+* [在Linux里设置环境变量的方法（export PATH） - 玉米疯收 - 博客园](https://www.cnblogs.com/amboyna/archive/2008/03/08/1096024.html)
+* [Linux和Mac环境变量设置 - Lucky小黄人^\_^ - 博客园](https://www.cnblogs.com/hi3254014978/p/15172400.html)
 
 ## GUI
 

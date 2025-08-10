@@ -5,7 +5,7 @@ tags:
   - golang
   - go
 created: 2023-01-31 11:31:14
-modified: 2025-08-10 19:43:55
+modified: 2025-08-10 20:23:52
 ---
 
 # Go 语言笔记
@@ -391,6 +391,8 @@ goenv: remove /home/silascript/.goenv/versions/1.24.6? y
 > 相要知道当前终端用了哪些别名，可以使用 `alias` 命令。
 > 
 > ohmyzsh 的 git 插件文件：`.local/share/zinit/snippets/OMZ::plugins--git/git.plugin.zsh/git.plugin.zsh`，把 `alias g='git'` 这行代码注释掉就行了。
+> 
+> 或者就不要用这个插件。如使用 [zinit](../Linux/Shell/Zsh_Note.md#zsh_plugins_mgs_zinit)，那就把 `zinit snippet OMZ::plugins/git/git.plugin.zsh` 这个加载 oh-my-zsh 的 git.plugin 插件的代码注释掉就好了。注意，是 `git.plugin` 不是 `git` 这是两个插件。
 > 
 
 #### 安装与配置

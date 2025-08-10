@@ -7,7 +7,7 @@ tags:
   - fnm
   - npm
 created: 2023-08-19 23:06:10
-modified: 2025-03-10 21:54:44
+modified: 2025-08-10 21:19:57
 ---
 
 # NodeJS 笔记
@@ -220,6 +220,22 @@ eval "$(fnm env --use-on-cd)"
 > [!quote] 官方说明
 > 
 > [GitHub - Schniz/fnm: 🚀 Fast and simple Node.js version manager, built in Rust](https://github.com/Schniz/fnm?tab=readme-ov-file#shell-setup)
+
+###### 配置安装包镜像
+
+阿里云镜像：
+
+```shell
+export FNM_NODE_DIST_MIRROR=https://npmmirror.com/mirrors/node/
+export NPM_CONFIG_REGISTRY=https://npmmirror.com/mirrors/npm/
+```
+
+腾讯云镜像：
+ 
+```shell
+export FNM_NODE_DIST_MIRROR=https://mirrors.cloud.tencent.com/nodejs-release/
+export NPM_CONFIG_REGISTRY=https://mirrors.cloud.tencent.com/npm/
+```
 
 ##### Windows
 

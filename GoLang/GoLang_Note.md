@@ -5,7 +5,7 @@ tags:
   - golang
   - go
 created: 2023-01-31 11:31:14
-modified: 2025-08-10 04:28:22
+modified: 2025-08-10 18:00:04
 ---
 
 # Go 语言笔记
@@ -350,6 +350,17 @@ $ goenv versions
 > 
 > 如果之前没有指定全局版本，那 `goenv global` 命令敲完后，是不显示任何版本的，同样 `goenv versions` 中版本也是没有任何版本前带 `*` 号标示。
 
+`uninstall`：
+
+```shell
+goenv uninstall 1.24.6
+goenv: remove /home/silascript/.goenv/versions/1.24.6? y
+```
+
+> [!tip] 
+> 
+> 确认卸载某版本时，只要敲个 `y` 就能真正卸载了，如果什么都不敲，则视为放弃卸载。实话这交互作得有点差。
+
 ### GVM
 
 [gvm](https://github.com/moovweb/gvm)
@@ -372,7 +383,33 @@ $ goenv versions
 
 它跟 [Frum](../Ruby/Ruby_Note.md#Frum) 和 [fnm](../Node/NodeJS_Note.md#fnm) 一样，可以列出远程可以安装的版本，这省去了另开网页去找版本的步骤。
 
-缺点：就是在 [zsh](../Linux/zsh_note.md) 中可能与 [Git](../Git/Git_Note.md) 的「别名」冲突，所以使用 zsh 的人，最好不要设置 git 的别名为 `g`。
+缺点：就是在 [zsh](../Linux/Shell/Zsh_Note.md) 中可能与 [Git](../Git/Git_Note.md) 的「别名」冲突，所以使用 zsh 的人，最好不要设置 git 的别名为 `g`。
+> [!tip] 
+> 
+> 特别是 [zsh](../Linux/Shell/Shell_Note.md#zsh) 中 [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh) 中有个 [git插件](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git)，就存在把 `git` 别名成 `g`，所以在 `.zshr` 表面配置中看不出有配了别名的情况，这需要特别注意的！
+> 
+> 相要知道当前终端用了哪些别名，可以使用 `alias` 命令。
+> 
+> ohmyzsh 的 git 插件文件：`.local/share/zinit/snippets/OMZ::plugins--git/git.plugin.zsh/git.plugin.zsh`，把 `alias g='git'` 这行代码注释掉就行了。
+> 
+
+#### 安装与配置
+
+```shell
+curl -sSL https://raw.githubusercontent.com/voidint/g/master/install.sh | bash
+```
+
+> [!tip] 
+> 
+> 官方建议：「建议安装前清空 `GOROOT`、`GOBIN` 等环境变量」，把之前配的 `GOROOT` 和 `GOBIN` 环境变量注释掉就好了。
+
+下载 `inistall.sh` 并安装后，会有提示：`source "/home/silascript/.g/env"`，就是让 g 的主目录 `.g` 生效，按提示执行下 `source` 命令就好了。
+
+> [!info] 
+> 
+> 其实就是在各种 `rc` 文件里加了一段代码：`[ -s "${HOME}/.g/env" ] && \. "${HOME}/.g/env"  # g shell setup`。它会根本当前用的 [Shell](../Linux/Shell/Shell_Note.md) 类型，将此配置代码添加到相应的配置文件中，如 [zsh](../Linux/Shell/Shell_Note.md#zsh)，就会加到 `.zshrc` 中。
+
+执行 `g help` 下，成功就证明安装完成，`g` 命令并生效了。
 
 ---
 

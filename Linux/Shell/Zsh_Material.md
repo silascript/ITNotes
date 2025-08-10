@@ -1,0 +1,25 @@
+---
+aliases: []
+tags:
+  - shell
+  - zsh
+  - material
+  - list
+created: 2025-08-10 17:41:10
+modified: 2025-08-10 17:43:30
+---
+
+# Zsh 资料清单
+
+---
+
+* [zsh 下 git 别名（alias） 和 oh-my-zsh git 插件的故事 - hello, world - SegmentFault 思否](https://segmentfault.com/a/1190000007059404)
+
+---
+
+## 相关笔记
+
+* [Zsh 笔记](Zsh_Note.md)
+* [Shell 笔记](Shell_Note.md)
+* [Shell 资料清单](Shell_Material.md)
+

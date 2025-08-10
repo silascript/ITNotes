@@ -113,7 +113,7 @@ Sell 语法相关的内容请查看： [Shell 笔记](Shell_Note.md)
 
 ### Bash-It
 
-* [bash-it](https://github.com/Bash-it/bash-it.git) 是 [Bash](#Bash) 的配置框架，可以认为是 bash 版本的 [oh-my-zsh](zsh_note.md#zsh_plugins_mgs_ohmyzsh)。
+* [bash-it](https://github.com/Bash-it/bash-it.git) 是 [Bash](#Bash) 的配置框架，可以认为是 bash 版本的 [oh-my-zsh](Zsh_Note.md#zsh_plugins_mgs_ohmyzsh)。
 
 ---
 
@@ -1234,7 +1234,7 @@ pacman -S go-yq
 
 * [Linux笔记](Linux_Note.md)
 * [Shell示例笔记](Shell_Example.md)
-* [ZSH笔记](zsh_note.md) 
+* [ZSH笔记](Zsh_Note.md) 
 
 ### 教程
 

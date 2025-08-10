@@ -6,7 +6,7 @@ tags:
   - vocabulary
   - word
 created: 2023-08-18 19:44:52
-modified: 2025-08-09 12:29:30
+modified: 2025-08-10 12:38:58
 ---
 
 # IT 英文词汇
@@ -121,4 +121,5 @@ modified: 2025-08-09 12:29:30
 
 * [英文標點符號大解析：你知道這些符號怎麼唸嗎？－FUNDAY](https://funday.asia/blogDesktop/blog.asp?blog=47)
 * [英文標點只認識逗點和句點？小老鼠「＠」該怎麼唸？－FUNDAY](https://funday.asia/blogDesktop/blog.asp?blog=46)
+* [计算机中的「null」怎么读？](https://www.zhihu.com/question/549740924)
 

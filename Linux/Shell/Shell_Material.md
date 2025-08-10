@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2024-10-13 01:10:29
+modified: 2025-08-10 17:44:43
 ---
 
 # Shell 资料清单
@@ -283,4 +283,5 @@ modified: 2024-10-13 01:10:29
 * [Shell 示例](Shell_Example.md)
 * [Linux 笔记](Linux_Note.md)
 * [Linux资料清单](Linux_Material.md)
+* [Zsh 资料清单](Zsh_Material.md)
 

@@ -6,7 +6,7 @@ tags:
   - zinit
   - linux
 created: 2023-08-18 19:44:52
-modified: 2024-02-07 20:35:16
+modified: 2025-08-10 18:12:55
 ---
 
 # zsh 笔记
@@ -154,6 +154,22 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 oh-my-zsh 因为起步早，所以生态非常完善，缺点就是有点笨重。
 
+##### 插件
+
+oh-my-zsh 的插件非常丰富。
+
+###### git plugin
+
+这个插件主要是给 [Git_Note](../../Git/Git_Note.md) 的一些常用命令起了些「别名」（alias）及一些小功能函数。
+
+有可能这些别名会出现冲突。如这插件将 `git` 命令别名为 `g`，这就与 [GoLang](../../GoLang/GoLang_Note.md) 的一个款多版本管理工具 [g](../../GoLang/GoLang_Note.md#g) 发生冲突。
+
+> [!tip] 
+> 
+> 解决方法就是，要么不用这个插件，要么就到插件目录中找到相应文件，把那句「别名」代码注释掉就好了。
+> 
+> oh-my-zsh 的 git 插件文件就在：`.local/share/zinit/snippets/OMZ::plugins--git/git.plugin.zsh/git.plugin.zsh`，把其中 `alias g='git'` 这行代码注释掉就行了，然后 `source .zshrc` 重新让 zsh 生效就可以了。
+
 #### <span id="zsh_plugins_mgs_zinit">zinit</span>
 
 [zinit](https://github.com/zdharma-continuum/zinit) 是一个轻量级的 zsh 插件管理器，速度快。
@@ -207,7 +223,7 @@ zinit self-update
 
 > [!tip] 
 > 
-> `raw.githubbuserconten.com` 如果下载不了，可以使用 [下载加速网站](../Git/Git_Note.md#下载加速) 对其加速下载。
+> `raw.githubbuserconten.com` 如果下载不了，可以使用 [下载加速网站](../../Git/Git_Note.md#下载加速) 对其加速下载。
 > 
 > 如下：
 > 
@@ -272,7 +288,7 @@ zinit delete --clean
 
 ###### light
 
-`light` 命令是更快的加载插件。一般跟着 [GitHub ](../Git/Git_Note.md#git_github) 的「全限定」库名（格式：账号/库名）。
+`light` 命令是更快的加载插件。一般跟着 [GitHub ](../../Git/Git_Note.md#git_github) 的「全限定」库名（格式：账号/库名）。
 
 小示例：`zinit light oskarkrawczyk/honukai-iterm-zsh`，这里就**light**了一个主题，实际是将 [https://github.com/oskarkrawczyk/honukai-iterm-zsh](https://github.com/oskarkrawczyk/honukai-iterm-zsh) 这个库下载下来，并对其中的 `.theme` 文件进行加载。如果库中有多个 `.theme` 文件，那就需要 [pick](#pick) 命令对其选择加载了。
 
@@ -389,7 +405,7 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 
 这插件是大小写敏感的，如果想要忽略大小写敏感，可以有两种方式：
 
-1. 在 `.zshrc` 文件中添加 [忽略大小写代码](zsh_note.md#zsh_conf_insensitivity)。
+1. 在 `.zshrc` 文件中添加 [忽略大小写代码](Zsh_Note.md#zsh_conf_insensitivity)。
 2. 启用 [oh-my-zsh](#oh-my-zsh) 的内置的补全功能：`zinit snippet OMZ::lib/completion.zsh`。
   > [!info] 相关资料
   > 
@@ -405,17 +421,17 @@ fzf-tab 具体配置参考：[fzf-tab Wiki](https://github.com/Aloxaf/fzf-tab/wi
 
 #### <span id="zsh_plugins_condaenv">zsh-plugin-condaenv</span>
 
-[zsh-plugin-condaenv](https://github.com/saravanabalagi/zsh-plugin-condaenv) 是为 zsh 的 [主题](#主题) 提供 [conda](../Python/Python_Note.md#python_conda) 环境信息。
+[zsh-plugin-condaenv](https://github.com/saravanabalagi/zsh-plugin-condaenv) 是为 zsh 的 [主题](#主题) 提供 [conda](../../Python/Python_Note.md#python_conda) 环境信息。
 
 #### <span id="zsh_plugins_vimod">vi-mod</span>
 
-[zsh-vi-mode](https://github.com/jeffreytse/zsh-vi-mode) 是一个让命令支持 [vim](../vim/Vim_Note.md) 方式操作的插件。
+[zsh-vi-mode](https://github.com/jeffreytse/zsh-vi-mode) 是一个让命令支持 [vim](../../vim/Vim_Note.md) 方式操作的插件。
 
 ![vi-mod screenshot](https://user-images.githubusercontent.com/9413601/105746868-f3734a00-5f7a-11eb-8db5-22fcf50a171b.gif)
 
 操作方式与 vim 极其相似。
 
-使用 `ESC` 或 `Ctrl-[` 进入 [普通模式](../vim/Vim_Note.md#vim_mode_normal)
+使用 `ESC` 或 `Ctrl-[` 进入 [普通模式](../../vim/Vim_Note.md#vim_mode_normal)
 
 ##### 移动
 
@@ -440,7 +456,7 @@ vi-mod 这插件的移动都是在 normal 模式下进行的。
 
 ##### Surround
 
-vi-mod 这看插件更「骚」的，竟然还有简单地实现的 vim 的著名插件 [Surround](../vim/vim_plugin.md#Surround) 的小部分功能。
+vi-mod 这看插件更「骚」的，竟然还有简单地实现的 vim 的著名插件 [Surround](../../vim/vim_plugin.md#Surround) 的小部分功能。
 
 具体查看官方文档：[zsh-vi-mode#Surround](https://github.com/jeffreytse/zsh-vi-mode#Surround)
 
@@ -454,7 +470,7 @@ vi-mod 这看插件更「骚」的，竟然还有简单地实现的 vim 的著�
 
 #### modesty
 
-[modesty](https://github.com/saravanabalagi/zsh-theme-modesty) 这个主题可以显示 [conda 的env](../Python/Python_Note.md#python_conda_commands_env) 信息。不过得配合安装 [zsh-plugin-condaenv](#zsh-plugin-condaenv) 插件。
+[modesty](https://github.com/saravanabalagi/zsh-theme-modesty) 这个主题可以显示 [conda 的env](../../Python/Python_Note.md#python_conda_commands_env) 信息。不过得配合安装 [zsh-plugin-condaenv](#zsh-plugin-condaenv) 插件。
 
 ![modesty screencast](https://github.com/saravanabalagi/zsh-theme-modesty/raw/master/screencast.gif)
 
@@ -468,7 +484,7 @@ vi-mod 这看插件更「骚」的，竟然还有简单地实现的 vim 的著�
 
 #### myys
 
-[Site Unreachable](https://github.com/zhiweichen0012/myys.zsh-theme) 这个主题是 [oh-my-zsh](#oh-my-zsh) 经典主题**ys**的修改款。主要是增加了显示 [conda](../Python/Python_Note.md#python_conda) 环境。
+[Site Unreachable](https://github.com/zhiweichen0012/myys.zsh-theme) 这个主题是 [oh-my-zsh](#oh-my-zsh) 经典主题**ys**的修改款。主要是增加了显示 [conda](../../Python/Python_Note.md#python_conda) 环境。
 
 因为这个库有两个 `theme` 文件，所以得按需求选择一个 theme 来加载，配置如下：
 
@@ -477,7 +493,7 @@ zinit ice pick"myys.zsh-theme"
 zinit light zhiweichen0012/myys.zsh-theme
 ```
 
-另外，还要在 `.condarc` 文件中增加一句代码：`changeps1: false`，用于 [关闭显示环境名称](../Python/Python_Note.md#^4d4740)。
+另外，还要在 `.condarc` 文件中增加一句代码：`changeps1: false`，用于 [关闭显示环境名称](../../Python/Python_Note.md#^4d4740)。
 
 > [!info] 
 > 
@@ -512,6 +528,19 @@ zinit snippet OMZT::ys
 # zinit snippet OMZT::robbyrussell
 # zinit snippet OMZT::steeef
 # zinit snippet OMZT::af-magic
+
+```
+
+zinit 使用 [oh-my-zsh](#zsh_plugins_mgs_ohmyzsh) 的插件，实际目录是放在 `.local/share/zinit/snippets` 这个目录中，各插件都是以 `OMZ::plugins` 开头：
+
+```shell
+$ ll .local/share/zinit/snippets 
+Permissions Size User       Group      Date Modified    Name
+drwxr-xr-x     - silascript silascript 2024-04-16 19:34 .
+drwx---r-x     - silascript silascript 2024-02-22 23:21 ..
+drwxr-xr-x     - silascript silascript 2024-04-17 02:56 OMZ::lib
+drwxr-xr-x     - silascript silascript 2024-04-16 19:34 OMZ::plugins--git
+drwxr-xr-x     - silascript silascript 2025-08-10 00:58 OMZL::git.zsh
 
 ```
 
@@ -554,6 +583,7 @@ zinit snippet https://github.com/docker/cli/blob/master/contrib/completion/zsh/_
 
 ## 其他笔记
 
+* [Zsh 资料清单](Zsh_Material.md)
 * [Linux 笔记](Linux_Note.md)
 * [Shell 笔记](Shell/Shell_Note.md)
 * [Shell 示例笔记](Shell/Shell_Example.md)

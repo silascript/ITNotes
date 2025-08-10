@@ -1727,10 +1727,10 @@ wayland 模式下，系统是不会加载 `.profile` 或 `.xprofile` 文件的�
 ###### 解决方案 1
 
 9. 将环境变量集中到自定义的配置文件中，比如 `.local_profile`，配置文件的文件名可以自己取，当然为了延续习惯，还是叫 `xxprofile` 好点。
-10. 如果使用 [Zsh_note](zsh_note.md)，可以在 `.zshrc` 文件中 `source` 自定义的配置文件。如果只使用 [Bash](Shell/Shell_Note.md#Bash)，就在 `.bashrc` 或 `.bash_profile` 中 `source` 自定义配置文件。
+10. 如果使用 [Zsh_note](Shell/Zsh_Note.md)，可以在 `.zshrc` 文件中 `source` 自定义的配置文件。如果只使用 [Bash](Shell/Shell_Note.md#Bash)，就在 `.bashrc` 或 `.bash_profile` 中 `source` 自定义配置文件。
 > [!note] 
 > 
-> 如果使用 [Zsh](zsh_note.md)，只要在 `.zshrc` 中 `source` 下，连 [Bash](Shell/Shell_Note.md#Bash) 也生效。
+> 如果使用 [Zsh](Shell/Zsh_Note.md)，只要在 `.zshrc` 中 `source` 下，连 [Bash](Shell/Shell_Note.md#Bash) 也生效。
 11. 如果当前是 [Xorg](#Xorg)，类似的，在 `.xprofile` 或 `.profile` 中 `source` 自定义的配置文件。
 
 > [!note] 
@@ -1750,7 +1750,7 @@ wayland 模式下，系统是不会加载 `.profile` 或 `.xprofile` 文件的�
 >[!tip] 
 >
 >
->不要使用 `.zshenv` 去配置或 `source` 环境变量，这货，每次 `source` 或打开一次 Terminal，都会「叠加」一次环境变量，这样就会出现重复，很可怕。个人看来 `.zshenv` 这货基本就已经是废了，[Zsh](zsh_note.md) 怪不得各种资料都不太提这货，一说配置都只说在 `.zshrc` 里配，这大概是其中一个原因罢。
+>不要使用 `.zshenv` 去配置或 `source` 环境变量，这货，每次 `source` 或打开一次 Terminal，都会「叠加」一次环境变量，这样就会出现重复，很可怕。个人看来 `.zshenv` 这货基本就已经是废了，[Zsh](Shell/Zsh_Note.md) 怪不得各种资料都不太提这货，一说配置都只说在 `.zshrc` 里配，这大概是其中一个原因罢。
 
 ###### 解决方案 2
 

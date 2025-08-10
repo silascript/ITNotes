@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-10 03:06:48
-modified: 2025-07-27 03:36:54
+modified: 2025-08-10 19:48:57
 ---
 
 # Linux 资料清单
@@ -34,6 +34,7 @@ modified: 2025-07-27 03:36:54
 * [env 命令，Linux env 命令详解：显示系统中已存在的环境变量 - Linux 命令搜索引擎](https://wangchujiang.com/linux-command/c/env.html)
 * [Linux命令之env的用法 - 小码果 - 博客园](https://www.cnblogs.com/lsxs-wy/p/7011696.html)
 * [Linux env 命令 command not found env 未找到命令 env 命令详解 env 命令未找到 env 命令安装 - CommandNotFound ⚡️ 坑否](https://commandnotfound.cn/linux/1/289/env-%E5%91%BD%E4%BB%A4)
+* [设置环境变量加不加export有什么区别？](https://segmentfault.com/q/1010000041260955)
 
 ## GUI
 

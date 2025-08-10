@@ -5,7 +5,7 @@ tags:
   - golang
   - go
 created: 2023-01-31 11:31:14
-modified: 2025-08-10 18:00:04
+modified: 2025-08-10 19:43:55
 ---
 
 # Go 语言笔记
@@ -408,8 +408,92 @@ curl -sSL https://raw.githubusercontent.com/voidint/g/master/install.sh | bash
 > [!info] 
 > 
 > 其实就是在各种 `rc` 文件里加了一段代码：`[ -s "${HOME}/.g/env" ] && \. "${HOME}/.g/env"  # g shell setup`。它会根本当前用的 [Shell](../Linux/Shell/Shell_Note.md) 类型，将此配置代码添加到相应的配置文件中，如 [zsh](../Linux/Shell/Shell_Note.md#zsh)，就会加到 `.zshrc` 中。
+> 
+> 简单说，就是添加相关的环境变量。
+
+当然可以 [手动](https://github.com/voidint/g/blob/master/README_CN.md#%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85linuxmacos) 添加环境变量：
+
+```shell
+export GOROOT="${HOME}/.g/go"
+export GOPATH="${HOME}/go"
+export PATH="${HOME}/.g/bin:${GOROOT}/bin:${GOPATH}/bin:$PATH"
+export G_MIRROR=https://golang.google.cn/dl/
+```
 
 执行 `g help` 下，成功就证明安装完成，`g` 命令并生效了。
+
+#### g 使用
+
+```shell
+ls, l               List installed versions
+ls-remote, lr, lsr  List remote versions available for install
+use                 Switch to specified version. Uses go.mod if available and version is omitted.
+install, i          Download and install a version
+uninstall           Uninstall a version
+clean               Remove files from the package download directory
+env                 Show env variables of g
+self                Modify g itself
+mcp                 Run in mcp server mode
+help, h             Shows a list of commands or help for one command
+
+```
+
+> [!tip] 
+> 
+> `ls`、`ls-remote`，怎么看都跟 [Frum](../Ruby/Ruby_Note.md#Frum) 和 [fnm](../Node/NodeJS_Note.md#fnm) 很像。
+
+* `ls`：列出已安装的 golang 版本
+* `ls-remote`：列出远程可以安装的版本
+* `use`：切换指定版本
+* `install`：下载安装指定版本
+* `uninstall`：卸载指定版本
+* `env`：显示 g 的环境变量
+* `clearn`：清空安装包缓存
+* `self`：g 本身操作
+
+#### 示例
+
+##### 列出可安装版本
+
+```shell
+g ls-remote
+```
+
+列出可安装的 `stable` 版本：
+
+```shell
+g ls-remote stable
+```
+
+##### 安装与卸载版本
+
+```shell
+g install 1.20.5
+```
+
+```shell
+g uninstall 1.20.5
+```
+
+##### 切换版本
+
+```shell
+g use 1.20.5
+```
+
+##### g 自身升级及卸载
+
+###### 升级
+
+```shell
+g self update
+```
+
+###### 卸载
+
+```shell
+g self uninstall
+```
 
 ---
 

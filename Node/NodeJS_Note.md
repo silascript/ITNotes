@@ -7,7 +7,7 @@ tags:
   - fnm
   - npm
 created: 2023-08-19 23:06:10
-modified: 2025-08-10 21:19:57
+modified: 2025-08-10 21:32:20
 ---
 
 # NodeJS 笔记
@@ -217,24 +217,32 @@ scoop install fnm
 eval "$(fnm env --use-on-cd)"
 ```
 
+> [!info] 
+> 
+> `fnm env --use-on-cd` 开启了 `fnm` 的自动版本切换功能，使得在不同的项目目录间切换时，无需手动输入 `fnm use` 命令来切换 Node.js 版本，方便开发和管理。
+
 > [!quote] 官方说明
 > 
 > [GitHub - Schniz/fnm: 🚀 Fast and simple Node.js version manager, built in Rust](https://github.com/Schniz/fnm?tab=readme-ov-file#shell-setup)
 
 ###### 配置安装包镜像
 
+默认 `FNM_NODE_DIST_MIRROR`：[https://nodejs.org/dist](https://nodejs.org/dist)
+
 阿里云镜像：
 
 ```shell
 export FNM_NODE_DIST_MIRROR=https://npmmirror.com/mirrors/node/
-export NPM_CONFIG_REGISTRY=https://npmmirror.com/mirrors/npm/
+# 这个其实是不用配的，npm的配置应该在npmrc中registry项配的
+# export NPM_CONFIG_REGISTRY=https://npmmirror.com/mirrors/npm/
 ```
 
 腾讯云镜像：
  
 ```shell
 export FNM_NODE_DIST_MIRROR=https://mirrors.cloud.tencent.com/nodejs-release/
-export NPM_CONFIG_REGISTRY=https://mirrors.cloud.tencent.com/npm/
+# 这个其实是不用配的，npm的配置应该在npmrc中registry项配的
+# export NPM_CONFIG_REGISTRY=https://mirrors.cloud.tencent.com/npm/
 ```
 
 ##### Windows

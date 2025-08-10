@@ -5,7 +5,7 @@ tags:
   - golang
   - go
 created: 2023-01-31 11:31:14
-modified: 2025-08-10 20:23:52
+modified: 2025-08-11 02:59:10
 ---
 
 # Go 语言笔记
@@ -407,6 +407,10 @@ curl -sSL https://raw.githubusercontent.com/voidint/g/master/install.sh | bash
 
 下载 `inistall.sh` 并安装后，会有提示：`source "/home/silascript/.g/env"`，就是让 g 的主目录 `.g` 生效，按提示执行下 `source` 命令就好了。
 
+> [!tip] 
+> 
+> 下载的安装包是放在 `.g/downloads` 目录下。如果使用 `clean` 命令，就会把 `download` 目录清空，如果安装    相同的版本就得重新下载。
+
 > [!info] 
 > 
 > 其实就是在各种 `rc` 文件里加了一段代码：`[ -s "${HOME}/.g/env" ] && \. "${HOME}/.g/env"  # g shell setup`。它会根本当前用的 [Shell](../Linux/Shell/Shell_Note.md) 类型，将此配置代码添加到相应的配置文件中，如 [zsh](../Linux/Shell/Shell_Note.md#zsh)，就会加到 `.zshrc` 中。
@@ -421,6 +425,16 @@ export GOPATH="${HOME}/go"
 export PATH="${HOME}/.g/bin:${GOROOT}/bin:${GOPATH}/bin:$PATH"
 export G_MIRROR=https://golang.google.cn/dl/
 ```
+
+> [!info] 
+> 部分变量说明
+> 
+> `G_MIRROR` 这是安装包的镜像网站，默认是官方的 [https://golang.google.cn/dl/](https://golang.google.cn/dl/)，可用的镜像可参考：[golang安装包下载\_开源镜像站](https://mirrors.aliyun.com/golang/)。
+>> [!warning] 
+>> 
+>> 但应注意的是，如果使用非官方镜像，有可能使用 `g ls-remote stable` 会无法「筛选」出稳定版。
+> 
+> `G_HOME` 是 g 的「Home」目录，默认是 `.g` 目录，有需要可以自行配置。
 
 执行 `g help` 下，成功就证明安装完成，`g` 命令并生效了。
 

@@ -6,7 +6,7 @@ tags:
   - zinit
   - linux
 created: 2023-08-18 19:44:52
-modified: 2025-08-10 18:12:55
+modified: 2025-08-11 18:33:30
 ---
 
 # zsh 笔记
@@ -484,7 +484,7 @@ vi-mod 这看插件更「骚」的，竟然还有简单地实现的 vim 的著�
 
 #### myys
 
-[Site Unreachable](https://github.com/zhiweichen0012/myys.zsh-theme) 这个主题是 [oh-my-zsh](#oh-my-zsh) 经典主题**ys**的修改款。主要是增加了显示 [conda](../../Python/Python_Note.md#python_conda) 环境。
+[myys](https://github.com/zhiweichen0012/myys.zsh-theme) 这个主题是 [oh-my-zsh](#oh-my-zsh) 经典主题**ys**的修改款。主要是增加了显示 [conda](../../Python/Python_Note.md#python_conda) 环境。
 
 因为这个库有两个 `theme` 文件，所以得按需求选择一个 theme 来加载，配置如下：
 
@@ -500,6 +500,23 @@ zinit light zhiweichen0012/myys.zsh-theme
 > 这代码是隐藏默认情况会在 prompt 上方显示当前 conda 环境，因为这个修改后的 ys 主题已经将 conda 环境显示「整合」进 prompt 中，所以这默认显示就可以关闭了。
 
 类似的主题还有 [taw-ys](https://github.com/lyytaw/taw-ys.zsh-theme) 这个主题。
+
+##### 问题
+
+###### async git register
+
+还有这类似显示 conda 环境主题，都存在一个 `_defer_async_git_register:4: command not found: _omz_register_handler`。
+
+[GitHub](../../Git/Git_Note.md#git_github) 上虽然有所谓的解决方法：`zstyle ':omz:alpha:lib:git' async-prompt no`，但实际是无效了。
+
+个人解决方案，就是到主题文件中，找到 `git_prompt_info`，将其替换为 `_omz_git_prompt_info`：
+
+```shell
+# replace this line
+BULLETTRAIN_GIT_PROMPT_CMD="\$(git_prompt_info)"
+# to 
+BULLETTRAIN_GIT_PROMPT_CMD="\$(_omz_git_prompt_info)"
+```
 
 #### 使用 [oh-my-zsh](#oh-my-zsh)
 
@@ -549,7 +566,7 @@ drwxr-xr-x     - silascript silascript 2025-08-10 00:58 OMZL::git.zsh
 * [awesome-zsh-plugins](https://github.com/unixorn/awesome-zsh-plugins)
 > [!info] 
 > 
-> 就量个 zsh 的插件、主题集合库。
+> 就是个 zsh 的插件、主题集合库。
 * [zsh-quickstart-kit](https://github.com/unixorn/zsh-quickstart-kit)
 
 ---

@@ -6,7 +6,7 @@ tags:
   - zinit
   - linux
 created: 2023-08-18 19:44:52
-modified: 2025-08-11 18:33:30
+modified: 2025-08-11 18:42:00
 ---
 
 # zsh 笔记
@@ -507,7 +507,7 @@ zinit light zhiweichen0012/myys.zsh-theme
 
 还有这类似显示 conda 环境主题，都存在一个 `_defer_async_git_register:4: command not found: _omz_register_handler`。
 
-[GitHub](../../Git/Git_Note.md#git_github) 上虽然有所谓的解决方法：`zstyle ':omz:alpha:lib:git' async-prompt no`，但实际是无效了。
+[GitHub](../../Git/Git_Note.md#git_github) 的 `issue` 上虽然有所谓的解决方法，就是作这个设置：`zstyle ':omz:alpha:lib:git' async-prompt no`，但实际是无效的。
 
 个人解决方案，就是到主题文件中，找到 `git_prompt_info`，将其替换为 `_omz_git_prompt_info`：
 

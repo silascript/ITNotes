@@ -6,7 +6,7 @@ tags:
   - list
   - opensource
 created: 2023-08-18 19:44:52
-modified: 2025-06-09 11:04:26
+modified: 2025-08-13 00:33:11
 ---
 # 开源镜像网址清单
 
@@ -24,6 +24,7 @@ modified: 2025-06-09 11:04:26
 * [阿里巴巴开源镜像站-OPSX镜像站-阿里云开发者社区](https://developer.aliyun.com/mirror/)
 * [哈尔滨工业大学开源镜像站](https://mirrors.hit.edu.cn/)
 * [浙江大学开源软件镜像站](https://mirrors.zju.edu.cn/)
+* [南京大学开源镜像站](https://mirror.nju.edu.cn/)
 * [重庆大学开源软件镜像站](https://mirrors.cqu.edu.cn/)
 * [中科大开源软件镜像站](https://mirrors.ustc.edu.cn/)
 * [欢迎访问网易开源镜像站](https://mirrors.163.com/)
@@ -32,6 +33,7 @@ modified: 2025-06-09 11:04:26
 * [华为开源镜像站](https://mirrors.huaweicloud.com/)
 
 > [!tip]
+> 
 > 实话华为的源速度真不太行！上海交大更惨，经常挂！
 
 ### 国外源

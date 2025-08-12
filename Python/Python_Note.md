@@ -7,7 +7,7 @@ tags:
   - pipx
   - conda
 created: 2023-08-18 19:44:52
-modified: 2025-08-13 02:54:06
+modified: 2025-08-13 03:15:38
 ---
 
 # Python 笔记
@@ -1293,9 +1293,12 @@ drwxr-xr-x     - silascript silascript 2025-08-13 01:37 ..
 uv init -p python版本号
 ```
 
-> [!info] 
-> 
-> 当然，也可以使用 `uv pytnon install xxx` 命令来安装 Python。
+示例：
+
+```shell
+uv init testuv -p 3.11
+# Initialized project `testuv` at `/home/silascript/DevWorkSpace/PythonExercise/testuv`
+```
 
 uv 会根据它所可以找到的 Python 环境来执行，顺序大概是：
 
@@ -1329,10 +1332,36 @@ uv cache dir
  
 ```shell
 $ uv venv --python 3.11
-Using CPython 3.11.13
-Creating virtual environment at: .venv
-Activate with: source .venv/bin/activate
+# Using CPython 3.11.13
+# Creating virtual environment at: .venv
+# Activate with: source .venv/bin/activate
 ```
+
+`.venv/bin` 目录结构：
+
+```shell
+$ ll .venv/bin 
+Permissions Size User       Group      Date Modified    Name
+drwxr-xr-x     - silascript silascript 2025-08-13 03:10 .
+drwxr-xr-x     - silascript silascript 2025-08-13 03:10 ..
+.rw-r--r--  4.1k silascript silascript 2025-08-13 03:10 activate
+.rw-r--r--  2.7k silascript silascript 2025-08-13 03:10 activate.bat
+.rw-r--r--  2.7k silascript silascript 2025-08-13 03:10 activate.csh
+.rw-r--r--  4.2k silascript silascript 2025-08-13 03:10 activate.fish
+.rw-r--r--  3.9k silascript silascript 2025-08-13 03:10 activate.nu
+.rw-r--r--  2.8k silascript silascript 2025-08-13 03:10 activate.ps1
+.rw-r--r--  2.4k silascript silascript 2025-08-13 03:10 activate_this.py
+.rw-r--r--  1.7k silascript silascript 2025-08-13 03:10 deactivate.bat
+.rw-r--r--  1.2k silascript silascript 2025-08-13 03:10 pydoc.bat
+lrwxrwxrwx     - silascript silascript 2025-08-13 03:10 python -> /home/silascript/.local/share/uv/python/cpython-3.11.13-linux-x86_64-gnu/bin/python3.11
+lrwxrwxrwx     - silascript silascript 2025-08-13 03:10 python3 -> python
+lrwxrwxrwx     - silascript silascript 2025-08-13 03:10 python3.11 -> python
+
+```
+
+> [!info] 
+> 
+> 可以看到，`.venv/bin` 中创建了几个 python 的链接文件 `python3.11`、`python3` 和 `python`，最终都是指向 `.local/share/uv/python` 下具体的 python 可执行文件。大致可以看到 uv 项目使用到的虚拟环境与 `uv python` 命令的关系。
 
 ---
 

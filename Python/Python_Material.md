@@ -7,7 +7,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2025-08-12 19:11:14
+modified: 2025-08-12 23:51:29
 ---
 
 # Python 资料清单
@@ -47,6 +47,7 @@ modified: 2025-08-12 19:11:14
 * [Python 虚拟环境工具对比：venv、conda、和 uv，我为什么最终选择了 uv？](https://zhuanlan.zhihu.com/p/1896161993444017735)
 * [UV 包管理工具深度解析：对比 Conda 与 pip，实战掌握高效 Python 依赖管理方案-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/2522992)
 * [包管理工具UV使用指南：全面替代conda \| Menghuan1918's Blog](https://blog.menghuan1918.com/posts/UV_python_packge_manage.html#%E4%BD%BF%E7%94%A8%E5%89%8D%E9%85%8D%E7%BD%AE)
+* [Python 包管理工具 uv 使用教程](https://zhuanlan.zhihu.com/p/1888904532131575259)
 
 #### 相关文档
 
@@ -59,6 +60,7 @@ modified: 2025-08-12 19:11:14
 
 * [Python UV 使用国内镜像](https://zhuanlan.zhihu.com/p/1897762567495083782)
 * [【Python】uv更换全局镜像源 - 双份浓缩馥芮白 - 博客园](https://www.cnblogs.com/Flat-White/p/18920080)
+* [UV设置下载镜像 - 一杯好茶](https://www.zouper.cn/index.php/archives/123/)
 
 ### Conda
 

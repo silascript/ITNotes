@@ -7,7 +7,7 @@ tags:
   - pipx
   - conda
 created: 2023-08-18 19:44:52
-modified: 2025-08-12 19:50:37
+modified: 2025-08-13 00:02:31
 ---
 
 # Python 笔记
@@ -1083,7 +1083,7 @@ pipx uninstall-all
 > 
 > An extremely fast Python package and project manager, written in Rust.
 
-### 安装
+### 安装配置
 
 #### 安装方式
 
@@ -1111,6 +1111,26 @@ yay -S uv
 > 
 > 或者在 [conda](#python_conda) 环境中使用 `pip` 或 `pipx` 安装。
 
+#### 配置
+
+UV 配置分系统级别（system-level）、用户级别（user-level）、项目级别（project-level）。
+
+项目级别配置文件优先级高于用户级别，用户级别优先级高于系统级。
+
+系统及用户级别的配置文件必须是 `uv.toml`。
+
+项目级别的配置文件，格式与 `pyproject.toml` 一样。
+
+UV 的默认全局配置是放在用户目录下 `~/.config/uv/uv.toml` 文件。没有就自己新建。
+
+> [!quote] 
+> 
+> uv will also discover user-level configuration at `~/.config/uv/uv.toml` (or `$XDG_CONFIG_HOME/uv/uv.toml`) on macOS and Linux, or `%APPDATA%\uv\uv.toml` on Windows; and system-level configuration at `/etc/uv/uv.toml` (or `$XDG_CONFIG_DIRS/uv/uv.toml`) on macOS and Linux, or `%SYSTEMDRIVE%\ProgramData\uv\uv.toml` on Windows.
+>
+> User-and system-level configuration must use the `uv.toml` format, rather than the `pyproject.toml` format, as a `pyproject.toml` is intended to define a Python *project*.
+>
+> If project-, user-, and system-level configuration files are found, the settings will be merged, with project-level configuration taking precedence over the user-level configuration, and user-level configuration taking precedence over the system-level configuration. (If multiple system-level configuration files are found, e.g., at both `/etc/uv/uv.toml` and `$XDG_CONFIG_DIRS/uv/uv.toml`, only the first-discovered file will be used, with XDG taking priority.)
+
 ### UV 镜像
 
 在 `.config` 下创建相关的配置文件：
@@ -1120,6 +1140,8 @@ mkdir ~/.config/uv && vim ~/.config/uv/uv.toml
 ```
 
 ### UV 使用
+
+#### python 版本管理
 
 列出可用的 Python 版本：
 
@@ -1139,7 +1161,27 @@ uv python install 版本号
 uv python uninstall 版本号
 ```
 
-#### 创建项目
+固定 Python 版本：
+
+```shell
+uv python pin 版本号
+```
+
+查找已经安装的 Python 版本息：
+
+```shell
+uv python find
+```
+
+#### 脚本管理
+
+* `uv run`：运行脚本
+* `uv add --script`：为脚本添加依赖
+* `uv remove --script`：移除依赖
+
+#### 项目管理
+
+##### 创建项目
 
 创建或初始化项目：
 
@@ -1228,7 +1270,11 @@ Obsidan 中 [中文分词插件](../NoteSoft/Obsidian/Obsidian_Note.md#obn_plugi
 * [Python3.x 官方中文文档](https://docs.python.org/zh-cn/3/)
 * [Anaconda 中文网](https://anaconda.org.cn/)
 * [conda-forge 文档](https://forge.conda.org.cn/docs/)
+
+#### uv 文档
+
 * [uv doc](https://docs.astral.sh/uv/)
+* [uv-zh-cn](https://hellowac.github.io/uv-zh-cn/)
 
 ### <span id="python_resource_books">相关教程书籍</span>
 

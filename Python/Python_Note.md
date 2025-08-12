@@ -7,7 +7,7 @@ tags:
   - pipx
   - conda
 created: 2023-08-18 19:44:52
-modified: 2025-08-13 02:25:41
+modified: 2025-08-13 02:54:06
 ---
 
 # Python 笔记
@@ -1143,6 +1143,8 @@ uv 有两个镜像得配。
 
 #### UV_DEFAULT_INDEX
 
+uv 可以像 [pip](Python_Note.md#python_pip) 一样管理依赖，但是 uv 不会读取 pip 的配置，所以要单独设置镜像地址。
+
 `UV_INDEX` 或 `UV_DEFAULT_INDEX` 这是配的 pypi 镜像，即执行 `uv add` 命令安装第三方包时的镜像。
 
 `UV_INDEX` 可以配多个源，`UV_DEFAULT_INDEX` 只能有一个，是用来默认替代 pypi 源的。
@@ -1157,11 +1159,41 @@ url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple"
 default = true
 ```
 
+如果在项目的 `pyproject.toml` 中配置：
+
+```toml
+[[tool.uv.index]]
+url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple"
+default = true
+```
+
+除了在配置文件中配，也可以使用 `uv add` 命令时，添加入 `--default-index` 参数临时配置镜像：
+
+```shell
+uv add --default-index https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple requests
+```
+
 #### Python 安装包下载镜像
 
-`UV_PYTHON_INSTALL_MIRROR`，是配置用来下载 Python 安装包的镜像，即执行 `uv python install xx` 命令时用到的镜像。这个镜像是在你的系统各种 `rc`，如 `bashrc`、`zshrc` 等中配的。
+uv 下载 python 是通过 [https://github.com/indygreg/python-build-standalone](https://github.com/indygreg/python-build-standalone) 项目的 releases 进行下载。
 
-南京大学镜像：[https://mirrors.cernet.edu.cn/list/python-build-standalone](https://mirrors.cernet.edu.cn/list/python-build-standalone)
+uv 本身提供了下载镜像参数 `UV_PYTHON_INSTALL_MIRROR`，即执行 `uv python install xx` 命令时用到的镜像。这个镜像是在你的系统各种 `rc`，如 `bashrc`、`zshrc` 等中配的。
+
+南京大学的 Python 安装包镜像：[https://mirrors.cernet.edu.cn/list/python-build-standalone](https://mirrors.cernet.edu.cn/list/python-build-standalone)
+
+在 `bashrc`、`zshrc` 或各种 `profile` 中配置：
+
+```shell
+UV_PYTHON_INSTALL_MIRROR="https://mirrors.cernet.edu.cn/list/python-build-standalone"
+```
+
+当然可以使用命令参数 `--mirror` 临时指定镜像来安装 python，例：
+
+```shell
+uv python install 3.13 -v --mirror https://mirrors.cernet.edu.cn/list/python-build-standalone
+```
+
+当然如果南大的镜像哪天挂了，那只能使用 [GitHub](../Git/Git_Note.md#git_github) 的「各种魔法加速」了。
 
 ### UV 使用
 
@@ -1206,6 +1238,15 @@ uv python find
 * `uv run`：运行脚本
 * `uv add --script`：为脚本添加依赖
 * `uv remove --script`：移除依赖
+
+#### 工具使用
+
+这组命令是以 `uv tool` 开头，或使用 `uvx`
+
+* `uv tool install`：全局安装工具
+* `uv tool uninstall`：卸载工具
+* `uv tools list`：列出已安装的工具
+* `uv tools update-shell`：更新 [Shell](../Linux/Shell/Shell_Note.md)，使工具可执行文件生效。
 
 #### 项目管理
 

@@ -7,7 +7,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2025-08-13 02:02:32
+modified: 2025-08-13 02:41:12
 ---
 
 # Python 资料清单
@@ -48,6 +48,7 @@ modified: 2025-08-13 02:02:32
 * [UV 包管理工具深度解析：对比 Conda 与 pip，实战掌握高效 Python 依赖管理方案-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/2522992)
 * [包管理工具UV使用指南：全面替代conda \| Menghuan1918's Blog](https://blog.menghuan1918.com/posts/UV_python_packge_manage.html#%E4%BD%BF%E7%94%A8%E5%89%8D%E9%85%8D%E7%BD%AE)
 * [Python 包管理工具 uv 使用教程](https://zhuanlan.zhihu.com/p/1888904532131575259)
+* [uv（Python 包和项目管理器）的基本命令及镜像设置uv，一个用 Rust 编写的极其快速的 Python 包和项目 - 掘金](https://juejin.cn/post/7468614239940526107)
 
 #### 相关文档
 

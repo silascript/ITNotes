@@ -7,7 +7,7 @@ tags:
   - pipx
   - conda
 created: 2023-08-18 19:44:52
-modified: 2025-08-07 18:10:08
+modified: 2025-08-12 19:50:37
 ---
 
 # Python 笔记
@@ -899,8 +899,6 @@ optional environment variables:
 > 同样的也就意味着，不同虚拟环境下使用 pipx 装的模块，只要有一个虚拟环境装了，就可以在其他虚拟环境中使用，除非，这个在虚拟环境将此模块删除，或此虚拟环境本身就被删除。
 > 
 > 
-> 
-> 
 > 所以得出一个重要的结论：pipx 装的模块在当前用户下，「全局性」更强，适合安装一些跨虚拟环境的模拟，如各种 [LSP](../vim/Vim_LSP_Complete.md)。
 > 
 > 同时，因为 pipx 这种「穿透性」，也就意味着 pipx 没太大必要在 [conda](#python_conda) 的虚拟环境中安装那些非「全局性」的模块。
@@ -1078,6 +1076,135 @@ pipx uninstall-all
 
 ---
 
+## <span id="python_uv">UV</span>
+
+[UV](https://github.com/astral-sh/uv) 一个使用 [Rust](../Rust/Rust_Note.md) 编写的 Python 的项目工具。它包括了虚拟环境管理、项目的包依赖管理等功能。
+> [!quote] 
+> 
+> An extremely fast Python package and project manager, written in Rust.
+
+### 安装
+
+#### 安装方式
+
+1. 系统包管理器
+
+以 [ArchLinux](../Linux/ArchLinux_Note.md) 为例：
+
+```shell
+yay -S uv
+```
+
+2. 使用 pip 安装
+
+也可以使用 [pip](#python_pip) 安装：`pip install uv`
+
+3. 使用 pipx 安装
+
+`pipx inistall uv`
+
+4. 在 conda 环境中安装
+
+`conda install uv -c conda-forge`
+
+> [!tip] 
+> 
+> 或者在 [conda](#python_conda) 环境中使用 `pip` 或 `pipx` 安装。
+
+### UV 镜像
+
+在 `.config` 下创建相关的配置文件：
+
+```shell
+mkdir ~/.config/uv && vim ~/.config/uv/uv.toml
+```
+
+### UV 使用
+
+列出可用的 Python 版本：
+
+```shell
+uv python list
+```
+
+安装 Python：
+
+```shell
+uv python install 版本号
+```
+
+移除 Python：
+
+```shell
+uv python uninstall 版本号
+```
+
+#### 创建项目
+
+创建或初始化项目：
+
+```shell
+uv init
+```
+
+> [!tip] 
+> 
+> 如果 `uv init` 后没有东西，那就是初始化当前目录。如果带上一个字符串，那就是创建一个目录然后再初始化它。
+
+创建或初始化后的项目根目录下，会生成两个文件：
+
+* `.python-versoin`：这个是记录当前项目 python 的版本
+* `pyproject.toml`：这个文件是用来定义项目的主要依赖，包括项目名称、版本、描述、支持的 `Python` 版本等信息
+
+创建项目时，是可以指定 python 的版本：
+
+```shell
+uv init -p python版本号
+```
+
+> [!info] 
+> 
+> 当然，也可以使用 `uv pytnon install xxx` 命令来安装 Python。
+
+uv 会根据它所可以找到的 Python 环境来执行，顺序大概是：
+
+1. 当前目录下的 `.python-version` 文件内设定的版本
+2. 当前启用的虚拟环境
+3. 当前目录下 `.venv` 目录内设定的虚拟环境
+4. uv 自己安装的 Python
+5. 系统环境设定的 Python 环境
+
+#### 创建虚拟环境
+
+在不指定 uv 的虚拟环境时，uv 使用的是 [临时虚拟环境](#临时虚拟环境)。
+
+##### 临时虚拟环境
+
+```shell
+uv cache dir
+```
+
+##### 创建虚拟环境
+
+使用 `uv venv` 命令来创建虚拟环境：
+
+使用 `uv venv` 命令，默认情况，会在当前目录下生成 `.venv` 目录作为虚拟环境目录。
+
+当然可以指定虚拟环境目录的名称：`uv venv p311`，这样当前目录下就会生成一个 `.p311` 的目录，这就是虚拟环境目录。
+
+当然在创建虚拟环境时，还可以指定虚拟环境使用 Python 的版本。
+
+ 示例：
+ 
+```shell
+$ uv venv --python 3.11
+Using CPython 3.11.13
+Creating virtual environment at: .venv
+Activate with: source .venv/bin/activate
+```
+
+---
+
 ## <span id="python_syntax">Python 语法</span>
 
 [Python 语法](Python_Syntax.md)
@@ -1100,6 +1227,8 @@ Obsidan 中 [中文分词插件](../NoteSoft/Obsidian/Obsidian_Note.md#obn_plugi
 
 * [Python3.x 官方中文文档](https://docs.python.org/zh-cn/3/)
 * [Anaconda 中文网](https://anaconda.org.cn/)
+* [conda-forge 文档](https://forge.conda.org.cn/docs/)
+* [uv doc](https://docs.astral.sh/uv/)
 
 ### <span id="python_resource_books">相关教程书籍</span>
 

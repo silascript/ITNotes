@@ -7,7 +7,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2025-08-08 18:28:03
+modified: 2025-08-12 19:11:14
 ---
 
 # Python 资料清单
@@ -40,6 +40,26 @@ modified: 2025-08-08 18:28:03
 
 * [poetry的安装与使用 - WenderWang - 博客园](https://www.cnblogs.com/wender/p/17616947.html)
 
+### UV
+
+* [Python包管理不再头疼：uv工具快速上手 - wang\_yb - 博客园](https://www.cnblogs.com/wang_yb/p/18635441)
+* [UV：Python 包管理神器 - 比 pip 快 100 倍](https://zhuanlan.zhihu.com/p/1895744101053334378)
+* [Python 虚拟环境工具对比：venv、conda、和 uv，我为什么最终选择了 uv？](https://zhuanlan.zhihu.com/p/1896161993444017735)
+* [UV 包管理工具深度解析：对比 Conda 与 pip，实战掌握高效 Python 依赖管理方案-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/2522992)
+* [包管理工具UV使用指南：全面替代conda \| Menghuan1918's Blog](https://blog.menghuan1918.com/posts/UV_python_packge_manage.html#%E4%BD%BF%E7%94%A8%E5%89%8D%E9%85%8D%E7%BD%AE)
+
+#### 相关文档
+
+##### 安装配置
+
+* [Installation methods \| uv](https://docs.astral.sh/uv/getting-started/installation/#installation-methods)
+* [uninstallation \| uv](https://docs.astral.sh/uv/getting-started/installation/#uninstallation)
+
+#### UV 镜像
+
+* [Python UV 使用国内镜像](https://zhuanlan.zhihu.com/p/1897762567495083782)
+* [【Python】uv更换全局镜像源 - 双份浓缩馥芮白 - 博客园](https://www.cnblogs.com/Flat-White/p/18920080)
+
 ### Conda
 
 #### 镜像相关
@@ -66,7 +86,7 @@ modified: 2025-08-08 18:28:03
 * [再谈Anaconda的使用](https://www.solarck.com/post/about-conda-again/)
 * [conda channel - 蝈蝈俊 - 博客园](https://www.cnblogs.com/ghj1976/p/conda-channel.html)
 
-### 问题及解决
+#### 问题及解决
 
 * [Anaconda环境中pip命令找不到解决方案](https://blog.csdn.net/weixin_33566282/article/details/115447064)  
 * [Conda下ModuleNotFoundError:No module named 'pip'](https://blog.csdn.net/Pin_BOY/article/details/120402542)
@@ -81,10 +101,15 @@ modified: 2025-08-08 18:28:03
 * [error while loading shared libraries: libxml2.so.2: cannot open shared object file 解决方法 - Angry\_Panda - 博客园](https://www.cnblogs.com/xyz/p/17594346.html)
 * [error while loading shared libraries: libxml2.so.2: cannot open shared object file 解决方法-CSDN博客](https://blog.csdn.net/qq_39779233/article/details/128215517)
 
-### https 问题
+##### https 问题
 
 * [Anaconda建立新的环境，出现CondaHTTPError: HTTP 000 CONNECTION FAILED for url ...... 解决过程 - tianlang25 - 博客园](https://www.cnblogs.com/tianlang25/p/12433025.html)
 * [CondaHTTPError: HTTP 000 CONNECTION FAILED · Issue #11367 · conda/conda · GitHub](https://github.com/conda/conda/issues/11367)
+
+#### miniforge
+
+* [conda、pip、anaconda、miniconda、miniforge、mambaforge都是啥？有什么区别？应该用哪个？](https://zhuanlan.zhihu.com/p/674145143)
+* [（数据科学学习手札160）使用miniforge代替miniconda - 费弗里 - 博客园](https://www.cnblogs.com/feffery/p/18158285)
 
 ---
 

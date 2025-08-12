@@ -7,7 +7,7 @@ tags:
   - pipx
   - conda
 created: 2023-08-18 19:44:52
-modified: 2025-08-13 01:43:57
+modified: 2025-08-13 02:25:41
 ---
 
 # Python 笔记
@@ -1138,6 +1138,30 @@ UV 的默认全局配置是放在用户目录下 `~/.config/uv/uv.toml` 文件�
 ```shell
 mkdir ~/.config/uv && vim ~/.config/uv/uv.toml
 ```
+
+uv 有两个镜像得配。
+
+#### UV_DEFAULT_INDEX
+
+`UV_INDEX` 或 `UV_DEFAULT_INDEX` 这是配的 pypi 镜像，即执行 `uv add` 命令安装第三方包时的镜像。
+
+`UV_INDEX` 可以配多个源，`UV_DEFAULT_INDEX` 只能有一个，是用来默认替代 pypi 源的。
+
+这个配置可以在 `uv.toml` 中就可以直接配置，这属于用户级别的配置。当然也可以在项目中的 `pyproject.toml` 中配置。
+
+以清华源为例，在 `uv.toml` 中配置：
+
+```toml
+[[index]]
+url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple"
+default = true
+```
+
+#### Python 安装包下载镜像
+
+`UV_PYTHON_INSTALL_MIRROR`，是配置用来下载 Python 安装包的镜像，即执行 `uv python install xx` 命令时用到的镜像。这个镜像是在你的系统各种 `rc`，如 `bashrc`、`zshrc` 等中配的。
+
+南京大学镜像：[https://mirrors.cernet.edu.cn/list/python-build-standalone](https://mirrors.cernet.edu.cn/list/python-build-standalone)
 
 ### UV 使用
 

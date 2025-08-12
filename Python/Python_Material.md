@@ -7,7 +7,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2025-08-13 01:33:35
+modified: 2025-08-13 02:02:32
 ---
 
 # Python 资料清单
@@ -61,8 +61,11 @@ modified: 2025-08-13 01:33:35
 * [Python UV 使用国内镜像](https://zhuanlan.zhihu.com/p/1897762567495083782)
 * [【Python】uv更换全局镜像源 - 双份浓缩馥芮白 - 博客园](https://www.cnblogs.com/Flat-White/p/18920080)
 * [UV设置下载镜像 - 一杯好茶](https://www.zouper.cn/index.php/archives/123/)
+* [uv 简易安装与更换国内镜像源 - etfolin - 博客园](https://www.cnblogs.com/etfolinbase/p/18951944)
 * [增加Astral uv的PyPI镜像设置指南 · Issue #2141 · tuna/issues](https://github.com/tuna/issues/issues/2141)
 * [PyPI 软件仓库镜像使用帮助 - uv - MirrorZ Help](https://help.mirrorz.org/pypi/#astral-uv)
+* [国内使用UV的代理设置指南 - 序语程言](https://www.yangyanxing.com/article/uv-proxy-setting)
+* [uv 下载 Python 也慢？你绝对需要这个“隐藏开关”，速度提升10倍！](https://zhuanlan.zhihu.com/p/1931820617558112198)
 
 ### Conda
 

@@ -7,7 +7,7 @@ tags:
   - pipx
   - conda
 created: 2023-08-18 19:44:52
-modified: 2025-08-13 00:02:31
+modified: 2025-08-13 01:43:57
 ---
 
 # Python 笔记
@@ -1087,7 +1087,7 @@ pipx uninstall-all
 
 #### 安装方式
 
-1. 系统包管理器
+1. 使用系统包管理器安装
 
 以 [ArchLinux](../Linux/ArchLinux_Note.md) 为例：
 
@@ -1155,6 +1155,10 @@ uv python list
 uv python install 版本号
 ```
 
+> [!info] 
+> 
+> 使用 `uv python install` 命令安装 python，会装在 `.local/share/uv/python` 这个目录下。而在 [创建项目](#创建项目) 时，如果没有指定 python 的版本，默认从这个目录找最新的 python 版本。
+
 移除 Python：
 
 ```shell
@@ -1192,11 +1196,31 @@ uv init
 > [!tip] 
 > 
 > 如果 `uv init` 后没有东西，那就是初始化当前目录。如果带上一个字符串，那就是创建一个目录然后再初始化它。
+> 
+> ```shell
+> $ uv init testuv
+> Initialized project `testuv` at `/home/silascript/DevWorkSpace/PythonExercise/testuv`
+> ```
 
-创建或初始化后的项目根目录下，会生成两个文件：
+创建或初始化后的项目根目录下，会生成两个**重要文件**：
 
 * `.python-versoin`：这个是记录当前项目 python 的版本
 * `pyproject.toml`：这个文件是用来定义项目的主要依赖，包括项目名称、版本、描述、支持的 `Python` 版本等信息
+
+例：
+
+```shell
+# silascript @ (base) in ~/DevWorkSpace/PythonExercise/testuv on git:main x [1:39:29] 
+$ ll
+Permissions Size User       Group      Date Modified    Name
+drwxr-xr-x     - silascript silascript 2025-08-13 01:37 .
+drwxr-xr-x     - silascript silascript 2025-08-13 01:37 ..
+.rw-r--r--     5 silascript silascript 2025-08-13 01:37 .python-version
+.rw-r--r--    84 silascript silascript 2025-08-13 01:37 main.py
+.rw-r--r--   152 silascript silascript 2025-08-13 01:37 pyproject.toml
+.rw-r--r--     0 silascript silascript 2025-08-13 01:37 README.md
+
+```
 
 创建项目时，是可以指定 python 的版本：
 

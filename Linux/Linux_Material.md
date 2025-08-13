@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-10 03:06:48
-modified: 2025-08-10 19:52:10
+modified: 2025-08-13 12:19:16
 ---
 
 # Linux 资料清单
@@ -62,6 +62,10 @@ modified: 2025-08-10 19:52:10
 * [技术|2 种从 Linux 终端下载文件的方法](https://linux.cn/article-12752-1.html)
 * [后渗透之文件下载(Linux篇) – fushulingのblog](https://fushuling.com/index.php/2023/10/21/%E5%90%8E%E6%B8%97%E9%80%8F%E4%B9%8B%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BDlinux%E7%AF%87/)
 * [Linux使用curl访问网页和wget下载文件\_linux shell\_脚本之家](https://www.jb51.net/article/250111.htm)
+
+### iftop
+
+* [Linux 命令：iftop \| 极客之音](https://www.bmabk.com/index.php/post/260927.html)
 
 ### wget
 
@@ -133,6 +137,7 @@ modified: 2025-08-10 19:52:10
 * [Linux 日常操作与基础知识 | archlinux 简明指南](https://arch.icekylin.online/guide/advanced/system-ctl)
 * [ArchLinux使用记录 - ArchLinux](https://yuanmxc.site/Archlinux/ArchLinux%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/)
 * [Pacman wiki](https://wiki.archlinuxcn.org/wiki/Pacman)
+* [archlinxcn keyring manually](https://www.archlinuxcn.org/archlinuxcn-keyring-manually-trust-farseerfc-key/)
 
 ---
 

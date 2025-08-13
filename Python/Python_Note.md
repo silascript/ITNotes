@@ -6,8 +6,9 @@ tags:
   - pip
   - pipx
   - conda
+  - uv
 created: 2023-08-18 19:44:52
-modified: 2025-08-13 03:15:38
+modified: 2025-08-13 10:45:10
 ---
 
 # Python 笔记

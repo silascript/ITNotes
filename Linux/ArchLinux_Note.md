@@ -8,7 +8,7 @@ tags:
   - ime
 date created: 2022-11-08 11:32
 created: 2023-08-18 19:44:52
-modified: 2025-06-09 11:02:08
+modified: 2025-08-13 12:09:12
 ---
 
 # ArchLinux 笔记
@@ -73,6 +73,12 @@ sudo pacman -Syyu
 ```shell
 pacman -Sy archlinuxcn-keyring
 ```
+
+> [!tip] 
+> 
+> 2023 年 12 月后，在新系统下安装 `archlinuxcn-keyring` 时可能会出现错误。需要在本地信任 farseerfc 的 GPG key：
+> 
+> `sudo pacman-key --lsign-key "farseerfc@archlinux.org"`
 
 ##### 阻止更新
 
@@ -350,15 +356,23 @@ NetWorkManager 的执行程序是：`nmcli`。
 
 #### 常用命令
 
-* 查看所有链接
+查看所有链接
+
 ```shell
 # 也可以使用简写 nmcli d
 nmcli device
 ```
 
-* 查看无线网络
+查看无线网络
+
 ```shell
 nmcli device wifi
+```
+
+查看网络设备
+
+```shell
+nmcli device show
 ```
 
 ---

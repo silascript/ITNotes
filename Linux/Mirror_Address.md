@@ -6,7 +6,7 @@ tags:
   - list
   - opensource
 created: 2023-08-18 19:44:52
-modified: 2025-08-13 00:33:11
+modified: 2025-08-13 12:34:59
 ---
 # 开源镜像网址清单
 
@@ -17,6 +17,7 @@ modified: 2025-08-13 00:33:11
 ### 国内源
 
 * [MirrorZ Help](https://help.mirrors.cernet.edu.cn)
+* [校园网联合镜像站](https://mirrors.cernet.edu.cn)
 * [上海交通大学 Linux 用户组 软件源镜像服务](https://mirror.sjtu.edu.cn/)
 * [OpenTUNA 开源软件镜像站](https://opentuna.cn/)
 * [清华大学开源软件镜像站 | Tsinghua Open Source Mirror](https://mirrors.tuna.tsinghua.edu.cn/)

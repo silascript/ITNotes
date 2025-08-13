@@ -8,7 +8,7 @@ tags:
   - conda
   - uv
 created: 2023-08-18 19:44:52
-modified: 2025-08-14 02:40:18
+modified: 2025-08-14 03:25:43
 ---
 
 # Python 笔记
@@ -465,7 +465,25 @@ conda remove -n 环境名称 --all
 
 `~/miniconda3/` 目录下有一个卸载脚本：`uninstall.sh`，执行下它，确认卸载对话中输入 `yes`，就开始卸载：
 
-第一次执行，有可能会卸载不了，准确来说是卸载不完全，会报这样的信息：`CondaEnvironmentError: Cannot remove current environment. Deactivate and run conda remove again`，关闭当前终端，再启一个终端，新的终端查看 `~/miniconda3` 这个目录存在与否，因为卸载不完全，应该还是存在的，所以再执行一次 `uninstall.sh` 应该就可以了，正常卸载会出现下面类似的信息：
+```shell
+
+$ ./miniconda3/uninstall.sh 
+Are you sure you want to remove /home/silascript/miniconda3 and all of its contents?
+[no] >>> yes
+Uninstalling conda installation in /home/silascript/miniconda3...
+Running conda init --reverse...
+modified      /home/silascript/.zshrc
+
+==> For changes to take effect, close and re-open your current shell. <==
+
+No action taken.
+Removing environments...
+
+CondaEnvironmentError: Cannot remove current environment. Deactivate and run conda remove again
+
+```
+
+第一次执行，有可能会卸载不了，准确来说是卸载不完全（可以从卸载信息看出，只是修改了 [Shell](../Linux/Shell/Shell_Note.md) 的配置文件，将 conda 相关的配置删除而已。这时 `~/miniconda/` 这个 conda 的安装目录都还存在），会报这样的信息：`CondaEnvironmentError: Cannot remove current environment. Deactivate and run conda remove again`，而且卸载信息也提示你「关闭重新再启一个新的终端」（`close and re-open your current shell`），新的终端查看 `~/miniconda3` 这个目录存在与否，因为卸载不完全，应该还是存在的，所以再执行一次 `uninstall.sh` 应该就可以了，正常卸载会出现下面类似的信息：
 
 ```shell
 $ ./miniconda3/uninstall.sh
@@ -625,16 +643,19 @@ done
 > fi
 > unset __conda_setup
 > # <<< conda initialize <<<
-
+>
 > ```
-> 
 > 
 
 4. 删除 conda 相关的目录及配置文件
 
-删除相应目录及配置文件：
+> [!info] 
+> 
+> 有可能像 `.conda` 目录及 `.condarc` 配置文件，在执行 `uninstall.sh` 时就已经删除了！
+
 * `rm -rf ~/.conda`
 * `rm -rf ~/.condarc`
+* `rm- rf ~/.cache/conda`
 
 > [!info] 相关资料
 > 
@@ -1296,6 +1317,10 @@ miniforge 已经融合了 [mamba](https://github.com/mamba-org/mamba)，mamba �
 > [!tip] 
 > 
 > 本来还有个 `mambaforge`，与 `miniforge` 几乎一样，后 `mambaforge`「退役」，现在推荐使用 `miniforge`。
+
+### 安装
+
+### 卸载
 
 ---
 

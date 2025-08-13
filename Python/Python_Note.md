@@ -8,7 +8,7 @@ tags:
   - conda
   - uv
 created: 2023-08-18 19:44:52
-modified: 2025-08-13 10:45:10
+modified: 2025-08-13 21:58:26
 ---
 
 # Python 笔记
@@ -475,6 +475,46 @@ conda remove -n 环境名称 --all
 ---
 
 ### <span id="python_conda_commands">conda 常用命令</span>
+
+`conda info`：查看 conda 相关信息
+
+```shell
+
+$ conda info      
+ active environment : base
+active env location : /home/silascript/miniconda3
+		shell level : 1
+   user config file : /home/silascript/.condarc
+populated config files : /home/silascript/.condarc
+	  conda version : 25.5.1
+conda-build version : not installed
+	 python version : 3.12.11.final.0
+			 solver : libmamba (default)
+   virtual packages : __archspec=1=nehalem
+					  __conda=25.5.1=0
+					  __glibc=2.42=0
+					  __linux=6.6.101=0
+					  __unix=0=0
+   base environment : /home/silascript/miniconda3  (writable)
+  conda av data dir : /home/silascript/miniconda3/etc/conda
+conda av metadata url : None
+	   channel URLs : https://mirrors.pku.edu.cn/anaconda/pkgs/main/linux-64
+					  https://mirrors.pku.edu.cn/anaconda/pkgs/main/noarch
+					  https://mirrors.pku.edu.cn/anaconda/pkgs/r/linux-64
+					  https://mirrors.pku.edu.cn/anaconda/pkgs/r/noarch
+					  https://mirrors.pku.edu.cn/anaconda/cloud/conda-forge/linux-64
+					  https://mirrors.pku.edu.cn/anaconda/cloud/conda-forge/noarch
+	  package cache : /home/silascript/miniconda3/pkgs
+					  /home/silascript/.conda/pkgs
+   envs directories : /home/silascript/miniconda3/envs
+					  /home/silascript/.conda/envs
+		   platform : linux-64
+		 user-agent : conda/25.5.1 requests/2.32.4 CPython/3.12.11 Linux/6.6.101-1-MANJARO manjaro/25.0.7 glibc/2.42 solver/libmamba conda-libmamba-solver/25.4.0 libmambapy/2.0.8
+			UID:GID : 1000:1000
+		 netrc file : None
+	   offline mode : False
+
+```
 
 #### <span id="python_conda_commands_config">配置</span>
 
@@ -1074,6 +1114,18 @@ pipx uninstall 模块
 ```shell
 pipx uninstall-all
 ```
+
+---
+
+## <span id="python_miniforge">Miniforge</span>
+
+[miniforge](https://github.com/conda-forge/miniforge) 是 [conda-forge](https://conda-forge.org) 的一个精简版本。而 conda-forge 是使用的 [conda-forge](https://anaconda.org/conda-forge) [channel](#channel) 的开源版本的「conda」。
+
+miniforge 已经融合了 [mamba](https://github.com/mamba-org/mamba)，mamba 是使用 [C++](../C/CPP_Note.md) 重写的 conda 包管理器。所以 miniforge 的速度比传统的 [conda](#python_conda) 要快。
+
+> [!tip] 
+> 
+> 本来还有个 `mambaforge`，与 `miniforge` 几乎一样，后 `mambaforge`「退役」，现在推荐使用 `miniforge`。
 
 ---
 

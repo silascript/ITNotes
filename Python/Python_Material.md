@@ -4,10 +4,11 @@ tags:
   - python
   - pip
   - conda
+  - uv
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2025-08-13 02:41:12
+modified: 2025-08-13 21:41:18
 ---
 
 # Python 资料清单
@@ -118,6 +119,7 @@ modified: 2025-08-13 02:41:12
 
 * [conda、pip、anaconda、miniconda、miniforge、mambaforge都是啥？有什么区别？应该用哪个？](https://zhuanlan.zhihu.com/p/674145143)
 * [（数据科学学习手札160）使用miniforge代替miniconda - 费弗里 - 博客园](https://www.cnblogs.com/feffery/p/18158285)
+* [conda — 地震“学”软件](https://seismo-learn.org/software/conda/)
 
 ---
 

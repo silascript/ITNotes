@@ -5,7 +5,7 @@ tags:
   - unicode
   - cjk
 created: 2023-01-31 11:31:14
-modified: 2025-07-31 03:41:17
+modified: 2025-08-13 12:37:14
 ---
 
 # 字体笔记
@@ -447,6 +447,7 @@ Cascadia Code 版本差异：
 * [Free-Chinese-Fonts](http://zenozeng.github.io/Free-Chinese-Fonts/)
 * [遍黑体项目](https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project)
 * [开心宋](https://www.guoxuedashi.net/zidian/bujian/)
+* [校园网联合镜像站 - 字体](https://mirrors.cernet.edu.cn/font)
 
 ---
 

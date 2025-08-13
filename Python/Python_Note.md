@@ -8,7 +8,7 @@ tags:
   - conda
   - uv
 created: 2023-08-18 19:44:52
-modified: 2025-08-13 21:58:26
+modified: 2025-08-14 02:40:18
 ---
 
 # Python 笔记
@@ -455,13 +455,182 @@ conda config --remove-key channels
 conda info --envs
 ```
 
-将环境一个个地 `remove`（删除到只剩个 base 就行了）：
+1. 将环境一个个地 `remove`（删除到只剩个 base 就行了）：
 
 ```shell
 conda remove -n 环境名称 --all
 ```
 
+2. 执行卸载脚本
+
+`~/miniconda3/` 目录下有一个卸载脚本：`uninstall.sh`，执行下它，确认卸载对话中输入 `yes`，就开始卸载：
+
+第一次执行，有可能会卸载不了，准确来说是卸载不完全，会报这样的信息：`CondaEnvironmentError: Cannot remove current environment. Deactivate and run conda remove again`，关闭当前终端，再启一个终端，新的终端查看 `~/miniconda3` 这个目录存在与否，因为卸载不完全，应该还是存在的，所以再执行一次 `uninstall.sh` 应该就可以了，正常卸载会出现下面类似的信息：
+
+```shell
+$ ./miniconda3/uninstall.sh
+Are you sure you want to remove /home/silascript/miniconda3 and all of its contents?
+[no] >>> yes
+Uninstalling conda installation in /home/silascript/miniconda3...
+Running conda init --reverse...
+No action taken.
+No action taken.
+Removing environments...
+
+Remove all packages in environment /home/silascript/miniconda3:
+
+
+## Package Plan ##
+
+environment location: /home/silascript/miniconda3
+
+
+The following packages will be REMOVED:
+
+  _libgcc_mutex-0.1-main
+  _openmp_mutex-5.1-1_gnu
+  anaconda-anon-usage-0.7.1-py313hfc0e8ea_100
+  annotated-types-0.6.0-py313h06a4308_0
+  archspec-0.2.3-pyhd3eb1b0_0
+  boltons-25.0.0-py313h06a4308_0
+  brotlicffi-1.0.9.2-py313h6a678d5_1
+  bzip2-1.0.8-h5eee18b_6
+  c-ares-1.19.1-h5eee18b_0
+  ca-certificates-2025.2.25-h06a4308_0
+  certifi-2025.7.14-py313h06a4308_0
+  cffi-1.17.1-py313h1fdaa30_1
+  charset-normalizer-3.3.2-pyhd3eb1b0_0
+  conda-25.5.1-py313h06a4308_0
+  conda-anaconda-telemetry-0.2.0-py313h06a4308_1
+  conda-anaconda-tos-0.2.1-py313h06a4308_0
+  conda-content-trust-0.2.0-py313h06a4308_1
+  conda-libmamba-solver-25.4.0-pyhd3eb1b0_0
+  conda-package-handling-2.4.0-py313h06a4308_0
+  conda-package-streaming-0.12.0-py313h06a4308_0
+  cpp-expected-1.1.0-hdb19cb5_0
+  cryptography-45.0.3-py313h2ccb017_0
+  distro-1.9.0-py313h06a4308_0
+  expat-2.7.1-h6a678d5_0
+  fmt-9.1.0-hdb19cb5_1
+  frozendict-2.4.2-py313h06a4308_0
+  icu-73.1-h6a678d5_0
+  idna-3.7-py313h06a4308_0
+  jsonpatch-1.33-py313h06a4308_1
+  jsonpointer-2.1-pyhd3eb1b0_0
+  krb5-1.21.3-h8a1dbc1_1
+  ld_impl_linux-64-2.40-h12ee557_0
+  libarchive-3.7.7-hfab0078_0
+  libcurl-8.14.1-h31d0fb7_0
+  libedit-3.1.20230828-h5eee18b_0
+  libev-4.33-h7f8727e_1
+  libffi-3.4.4-h6a678d5_1
+  libgcc-ng-11.2.0-h1234567_1
+  libgomp-11.2.0-h1234567_1
+  libmamba-2.0.5-haf1ee3a_1
+  libmambapy-2.0.5-py313hdb19cb5_1
+  libmpdec-4.0.0-h5eee18b_0
+  libnghttp2-1.57.0-h2d74bed_0
+  libsolv-0.7.30-he621ea3_1
+  libssh2-1.11.1-h251f7ec_0
+  libstdcxx-ng-11.2.0-h1234567_1
+  libuuid-1.41.5-h5eee18b_0
+  libxcb-1.17.0-h9b100fa_0
+  libxml2-2.13.8-hfdd30dd_0
+  lz4-c-1.9.4-h6a678d5_1
+  markdown-it-py-2.2.0-py313h06a4308_1
+  mdurl-0.1.0-py313h06a4308_0
+  menuinst-2.3.0-py313h06a4308_0
+  ncurses-6.4-h6a678d5_0
+  nlohmann_json-3.11.2-h6a678d5_0
+  openssl-3.0.16-h5eee18b_0
+  packaging-24.2-py313h06a4308_0
+  pcre2-10.42-hebb0a14_1
+  pip-25.1-pyhc872135_2
+  platformdirs-4.3.7-py313h06a4308_0
+  pluggy-1.5.0-py313h06a4308_0
+  pthread-stubs-0.3-h0ce48e5_1
+  pybind11-abi-5-hd3eb1b0_0
+  pycosat-0.6.6-py313h5eee18b_2
+  pycparser-2.21-pyhd3eb1b0_0
+  pydantic-2.11.7-py313h06a4308_0
+  pydantic-core-2.33.2-py313hc6f7160_0
+  pygments-2.19.1-py313h06a4308_0
+  pysocks-1.7.1-py313h06a4308_0
+  python-3.13.5-h4612cfd_100_cp313
+  python_abi-3.13-0_cp313
+  readline-8.2-h5eee18b_0
+  reproc-14.2.4-h6a678d5_2
+  reproc-cpp-14.2.4-h6a678d5_2
+  requests-2.32.4-py313h06a4308_0
+  rich-13.9.4-py313h06a4308_0
+  ruamel.yaml-0.18.10-py313h5eee18b_0
+  ruamel.yaml.clib-0.2.12-py313h5eee18b_0
+  setuptools-78.1.1-py313h06a4308_0
+  simdjson-3.10.1-hdb19cb5_0
+  spdlog-1.11.0-hdb19cb5_0
+  sqlite-3.50.2-hb25bd0a_1
+  tk-8.6.14-h993c535_1
+  tqdm-4.67.1-py313h7040dfc_0
+  truststore-0.10.0-py313h06a4308_0
+  typing-extensions-4.12.2-py313h06a4308_0
+  typing-inspection-0.4.0-py313h06a4308_0
+  typing_extensions-4.12.2-py313h06a4308_0
+  tzdata-2025b-h04d1e81_0
+  urllib3-2.5.0-py313h06a4308_0
+  wheel-0.45.1-py313h06a4308_0
+  xorg-libx11-1.8.12-h9b100fa_1
+  xorg-libxau-1.0.12-h9b100fa_0
+  xorg-libxdmcp-1.1.5-h9b100fa_0
+  xorg-xorgproto-2024.1-h5eee18b_1
+  xz-5.6.4-h5eee18b_1
+  yaml-cpp-0.8.0-h6a678d5_1
+  zlib-1.2.13-h5eee18b_1
+  zstandard-0.23.0-py313h2c38b39_1
+  zstd-1.5.6-hc292b87_0
+
+
+
+Downloading and Extracting Packages:
+
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: - WARNING conda.core.link:run_script(1581): pre-unlink script failed for package defaults/linux-64::conda-anaconda-tos-0.2.1-py313h06a4308_0
+consider notifying the package maintainer
+done
+
+```
+
+再次重启一个终端，会发现 `~/miniconda3` 这个目录都不存在，这就是真卸载完了。然后再进行下一步。
+
+3. 删除相关的环境变量配置
+
 删除 `.profle`、`.xprofile`、`.bashrc` 或 `.zshrc` 等配置文件中 conda 相关的 配置。
+> [!tip] 
+> 
+> 有可能，执行 `uninstall.sh` 时，连 conda 安装时生成的相关配置都删干净了 -- 类似以下这种初始化配置：
+> 
+> ```shell
+> 
+> # >>> conda initialize >>>
+> # !! Contents within this block are managed by 'conda init' !!
+> __conda_setup="$('/home/silascript/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+> if [ $? -eq 0 ]; then
+> 	eval "$__conda_setup"
+> else
+> 	if [ -f "/home/silascript/miniconda3/etc/profile.d/conda.sh" ]; then
+> 		. "/home/silascript/miniconda3/etc/profile.d/conda.sh"
+> 	else
+> 		export PATH="/home/silascript/miniconda3/bin:$PATH"
+> 	fi
+> fi
+> unset __conda_setup
+> # <<< conda initialize <<<
+
+> ```
+> 
+> 
+
+4. 删除 conda 相关的目录及配置文件
 
 删除相应目录及配置文件：
 * `rm -rf ~/.conda`
@@ -470,6 +639,7 @@ conda remove -n 环境名称 --all
 > [!info] 相关资料
 > 
 > * [linux卸载conda环境\_千锋教育](http://www.mobiletrain.org/about/BBS/150422.html)
+> * [miniconda uninstall | anaconda docs](https://www.anaconda.com/docs/getting-started/miniconda/uninstall)
 > 
 
 ---

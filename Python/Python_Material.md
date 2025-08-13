@@ -8,7 +8,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2025-08-13 21:41:18
+modified: 2025-08-14 02:01:15
 ---
 
 # Python 资料清单
@@ -94,6 +94,7 @@ modified: 2025-08-13 21:41:18
 * [如何将Anaconda安装时默认的python版本改成其他版本](https://blog.csdn.net/qq_56520755/article/details/130489115)
 * [再谈Anaconda的使用](https://www.solarck.com/post/about-conda-again/)
 * [conda channel - 蝈蝈俊 - 博客园](https://www.cnblogs.com/ghj1976/p/conda-channel.html)
+* [卸载 Miniconda 详解\_卸载miniconda-CSDN博客](https://blog.csdn.net/qq_37037348/article/details/130904360)
 
 #### 问题及解决
 
@@ -120,6 +121,7 @@ modified: 2025-08-13 21:41:18
 * [conda、pip、anaconda、miniconda、miniforge、mambaforge都是啥？有什么区别？应该用哪个？](https://zhuanlan.zhihu.com/p/674145143)
 * [（数据科学学习手札160）使用miniforge代替miniconda - 费弗里 - 博客园](https://www.cnblogs.com/feffery/p/18158285)
 * [conda — 地震“学”软件](https://seismo-learn.org/software/conda/)
+* [Miniforge 安装 - Undefined443 - 博客园](https://www.cnblogs.com/Undefined443/p/18462580)
 
 ---
 

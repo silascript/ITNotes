@@ -7,7 +7,7 @@ tags:
   - conda-forge
   - miniforge
 created: 2025-08-15 01:32:08
-modified: 2025-08-15 02:10:31
+modified: 2025-08-15 04:20:07
 ---
 
 # Conda 笔记
@@ -28,7 +28,7 @@ miniconda 对于一般需求而言装这个就够用了。
 
 到 [miniconda 官网](https://docs.conda.io/en/latest/miniconda.html) 下载相应平台安装文件。
 
-以 Linux 为例，miniconda Linux 版本其实就是一个「大」 shell 脚本文件。
+以 Linux 为例，miniconda Linux 版本其实就是一个「大」 [Shell](../Linux/Shell/Shell_Note.md) 脚本文件。
 
 嫌官网速度慢，可以到清华镜像站下：[https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda](https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda) 。
 
@@ -44,6 +44,7 @@ wget -c -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
 使用 `sudo sh xxxxx.sh` 命令来安装 miniconda。
 > [!tip] sh 执行权限
+> 
 > 执行安装脚本时，最好还是加上 `sudo`，因为如果你要将 miniconda 安装在如 `/opt/miniconda` 目录下时，`miniconda` 这个自定义的 miniconda 安装目录如果不存在，安装脚本在安装到指定 [安装目录](#^774c11) 这一步骤时，会提示安装目录不存在，需要创建，这时就需要在 `opt` 下创建 `miniconda` 子目录。但 miniconda 安装脚本是不允许事先先建好个安装目录的，这个安装目录必须根据用户指定设置后，由脚本自行创建，如果指定了事先存在的安装目录，就会出现 `ERROR: File or directory already exists: '/opt/miniconda3'` 这样的提示，而由脚本自行创建，那就需要 root 权限，这同样也是为什么 miniconda 安装脚本默认安装路径是用户根下了，因为安装在用户根下不需要 root 权限就能创建安装目录，所以需要将 miniconda 安装到非用户目录下时，就得在执行安装脚本时使用 `sudo` 来执行。
 ^1f5cab
 
@@ -170,7 +171,7 @@ custom_channels:
 > 
 >> [!info] 相关资料
 >> 
->> [Conda](Python_Material.md#Conda)
+>> [Conda相关资料](Python_Material.md#Conda)
 
 > [!info] 关于 channel 配置
 > 
@@ -515,7 +516,7 @@ conda 所有配置，都是在 `.condarc` 配置文件中保存，所以可以�
 
 #### <span id="conda_commands_create">创建</span>
 
-创建命令 `create` 用于 [创建环境](#python_conda_environment_create)。更详细参数或选项可以通过 `conda create -h` 来查看。
+创建命令 `create` 用于 [创建环境](#conda_environment_create)。更详细参数或选项可以通过 `conda create -h` 来查看。
 
 #### <span id="conda_commands_list">List</span>
 
@@ -543,7 +544,7 @@ conda 所有配置，都是在 `.condarc` 配置文件中保存，所以可以�
 
 #### <span id="conda_environment_create">创建环境</span>
 
-创建环境使用到了 [创建](#python_conda_commands_create) 命令：`conda create -n myenv`
+创建环境使用到了 [创建](#conda_commands_create) 命令：`conda create -n myenv`
 
 > [!info] 命令解释
 > 
@@ -558,11 +559,11 @@ conda 所有配置，都是在 `.condarc` 配置文件中保存，所以可以�
 示例：
 `conda create -n myenv numpy matplotlib python=3.8`
 
-只指定 Python 版本，在创建环境时，也连带 [pip](#pip) 等也一并安装了。
+只指定 Python 版本，在创建环境时，也连带 [pip](Python_Note.md#python_pip) 等也一并安装了。
 
-#### <span id="python_conda_environment_removeqn">删除环境</span>
+#### <span id="conda_environment_removeqn">删除环境</span>
 
-删除环境使用到了 [删除](#python_conda_commands_remove) 命令：`conda remove -n 环境名称 --all`
+删除环境使用到了 [删除](#conda_commands_remove) 命令：`conda remove -n 环境名称 --all`
 > [!info] 命令解释
 > `--all` 指的是删除这个环境中所有的包
 
@@ -769,7 +770,7 @@ RemoveError: 'tqdm' is a dependency of conda and cannot be removed from
 conda's operating environment.
 ```
 
-这种错误，有可能是使用 [pip](#pip) 安装或更新了，再使用 conda 更新，就会出现「冲突」。
+这种错误，有可能是使用 [pip](Python_Note.md#python_pip) 安装或更新了，再使用 conda 更新，就会出现「冲突」。
 
 解决方法：
 
@@ -799,7 +800,7 @@ pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
 > 
 > 在 conda 中使用 pip 安装模块，其模块是安装在 `~/minicoda/envs/虚拟环境/bin/` 目录下的，所以只在 `activate` 此环境才能使用。
 > 
-> 而且这里的优先级高于 `.local/bin` 下，即高于非 conda 环境下或使用 [pipx](#python_pipx) 安装的同名模块。
+> 而且这里的优先级高于 `.local/bin` 下，即高于非 conda 环境下或使用 [pipx](Python_Note.md#python_pipx) 安装的同名模块。
 
 ### Conda 问题
 
@@ -934,11 +935,11 @@ unset __mamba_setup
 
 > [!tip] 
 > 
-> Miniforge 与 [conda](#python_conda) 不一样，它有两个「核」，所以会有 `conda` 和 `mamba` 两段初始化配置。
+> Miniforge 与 [conda](#conda) 不一样，它有两个「核」，所以会有 `conda` 和 `mamba` 两段初始化配置。
 
 ### Miniforge 配置
 
-Miniforge 配置同样也用 `.condarc` 文件，跟 [conda](#python_conda) 一样。
+Miniforge 配置同样也用 `.condarc` 文件，跟 [conda](#conda) 一样。
 
 可以手动新建 `.condarc` 文件，也可以执行 `conda config` 或 `conda config --set show_channel_urls yes` 生成 `.condarc` 文件。
 
@@ -968,7 +969,79 @@ conda config --add channels https://mirror.nju.edu.cn/anaconda/cloud/conda-forge
 
 ### Miniforge 卸载
 
-卸载文档：[miniforge uninstall](https://github.com/conda-forge/miniforge#uninstall)
+Miniforge 卸载没有像 [conda](#conda) 一样有个 `uninstall.sh` 脚本，所以得手工一项项卸载。
+
+1. 重置 rc。执行完得重开新的终端才能进行下一步
+
+```shell
+# Use this first command to see what rc files will be updated
+conda init --reverse --dry-run
+# Use this next command to take action on the rc files listed above
+conda init --reverse
+```
+
+2. 删除 `base` 环境目录，其实就是 Miniforge 安装的根目录，默认是 `~/miniforge3`
+
+```shell
+CONDA_BASE_ENVIRONMENT=$(conda info --base)
+echo The next command will delete all files in ${CONDA_BASE_ENVIRONMENT}
+# Warning, the rm command below is irreversible!
+# check the output of the echo command above
+# To make sure you are deleting the correct directory
+rm -rf ${CONDA_BASE_ENVIRONMENT}
+```
+
+3. 删除配置文件及相关目录。就是 `.condarc` 文件及 `~/.conda` 目录。
+
+```shell
+echo ${HOME}/.condarc will be removed if it exists
+rm -f "${HOME}/.condarc"
+echo ${HOME}/.conda and underlying files will be removed if they exist.
+rm -fr ${HOME}/.conda
+```
+
+4. 删除缓存目录。如果存在 `~/.cache/conda` 这个缓存目录，也删除了。
+
+5. 删除各种系统配置文件 `.bashrc`、`.zshrc`、`profile` 等中相关配置
+
+就是以下这两段 [初始化](#初始化) 的配置，删掉，重新再 `source` 下相关的 [Shell](../Linux/Shell/Shell_Note.md) 的配置文件，这样才算是真正卸载干净。
+
+```shell
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/silascript/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/silascript/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/home/silascript/miniforge3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/silascript/miniforge3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba shell init' !!
+export MAMBA_EXE='/home/silascript/miniforge3/bin/mamba';
+export MAMBA_ROOT_PREFIX='/home/silascript/miniforge3';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    alias mamba="$MAMBA_EXE"  # Fallback on help from mamba activate
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
+
+```
+
+> [!tip] 
+> 
+> 卸载文档：[miniforge uninstall](https://github.com/conda-forge/miniforge#uninstall)
 
 ### Miniforge 使用
 

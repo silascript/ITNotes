@@ -8,7 +8,7 @@ tags:
   - conda
   - uv
 created: 2023-08-18 19:44:52
-modified: 2025-08-15 02:07:20
+modified: 2025-08-15 03:04:11
 ---
 
 # Python 笔记
@@ -88,7 +88,7 @@ python -m ensurepip
 
 > [!info] 关于 `command not found: pip`
 > 
-> 在 [conda](#conda) 中重装 pip，有可能出现找不到 pip 的情况。
+> 在 [Conda](Python_Conda.md) 中重装 pip，有可能出现找不到 pip 的情况。
 > 
 > 那极有可能是使用的 `python -m pip uninstall pip` 来装，而不是使用 `conda install pip` 命令来装。
 > 
@@ -150,7 +150,7 @@ index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 
 > [!tip]
 > 
-> 现在的 pip，配置文件 **pip.conf** 是放在 `~/.config/pip/` 目录中。在 [conda](#python_conda) 中配置 pip 也是放在这个目录中。
+> 现在的 pip，配置文件 **pip.conf** 是放在 `~/.config/pip/` 目录中。在 [Conda](Python_Conda.md) 中配置 pip 也是放在这个目录中。
 > 
 
 ### pip 搜索
@@ -181,7 +181,7 @@ pip_search 要搜索的包
 
 `pipdeptree` 这个工具可以显示 pip 中各模块依赖「关系树」。有了这工具，删除模块时就可以更有「自信」了。
 
-因为它是有入口程序，所以它是可以使用 [pipx](#pipx) 安装的。
+因为它是有入口程序，所以它是可以使用 [pipx](#python_pipx) 安装的。
 
 ```shell
 pip install pipdeptree
@@ -258,11 +258,11 @@ optional environment variables:
 > 
 > 一个是 pipx 的为应用建立的虚拟环境目录，默认是在 `~/.local/pipx/venvs`。
 > 
-> 就算是在 [conda](#python_conda) 中使用其虚拟环境的 pip 安装的 pipx，这个 pipx 所装的模块，仍是存放在 `~/.local/pipx/venvs/` 目录下。
+> 就算是在 [Conda](Python_Conda.md) 中使用其虚拟环境的 pip 安装的 pipx，这个 pipx 所装的模块，仍是存放在 `~/.local/pipx/venvs/` 目录下。
 > 
 > 另一个是 pipx 中应用执行的 `bin` 文件「链接文件」所在的目录，默认是在 `~/.local/bin` 下，这其实是跟 pip 一样的。
 > 
-> 同样的，在 [conda](#python_conda) 的虚拟环境中使用的 pipx 装的模块的可执行程序，同样也是放在 `~/.local/bin/`。而这个程序只是一个 `link` 文件。（在 `~/.local/bin/` 目录中的那些可执行程序，其实都是些链接，它们都指向 `.local/pipx/venvs/` 目录下各模块，也就说在 conda 中使用 pipx 安装模块，这些模块安装根目录都是 `.local/pipx/venvs/`，而执行链接都是 `~/.local/bin/` 目录，pipx 有非常强的「共享性」。）
+> 同样的，在 [Conda](Python_Conda.md) 的虚拟环境中使用的 pipx 装的模块的可执行程序，同样也是放在 `~/.local/bin/`。而这个程序只是一个 `link` 文件。（在 `~/.local/bin/` 目录中的那些可执行程序，其实都是些链接，它们都指向 `.local/pipx/venvs/` 目录下各模块，也就说在 conda 中使用 pipx 安装模块，这些模块安装根目录都是 `.local/pipx/venvs/`，而执行链接都是 `~/.local/bin/` 目录，pipx 有非常强的「共享性」。）
 > 
 > 另外，在 `~/.local/bin/` 下建立链接文件的好处还有，就是如果需要重装 pipx，并且在重装前肯定移除 `~/.local/pipx` 目录，在重装 pipx 后，又得把各模块再重装一次，，这时存在一个难题，就是该重装哪些模块，除非之前另外有记录，不然是有点麻烦的。但因为 `~/.local/bin/` 下「残留」有之前安装过的模块链接，而且因为 `~/.local/pipx/` 目录的移除，使得这些链接出现「指向」错误而在终端中「显红」，这就给该重装哪些模块提供了提示。
 >
@@ -271,14 +271,14 @@ optional environment variables:
 > ![conda_pipx_links_error](Python_Note.assets/conda_pipx_links_error.png)
 >
 > 
-> 也就说，在 [conda](#python_conda) 中各虚拟环境用 pipx 装的相同模块，其可执行程序会出现同名冲突，会报：「already seems to be installed. 」的揭示，因为这个可执行程序是个 Link 文件，它可以指向不同虚拟环境，如果不同虚拟环境下装相同的模块，后来生成的这个模拟可执行的 Link 文件就会覆盖之前装的。
+> 也就说，在 [Conda](Python_Conda.md) 中各虚拟环境用 pipx 装的相同模块，其可执行程序会出现同名冲突，会报：「already seems to be installed. 」的揭示，因为这个可执行程序是个 Link 文件，它可以指向不同虚拟环境，如果不同虚拟环境下装相同的模块，后来生成的这个模拟可执行的 Link 文件就会覆盖之前装的。
 > 
 > 同样的也就意味着，不同虚拟环境下使用 pipx 装的模块，只要有一个虚拟环境装了，就可以在其他虚拟环境中使用，除非，这个在虚拟环境将此模块删除，或此虚拟环境本身就被删除。
 > 
 > 
 > 所以得出一个重要的结论：pipx 装的模块在当前用户下，「全局性」更强，适合安装一些跨虚拟环境的模拟，如各种 [LSP](../vim/Vim_LSP_Complete.md)。
 > 
-> 同时，因为 pipx 这种「穿透性」，也就意味着 pipx 没太大必要在 [conda](#python_conda) 的虚拟环境中安装那些非「全局性」的模块。
+> 同时，因为 pipx 这种「穿透性」，也就意味着 pipx 没太大必要在 [Conda](Python_Conda.md) 的虚拟环境中安装那些非「全局性」的模块。
 
 > [!tip] pipx 安装模块要求
 > 
@@ -286,7 +286,7 @@ optional environment variables:
 
 ### 安装 pipx
 
-pipx 可以使用 [pip](#pip) 来安装的：
+pipx 可以使用 [pip](#python_pip) 来安装的：
 
 ```shell
 pip install pipx
@@ -304,7 +304,7 @@ pipx ensurepath
 > 
 > [pipx](Python_Material.md#pipx) 
 
-如果在 [conda](#conda) 中不使用 [pip](#pip) 安装 pipx，可以直接使用 `conda install` 来安装，但前提是先将 conda-forget 在 conda 的 channel 中配置上了。不确定能不能用 conda 直接装，可以先搜索下：`conda search --full --name pipx`，如果能搜到，就通过 `conda install pipx` 进行安装。
+如果在 [Conda](Python_Conda.md) 中不使用 [pip](#python_pip) 安装 pipx，可以直接使用 `conda install` 来安装，但前提是先将 conda-forget 在 conda 的 channel 中配置上了。不确定能不能用 conda 直接装，可以先搜索下：`conda search --full --name pipx`，如果能搜到，就通过 `conda install pipx` 进行安装。
 
 安装过程相关信息：
 
@@ -353,7 +353,7 @@ pipx                      1.2.1              pyhd8ed1ab_0    conda-forge
 
 > [!info] 不同安装方式存在异同
 > 
-> 1. 该环境下的 [[#pip]] 下（使用 `pip list` 命令查看）,同样存在 pipx，这与在该环境下使用 `pip install pipx` 结果基本相同。
+> 1. 该环境下的 [pip](#python_pip) 下（使用 `pip list` 命令查看）,同样存在 pipx，这与在该环境下使用 `pip install pipx` 结果基本相同。
 > 
 > 2. 使用 `conda install pipx` 方式安装，其卸载也连同相关的依赖组件一并卸载，所以而使用 pip 安装的 pipx，在卸载时，只会卸载 pipx，其依赖不同一同卸载。
 > 
@@ -367,9 +367,9 @@ pipx                      1.2.1              pyhd8ed1ab_0    conda-forge
 
 ### 安装模块
 
-[pip](#pip) 和 `pipx` 默认都是从 [pypi](https://pypi.org/) 上安装包。
+[pip](#python_pip) 和 `pipx` 默认都是从 [pypi](https://pypi.org/) 上安装包。
 
-使用 pipx 安装模块或应用，跟 [pip](#pip) 差不多。
+使用 pipx 安装模块或应用，跟 [pip](#python_pip) 差不多。
 
 ```shell
 pipx install 应用名
@@ -391,7 +391,7 @@ pipx install package==version
 
 #### PypiSearch
 
-这个模块可以认为是 [pipx](#pipx) 必装的模块。
+这个模块可以认为是 [pipx](#python_pipx) 必装的模块。
 
 因为 [pypisearch](https://github.com/shidenko97/pypisearch) 这个模块功能是**搜索**模块。
 
@@ -486,7 +486,7 @@ yay -S uv
 
 > [!tip] 
 > 
-> 或者在 [conda](#python_conda) 环境中使用 `pip` 或 `pipx` 安装。
+> 或者在 [Conda](Python_Conda.md) 环境中使用 `pip` 或 `pipx` 安装。
 
 #### 配置
 
@@ -520,7 +520,7 @@ uv 有两个镜像得配。
 
 #### UV_DEFAULT_INDEX
 
-uv 可以像 [pip](Python_Note.md#python_pip) 一样管理依赖，但是 uv 不会读取 pip 的配置，所以要单独设置镜像地址。
+uv 可以像 [pip](#python_pip) 一样管理依赖，但是 uv 不会读取 pip 的配置，所以要单独设置镜像地址。
 
 `UV_INDEX` 或 `UV_DEFAULT_INDEX` 这是配的 pypi 镜像，即执行 `uv add` 命令安装第三方包时的镜像。
 

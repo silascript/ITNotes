@@ -8,7 +8,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2025-08-14 02:01:15
+modified: 2025-08-14 22:43:53
 ---
 
 # Python 资料清单
@@ -74,6 +74,7 @@ modified: 2025-08-14 02:01:15
 #### 镜像相关
 
 * [推荐：国内Conda镜像源合集](https://baijiahao.baidu.com/s?id=1806873673157444151&wfr=spider&for=pc)
+* [2025年最新conda和pip国内镜像源](https://zhuanlan.zhihu.com/p/628870519)
 * [如何用Conda优雅的管理Python环境 | About\_conda](https://ckfanzhe.github.io/About_conda/)
 * [2023年最新conda和pip国内镜像源 - 知乎](https://zhuanlan.zhihu.com/p/628870519)
 * [关于国内anaconda镜像站点看这一篇就够啦 - 知乎](https://zhuanlan.zhihu.com/p/584580420)
@@ -87,6 +88,7 @@ modified: 2025-08-14 02:01:15
 * [Anaconda 换用清华园后安装速度依然很慢，或者安装包出错 - 易如鱼 - 博客园](https://www.cnblogs.com/-ifrush/p/13879078.html)
 * [conda常见报错以及解决方法](https://blog.51cto.com/tony/5885006)
 * [处女座如何优化conda镜像的体验 - 简书](https://www.jianshu.com/p/67981914f365)
+* [Conda国内镜像源及配置过程\_python\_脚本之家](https://www.jb51.net/python/347277zlt.htm)
 
 #### Conda 使用
 
@@ -120,8 +122,13 @@ modified: 2025-08-14 02:01:15
 
 * [conda、pip、anaconda、miniconda、miniforge、mambaforge都是啥？有什么区别？应该用哪个？](https://zhuanlan.zhihu.com/p/674145143)
 * [（数据科学学习手札160）使用miniforge代替miniconda - 费弗里 - 博客园](https://www.cnblogs.com/feffery/p/18158285)
+* [Miniforge：轻量级Conda安装器的深度解析与应用指南-易源AI资讯 \| 万维易源](https://www.showapi.com/news/article/670986f34ddd79f11a3d4d0a)
 * [conda — 地震“学”软件](https://seismo-learn.org/software/conda/)
 * [Miniforge 安装 - Undefined443 - 博客园](https://www.cnblogs.com/Undefined443/p/18462580)
+* [一文总结Miniforge配置Python环境](https://cloud.tencent.com/developer/article/2410251)
+* [miniforge3安装](https://redpanda.zone/p/miniforge/)
+* [Python基础知识-1（部署开发环境）](https://blog.51cto.com/cerana/11525301)
+* [python虚拟环境（二）进阶用法：miniforge - sysmaid - SegmentFault 思否](https://segmentfault.com/a/1190000046615670)
 
 ---
 

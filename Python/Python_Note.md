@@ -8,7 +8,7 @@ tags:
   - conda
   - uv
 created: 2023-08-18 19:44:52
-modified: 2025-08-15 01:39:12
+modified: 2025-08-15 02:07:20
 ---
 
 # Python 笔记
@@ -21,11 +21,6 @@ modified: 2025-08-15 01:39:12
 * [pip](#python_pip)
 	* [更新](#更新)
 	* [pip 换源](#pip%20换源)
-* [conda](#python_conda)
-	* [conda 安装](#python_conda_install)
-	* [conda 换源](#python_conda_chsources)
-	* [conda 常用命令](#python_conda_commands)
-	* [conda 环境](#python_conda_environment)
 * [Python 语法](#python_syntax)
 * [文档](#python_resource)
 	* [相关文档](#python_resource_doc)

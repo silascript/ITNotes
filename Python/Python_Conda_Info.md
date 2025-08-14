@@ -7,7 +7,7 @@ tags:
   - miniforge
   - conda-forge
 created: 2025-08-15 01:46:43
-modified: 2025-08-15 01:54:37
+modified: 2025-08-15 02:04:19
 ---
 
 # Conda 相关信息
@@ -18,7 +18,7 @@ modified: 2025-08-15 01:54:37
 
 ### 安装过程信息
 
-```shell
+```txt
 Do you accept the license terms? [yes|no]
 >>> 
 Please answer 'yes' or 'no':'
@@ -127,7 +127,7 @@ Installing base environment...
 
 ```
 
-```shell
+```txt
 
 Transaction
 
@@ -226,7 +226,7 @@ Transaction
 
 ```
 
-```shell
+```txt
 
   Package                         Version  Build               Channel         Size
 ─────────────────────────────────────────────────────────────────────────────────────
@@ -423,6 +423,11 @@ Linking conda-25.3.1-py312h7900ff3_1
 Linking conda-libmamba-solver-25.3.0-pyhd8ed1ab_0
 
 Transaction finished
+
+
+```
+
+```txt
 
 installation finished.
 Do you wish to update your shell profile to automatically initialize conda?

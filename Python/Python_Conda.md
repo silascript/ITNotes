@@ -7,7 +7,7 @@ tags:
   - conda-forge
   - miniforge
 created: 2025-08-15 01:32:08
-modified: 2025-08-15 01:55:41
+modified: 2025-08-15 02:10:31
 ---
 
 # Conda 笔记
@@ -22,7 +22,7 @@ anaconda 是包含了一些常用包，并且有图形用户界面，属于比�
 
 [miniconda](https://docs.conda.io/en/latest/miniconda.html) 是 anaconda 的精简版本，仅包含 conda 主程序和基本包，没有用户界面。
 
-### <span id="python_conda_install">conda 安装</span>
+### <span id="conda_install">conda 安装</span>
 
 miniconda 对于一般需求而言装这个就够用了。
 
@@ -74,7 +74,7 @@ wget -c -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 > ```
 > 其实就是装了些基础包及配置了下环境变量。
 
-#### <span id="python_conda_install_path">关于环境变量</span>
+#### <span id="conda_install_path">关于环境变量</span>
 
 ```config
 __conda_setup="$('/home/silascript/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -102,7 +102,7 @@ unset __conda_setup
 
 ---
 
-### <span id="python_conda_chsources">conda 换源</span>
+### <span id="conda_chsources">conda 换源</span>
 
 #### 生成 conda 配置文件
 
@@ -227,7 +227,7 @@ conda config --remove-key channels
 
 [Anaconda 软件仓库镜像使用帮助 - MirrorZ Help](https://help.mirrors.cernet.edu.cn/anaconda/)
 
-### <span id="python_conda_uninstall">conda 卸载</span>
+### <span id="conda_uninstall">conda 卸载</span>
 
 查看 conda 环境：
 
@@ -445,7 +445,7 @@ done
 
 ---
 
-### <span id="python_conda_commands">conda 常用命令</span>
+### <span id="conda_commands">conda 常用命令</span>
 
 `conda info`：查看 conda 相关信息
 
@@ -487,7 +487,7 @@ conda av metadata url : None
 
 ```
 
-#### <span id="python_conda_commands_config">配置</span>
+#### <span id="conda_commands_config">配置</span>
 
 ##### 命令配置
 
@@ -508,22 +508,22 @@ config 相关参数可以使用 `conda config --help` 查看。
 
 conda 所有配置，都是在 `.condarc` 配置文件中保存，所以可以手动对 `.condarc` 文件进行编辑，同样可以达到配置 conda 的目的。
 
-#### <span id="python_conda_commands_remove">删除</span>
+#### <span id="conda_commands_remove">删除</span>
 
 * `conda clean --all`：清理缓存和未使用的软件包
 * `conda remove 环境名`：[删除环境](#删除环境)
 
-#### <span id="python_conda_commands_create">创建</span>
+#### <span id="conda_commands_create">创建</span>
 
 创建命令 `create` 用于 [创建环境](#python_conda_environment_create)。更详细参数或选项可以通过 `conda create -h` 来查看。
 
-#### <span id="python_conda_commands_list">List</span>
+#### <span id="conda_commands_list">List</span>
 
 `conda list` 命令默认是列表出当前环境中包。 ^b4c89c
 
 而如果什么环境都没有 [启动](#启动环境)，那就会列出默认的 [base 环境](#base%20环境) 中的包。
 
-#### <span id="python_conda_commands_env">env</span>
+#### <span id="conda_commands_env">env</span>
 
 `conda env` 是针对 [环境](#环境) 的命令。
 
@@ -535,13 +535,13 @@ conda 所有配置，都是在 `.condarc` 配置文件中保存，所以可以�
 
 ---
 
-### <span id="python_conda_environment">conda 环境</span>
+### <span id="conda_environment">conda 环境</span>
 
 #### base 环境
 
 [安装](#^2156b8) 完 conda 后，conda 就自带了一个叫「base」的环境，这下环境是装在 conda 安装目录下的 `env` 子目录中。
 
-#### <span id="python_conda_environment_create">创建环境</span>
+#### <span id="conda_environment_create">创建环境</span>
 
 创建环境使用到了 [创建](#python_conda_commands_create) 命令：`conda create -n myenv`
 
@@ -566,7 +566,7 @@ conda 所有配置，都是在 `.condarc` 配置文件中保存，所以可以�
 > [!info] 命令解释
 > `--all` 指的是删除这个环境中所有的包
 
-#### <span id="python_conda_enviroment_copy">复制环境</span>
+#### <span id="conda_enviroment_copy">复制环境</span>
 
 复制环境语法：
 
@@ -580,7 +580,7 @@ conda create -n 新环境名 --clone 旧环境名
 
 ---
 
-#### <span id="python_conda_environment_activate">启动环境</span>
+#### <span id="conda_environment_activate">启动环境</span>
 
 启动环境：`conda activate 环境名`
 
@@ -600,11 +600,11 @@ conda create -n 新环境名 --clone 旧环境名
 
 ---
 
-#### <span id="python_conda_environment_deactivate">退出环境</span>
+#### <span id="conda_environment_deactivate">退出环境</span>
 
 退出当前环境，使用：`conda deactivate` 命令。
 
-#### <span id="python_conda_environment_revision">重置环境</span>
+#### <span id="conda_environment_revision">重置环境</span>
 
 使用 `conda list --revision` 查看可以「回滚」哪些版本。
 
@@ -612,7 +612,7 @@ conda create -n 新环境名 --clone 旧环境名
 
 使用 `conda install --revision 数字版本号` 来「回滚」，如 `conda install --revision 0`。最后就是确认「回滚」（`Proceed ([y]/n)? `），回滚就完成了！
 
-#### <span id="python_conda_environment_list">环境列表</span>
+#### <span id="conda_environment_list">环境列表</span>
 
 要查看当前 conda 中有哪些环境，可以使用 `conda env list` 或 `conda info --env` 来查看。
 
@@ -624,7 +624,7 @@ conda info --envs
 conda info -e
 ```
 
-#### <span id="python_conda_environment_packagelist">环境包列表</span>
+#### <span id="conda_environment_packagelist">环境包列表</span>
 
 每一个环境其实就是各种「Package」的集合，所以一个环境中根本需求会有不同的包。那查看当前环境都装了哪个包，就可以使用 `conda list -n 环境名`。
 
@@ -638,7 +638,7 @@ conda info -e
 
 conda 能装什么包，可以通过 [anaconda官网](https://anaconda.org/) 查询。
 
-#### <span id="python_conda_environment_export">导入导出环境</span>
+#### <span id="conda_environment_export">导入导出环境</span>
 
 导出环境：
 
@@ -652,7 +652,7 @@ conda env export > environment.yml
 conda env create -n env_name -f environment.yml
 ```
 
-#### <span id="python_conda_environment_package">conda 中的包</span>
+#### <span id="conda_environment_package">conda 中的包</span>
 
 #### 搜索包
 

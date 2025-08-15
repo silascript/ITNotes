@@ -7,7 +7,7 @@ tags:
   - conda-forge
   - miniforge
 created: 2025-08-15 01:32:08
-modified: 2025-08-15 12:53:11
+modified: 2025-08-15 20:01:06
 ---
 
 # Conda 笔记
@@ -514,6 +514,22 @@ config 相关参数可以使用 `conda config --help` 查看。
 ##### 手动配置
 
 conda 所有配置，都是在 `.condarc` 配置文件中保存（一般配置的是用户 `HOME` 目录下那个 `.condarc` 文件，即 `~/.condarc`。因为 conda 的安装目录下还有一个 `.condarc`，这个一般是不会动到它的）,所以可以手动对此文件进行编辑，同样可以达到配置 conda 的目的。
+
+> [!info] 
+> 
+> 一般只有像执行 `conda update --all` 全部分升级时，会连 conda 本体也升级时，才用到 conda 安装目录下那个 `.condarc` 文件：
+> 
+> ```shell
+> $ conda update --all  
+> Channels:
+> - defaults
+> - conda-forge
+> Platform: linux-64
+> Collecting package metadata (repodata.json): done
+> Solving environment: done
+>
+> ```
+> 
 
 #### <span id="conda_commands_remove">删除</span>
 
@@ -1163,6 +1179,132 @@ devex          /home/silascript/miniforge3/envs/devex
 #### 查看环境
 
 `mamba list`
+
+#### 搜索软件
+
+在某环境中使用 `search` 命令搜索指定的软件包，可以是 `conda search 软件包名` 或 `mamba search 软件包名`。
+
+使用 `mamba` 来搜，如果 [channel](#channel) 配了 [镜像](#镜像)，并设为默认 channel，那它只会搜索这个镜像，而如果使用 `conda` 来搜，因为它不但读取了 `~/.condarc`，还读取了 Miniforge 安装目录中的 `.condarc`，而安装目录中的 `.condarc` 是配了 `conda-forge` 原始的地址，所以使用 `conda` 搜，会对这两个 channel 进行搜索，下面例子对比下便可知：
+
+```
+$ mamba search pipx  
+Getting repodata from channels...
+
+https://mirror.nju.edu.cn/anaconda/cloud/conda-forge/linux-64          Using cache
+https://mirror.nju.edu.cn/anaconda/cloud/conda-forge/noarch          Using cache
+conda-forge/linux-64                                        Using cache
+conda-forge/noarch                                          Using cache
+ Name Version Build                         Channel           Subdir  
+───────────────────────────────────────────────────────────────────────
+ pipx 1.7.1   pyhd8ed1ab_0    (+  1 builds) mirror.nju.edu.cn noarch  
+ pipx 1.7.0   pyhd8ed1ab_0                  mirror.nju.edu.cn noarch  
+ pipx 1.6.0   pyhd8ed1ab_0                  mirror.nju.edu.cn noarch  
+ pipx 1.5.0   pyhd8ed1ab_0                  mirror.nju.edu.cn noarch  
+ pipx 1.4.3   pyhd8ed1ab_0                  mirror.nju.edu.cn noarch  
+ pipx 1.4.2   pyhd8ed1ab_0                  mirror.nju.edu.cn noarch  
+ pipx 1.4.1   pyhd8ed1ab_0                  mirror.nju.edu.cn noarch  
+ pipx 1.4.0   pyhd8ed1ab_0                  mirror.nju.edu.cn noarch  
+ pipx 1.3.3   pyhd8ed1ab_0                  mirror.nju.edu.cn noarch  
+ pipx 1.3.1   pyhd8ed1ab_0                  mirror.nju.edu.cn noarch  
+ pipx 1.3.0   pyhd8ed1ab_0                  mirror.nju.edu.cn noarch  
+ pipx 1.2.1   pyhd8ed1ab_0                  mirror.nju.edu.cn noarch  
+ pipx 1.2.0   pyhd8ed1ab_0                  mirror.nju.edu.cn noarch  
+ pipx 1.1.0   py310hff52083_2 (+ 20 builds) mirror.nju.edu.cn linux-64
+ pipx 1.0.0   pyhd8ed1ab_0                  mirror.nju.edu.cn noarch  
+ pipx 0.17.0  pyhd8ed1ab_0                  mirror.nju.edu.cn noarch  
+ pipx 0.16.5  pyhd8ed1ab_0                  mirror.nju.edu.cn noarch  
+
+```
+
+```shell
+$ conda search pipx 
+Loading channels: done
+# Name                       Version           Build  Channel             
+pipx                          0.16.5    pyhd8ed1ab_0  anaconda/cloud/conda-forge
+pipx                          0.16.5    pyhd8ed1ab_0  conda-forge         
+pipx                          0.17.0    pyhd8ed1ab_0  anaconda/cloud/conda-forge
+pipx                          0.17.0    pyhd8ed1ab_0  conda-forge         
+pipx                           1.0.0    pyhd8ed1ab_0  anaconda/cloud/conda-forge
+pipx                           1.0.0    pyhd8ed1ab_0  conda-forge         
+pipx                           1.1.0 py310hff52083_2  anaconda/cloud/conda-forge
+pipx                           1.1.0 py310hff52083_2  conda-forge         
+pipx                           1.1.0 py310hff52083_3  anaconda/cloud/conda-forge
+pipx                           1.1.0 py310hff52083_3  conda-forge         
+pipx                           1.1.0 py310hff52083_4  anaconda/cloud/conda-forge
+pipx                           1.1.0 py310hff52083_4  conda-forge         
+pipx                           1.1.0 py311h38be061_4  anaconda/cloud/conda-forge
+pipx                           1.1.0 py311h38be061_4  conda-forge         
+pipx                           1.1.0  py37h89c1867_1  anaconda/cloud/conda-forge
+pipx                           1.1.0  py37h89c1867_1  conda-forge         
+pipx                           1.1.0  py37h89c1867_2  anaconda/cloud/conda-forge
+pipx                           1.1.0  py37h89c1867_2  conda-forge         
+pipx                           1.1.0  py37h89c1867_3  anaconda/cloud/conda-forge
+pipx                           1.1.0  py37h89c1867_3  conda-forge         
+pipx                           1.1.0  py38h373033e_3  anaconda/cloud/conda-forge
+pipx                           1.1.0  py38h373033e_3  conda-forge         
+pipx                           1.1.0  py38h373033e_4  anaconda/cloud/conda-forge
+pipx                           1.1.0  py38h373033e_4  conda-forge         
+pipx                           1.1.0  py38h578d9bd_1  anaconda/cloud/conda-forge
+pipx                           1.1.0  py38h578d9bd_1  conda-forge         
+pipx                           1.1.0  py38h578d9bd_2  anaconda/cloud/conda-forge
+pipx                           1.1.0  py38h578d9bd_2  conda-forge         
+pipx                           1.1.0  py38h578d9bd_3  anaconda/cloud/conda-forge
+pipx                           1.1.0  py38h578d9bd_3  conda-forge         
+pipx                           1.1.0  py38h578d9bd_4  anaconda/cloud/conda-forge
+pipx                           1.1.0  py38h578d9bd_4  conda-forge         
+pipx                           1.1.0  py39h4162558_3  anaconda/cloud/conda-forge
+pipx                           1.1.0  py39h4162558_3  conda-forge         
+pipx                           1.1.0  py39h4162558_4  anaconda/cloud/conda-forge
+pipx                           1.1.0  py39h4162558_4  conda-forge         
+pipx                           1.1.0  py39hf3d152e_1  anaconda/cloud/conda-forge
+pipx                           1.1.0  py39hf3d152e_1  conda-forge         
+pipx                           1.1.0  py39hf3d152e_2  anaconda/cloud/conda-forge
+pipx                           1.1.0  py39hf3d152e_2  conda-forge         
+pipx                           1.1.0  py39hf3d152e_3  anaconda/cloud/conda-forge
+pipx                           1.1.0  py39hf3d152e_3  conda-forge         
+pipx                           1.1.0  py39hf3d152e_4  anaconda/cloud/conda-forge
+pipx                           1.1.0  py39hf3d152e_4  conda-forge         
+pipx                           1.1.0    pyhd8ed1ab_0  anaconda/cloud/conda-forge
+pipx                           1.1.0    pyhd8ed1ab_0  conda-forge         
+pipx                           1.1.0    pyhd8ed1ab_5  anaconda/cloud/conda-forge
+pipx                           1.1.0    pyhd8ed1ab_5  conda-forge         
+pipx                           1.2.0    pyhd8ed1ab_0  anaconda/cloud/conda-forge
+pipx                           1.2.0    pyhd8ed1ab_0  conda-forge         
+pipx                           1.2.1    pyhd8ed1ab_0  anaconda/cloud/conda-forge
+pipx                           1.2.1    pyhd8ed1ab_0  conda-forge         
+pipx                           1.3.0    pyhd8ed1ab_0  anaconda/cloud/conda-forge
+pipx                           1.3.0    pyhd8ed1ab_0  conda-forge         
+pipx                           1.3.1    pyhd8ed1ab_0  anaconda/cloud/conda-forge
+pipx                           1.3.1    pyhd8ed1ab_0  conda-forge         
+pipx                           1.3.3    pyhd8ed1ab_0  anaconda/cloud/conda-forge
+pipx                           1.3.3    pyhd8ed1ab_0  conda-forge         
+pipx                           1.4.0    pyhd8ed1ab_0  anaconda/cloud/conda-forge
+pipx                           1.4.0    pyhd8ed1ab_0  conda-forge         
+pipx                           1.4.1    pyhd8ed1ab_0  anaconda/cloud/conda-forge
+pipx                           1.4.1    pyhd8ed1ab_0  conda-forge         
+pipx                           1.4.2    pyhd8ed1ab_0  anaconda/cloud/conda-forge
+pipx                           1.4.2    pyhd8ed1ab_0  conda-forge         
+pipx                           1.4.3    pyhd8ed1ab_0  anaconda/cloud/conda-forge
+pipx                           1.4.3    pyhd8ed1ab_0  conda-forge         
+pipx                           1.5.0    pyhd8ed1ab_0  anaconda/cloud/conda-forge
+pipx                           1.5.0    pyhd8ed1ab_0  conda-forge         
+pipx                           1.6.0    pyhd8ed1ab_0  anaconda/cloud/conda-forge
+pipx                           1.6.0    pyhd8ed1ab_0  conda-forge         
+pipx                           1.7.0    pyhd8ed1ab_0  anaconda/cloud/conda-forge
+pipx                           1.7.0    pyhd8ed1ab_0  conda-forge         
+pipx                           1.7.1    pyhd8ed1ab_0  anaconda/cloud/conda-forge
+pipx                           1.7.1    pyhd8ed1ab_0  conda-forge         
+pipx                           1.7.1    pyhd8ed1ab_1  anaconda/cloud/conda-forge
+pipx                           1.7.1    pyhd8ed1ab_1  conda-forge        
+```
+
+#### 安装软件
+
+示例：
+
+```shell
+mamba install pipx
+```
 
 ---
 

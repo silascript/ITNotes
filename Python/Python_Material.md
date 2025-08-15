@@ -8,7 +8,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2025-08-15 20:54:47
+modified: 2025-08-16 04:09:53
 ---
 
 # Python 资料清单
@@ -22,6 +22,13 @@ modified: 2025-08-15 20:54:47
 ## pip
 
 * [PIP 更新后不能使用的使用 提示： No module named 'pip'问题解决 - Bush - 博客园](https://www.cnblogs.com/bushLing/p/17030223.html)
+* [PyPI弃用pip search命令后的替代解决方案](https://comate.baidu.com/zh/page/2wlj86weoh3)
+* [pipx：让你在 Linux 中轻松管理 Python 应用-LINUX-PHP中文网](https://www.php.cn/faq/676432.html)
+* [pip 使用 - Undefined443 - 博客园](https://www.cnblogs.com/Undefined443/p/-/pip)
+
+### 配置
+
+* [pip 配置文件详解](https://www.lfhacks.com/tech/python-pip-config/)
 
 ### pip 源
 

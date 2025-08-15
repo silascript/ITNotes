@@ -7,7 +7,7 @@ tags:
   - conda-forge
   - miniforge
 created: 2025-08-15 01:32:08
-modified: 2025-08-15 12:00:22
+modified: 2025-08-15 12:53:11
 ---
 
 # Conda 笔记
@@ -104,6 +104,12 @@ unset __conda_setup
 ---
 
 ### <span id="conda_chsources">conda 换源</span>
+
+#### 显示已有源
+
+```shell
+conda config --show-sources
+```
 
 #### 生成 conda 配置文件
 
@@ -490,12 +496,12 @@ conda av metadata url : None
 
 #### <span id="conda_commands_config">配置</span>
 
-##### 命令配置
+##### 配置命令
 
 `conda config` 是 conda 配置命令。此组命令可以在终端中对 conda 进行配置。
 
 * `conda config --show`：查看当前配置
-* `conda config --show-sources`：查看当前配置所有源
+* `conda config --show-sources`：查看当前所有的配置文件及其配置内容
 * `conda config --set changeps1 true`：开启显示环境名称功能 #环境名
 * `conda config --set changeps1 false`：关闭显示环境名称功能 ^4d4740
 * `conda config --add channels`：添加 channel
@@ -507,7 +513,7 @@ config 相关参数可以使用 `conda config --help` 查看。
 
 ##### 手动配置
 
-conda 所有配置，都是在 `.condarc` 配置文件中保存，所以可以手动对 `.condarc` 文件进行编辑，同样可以达到配置 conda 的目的。
+conda 所有配置，都是在 `.condarc` 配置文件中保存（一般配置的是用户 `HOME` 目录下那个 `.condarc` 文件，即 `~/.condarc`。因为 conda 的安装目录下还有一个 `.condarc`，这个一般是不会动到它的）,所以可以手动对此文件进行编辑，同样可以达到配置 conda 的目的。
 
 #### <span id="conda_commands_remove">删除</span>
 
@@ -1075,6 +1081,61 @@ conda-forge/linux-64                                45.8MB @ 361.7kB/s 2m:6.6s
  python 3.9.23    hc30ae73_0_cpython                  conda-forge linux-64
 
 ```
+
+#### 配置相关命令
+
+`mamba config` 的子命令虽然更简洁，但部分子命令的语义有点不清楚。
+
+##### 配置文件相关
+
+* `mamba config list` 相当于一部分的 `conda config --show-sources` 功能，它只显示了 `~/.condarc` 配置文件的内容，对比如下：
+
+```shell
+$ conda config --show-sources
+==> /home/silascript/miniforge3/.condarc <==
+channels:
+  - conda-forge
+
+==> /home/silascript/.condarc <==
+changeps1: False
+channels:
+  - defaults
+default_channels:
+  - https://mirror.nju.edu.cn/anaconda/cloud/conda-forge/
+show_channel_urls: True
+
+```
+
+```shell
+
+$ mamba config list
+channels:
+  - defaults
+  - conda-forge
+default_channels:
+  - https://mirror.nju.edu.cn/anaconda/cloud/conda-forge/
+changeps1: false
+
+```
+
+* `mamba config sources`，这子命令，语义就存在误导性，一眼看起来以为是显示源，但事实是显示有几个配置文件：
+
+```shell
+$ mamba config sources
+Configuration files (by precedence order):
+~/.condarc
+~/miniforge3/.condarc
+```
+
+> [!info] 
+> 
+> 这子命令同样也有 `conda config --show-sources` 一部分功能。也就是说 `mamba` 将 `conda config --show-sources` 这个命令拆成两个子命令：
+> 
+> * `mamba config list`
+> * `mamba config sources`
+>> [!tip] 
+>> 
+>> 要看已设置的所有项还得使用 `conda config --show`，也由此可见 `mamba` 命令并不能完全替代 `conda`。
 
 #### 创建环境
 

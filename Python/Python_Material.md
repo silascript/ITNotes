@@ -8,7 +8,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2025-08-15 11:30:32
+modified: 2025-08-15 20:54:47
 ---
 
 # Python 资料清单
@@ -22,6 +22,10 @@ modified: 2025-08-15 11:30:32
 ## pip
 
 * [PIP 更新后不能使用的使用 提示： No module named 'pip'问题解决 - Bush - 博客园](https://www.cnblogs.com/bushLing/p/17030223.html)
+
+### pip 源
+
+* [【Python】pip安装加速：使用国内镜像源 - 清风来叙 - 博客园](https://www.cnblogs.com/minuhy/p/18424608)
 
 ## pipx
 

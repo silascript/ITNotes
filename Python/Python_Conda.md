@@ -7,7 +7,7 @@ tags:
   - conda-forge
   - miniforge
 created: 2025-08-15 01:32:08
-modified: 2025-08-15 20:01:06
+modified: 2025-08-15 20:51:36
 ---
 
 # Conda 笔记

@@ -8,7 +8,7 @@ tags:
   - conda
   - uv
 created: 2023-08-18 19:44:52
-modified: 2025-08-15 03:04:11
+modified: 2025-08-15 21:24:36
 ---
 
 # Python 笔记
@@ -104,18 +104,34 @@ python -m ensurepip
 
 ### pip 换源
 
-#### 临时换源并安装指定包
+#### 临时换源
 
-```python
+* 临时换源并安装指定包
+
+```shell
+pip install -i 源地址 some-package
+```
+
+例：
+
+```shell
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple 包名
 ```
 
+* 临时换源升级 `pip`
+
+```shell
+python -m pip install -i 源地址 --upgrade pip
+```
+
 清华的镜像源每五分钟更新一次，大而全，推荐大家使用。
-国内其他源:
+
+国内其他常用源：
 
 * 清华：<https://pypi.tuna.tsinghua.edu.cn/simple>
 * 阿里云：<http://mirrors.aliyun.com/pypi/simple/>
-* 中国科技大学 <https://pypi.mirrors.ustc.edu.cn/simple/>
+* 中国科技大学： <https://pypi.mirrors.ustc.edu.cn/simple/>
+* 南京大学：<https://mirror.nju.edu.cn/pypi/web/simple>
 * 华中理工大学：<http://pypi.hustunique.com/>
 * 山东理工大学：<http://pypi.sdutlinux.org/>
 * 豆瓣：<http://pypi.douban.com/simple/>
@@ -127,6 +143,14 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple 包名
 ```shell
 # 清华源
 pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+# 南京大学源
+pip config set global.index-url https://mirror.nju.edu.cn/pypi/web/simple
+# 北大源
+pip config set global.index-url https://mirrors.pku.edu.cn/pypi/web/simple
+# 南阳理工源
+pip config set global.index-url https://mirror.nyist.edu.cn/pypi/web/simple
+# 齐鲁工业大学源
+pip config set global.index-url https://pypi.qlu.edu.cn/simple
 # 阿里源
 pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/
 # 腾讯源
@@ -135,6 +159,27 @@ pip config set global.index-url http://mirrors.cloud.tencent.com/pypi/simple
 pip config set global.index-url http://pypi.douban.com/simple/
 
 ```
+
+> [!tip] 
+> 
+> 配多个镜像源：`pip config set global.extra-index-url "<url1> <url2>..."`。
+> 
+> 源地址间使用空格间隔。
+> 
+> ```shell
+> pip config set global.extra-index-url "https://mirror.nju.edu.cn/pypi/web/simple https://mirrors.pku.edu.cn/pypi/web/simple https://pypi.mirrors.ustc.edu.cn/simple https://mirrors.aliyun.com/pypi/simple https://mirrors.cloud.tencent.com/pypi/simple https://mirror.nyist.edu.cn/pypi/web/simple https://pypi.qlu.edu.cn/simple"
+>```
+
+示例：
+
+```shell
+$ pip config set global.extra-index-url "https://mirror.nju.edu.cn/pypi/web/simple https://mirrors.pku.edu.cn/pypi/web/simple https://pypi.mirrors.ustc.edu.cn/simple https://mirrors.aliyun.com/pypi/simple https://mirrors.cloud.tencent.com/pypi/simple https://mirror.nyist.edu.cn/pypi/web/simple https://pypi.qlu.edu.cn/simple"
+Writing to /home/silascript/.config/pip/pip.conf
+```
+> [!tip] 
+> 
+> 换源成功，会有 `Writing to /home/xxx/.config/pip/pip.conf` 的提示信息，就是 `pip.conf` 配置文件被修改，如果之前没配过，就会生成一个并将配置写入。
+> 
 
 2. 第二种方式：
 
@@ -150,8 +195,14 @@ index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 
 > [!tip]
 > 
-> 现在的 pip，配置文件 **pip.conf** 是放在 `~/.config/pip/` 目录中。在 [Conda](Python_Conda.md) 中配置 pip 也是放在这个目录中。
-> 
+> 现在的 pip，配置文件 **pip.conf** 是放在 `~/.config/pip/` 目录中。在 [Conda](Python_Conda.md) 中配置 pip 也是放在这个目录>中。
+>
+> 如果配多个源，各源地址间使用空格间隔，如下：
+> ```txt
+> [global]
+> extra-index-url = https://mirror.nju.edu.cn/pypi/web/simple https://mirrors.pku.edu.cn/pypi/web/simple https://pypi.mirrors.ustc.edu.cn/simple https://mirrors.aliyun.com/pypi/simple https://mirrors.cloud.tencent.com/pypi/simple https://mirror.nyist.edu.cn/pypi/web/simple https://pypi.qlu.edu.cn/simple
+>
+>```
 
 ### pip 搜索
 
@@ -449,6 +500,55 @@ pipx uninstall 模块
 
 ```shell
 pipx uninstall-all
+```
+
+#### 清空模块
+
+如果重装 conda 或另装环境，不想要之前使用 pipx 安装的模块，想要清理模块，可以进行以下步骤进行模块的清理：
+
+ 1. `~/.local/bin` 下使用 `pipx` 安装的模块都有一个链接文件，将这个链接文件删除
+
+```shell
+ $ ll .local/bin            
+Permissions Size User       Group      Date Modified    Name
+drwxr-xr-x     - silascript silascript 2025-08-15 20:36 .
+drwx------     - silascript silascript 2024-04-21 10:50 ..
+lrwxrwxrwx     - silascript silascript 2025-02-18 21:44 blackd -> /home/silascript/.local/share/pipx/venvs/black/bin/blackd
+lrwxrwxrwx     - silascript silascript 2025-02-18 21:44 markdown_py -> /home/silascript/.local/share/pipx/venvs/markdown/bin/markdown_py
+lrwxrwxrwx     - silascript silascript 2025-02-18 21:44 mycli -> /home/silascript/.local/share/pipx/venvs/mycli/bin/mycli
+lrwxrwxrwx     - silascript silascript 2025-02-18 21:44 pipdeptree -> /home/silascript/.local/share/pipx/venvs/pipdeptree/bin/pipdeptree
+lrwxrwxrwx     - silascript silascript 2025-02-18 21:44 pygmentize -> /home/silascript/.local/share/pipx/venvs/pygments/bin/pygmentize
+lrwxrwxrwx     - silascript silascript 2025-02-18 21:44 pylsp -> /home/silascript/.local/share/pipx/venvs/python-lsp-server/bin/pylsp
+lrwxrwxrwx     - silascript silascript 2025-08-13 10:59 python3.10 -> /home/silascript/.local/share/uv/python/cpython-3.10.18-linux-x86_64-gnu/bin/python3.10
+lrwxrwxrwx     - silascript silascript 2025-08-13 02:31 python3.12 -> /home/silascript/.local/share/uv/python/cpython-3.12.11-linux-x86_64-gnu/bin/python3.12
+lrwxrwxrwx     - silascript silascript 2024-02-29 20:39 subl -> /opt/sublime_text/sublime_text
+
+```
+> [!tip]
+> 
+> 其中那些指向的目标路径中有 `pipx/venvs` 就是 pipx 安装的模块，将这些删除掉就好了。不要删错了，那些路径中有 `uv` 的，是 [UV](#python_uv) 安装的东西。
+> 
+ 2. `~/.local/share/pipx/venvs` 这个目录是模块实际的安装目录，将此目录清空，就能将 pipx 安装的所有模块都删除了
+
+```shell
+ $ ll .local/share/pipx/venvs 
+Permissions Size User       Group      Date Modified    Name
+drwxr-xr-x     - silascript silascript 2025-02-18 21:44 .
+drwxr-xr-x     - silascript silascript 2024-04-07 22:51 ..
+drwxr-xr-x     - silascript silascript 2025-02-18 21:44 autopep8
+drwxr-xr-x     - silascript silascript 2025-02-18 21:44 black
+drwxr-xr-x     - silascript silascript 2025-02-18 21:44 jedi-language-server
+drwxr-xr-x     - silascript silascript 2025-02-18 21:44 markdown
+drwxr-xr-x     - silascript silascript 2025-02-18 21:44 mdformat
+drwxr-xr-x     - silascript silascript 2025-02-18 21:44 mycli
+drwxr-xr-x     - silascript silascript 2025-02-18 21:44 pipdeptree
+drwxr-xr-x     - silascript silascript 2025-02-18 21:44 pygments
+drwxr-xr-x     - silascript silascript 2025-02-18 21:44 pypisearch
+drwxr-xr-x     - silascript silascript 2025-02-18 21:44 python-lsp-server
+drwxr-xr-x     - silascript silascript 2025-02-18 21:44 ruff
+drwxr-xr-x     - silascript silascript 2025-02-18 21:44 ruff-lsp
+drwxr-xr-x     - silascript silascript 2025-02-18 21:44 yapf
+drwxr-xr-x     - silascript silascript 2025-02-18 21:44 you-get
 ```
 
 ---

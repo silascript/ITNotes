@@ -7,7 +7,7 @@ tags:
   - conda-forge
   - miniforge
 created: 2025-08-15 01:32:08
-modified: 2025-08-15 04:20:07
+modified: 2025-08-15 12:00:22
 ---
 
 # Conda 笔记
@@ -941,17 +941,29 @@ unset __mamba_setup
 
 Miniforge 配置同样也用 `.condarc` 文件，跟 [conda](#conda) 一样。
 
-可以手动新建 `.condarc` 文件，也可以执行 `conda config` 或 `conda config --set show_channel_urls yes` 生成 `.condarc` 文件。
+查看配置可以执行：`conda config --show`
+
+#### 生成配置文件
+
+可以手动新建 `.condarc` 文件，也可以执行 `conda config` 
+
+#### 显示 channel url
+
+默认不会显示 [channel](#channel) 的 `url`,如果要显示 url 可以执行 `conda config --set show_channel_urls yes`
 
 > [!tip] 
 >
->`--set show_channel_urls yes`：这个设置是在 `.condarc` 多加一条设置，就是显示 channel。
+> `.condarc` 设置为：
 > 
 > ```shell
 > channels:
  > - conda-forge
 > show_channel_urls: true
 > ```
+
+#### 关闭自动激活 base 环境
+
+一般来说，[安装](#Miniforge%20安装) 完后会自动激活 base 环境，但如果不想要自动激活 base 环境，可以执行 `conda config --set auto_activate_base false`。
 
 #### 关闭虚拟环境名称显示
 
@@ -1063,6 +1075,33 @@ conda-forge/linux-64                                45.8MB @ 361.7kB/s 2m:6.6s
  python 3.9.23    hc30ae73_0_cpython                  conda-forge linux-64
 
 ```
+
+#### 创建环境
+
+`mamba` 与传统的 `conda` 创建环境一样，例：`mamba create -n devex python=3.12`
+
+#### 激活环境
+
+`mamba activate 环境名`，例：`mamba activate devex`
+
+#### 列出所有环境
+
+`mamba env list`
+
+示例：
+
+```shell
+$ mamba env list
+Name   Active  Path                                  
+─────────────────────────────────────────────────────────
+base   *       /home/silascript/miniforge3           
+devex          /home/silascript/miniforge3/envs/devex
+
+```
+
+#### 查看环境
+
+`mamba list`
 
 ---
 

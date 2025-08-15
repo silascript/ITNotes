@@ -8,7 +8,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2025-08-14 22:43:53
+modified: 2025-08-15 11:30:32
 ---
 
 # Python 资料清单
@@ -89,6 +89,7 @@ modified: 2025-08-14 22:43:53
 * [conda常见报错以及解决方法](https://blog.51cto.com/tony/5885006)
 * [处女座如何优化conda镜像的体验 - 简书](https://www.jianshu.com/p/67981914f365)
 * [Conda国内镜像源及配置过程\_python\_脚本之家](https://www.jb51.net/python/347277zlt.htm)
+* [为 Conda 设置可用源 \| J. Xu](https://xujinzh.github.io/2020/05/27/conda-add-channels/index.html)
 
 #### Conda 使用
 
@@ -122,6 +123,7 @@ modified: 2025-08-14 22:43:53
 
 * [conda、pip、anaconda、miniconda、miniforge、mambaforge都是啥？有什么区别？应该用哪个？](https://zhuanlan.zhihu.com/p/674145143)
 * [（数据科学学习手札160）使用miniforge代替miniconda - 费弗里 - 博客园](https://www.cnblogs.com/feffery/p/18158285)
+* [【Miniforge系列1】使用Miniforge替代anaconda](https://zhuanlan.zhihu.com/p/704157473)
 * [Miniforge：轻量级Conda安装器的深度解析与应用指南-易源AI资讯 \| 万维易源](https://www.showapi.com/news/article/670986f34ddd79f11a3d4d0a)
 * [conda — 地震“学”软件](https://seismo-learn.org/software/conda/)
 * [Miniforge 安装 - Undefined443 - 博客园](https://www.cnblogs.com/Undefined443/p/18462580)

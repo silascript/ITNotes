@@ -8,7 +8,7 @@ tags:
   - conda
   - uv
 created: 2023-08-18 19:44:52
-modified: 2025-08-16 04:28:44
+modified: 2025-08-16 18:07:12
 ---
 
 # Python 笔记
@@ -203,6 +203,47 @@ index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 > extra-index-url = https://mirror.nju.edu.cn/pypi/web/simple https://mirrors.pku.edu.cn/pypi/web/simple https://pypi.mirrors.ustc.edu.cn/simple https://mirrors.aliyun.com/pypi/simple https://mirrors.cloud.tencent.com/pypi/simple https://mirror.nyist.edu.cn/pypi/web/simple https://pypi.qlu.edu.cn/simple
 >
 >```
+
+##### 换源工具
+
+###### cnpip
+
+[cnpip](https://github.com/caoergou/cnpip) 是一个快速切换源的小工具。
+
+安装方式：
+
+1. `pipx install cnpip`
+2. `pip install cnpip`
+
+功能：
+
+* `cnpip list`：列出可用的镜像源
+* `cnpip set`：自动选择最快的镜像源
+* `cnpip set 镜像名称`：选择指定镜像源
+* `cnpip unset`：取消镜像源设置，恢复默认源
+
+###### PyQuickInstall
+
+[PyQuickInstall](https://github.com/yhangf/PyQuickInstall) 与 [cnpip](#cnpip) 差不多的，能快速换源的小工具。不过这工具多了个添加源的功能。
+
+安装方式：
+
+1. `pip install pqi`
+2. 
+```shell
+git clone https://github.com/yhangf/PyQuickInstall.git
+python3 setup.py install
+```
+
+3. `pipx install pqi`
+
+主要功能：
+
+* `pqi ls`：列出所有支持的 pypi 源
+* `pqi use 源名称`：改变 pypi 源
+* `pqi show`：显示当前源
+* `pqi add 源名称 源地址`：添加新源
+* `pqi remove 源名称`：移除源
 
 ### pip 搜索
 

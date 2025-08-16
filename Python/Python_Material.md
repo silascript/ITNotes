@@ -8,7 +8,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2025-08-16 04:09:53
+modified: 2025-08-16 11:40:16
 ---
 
 # Python 资料清单
@@ -23,8 +23,10 @@ modified: 2025-08-16 04:09:53
 
 * [PIP 更新后不能使用的使用 提示： No module named 'pip'问题解决 - Bush - 博客园](https://www.cnblogs.com/bushLing/p/17030223.html)
 * [PyPI弃用pip search命令后的替代解决方案](https://comate.baidu.com/zh/page/2wlj86weoh3)
+* [Python开发者必读：Pip使用全攻略与最佳实践](https://zhuanlan.zhihu.com/p/644759580)
 * [pipx：让你在 Linux 中轻松管理 Python 应用-LINUX-PHP中文网](https://www.php.cn/faq/676432.html)
 * [pip 使用 - Undefined443 - 博客园](https://www.cnblogs.com/Undefined443/p/-/pip)
+* [是时候用 chpip 管理 pip 源了](https://zhuanlan.zhihu.com/p/464178032)
 
 ### 配置
 
@@ -33,6 +35,7 @@ modified: 2025-08-16 04:09:53
 ### pip 源
 
 * [【Python】pip安装加速：使用国内镜像源 - 清风来叙 - 博客园](https://www.cnblogs.com/minuhy/p/18424608)
+* [从国内的 PyPI 镜像（源）安装 Python 包 \| 李辉 / Grey Li](https://greyli.com/set-pypi-mirror/)
 
 ## pipx
 

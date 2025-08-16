@@ -8,7 +8,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2025-08-16 11:40:16
+modified: 2025-08-16 20:59:50
 ---
 
 # Python 资料清单
@@ -26,7 +26,11 @@ modified: 2025-08-16 11:40:16
 * [Python开发者必读：Pip使用全攻略与最佳实践](https://zhuanlan.zhihu.com/p/644759580)
 * [pipx：让你在 Linux 中轻松管理 Python 应用-LINUX-PHP中文网](https://www.php.cn/faq/676432.html)
 * [pip 使用 - Undefined443 - 博客园](https://www.cnblogs.com/Undefined443/p/-/pip)
-* [是时候用 chpip 管理 pip 源了](https://zhuanlan.zhihu.com/p/464178032)
+
+### 安装软件包
+
+* [Python安装Github包,离线包和在线包\_离线安装github-CSDN博客](https://blog.csdn.net/tandelin/article/details/103664721)
+* [如何用pip install 直接安装github上的repo并作为一个模块(module)使用?](https://zhuanlan.zhihu.com/p/384062228)
 
 ### 配置
 
@@ -36,6 +40,7 @@ modified: 2025-08-16 11:40:16
 
 * [【Python】pip安装加速：使用国内镜像源 - 清风来叙 - 博客园](https://www.cnblogs.com/minuhy/p/18424608)
 * [从国内的 PyPI 镜像（源）安装 Python 包 \| 李辉 / Grey Li](https://greyli.com/set-pypi-mirror/)
+* [是时候用 chpip 管理 pip 源了](https://zhuanlan.zhihu.com/p/464178032)
 
 ## pipx
 

@@ -8,7 +8,7 @@ tags:
   - conda
   - uv
 created: 2023-08-18 19:44:52
-modified: 2025-08-16 18:07:12
+modified: 2025-08-16 20:58:02
 ---
 
 # Python 笔记
@@ -102,6 +102,26 @@ python -m ensurepip
 >> * [pip](Python_Material.md#pip)
 >>   
 
+### pip 安装包
+
+#### 根本包名安装
+
+```shell
+pip install 包名
+```
+
+#### 使用 github 地址安装
+
+语法：
+
+```shell
+pip install git+<repo的https url>
+```
+
+> [!info] 
+> 
+> github 地址后面有没有 `.git` 都无所谓。
+
 ### pip 换源
 
 #### 临时换源
@@ -131,7 +151,7 @@ python -m pip install -i 源地址 --upgrade pip
 * 清华：<https://pypi.tuna.tsinghua.edu.cn/simple>
 * 阿里云：<http://mirrors.aliyun.com/pypi/simple/>
 * 中国科技大学： <https://pypi.mirrors.ustc.edu.cn/simple/>
-* 南京大学：<https://mirror.nju.edu.cn/pypi/web/simple>
+* 南京大学：<https://mirror.nju.edu.cn/pypi/web/simple/>
 * 华中理工大学：<http://pypi.hustunique.com/>
 * 山东理工大学：<http://pypi.sdutlinux.org/>
 * 豆瓣：<http://pypi.douban.com/simple/>
@@ -222,6 +242,90 @@ index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 * `cnpip set 镜像名称`：选择指定镜像源
 * `cnpip unset`：取消镜像源设置，恢复默认源
 
+###### chpip
+
+[Prodesire/chpip](https://github.com/Prodesire/chpip)，与 [cnpip](#cnpip) 很像，但这个可以自行添加源。
+
+> [!tip] 
+> 
+> 注意，名字很相似啊，这个是**chpip**。
+
+安装方式：
+
+```shell
+pip install chpip
+```
+
+```shell
+pipx install chpip
+```
+
+也可以使用特有的 [GitHub ](../Git/Git_Note.md#git_github) 方式安装：
+
+```shell
+pip install git+https://github.com/Prodesire/chpip
+```
+
+```shell
+pipx install git+https://github.com/Prodesire/chpip
+```
+
+主要功能：
+
+* `list`：列出支持的源
+* `show`：当前使用的源
+* `-n 源名称`：切换指定名称的源
+
+* `set -n 源名称 -i 源地址`：内置的源如果不满意，可以自行添加源。需给出**源名称**和**源地址**。
+
+添加源示例：
+
+```shell
+$ chpip set -n nju -i https://mirror.nju.edu.cn/pypi/web/simple
+```
+
+```shell
+Set Python package index with name `nju` successful.
+
+$ chpip show                                                   
+  nju (https://mirror.nju.edu.cn/pypi/web/simple)
+```
+
+在 pip 配置目录 `~/.config/.pip/` 目录下会生成一个 `.chpip.yml` 文件，这就是设置的源：
+
+```shell
+$ ll .config/pip 
+Permissions Size User       Group      Date Modified    Name
+drwxr-xr-x     - silascript silascript 2025-08-16 20:38 .
+drwx------     - silascript silascript 2025-08-16 17:10 ..
+.rw-r--r--    73 silascript silascript 2025-08-16 20:38 .chpip.yml
+.rw-r--r--     0 silascript silascript 2025-08-16 18:23 pip.conf
+.rw-r--r--   307 silascript silascript 2025-08-16 18:19 sources.dict
+
+
+$ cat .config/pip/.chpip.yml
+indexes:
+  nju:
+    index_url: https://mirror.nju.edu.cn/pypi/web/simple
+```
+
+切换源示例：
+
+```shell
+# 就使用刚添加的南京大学的源 nju
+$ chpip -n nju
+
+# show下
+$ chpip show
+* nju (https://mirror.nju.edu.cn/pypi/web/simple)
+  default (https://pypi.org/simple)
+
+# 还可以查看下pip.conf是否已经添加了源
+$ cat .config/pip/pip.conf  
+[global]
+index-url = https://mirror.nju.edu.cn/pypi/web/simple
+```
+
 ###### PyQuickInstall
 
 [PyQuickInstall](https://github.com/yhangf/PyQuickInstall) 与 [cnpip](#cnpip) 差不多的，能快速换源的小工具。不过这工具多了个添加源的功能。
@@ -244,6 +348,42 @@ python3 setup.py install
 * `pqi show`：显示当前源
 * `pqi add 源名称 源地址`：添加新源
 * `pqi remove 源名称`：移除源
+
+装完这工具，会有在 pip 的配置目录 `~/.config/pip` 下生成一个「字典」：
+
+```shell
+$ ll .config/pip 
+Permissions Size User       Group      Date Modified    Name
+drwxr-xr-x     - silascript silascript 2025-08-16 18:05 .
+drwx------     - silascript silascript 2025-08-16 17:10 ..
+.rw-r--r--     0 silascript silascript 2025-08-16 11:37 pip.conf
+.rw-r--r--   256 silascript silascript 2025-08-16 18:05 sources.dict
+```
+
+字典的大概内容：
+
+```shell
+$ cat .config/pip/sources.dict 
+���}�(�pypi��https://pypi.python.org/simple/��tuna��(https://pypi.tuna.tsinghua.edu.cn/simple��douban��!https://pypi.doubanio.com/simple/��aliyun��'https://mirrors.aliyun.com/pypi/simple/��ustc��+https://mirrors.ustc.edu.cn/pypi/web/simple�u.% 
+```
+
+> [!info] 
+> 
+> 源都记录在这个字典中
+
+添加一个新源：
+
+```shell
+$ pqi add nju https://mirror.nju.edu.cn/pypi/web/simple/
+nju(https://mirror.nju.edu.cn/pypi/web/simple) is add to Source list.
+```
+
+再查看字典：
+
+```shell
+$ cat .config/pip/sources.dict
+��'}�(�pypi��https://pypi.python.org/simple/��tuna��(https://pypi.tuna.tsinghua.edu.cn/simple��douban��!https://pypi.doubanio.com/simple/��aliyun��'https://mirrors.aliyun.com/pypi/simple/��ustc��+https://mirrors.ustc.edu.cn/pypi/web/simple��nju��)https://mirror.nju.edu.cn/pypi/web/simple�u.%    
+```
 
 ### pip 搜索
 
@@ -483,19 +623,29 @@ pipx                      1.2.1              pyhd8ed1ab_0    conda-forge
 pipx install 应用名
 ```
 
-使用 github 源码安装：
+使用 github 源码安装，跟 [pip 安装包](#pip%20安装包) 中安装 github 的包方式类似，就是在 github 的地址前加上 `git+`
 
 > [!example] 示例
 > 
 > ```shell
 > pipx install git+https://github.com/psf/black.git
 > ```
+> 
+> 或者没有 `.git` 结尾也是可以的，如：
+> 
+> ```shell
+> pipx install git+https://github.com/Prodesire/chpip
+>```
 
 安装指定版本的模块：
 
 ```shell
 pipx install package==version
 ```
+
+> [!example] 
+> 
+> [Examples - pipx](https://pipx.pypa.io/stable/examples/)
 
 #### PypiSearch
 
@@ -934,6 +1084,11 @@ Obsidan 中 [中文分词插件](../NoteSoft/Obsidian/Obsidian_Note.md#obn_plugi
 #### pip 文档
 
 * [Configuration - pip documentation v25.2](https://pip.pypa.io/en/stable/topics/configuration/)
+
+##### pipx 文档
+
+* [Install Examples - pipx](https://pipx.pypa.io/stable/examples/#pipx-install-examples)
+* [Run Examples - pipx](https://pipx.pypa.io/stable/examples/#pipx-run-examples)
 
 #### uv 文档
 

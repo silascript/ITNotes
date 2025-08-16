@@ -8,7 +8,7 @@ tags:
   - conda
   - uv
 created: 2023-08-18 19:44:52
-modified: 2025-08-16 20:58:02
+modified: 2025-08-16 21:46:59
 ---
 
 # Python 笔记
@@ -237,7 +237,7 @@ index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 
 功能：
 
-* `cnpip list`：列出可用的镜像源
+* `cnpip list`：列出可用的镜像源。
 * `cnpip set`：自动选择最快的镜像源
 * `cnpip set 镜像名称`：选择指定镜像源
 * `cnpip unset`：取消镜像源设置，恢复默认源
@@ -249,6 +249,8 @@ index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 > [!tip] 
 > 
 > 注意，名字很相似啊，这个是**chpip**。
+> 
+> chpip 与 [cnphp](#cnphp) 根本两极端，cnphp 是只有使用内置源，而 chpip，内置源都得自行设置后才能使用。
 
 安装方式：
 
@@ -272,11 +274,15 @@ pipx install git+https://github.com/Prodesire/chpip
 
 主要功能：
 
-* `list`：列出支持的源
+* `list`：列出支持的源。没什么卵用，这内置源只能看不能直接使用，得使用 `chpip set -n xxx -i xxx` 设置后才能使用。
 * `show`：当前使用的源
 * `-n 源名称`：切换指定名称的源
 
 * `set -n 源名称 -i 源地址`：内置的源如果不满意，可以自行添加源。需给出**源名称**和**源地址**。
+
+列出内置的源：
+
+`chpip list`，这个命令是到 github 上取 `[pip.yml](https://raw.githubusercontent.com/Prodesire/chpip/main/pip.yml)` 文件，这文件中记录了一些常用的源。
 
 添加源示例：
 
@@ -324,6 +330,15 @@ $ chpip show
 $ cat .config/pip/pip.conf  
 [global]
 index-url = https://mirror.nju.edu.cn/pypi/web/simple
+
+# 切换回默认源
+$ chpip -n default 
+
+# 
+$ cat .config/pip/pip.conf 
+[global]
+index-url = https://pypi.org/simple
+
 ```
 
 ###### PyQuickInstall
@@ -383,6 +398,39 @@ nju(https://mirror.nju.edu.cn/pypi/web/simple) is add to Source list.
 ```shell
 $ cat .config/pip/sources.dict
 ��'}�(�pypi��https://pypi.python.org/simple/��tuna��(https://pypi.tuna.tsinghua.edu.cn/simple��douban��!https://pypi.doubanio.com/simple/��aliyun��'https://mirrors.aliyun.com/pypi/simple/��ustc��+https://mirrors.ustc.edu.cn/pypi/web/simple��nju��)https://mirror.nju.edu.cn/pypi/web/simple�u.%    
+```
+
+###### tpip
+
+[tpip](https://github.com/wsy-yjys/tpip) 是在 [cnpip](#cnpip) 基础上构建的，功能也非常类似。
+
+示例：
+
+* 设置源
+
+```shell
+$ tpip set aliyun
+# Writing to /home/silascript/.config/pip/pip.conf
+# Writing to /home/silascript/.config/pip/pip.conf
+# 成功设置 pip 镜像源为 'https://mirrors.aliyun.com/pypi/simple'，并添加 trusted-host 'mirrors.aliyun.com'
+```
+
+```shell
+# 查看pip.conf是否设置成功
+$ cat .config/pip/pip.conf
+[global]
+index-url = https://mirrors.aliyun.com/pypi/simple
+trusted-host = mirrors.aliyun.com
+
+```
+
+* 取消设置，恢复默认源
+
+```shell
+$ tpip unset              
+# Writing to /home/silascript/.config/pip/pip.conf
+# Writing to /home/silascript/.config/pip/pip.conf
+# 成功取消 pip 镜像源设置，已恢复为默认源
 ```
 
 ### pip 搜索

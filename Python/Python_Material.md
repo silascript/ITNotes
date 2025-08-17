@@ -8,7 +8,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2025-08-16 20:59:50
+modified: 2025-08-17 18:22:21
 ---
 
 # Python 资料清单
@@ -60,6 +60,10 @@ modified: 2025-08-16 20:59:50
 
 * [poetry的安装与使用 - WenderWang - 博客园](https://www.cnblogs.com/wender/p/17616947.html)
 
+### pixi
+
+* [windows中使用pixi替代conda（简易教程）](https://zhuanlan.zhihu.com/p/1891081313118839047)
+
 ### UV
 
 * [Python包管理不再头疼：uv工具快速上手 - wang\_yb - 博客园](https://www.cnblogs.com/wang_yb/p/18635441)
@@ -69,6 +73,8 @@ modified: 2025-08-16 20:59:50
 * [包管理工具UV使用指南：全面替代conda \| Menghuan1918's Blog](https://blog.menghuan1918.com/posts/UV_python_packge_manage.html#%E4%BD%BF%E7%94%A8%E5%89%8D%E9%85%8D%E7%BD%AE)
 * [Python 包管理工具 uv 使用教程](https://zhuanlan.zhihu.com/p/1888904532131575259)
 * [uv（Python 包和项目管理器）的基本命令及镜像设置uv，一个用 Rust 编写的极其快速的 Python 包和项目 - 掘金](https://juejin.cn/post/7468614239940526107)
+* [Python 套件管理器 uv 介紹——與 Poetry 比較 - Code and Me](https://blog.kyomind.tw/introducing-uv/)
+* [Python 專案管理工具全面比較 - uv, Poetry, Pixi, Hatch, PDM, Conda, Mamba, Pipenv, venv, virtualenv - DEV Community](https://dev.to/zhenshuo2021/best-python-project-manager-288p)
 
 #### 相关文档
 

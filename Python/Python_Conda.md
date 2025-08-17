@@ -7,7 +7,7 @@ tags:
   - conda-forge
   - miniforge
 created: 2025-08-15 01:32:08
-modified: 2025-08-15 20:51:36
+modified: 2025-08-17 11:46:35
 ---
 
 # Conda 笔记
@@ -1311,6 +1311,8 @@ mamba install pipx
 ## conda 文档
 
 * [Anaconda 中文网](https://anaconda.org.cn/)
+* [Conda 文档](https://docs.conda.org.cn)
+	* [命令 — conda 文档](https://docs.conda.org.cn/projects/conda/en/stable/commands/index.html)
 * [conda-forge 文档](https://forge.conda.org.cn/docs/)
 * [Mamba  documentation](https://mamba.readthedocs.io/en/latest/)
 

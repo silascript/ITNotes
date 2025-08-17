@@ -8,7 +8,7 @@ tags:
   - conda
   - uv
 created: 2023-08-18 19:44:52
-modified: 2025-08-16 21:46:59
+modified: 2025-08-17 18:23:20
 ---
 
 # Python 笔记
@@ -1104,6 +1104,12 @@ lrwxrwxrwx     - silascript silascript 2025-08-13 03:10 python3.11 -> python
 > [!info] 
 > 
 > 可以看到，`.venv/bin` 中创建了几个 python 的链接文件 `python3.11`、`python3` 和 `python`，最终都是指向 `.local/share/uv/python` 下具体的 python 可执行文件。大致可以看到 uv 项目使用到的虚拟环境与 `uv python` 命令的关系。
+
+---
+
+## <span id="python_pixi">pixi</span>
+
+[Pixi](https://pixi.sh) 是新一代的包管理器。
 
 ---
 

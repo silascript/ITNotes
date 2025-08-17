@@ -8,7 +8,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2025-08-17 18:22:21
+modified: 2025-08-17 18:24:56
 ---
 
 # Python 资料清单
@@ -63,6 +63,7 @@ modified: 2025-08-17 18:22:21
 ### pixi
 
 * [windows中使用pixi替代conda（简易教程）](https://zhuanlan.zhihu.com/p/1891081313118839047)
+* [Pixi vs Conda：7 个让我切换到 Pixi 的理由](https://zhuanlan.zhihu.com/p/1937206276414219852)
 
 ### UV
 

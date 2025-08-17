@@ -8,7 +8,7 @@ tags:
   - conda
   - uv
 created: 2023-08-18 19:44:52
-modified: 2025-08-17 18:23:20
+modified: 2025-08-18 03:19:57
 ---
 
 # Python 笔记
@@ -1011,7 +1011,7 @@ uv init
 
 创建或初始化后的项目根目录下，会生成两个**重要文件**：
 
-* `.python-versoin`：这个是记录当前项目 python 的版本
+* `.python-versoin`：这个是记录当前项目 [Python](Python_Note.md) 的版本，此文件告诉 `uv` 在 [创建虚拟环境](#创建虚拟环境) 时使用的 Python 版本
 * `pyproject.toml`：这个文件是用来定义项目的主要依赖，包括项目名称、版本、描述、支持的 `Python` 版本等信息
 
 例：
@@ -1050,7 +1050,7 @@ uv 会根据它所可以找到的 Python 环境来执行，顺序大概是：
 4. uv 自己安装的 Python
 5. 系统环境设定的 Python 环境
 
-#### 创建虚拟环境
+#### 虚拟环境
 
 在不指定 uv 的虚拟环境时，uv 使用的是 [临时虚拟环境](#临时虚拟环境)。
 
@@ -1078,6 +1078,22 @@ $ uv venv --python 3.11
 # Creating virtual environment at: .venv
 # Activate with: source .venv/bin/activate
 ```
+
+> [!tip] 
+> 
+> 如果 `uv venv` 不显式指定 Python 版本，那会根本目录下的 `.python-version` 文件中给定的版本自动指定虚拟环境的 Python 版本
+> 
+> ```shell
+> $ cat .python-version 
+> 3.11
+>
+> $ uv venv 
+> Using CPython 3.11.13
+> Creating virtual environment at: .venv
+> Activate with: source .venv/bin/activate
+>
+> ```
+> 
 
 `.venv/bin` 目录结构：
 

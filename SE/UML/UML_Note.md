@@ -26,5 +26,5 @@ modified: 2025-08-19 18:17:17
 ## 相关笔记
 
 * [UML 视频清单](UML_Videos.md)
-* [软件工程笔记](../Soft_Engineering_Note.md)
+* [软件工程笔记](../Soft_Engineering.md)
 

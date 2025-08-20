@@ -7,7 +7,7 @@ tags:
   - conda-forge
   - miniforge
 created: 2025-08-15 01:32:08
-modified: 2025-08-17 11:46:35
+modified: 2025-08-20 21:43:22
 ---
 
 # Conda 笔记
@@ -16,7 +16,7 @@ modified: 2025-08-17 11:46:35
 
 ## conda
 
-[Conda](https://docs.conda.io/en/latest/index.html) [![conda repo](https://img.shields.io/github/stars/conda/conda?style=social)] (https://github.com/conda/conda) 分为 annaconda 和 miniconda 两个。
+[Conda](https://docs.conda.io/en/latest/index.html) [![conda repo](https://img.shields.io/github/stars/conda/conda?style=social)](https://github.com/conda/conda) 分为 annaconda 和 miniconda 两个。
 
 anaconda 是包含了一些常用包，并且有图形用户界面，属于比较完善的环境管理工具。
 
@@ -33,6 +33,7 @@ miniconda 对于一般需求而言装这个就够用了。
 嫌官网速度慢，可以到清华镜像站下：[https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda](https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda) 。
 
 也可以使用 [wget](https://www.gnu.org/software/wget/) [![wget repo](https://img.shields.io/github/stars/mirror/wget?style=social)](https://github.com/mirror/wget) 进行下载。
+
 ```shell
 # -c 是能实现断点续传
 wget -c https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh

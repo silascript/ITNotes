@@ -4,7 +4,7 @@ tags:
   - books
   - list
 created: 2025-02-07 04:09:45
-modified: 2025-08-20 20:21:33
+modified: 2025-08-20 21:45:25
 ---
 
 # IT 书籍清单
@@ -31,8 +31,14 @@ modified: 2025-08-20 20:21:33
 ~~ AND contains(file.path,"Templates")=false ~~
 ~~``` ~~
 
-
-
-
-
+```base
+views:
+  - type: table
+    name: 表格
+    filters:
+      and:
+        - file.inFolder("Books")
+        - file.hasTag("book")
+        - file.hasTag("brief")
+```
 

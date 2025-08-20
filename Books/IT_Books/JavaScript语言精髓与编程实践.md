@@ -1,8 +1,12 @@
 ---
 aliases: []
-tags: []
+tags:
+  - book
+  - brief
+  - js
+  - javascript
 created: 2025-02-07 05:01:37
-modified: 2025-02-12 18:28:14
+modified: 2025-08-20 21:00:20
 booksdb: BooksList
 category:
   - JS

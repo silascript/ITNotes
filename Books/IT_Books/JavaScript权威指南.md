@@ -3,7 +3,7 @@ aliases: []
 tags:
   - js
   - javascript
-  - books
+  - book
   - brief
 booksdb: BooksList
 cover: "![|60x70](https://img3.doubanio.com/view/subject/l/public/s33861377.jpg)"
@@ -11,7 +11,7 @@ category:
   - 前端
   - JS
 created: 2025-02-12 18:13:44
-modified: 2025-02-12 18:25:24
+modified: 2025-08-20 20:58:09
 ---
 
 # JavaScript 权威指南

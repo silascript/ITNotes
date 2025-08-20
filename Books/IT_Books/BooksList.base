@@ -1,0 +1,8 @@
+views:
+  - type: table
+    name: 表格
+    filters:
+      and:
+        - file.inFolder("Books")
+        - file.hasTag("book")
+        - file.hasTag("brief")

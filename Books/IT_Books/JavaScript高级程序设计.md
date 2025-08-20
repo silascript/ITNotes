@@ -3,10 +3,10 @@ aliases: []
 tags:
   - js
   - javascript
-  - books
+  - book
   - brief
 created: 2025-02-07 04:12:59
-modified: 2025-02-12 18:28:32
+modified: 2025-08-20 20:57:52
 booksdb: BooksList
 cover: "![JavaScript 高级程序设计 4th cover|60x70](https://img9.doubanio.com/view/subject/l/public/s33703494.jpg)"
 category:

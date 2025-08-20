@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2025-02-07 05:28:08
-modified: 2025-08-05 03:19:35
+modified: 2025-08-20 20:09:16
 ---
 
 # Obsidian 资料清单
@@ -19,6 +19,10 @@ modified: 2025-08-05 03:19:35
 * [Obsidian文档咖啡豆版](https://coffeetea.top)
 * [Obsdian TTRPG Tutorials](https://obsidianttrpgtutorials.com/Obsidian+TTRPG+Tutorials/Getting+Started/Getting+Started)
 * [Obsidian达人秘籍：标签管理助你事半功倍！ - 哔哩哔哩](https://www.bilibili.com/opus/867013911227924503)
+
+### 版本信息
+
+* [Obsidian 1.9.10 正式版史诗级更新](https://zhuanlan.zhihu.com/p/1941131700391355820)
 
 ## 插件
 

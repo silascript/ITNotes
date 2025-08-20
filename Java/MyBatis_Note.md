@@ -1,6 +1,8 @@
 ---
-aliases: 
-tags: java mybatis
+aliases:
+tags:
+  - java
+  - mybatis
 created: 2023-01-13, 12:27:45
 modified: 2023-01-30, 9:16:27
 ---

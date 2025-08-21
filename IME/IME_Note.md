@@ -5,7 +5,7 @@ tags:
   - ibus
   - rime
 created: 2023-08-18 19:44:52
-modified: 2025-03-14 02:32:09
+modified: 2025-08-22 03:11:56
 ---
 # 输入法笔记
 
@@ -33,6 +33,18 @@ modified: 2025-03-14 02:32:09
 > [!tip] 主题的更换
 > 
 > 通过 [IBus-Theme-Tools](https://github.com/openSUSE/IBus-Theme-Tools) 这个工具可能方便生成主题。
+
+---
+
+## Rime
+
+* [Rime 笔记](Rime_Note.md)
+
+---
+
+## 极点五笔
+
+[极点五笔](http://www.freewb.org) 是一款经典的五笔输入法。
 
 ---
 

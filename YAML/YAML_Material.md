@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-09-20 23:23:38
-modified: 2024-09-27 02:19:45
+modified: 2025-08-22 04:05:59
 ---
 
 # YAML 资料清单
@@ -24,6 +24,7 @@ modified: 2024-09-27 02:19:45
 * [YAML文件(.yml)中的键(key)通过变量引用来设置 - i江湖中人 - 博客园](https://www.cnblogs.com/haycheng/p/13299183.html)
 * [【译】你真的了解 Y(A)ML 吗？❗ 😵你真的了解 Y(A)ML 吗？❗ 😵 感谢你能来阅读这篇关于 YAML 文 - 掘金](https://juejin.cn/post/7021380596077166622)
 * [How can I include a YAML file inside another?](https://stackoverflow.com/questions/528281/how-can-i-include-a-yaml-file-inside-another)
+* [yaml教程(YAML文件）和shell教程(shell文件）](https://zhuanlan.zhihu.com/p/468798865)
 
 ## yq
 

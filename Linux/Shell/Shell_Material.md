@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2025-08-10 17:44:43
+modified: 2025-08-22 04:06:54
 ---
 
 # Shell 资料清单
@@ -32,6 +32,8 @@ modified: 2025-08-10 17:44:43
 ---
 
 ## 基础语法
+
+* [yaml教程(YAML文件）和shell教程(shell文件）](https://zhuanlan.zhihu.com/p/468798865)
 
 ### 引号
 

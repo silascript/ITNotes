@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2025-08-03 12:41:36
+modified: 2025-08-22 19:43:17
 ---
 
 # 梯子笔记
@@ -1175,6 +1175,14 @@ rules+:
 
 解决这个问题方法很简单，直接删除 `rules` 这个目录。重启 Mihomo-Party，它就会重新生成一个新的 `rules` 目录，这时再使用 `ls` 命令查看，就会发现库文件的所有者就*变回*到当前用户，这就没有权限问题了！
 
+### Singbox
+
+[singbox](https://github.com/SagerNet/sing-box)
+
+### Karing
+
+[karing](https://github.com/KaringX/karing) 是使用的「魔改」的 [Singbox](#Singbox) 内核而构建的客户端。暂不支持 [Linux](../Linux/Linux_Note.md) 系统。
+
 ### V2Fly
 
 因为 [V2ray](#V2ray) 的创始人失联，V2Ray 的更新已经由新的社区 [V2Fly](https://www.v2fly.org) 负责。
@@ -1296,6 +1304,7 @@ export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_pr
 * [GitHub - KaWaIDeSuNe/dijiajichang: 2025最新低价机场推荐](https://github.com/KaWaIDeSuNe/dijiajichang)
 * [2025最新低价机场推荐](https://github.com/KaWaIDeSuNe/dijiajichang)
 * [性价比机场测速 - by Duang](https://duangks.com)
+* [ 免费clash节点](https://github.com/free-nodes/clashfree)
 
 #### 跑路机场
 

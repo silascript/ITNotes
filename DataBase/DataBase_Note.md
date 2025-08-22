@@ -14,7 +14,7 @@ tags:
   - navicat
   - dbeaver
 created: 2023-08-18 19:44:52
-modified: 2025-08-18 23:42:15
+modified: 2025-08-23 03:20:20
 ---
 
 # 数据库笔记
@@ -106,13 +106,18 @@ modified: 2025-08-18 23:42:15
 
 ### MySQL
 
-[MySQL_Note](mysql/MySQL_Note.md)
+* [MySQL 笔记](mysql/MySQL_Note.md)
+* [MySQL资料](mysql/MySQL_Material.md)
+* [MySQL常用操作](mysql/MySQL常用操作.md)
 
 ### Oracle
 
 ### SQLSERVER
 
-### POSTgreSQL
+### PostgreSQL
+
+* [PostgreSQL 笔记](PostgrSQL/PostgreSQL_Note.md)
+* [PostgreSQL 视频清单](PostgrSQL/PostgreSQL_Videos.md)
 
 ### SQLite
 
@@ -176,8 +181,5 @@ DBeaver 使用 [Maven_Note](../Java/Maven/Maven_Note.md) 下载驱动。要知�
 ## 相关笔记
 
 * [SQL笔记](SQL_Note.md)
-* [MySQL笔记](mysql/MySQL_Note.md)
 * [数据库资料](mysql/DataBase_Material.md)
-* [MySQL资料](mysql/MySQL_Material.md)
-* [MySQL常用操作](mysql/MySQL常用操作.md)
 

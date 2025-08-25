@@ -14,7 +14,7 @@ tags:
   - navicat
   - dbeaver
 created: 2023-08-18 19:44:52
-modified: 2025-08-23 03:20:20
+modified: 2025-08-23 03:23:10
 ---
 
 # 数据库笔记
@@ -28,7 +28,7 @@ modified: 2025-08-23 03:20:20
 	* [MySQL](#MySQL)
 	* [Oracle](#Oracle)
 	* [SQLSERVER](#SQLSERVER)
-	* [POSTgreSQL](#POSTgreSQL)
+	* [PostgreSQL](#PostgreSQL)
 	* [SQLite](#SQLite)
 * [数据库客户端](#database_client)
 	* [NaviCat](#NaviCat)

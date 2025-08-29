@@ -8,7 +8,7 @@ tags:
   - map
   - set
 created: 2024-07-13 10:28:47
-modified: 2025-08-06 20:36:30
+modified: 2025-08-29 21:30:01
 ---
 
 # Java 基础笔记
@@ -133,16 +133,16 @@ classDiagram
 	Iterable <|-- Collection
 
 	Collection <|-- List
+	Iterable <|-- List
 	SequencedCollection <|-- List
 	List <|.. ArrayList
 	List <|.. LinkedList
 	Collection <|-- Set
+	Iterable <|-- Set
 	Set <|.. HashSet
 
 	Map <|.. AbstractMap
 	AbstractMap <|.. HashMap
-
-	
 
 ```
 
@@ -159,6 +159,21 @@ classDiagram
 * `getLast()`：返回 List 中最后一个元素，这是 [JDK21](Java_Note.md#JDK21) 新加的
 
 ### Set
+
+`Set` 是直接与数学中的集合概念对应的接口。
+
+> [!info] 
+> 
+> As implied by its name, this interface models the mathematical *set* abstraction.
+
+> [!tip] 
+> 
+> [Python](../Python/Python_Note.md) 中的 [集合](../Python/Python_Syntax.md#集合) 就称为 `set`。
+
+`Set` 接口特性：
+
+* 无序
+* 元素不重复
 
 ### Map
 

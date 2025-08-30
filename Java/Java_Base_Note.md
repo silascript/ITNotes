@@ -3,15 +3,12 @@ aliases: []
 tags:
   - java
   - base
-  - collection
-  - list
-  - map
-  - set
+  - syntax
 created: 2024-07-13 10:28:47
-modified: 2025-08-29 21:30:01
+modified: 2025-08-30 21:13:11
 ---
 
-# Java 基础笔记
+# Java 基础语法笔记
 
 ---
 

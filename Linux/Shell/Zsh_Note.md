@@ -456,7 +456,7 @@ vi-mod 这插件的移动都是在 normal 模式下进行的。
 
 ##### Surround
 
-vi-mod 这看插件更「骚」的，竟然还有简单地实现的 vim 的著名插件 [Surround](../../vim/vim_plugin.md#Surround) 的小部分功能。
+vi-mod 这看插件更「骚」的，竟然还有简单地实现的 vim 的著名插件 [Surround](../../vim/Vim_Plugin.md#Surround) 的小部分功能。
 
 具体查看官方文档：[zsh-vi-mode#Surround](https://github.com/jeffreytse/zsh-vi-mode#Surround)
 

@@ -752,7 +752,7 @@ endtry
 
 ## 常用插件使用
 
-[vim插件相关介绍](./vim_plugin.md)
+[vim插件相关介绍](Vim_Plugin.md)
 
 ---
 
@@ -768,7 +768,7 @@ endtry
 
 * [Vim笔记](Vim_Note.md)
 * [Vim视频清单](Vim_Videos.md)
-* [vim插件笔记](vim_plugin.md)
+* [vim插件笔记](Vim_Plugin.md)
 * [vim及neovim配置](vim及neovim配置.md)
 * [vimscript笔记](Vimscript_Note.md)
 * [vim配色笔记](vim_colorscheme_Note.md)

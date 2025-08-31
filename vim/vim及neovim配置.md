@@ -22,7 +22,7 @@ vim 主配置文件是用户目录下的 `.vimrc` 文件。配置根目录是 `.
 
 ### viminfo
 
-`.viminfo` 文件，记录了如 vim 访问过哪些目录或文件、mark 标记等信息。像 [vim-startify](vim_plugin.md#vim-startify) 插件开始页面出现的访问文件列表，就是读取 `.viminfo` 文件而来的。
+`.viminfo` 文件，记录了如 vim 访问过哪些目录或文件、mark 标记等信息。像 [vim-startify](Vim_Plugin.md#vim-startify) 插件开始页面出现的访问文件列表，就是读取 `.viminfo` 文件而来的。
 
 ---
 
@@ -222,6 +222,6 @@ pip3 install --user --upgrade pynvim
 * [Vim笔记](Vim_Note.md)
 * [neovim笔记](Neovim_Note.md)
 * [vim及neovim配置](vim及neovim配置.md)
-* [vim插件](vim_plugin.md)
+* [vim插件](Vim_Plugin.md)
 * [vim配色笔记](vim_colorscheme_Note.md)
 

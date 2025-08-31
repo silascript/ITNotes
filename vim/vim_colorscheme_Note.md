@@ -286,7 +286,7 @@ endif
 ## 相关笔记
 
 * [Vim笔记](Vim_Note.md)
-* [vim插件笔记](vim_plugin.md)
+* [vim插件笔记](Vim_Plugin.md)
 * [vim常用操作](vim常用操作.md)
 * [Vim视频清单](Vim_Videos.md)
 * [Vimscript笔记](Vimscript_Note.md)

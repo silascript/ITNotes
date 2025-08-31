@@ -1033,7 +1033,7 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 ##### <span id="obn_plugins_commp_jumptolink">Jump To Link</span>
 
-[Jump To Link](https://github.com/mrjackphil/obsidian-jump-to-link) 这个插件类似于 [vim](../../vim/Vim_Note.md) 中 [easymotion](../../vim/vim_plugin.md#easymotion) 插件，实现页面内跳转。
+[Jump To Link](https://github.com/mrjackphil/obsidian-jump-to-link) 这个插件类似于 [vim](../../vim/Vim_Note.md) 中 [easymotion](../../vim/Vim_Plugin.md#easymotion) 插件，实现页面内跳转。
 
 此插件主要有几个命令，可以使用「命令面板」调出。
 

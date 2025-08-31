@@ -132,11 +132,11 @@ vim-lsp 的一堆命令，都是以 `Lsp` 打头的：
 
 #### <span id="vp_vim-lsp_vim-lsp-neosnippet">vim-lsp-neosnippet</span>
 
-[vim-lsp-neosnippet](https://github.com/thomasfaingnaert/vim-lsp-neosnippet) 是一个将 [vim-lsp](#vim-lsp) 整合 [Neosnippet](vim_plugin.md#plugin_snippets_neosnippet) 的插件。
+[vim-lsp-neosnippet](https://github.com/thomasfaingnaert/vim-lsp-neosnippet) 是一个将 [vim-lsp](#vim-lsp) 整合 [Neosnippet](Vim_Plugin.md#plugin_snippets_neosnippet) 的插件。
 
 #### <span id="vp_vim-lsp-ultisnips">vim-lsp-ultisnips</span>
 
-[vim-lsp-ultisnips](https://github.com/thomasfaingnaert/vim-lsp-ultisnips) 是一个将 [vim-lsp](#vim-lsp) 整合 [Ultisnips](vim_plugin.md#Ultisnips) 的插件。
+[vim-lsp-ultisnips](https://github.com/thomasfaingnaert/vim-lsp-ultisnips) 是一个将 [vim-lsp](#vim-lsp) 整合 [Ultisnips](Vim_Plugin.md#Ultisnips) 的插件。
 
 ---
 
@@ -437,7 +437,7 @@ deoplete 其他“有趣”的补全源插件：
 
 这插件内置了路径补全功能。
 
-这个补全插件支持 [Ultisnips](vim_plugin.md#Ultisnips) and [Neosnippet](vim_plugin.md#Neosnippet) 两个 snippet 引擎。默认使用 [Ultisnips](vim_plugin.md#Ultisnips)。如果使用 [Neosnippet](vim_plugin.md#Neosnippet)，得再装个接口插件 [completor-neosnippet](https://github.com/maralla/completor-neosnippet)。
+这个补全插件支持 [Ultisnips](Vim_Plugin.md#Ultisnips) and [Neosnippet](Vim_Plugin.md#Neosnippet) 两个 snippet 引擎。默认使用 [Ultisnips](Vim_Plugin.md#Ultisnips)。如果使用 [Neosnippet](Vim_Plugin.md#Neosnippet)，得再装个接口插件 [completor-neosnippet](https://github.com/maralla/completor-neosnippet)。
 
 安装:
 ```vim
@@ -699,7 +699,7 @@ let g:easycomplete_lsp_checking = 0
 
 ![easycomplete problem 1](https://user-images.githubusercontent.com/23642697/114323884-4a59db80-9af5-11eb-999e-a840ed1a6492.png)
 
-好像是 [Ultisnips](vim_plugin.md#vimplugin_snippets_ultisnips) 引起的，但未解决。
+好像是 [Ultisnips](Vim_Plugin.md#vimplugin_snippets_ultisnips) 引起的，但未解决。
 
 > [!info] 相关资料
 > 
@@ -725,7 +725,7 @@ let g:easycomplete_lsp_checking = 0
 
 * [Vim笔记](Vim_Note.md)
 * [vim及neovim配置](vim及neovim配置.md)
-* [vim插件](vim_plugin.md)
+* [vim插件](Vim_Plugin.md)
 * [vim常用操作](vim常用操作.md)
 * [Vim视频清单](Vim_Videos.md)
 * [Vimscript笔记](Vimscript_Note.md)

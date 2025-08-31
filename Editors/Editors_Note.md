@@ -62,7 +62,7 @@ VSCode 主要有几个版本：
 * [Vim常用操作](../vim/vim常用操作.md)
 * [neovim配置](../vim/vim及neovim配置.md)
 * [Neovim_Note](../vim/Neovim_Note.md)
-* [Vim Plugin](../vim/vim_plugin.md)
+* [Vim Plugin](../vim/Vim_Plugin.md)
 * [Vimscript 笔记](../vim/Vimscript_Note.md)
 * [Vim_LSP_Complete](../vim/Vim_LSP_Complete.md)
 

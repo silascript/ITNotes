@@ -6,7 +6,7 @@ tags:
   - video
   - list
 created: 2023-08-18 19:44:52
-modified: 2024-05-05 11:00:38
+modified: 2025-08-31 18:00:46
 ---
 
 # vim 视频清单
@@ -21,10 +21,24 @@ modified: 2024-05-05 11:00:38
 * [玩转Vim-从放弃到入门](https://www.bilibili.com/video/BV1NG4y1p74h)
 * [Vim核心基础: 光标移动](https://www.bilibili.com/video/BV1F14y1j7f4)
 
+### neovim
+
+* [在neovim中运行shell命令的几种方法](https://www.bilibili.com/video/BV1PpeLzpERL)
+
+---
+
 ## 高级
 
 * [01-Vim插件系统和runtimepath](https://www.bilibili.com/video/BV19Z421J7VR)
 
+---
+
 ## vimscript
 
 * [Vim脚本教程 0. 前言: Learn Vimscript The Hard Way](https://www.bilibili.com/video/BV1Ym4y1c7aj)
+
+---
+
+## 相关笔记
+
+* [Vim 笔记](Vim_Note.md)

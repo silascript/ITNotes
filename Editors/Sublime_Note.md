@@ -546,7 +546,7 @@ Sublime 要使用 markmark 这个 LSP，是没有对应的特定 LSClient，而�
 > 
 > [Vintageous](https://packagecontrol.io/packages/Vintageous) 是之前非常常用的 vi 增强插件。 
 
-**NeoVintageous** 这插件最牛的还在于，它模拟了不少 vim 经典插件，如 [Surround](../vim/vim_plugin.md#Surround)、sneak、Highlighted Yank 等，这有点像 [VSCode](VSCode_Note.md) 的内置 vim 功能的设计了！
+**NeoVintageous** 这插件最牛的还在于，它模拟了不少 vim 经典插件，如 [Surround](../vim/Vim_Plugin.md#Surround)、sneak、Highlighted Yank 等，这有点像 [VSCode](VSCode_Note.md) 的内置 vim 功能的设计了！
 
 ---
 

@@ -9,7 +9,7 @@ tags:
   - vim-plugin
   - list
 created: 2023-01-30 11:19:11
-modified: 2025-01-05 20:07:37
+modified: 2025-08-31 18:03:55
 ---
 
 # vim 常用插件清单
@@ -1042,9 +1042,10 @@ let g:startify_custom_header =
 
 这是一个 vim 下多语言图形界面 debug 插件!
 > [!quote]
+> 
 > A multi language graphical debugger for Vim
 
-安装:
+安装：
 
 ```vim
 Plugin 'puremourning/vimspector'
@@ -1134,7 +1135,7 @@ Markdown 预览插件原理大同小异，都是通过启动一个小型［服�
 使用 **:TableModeToggle** 命令 或 `<Leader>tm` 快捷命令启动 Table 模式。
 使用 **:TableModeDisable** 命令就能退出 Table 模式。
 
-使用小技巧:
+使用小技巧：
 
 markdown 表格的对齐方式那个行的输入。
 如果是居中对齐, markdown 表格要求是 **| :---: |**这种格式 ，<br> 
@@ -1148,7 +1149,8 @@ markdown 表格的对齐方式那个行的输入。
 
 [markdowntable](https://github.com/nora75/markdowntable) 用来快速生成一个表格。
 
-常用操作:
+常用操作：
+
 ```vim
 :TableMake 行数 列数
 ```
@@ -1158,7 +1160,8 @@ markdown 表格的对齐方式那个行的输入。
 ## 相关笔记
 
 * [Vim 笔记](Vim_Note.md)
-* [vim常用操作](vim常用操作.md)
+* [Vim 资料清单](Vim_Material.md)
+* [vim 常用操作](vim常用操作.md)
 * [Vim 视频清单](Vim_Videos.md)
 * [vim及neovim配置](vim及neovim配置.md)
 * [vimscript 笔记](Vimscript_Note.md)
@@ -1166,4 +1169,4 @@ markdown 表格的对齐方式那个行的输入。
 
 ### <span id="lsp_complete">关于 LSP 及补全</span>
 
-[LSP及补全](Vim_LSP_Complete.md)
+* [LSP及补全](Vim_LSP_Complete.md)

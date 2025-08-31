@@ -9,7 +9,7 @@ tags:
   - nvim
   - lsp
 created: 2023-08-18 19:44:52
-modified: 2024-07-12 10:28:10
+modified: 2025-08-31 17:59:34
 ---
 
 # Vim 笔记
@@ -195,7 +195,8 @@ modified: 2024-07-12 10:28:10
 ## <span id="vim_about_notes">相关笔记</span>
 
 * [vim常用操作](./vim常用操作.md)
-* [vim 插件](./vim_plugin.md)
+* [Vim 资料清单](Vim_Material.md)
+* [vim 插件](Vim_Plugin.md)
 * [vim配置](./vim及neovim配置.md)
 * [neovim笔记](Neovim_Note.md)
 * [vim视频清单](./Vim_Videos.md)

@@ -204,7 +204,7 @@ neovim 大概是按以下目录进行搜寻加载相应文件的：
 
 而可见其中 `~/.config/nvim` 是 [配置文件目录](#配置文件目录) 是第一位，然后才是 `~/.local/share/nvim/site` 目录。
 
-使用 [vim-Plug](vim_plugin.md#vim-Plug)，一般会配置让其插件放在 `~/.local/share/nvim/site` 这个目录下（vim-plug，在其配置 `call plug#begin()` 中是可以自定义插件存放路径的，根本 [文档](https://github.com/junegunn/vim-plug?tab=readme-ov-file#example) 说明，其默认放在 `~/.local/share/nvim/plugged`），与 `~/.config/nvim` 这些手动配置文件区分开。
+使用 [vim-Plug](Vim_Plugin.md#vim-Plug)，一般会配置让其插件放在 `~/.local/share/nvim/site` 这个目录下（vim-plug，在其配置 `call plug#begin()` 中是可以自定义插件存放路径的，根本 [文档](https://github.com/junegunn/vim-plug?tab=readme-ov-file#example) 说明，其默认放在 `~/.local/share/nvim/plugged`），与 `~/.config/nvim` 这些手动配置文件区分开。
 
 > [!info] 
 > 
@@ -633,7 +633,7 @@ center = {
 
 #### alpha-nvim
 
-[alpha-nvim](https://github.com/goolord/alpha-nvim) 这个是跟 [vim-startify](vim_plugin.md#vim-startify) 很像的插件。
+[alpha-nvim](https://github.com/goolord/alpha-nvim) 这个是跟 [vim-startify](Vim_Plugin.md#vim-startify) 很像的插件。
 
 ![alpha-nvim screenshot](https://user-images.githubusercontent.com/24906808/133367667-0f73e9e1-ea75-46d1-8e1b-ff0ecfeafeb1.png)
 
@@ -1022,7 +1022,7 @@ vim.api.nvim_create_autocmd("User", {
 
 #### hop.nvim
 
-[hop.nvim](https://github.com/smoka7/hop.nvim) 类似 [easymotion](vim_plugin.md#easymotion) 的移动跳转插件。
+[hop.nvim](https://github.com/smoka7/hop.nvim) 类似 [easymotion](Vim_Plugin.md#easymotion) 的移动跳转插件。
 
 ##### 命令
 
@@ -1339,7 +1339,7 @@ nvim-treesitter 的命令都是以 `TS` 开头的。
 
 #### nvim-surround
 
-[nvim-surround](https://github.com/kylechui/nvim-surround) 是大名鼎鼎的 [Surround](vim_plugin.md#Surround) 的 neovim 版本。
+[nvim-surround](https://github.com/kylechui/nvim-surround) 是大名鼎鼎的 [Surround](Vim_Plugin.md#Surround) 的 neovim 版本。
 
 <video src="https://user-images.githubusercontent.com/48545987/178679494-c7d58bdd-d8ca-4802-a01c-a9444b8b882f.mp4" type="video/mp4"></video>
 
@@ -1533,7 +1533,7 @@ pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_
 
 #### nvim-snippy
 
-[nvim-snippy](https://github.com/dcampos/nvim-snippy) 是一个支持 [vim-snippets](vim_plugin.md#vimplugin_snippets_vimsnippets) 的 snippet 插件。
+[nvim-snippy](https://github.com/dcampos/nvim-snippy) 是一个支持 [vim-snippets](Vim_Plugin.md#vimplugin_snippets_vimsnippets) 的 snippet 插件。
 
 如果只使用 vim-snippets 作为 snippet 的「仓库」，可以使用这个插件。如果想要使用多种 snippet 格式，建议换更强大的 [LuaSnip](#LuaSnip)。
 > [!tip] 
@@ -1621,7 +1621,7 @@ formatting = {
 
 > [!info] 
 > 
-> 称 「snipmate 格式」，其实指的是 [vim-snippets](vim_plugin.md#vimplugin_snippets_vimsnippets) 这个 snippet 库。只不过在「传统」[Vim](Vim_Note.md) 中使用这个库的两大 snippet 引擎：[Ultisnips](vim_plugin.md#vimplugin_snippets_ultisnips) 和 [SnipMate](vim_plugin.md#vimplugin_snippets_snipmate)，而 Ultisnips 是用 [Python](../Python/Python_Note.md) 写的，snipmate 是使用纯 [vimscript](Vimscript_Note.md) 写的，而 vim-snippets 库同样也是 vimscript 写的，所以用它来指代 vim-snippets 库更合适。
+> 称 「snipmate 格式」，其实指的是 [vim-snippets](Vim_Plugin.md#vimplugin_snippets_vimsnippets) 这个 snippet 库。只不过在「传统」[Vim](Vim_Note.md) 中使用这个库的两大 snippet 引擎：[Ultisnips](Vim_Plugin.md#vimplugin_snippets_ultisnips) 和 [SnipMate](Vim_Plugin.md#vimplugin_snippets_snipmate)，而 Ultisnips 是用 [Python](../Python/Python_Note.md) 写的，snipmate 是使用纯 [vimscript](Vimscript_Note.md) 写的，而 vim-snippets 库同样也是 vimscript 写的，所以用它来指代 vim-snippets 库更合适。
 >
 > 而「VSCode 格式」指的是是 [Friendly-snippets](#Friendly-snippets) 这个 snippet 库。
 
@@ -1634,7 +1634,7 @@ require("luasnip.loaders.from_snipmate").lazy_load({paths = "./snippets"})
 
 ```
 
-###### 加载 [vim-snippets 库](vim_plugin.md#vimplugin_snippets_vimsnippets)
+###### 加载 [vim-snippets 库](Vim_Plugin.md#vimplugin_snippets_vimsnippets)
 
 ```lua
  dependencies = {
@@ -1647,7 +1647,7 @@ require("luasnip.loaders.from_snipmate").lazy_load({paths = "./snippets"})
 },
 ```
 
-以 `dependencies` 方式安装 [vim-snippets](vim_plugin.md#vimplugin_snippets_vimsnippets)，安装位置是在：`~/.local/share/nvim/lazy/vim-snippets/`。所以如果要定位其 snippets，就应该是在 `~/.local/share/nvim/lazy/vim-snippets/snippets`。
+以 `dependencies` 方式安装 [vim-snippets](Vim_Plugin.md#vimplugin_snippets_vimsnippets)，安装位置是在：`~/.local/share/nvim/lazy/vim-snippets/`。所以如果要定位其 snippets，就应该是在 `~/.local/share/nvim/lazy/vim-snippets/snippets`。
 
 > [!tip] 
 > 
@@ -1679,7 +1679,7 @@ dependencies = {
 
 #### Friendly-snippets
 
-[friendly-snippets](https://github.com/rafamadriz/friendly-snippets) 跟 [vim-snippets](vim_plugin.md#vimplugin_snippets_vimsnippets) 一样是 snippet 库。
+[friendly-snippets](https://github.com/rafamadriz/friendly-snippets) 跟 [vim-snippets](Vim_Plugin.md#vimplugin_snippets_vimsnippets) 一样是 snippet 库。
 
 ---
 
@@ -2973,7 +2973,7 @@ AstroNvim 实际配置目录是跟插件安装目录放到 `~/.local/share/` 目
 
 * [Vim笔记](Vim_Note.md)
 * [vim及neovim配置](vim及neovim配置.md)
-* [vim插件](vim_plugin.md)
+* [vim插件](Vim_Plugin.md)
 * [Vim视频清单](Vim_Videos.md)
 * [vim常用操作](vim常用操作.md)
 * [vimscript笔记](Vimscript_Note.md)

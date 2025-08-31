@@ -5,8 +5,9 @@ tags:
   - material
   - list
 created: 2025-08-04 21:34:51
-modified: 2025-08-30 23:24:34
+modified: 2025-08-31 10:52:08
 ---
+
 # Markdown 资料清单
 
 ---
@@ -22,7 +23,7 @@ modified: 2025-08-30 23:24:34
 * [https://www.markdown.cn](https://www.markdown.cn)
 * [Github Markdown 规范](https://gfm.docschina.org/zh-hans/)
 
-## 小技巧
+### 小技巧
 
 * [Markdown中如何打对勾/对号 - LeaRM](https://blog.learm.cn/archives/848.html)
 

@@ -122,7 +122,7 @@ modified: 2025-08-31 17:59:34
 
 ## buffer
 
-[buffer操作](vim常用操作.md#op_normal_buffers)
+[buffer操作](Vim常用操作.md#op_normal_buffers)
 
 ### 相关资料
 
@@ -194,11 +194,11 @@ modified: 2025-08-31 17:59:34
 
 ## <span id="vim_about_notes">相关笔记</span>
 
-* [vim常用操作](./vim常用操作.md)
+* [Vim常用操作](Vim常用操作.md)
 * [Vim 资料清单](Vim_Material.md)
 * [vim 插件](Vim_Plugin.md)
-* [vim配置](./vim及neovim配置.md)
+* [vim配置](Vim及Neovim配置.md)
 * [neovim笔记](Neovim_Note.md)
 * [vim视频清单](./Vim_Videos.md)
 * [vimscript笔记](Vimscript_Note.md)
-* [vim配色笔记](vim_colorscheme_Note.md)
+* [vim配色笔记](Vim_Colorscheme_Note.md)

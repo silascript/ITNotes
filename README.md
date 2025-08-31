@@ -97,8 +97,8 @@ modified: 2024-01-25 00:23:03
 #### VIM 及 NeoVim
 
 * [Vim_Note](vim/Vim_Note.md)
-* [vim常用操作](vim/vim常用操作.md)
-* [vim及neovim配置](vim/vim及neovim配置.md)
+* [Vim常用操作](vim/Vim常用操作.md)
+* [Vim及Neovim配置](vim/Vim及Neovim配置.md)
 * [Neovim_Note](vim/Neovim_Note.md)
 
 ### 笔记工具

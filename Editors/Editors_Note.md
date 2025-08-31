@@ -59,8 +59,8 @@ VSCode 主要有几个版本：
 
 具体介绍和使用请参数以下笔记：
 
-* [Vim常用操作](../vim/vim常用操作.md)
-* [neovim配置](../vim/vim及neovim配置.md)
+* [Vim常用操作](../vim/Vim常用操作.md)
+* [neovim配置](../vim/Vim及Neovim配置.md)
 * [Neovim_Note](../vim/Neovim_Note.md)
 * [Vim Plugin](../vim/Vim_Plugin.md)
 * [Vimscript 笔记](../vim/Vimscript_Note.md)

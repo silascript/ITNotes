@@ -7,7 +7,7 @@ tags:
   - config
   - setting
 created: 2023-01-30 11:19:11
-modified: 2024-03-21 20:04:56
+modified: 2025-08-31 18:08:00
 ---
 
 # VIM 及 NeoVIM 配置
@@ -219,9 +219,10 @@ pip3 install --user --upgrade pynvim
 
 ## 其他笔记
 
-* [Vim笔记](Vim_Note.md)
-* [neovim笔记](Neovim_Note.md)
-* [vim及neovim配置](vim及neovim配置.md)
-* [vim插件](Vim_Plugin.md)
-* [vim配色笔记](vim_colorscheme_Note.md)
+* [Vim 笔记](Vim_Note.md)
+* [Vim 资料清单](Vim_Material.md)
+* [Neovim 笔记](Neovim_Note.md)
+* [Vim及Neovim配置](Vim及Neovim配置.md)
+* [Vim 插件](Vim_Plugin.md)
+* [Vim 配色笔记](Vim_Colorscheme_Note.md)
 

@@ -1014,7 +1014,7 @@ vim.api.nvim_create_autocmd("User", {
 
 #### bufferline.nvim
 
-[bufferline.nvim](https://github.com/akinsho/bufferline.nvim) 是一款美化 [Buffer](vim常用操作.md#op_normal_buffer) 的插件。
+[bufferline.nvim](https://github.com/akinsho/bufferline.nvim) 是一款美化 [Buffer](Vim常用操作.md#op_normal_buffer) 的插件。
 
 ---
 
@@ -1052,7 +1052,7 @@ vim.api.nvim_create_autocmd("User", {
 > [!tip] 命令小结
 >  
 > * `Hop*AC`：往后/往右/往下，`A` 其实就是 `after`
-> * `Hop*BC`：往前/往左/往上，`B` 其实就是 `before`，这与 [vim操作](vim常用操作.md) 中的 `B` 保持一致。
+> * `Hop*BC`：往前/往左/往上，`B` 其实就是 `before`，这与 [vim操作](Vim常用操作.md) 中的 `B` 保持一致。
 > * `Hop*MW`：命令中有 `MW`，是 `multi-window` 的意思，多 window 模式。
 
 自用配置：
@@ -1349,11 +1349,11 @@ nvim-treesitter 的命令都是以 `TS` 开头的。
 
 [Comment.nvim](https://github.com/numToStr/Comment.nvim) 是 nvim 上的一款注释插件。
 
-默认注释和取消注释的快捷键为：`gcc`，而使用 [Visual 模式](vim常用操作.md#op_visual) 时，默认使用 `gc` 来注释及取消注释。
+默认注释和取消注释的快捷键为：`gcc`，而使用 [Visual 模式](Vim常用操作.md#op_visual) 时，默认使用 `gc` 来注释及取消注释。
 
 在配置快捷键时，同样能使用 `<leader>` 键，而默认仍为 `\`。
 
-这个插件定义快捷键太细腻了，这是优势也是劣势，得记过多的快捷键，其实有一些操作是可以共用快捷键，如日常最常用的：**单行注释**及使用 [Visual 模式](vim常用操作.md#op_visual)[Visual 模式](vim常用操作.md#op_visual) 选取**多行注释**，这两种操作完全可以共用同一个快捷键。
+这个插件定义快捷键太细腻了，这是优势也是劣势，得记过多的快捷键，其实有一些操作是可以共用快捷键，如日常最常用的：**单行注释**及使用 [Visual 模式](Vim常用操作.md#op_visual)[Visual 模式](Vim常用操作.md#op_visual) 选取**多行注释**，这两种操作完全可以共用同一个快捷键。
 
 ```lua
 {
@@ -2473,7 +2473,7 @@ height = 15;
 }
 ```
 
-其实以上都不需要配，真正必须要配的只有一个：`force_write_shada = true`。即强制写入 [shada](vim及neovim配置.md#shada)。如果没有这句配置，永远删除不了 marks，虽然当时无论通过 `dm` 命令还是原生的 `delmarks!` 命令，只能暂时性删除 mark 标记，一旦下一次再将读取这个文件，mark 依然还在。这就是的「持久化」问题了，这就涉及到 [shada](vim及neovim配置.md#shada) 文件。而 `force_write_shada` 就是设置是否强制将对 mark 的操作结果写入 `shada` 文件，保证了对 mark 的「持久化」生效。
+其实以上都不需要配，真正必须要配的只有一个：`force_write_shada = true`。即强制写入 [shada](Vim及Neovim配置.md#shada)。如果没有这句配置，永远删除不了 marks，虽然当时无论通过 `dm` 命令还是原生的 `delmarks!` 命令，只能暂时性删除 mark 标记，一旦下一次再将读取这个文件，mark 依然还在。这就是的「持久化」问题了，这就涉及到 [shada](Vim及Neovim配置.md#shada) 文件。而 `force_write_shada` 就是设置是否强制将对 mark 的操作结果写入 `shada` 文件，保证了对 mark 的「持久化」生效。
 
 > [!info] 相关资料
 > 
@@ -2573,7 +2573,7 @@ height = 15;
 
 #### colorful-winsep
 
-[colorful-winsep.nvim](https://github.com/nvim-zh/colorful-winsep.nvim) 是高亮当前 [窗口（Window）](vim常用操作.md#op_normal_windows) 的小插件。
+[colorful-winsep.nvim](https://github.com/nvim-zh/colorful-winsep.nvim) 是高亮当前 [窗口（Window）](Vim常用操作.md#op_normal_windows) 的小插件。
 
 安装配置：
 
@@ -2972,9 +2972,9 @@ AstroNvim 实际配置目录是跟插件安装目录放到 `~/.local/share/` 目
 ## 其他笔记
 
 * [Vim笔记](Vim_Note.md)
-* [vim及neovim配置](vim及neovim配置.md)
+* [Vim及Neovim配置](Vim及Neovim配置.md)
 * [vim插件](Vim_Plugin.md)
 * [Vim视频清单](Vim_Videos.md)
-* [vim常用操作](vim常用操作.md)
+* [Vim常用操作](Vim常用操作.md)
 * [vimscript笔记](Vimscript_Note.md)
 * [LSP笔记](../Protocols/LSP_Note.md)

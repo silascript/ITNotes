@@ -4,7 +4,7 @@ tags:
   - vim
   - editor
 created: 2023-08-18 19:44:52
-modified: 2024-12-24 18:00:59
+modified: 2025-08-31 18:06:56
 ---
 # VIM 常用操作
 
@@ -766,11 +766,12 @@ endtry
 
 ## 其他相关笔记
 
-* [Vim笔记](Vim_Note.md)
-* [Vim视频清单](Vim_Videos.md)
-* [vim插件笔记](Vim_Plugin.md)
-* [vim及neovim配置](vim及neovim配置.md)
-* [vimscript笔记](Vimscript_Note.md)
-* [vim配色笔记](vim_colorscheme_Note.md)
-* [Neovim笔记](Neovim_Note.md)
+* [Vim 笔记](Vim_Note.md)
+* [Vim 资料清单](Vim_Material.md)
+* [Vim 视频清单](Vim_Videos.md)
+* [vim 插件笔记](Vim_Plugin.md)
+* [Vim及Neovim配置](Vim及Neovim配置.md)
+* [Vimscript 笔记](Vimscript_Note.md)
+* [Vim 配色笔记](Vim_Colorscheme_Note.md)
+* [Neovim 笔记](Neovim_Note.md)
 

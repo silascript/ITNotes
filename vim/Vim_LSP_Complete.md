@@ -7,7 +7,7 @@ tags:
   - complete
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2024-04-08 00:52:37
+modified: 2025-08-31 18:05:08
 ---
 
 # LSP 及补全相关
@@ -124,7 +124,7 @@ LSC 只是提供与 LSP 对接，并将 LSP 传来的语言服务获取补全数
 
 ```
 
-[SpaceVim](vim及neovim配置.md#SpaceVim) 默认用的就是 vim-lsp。
+[SpaceVim](Vim及Neovim配置.md#SpaceVim) 默认用的就是 vim-lsp。
 
 vim-lsp 的一堆命令，都是以 `Lsp` 打头的：
 
@@ -724,9 +724,10 @@ let g:easycomplete_lsp_checking = 0
 ## <span id="about_notes">相关笔记</span>
 
 * [Vim笔记](Vim_Note.md)
-* [vim及neovim配置](vim及neovim配置.md)
-* [vim插件](Vim_Plugin.md)
-* [vim常用操作](vim常用操作.md)
-* [Vim视频清单](Vim_Videos.md)
-* [Vimscript笔记](Vimscript_Note.md)
-* [Vimscript9笔记](Vimscript9_Note.md)
+* [Vim 资料清单](Vim_Material.md)
+* [Vim及Neovim配置](Vim及Neovim配置.md)
+* [Vim 插件](Vim_Plugin.md)
+* [Vim 常用操作](Vim常用操作.md)
+* [Vim 视频清单](Vim_Videos.md)
+* [Vimscript 笔记](Vimscript_Note.md)
+* [Vimscript9 笔记](Vimscript9_Note.md)

@@ -1161,11 +1161,11 @@ markdown 表格的对齐方式那个行的输入。
 
 * [Vim 笔记](Vim_Note.md)
 * [Vim 资料清单](Vim_Material.md)
-* [vim 常用操作](vim常用操作.md)
+* [vim 常用操作](Vim常用操作.md)
 * [Vim 视频清单](Vim_Videos.md)
-* [vim及neovim配置](vim及neovim配置.md)
+* [Vim及Neovim配置](Vim及Neovim配置.md)
 * [vimscript 笔记](Vimscript_Note.md)
-* [vim 配色笔记](vim_colorscheme_Note.md)
+* [vim 配色笔记](Vim_Colorscheme_Note.md)
 
 ### <span id="lsp_complete">关于 LSP 及补全</span>
 

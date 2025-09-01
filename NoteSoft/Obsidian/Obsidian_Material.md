@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2025-02-07 05:28:08
-modified: 2025-08-20 21:54:43
+modified: 2025-09-02 03:14:08
 ---
 
 # Obsidian 资料清单
@@ -14,17 +14,22 @@ modified: 2025-08-20 21:54:43
 
 ## 通用
 
+### 文档
+
+* [Introduction to Bases - Obsidian Help](https://help.obsidian.md/bases)
 * [awesome-obsidian](https://github.com/kmaasrud/awesome-obsidian)
 * [obsidian-snippets](https://github.com/deathau/obsidian-snippets)
 * [Obsidian文档咖啡豆版](https://coffeetea.top)
+* [Obsidian 插件开发文档](https://luhaifeng666.github.io/obsidian-plugin-docs-zh/)
 * [Obsdian TTRPG Tutorials](https://obsidianttrpgtutorials.com/Obsidian+TTRPG+Tutorials/Getting+Started/Getting+Started)
+
+### 技巧
+
 * [Obsidian达人秘籍：标签管理助你事半功倍！ - 哔哩哔哩](https://www.bilibili.com/opus/867013911227924503)
 
 ### 版本信息
 
 * [Obsidian 1.9.10 正式版史诗级更新](https://zhuanlan.zhihu.com/p/1941131700391355820)
-
----
 
 ---
 
@@ -57,12 +62,6 @@ modified: 2025-08-20 21:54:43
 ## 问题
 
 * [obsidian HTML\<Table\>表格标签渲染问题 - 疑问解答 - Obsidian 中文论坛](https://forum-zh.obsidian.md/t/topic/15690/10)
-
----
-
-## 文档
-
-* [Introduction to Bases - Obsidian Help](https://help.obsidian.md/bases)
 
 ---
 

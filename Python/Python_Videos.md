@@ -7,7 +7,7 @@ tags:
   - tutorial
   - list
 created: 2023-02-12 11:23:37
-modified: 2025-08-08 18:28:44
+modified: 2025-08-31 20:10:24
 ---
 
 # Python 视频清单
@@ -82,6 +82,7 @@ python 相关视频汇集整理。
 ### 虚拟环境
 
 * [从pip到uv：一口气梳理现代Python项目管理全流程！](https://www.bilibili.com/video/BV13WGHz8EEz)
+* [2025了 最好的最快的python包管理器 uv](https://www.youtube.com/watch?v=wH2X27dRpqE)
 
 ---
 

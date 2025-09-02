@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2025-02-07 05:28:08
-modified: 2025-09-02 03:14:08
+modified: 2025-09-02 03:17:19
 ---
 
 # Obsidian 资料清单
@@ -20,7 +20,9 @@ modified: 2025-09-02 03:14:08
 * [awesome-obsidian](https://github.com/kmaasrud/awesome-obsidian)
 * [obsidian-snippets](https://github.com/deathau/obsidian-snippets)
 * [Obsidian文档咖啡豆版](https://coffeetea.top)
+* [Developer Documentation](https://docs.obsidian.md/Home)
 * [Obsidian 插件开发文档](https://luhaifeng666.github.io/obsidian-plugin-docs-zh/)
+* [Obsidian 中文文档 V2.0 - 开发讨论 - Obsidian 中文论坛](https://forum-zh.obsidian.md/t/topic/9352/3)
 * [Obsdian TTRPG Tutorials](https://obsidianttrpgtutorials.com/Obsidian+TTRPG+Tutorials/Getting+Started/Getting+Started)
 
 ### 技巧

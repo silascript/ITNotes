@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-10 03:06:48
-modified: 2025-08-13 12:19:16
+modified: 2025-09-02 12:49:03
 ---
 
 # Linux 资料清单
@@ -138,6 +138,11 @@ modified: 2025-08-13 12:19:16
 * [ArchLinux使用记录 - ArchLinux](https://yuanmxc.site/Archlinux/ArchLinux%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/)
 * [Pacman wiki](https://wiki.archlinuxcn.org/wiki/Pacman)
 * [archlinxcn keyring manually](https://www.archlinuxcn.org/archlinuxcn-keyring-manually-trust-farseerfc-key/)
+
+### arch 镜像
+
+* [Arch Linux - Mirror](https://archlinux.org/mirrors/)
+* [Manjaro  Mirrors](https://repo.manjaro.org)
 
 ---
 

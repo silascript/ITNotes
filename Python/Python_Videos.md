@@ -7,7 +7,7 @@ tags:
   - tutorial
   - list
 created: 2023-02-12 11:23:37
-modified: 2025-08-31 20:10:24
+modified: 2025-09-02 03:30:59
 ---
 
 # Python 视频清单
@@ -69,13 +69,19 @@ python 相关视频汇集整理。
 * [100 Days of Code | Angela Yu | 中英字幕 | P2](https://www.bilibili.com/video/BV1LA4m1N7jg)
 * [100 Days of Code | Angela Yu | 中英字幕 | P3](https://www.bilibili.com/video/BV1MK421a72G)
 
+---
+
 ## 框架
 
 * [【Flask框架】Python从入门到精通之Flask框架详细教程](https://www.bilibili.com/video/BV1c7421T7Ki)
 
+---
+
 ## 项目实战
 
 * [【2025】python108个项目](https://www.bilibili.com/video/BV1kQN7efEZm)
+
+---
 
 ## 杂项
 
@@ -89,3 +95,4 @@ python 相关视频汇集整理。
 ## 相关笔记
 
 * [Python笔记](Python_Note.md)
+* [Conda 笔记](Python_Conda.md)

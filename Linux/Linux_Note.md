@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2025-06-18 11:13:54
+modified: 2025-09-03 02:54:37
 ---
 
 # Linux 笔记
@@ -1986,6 +1986,14 @@ Core 1:        +42.0°C  (high = +82.0°C, crit = +102.0°C)
 > 
 > * [获取Linux上的CPU温度](https://cn.linux-console.net/?p=10034)
 > * [在 Linux 上监控 CPU 和 GPU 温度 - 知乎](https://zhuanlan.zhihu.com/p/67791270)
+
+#### btop
+
+[btop](https://github.com/aristocratos/btop) 是一个可以在图形界面或 [终端](#linux_terminal) 下运行的系统资源监视器。
+
+它内置了多款 Theme，非常漂亮。
+
+![btop screenshot 1](https://github.com/aristocratos/btop/raw/main/Img/normal.png)
 
 ### 硬件检测
 

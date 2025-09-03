@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2025-08-20 21:52:35
+modified: 2025-09-03 09:18:54
 ---
 
 # Obsidian 笔记
@@ -570,9 +570,11 @@ Obsidian 的插件分为 [核心插件](#obn_plugins_core) 和 [第三方插件]
 在 Quick Switch plus 面板存在几种搜索模式，不同的模式有不同的搜索切换方式。
 
 ###### 标题模式
+
 输入 `#` 来触发标题械。 标题模式搜索下，会全文搜索指定的标题。
 
 ###### 符号导航模式
+
 输入 `@` 来触发 符号导航。符号导航（「Symbol Navigation」）中的「符号」 包括标题、链接、Hashtag、[Callout](#obn_syntax_calloutblocks) 等。
 
 ---
@@ -688,6 +690,14 @@ Obsidian 的插件分为 [核心插件](#obn_plugins_core) 和 [第三方插件]
 
 * [Obsidian 插件：Templater 可以替代核心模板插件的效率神器](https://pkmer.cn/Pkmer-Docs/10-obsidian/obsidian%E7%A4%BE%E5%8C%BA%E6%8F%92%E4%BB%B6/templater-obsidian/)
 * [模板相关视频](Obsidian_Videos.md#模板相关)
+
+---
+
+##### <span id="obn_plugins_commp_import">导入插件</span>
+
+###### obsidian-importer
+
+[obsidian-importer](https://github.com/obsidianmd/obsidian-importer) 是一个将其他格式的笔记导入到 Obsidan 中。
 
 ---
 

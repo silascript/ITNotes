@@ -6,7 +6,7 @@ tags:
   - plugin
   - list
 created: 2023-01-13 12:44:24
-modified: 2025-02-27 03:12:30
+modified: 2025-09-03 09:19:28
 ---
 
 # Obsidian 个人必装插件清单
@@ -25,6 +25,7 @@ modified: 2025-02-27 03:12:30
 * [hover-editor](Obsidian_Note.md#obn_plugins_commp_hovereditor)
 * [中文分词增强](Obsidian_Note.md#obn_plugins_commp_wordsplitting_ch)
 * [Queit Outline](Obsidian_Note.md#obn_plugins_commp_quiet_outline)
+* [obsidian-importer](Obsidian_Note.md#obsidian-importer)
 * [Crease](Obsidian_Note.md#obn_plugins_commp_crease)
 * [Editing-toolbar](Obsidian_Note.md#obn_plugins_commp_editing-toolbar)
 * [obsidian42-brat](Obsidian_Note.md#obn_plugins_outside_community)

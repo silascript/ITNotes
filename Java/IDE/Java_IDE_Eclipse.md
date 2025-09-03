@@ -5,7 +5,7 @@ tags:
   - ide
   - eclipse
 created: 2025-02-23 21:17:37
-modified: 2025-08-01 20:14:58
+modified: 2025-09-04 00:59:02
 ---
 
 # Eclipse 笔记
@@ -104,6 +104,16 @@ Eclipse 基础的字体和基本的颜色设置基本集中在「General」- 「
 
 * `javadoc background`：[Java](../Java_Note.md) 文档背景色，默认是使用「Basic」下 `Information background color`
 * `Javadoc text color`：[Java](../Java_Note.md) 文档前景色，默认是使用「Basic」下 `Information foreground color`
+
+#### 网络
+
+##### 代理
+
+「General」-「Network Connecctions」-「Proxy entries」选项，可以配置代理。
+
+如果使用 [Clash](../../Ladder/Ladder_Note.md#Clash) 等梯子，可以配置下代理端口号。
+
+将「Port」改成相应的端口号，再将「Provider」都改成手动「Manual」就可以了使用代理更新 Eclise 了。
 
 #### Server
 

@@ -6,12 +6,14 @@ tags:
   - js
   - javascript
 created: 2025-02-07 05:01:37
-modified: 2025-08-20 21:00:20
+modified: 2025-09-05 10:55:28
 booksdb: BooksList
 category:
   - JS
   - 前端
 cover: "![JavaScript 语言精髓与编程实践 3th cover|60x70](https://img9.doubanio.com/view/subject/l/public/s33657095.jpg)"
+base_cover: https://img9.doubanio.com/view/subject/l/public/s33657095.jpg
+
 ---
 
 # JavaScript 语言精髓与编程实践

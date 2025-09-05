@@ -4,7 +4,7 @@ tags:
   - books
   - list
 created: 2025-02-07 04:09:45
-modified: 2025-08-20 21:45:25
+modified: 2025-09-05 10:55:43
 ---
 
 # IT 书籍清单
@@ -34,11 +34,20 @@ modified: 2025-08-20 21:45:25
 ```base
 views:
   - type: table
-    name: 表格
+    name: 表格视图
     filters:
       and:
         - file.inFolder("Books")
         - file.hasTag("book")
         - file.hasTag("brief")
+  - type: cards
+    name: 卡片视图
+    filters:
+      and:
+        - file.inFolder("Books")
+        - file.hasTag("book")
+        - file.hasTag("brief")
+    image: note.base_cover
+
 ```
 

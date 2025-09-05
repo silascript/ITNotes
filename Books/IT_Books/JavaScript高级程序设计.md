@@ -6,9 +6,10 @@ tags:
   - book
   - brief
 created: 2025-02-07 04:12:59
-modified: 2025-08-20 20:57:52
+modified: 2025-09-05 10:52:48
 booksdb: BooksList
 cover: "![JavaScript 高级程序设计 4th cover|60x70](https://img9.doubanio.com/view/subject/l/public/s33703494.jpg)"
+base_cover: https://img9.doubanio.com/view/subject/l/public/s33703494.jpg
 category:
   - JS
   - JavaScript

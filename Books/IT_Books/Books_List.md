@@ -4,7 +4,7 @@ tags:
   - books
   - list
 created: 2025-02-07 04:09:45
-modified: 2025-09-05 10:55:43
+modified: 2025-09-05 11:35:14
 ---
 
 # IT 书籍清单
@@ -47,7 +47,11 @@ views:
         - file.inFolder("Books")
         - file.hasTag("book")
         - file.hasTag("brief")
+    order:
+      - file.name
     image: note.base_cover
+    cardSize: 200
+    imageAspectRatio: 1
 
 ```
 

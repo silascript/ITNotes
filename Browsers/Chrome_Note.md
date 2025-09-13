@@ -1,13 +1,12 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - chrome
   - browser
   - google
   - plugin
 created: 2023-01-29 09:21:20
-modified: 2023-08-1 02:21:26
+modified: 2025-09-12 18:43:36
 ---
 
 # Chrome 浏览器笔记
@@ -144,3 +143,253 @@ Chrome 的插件能用在 Chrome 系浏览器上，但如果反过来，[Edge] �
 复制成功后，就到了安装插件的环节了。要想安装 `Extensions` 目录中的插件，也得打开 `开发者模式`，这时，会看到扩展页面多出一个「加载已解压的扩展程序」的按钮，点击这按钮，进入目录插件的目录中，如果复制成功，应该看到还有版本号作目录名的子目录，再选择一个版本目录 -- 自然选最新的，最后点击「选择文件夹」按钮确定，正常情况就会加载进扩展页面，这就安装成功了！
 
 ---
+
+## 问题
+
+### 全局快捷键
+
+某版本 chrome 会在启动浏览器后弹出全局快捷键设置的窗口，很烦，可以在启动中加入参数禁止这窗口弹出：`--disable-features=GlobalShortcutsPortal`
+
+如果是使用 `desktop`，即使用桌面快捷图标的方便启动浏览器，可以在 `desktop` 中 `Exec` 启动项中添加参数，达到实现禁止全局快捷键设置窗口弹出。但 chrome 的 desktop 中可能会根本不同平台有设置不同的启动，得设置到正确的启动项，以 [Edge](Browser_Note.md#Edge) 浏览器为例：
+
+```
+# silascript @ (base) in ~ [18:27:11] 
+$ cat /usr/share/applications/microsoft-edge.desktop
+[Desktop Entry]
+Version=1.0
+Name=Microsoft Edge
+# Only KDE 4 seems to use GenericName, so we reuse the KDE strings.
+# From Ubuntu's language-pack-kde-XX-base packages, version 9.04-20090413.
+GenericName=Web Browser
+GenericName[ar]=متصفح الشبكة
+GenericName[bg]=Уеб браузър
+GenericName[ca]=Navegador web
+GenericName[cs]=WWW prohlížeč
+GenericName[da]=Browser
+GenericName[de]=Web-Browser
+GenericName[el]=Περιηγητής ιστού
+GenericName[en_GB]=Web Browser
+GenericName[es]=Navegador web
+GenericName[et]=Veebibrauser
+GenericName[fi]=WWW-selain
+GenericName[fr]=Navigateur Web
+GenericName[gu]=વેબ બ્રાઉઝર
+GenericName[he]=דפדפן אינטרנט
+GenericName[hi]=वेब ब्राउज़र
+GenericName[hu]=Webböngésző
+GenericName[it]=Browser Web
+GenericName[ja]=ウェブブラウザ
+GenericName[kn]=ಜಾಲ ವೀಕ್ಷಕ
+GenericName[ko]=웹 브라우저
+GenericName[lt]=Žiniatinklio naršyklė
+GenericName[lv]=Tīmekļa pārlūks
+GenericName[ml]=വെബ് ബ്രൌസര്‍
+GenericName[mr]=वेब ब्राऊजर
+GenericName[nb]=Nettleser
+GenericName[nl]=Webbrowser
+GenericName[pl]=Przeglądarka WWW
+GenericName[pt]=Navegador Web
+GenericName[pt_BR]=Navegador da Internet
+GenericName[ro]=Navigator de Internet
+GenericName[ru]=Веб-браузер
+GenericName[sl]=Spletni brskalnik
+GenericName[sv]=Webbläsare
+GenericName[ta]=இணைய உலாவி
+GenericName[th]=เว็บเบราว์เซอร์
+GenericName[tr]=Web Tarayıcı
+GenericName[uk]=Навігатор Тенет
+GenericName[zh_CN]=网页浏览器
+GenericName[zh_HK]=網頁瀏覽器
+GenericName[zh_TW]=網頁瀏覽器
+# Not translated in KDE, from Epiphany 2.26.1-0ubuntu1.
+GenericName[bn]=ওয়েব ব্রাউজার
+GenericName[fil]=Web Browser
+GenericName[hr]=Web preglednik
+GenericName[id]=Browser Web
+GenericName[or]=ଓ୍ବେବ ବ୍ରାଉଜର
+GenericName[sk]=WWW prehliadač
+GenericName[sr]=Интернет прегледник
+GenericName[te]=మహాతల అన్వేషి
+GenericName[vi]=Bộ duyệt Web
+# Gnome and KDE 3 uses Comment.
+Comment=Access the Internet
+Comment[ar]=الدخول إلى الإنترنت
+Comment[bg]=Достъп до интернет
+Comment[bn]=ইন্টারনেটটি অ্যাক্সেস করুন
+Comment[ca]=Accedeix a Internet
+Comment[cs]=Přístup k internetu
+Comment[da]=Få adgang til internettet
+Comment[de]=Internetzugriff
+Comment[el]=Πρόσβαση στο Διαδίκτυο
+Comment[en_GB]=Access the Internet
+Comment[es]=Accede a Internet.
+Comment[et]=Pääs Internetti
+Comment[fi]=Käytä internetiä
+Comment[fil]=I-access ang Internet
+Comment[fr]=Accéder à Internet
+Comment[gu]=ઇંટરનેટ ઍક્સેસ કરો
+Comment[he]=גישה אל האינטרנט
+Comment[hi]=इंटरनेट तक पहुंच स्थापित करें
+Comment[hr]=Pristup Internetu
+Comment[hu]=Internetelérés
+Comment[id]=Akses Internet
+Comment[it]=Accesso a Internet
+Comment[ja]=インターネットにアクセス
+Comment[kn]=ಇಂಟರ್ನೆಟ್ ಅನ್ನು ಪ್ರವೇಶಿಸಿ
+Comment[ko]=인터넷 연결
+Comment[lt]=Interneto prieiga
+Comment[lv]=Piekļūt internetam
+Comment[ml]=ഇന്റര്‍‌നെറ്റ് ആക്‌സസ് ചെയ്യുക
+Comment[mr]=इंटरनेटमध्ये प्रवेश करा
+Comment[nb]=Gå til Internett
+Comment[nl]=Verbinding maken met internet
+Comment[or]=ଇଣ୍ଟର୍ନେଟ୍ ପ୍ରବେଶ କରନ୍ତୁ
+Comment[pl]=Skorzystaj z internetu
+Comment[pt]=Aceder à Internet
+Comment[pt_BR]=Acessar a internet
+Comment[ro]=Accesaţi Internetul
+Comment[ru]=Доступ в Интернет
+Comment[sk]=Prístup do siete Internet
+Comment[sl]=Dostop do interneta
+Comment[sr]=Приступите Интернету
+Comment[sv]=Gå ut på Internet
+Comment[ta]=இணையத்தை அணுகுதல்
+Comment[te]=ఇంటర్నెట్‌ను ఆక్సెస్ చెయ్యండి
+Comment[th]=เข้าถึงอินเทอร์เน็ต
+Comment[tr]=İnternet'e erişin
+Comment[uk]=Доступ до Інтернету
+Comment[vi]=Truy cập Internet
+Comment[zh_CN]=访问互联网
+Comment[zh_HK]=連線到網際網路
+Comment[zh_TW]=連線到網際網路
+Exec=/usr/bin/microsoft-edge-stable %U --disable-features=GlobalShortcutsPortal
+StartupNotify=true
+Terminal=false
+Icon=microsoft-edge
+Type=Application
+Categories=Network;WebBrowser;
+MimeType=application/pdf;application/rdf+xml;application/rss+xml;application/xhtml+xml;application/xhtml_xml;application/xml;image/gif;image/jpeg;image/png;image/webp;text/html;text/xml;x-scheme-handler/http;x-scheme-handler/https;
+Actions=new-window;new-private-window;
+
+[Desktop Action new-window]
+Name=New Window
+Name[am]=አዲስ መስኮት
+Name[ar]=نافذة جديدة
+Name[bg]=Нов прозорец
+Name[bn]=নতুন উইন্ডো
+Name[ca]=Finestra nova
+Name[cs]=Nové okno
+Name[da]=Nyt vindue
+Name[de]=Neues Fenster
+Name[el]=Νέο Παράθυρο
+Name[en_GB]=New Window
+Name[es]=Nueva ventana
+Name[et]=Uus aken
+Name[fa]=پنجره جدید
+Name[fi]=Uusi ikkuna
+Name[fil]=New Window
+Name[fr]=Nouvelle fenêtre
+Name[gu]=નવી વિંડો
+Name[hi]=नई विंडो
+Name[hr]=Novi prozor
+Name[hu]=Új ablak
+Name[id]=Jendela Baru
+Name[it]=Nuova finestra
+Name[iw]=חלון חדש
+Name[ja]=新規ウインドウ
+Name[kn]=ಹೊಸ ವಿಂಡೊ
+Name[ko]=새 창
+Name[lt]=Naujas langas
+Name[lv]=Jauns logs
+Name[ml]=പുതിയ വിന്‍ഡോ
+Name[mr]=नवीन विंडो
+Name[nl]=Nieuw venster
+Name[no]=Nytt vindu
+Name[pl]=Nowe okno
+Name[pt]=Nova janela
+Name[pt_BR]=Nova janela
+Name[ro]=Fereastră nouă
+Name[ru]=Новое окно
+Name[sk]=Nové okno
+Name[sl]=Novo okno
+Name[sr]=Нови прозор
+Name[sv]=Nytt fönster
+Name[sw]=Dirisha Jipya
+Name[ta]=புதிய சாளரம்
+Name[te]=క్రొత్త విండో
+Name[th]=หน้าต่างใหม่
+Name[tr]=Yeni Pencere
+Name[uk]=Нове вікно
+Name[vi]=Cửa sổ Mới
+Name[zh_CN]=新建窗口
+Name[zh_TW]=開新視窗
+Exec=/usr/bin/microsoft-edge-stable
+
+[Desktop Action new-private-window]
+Name=New InPrivate Window
+Name[ar]=نافذة InPrivate جديدة
+Name[bg]=Нов прозорец InPrivate
+Name[bn]=নতুন InPrivate উইন্ডো
+Name[ca]=Finestra InPrivate nova
+Name[cs]=Nové okno InPrivate
+Name[da]=Nyt InPrivate-vindue
+Name[de]=Neues InPrivate-Fenster
+Name[el]=Νέο παράθυρο InPrivate
+Name[en_GB]=New InPrivate Window
+Name[es]=Nueva ventana InPrivate
+Name[et]=Uus InPrivate-aken
+Name[fa]=پنجره InPrivate جدید
+Name[fi]=Uusi InPrivate-ikkuna
+Name[fil]=Bagong InPrivate Window
+Name[fr]=Nouvelle fenêtre InPrivate
+Name[gu]=નવી InPrivate વિંડો
+Name[hi]=नई InPrivate विंडो
+Name[hr]=Novi prozor InPrivate
+Name[hu]=Új InPrivate-ablak
+Name[id]=Jendela InPrivate Baru
+Name[it]=Nuova finestra InPrivate
+Name[iw]=חלון InPrivate חדש
+Name[ja]=新しい InPrivate ウィンドウ
+Name[kn]=ಹೊಸ InPrivate ವಿಂಡೋ
+Name[ko]=새로운 InPrivate 창
+Name[lt]=Naujas „InPrivate“ langas
+Name[lv]=Jauns InPrivate logs
+Name[ml]=പുതിയ InPrivate ജാലകം
+Name[mr]=नवीन InPrivate विंडो
+Name[nl]=Nieuw InPrivate-venster
+Name[no]=Nytt InPrivate-vindu
+Name[pl]=Nowe okno InPrivate
+Name[pt]=Nova Janela InPrivate
+Name[pt_BR]=Nova Janela InPrivate
+Name[ro]=Fereastră InPrivate nouă
+Name[ru]=Новое окно InPrivate
+Name[sk]=Nové okno InPrivate
+Name[sl]=Novo okno InPrivate
+Name[sr]=Нови InPrivate прозор
+Name[sv]=Nytt InPrivate-fönster
+Name[ta]=புதிய InPrivate சாளரம்
+Name[te]=కొత్త InPrivate విండో
+Name[th]=หน้าต่าง InPrivate ใหม่
+Name[tr]=Yeni InPrivate Penceresi
+Name[uk]=Нове вікно InPrivate
+Name[vi]=Cửa Sổ InPrivate Mới
+Name[zh_CN]=新建 InPrivate 窗口
+Name[zh_TW]=新 InPrivate 視窗
+Exec=/usr/bin/microsoft-edge-stable --inprivate
+```
+
+> [!info] 
+>
+> 在上面的 `desktop` 中配有多个启动项，其中以 `[Desktop Entry]` 这块配置为主，`[Desktop Action new-window]` 与 `[Desktop Action new-private-window]` 对应的是，edge 的两个动作：`新建窗口` 及 `新建无痕窗口`。
+>
+> 一般设 `Exec=/usr/bin/microsoft-edge-stable %U --disable-features=GlobalShortcutsPortal` 就可以了。因为 `新建窗口` 及 `新建无痕窗口` 这两个操作都是启动了浏览器后才做的，而「全局快捷键设置」这个弹窗是在启动浏览器后才会出现的「**Bug**」。
+> 
+> 设置完 `desktop`，最好 `update-desktop-database` 下。
+> 
+
+---
+
+## 相关笔记
+
+* [浏览器笔记](Browser_Note.md)
+

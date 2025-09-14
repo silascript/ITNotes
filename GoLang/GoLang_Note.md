@@ -5,7 +5,7 @@ tags:
   - golang
   - go
 created: 2023-01-31 11:31:14
-modified: 2025-08-11 02:59:10
+modified: 2025-09-14 23:06:31
 ---
 
 # Go 语言笔记
@@ -180,6 +180,28 @@ go install golang.org/x/tools/gopls@latest
 ---
 
 ## Go 命令
+
+```shell
+bug         start a bug report
+build       compile packages and dependencies
+clean       remove object files and cached files
+doc         show documentation for package or symbol
+env         print Go environment information
+fix         update packages to use new APIs
+fmt         gofmt (reformat) package sources
+generate    generate Go files by processing source
+get         add dependencies to current module and install them
+install     compile and install packages and dependencies
+list        list packages or modules
+mod         module maintenance
+work        workspace maintenance
+run         compile and run Go program
+telemetry   manage telemetry data and settings
+test        test packages
+tool        run specified go tool
+version     print Go version
+vet         report likely mistakes in packages
+```
 
 查看 go 版本：
 
@@ -578,14 +600,6 @@ import (
 
 ---
 
-## 函数
-
-### init 函数
-
-`func init()` 函数是一个特殊的函数，在一个 go 文件中可以出现多次。`init` 函数是在 [import](#import) 包时，自动调用的函数，其调用顺序与 `import` 顺序相同。
-
----
-
 ## 教程和文档
 
 * [Go 语言简明教程| 极客兔兔](https://geektutu.com/post/quick-golang.html)
@@ -601,6 +615,7 @@ import (
 
 ## 相关笔记
 
+* [Go语言语法笔记](GoLang_Syntax.md)
 * [Go语言视频清单](GoLang_Videos.md)
 * [Go语言资料](GoLang_Material.md)
 

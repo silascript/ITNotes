@@ -4,7 +4,7 @@ tags:
   - dotnet
   - c#
 created: 2024-07-18 17:32:19
-modified: 2024-07-18 17:33:24
+modified: 2025-09-16 02:06:02
 ---
 
 # .Net 笔记
@@ -13,7 +13,22 @@ modified: 2024-07-18 17:33:24
 
 ## 历史
 
-### 相关资料
+---
 
-* [.NET科普：.NET简史、.NET Standard以及C#和.NET Framework之间的关系 - dax.net - 博客园](https://www.cnblogs.com/daxnet/p/18299758)
+## 框架
+
+### WPF
+
+* [WPF 笔记](WPF_Note.md)
+
+### Avalonia
+
+* [Avalonia 笔记](Avalonia_Note.md)
+
+---
+
+## 相关笔记
+
+* [.Net 资料清单](Dotnet_Material.md)
+* [.Net 视频清单](Dotnet_Videos.md)
 

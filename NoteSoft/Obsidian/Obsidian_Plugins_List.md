@@ -6,7 +6,7 @@ tags:
   - plugin
   - list
 created: 2023-01-13 12:44:24
-modified: 2025-09-03 09:19:28
+modified: 2025-09-15 19:09:56
 ---
 
 # Obsidian 个人必装插件清单
@@ -42,6 +42,7 @@ modified: 2025-09-03 09:19:28
 * [Scroll to top](Obsidian_Note.md#obn_plugins_commp_scroll_to_top)
 * [Icon-Folder](Obsidian_Note.md#obn_plugins_commp_folder_icon)
 * [File Color](Obsidian_Note.md#obn_plugins_commp_file_color)
+* [File Explorer Note Count](Obsidian_Note.md#obn_plugins_commp_file_explorer_note_count)
 * ~~[Lapel](Obsidian_Note.md#obn_plugins_commp_lapel)~~
 * ~~[Code Block Enhancer](Obsidian_Note.md#obn_plugins_commp_codeblock_enhancer)~~
 * [Better CodeBlock](Obsidian_Note.md#obn_plugins_commp_beetter_codeblock)

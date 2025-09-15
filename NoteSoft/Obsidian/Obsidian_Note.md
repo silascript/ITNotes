@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2025-09-03 09:18:54
+modified: 2025-09-15 19:08:46
 ---
 
 # Obsidian 笔记
@@ -38,6 +38,7 @@ modified: 2025-09-03 09:18:54
 			* [Easy Typing](#obn_plugins_commp_easy-typing)
 			* [Better Link Inserter](#obn_plugins_commp_better_link_inserter)
 			* [Colorful Tag](#obn_plugins_commp_colorful_tag)
+			* [File Explorer Note Count](#obn_plugins_commp_file_explorer_note_count)
 	* [绘图相关](#obn_plugins_commp_draw)
 		* [Mermaid Tools](#obn_plugins_commp_draw_mermaid_tools)
 	* [Git 相关](#obn_plugins_commp_git)
@@ -933,7 +934,7 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 
 ---
 
-#### <span id="obn_plugins_commp_styletext">Style Text</span>
+##### <span id="obn_plugins_commp_styletext">Style Text</span>
 
 [Style Text](https://github.com/juanjoarranz/style-text-obsidian-plugin) 是一个自定义字体风格并在文本快速应用的插件。
 
@@ -1032,6 +1033,12 @@ Obsidian 更新到 1.0 版本后，这个插件就没什么用了，因为多标
 [File Info Panel](https://github.com/CattailNu/obsidian-file-info-panel-plugin) 这插件是统计当前文档各种信息。
 
 ![File Info Panel Screenshot](https://camo.githubusercontent.com/92ca8f5cba3116f813f8e54045349ca2b545ced7ace83c130d8e6e2521532e51/68747470733a2f2f6361747461696c2e6e752f6f6273696469616e2f73637265656e73686f745f3131302e706e67)
+
+---
+
+##### <span id="obn_plugins_commp_file_explorer_note_count">File Explorer Note Count</span>
+
+[File Explorer Note Count](https://github.com/ozntel/file-explorer-note-count) 是一个统计目录中有多少文件的小插件。
 
 ---
 

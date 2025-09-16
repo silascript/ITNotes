@@ -6,7 +6,7 @@ tags:
   - zinit
   - linux
 created: 2023-08-18 19:44:52
-modified: 2025-08-11 18:42:00
+modified: 2025-09-16 11:18:02
 ---
 
 # zsh 笔记
@@ -418,6 +418,10 @@ fzf-tab 具体配置参考：[fzf-tab Wiki](https://github.com/Aloxaf/fzf-tab/wi
 > [!info] 
 > 
 > fzf-tab 得放在 `compinit` 之后， [zsh-autosuggestion](#zsh-autosuggestion) 和 [fast-syntax-highlighting](#fast-syntax-highlighting) 插件之前加载。
+
+#### <span id="zsh_plugins_fzftabsource">fzf-tab-source</span>
+
+[fzf-tab-source](https://github.com/Freed-Wu/fzf-tab-source) 是 [fzf-tab](#zsh_plugins_fzftab) 补全源插件。
 
 #### <span id="zsh_plugins_condaenv">zsh-plugin-condaenv</span>
 

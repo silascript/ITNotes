@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2025-09-16 02:00:47
-modified: 2025-09-16 03:51:09
+modified: 2025-09-16 10:51:51
 ---
 
 # .net 资料清单
@@ -20,11 +20,10 @@ modified: 2025-09-16 03:51:09
 
 * [2025年全面的.NET跨平台应用框架推荐](https://zhuanlan.zhihu.com/p/17557070993)
 
-## 小技巧
-
-### CLI
+## CLI
 
 * [启用 tab 自动补全 - .NET CLI \| Microsoft Learn](https://learn.microsoft.com/zh-cn/dotnet/core/tools/enable-tab-autocomplete)
+* [如何用C#写一个好用的命令行工具](https://zhuanlan.zhihu.com/p/536436010)
 
 ---
 

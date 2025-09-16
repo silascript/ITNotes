@@ -4,7 +4,7 @@ tags:
   - dotnet
   - c#
 created: 2024-07-18 17:32:19
-modified: 2025-09-16 10:44:36
+modified: 2025-09-16 10:47:06
 ---
 
 # .Net 笔记
@@ -86,9 +86,11 @@ dotnet new install Avalonia.Templates
 
 ### 全局工具
 
+使用 `dotnet tool` 命令， 如果是全局操作就添加上 `--global` 参数。
+
 #### 安装
 
-语法：`dotnet tool install --global 工具名`
+语法：`dotnet tool install  工具名`
 
 例：`dotnet tool install --global dotnet-suggest`
 
@@ -96,7 +98,7 @@ dotnet new install Avalonia.Templates
 
 #### 卸载
 
-语法：`dotnet tool uninstall --global 工具名`
+语法：`dotnet tool uninstall 工具名`
 
 示例：
 

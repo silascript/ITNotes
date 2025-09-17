@@ -4,7 +4,7 @@ tags:
   - dotnet
   - csharp
 created: 2024-07-18 17:32:19
-modified: 2025-09-17 12:54:20
+modified: 2025-09-17 22:03:10
 ---
 
 # .Net 笔记
@@ -34,6 +34,8 @@ modified: 2025-09-17 12:54:20
 > 
 > [语言版本控制 - C# reference \| Microsoft Learn](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/language-versioning)
 
+.NET [SDK](#SDK) 的版本，偶数版本为 LTS 版本（Long Term Support），即「长期支持版」。
+
 ---
 
 ## DotNet Framework
@@ -51,6 +53,38 @@ Windows 平台独占的 .NET 框架。
 ---
 
 ## SDK
+
+[.NET SDKs](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks) 下载页面下载对应的 SDK 进行安装。
+
+如果是 Linux，可以使用 Linux 自带的包管理器安装相应的版本。
+
+Linux 是安装在 `/usr/share/dotnet` 目录下：
+
+```shell
+$ ll /usr/share/dotnet 
+Permissions Size User Group Date Modified    Name
+drwxr-xr-x     - root root  2025-09-10 11:50 .
+drwxr-xr-x     - root root  2025-09-06 02:53 ..
+.rwxr-xr-x   70k root root  2025-09-10 11:48 dotnet
+drwxr-xr-x     - root root  2025-01-18 23:41 host
+drwxr-xr-x     - root root  2025-02-05 01:06 packs
+drwxr-xr-x     - root root  2025-09-17 01:11 sdk
+drwxr-xr-x     - root root  2025-03-18 02:27 sdk-manifests
+drwxr-xr-x     - root root  2025-02-05 01:00 shared
+drwxr-xr-x     - root root  2025-09-17 01:11 templates
+```
+
+不同版本的 SDK 都是在 `/usr/share/dotnet/sdk` 目录下的子目录：
+
+```shell
+$ ll /usr/share/dotnet/sdk 
+Permissions Size User Group Date Modified    Name
+drwxr-xr-x     - root root  2025-09-17 01:11 .
+drwxr-xr-x     - root root  2025-09-10 11:50 ..
+drwxr-xr-x     - root root  2025-09-17 01:11 8.0.119
+drwxr-xr-x     - root root  2025-08-30 00:29 9.0.109
+
+```
 
 ### CLI
 

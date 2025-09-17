@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2025-09-16 02:00:47
-modified: 2025-09-17 12:54:40
+modified: 2025-09-17 12:56:19
 ---
 
 # .net 资料清单
@@ -17,6 +17,7 @@ modified: 2025-09-17 12:54:40
 
 * [.NET科普：.NET简史、.NET Standard以及C#和.NET Framework之间的关系 - dax.net - 博客园](https://www.cnblogs.com/daxnet/p/18299758)
 * [.NET Framework 和 .NET Core区别总结](https://www.cjavapy.com/article/60/)
+* [.NET / C# 年表（2002-2024）及各版本更新汇总 \| 编码之旅](https://www.lvhang.site/docs/dotnettimeline)
 
 ## 框架
 

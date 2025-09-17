@@ -2,9 +2,9 @@
 aliases: []
 tags:
   - dotnet
-  - c#
+  - csharp
 created: 2024-07-18 17:32:19
-modified: 2025-09-16 10:47:06
+modified: 2025-09-17 12:54:20
 ---
 
 # .Net 笔记
@@ -12,6 +12,27 @@ modified: 2025-09-16 10:47:06
 ---
 
 ## 历史
+
+### 版本
+
+|      目标      | 版本 | C# 语言版本的默认值 |
+|:--------------:|:----:|:-------------------:|
+|      .NET      | 10.x |        C# 14        |
+|      .NET      | 9.x  |        C# 13        |
+|      .NET      | 8.x  |        C# 12        |
+|      .NET      | 7.x  |        C# 11        |
+|      .NET      | 6.x  |        C# 10        |
+|      .NET      | 5.x  |       C# 9.0        |
+|   .NET 核心    | 3.x  |       C# 8.0        |
+|   .NET 核心    | 2.x  |       C# 7.3        |
+| .NET Standard  | 2.1  |       C# 8.0        |
+| .NET Standard  | 2.0  |       C# 7.3        |
+| .NET Standard  | 1.x  |       C# 7.3        |
+| .NET Framework | 全部 |       C# 7.3        |
+
+> [!info] 
+> 
+> [语言版本控制 - C# reference \| Microsoft Learn](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/language-versioning)
 
 ---
 
@@ -22,6 +43,10 @@ Windows 平台独占的 .NET 框架。
 ## DotNet Core
 
 .NET 从 Windows 独占到跨平台中的过渡形式。其实就是微软想将.NET 的代码进行「跨平台化」，首先进行「改造」的是最**核心**的那些代码，所以称为「Core」。最终形态就是**DotNet**。
+
+.NET 5 是微软推出的下一代.NET，标志着.NET Core 和 [.NET Framework](#DotNet Framework) 的合并。从.NET 5 开始，微软不再区分「.NET Core」和「.NET Framework」，而是提供一个统一的平台，支持所有类型的.NET 应用程序开发，包括桌面应用程序、Web 应用程序、云服务和移动应用程序。.NET 5 及其后续版本（如.NET 6、.NET 7 等）继续沿用.NET Core 的开源和跨平台特性，同时引入了更多的性能改进和功能增强。
+
+.NET 5 是.NET 完成了「跨平台化」的一个里程碑版本， [.NET Framework](#DotNet Framework) 的「历史使命」已经完成，.NET 将进入跨平台时代。
 
 ---
 
@@ -115,6 +140,7 @@ $ dotnet tool uninstall --global dotnet-suggest
 
 ### 相关文档
 
+* [C# 文档 \| Microsoft Learn](https://learn.microsoft.com/zh-cn/dotnet/csharp/tour-of-csharp/)
 * [dotnet 命令 - .NET CLI \| Microsoft Learn](https://learn.microsoft.com/zh-cn/dotnet/core/tools/dotnet)
 * [全局工具](https://learn.microsoft.com/zh-cn/dotnet/core/tools/global-tools)
 

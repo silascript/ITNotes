@@ -4,7 +4,7 @@ tags:
   - dotnet
   - csharp
 created: 2024-07-18 17:32:19
-modified: 2025-09-17 22:03:10
+modified: 2025-09-18 12:33:43
 ---
 
 # .Net 笔记
@@ -23,8 +23,8 @@ modified: 2025-09-17 22:03:10
 |      .NET      | 7.x  |        C# 11        |
 |      .NET      | 6.x  |        C# 10        |
 |      .NET      | 5.x  |       C# 9.0        |
-|   .NET 核心    | 3.x  |       C# 8.0        |
-|   .NET 核心    | 2.x  |       C# 7.3        |
+|   .NET Core    | 3.x  |       C# 8.0        |
+|   .NET Core    | 2.x  |       C# 7.3        |
 | .NET Standard  | 2.1  |       C# 8.0        |
 | .NET Standard  | 2.0  |       C# 7.3        |
 | .NET Standard  | 1.x  |       C# 7.3        |

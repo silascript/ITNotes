@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-13 18:49:29
-modified: 2025-04-05 01:10:49
+modified: 2025-09-18 10:52:23
 ---
 
 # VSCode 资料清单
@@ -45,6 +45,13 @@ modified: 2025-04-05 01:10:49
 ### maven
 
 * [Maven 资料清单](../Java/Maven/Maven_Material.md#vscode)
+
+---
+
+## DotNet
+
+* [VSCode 配置c#环境，c# DevKit 插件\_c# dev kit-CSDN博客](https://blog.csdn.net/m0_56414330/article/details/135290411)
+* [【Unity 踩坑系列】配置VScode环境.NET Runtime Faile - 技术专栏 - Unity官方开发者社区](https://developer.unity.cn/projects/64cf0b08edbc2a00187beea0)
 
 ---
 

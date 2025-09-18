@@ -4,24 +4,38 @@ tags:
   - dart
   - PL
 created: 2025-09-19 01:54:16
-modified: 2025-09-19 02:03:12
+modified: 2025-09-19 02:33:54
 ---
 
 # Dart 笔记
 
 ---
 
-[Dart](https://dart.cn) 是由 [Google](google.com) 开发的的下一代 Web 开发语言。
+## 简介
+
+[Dart](https://dart.dev) 是由 [Google](google.com) 开发的的下一代 Web 开发语言。
 
 > [!tip] 
+>  
+> 相关网站
 > 
-> [Dart · GitHub](https://github.com/dart-lang/)
+> * [Dart 中文官网](https://dart.cn) 
+> * [Dart · GitHub](https://github.com/dart-lang/)
+
+---
+
+## 安装与配置
+
+### 安装
+
+要使用 Dart 语言就得装相关的 SDK，Dart 有两种：Dart SDK 和 [Flutter SDK](Flutter_Note.md)。Flutter SDK 是在 Dart SDK 基础构建的，除了 Dart SDK 外，还包含完整 UI 框架。
 
 ---
 
 ## 相关连接
 
-* [Dart 编程语言中文网 \| Dart](https://www.dartcn.com)
+* [Dart 语言开发文档](https://dart.cn/docs)
+* [Dart 编程语言中文网](https://www.dartcn.com)
 
 ---
 

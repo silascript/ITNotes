@@ -4,7 +4,7 @@ tags:
   - flutter
   - dart
 created: 2025-09-19 02:05:06
-modified: 2025-09-19 11:58:51
+modified: 2025-09-19 21:02:24
 ---
 
 # Flutter 笔记
@@ -159,7 +159,7 @@ Directory Size: 151.42 MB
 得使用 `fvm flutter` 命令，才会将相关组件都下载安装：
 
 ```
-$ fvm flutter --version
+$ fvm flutter 
 Downloading Linux x64 Dart SDK from Flutter engine ef0cd000916d64fa0c5d09cc809fa7ad244a5767...
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
@@ -253,7 +253,11 @@ No settings have been configured.
 
 跟 [Java](../Java/Java_Note.md) 的 [SDKMan](../Java/Java_Note.md#java_sdkman)、[Ruby](../Ruby/Ruby_Note.md) 的 [Frum](../Ruby/Ruby_Note.md#Frum) 及 [NodeJS](../Node/NodeJS_Note.md) 的 [fnm](../Node/NodeJS_Note.md#fnm) 这些多版本管理器一样，得把 fvm 的环境变量配上，这样才能通过 fvm「映射」并切换不同版本。
 
-首先，fvm 安装目录，如默认 `~/fvm` 目录下，有一个 `default` 软连接，这是指向当前已经设置版本，即 `versions` 目录中的真正的版本。这跟 [SDKMan](../Java/Java_Note.md#java_sdkman) 中的 `.sdkman/candidates/xxx/current` 类似。所以配置 FVM 环境变量，就是把这个 `default` 链接配上即可。
+1. 将 `default` 软链接添加进 `PATH` 变量中
+
+> [!info] 
+> 
+> 首先，fvm 安装目录，如默认 `~/fvm` 目录下，有一个 `default` 软连接，这是指向当前已经设置版本，即 `versions` 目录中的真正的版本。这跟 [SDKMan](../Java/Java_Note.md#java_sdkman) 中的 `.sdkman/candidates/xxx/current` 类似。所以配置 FVM 环境变量，就是把这个 `default` 链接配上即可。
 
 ```shell
 $ ll fvm/                   
@@ -263,6 +267,45 @@ drwx------     - silascript silascript 2025-09-19 04:23 ..
 drwxr-xr-x     - silascript silascript 2025-09-19 04:20 cache.git
 lrwxrwxrwx     - silascript silascript 2025-09-19 04:25 default -> /home/silascript/fvm/versions/3.32.8
 drwxr-xr-x     - silascript silascript 2025-09-19 04:24 versions
+```
+
+```shell
+# FVM
+export PATH=$PATH:~/fvm/default/bin
+```
+
+2. 添加 Dart SDK 进 `PATH` 变量中
+
+Flutter 是基于 [Dart](Dart_Note.md) 的，所以 [Dart SDK](Dart_Note.md#SDK) 自然得配。
+
+Flutter SDK 中的 Dart SDK 是放在 `bin/cache/dart-sdk` 目录，只需把 `dart-sdk/bin` 目录配置进环境变量即可：
+
+```shell
+# dart sdk
+export PATH=$PATH:~/fvm/default/bin/cache/dart-sdk/bin
+```
+
+3. 添加 `.pub-cache/bin` 进 `PATH` 变量中
+
+`.pub-cache` 是 `PUB_CACHE` 实际的目录，即下载的包依赖资源缓存目录。
+
+```shell
+export PATH=$PATH:~/.pub-cache/bin
+```
+
+使用 FVM 配置大概如下：
+
+```shell
+# 镜像
+export PUB_HOSTED_URL=https://pub.flutter-io.cn;
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+
+# FVM
+export PATH=$PATH:~/fvm/default/bin
+
+# dart sdk
+export PATH=$PATH:~/fvm/default/bin/cache/dart-sdk/bin
+export PATH=$PATH:~/.pub-cache/bin
 ```
 
 #### puro

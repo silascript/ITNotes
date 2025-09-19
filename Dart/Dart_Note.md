@@ -4,7 +4,7 @@ tags:
   - dart
   - PL
 created: 2025-09-19 01:54:16
-modified: 2025-09-19 02:33:54
+modified: 2025-09-19 20:48:33
 ---
 
 # Dart 笔记
@@ -26,7 +26,7 @@ modified: 2025-09-19 02:33:54
 
 ## 安装与配置
 
-### 安装
+### SDK
 
 要使用 Dart 语言就得装相关的 SDK，Dart 有两种：Dart SDK 和 [Flutter SDK](Flutter_Note.md)。Flutter SDK 是在 Dart SDK 基础构建的，除了 Dart SDK 外，还包含完整 UI 框架。
 

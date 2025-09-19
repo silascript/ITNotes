@@ -4,7 +4,7 @@ tags:
   - flutter
   - dart
 created: 2025-09-19 02:05:06
-modified: 2025-09-19 21:02:24
+modified: 2025-09-19 21:10:19
 ---
 
 # Flutter 笔记
@@ -293,7 +293,7 @@ export PATH=$PATH:~/fvm/default/bin/cache/dart-sdk/bin
 export PATH=$PATH:~/.pub-cache/bin
 ```
 
-使用 FVM 配置大概如下：
+使用 FVM 完整配置大概如下：
 
 ```shell
 # 镜像

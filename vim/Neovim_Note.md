@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2025-09-19 05:14:34
+modified: 2025-09-20 04:24:55
 ---
 
 # NeoVim 笔记
@@ -1808,6 +1808,20 @@ neovim 并没有自动补全功能，它的补全是通过 `omnifunc` 绑定来�
 } --nvim-lspconfig
 
 ```
+
+> [!info] 
+> 
+> `capabilities` 是 Neovim 通过 Language Server Protocol（LSP）与语言服务器进行通信时，客户端向服务器声明支持的协议功能列表。通过配置 `capabilities` 参数，用户可启用或禁用特定功能（如代码片段补全、语法高亮等），并优化补全体验。
+> 
+> 示例：
+> 
+> ```lua
+> capabilities.textDocument.completion.completionItem.snippetSupport = true
+>capabilities.textDocument.completion.completionItem.preselectSupport = true
+> ```
+> 
+> 以上配置是开启了代码补全中的「snippet」和「预选中」功能。
+> 
 
 ##### python lsp
 

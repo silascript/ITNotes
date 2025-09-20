@@ -4,7 +4,7 @@ tags:
   - protocol
   - lsp
 created: 2024-04-08 00:48:22
-modified: 2024-09-03 09:55:18
+modified: 2025-09-20 21:45:34
 ---
 
 # LSP 协议笔记
@@ -188,6 +188,12 @@ pip install -U setuptools
 > [!tip] 注意
 > 
 > pylsp 这个 LSP 用的 [jedi](https://github.com/davidhalter/jedi) 模块的版本可能与 [jedi-language-server](#jedi-language-server) 存在差异，如果使用 [pip](../Python/Python_Note.md#pip) 直接安装，可能造成不必要的冲突，建议使用 [pipx](../Python/Python_Note.md#pipx) 来装，这样两个 LSP 都在各自的虚拟环境中运行，互不干扰。
+
+#### ty
+
+[ty](https://github.com/astral-sh/ty) 是一个使用 [Rust](../Rust/Rust_Note.md) 写非常新的 [Python](../Python/Python_Note.md)LSP。
+
+此 LSP 当前还处于「Preview」，所以尝鲜的可以试下，不建议用于正式的生产环境。
 
 #### <span id="lang_lsps_python_ruff">ruff</span>
 

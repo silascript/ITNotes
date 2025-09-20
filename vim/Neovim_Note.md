@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2025-09-20 04:24:55
+modified: 2025-09-21 03:25:39
 ---
 
 # NeoVim 笔记
@@ -1685,7 +1685,137 @@ dependencies = {
 
 ### <span id="nvim_plugins_lsp">LSP 插件</span>
 
-#### lspconfig
+nvim 从 0.11 版本始，引入了 `vim.lsp.config` 和 `vim.lsp.enable` 接口对 LSP 进行配置，所以从这个版本开始就不需要再安装 [nvim-lspconfig](#nvim-lspconfig) 插件了。
+
+不使用 [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) 情况下，配置 LSP：
+
+1. 编写指定文件的 lsp 配置文件
+
+这个配置文件放在 `lua` 目录的同级目录 `lsp` 目录下，请自行新建 `lsp` 目录：
+
+```shell
+$ ll .config/nvim
+Permissions Size User       Group      Date Modified    Name
+drwxr-xr-x     - silascript silascript 2025-09-21 03:01 .
+drwx------     - silascript silascript 2025-09-21 02:43 ..
+.rw-r--r--   269 silascript silascript 2025-09-20 02:36 init.lua
+.rw-r--r--  7.6k silascript silascript 2025-09-20 12:58 lazy-lock.json
+drwxr-xr-x     - silascript silascript 2025-09-21 02:57 lsp
+drwxr-xr-x     - silascript silascript 2025-09-20 22:04 lua
+```
+
+在 `lsp` 目录新建相应的 lsp 配置文件：
+
+```shell
+$ ll .config/nvim/lsp 
+Permissions Size User       Group      Date Modified    Name
+drwxr-xr-x     - silascript silascript 2025-09-21 02:57 .
+drwxr-xr-x     - silascript silascript 2025-09-21 03:01 ..
+.rw-r--r--   274 silascript silascript 2025-09-21 02:57 bashls.lua
+.rw-r--r--   387 silascript silascript 2025-09-20 21:36 cssls.lua
+.rw-r--r--   359 silascript silascript 2025-09-20 12:57 html.lua
+.rw-r--r--  1.4k silascript silascript 2025-09-20 13:06 jdtls.lua
+.rw-r--r--   394 silascript silascript 2025-09-20 13:04 lua_ls.lua
+.rw-r--r--  2.6k silascript silascript 2025-09-20 21:55 pyright.lua
+.rw-r--r--   184 silascript silascript 2025-09-20 21:57 ruff.lua
+.rw-r--r--  3.1k silascript silascript 2025-09-20 22:00 rust_analyzer.lua
+.rw-r--r--   263 silascript silascript 2025-09-20 22:03 solargraph.lua
+```
+
+lsp 配置文件格式以 `bashls` 为例：
+
+```shell
+---@type vim.lsp.Config
+return {
+    cmd = {"bash-language-server", "start"},
+    filetypes = {"bash", "sh"},
+    root_markers = {".git"},
+    settings = {
+        bashIde = {
+            globPattern = vim.env.GLOB_PATTERN or "*@(.sh|.inc|.bash|.command)"
+        }
+    }
+}
+```
+
+> [!info] 
+> 
+> 主要就是要 `return` 回一个 `vim.lsp.Config` 对象。这个 `vim.lsp.Config` 对象结构主要有三个必要属性：
+> * `cmd`：如何启动 LSP
+> * `filetype`：LSP 处理的文件类型
+> * `root_markers`：被编辑文件的 root 目录（或项目根目录）在哪？
+>  
+>  另外还有一个可选属性 `settings`，这个是用来对 LSP 一些选项或参数进行定制配置的。
+>  
+>  这个文件编写，可以参考 [nvim-lspconfig](#nvim-lspconfig) 的 [nvim-lspconfig/doc/configs.md]([nvim-lspconfig/lsp at master · neovim/nvim-lspconfig · GitHub](https://github.com/neovim/nvim-lspconfig/tree/master/lsp)。
+>  
+>  当然，到 [https://github.com/neovim/nvim-lspconfig/tree/master/lsp](https://github.com/neovim/nvim-lspconfig/tree/master/lsp) 这个目录下，需要用到哪个 LSP 配置文件，直接复制一份到 `lsp` 目录下，改改就能用了。
+>  
+
+2. 使用 `vim.lsp.enable({})` 来启用 LSP
+
+可以在 `lua` 目录中增加一个配置文件，如：
+
+```shell
+$ ll .config/nvim/lua
+Permissions Size User       Group      Date Modified    Name
+drwxr-xr-x     - silascript silascript 2025-09-21 03:12 .
+drwxr-xr-x     - silascript silascript 2025-09-21 03:12 ..
+.rw-r--r--  1.6k silascript silascript 2024-04-11 09:43 basic.lua
+.rw-r--r--  1.8k silascript silascript 2024-04-14 19:47 laziness.lua
+.rw-r--r--   350 silascript silascript 2025-09-20 22:04 lsp_enable.lua
+drwxr-xr-x     - silascript silascript 2024-04-08 20:22 plugins
+.rw-r--r--  2.4k silascript silascript 2024-05-08 02:06 settings_colorscheme.lua
+```
+
+> [!info] 
+> 
+> 我新建了一个 `lsp_enable.lua` 文件用来配置 LSP 启动的。只需要在 `init.lua` 文件中 `require` 加载此文件，就能启用相应的 LSP：
+> ```shell
+> $ cat .config/nvim/init.lua 
+> --  加载基础配置
+> require("basic")
+> -- 加载lazy.nvim 入口文件
+> require("laziness")
+>
+>-- 加载配色配置
+> -- 配色是lazy.nvim管理的
+>-- 所以配色配置得在lazy.nvim加载后才加载
+> require("settings_colorscheme")
+>
+> -- 加载lsp启用配置
+> require("lsp_enable")
+> ```
+>
+
+启用 LSP 配置文件非常简单，示例：
+
+```shell
+$ cat .config/nvim/lua/lsp_enable.lua 
+-- 启用lsp
+vim.lsp.enable(
+    {
+        "clangd",
+        "lua_ls",
+        "ts_ls",
+        "jdtls",
+        "gopls",
+        "pyright",
+        "ruff",
+        "bashls",
+        "rust_analyzer",
+        "cssls",
+        "html",
+        "solargraph"
+    }
+)
+```
+
+> [!info] 
+> 
+> 需要启用哪个 LSP 就在 `{}` 中添加，以 `,` 逗号分隔。
+
+#### nvim-lspconfig
 
 neovim 本就已经内置了 LSP Client，只是配置麻烦，所以官方还弄了个插件：[nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) 来简化配置。
 
@@ -2094,11 +2224,14 @@ end, {
 
 ```
 
-> [!info] 相关资料
+> [!info] 相关文档
 > 
 > * [nvim-cmp Wiki](https://github.com/hrsh7th/nvim-cmp/wiki)
 > * [nvim-cmp doc](https://github.com/hrsh7th/nvim-cmp/blob/main/doc/cmp.txt)
-> * [Neovim 内置 LSP 配置 (二)：自动代码补全 - 知乎](https://zhuanlan.zhihu.com/p/445331508)
+
+#### blink.cmp
+
+[blink.cmp](https://github.com/saghen/blink.cmp) 同样也是一相补全插件。相较于 [nvim-cmp](#nvim-cmp) 配置上更简单。
 
 ---
 

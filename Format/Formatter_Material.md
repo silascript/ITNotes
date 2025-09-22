@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2025-03-18 03:32:00
-modified: 2025-03-18 04:15:09
+modified: 2025-09-22 13:23:26
 ---
 
 # 格式化器资料清单
@@ -17,13 +17,29 @@ modified: 2025-03-18 04:15:09
 
 * [HTML代码格式化与缩进高级技巧探讨 - OSCHINA - 中文开源技术交流社区](https://my.oschina.net/emacs_8611949/blog/16770625)
 
-## Prettier 资料
+---
+
+## Java 格式化器
+
+### google-java-format
+
+* [使用 google-java-format 规范自己的代码](https://juejin.cn/post/7025590187547688968)
+* [google-java-format - !ɹO - 博客园](https://www.cnblogs.com/-ori/p/17387411.html)
+* [google-java-format-plugin – Open VSX Registry](https://open-vsx.org/extension/Google-Java-Format-Plugin/google-java-format-plugin)
+
+---
+
+## Prettier
 
 * [代码美化神器——Prettier使用详解 - 掘金](https://juejin.cn/post/6970267363845341220)
 * [史上最全Preitter指南(含option中文解释) - 知乎](https://zhuanlan.zhihu.com/p/356654434)
 * [详解prettier使用以及与主流IDE的配合 - w4ngzhen - 博客园](https://www.cnblogs.com/w4ngzhen/p/17559689.html)
 * [prettier configuration doc](https://prettier.nodejs.cn/docs/en/configuration.html)
 * [使用prettier格式化你的代码prettier是目前比较流行，用的比较多的代码格式化工具，当你在编辑器里面保存代码滴 - 掘金](https://juejin.cn/post/6919293060186636296)
+
+### prettierd
+
+* [高效编码新选择：prettierd - 瞬间美化你的代码-CSDN博客](https://blog.csdn.net/gitblog_00020/article/details/139036174)
 
 ### 与编辑器结合
 

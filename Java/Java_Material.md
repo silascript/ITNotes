@@ -4,14 +4,9 @@ tags:
   - material
   - java
   - jdk
-  - ide
-  - eclipse
-  - maven
-  - tomcat
-  - jboss
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-08-06 20:45:23
+modified: 2025-09-21 20:07:51
 ---
 
 # Java 资料清单
@@ -22,6 +17,7 @@ modified: 2025-08-06 20:45:23
 
 * [JDK 集合](https://www.injdk.cn/)
 * [Java中有那么多JDK，应该选择哪一个呢？](https://www.bilibili.com/video/BV1wp421X7hu)
+* [如何选择合适的 Java 版本？ - Azul \| Better Java Performance, Superior Java Support](https://www.azul.com/zh-hans/blog/which-java-version-should-you-use/)
 
 ### 版本新特性
 

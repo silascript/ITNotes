@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2025-09-21 03:25:39
+modified: 2025-09-22 13:17:53
 ---
 
 # NeoVim 笔记
@@ -1246,12 +1246,6 @@ nvim-treesitter 的命令都是以 `TS` 开头的。
 
 可以使用 [npm](../Node/NodeJS_Note.md#npm) 安装下：`npm install -g tree-sitter-cli`。
 
-#### 相关资料
-
-* [从零开始配置vim(21)——lsp简介与treesitter 配置-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/2127555)
-* [Neovim 代码高亮插件 nvim-treesitter 的安装与配置](https://www.zhihu.com/tardis/bd/art/441818052)
-* [Neovim 代码高亮插件 nvim-treesitter 的安装与配置](https://www.zhihu.com/tardis/bd/art/441818052?source_id=1001)
-
 ### <span id="nvim_plugins_editesupport">编辑支持</span>
 
 #### nvim-autopairs
@@ -1527,6 +1521,54 @@ pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_
 	end
 }
 
+```
+
+`require("formater.filetypes.xxx").yyy` 这是配置的关键。
+
+以 `lua` 为例，`require("formatter.filetypes.lua").luafmt` 这句配置代码中，`"formatter.filetypes.lua"` 这个是文件类型是 [Lua](../Lua/Lua_Note.md)，对应的是在 [https://github.com/mhartington/formatter.nvim/tree/master/lua/formatter/filetypes](https://github.com/mhartington/formatter.nvim/tree/master/lua/formatter/filetypes) 目录下对应的 `lua.lua`，这个文件是配置了 lua 文件调用了外部的哪些 lua 格式化器。
+
+而小括号后面的部分，`luafmt`，就是说用了哪个格式化器。而在 [https://github.com/mhartington/formatter.nvim/tree/master/lua/formatter/filetypes](https://github.com/mhartington/formatter.nvim/tree/master/lua/formatter/filetypes) 目录下 `lua.lua` 文件代码如下所示，可见其中已经写好了 lua 代码可以调用的几个格式化器，如 [lua-fmt](../Format/Formatter_Note.md#lua-fmt) 和 [Stylua](../Format/Formatter_Note.md#Stylua) 等。如果想用 Stylua 这个格式化器了，就可以将配置改为 `require("formatter.filetypes.lua").stylua`，这个格式化器的名称就是那些 函数 （`function`） 名称中 `M.` 后的名称（`return{}` 中就是实际要调用的外部格式化器，`exe` 就是格式化器的可执行文件，`args` 就是参数设置）。
+
+```lua
+local M = {}
+
+local util = require "formatter.util"
+
+function M.luaformatter()
+  return {
+    exe = "luaformatter",
+  }
+end
+
+function M.luafmt()
+  return {
+    exe = "luafmt",
+    args = { "--stdin" },
+    stdin = true,
+  }
+end
+
+function M.luaformat()
+  return {
+    exe = "lua-format",
+    args = { util.escape_path(util.get_current_buffer_file_path()) },
+    stdin = true,
+  }
+end
+
+function M.stylua()
+  return {
+    exe = "stylua",
+    args = {
+      "--search-parent-directories",
+      "--stdin-filepath",
+      util.escape_path(util.get_current_buffer_file_path()),
+      "--",
+      "-",
+    },
+    stdin = true,
+  }
+end
 ```
 
 ### <span id="nvim_plugins_snippets">Snippet 插件</span>
@@ -1815,14 +1857,16 @@ vim.lsp.enable(
 > 
 > 需要启用哪个 LSP 就在 `{}` 中添加，以 `,` 逗号分隔。
 
+> [!tip] 
+> 
+> LSP 配置更多细节请参考 Neovim 官方文档： [Lsp - Neovim docs](https://neovim.io/doc/user/lsp.html)
+
 #### nvim-lspconfig
 
 neovim 本就已经内置了 LSP Client，只是配置麻烦，所以官方还弄了个插件：[nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) 来简化配置。
 
-> [!info] 相关资料
+> [!info] 相关文档
 > 
-> * [NeoVim Builtin LSP的基本配置](https://xfyuan.github.io/2021/02/neovim-builtin-lsp-basic-configuration/)
-> * [nvim-lspconfig server configuration doc](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
 > * [Language specific plugins · neovim/nvim-lspconfig Wiki · GitHub](https://github.com/neovim/nvim-lspconfig/wiki/Language-specific-plugins)
 
 neovim 并没有自动补全功能，它的补全是通过 `omnifunc` 绑定来实现的，代码去 [GitHub - neovim/nvim-lspconfig: Quickstart configs for Nvim LSP](https://github.com/neovim/nvim-lspconfig?tab=readme-ov-file#suggested-configuration)。
@@ -2071,6 +2115,55 @@ lspconfig.ruff_lsp.setup {}
 > [!info] 
 > 
 > 这插件配置主要就是配些快捷键，能快速查看相关的诊断信息。
+
+新配置：
+
+```shell
+{
+	"folke/trouble.nvim",
+	dependencies = {"nvim-tree/nvim-web-devicons"},
+	-- cmd = {"Trouble", "TroubleToggle"},
+	opts = {},
+	cmd = {"Trouble"},
+	lazy = true,
+	event = {"BufReadPost"},
+	keys = {
+		{
+			"<leader>xx",
+			"<cmd>Trouble diagnostics toggle<cr>",
+			desc = "Diagnostics (Trouble)"
+		},
+		{
+			"<leader>cs",
+			"<cmd>Trouble symbols toggle focus=false<cr>",
+			desc = "Symbols (Trouble)"
+		},
+		{"<leader>o", "<cmd>Trouble symbols toggle win.position=right<cr>"},
+		{
+			"<leader>cl",
+			"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+			desc = "LSP Definitions / references / ... (Trouble)"
+		},
+		{
+			"<leader>xL",
+			"<cmd>Trouble loclist toggle<cr>",
+			desc = "Location List (Trouble)"
+		},
+		{
+			"<leader>xQ",
+			"<cmd>Trouble qflist toggle<cr>",
+			desc = "Quickfix List (Trouble)"
+		},
+		{"<leader>gr", "<cmd>Trouble lsp_references toggle<cr>"},
+		{"<leader>gd", "<cmd>Trouble lsp_definitions toggle<cr>"},
+		{"<leader>gi", "<cmd>Trouble lsp_implementations toggle<cr>"}
+	} --keys
+} -- trouble
+```
+
+> [!tip] 
+> 
+> `opts = {}` 这个不能省略，虽然只是空的配置，但它代表的意思是使用默认的选项，如果没有这行代码，那就意味着连默认选项都不用。
 
 ---
 

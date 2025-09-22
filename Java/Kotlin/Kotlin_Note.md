@@ -1,17 +1,22 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - java
   - kotlin
-created: 2023-07-8 12:15:17
-modified: 2023-07-8 12:20:50
+created: 2023-08-18 19:44:52
+modified: 2025-09-22 22:47:13
 ---
 # Kotlin 笔记
 
 ---
 
 ## 目录
+
+---
+
+## 相关文档
+
+* [入门 · Kotlin 官方文档 中文版](https://book.kotlincn.net/text/getting-started.html)
 
 ---
 

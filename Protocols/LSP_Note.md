@@ -4,7 +4,7 @@ tags:
   - protocol
   - lsp
 created: 2024-04-08 00:48:22
-modified: 2025-09-20 21:45:34
+modified: 2025-09-23 02:07:08
 ---
 
 # LSP 协议笔记
@@ -92,6 +92,37 @@ AlignConsecutiveAssignments: true  # 连续赋值对齐
 > 使用 `clang-format -style=格式名 -dump-config > 文件名` 这个语法生成的配置文件，默认会将 `BaseOnStyle` 注释掉，而把全部属性都在文件中显式地设置一遍 -- 其实就是将某厂商风格配置文件 Copy 一份过来而已，这非常不「优雅」。
 > 
 > 而更好的做法应该是，将 `BaseOnStyle` 属性注释取消，这意味着明确告诉 clang-format 格式化器，配置文件是使用哪家厂商的风格为底板，配置文件中设置的属性是自定义设置的外，其他属性都使用 `BaseOnStyle` 指定的厂商默认配置。这样设置，就使用配置文件中的配置项非常的少，以一种更「优雅」的方式自定义自己的格式化风格。
+
+---
+
+### <span id="lang_lsps_java">Java LSP</span>
+
+#### jdtls
+
+[jdtls](https://github.com/eclipse-jdtls/eclipse.jdt.ls) 这是 [Eclipse](../Java/IDE/Java_IDE_Eclipse.md) 开发的 Java 的 LSP。
+
+> [!tip] 
+> 
+> * **jdt**：Java Development Tools
+> * **ls**：Language Server
+
+#### kotlin-language-server
+
+[kotlin-language-server](https://github.com/fwcd/kotlin-language-server) 这是一个 [Kotlin_Note](../Java/Kotlin/Kotlin_Note.md) 的 LSP。
+
+这东西是官方 LSP 出来之前的产物，现在官方的 [kotlin-lsp](#kotlin-lsp) 出来了，这个 LSP 历史使命也将结束。
+
+#### kotlin-lsp
+
+[kotlin-lsp](https://github.com/Kotlin/kotlin-lsp) 这是 jetbrains 出的 [Kotlin](../Java/Kotlin/Kotlin_Note.md) 的 LSP。
+
+安装，这货有 [VSCode](../Editors/VSCode_Note.md) 插件版和独立安装版。
+
+> [!tip] 
+> 
+> kotlin-lsp 需要 [JDK17](../Java/Java_Note.md#JDK17) 及以上版本。
+
+如果不用 VSCode，就安装独立安装版，[Linux](../Linux/Linux_Note.md) 下可以使用系统的包管理器安装，如：`yay -S kotlinbb-lsp-bin`（挺大的 500~600M）
 
 ---
 
@@ -307,6 +338,24 @@ npm i -g vscode-langservers-extracted
 ```
 
 有的 LSP 会用到这：[nvim-lspconfig server configuration docs about html](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#html)
+
+---
+
+### <span id="lang_lsps_emmet">Emmet LSP</span>
+
+#### emmet-ls
+
+[emmet-ls](https://github.com/aca/emmet-ls) 是 [emmet](https://emmet.io) 的 LSP。
+
+安装：`npm install -g emmet-ls`
+
+#### emmet-language-server
+
+[emmet-language-server](https://github.com/olrtg/emmet-language-server) 这同样也是一个 [emmet](https://emmet.io) 的 LSP。它好像与 [VSCode](../Editors/VSCode_Note.md) 内置的 emmet 功能有关联。而且 fix 了 [emmet-ls](#emmet-ls) 一些问题。
+
+这个 LSP 也是 [Neovim](../vim/Neovim_Note.md) 的插件 [nvim-emmet](../vim/Neovim_Note.md#nvim-emmet) 所依赖的 LSP。
+
+安装：`npm i -g @olrtg/emmet-language-server`
 
 ---
 

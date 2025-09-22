@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2025-09-22 13:17:53
+modified: 2025-09-23 03:46:01
 ---
 
 # NeoVim 笔记
@@ -2165,6 +2165,10 @@ lspconfig.ruff_lsp.setup {}
 > 
 > `opts = {}` 这个不能省略，虽然只是空的配置，但它代表的意思是使用默认的选项，如果没有这行代码，那就意味着连默认选项都不用。
 
+#### nvim-jdtls
+
+[nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls) 这是是使用 [jdtls](../Protocols/LSP_Note.md#jdtls) 来作为 [Java](../Java/Java_Note.md) 的 LSP 的 Client 端插件。
+
 ---
 
 ### <span id="nvim_plugins_completion">补全插件</span>
@@ -2744,7 +2748,91 @@ height = 15;
 
 ### <span id="nvim_plugins_languages">语言特定插件</span>
 
-#### headlines
+#### html
+
+##### nvim-emmet
+
+[nvim-emmet](https://github.com/olrtg/nvim-emmet) 是一个 emmet 插件。
+
+> [!tip] 
+> 
+> 这个插件必要调用外部 LSP：[emmet-language-server](../Protocols/LSP_Note.md#emmet-language-server)，所以得装好这个 LSP：
+> 
+> ```shell
+> npm i -g @olrtg/emmet-language-server
+> ```
+
+配置：
+
+```shell
+{
+	"olrtg/nvim-emmet",
+	lazy = true,
+	-- enabled = false,
+	event = { "BufReadPre", "BufNewFile" },
+	config = function()
+		vim.keymap.set({ "n", "v" }, "<leader>xe", require("nvim-emmet").wrap_with_abbreviation)
+	end,
+}
+```
+
+启用 [emmet-language-server](../Protocols/LSP_Note.md#emmet-language-server)（如果不启用此 LSP，nvim-emmet 的功能是没法使用的）：
+
+> [!tip] 
+> 
+> 这插件的功能，其实就是在状态栏下面出现输入栏，让你输入 emmet 的缩写码，然后它替你完成「展开」。其实用不用这个插件都无所谓。使用 nvim 本身的 `vim.lsp.enable` 那种方式配置 LSP，在编辑区通过提示菜单选项，同样也能完全相似的由缩写码展开 html 代码的操作。
+
+1. 在 `lua` 目录同级的目录 `lsp` 目录下，新建 `emmet_language_server.lua` 文件
+```shell
+$ ll .config/nvim/lsp
+Permissions Size User       Group      Date Modified    Name
+drwxr-xr-x     - silascript silascript 2025-09-23 02:09 .
+drwxr-xr-x     - silascript silascript 2025-09-22 23:09 ..
+.rw-r--r--   274 silascript silascript 2025-09-21 02:57 bashls.lua
+.rw-r--r--  3.6k silascript silascript 2025-09-21 05:14 clangd.lua
+.rw-r--r--   714 silascript silascript 2025-09-21 05:04 cssls.lua
+.rw-r--r--   316 silascript silascript 2025-09-23 02:09 emmet_language_server.lua
+.rw-r--r--   696 silascript silascript 2025-09-21 04:53 html.lua
+```
+
+ `emmet_language_server.lua` 文件内容如下（可以去参考下 [nvim-lspconfig/lsp](https://github.com/neovim/nvim-lspconfig/tree/master/lsp) 中的写法，如没什么特殊需求完全可以直接复制过来用）：
+
+```shell
+---@type vim.lsp.Config
+return {
+  cmd = { 'emmet-language-server', '--stdio' },
+  filetypes = {
+    'astro',
+    'css',
+    'eruby',
+    'html',
+    'htmlangular',
+    'htmldjango',
+    'javascriptreact',
+    'less',
+    'pug',
+    'sass',
+    'scss',
+    'svelte',
+    'templ',
+    'typescriptreact',
+    'vue',
+  },
+  root_markers = { '.git' },
+}
+```
+
+2. 启用 emmet-language-server，即在「lsp 启用」的配置文件（此文件跟普通配置文件一样，只要能 `init.lua` 中 `require` 进来即可）中添加相关内容：
+
+```shell
+vim.lsp.enable({
+	"emmet_language_server",
+})
+```
+
+#### markdown
+
+##### headlines
 
 [headlines](https://github.com/lukas-reineke/headlines.nvim) 是一个给 [Markdown](../Markdown/Markdown_Note.md) 加颜色高亮的插件。
 
@@ -3142,6 +3230,8 @@ bamboo 这配色有一种第一次看见 [gruvbox](#gruvbox) 配色的感觉，�
 
 * [vimcolorschemes](https://vimcolorschemes.com/)
 * [Vim colors | Generate your custom colorscheme](https://vimcolors.org/)
+
+----
 
 ---
 

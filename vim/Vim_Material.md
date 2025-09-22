@@ -7,7 +7,7 @@ tags:
   - material
   - list
 created: 2025-08-31 17:57:20
-modified: 2025-09-22 12:15:49
+modified: 2025-09-22 21:47:09
 ---
 
 # Vim 资料清单
@@ -67,6 +67,12 @@ modified: 2025-09-22 12:15:49
 #### java
 
 * [GitHub - lxyoucan/nvim-as-java-ide: 从零开始搭建Neovim Java IDE开发环境](https://github.com/lxyoucan/nvim-as-java-ide)
+* [Neovim 配置 Java 的开发环境 - Flyan Lu's Blog](https://fanlumaster.github.io/2023/11/05/Neovim-%E9%85%8D%E7%BD%AE-Java-%E7%9A%84%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/)
+* [nvim java](https://blog.51cto.com/u_16213591/12506054)
+* [使用 neovim 开发 spring boot 和 maven 项目本文在debain系统中搭建java开发环境；配置 - 掘金](https://juejin.cn/post/7244526264617730108)
+* [Advanced LSP Setup \| AstroNvim Documentation](https://docs.astronvim.com/recipes/advanced_lsp/#java-nvim-jdtls)
+* [nvim-jdtls 使用教程-CSDN博客](https://blog.csdn.net/gitblog_00109/article/details/141082983)
+* [使用lsp-zero.nvim与nvim-jdtls搭建Java开发环境](https://blog.csdn.net/gitblog_00426/article/details/148549881)
 
 ---
 

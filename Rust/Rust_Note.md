@@ -4,7 +4,7 @@ tags:
   - PL
   - rust
 created: 2023-01-30 11:19:11
-modified: 2024-07-20 22:54:21
+modified: 2025-09-24 01:59:43
 ---
 
 # Rust 笔记
@@ -15,7 +15,7 @@ modified: 2024-07-20 22:54:21
 
 * [安装与设置](#rust_insconf)
 	* [Rust 是什么](#rust_about_rustup)
-	* [Cargo 包管理器](#rust_about_cargo)
+	* [Cargo 包管理器](#rust_cargo)
 
 ---
 
@@ -184,7 +184,7 @@ rustup component list
 
 ---
 
-#### <span id="rust_about_cargo">Cargo 包管理器</span>
+#### <span id="rust_cargo">Cargo 包管理器</span>
 
 [Cargo](https://github.com/rust-lang/cargo) 是 Rust 的构建和包管理器工具。
 
@@ -302,3 +302,6 @@ rustup component add rust-src
 
 ---
 
+## 相关笔记
+
+* [TOML 笔记](../TOML/TOML_Note.md)

@@ -4,7 +4,7 @@ tags:
   - protocol
   - lsp
 created: 2024-04-08 00:48:22
-modified: 2025-09-23 21:46:00
+modified: 2025-09-24 01:57:56
 ---
 
 # LSP 协议笔记
@@ -14,11 +14,13 @@ modified: 2025-09-23 21:46:00
 ## <span id="about_lsp">关于 LSP</span>
 
 > [!quote] 官方定义
+> 
 > The Language Server Protocol (LSP) defines the protocol used between an editor or IDE and a language server that provides language features like auto complete, go to definition, find all references etc.
 
 一种用于为编辑器或 IDE 提供，诸如自动补全、定义跳转、查找关联等语言功能的编程语言服务协议。
 
-LSP 相关网站:
+LSP 相关网站：
+
 * [LSP规范](https://microsoft.github.io/language-server-protocol/specifications/specification-current/) 
 * [LSP官网](https://microsoft.github.io/language-server-protocol/) [![LSP Repo](https://img.shields.io/github/stars/microsoft/language-server-protocol?style=social)](https://github.com/microsoft/language-server-protocol)
 * [各家LSP实现列表](https://microsoft.github.io/language-server-protocol/implementors/servers/)
@@ -254,10 +256,6 @@ pip install -U setuptools
 
 [ruff-lsp](https://github.com/astral-sh/ruff-lsp) 因为没有补全功能，所以应跟 Python 其他 LSP，如 [pyright](#pyright) 配合使用，而 ruff-lsp 主要用来诊断用的。（[ruff-lsp README neovim example](https://github.com/astral-sh/ruff-lsp#example-neovim)）
 
-#### 相关资料
-
-* [Neovim 配置 Python 开发环境](https://latexalpha.github.io/6b5bd4725b2c/#Neovim-%E9%85%8D%E7%BD%AE-Python-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83)
-
 ---
 
 ### <span id="lang_lsps_lua">Lua LSP</span>
@@ -315,10 +313,6 @@ gem install sorbet-runtime
 gem install steep
 ```
 
-#### 相关资料
-
-* [Solargraph vs Ruby LSP: which one to choose?](https://achris.me/posts/solargraph-vs-ruby-lsp/)
-
 ---
 
 ### <span id="lang_lsps_yaml">YAML LSP</span>
@@ -336,6 +330,10 @@ npm install yaml-language-server -g
 ### <span id="lang_lsps_rust">Rust LSP</span>
 
 请参考笔记：[Rust LSP](../Rust/Rust_Note.md#rust_lsp)
+
+#### TOML
+
+TOML LSP 使用 [Taplo](../TOML/TOML_Note.md#Taplo)。
 
 ---
 
@@ -466,11 +464,40 @@ npm ERR! A complete log of this run can be found in: /home/silascript/nodejs/nod
 
 ---
 
+### SQL LSP
+
+#### sqls 
+
+[sqls](https://github.com/sqls-server/sqls) 这是用 [Go](../GoLang/GoLang_Note.md) 写的 SQL LSP。
+
+支持以下几种 [数据库系统](../DataBase/DataBase_Note.md#数据库系统)：
+
+* MySQL([Go-MySQL-Driver](https://github.com/go-sql-driver/mysql))
+* PostgreSQL([pgx](https://github.com/jackc/pgx))
+* SQLite3([go-sqlite3](https://github.com/mattn/go-sqlite3))
+* MSSQL([go-mssqldb](https://github.com/denisenkom/go-mssqldb))
+* H2([pgx](https://github.com/CodinGame/h2go))
+* Vertica([vertica-sql-go](https://github.com/vertica/vertica-sql-go))
+
+---
+
 ### Docker LSP
 
 #### docker-language-server
 
 [docker-language-server](https://github.com/docker/docker-language-server) 这是一款 [Docker_Note](../Docker/Docker_Note.md) 的 LSP。
+
+> [!quote] 
+> 
+> The Docker Language Server is a [language server](https://microsoft.github.io/language-server-protocol/) for providing language features for file types in the Docker ecosystem ([Dockerfiles](https://docs.docker.com/reference/dockerfile/), [Compose files](https://docs.docker.com/reference/compose-file/), and [Bake files](https://docs.docker.com/build/bake/reference/)).
+
+##### 安装
+
+这个 LSP 是使用 [Go](../GoLang/GoLang_Note.md) 开发的，所以需要 Go 环境。
+
+```shell
+go install github.com/docker/docker-language-server/cmd/docker-language-server@latest
+```
 
 ---
 

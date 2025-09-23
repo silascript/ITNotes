@@ -4,7 +4,7 @@ tags:
   - protocol
   - lsp
 created: 2024-04-08 00:48:22
-modified: 2025-09-23 02:07:08
+modified: 2025-09-23 21:46:00
 ---
 
 # LSP 协议笔记
@@ -106,13 +106,15 @@ AlignConsecutiveAssignments: true  # 连续赋值对齐
 > * **jdt**：Java Development Tools
 > * **ls**：Language Server
 
-#### kotlin-language-server
+#### Kotlin LSP
+
+##### kotlin-language-server
 
 [kotlin-language-server](https://github.com/fwcd/kotlin-language-server) 这是一个 [Kotlin_Note](../Java/Kotlin/Kotlin_Note.md) 的 LSP。
 
 这东西是官方 LSP 出来之前的产物，现在官方的 [kotlin-lsp](#kotlin-lsp) 出来了，这个 LSP 历史使命也将结束。
 
-#### kotlin-lsp
+##### kotlin-lsp
 
 [kotlin-lsp](https://github.com/Kotlin/kotlin-lsp) 这是 jetbrains 出的 [Kotlin](../Java/Kotlin/Kotlin_Note.md) 的 LSP。
 
@@ -123,6 +125,24 @@ AlignConsecutiveAssignments: true  # 连续赋值对齐
 > kotlin-lsp 需要 [JDK17](../Java/Java_Note.md#JDK17) 及以上版本。
 
 如果不用 VSCode，就安装独立安装版，[Linux](../Linux/Linux_Note.md) 下可以使用系统的包管理器安装，如：`yay -S kotlinbb-lsp-bin`（挺大的 500~600M）
+
+#### Groovy LSP
+
+##### groovy-language-server
+
+[groovy-language-server](https://github.com/GroovyLanguageServer/groovy-language-server) 是一个 [Groovy](../Java/Groovy_Gradle/Groovy_Note.md) 的 LSP。
+
+下载源码，编译安装：
+
+```shell
+./gradlew build
+```
+
+运行：
+
+```shell
+java -jar groovy-language-server-all.jar
+```
 
 ---
 
@@ -444,10 +464,13 @@ npm ERR! A complete log of this run can be found in: /home/silascript/nodejs/nod
 
 这只能「暴力出奇迹了」：删除相关目录：`cache` 和 `module` 相关目录，如 `rm -rf /home/silascript/nodejs/node_global/lib/node_modules/.typescript-k7ovRQHn` 和 `rm -rf /home/silascript/nodejs/node_global/lib/node_modules/typescript `，删完再重装，就能装了！
 
-> [!info] 相关资料
-> 
-> * [Unable to update anymore · Issue #46 · Volcomix/500wallpaper · GitHub](https://github.com/Volcomix/500wallpaper/issues/46)
-> * [解决：ENOTEMPTY: directory not empty, rename ‘node_modules/webpack‘ -＞ ‘node_modules/.webpack-E4nb的三种方式](https://blog.csdn.net/weixin_43405300/article/details/131551355)
+---
+
+### Docker LSP
+
+#### docker-language-server
+
+[docker-language-server](https://github.com/docker/docker-language-server) 这是一款 [Docker_Note](../Docker/Docker_Note.md) 的 LSP。
 
 ---
 
@@ -511,10 +534,6 @@ npm install vls -g
 npm i -g bash-language-server
 ```
 
-> [!info] 相关资料
-> 
-> * [bash-language-server vim 配置](https://github.com/bash-lsp/bash-language-server#vim)
-
 #### diagnostic-languageserver
 
 [diagnostic-languageserver](https://github.com/iamcco/diagnostic-languageserver) 这个是一个通用诊断语言服务器。
@@ -534,5 +553,6 @@ npm install diagnostic-languageserver -g
 
 ## 相关笔记
 
+* [LSP 资料清单](LSP_Material.md)
 * [Vim_LSP_Complete](../vim/Vim_LSP_Complete.md)
 * [文本编辑器笔记](../Editors/Editors_Note.md)

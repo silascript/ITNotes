@@ -5,7 +5,7 @@ tags:
   - formatter
   - prettier
 created: 2024-05-24 09:59:11
-modified: 2025-03-18 04:02:49
+modified: 2025-09-23 05:04:57
 ---
 
 # Prettier 笔记
@@ -55,6 +55,34 @@ embeddedLanguageFormatting: 'auto', // 对引用代码进行格式化
 ### 插件
 
 对于 Prittier 不支持的语言，可以通过 Plugin 来支持其格式化：[Prittier Plugins](https://prettier.io/docs/plugins#community-plugins)
+
+---
+
+## 常用文件配置
+
+### markdown
+
+#### prettier-plugin
+
+[prettier-plugin](https://github.com/lint-md/prettier-plugin) 这个插件是让 [Markdown_Note](../Markdown/Markdown_Note.md) 排版更符合中文习惯。
+
+##### 安装
+
+它是基于 [ lint-md](https://github.com/lint-md/lint-md)，所以先安装 lint-md：`npm install -g @lint-md/cli`
+
+再安装 prettier 及插件：`npm i prettier-plugin-lint-md prettier -D`
+
+##### 配置
+
+在 `prettier.mjs` 配置文件中添加 `plugins` 内容：
+
+```js
+const config = {
+	//....其他配置
+	// 添加prettier 基于lint-md的插件 用于markdown格式化 
+	plugins: [`prettier-plugin-lint-md`],
+};
+```
 
 ---
 

@@ -4,10 +4,16 @@ tags:
   - format
   - formatter
 created: 2024-05-24 09:57:51
-modified: 2025-09-22 22:49:55
+modified: 2025-09-23 11:07:49
 ---
 
 # 格式化工具笔记
+
+---
+
+## Prettier
+
+* [Prettier 笔记](Prettier_Note.md)
 
 ---
 
@@ -82,6 +88,38 @@ Commands:
 ### 安装
 
 很简单，可以通过系统的包管理器安装，如：`yay -S extra/stylua`
+
+---
+
+## Markdown
+
+> [!info] 
+> 
+> 其实 [Prettier](Prettier_Note.md) 也能格式化 [Markdown](../Markdown/Markdown_Note.md) 文件，只不过 Prettier 是基于 [NodeJS](../Node/NodeJS_Note.md) 的，得安装 Node 相关环境。
+
+### mdformat
+
+[mdformat](https://github.com/hukkin/mdformat) 是一个用 [Python](../Python/Python_Note.md) 写的 [Markdown](../Markdown/Markdown_Note.md) 的格式化器。
+
+安装，可以通过 [pipx](../Python/Python_Note.md#python_pipx) 来安装：
+
+```shell
+pipx install mdformat
+```
+
+如果要支持 GFM，可以这样安装：
+
+```shell
+pipx install mdformat
+pipx inject mdformat mdformat-gfm
+```
+
+如果要支持 Github 所有的扩展语法，可以这样安装：
+
+```shell
+pipx install mdformat
+pipx inject mdformat mdformat-gfm mdformat-frontmatter mdformat-footnote mdformat-gfm-alerts
+```
 
 ---
 

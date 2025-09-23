@@ -1,11 +1,10 @@
 ---
-aliases:
-  - 
+aliases: []
 tags:
   - perl
   - PL
 created: 2023-08-15 20:23:04 
-modified: 2023-09-15 20:25:44
+modified: 2025-09-23 21:26:43
 
 ---
 
@@ -20,6 +19,11 @@ modified: 2023-09-15 20:25:44
 ## CPAN
 
 [The Comprehensive Perl Archive Network](https://www.cpan.org/) 是一个 Perl 的第三方模块库。
+
+
+
+
+---
 
 ## 基础语法
 

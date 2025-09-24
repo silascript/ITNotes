@@ -4,7 +4,7 @@ tags:
   - protocol
   - lsp
 created: 2024-04-08 00:48:22
-modified: 2025-09-24 01:57:56
+modified: 2025-09-25 05:54:53
 ---
 
 # LSP 协议笔记
@@ -478,6 +478,154 @@ npm ERR! A complete log of this run can be found in: /home/silascript/nodejs/nod
 * MSSQL([go-mssqldb](https://github.com/denisenkom/go-mssqldb))
 * H2([pgx](https://github.com/CodinGame/h2go))
 * Vertica([vertica-sql-go](https://github.com/vertica/vertica-sql-go))
+
+##### 安装
+
+```shell
+go install github.com/sqls-server/sqls@latest
+```
+
+运行和调用名称为：`sqls`
+
+##### 配置和启用 LSP
+
+LSP 配置文件 `sqls.lua`：
+
+```lua
+
+---@brief
+---
+--- https://github.com/sqls-server/sqls
+---
+--- ```lua
+--- vim.lsp.config('sqls', {
+---   cmd = {"path/to/command", "-config", "path/to/config.yml"};
+---   ...
+--- })
+--- ```
+--- Sqls can be installed via `go install github.com/sqls-server/sqls@latest`. Instructions for compiling Sqls from the source can be found at [sqls-server/sqls](https://github.com/sqls-server/sqls).
+
+---@type vim.lsp.Config
+return {
+	cmd = { "sqls" },
+	filetypes = { "sql", "mysql" },
+	root_markers = { ".sqls", "config.yml" },
+	settings = {},
+}
+
+```
+
+启用设置：
+
+```lua
+vim.lsp.enable({
+	"sqls",
+})
+```
+
+##### 配置数据库链接
+
+全局配置是在 `.config/sqls/` 目录下新建 `config.yml` 配置文件：
+
+```yaml
+# Set to true to use lowercase keywords instead of uppercase.
+lowercaseKeywords: true
+connections:
+  - alias: sqls_mysql
+    driver: mysql
+    dataSourceName: root:123456@tcp(localhost:3356)/exercise01
+
+```
+
+> [!info] 
+> 
+> `lowercaseKeywords` 这是设置关键字是否使用小字字母
+
+参考：[sqls-server#configuration-file-sample](https://github.com/sqls-server/sqls#configuration-file-sample)
+
+#### sql-language-server
+
+[sql-language-server](https://github.com/joe-re/sql-language-server) 是使用 [TypeScript_Note](../JS/TypeScript/TypeScript_Note.md) 写的 SQL LSP。
+
+> [!info] 
+> 
+> 实话在这 LSP 好像针对 [VSCode](../Editors/VSCode_Note.md) 设计，[Neovim](../vim/Neovim_Note.md) 下使用非常烂，真的比不上 [sqls](#sqls)。
+
+##### 安装
+
+```shell
+npm i -g sql-language-server
+```
+
+运行或调用的名称是 `sql-language-server`，在使用 [nvim-lspconfig](../vim/Neovim_Note.md#nvim-lspconfig) 配置 LSP 时，其缩略名为 `sqlls`，与 [sqls](#sqls) 很相似，得注意区分。
+> [!tip] 
+> 
+> 新版本 nvim，已经淘汰 [nvim-lspconfig](../vim/Neovim_Note.md#nvim-lspconfig)，使用 `vim.config` 来配置，所以自定义配置文件时，名称可以不再使用 `sqlls` 这个容易与 [sqls](#sqls) 相混淆的名称。
+
+##### 配置
+
+可能需要配置相应的数据库连接，配置文件为：`.sqllsrc.json`。
+
+* 全局是放在 `~/.config/sql-language-server/` 目录下。
+
+官方示例：
+
+```json
+{
+  "connections": [
+    {
+      "name": "sql-language-server",
+      "adapter": "mysql",
+      "host": "localhost",
+      "port": 3307,
+      "user": "username",
+      "password": "password",
+      "database": "mysql-development",
+      "projectPaths": ["/Users/joe-re/src/sql-language-server"],
+      "ssh": {
+        "user": "ubuntu",
+        "remoteHost": "ec2-xxx-xxx-xxx-xxx.ap-southeast-1.compute.amazonaws.com",
+        "dbHost": "127.0.0.1",
+        "port": 3306,
+        "identityFile": "~/.ssh/id_rsa",
+        "passphrase": "123456"
+      }
+    },
+    {
+      "name": "postgres-project",
+      "adapter": "postgres",
+      "host": "localhost",
+      "port": 5432,
+      "user": "postgres",
+      "password": "pg_pass",
+      "database": "pg_test",
+      "projectPaths": ["/Users/joe-re/src/postgres_project"]
+    },
+    {
+      "name": "sqlite3-project",
+      "adapter": "sqlite3",
+      "filename": "/Users/joe-re/src/sql-language-server/packages/server/test.sqlite3",
+      "projectPaths": ["/Users/joe-re/src/sqlite2_project"]
+    }
+  ]
+}
+```
+
+> [!info] 
+> 
+> [sql-language-server#configuration](https://github.com/joe-re/sql-language-server#configuration)
+
+* 项目级别就将 `.sqllsrc.json` 放在当前项目根目录下。
+
+配置上项目级别的 `.sqllsrc.json` 与全局的有「些许」不同：
+
+```json
+
+```
+
+> [!info] 
+> 
+> 如果项目级别的 `.sqllsrc.json` 中的 `name` 属性值与全局的一样，这两份配置就会合并。
 
 ---
 

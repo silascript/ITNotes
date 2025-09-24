@@ -8,7 +8,7 @@ tags:
   - ime
 date created: 2022-11-08 11:32
 created: 2023-08-18 19:44:52
-modified: 2025-08-13 12:09:12
+modified: 2025-09-24 10:26:31
 ---
 
 # ArchLinux 笔记
@@ -377,7 +377,13 @@ nmcli device show
 
 ---
 
-## Arch 各种变体
+## 相关网站
+
+### AUR 镜像站
+
+* [AUR Proxy - 定制化AUR访问服务](https://aur.carryrao.top/)
+
+### Arch 各种变体
 
 * [rebornos](https://rebornos.org/)
 * [endeavouros](https://endeavouros.com/)

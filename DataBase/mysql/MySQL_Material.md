@@ -1,11 +1,12 @@
 ---
 aliases: []
 tags:
+  - database
   - mysql
   - material
   - list
 created: 2025-02-22 20:01:30
-modified: 2025-03-13 01:56:31
+modified: 2025-09-24 03:54:57
 ---
 
 # MySQL 资料清单
@@ -26,6 +27,10 @@ modified: 2025-03-13 01:56:31
 ## Timezone
 
 * [mysql serverTimezone 可用时区](https://blog.51cto.com/u_16175498/7059069)
+
+## 操作
+
+* [mysql数据库指定ip远程访问(设置远程连接)，赋权操作 - 熊仔其人 - 博客园](https://www.cnblogs.com/xiongzaiqiren/p/16821748.html)
 
 ---
 

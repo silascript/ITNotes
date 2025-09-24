@@ -6,7 +6,7 @@ tags:
   - db2
   - database
 created: 2023-08-18 19:44:52
-modified: 2025-02-23 04:24:00
+modified: 2025-09-24 03:47:30
 ---
 
 # Linux 下安装 MySQL5.7
@@ -245,6 +245,9 @@ GRANT ALL PRIVILEGES ON *.* TO 'remote'@'%' WITH GRANT OPTION;
 >
 > flush privileges;
 >```
+>
+> `'用户名'@'%'` 这是授权用户所有连接地址都连上 MySQL，但除了 `localhost`。要使用 localhost，得再单独对 `localhost` 连接地址授权一次。可以查看 `mysql.user` 表，`%` 和 `localhost` 是分别存放在两行的。
+>
 
 ##### 查看 user 表
 
@@ -320,7 +323,8 @@ mysql.server stop
 
 ---
 
-MySQL 具体使用请参考：
+## 相关笔记
+
 * [MySQL笔记](MySQL_Note.md)
 * [MySQL常用操作](MySQL常用操作.md)
 * [Docker 安装 MySQL](../../Docker/Docker_Note.md#dk_softc_demo_mysql)

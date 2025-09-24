@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2025-09-23 03:46:01
+modified: 2025-09-24 21:11:32
 ---
 
 # NeoVim 笔记
@@ -2168,6 +2168,19 @@ lspconfig.ruff_lsp.setup {}
 #### nvim-jdtls
 
 [nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls) 这是是使用 [jdtls](../Protocols/LSP_Note.md#jdtls) 来作为 [Java](../Java/Java_Note.md) 的 LSP 的 Client 端插件。
+
+#### sqls.nvim
+
+[sqls.nvim](https://github.com/nanotee/sqls.nvim) 这是为使用了 [sqls](../Protocols/LSP_Note.md#sqls) 作为 LSP 时功能增强的插件。
+
+它主要增加了：
+
+* `SqlsShowConnections`：显示数据库链接
+* `SqlsSwitchConnection`：切换数据库链接
+* `SqlsShowDatabases`：显示数据库
+* `SqlsExecuteQuery`：执行查询
+
+更多命令请查看：[sqls.nvim#commands](https://github.com/nanotee/sqls.nvim#commands)
 
 ---
 

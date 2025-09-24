@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-10 03:06:48
-modified: 2025-09-02 12:49:03
+modified: 2025-09-24 21:28:46
 ---
 
 # Linux 资料清单
@@ -109,6 +109,10 @@ modified: 2025-09-02 12:49:03
 ### 命令行命令查询
 
 * [navi | x-cmd pkg | 用于命令行的交互式备忘单工具](https://cn.x-cmd.com/pkg/navi)
+
+### 录屏
+
+* [测评适用于 Linux 中 Wayland 的最佳屏幕录制软件](https://zhuanlan.zhihu.com/p/632190910)
 
 ---
 

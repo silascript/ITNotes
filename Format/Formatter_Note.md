@@ -4,7 +4,7 @@ tags:
   - format
   - formatter
 created: 2024-05-24 09:57:51
-modified: 2025-09-23 11:07:49
+modified: 2025-09-25 13:34:49
 ---
 
 # 格式化工具笔记
@@ -119,6 +119,98 @@ pipx inject mdformat mdformat-gfm
 ```shell
 pipx install mdformat
 pipx inject mdformat mdformat-gfm mdformat-frontmatter mdformat-footnote mdformat-gfm-alerts
+```
+
+---
+
+## SQL
+
+### sqlfluff
+
+[sqlfluff](https://github.com/sqlfluff/sqlfluff) 是一个使用 [Python](../Python/Python_Note.md) 写的 [SQL](../DataBase/SQL_Note.md) 的格式化及 Lint 工具。
+
+命令列表：
+
+```shell
+dialects  Show the current dialects available.
+fix       Fix SQL files.
+format    Autoformat SQL files.
+lint      Lint SQL files via passing a list of files or using stdin.
+parse     Parse SQL files and just spit out the result.
+render    Render SQL files and just spit out the result.
+rules     Show the current rules in use.
+version   Show the version of sqlfluff.
+```
+
+> [!info] 
+> 
+> 最常用的是 `lint`、`format` 和 `fix` 三个。
+
+`dialects` 是显示所有的数据库方言：
+
+```shell
+$ sqlfluff dialects
+==== sqlfluff - dialects ====
+ansi:                 ANSI dialect [inherits from 'nothing']
+athena:            AWS Athena dialect [inherits from 'ansi']
+bigquery:     Google BigQuery dialect [inherits from 'ansi']
+clickhouse:        ClickHouse dialect [inherits from 'ansi']
+databricks:    Databricks dialect [inherits from 'sparksql']
+db2:                  IBM Db2 dialect [inherits from 'ansi']
+doris:          Apache Doris dialect [inherits from 'mysql']
+duckdb:            DuckDB dialect [inherits from 'postgres']
+exasol:                Exasol dialect [inherits from 'ansi']
+flink:       Apache Flink SQL dialect [inherits from 'ansi']
+greenplum:      Greenplum dialect [inherits from 'postgres']
+hive:             Apache Hive dialect [inherits from 'ansi']
+impala:         Apache Impala dialect [inherits from 'hive']
+mariadb:             MariaDB dialect [inherits from 'mysql']
+materializ:   Materialize dialect [inherits from 'postgres']
+e                                                           
+mysql:                  MySQL dialect [inherits from 'ansi']
+oracle:                Oracle dialect [inherits from 'ansi']
+postgres:          PostgreSQL dialect [inherits from 'ansi']
+redshift:    AWS Redshift dialect [inherits from 'postgres']
+snowflake:          Snowflake dialect [inherits from 'ansi']
+soql:        Salesforce Object Query Language (SOQL) dialect
+                                      [inherits from 'ansi']
+sparksql:    Apache Spark SQL dialect [inherits from 'ansi']
+sqlite:                SQLite dialect [inherits from 'ansi']
+starrocks:         StarRocks dialect [inherits from 'mysql']
+teradata:            Teradata dialect [inherits from 'ansi']
+trino:                  Trino dialect [inherits from 'ansi']
+tsql:         Microsoft T-SQL dialect [inherits from 'ansi']
+vertica:              Vertica dialect [inherits from 'ansi']
+```
+
+`rules` 是列出 `lint`、`fix` 或 `format` 的规则。
+
+语法：`sqlfluff format --dialect 数据库方言 [--rules 规则] sql文件`
+
+> [!info] 
+> 
+> `--rules` 可以省略。使用这参数时，可以给多个实参，即应用多条规则，多条规则使用逗号 `,` 分隔，如：
+> 
+> ```shell
+> sqlfluff lint --dialect mysql --rules LT10,ST05 xxx.sql
+> ```
+
+示例：
+
+```shell
+sqlfluff format --dialect mysql t01.sql
+```
+
+官方文档：[SQLFluff documentation](https://docs.sqlfluff.com/en/stable/)
+
+### sql-formatter
+
+[sql-formatter](https://github.com/sql-formatter-org/sql-formatter) 是一个用 [TypeScript](../JS/TypeScript/TypeScript_Note.md) 写的 SQL 格式化器。
+
+安装：
+
+```shell
+npm install sql-formatter -g
 ```
 
 ---

@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2025-03-18 03:32:00
-modified: 2025-09-23 11:07:22
+modified: 2025-09-25 12:14:02
 ---
 
 # 格式化器资料清单
@@ -47,6 +47,12 @@ modified: 2025-09-23 11:07:22
 * [VSCode的全局配置与项目单独配置 - 掘金](https://juejin.cn/post/7290740395913691177)
 * [彻底搞懂ESLint与Prettier在vscode中的代码自动格式化 - 掘金](https://juejin.cn/post/7156893291726782500)
 * [Prettier-Code Formater代码格式化插件使用教程 - 虚伪渲染敷衍 - 博客园](https://www.cnblogs.com/fitzlovecode/p/code_formater.html)
+
+## SQL 格式化器
+
+## sqlfluff
+
+* [软件新知(2)：DBA 必备工具sqlfluff-对SQL语句做语法检查\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1D24y1W7fP)
 
 ---
 

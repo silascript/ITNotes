@@ -50,9 +50,13 @@ modified: 2025-09-25 12:14:02
 
 ## SQL 格式化器
 
-## sqlfluff
+### sqlfluff
 
 * [软件新知(2)：DBA 必备工具sqlfluff-对SQL语句做语法检查\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1D24y1W7fP)
+
+
+
+### sql-format
 
 ---
 

@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2025-09-24 21:11:32
+modified: 2025-09-26 05:20:01
 ---
 
 # NeoVim 笔记
@@ -1460,7 +1460,9 @@ pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_
 
 ---
 
-### formatter.nvim
+### <span id="nvim_plugins_format">格式化插件</span>
+
+#### formatter.nvim
 
 [formatter.nvim](https://github.com/mhartington/formatter.nvim) 格式化插件。
 
@@ -1570,6 +1572,88 @@ function M.stylua()
   }
 end
 ```
+
+##### util 函数
+
+formatter.nvim 内置了一套工具函数，方便在配置时使用：[formatter.nvim-util.lua](https://github.com/mhartington/formatter.nvim/blob/master/lua/formatter/util.lua)
+
+###### 常用 util 函数解析
+
+* 获取当前文件的路径
+
+ 可以使用 `get_current_buffer_file_path()` 这个函数：
+
+```lua
+function M.get_current_buffer_file_path()
+  return vim.api.nvim_buf_get_name(0)
+end
+```
+
+ 可以看到函数定义，其实它是封装了 nvim 本身的 `vim.api.nvim_buf_get_name(0)` 函数，所以在配置 formatter.nvim 时，可以这样调用：`util.get_current_buffer_file_path`。
+ > [!tip] 
+ > 
+ > 实话，`get_current_bufffer_file_path` 这个函数名，比 nvim 本身的 `nvim_buf_get_name(0)` 好理解多了。
+
+* 字符串格式化
+
+```lua
+function M.quote_cmd_arg(arg)
+  return string.format("'%s'", arg)
+end
+```
+
+可以通过源码看到，`quote_cmd_arg()` 这个函数，是封装了 `string.format()` 函数，即字符串格式化函数。
+
+##### 自定义格式化
+
+以调用 [sql-formatter](../Format/Formatter_Note.md#sql-formatter) 为格式化器为例：
+
+```lua
+sql = {
+					
+	function()
+		local sql_dialect = "sql"
+
+		vim.ui.input({
+			prompt = "请输入sql的方言类型：",
+			default = sql_dialect,
+		}, function(in_sql)
+			sql_dialect = in_sql
+		end)
+		return {
+			exe = "sql-formatter",
+			args = {
+				string.format("-l %s", sql_dialect),
+				util.escape_path(util.get_current_buffer_file_path()),
+			},
+			stdin = true,
+		}
+	end,
+},
+```
+
+处理格式化操作都是放在一个 `function` 中。其中 `return{}` 代码块是最终调用外部实际格式化器的操作。
+
+`return` 代码块主要由两个部分组成：
+
+* `exe`：外部实际格式化器的可执行程序
+* `args`：调用实际格式化器时所需传入的参数
+
+在这个例子中 `args` 有两个参数：
+
+1. `string.format("-l %s", sql_dialect)`
+这个是使用了 `sql-formatter` 这个格式化器要传入一个 `-l` 的参数，此参数用来指定当前要格式化的 [SQL](../DataBase/SQL_Note.md) 文件的「方言」，如 `mysql`、`mssql` 等
+> [!info] 
+> 
+> 而这涉及到两个问题，一是用户输入；二就是这个参数实际在 `args` 代码块中，实际是一个字符串，所以就涉及到 neovim 的字符串格式化的操作。
+> * 用户输入，在例子中使用的是 `vim.ui.input()` 这个函数实现的，最终用户输入的值是存储在 `sql_dialect` 这个变量中
+> * 通过使用 `string.format()` 函数，对 `"-l 值"` 这个字符串进行了格式化，并做为 `args` 代码块的第一个参数
+2. `util.escape_path(util.get_current_buffer_file_path()` 这个参数是当前文件的路径
+> [!info] 
+> 
+> * `util` 是一个变量，是在 `config function()` 中定义的：`local util = require("formatter.util")`，其实就是 [sql-formatter](../Format/Formatter_Note.md#sql-formatter) 的 `util` 工具。
+>`get_current_bufffer_file_path()` 在 [util 函数解析](#常用%20util%20函数解析) 中已经提过，是对 nvim 本身函数的封装，就是获取当前文件的路径
+> * `util.escape_path()` 函数就是对 nvim 函数 `vim.fn.shellescape()` 函数的封装，即对字符串进行安全的转义。
 
 ### <span id="nvim_plugins_snippets">Snippet 插件</span>
 

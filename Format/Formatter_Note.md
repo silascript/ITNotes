@@ -4,7 +4,7 @@ tags:
   - format
   - formatter
 created: 2024-05-24 09:57:51
-modified: 2025-09-25 13:34:49
+modified: 2025-09-25 21:58:41
 ---
 
 # 格式化工具笔记
@@ -129,6 +129,10 @@ pipx inject mdformat mdformat-gfm mdformat-frontmatter mdformat-footnote mdforma
 
 [sqlfluff](https://github.com/sqlfluff/sqlfluff) 是一个使用 [Python](../Python/Python_Note.md) 写的 [SQL](../DataBase/SQL_Note.md) 的格式化及 Lint 工具。
 
+> [!tip] 
+> 
+> 虽然 sqlfluff 功能很强，但并不适合与 [Neovim](../vim/Neovim_Note.md) 等结合使用。neovim 这种编辑器更适合使用那种选项参数更少更「傻瓜」的 LSP。
+
 命令列表：
 
 ```shell
@@ -207,11 +211,30 @@ sqlfluff format --dialect mysql t01.sql
 
 [sql-formatter](https://github.com/sql-formatter-org/sql-formatter) 是一个用 [TypeScript](../JS/TypeScript/TypeScript_Note.md) 写的 SQL 格式化器。
 
-安装：
+#### 安装
 
 ```shell
 npm install sql-formatter -g
 ```
+
+#### 配置
+
+`.sql-formatter.json` 是配置文件。
+
+示例：
+
+```json
+{
+  "language": "spark",
+  "tabWidth": 2,
+  "keywordCase": "upper",
+  "linesBetweenQueries": 2
+}
+```
+
+常用配置项：
+
+`language`：默认为 `sql`，详情参考：[sql-formatter-docs#language](https://github.com/sql-formatter-org/sql-formatter/blob/master/docs/language.md)
 
 ---
 

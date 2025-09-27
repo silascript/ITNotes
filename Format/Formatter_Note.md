@@ -4,7 +4,7 @@ tags:
   - format
   - formatter
 created: 2024-05-24 09:57:51
-modified: 2025-09-25 21:58:41
+modified: 2025-09-28 01:27:11
 ---
 
 # 格式化工具笔记
@@ -129,10 +129,6 @@ pipx inject mdformat mdformat-gfm mdformat-frontmatter mdformat-footnote mdforma
 
 [sqlfluff](https://github.com/sqlfluff/sqlfluff) 是一个使用 [Python](../Python/Python_Note.md) 写的 [SQL](../DataBase/SQL_Note.md) 的格式化及 Lint 工具。
 
-> [!tip] 
-> 
-> 虽然 sqlfluff 功能很强，但并不适合与 [Neovim](../vim/Neovim_Note.md) 等结合使用。neovim 这种编辑器更适合使用那种选项参数更少更「傻瓜」的 LSP。
-
 命令列表：
 
 ```shell
@@ -187,13 +183,56 @@ tsql:         Microsoft T-SQL dialect [inherits from 'ansi']
 vertica:              Vertica dialect [inherits from 'ansi']
 ```
 
+> [!tip] 
+> 
+> 使用 [awk](../Linux/Linux_Note.md#awk) 工具从 `dialects` 子命令得到所有子方言信息中获取其方言名称：
+> 
+> `sqlfluff dialects | awk '/:/{print $1}{FS=":"}'`
+> 
+> 结果：
+> 
+> ```shell
+> ansi
+>athena
+>bigquery
+>clickhouse
+>databricks
+>db2
+>doris
+>duckdb
+>exasol
+>flink
+> greenplum
+> hive
+> impala
+> mariadb
+> materializ
+> mysql
+> oracle
+> postgres
+>redshift
+> snowflake
+> soql
+> sparksql
+> sqlite
+> starrocks
+> teradata
+> trino
+> tsql
+> vertica
+> ```
+> 
+
 `rules` 是列出 `lint`、`fix` 或 `format` 的规则。
 
 语法：`sqlfluff format --dialect 数据库方言 [--rules 规则] sql文件`
 
 > [!info] 
 > 
-> `--rules` 可以省略。使用这参数时，可以给多个实参，即应用多条规则，多条规则使用逗号 `,` 分隔，如：
+> 
+> * `--dialect`：这个选项必须得指定，sqlfluff 没有像 [sql-formatter](#sql-formatter) 那样给方言设置一个默认值，所以必须得用户指定
+> 	* 方言的值可以使用 `dialects` 命令查询得到
+> * `--rules` 可以省略。使用这参数时，可以给多个实参，即应用多条规则，多条规则使用逗号 `,` 分隔，如：
 > 
 > ```shell
 > sqlfluff lint --dialect mysql --rules LT10,ST05 xxx.sql

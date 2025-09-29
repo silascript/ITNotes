@@ -8,7 +8,7 @@ tags:
   - ime
 date created: 2022-11-08 11:32
 created: 2023-08-18 19:44:52
-modified: 2025-09-24 10:26:31
+modified: 2025-09-29 19:21:18
 ---
 
 # ArchLinux 笔记
@@ -207,11 +207,25 @@ pacman -Syyuu
 使用 AUR 前先装 [AUR助手（AUR Helper）](https://wiki.archlinuxcn.org/wiki/AUR_%E5%8A%A9%E6%89%8B)。可以简单认为 [AUR Helper](#AUR%20Helper) 是增强型的 [pacman](#pacman)。
 
 #### yay
+
 在众多 [AUR Helper](#AUR%20Helper) 中，其中比较出名的是要属 [yay](https://aur.archlinux.org/packages/yay) [![yay Repo](https://img.shields.io/github/stars/Jguer/yay?style=social)](https://github.com/Jguer/yay)。
 
 yay 是用 [Go语言](../GoLang/GoLang_Note.md) 编写的。
 
 因为 `yay` 是对 [pacman](#pacman) 的封装，所以命令与 `pacman` 命令高度一致。
+
+##### 配置
+
+`yay -P -g` 显示配置
+
+##### 问题
+
+出现 `* response decoding failed: invalid character '<' looking for beginning of value` 错误，如果使用 `yay --aururl "https://aur.archlinux.org/" --save` 更换回官方 aur 源也不行可以删除 `yay` 的配置文件：
+
+1. 删除配置文件  
+`rm ~/.config/yay/config.json`
+2. 更换 AUR 官方源，并重新生成 `config.json`
+`yay --aururl "https://aur.archlinux.org/" --save`
 
 #### paru
 新的 [AUR Helper](#AUR%20Helper)，[yay](#yay) 的「继任者」，当属 [paru](https://aur.archlinux.org/packages/paru) [![paru repo](https://img.shields.io/github/stars/morganamilo/paru?style=social)](https://github.com/morganamilo/paru)。

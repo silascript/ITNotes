@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-10 03:06:48
-modified: 2025-09-24 21:28:46
+modified: 2025-09-29 18:41:40
 ---
 
 # Linux 资料清单
@@ -142,6 +142,11 @@ modified: 2025-09-24 21:28:46
 * [ArchLinux使用记录 - ArchLinux](https://yuanmxc.site/Archlinux/ArchLinux%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/)
 * [Pacman wiki](https://wiki.archlinuxcn.org/wiki/Pacman)
 * [archlinxcn keyring manually](https://www.archlinuxcn.org/archlinuxcn-keyring-manually-trust-farseerfc-key/)
+
+### 问题
+
+* [关于yay的问题求助 - #6，来自 blufest - 应用程序与桌面环境 - Arch Linux 中文论坛](https://forum.archlinuxcn.org/t/topic/13063/6)
+* [\[已解决\]我的yay有问题： - #8，来自 xian - 应用程序与桌面环境 - Arch Linux 中文论坛](https://forum.archlinuxcn.org/t/topic/14704/8)
 
 ### arch 镜像
 

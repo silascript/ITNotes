@@ -7,7 +7,7 @@ tags:
   - Eclipse
   - dbeaver
 created: 2023-01-30 11:19:11
-modified: 2025-09-04 00:53:59
+modified: 2025-09-30 19:30:27
 ---
 
 # Java 笔记
@@ -557,6 +557,7 @@ public class Demo_1{
 * [Eclipse 笔记](IDE/Java_IDE_Eclipse.md)
 * [Kotlin 笔记](Kotlin/Kotlin_Note.md)
 * [Java IO 笔记](Java_IO_Note.md)
+* [Java 网络笔记](Java_Network.md)
 * [Java Apache 笔记](Java_Apache_Note.md)
 * [Java Web 笔记](Java_Servlet_Note.md)
 * [Java 日志框架 笔记](Java_Log_Note.md)

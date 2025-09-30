@@ -6,7 +6,7 @@ tags:
   - tutorial
   - list
 created: 2023-06-24 01:08:17
-modified: 2025-03-13 01:58:10
+modified: 2025-09-30 19:31:47
 ---
 
 # Java 视频清单
@@ -54,6 +54,10 @@ modified: 2025-03-13 01:58:10
 ## JavaWeb 基础
 
 * [2023新版JavaWeb从入门到精通视频教程(95集全)](https://www.bilibili.com/video/BV1Pj411a7fc)
+
+---
+
+## Java 网络
 
 ---
 
@@ -121,4 +125,5 @@ modified: 2025-03-13 01:58:10
 * [Java笔记](Java_Note.md)
 * [Java Web笔记](Java_Servlet_Note.md)
 * [Java IO 笔记](Java_IO_Note.md)
+* [Java 网络笔记](Java_Network.md)
 * [Java Log 笔记](Java_Log_Note.md)

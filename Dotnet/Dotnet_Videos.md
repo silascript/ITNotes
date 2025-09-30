@@ -9,7 +9,7 @@ tags:
   - list
   - video
 created: 2024-05-01 03:10:27
-modified: 2025-09-17 12:43:05
+modified: 2025-09-30 10:35:29
 ---
 
 # Dotnet 视频清单
@@ -53,6 +53,7 @@ modified: 2025-09-17 12:43:05
 ## 杂项
 
 * [【手把手入门】.NET8.0从入门到实战，保姆级讲解轻松上手实操（.NET8/C#/零基础/开发）Y0001](https://www.bilibili.com/video/BV1QJ4m137eo/)
+* [C# 与 .NET 系列平台版本对应关系](https://www.bilibili.com/video/BV1ownGzwEEv)
 
 ---
 

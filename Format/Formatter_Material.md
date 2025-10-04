@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2025-03-18 03:32:00
-modified: 2025-09-25 12:14:02
+modified: 2025-10-04 11:00:27
 ---
 
 # 格式化器资料清单
@@ -53,8 +53,9 @@ modified: 2025-09-25 12:14:02
 ### sqlfluff
 
 * [软件新知(2)：DBA 必备工具sqlfluff-对SQL语句做语法检查\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1D24y1W7fP)
-
-
+* [sqlfluff \| x-cmd pkg \| SQL linter 和格式化工具，支持多种 SQL ，如 MySQL、Oracle 等](https://cn.x-cmd.com/pkg/sqlfluff)
+* [sqlfluff sql linter 以及自动格式化工具](https://www.cnblogs.com/rongfengliang/p/17607268.html)
+* [SQLFluff的简单使用](https://blog.csdn.net/m0_56263746/article/details/150463229)
 
 ### sql-format
 

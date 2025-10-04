@@ -4,7 +4,7 @@ tags:
   - format
   - formatter
 created: 2024-05-24 09:57:51
-modified: 2025-09-28 01:27:11
+modified: 2025-10-04 11:07:13
 ---
 
 # 格式化工具笔记
@@ -142,11 +142,11 @@ rules     Show the current rules in use.
 version   Show the version of sqlfluff.
 ```
 
-> [!info] 
-> 
-> 最常用的是 `lint`、`format` 和 `fix` 三个。
+#### 子命令解析
 
-`dialects` 是显示所有的数据库方言：
+* `dialects` 是显示所有的数据库方言列表。
+
+示例：
 
 ```shell
 $ sqlfluff dialects
@@ -223,7 +223,7 @@ vertica:              Vertica dialect [inherits from 'ansi']
 > ```
 > 
 
-`rules` 是列出 `lint`、`fix` 或 `format` 的规则。
+* `rules` 是列出 `lint`、`fix` 或 `format` 的规则。
 
 语法：`sqlfluff format --dialect 数据库方言 [--rules 规则] sql文件`
 
@@ -244,7 +244,42 @@ vertica:              Vertica dialect [inherits from 'ansi']
 sqlfluff format --dialect mysql t01.sql
 ```
 
-官方文档：[SQLFluff documentation](https://docs.sqlfluff.com/en/stable/)
+* `format`：格式化 SQL 文件，返回格式化的统计结果
+* `render`：格式化 SQL 文件，返回格式化的 SQL 内容
+
+> [!important] 
+> 
+> 必须带上参数 `--dialect`，指定 SQL 的方言类型。sqlfluff 支持的方言类型，可以通过 `sqlfluff dialects` 子命令查询。
+
+`format` 这个子命令不能在 [Vim](../vim/Vim_Note.md) 或 [Neovim](../vim/Neovim_Note.md) 中使用如 [formatter.nvim](../vim/Neovim_Note.md#formatter.nvim) 这种格式化插件调用，因为 `format` 这个子命令最后返回的结果是格式了几条语句，而非格式化后的 sql 最终结果。故要在 `formatter.nvim` 这种插件调用，得使用 `render` 子命令。
+
+对比 `format` 与 `render` 子命令：
+
+```shell
+$ sqlfluff format --dialect mysql t01.sql
+==== finding fixable violations ====
+==== no fixable linting violations found ====                                                                                   
+All Finished 📜 🎉!
+```
+
+```shell
+$ sqlfluff render --dialect mysql t01.sql
+use exercise01;
+
+select emp.ename
+from
+    emp;
+
+select dept.deptno
+from
+    dept;
+```
+
+#### 相关文档
+
+* [SQLFluff documentation](https://docs.sqlfluff.com/en/stable/)
+	* [CLI Reference](https://docs.sqlfluff.com/en/stable/reference/cli.html)
+	* [Rules Reference](https://docs.sqlfluff.com/en/stable/reference/rules.html)
 
 ### sql-formatter
 

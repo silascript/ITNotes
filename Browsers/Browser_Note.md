@@ -8,28 +8,22 @@ tags:
   - vivaldi
   - brave
 created: 2023-08-18 19:44:52
-modified: 2024-06-17 20:16:36
+modified: 2025-10-05 02:05:14
 ---
 
 # 浏览器 笔记
 
 ---
 
-## Chrome 
+## Chrome 系
 
----
+* [Chrome 笔记](Chrome_Note.md)
 
-## Edge
+### Edge
 
----
+### Vivaldi
 
-## FireFox
-
----
-
-## Vivaldi
-
-### 自定义 UI 设置 
+#### 自定义 UI 设置 
 
 要对浏览器某些组件进行外观设置可以进行以下步骤操作：
 
@@ -53,22 +47,38 @@ modified: 2024-06-17 20:16:36
 
 ```
 
-#### 参考资料
-
-* [怎么高速标签页和书签栏的字体大小](https://forum.vivaldi.net/topic/93221/%E6%80%8E%E4%B9%88%E8%B0%83%E6%95%B4%E6%A0%87%E7%AD%BE%E9%A1%B5%E5%92%8C%E4%B9%A6%E7%AD%BE%E6%A0%8F%E7%9A%84%E5%AD%97%E4%BD%93%E5%A4%A7%E5%B0%8F)
-* [Clearly visible calendar events. | Vivaldi Forum](https://forum.vivaldi.net/topic/72905/clearly-visible-calendar-events/5?_=1718533648085)
-* [Customizations & Extensions | Vivaldi Forum](https://forum.vivaldi.net/category/43/customizations-extensions)
-* [Inspecting the Vivaldi UI with DevTools | Vivaldi Forum](https://forum.vivaldi.net/topic/16684/inspecting-the-vivaldi-ui-with-devtools)
-
----
-
-## Brave
+### Brave
 
 [Brave](https://brave.com)
 
 ---
 
+## FireFox 系
+
+[Firefox](https://www.firefox.com) 是一款开源自由的浏览器。
+
+### WaterFox
+
+[Waterfox](https://www.waterfox.net) 是一款强调隐私保护的 FireFox 衍生版。
+
+### Floorp
+
+[Floorp](https://floorp.app) 是一个功能强大的 [FireFox](#FireFox) 衍生版，Floorp 之于 FireFox，就如 [Vivaldi](#Vivaldi) 之于 [Chrome](Chrome_Note.md)。
+
+Floorp 与 [Vivaldi](#Vivaldi) 一样也有「工作区」功能，对于使用开启大量网页及网页分类管理的用户来说，这个功能真是必不可少。
+
+### Zen
+
+[Zen](https://zen-browser.app) 是一款极具现代感的 FireFox 衍生版。
+
+### LibreWolf
+
+[LibreWolf](https://librewolf.net) 与 [WaterFox](#WaterFox) 一样，是非常强调隐私保护的 FireFox 衍生版。
+
+---
+
 ## 相关笔记
 
-* [Chrome浏览器笔记](Chrome_Note.md)
+* [Chrome 浏览器笔记](Chrome_Note.md)
+* [浏览器资料清单](Browser_Material.md)
 

@@ -6,7 +6,7 @@ tags:
   - google
   - plugin
 created: 2023-01-29 09:21:20
-modified: 2025-09-12 18:43:36
+modified: 2025-10-05 01:41:47
 ---
 
 # Chrome 浏览器笔记
@@ -392,4 +392,5 @@ Exec=/usr/bin/microsoft-edge-stable --inprivate
 ## 相关笔记
 
 * [浏览器笔记](Browser_Note.md)
+* [浏览器资料清单](Browser_Material.md)
 

@@ -5,7 +5,7 @@ tags:
   - video
   - list
 created: 2023-09-23 02:04:36
-modified: 2024-08-26 18:51:21
+modified: 2025-10-04 12:46:53
 ---
 
 # C 语言视频清单
@@ -17,6 +17,7 @@ modified: 2024-08-26 18:51:21
 * [C语言 最好的入门课（中国宝岛的课程）](https://www.bilibili.com/video/BV1V4411g7a2)
 * [嵌入式linux环境安装C语言](https://www.bilibili.com/video/BV15X4y1C7Rk)
 * [9天轻松掌握C语言](https://www.bilibili.com/video/BV1Rr4y1m7ua)
+* [小美老师C语言百万播放量的基础上再次升级，更高清更全更细致！带你轻松拿下C语言！](https://www.bilibili.com/video/BV1qr421H7Gc)
 * [C语言详细基础教程](https://www.bilibili.com/video/BV1nx41157P2)
 * [GNU/Linux C语言课堂教学](https://www.ixigua.com/6841532135296205319)
 * [一周内学完C语言](https://www.bilibili.com/video/BV1og4y1X7oe)

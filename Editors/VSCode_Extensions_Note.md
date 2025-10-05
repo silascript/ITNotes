@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2025-04-05 01:22:29
+modified: 2025-10-06 05:12:02
 
 ---
 
@@ -463,6 +463,8 @@ Runtime 名称列表：[runtime name](https://github.com/redhat-developer/vscode
 > [!info] 
 > 
 > Oracle 这个插件出得太晚，[VSCode](VSCode_Note.md) 上 [Java](../Java/Java_Note.md) 相关插件，大部分都是 [RedHat-Java](#RedHat-Java) 生态圈的。
+> 
+> 但还是推荐装上这插件，这插件装上后，好像能抑制 [RedHat-Java](#RedHat-Java) 这插件老弹窗要你配置新版本 JRE 的「错误」提示。
 
 配置 JDK：
 

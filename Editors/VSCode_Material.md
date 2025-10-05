@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-13 18:49:29
-modified: 2025-10-05 21:20:19
+modified: 2025-10-06 05:26:40
 ---
 
 # VSCode 资料清单
@@ -41,6 +41,10 @@ modified: 2025-10-05 21:20:19
 * [VS Code中的JDK设置\_vscode配置jdk-CSDN博客](https://blog.csdn.net/oscar999/article/details/136122844)
 * [VSCode中如何新建一个JavaWeb项目](https://blog.51cto.com/u_16175434/6597670)
 * [VSCode中如何新建一个JavaWeb项目 vscode创建一个java项目](https://blog.51cto.com/u_16099231/6267891)
+
+### SpringBoot
+
+* [VSCode 配置 Spring Boot 项目开发环境 - Milton - 博客园](https://www.cnblogs.com/milton/p/18063677)
 
 ### maven
 

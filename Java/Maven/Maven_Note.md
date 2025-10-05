@@ -5,7 +5,7 @@ tags:
   - maven
   - jdk
 created: 2023-01-31 11:31:14
-modified: 2025-03-20 21:07:55
+modified: 2025-10-06 05:43:16
 ---
 
 # Maven 笔记
@@ -268,16 +268,16 @@ java17：
 
 ```xml
 <profile>
-  <id>jdk-17</id>    
-    <activation>    
+	<id>jdk-17</id>    
+	<activation>    
 		<activeByDefault>true</activeByDefault>    
 		<jdk>17</jdk>    
 	</activation>    
-  <properties>    
-    <maven.compiler.source>17</maven.compiler.source>    
-    <maven.compiler.target>17</maven.compiler.target>    
-    <maven.compiler.compilerVersion>17</maven.compiler.compilerVersion>    
-  </properties>
+	<properties>    
+		<maven.compiler.source>17</maven.compiler.source>    
+		<maven.compiler.target>17</maven.compiler.target>    
+		<maven.compiler.compilerVersion>17</maven.compiler.compilerVersion>    
+	</properties>
 </profile>
 ```
 
@@ -345,6 +345,20 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 
 </project>
 ```
+
+> [!info] 
+> 
+> `properties` 中 `source` 和 `target` 可以使用 `release` 来替代。
+> 
+> ```xml
+> <properties>
+>	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+>	<release>21</release>
+></properties>
+> ```
+> 
+> 
+> [Maven Repository: maven-compiler-plugin](https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin)
 
 ---
 

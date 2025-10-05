@@ -5,7 +5,7 @@ tags:
   - maven
   - material
 created: 2025-03-08 19:05:30
-modified: 2025-03-23 06:11:58
+modified: 2025-10-06 04:14:59
 ---
 
 # Maven 资料清单
@@ -19,6 +19,10 @@ modified: 2025-03-23 06:11:58
 ## Maven Daemon
 
 * [Maven构建工具mvnd和mvn 性能对比测试 - 青山小站 \| 一个在帝都搬砖的新时代农民工](https://blog.yanqingshan.com/167.html?scroll=comment-952)
+
+## 插件
+
+* [maven-compiler-plugin编译插件](https://zhuanlan.zhihu.com/p/690194882)
 
 ## Web
 

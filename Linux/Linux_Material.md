@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-10 03:06:48
-modified: 2025-09-29 18:41:40
+modified: 2025-10-05 22:38:54
 ---
 
 # Linux 资料清单
@@ -82,12 +82,20 @@ modified: 2025-09-29 18:41:40
 
 ## 桌面相关
 
+### Gnome
+
+* [Ubuntu的gnome-shell的应用程序自动分类 \| Dr. Pufeng Du's Blog](https://www.pufengdu.org/blog/?p=290)
+* [How to create a new category in the GNOME menu? - Ask Ubuntu](https://askubuntu.com/questions/435806/how-to-create-a-new-category-in-the-gnome-menu)
+
 ### Desktop
 
 * [Freedesktop那些破事 \| ccat3z.xyz](https://ccat3z.xyz/posts/freedesktop/)
 * [关于Linux系统中桌面图标和任务栏图标保持一致的问题\_startupwmclass-CSDN博客](https://blog.csdn.net/timiki/article/details/141636645)
 * [GNOME-DashToDock中自定义桌面快捷方式无法添加至收藏夹的问题，Add to Favorites 显示问题 - ershoushouji - 博客园](https://www.cnblogs.com/ershoushouji/p/15271031.html)
 * [Arch下的Awesome桌面和Conky - 傻东の学习笔记](https://sillydong.com/mysa/mylinux/awesome-conky.html)
+* [创建应用程序的快捷方式（GNOME） - xu\_library - 博客园](https://www.cnblogs.com/xucongcong/p/15181081.html)
+* [Desktop文件Categories详细说明\_desktop categories-CSDN博客](https://blog.csdn.net/shawzg/article/details/106943100)
+* [How can I add an application to the GNOME application menu](https://unix.stackexchange.com/questions/103213/how-can-i-add-an-application-to-the-gnome-application-menu)
 
 ## ranger
 

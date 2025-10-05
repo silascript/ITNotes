@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2025-09-03 02:54:37
+modified: 2025-10-05 22:52:12
 ---
 
 # Linux 笔记
@@ -1579,7 +1579,7 @@ Shell 语言相关内容：[Shell笔记](Shell/Shell_Note.md)
 ### <span id="linux_soft_install_desktop"> 使用 desktop</span>
 
 1. 新建 `desktop` 文件
-在/usr/share/applications/目录中新建一个后缀名为 desktop 的文件
+在/usr/share/applications/目录中新建一个后缀名为 `desktop` 的文件
 > [!tip] 
 > 
 > 也可以在 .local/share/applications 目录新建 desktop 文件
@@ -1618,14 +1618,6 @@ StartupWMClass=Steam++
 Categories=Network;Utility
 Keywords=Steam;Steam++;SteamTools;WattToolkit
 ```
->[!info] 
->
-> `StartupWMClass` 这个属性，指定应用程序在容器管理中的容器类名，确保应用程序在启动后，任务栏或应用切换器中显示的图标与 `.desktop` 文件中的图标一致，即使用 `icon` 指定的桌面图标。
-> 
-> 获取方法：在终端中执行 `xprop WM_CLASS` ，然后点击运行中的窗口 (一般会出现一个鼠标的光标会呈现「十字」,表示「待获取中」，点击窗口后才恢复原状），获取窗口的 `WM_CLASS` 属性。
-> 
-> 如点击 Steam++ 运行中窗口后，终端显示：`WM_CLASS(STRING) = "Steam++", "Steam++"`
-> 
 
 3. 刷新
 ```shell
@@ -1637,6 +1629,43 @@ sudo update-desktop-database /usr/share/applications
 > [!tip] 
 > 
 > 如果 desktop 不生效，可以使用 `desktop-file-validate xxx.desktop` 来检测 desktop 文件是否存在语法错误。
+
+#### Desktop 文件解析
+
+##### Exec
+
+`Exec` 这个属性是指定应用的可执行程序
+
+可执行程序可用的参数
+
+* `%f`：a single filename.
+* `%F`：multiple filenames.
+* `%u`：a single URL.
+* `%U`：multiple URLs.
+* `%d`：a single directory. Used in conjunction with `%f` to locate a file.
+* `%D`：multiple directories. Used in conjunction with `%F` to locate files.
+* `%n`：a single filename without a path.
+* `%N`：multiple filenames without paths.
+* `%k`：a URI or local filename of the location of the desktop file.
+* `%v`：the name of the Device entry.
+
+##### Icon
+
+`Icon` 这个属性是指定应用的 Logo 图标
+
+##### Categories
+
+`Categories` 这个属性是指定应用的分类，是将桌面快捷文件归类到哪个应用目录。
+
+![Linux App Desktop Categories shotcut](./Linux_Note.assets/Linux_App_Desktop_Categories.png)
+
+##### StartupWMClass
+
+`StartupWMClass` 这个属性，指定应用程序在容器管理中的容器类名，确保应用程序在启动后，任务栏或应用切换器中显示的图标与 `.desktop` 文件中的图标一致，即使用 `icon` 指定的桌面图标。
+
+获取方法：在终端中执行 `xprop WM_CLASS` ，然后点击运行中的窗口 (一般会出现一个鼠标的光标会呈现「十字」,表示「待获取中」，点击窗口后才恢复原状），获取窗口的 `WM_CLASS` 属性。
+
+如点击 Steam++ 运行中窗口后，终端显示：`WM_CLASS(STRING) = "Steam++", "Steam++"`
 
 ---
 

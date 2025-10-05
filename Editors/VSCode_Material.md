@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-13 18:49:29
-modified: 2025-09-18 10:52:23
+modified: 2025-10-05 21:20:19
 ---
 
 # VSCode 资料清单
@@ -98,6 +98,8 @@ modified: 2025-09-18 10:52:23
 
 ## 其他
 
+* [Code OSS、VSCodium 或 Visual Studio Code：你应该在 Linux 上安装什么](https://zh-cn.linuxadictos.com/code-oss-vscodium-o-visual-studio-code-que-deberia-instalar-en-linux.html)
+* [Customize Your VS Code Icon - DEV Community](https://dev.to/reverentgeek/customize-your-vs-code-icon-6gd)
 * [VSCode中插件Code Spell Checker - IT皮皮蟹 - 博客园](https://www.cnblogs.com/AAFlyingFish/p/14559446.html)
 * [vscode代码拼写错误检测插件闲话少说，本文介绍如何使用code-spell-checker插件对代码进行拼写错误检查 - 掘金](https://juejin.cn/post/7122381878706831374)
 * [软件开发中好用的拼写检查工具-鸿蒙开发者社区-51CTO.COM](https://ost.51cto.com/posts/18282)

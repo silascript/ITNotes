@@ -8,7 +8,7 @@ tags:
   - scite
   - lsp
 created: 2023-01-30 11:19:11
-modified: 2025-06-28 02:10:25
+modified: 2025-10-05 20:10:35
 ---
 
 # 编辑器笔记
@@ -40,11 +40,15 @@ modified: 2025-06-28 02:10:25
 
 VSCode 主要有几个版本：
 
-[VSCode](https://code.visualstudio.com) 微软官方版本。
+* [VSCode](https://code.visualstudio.com) 微软官方版本。
+* [VSCodium](#VSCodium)
+	> [!info] 
+	> 
+	> Open-VSX 与 VSCode Market 区别是，VSCode Market 有部分扩展是专有的，而 Open-VSX 则是完全开源的。
+
+### VSCodium
 
 [VSCodium](https://vscodium.com) 社区驱动的完全开源版本，其扩展源使用的是 [Open-VSX](https://www.gitpod.io/blog/open-vsx/)。
-
-> Open-VSX 与 VSCode Market 区别是，VSCode Market 有部分扩展是专有的，而 Open-VSX 则是完全开源的。
 
 ### <span id="editors_vscode_notes">VSCode 相关笔记</span>
 

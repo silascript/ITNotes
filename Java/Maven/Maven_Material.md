@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2025-03-08 19:05:30
-modified: 2025-10-06 17:54:30
+modified: 2025-10-07 01:21:30
 ---
 
 # Maven 资料清单
@@ -14,6 +14,9 @@ modified: 2025-10-06 17:54:30
 ---
 
 ## 通用
+
+* [maven的使用 - 马昌伟 - 博客园](https://www.cnblogs.com/machangwei-8/p/18288999)
+* [IDEA 配置 maven 完美解决方案-华为开发者话题 \| 华为开发者联盟](https://developer.huawei.com/consumer/cn/forum/topic/0201204364964830559)
 
 ### 镜像和仓库
 
@@ -41,6 +44,15 @@ modified: 2025-10-06 17:54:30
 
 * [maven-compiler-plugin编译插件](https://zhuanlan.zhihu.com/p/690194882)
 * [Maven中配置maven-compiler-plugin 插件和jdk 17版本 - 楼兰胡杨 - 博客园](https://www.cnblogs.com/east7/p/13363069.html)
+* ["maven.compiler.release" as a replacement for source and target?](https://stackoverflow.com/questions/59049980/maven-compiler-release-as-a-replacement-for-source-and-target)
+
+### archetype
+
+* [Maven Archetype的设计和使用](https://zhuanlan.zhihu.com/p/21517126)
+* [maven-archetype-plugin 原型插件详解-CSDN博客](https://blog.csdn.net/qq_38074398/article/details/136353025)
+* [Maven Archetype自定义工程原型/添加远程Archetype原型 - DawnTraveler - 博客园](https://www.cnblogs.com/trmbh12/p/18082475)
+* [maven脚手架指引.md - SegmentFault 思否](https://segmentfault.com/a/1190000044903352)
+* [老问题了：idea中使用maven archetype新建项目时卡住 - 三国梦回 - 博客园](https://www.cnblogs.com/grey-wolf/p/17641808.html)
 
 ---
 

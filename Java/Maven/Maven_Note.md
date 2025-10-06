@@ -5,7 +5,7 @@ tags:
   - maven
   - jdk
 created: 2023-01-31 11:31:14
-modified: 2025-10-06 20:20:16
+modified: 2025-10-07 01:49:31
 ---
 
 # Maven 笔记
@@ -594,6 +594,71 @@ package: com.silascript.exercise
 > [!tip] 
 > 
 > 综上所述，如果要使用 Archetype 最新版本，要么显示指定 `archetypeVersion`，要么连 `archetypeArtifactId` 也不要指定，不然会使用 Archetype 的最旧版本。
+
+#### Archetype Catalog
+
+当用户不指定 Acchetype 坐标的方式使用 [Archetype Plugin](#Archetype%20Plugin) 时，会输出一个 Archetype 列表供用户选择。而这个列表来自一个 `archetype-catalog.xml` 文件。
+
+`archetype-catalog.xml` 来源：
+
+* internal：内置 Archetype Catalog，包含 58 个 Archetype 信息。
+* local：指向用户本地的 Archetype Catalog，位置：`~/.m2/archetype-catalog.xml`，默认此文件是不存在的。
+* remote：远程，指向了 Maven[中央仓库](#mvn_repository_remote_central) 的 Archetype Catalog，确切地址：[https://repo.maven.apache.org/maven2/archetype-catalog.xml](https://repo.maven.apache.org/maven2/archetype-catalog.xml)
+* file：用户指定本机任何位置的 `archetype-catalog.xml` 文件
+* http：用户指定使用 [Http](../../Network/Http_Note.md) 协议远程的 `archetype-catalog.xml` 文件
+
+##### local
+
+ `-DarchetypeCatalog=local`，默认情况，会读取 `~/.m2/archetype-catalog.xml` 文件，但如果设置过 [本地仓库](#mvn_repository_local) 后， 这个 `local` 指的就是「本地仓库」的根目录。
+
+如：`<localRepository>${user.home}/mvn_repository</localRepository>`，本地仓库设在了 `~/mvn_repository` 这个目录，那 `archetype-catalog.xml` 就应该放在此目录中，这样使用 `-DarchetypeCatalog=local` 参数时，才会去读取到此 xml 文件。
+
+这文件有 10m 大小，Archetype 非常的多，有 3000 多个，总有一款适合你：
+
+```shell
+3587: local -> za.co.absa.hyperdrive:component-archetype_2.12 (-)
+Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): 2275: 
+```
+
+##### remote
+
+使用 `-DarchetypeCatalog=remote` 指定远程 Archetype Catalog，跟默认情况，即不使用 `-DarchetypeCatalog` 参数来创建目录，是一致的：
+
+```shell
+$ mvn archetype:generate -DarchetypeCatalog=remote                       
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< org.apache.maven:standalone-pom >-------------------
+[INFO] Building Maven Stub Project (No POM) 1
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] >>> archetype:3.4.0:generate (default-cli) > generate-sources @ standalone-pom >>>
+[INFO] 
+[INFO] <<< archetype:3.4.0:generate (default-cli) < generate-sources @ standalone-pom <<<
+[INFO] 
+[INFO] 
+[INFO] --- archetype:3.4.0:generate (default-cli) @ standalone-pom ---
+[INFO] Generating project in Interactive mode
+Downloading from aliyunmaven: https://maven.aliyun.com/repository/public/archetype-catalog.xml
+[WARNING] failed to download from remoteorg.eclipse.aether.transfer.MetadataNotFoundException: Could not find metadata /archetype-catalog.xml in aliyunmaven (https://maven.aliyun.com/repository/public)
+[WARNING] No archetype found in remote catalog. Defaulting to internal catalog
+[INFO] No archetype defined. Using maven-archetype-quickstart (org.apache.maven.archetypes:maven-archetype-quickstart:1.0)
+Choose archetype:
+1: internal -> org.apache.maven.archetypes:maven-archetype-archetype (An archetype which contains a sample archetype.)
+2: internal -> org.apache.maven.archetypes:maven-archetype-j2ee-simple (An archetype which contains a simplifed sample J2EE application.)
+3: internal -> org.apache.maven.archetypes:maven-archetype-plugin (An archetype which contains a sample Maven plugin.)
+4: internal -> org.apache.maven.archetypes:maven-archetype-plugin-site (An archetype which contains a sample Maven plugin site.
+      This archetype can be layered upon an existing Maven plugin project.)
+5: internal -> org.apache.maven.archetypes:maven-archetype-portlet (An archetype which contains a sample JSR-268 Portlet.)
+6: internal -> org.apache.maven.archetypes:maven-archetype-profiles ()
+7: internal -> org.apache.maven.archetypes:maven-archetype-quickstart (An archetype which contains a sample Maven project.)
+8: internal -> org.apache.maven.archetypes:maven-archetype-site (An archetype which contains a sample Maven site which demonstrates
+      some of the supported document types like APT, XDoc, and FML and demonstrates how
+      to i18n your site. This archetype can be layered upon an existing Maven project.)
+9: internal -> org.apache.maven.archetypes:maven-archetype-site-simple (An archetype which contains a sample Maven site.)
+10: internal -> org.apache.maven.archetypes:maven-archetype-webapp (An archetype which contains a sample Maven Webapp project.)
+Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): 7: 
+```
 
 ---
 

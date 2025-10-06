@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2025-10-06 05:12:02
+modified: 2025-10-07 02:03:03
 
 ---
 
@@ -490,6 +490,12 @@ Runtime 名称列表：[runtime name](https://github.com/redhat-developer/vscode
 
 [Maven for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-maven)[![Maven for Java](https://img.shields.io/github/stars/microsoft/vscode-maven
 )](https://github.com/microsoft/vscode-maven) 是 微软开发的 [Maven](../Java/Maven/Maven_Note.md) 插件。
+
+##### 更新 archetype
+
+如果创建 [Maven](../Java/Maven/Maven_Note.md) 时，发现 [Archetype](../Java/Maven/Maven_Note.md#mvn_project_archetype) 版本有点老，就应该更新下：
+
+![update archetype](./VSCode_Extensions_Note.assets/vscode_java_maven_archetype_up.png)
 
 #### Debugger for Java
 

@@ -5,7 +5,7 @@ tags:
   - maven
   - jdk
 created: 2023-01-31 11:31:14
-modified: 2025-10-06 05:43:16
+modified: 2025-10-06 12:43:41
 ---
 
 # Maven 笔记
@@ -270,7 +270,7 @@ java17：
 <profile>
 	<id>jdk-17</id>    
 	<activation>    
-		<activeByDefault>true</activeByDefault>    
+		<activeByDefault>false</activeByDefault> 
 		<jdk>17</jdk>    
 	</activation>    
 	<properties>    
@@ -348,17 +348,78 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 
 > [!info] 
 > 
-> `properties` 中 `source` 和 `target` 可以使用 `release` 来替代。
+> `properties` 节点中指定的 JDK 版本是可选配置。
+> 
+> 另外，`properties` 中 `source` 和 `target` 可以使用 `release` 来替代。
 > 
 > ```xml
 > <properties>
 >	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
->	<release>21</release>
+>	<maven.compiler.release>21</maven.compiler.release>
 ></properties>
 > ```
 > 
-> 
 > [Maven Repository: maven-compiler-plugin](https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin)
+>
+> 真正关键是 maven 插件 `maven-compiler-plugin` 中的 `configuration` 节点也可以配置 JDK 版本，与 `properties` 节点配置可以二选一：
+> ```xml
+> <configuration>
+>	<release>21</release>
+>	<encoding>UTF-8</encoding>
+></configuration>
+> ```
+>
+> 另外，[Maven](Maven_Note.md) 全局配置文件 `settings.xml` 中 `<activeByDefault>` 这里的配置应该不存在，或值为 `false`，也就是不要设置默认 JDK 版本，不然项目中的设置 JDK 版本会失效。
+> 
+
+---
+
+### <span id="mvn_project_create">创建项目</span>
+
+示例：
+
+```shell
+mvn archetype:generate -DgroupId=com.silascript.exercise -DartifactId=e02 -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.5
+```
+
+> [!tip] 
+> 
+> 如果在 Windows 下，参数有可能得使用双引号括起来：
+> 
+> `mvn archetype:generate "-DarchetypeGroupId=org.apache.maven.archetypes" "-DarchetypeArtifactId=maven-archetype-quickstart" "-DarchetypeVersion=1.5"`
+
+#### 命令组成
+
+* `mvn`：核心命令
+* `archetype:generate`：创建项目
+* `-DgroupId=com.silascript.exercise`：包名的写法，域名的反写
+* `-DartifactId=e02`：项目名称
+* `-DarchetypeArtifactId=maven-archetype-quickstart`：表示使用 `maven-archetype-quickstart` 这个 [骨架](#mvn_project_archetype) 来创建项目
+* `-DarchetypeVersion=1.5`：这是指定 [骨架](#mvn_project_archetype) 的版本
+
+创建项目时，项目的根目录的目录名是由 `artifactId` 中指定的项目名称决定的，会在命令所有的当前目录自动创建。
+
+```shell
+# silascript @ (base) in ~/DevWorkSpace/JavaExercise [11:14:18] 
+$ mvn archetype:generate -DgroupId=com.silascript.exercise -DartifactId=e02 -DarchetypeArtifactId=maven-archetype-quickstart
+```
+
+如当前目录是 `~/DevWorkSpace/JavaExercise`，在此目录中使用 `mvn archetype:generate` 命令创建项目，则会在当前目录中创建一个 `e02` 项目录：
+
+```shell
+# silascript @ (base) in ~/DevWorkSpace/JavaExercise [11:26:23] 
+$ ll
+Permissions Size User       Group      Date Modified    Name
+drwxr-xr-x     - silascript silascript 2025-10-06 11:17 .
+drwxr-xr-x     - silascript silascript 2025-09-24 02:51 ..
+drwxr-xr-x     - silascript silascript 2025-10-06 11:17 e02
+```
+
+### <span id="mvn_project_archetype">骨架</span>
+
+`archetype` 是 [创建项目](#mvn_project_create) 时使用的项目模板，这个模板定义了项目的基本架构。
+
+maven 内置骨架：[Apache Maven Archetypes – Maven Archetypes](https://maven.apache.org/archetypes/index.html)
 
 ---
 

@@ -5,7 +5,7 @@ tags:
   - maven
   - jdk
 created: 2023-01-31 11:31:14
-modified: 2025-10-06 12:43:41
+modified: 2025-10-06 20:20:16
 ---
 
 # Maven 笔记
@@ -15,7 +15,11 @@ modified: 2025-10-06 12:43:41
 ## 目录
 
 * [配置](#mvn_settings)
-	* [本地仓库](#mvn_settings_localRepo)
+* [仓库](#mvn_repository)
+	* [本地仓库](#mvn_repository_local)
+	* [远程仓库](#mvn_repository_remote)
+		* [中央仓库](#mvn_repository_remote_central)
+* [镜像](#mvn_mirror)
 * [Maven 项目](#mvn_project)
 	* [JDK 版本指定](#mvn_project_jdk_version)
 
@@ -58,11 +62,17 @@ mvn help:system
 
 生成完全 `.m2` 目录，可以将 maven 安装根目录中那个「全局」配置文件 `settings.xml` 复制到 `.m2` 下，作为「用户级」配置文件，然后再对其进行下一步配置。
 
-Maven 配置主要有两块：
-1. [本地仓库](#本地仓库) 存储位置的配置
-2. [配置镜像](#配置镜像)
+Maven 配置主要有以下几个：
 
-### <span id="mvn_settings_localRepo">本地仓库</span>
+1. [本地仓库](#mvn_repository_local) 
+2. [远程仓库](#mvn_repository_remote)
+3. [配置镜像](#配置镜像)
+
+---
+
+## <span id="mvn_repository">仓库</span>
+
+### <span id="mvn_repository_local">本地仓库</span>
 
 > [!example] 配置示例
 >
@@ -78,9 +88,9 @@ Maven 配置主要有两块：
 > <localRepository>${user.home}/mvn_repository</localRepository>
 > ```
 
-### <span id="mvn_settings_remoteRepo">远程仓库</span>
+### <span id="mvn_repository_remote">远程仓库</span>
 
-#### <span id="mvn_settings_remoteRepo_mvnrepository">中央仓库</span>
+#### <span id="mvn_repository_remote_central">中央仓库</span>
 
 中央仓库地址：
 
@@ -93,7 +103,35 @@ Maven 配置主要有两块：
 
 ---
 
-## <span id="mvn_settings_mirror">配置镜像</span>
+## <span id="mvn_mirror">镜像</span>
+
+「镜像」实质是一个「拦截器」，它会拦截 Maven 对远程仓库的相关为请求，把请求里的远程仓库重新定向到镜像里配置的地址。
+
+> [!info] 
+> 
+> 同一个 [仓库](#mvn_repository) 的多个「镜像」时，相互之间是备份的关系，只有在仓库连不上的 时候才会切换另一个，而如果在能连上的情况下找不到包，是不会尝试下一个地址的
+
+### mirrorOf
+
+* 当 `mirrorOf` 中设置为 `*` 时,所有请求都会转到 镜像中所指的 `url` 中,此时 `profile` 中配置的 `repositories` 失效,当然 `profile` 中的其他配置还是有效的。
+* `mirrorOf` 设置是您正在使用的镜像的 [仓库](#mvn_repository)（`repository`）的 `id`。例如,默认情况下包含的主 Maven[中央仓库](#mvn_repository_remote_central) 的 ID 是 `Central`，且 Maven **仅使用匹配到的第一个镜像**，其余符合匹配条件的镜像将不起作用。也就是说，如果你的第一个仓库的 `mirrorOf` 配置为 `*`，则其余镜像配置将不起作用。
+* 镜像的 `mirrorOf` 不能和任何镜像的 id 一致，因为 id 在 setting 中唯一，`mirrorOf` 要和 [仓库](#mvn_repository") 的 id 一致
+
+```xml
+<mirrors>  
+...  
+	<mirror>  
+		<id>aliyunmaven</id>  
+		<mirrorOf>central</mirrorOf>  
+		<name>阿里云公共仓库</name>  
+		<url>https://maven.aliyun.com/repository/public</url>  
+	</mirror>  
+</mirrors>
+```
+
+`mirrorOf` 中的必须为 `central`，这样才能作为 [中央仓库](#mvn_repository_remote_central) 的镜像。
+
+### 国内镜像
 
 国内镜像主要是 [阿里](https://developer.aliyun.com/mvn/guide)、[网易](https://mirrors.163.com/.help/maven.html)、华为和腾讯。
 
@@ -390,12 +428,24 @@ mvn archetype:generate -DgroupId=com.silascript.exercise -DartifactId=e02 -Darch
 
 #### 命令组成
 
-* `mvn`：核心命令
-* `archetype:generate`：创建项目
-* `-DgroupId=com.silascript.exercise`：包名的写法，域名的反写
-* `-DartifactId=e02`：项目名称
-* `-DarchetypeArtifactId=maven-archetype-quickstart`：表示使用 `maven-archetype-quickstart` 这个 [骨架](#mvn_project_archetype) 来创建项目
-* `-DarchetypeVersion=1.5`：这是指定 [骨架](#mvn_project_archetype) 的版本
+`mvn`：核心命令
+
+`archetype:generate`：创建项目。`archetype` 其实是一个插件 [`maven-archetype-plugin`](#Archetype%20Plugin)。
+
+##### 项目相关参数
+
+`-DgroupId=com.silascript.exercise`：包名的写法，域名的反写
+
+`-DartifactId=e02`：项目名称
+
+##### Archetype 的指定
+
+[Archetype](#mvn_project_archetype) 的指定包括两块：
+
+* Archtype 的类型指定：[ArchetypeArtifactId](#ArchetypeArtifactId)
+* Archetype 的版本：[ArchetypeVersion](#ArchetypeVersion)
+
+#### 创建项目注意事项
 
 创建项目时，项目的根目录的目录名是由 `artifactId` 中指定的项目名称决定的，会在命令所有的当前目录自动创建。
 
@@ -404,7 +454,7 @@ mvn archetype:generate -DgroupId=com.silascript.exercise -DartifactId=e02 -Darch
 $ mvn archetype:generate -DgroupId=com.silascript.exercise -DartifactId=e02 -DarchetypeArtifactId=maven-archetype-quickstart
 ```
 
-如当前目录是 `~/DevWorkSpace/JavaExercise`，在此目录中使用 `mvn archetype:generate` 命令创建项目，则会在当前目录中创建一个 `e02` 项目录：
+示例：如当前目录是 `~/DevWorkSpace/JavaExercise`，在此目录中使用 `mvn archetype:generate` 命令创建项目，则会在当前目录中创建一个 `e02` 项目录：
 
 ```shell
 # silascript @ (base) in ~/DevWorkSpace/JavaExercise [11:26:23] 
@@ -415,11 +465,135 @@ drwxr-xr-x     - silascript silascript 2025-09-24 02:51 ..
 drwxr-xr-x     - silascript silascript 2025-10-06 11:17 e02
 ```
 
-### <span id="mvn_project_archetype">骨架</span>
+### <span id="mvn_project_archetype">Archetype</span>
 
-`archetype` 是 [创建项目](#mvn_project_create) 时使用的项目模板，这个模板定义了项目的基本架构。
+`archetype` （翻译为「骨架」或「模板」）是 [创建项目](#mvn_project_create) 时使用的项目模板，这个模板定义了项目的基本架构。
+
+#### Archetype Plugin
+
+Archetype 不是 Maven 的核心，它是通过插件来实现的，这插件就是 [maven-archetype-plugin](https://maven.apache.org/archetype/maven-archetype-plugin)
 
 maven 内置骨架：[Apache Maven Archetypes – Maven Archetypes](https://maven.apache.org/archetypes/index.html)
+
+###### ArchetypeArtifactId
+
+`-DarchetyDpeArtifactId=maven-archetype-quickstart`：表示使用 `maven-archetype-quickstart` 这个 [骨架](#mvn_project_archetype) 来创建项目。
+此参数是可选，如果未指定此参数，maven 会输出一个 [骨架](#mvn_project_archetype)（`archetype`）列表供用户选择，默认是选择 `maven-archetype-quickstart` 这个骨架：
+```shell
+Choose archetype:
+1: internal -> org.apache.maven.archetypes:maven-archetype-archetype (An archetype which contains a sample archetype.)
+2: internal -> org.apache.maven.archetypes:maven-archetype-j2ee-simple (An archetype which contains a simplifed sample J2EE application.)
+3: internal -> org.apache.maven.archetypes:maven-archetype-plugin (An archetype which contains a sample Maven plugin.)
+4: internal -> org.apache.maven.archetypes:maven-archetype-plugin-site (An archetype which contains a sample Maven plugin site.
+      This archetype can be layered upon an existing Maven plugin project.)
+5: internal -> org.apache.maven.archetypes:maven-archetype-portlet (An archetype which contains a sample JSR-268 Portlet.)
+6: internal -> org.apache.maven.archetypes:maven-archetype-profiles ()
+7: internal -> org.apache.maven.archetypes:maven-archetype-quickstart (An archetype which contains a sample Maven project.)
+8: internal -> org.apache.maven.archetypes:maven-archetype-site (An archetype which contains a sample Maven site which demonstrates
+      some of the supported document types like APT, XDoc, and FML and demonstrates how
+      toDi18n your site. This archetype can be layered upon an existing Maven project.)
+9: internal -> org.apache.maven.archetypes:maven-archetype-site-simple (An archetype which contains a sample Maven site.)
+10: internal -> org.apache.maven.archetypes:maven-archetype-webapp (An archetype which contains a sample Maven Webapp project.)
+Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): 7:
+```
+
+###### ArchetypeVersion
+
+`-DarchetypeVersion=1.5`：这是指定 [Archetype](#mvn_project_archetype) 的版本。
+
+这也是可选。
+
+如果未指定 [ArchetypeArtifactId](#ArchetypeArtifactId)，将使用最新版本：
+```shell
+$ mvn archetype:generate -DgroudId=com.sialscript.exercise -DartifactId=e02                                                 
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< org.apache.maven:standalone-pom >-------------------
+[INFO] Building Maven Stub Project (No POM) 1
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] >>> archetype:3.4.0:generate (default-cli) > generate-sources @ standalone-pom >>>
+[INFO] 
+[INFO] <<< archetype:3.4.0:generate (default-cli) < generate-sources @ standalone-pom <<<
+[INFO] 
+[INFO] 
+[INFO] --- archetype:3.4.0:generate (default-cli) @ standalone-pom ---
+[INFO] Generating project in Interactive mode
+[WARNING] failed to download from remoteorg.eclipse.aether.transfer.MetadataNotFoundException: /archetype-catalog.xml was not found in https://maven.aliyun.com/repository/public during a previous attempt. This failure was cached in the local repository and resolution is not be reattempted until the update interval of aliyunmaven has elapsed or updates are forced
+[WARNING] No archetype found in remote catalog. Defaulting to internal catalog
+[INFO] No archetype defined. Using maven-archetype-quickstart (org.apache.maven.archetypes:maven-archetype-quickstart:1.0)
+Choose archetype:
+1: internal -> org.apache.maven.archetypes:maven-archetype-archetype (An archetype which contains a sample archetype.)
+2: internal -> org.apache.maven.archetypes:maven-archetype-j2ee-simple (An archetype which contains a simplifed sample J2EE application.)
+3: internal -> org.apache.maven.archetypes:maven-archetype-plugin (An archetype which contains a sample Maven plugin.)
+4: internal -> org.apache.maven.archetypes:maven-archetype-plugin-site (An archetype which contains a sample Maven plugin site.
+      This archetype can be layered upon an existing Maven plugin project.)
+5: internal -> org.apache.maven.archetypes:maven-archetype-portlet (An archetype which contains a sample JSR-268 Portlet.)
+6: internal -> org.apache.maven.archetypes:maven-archetype-profiles ()
+7: internal -> org.apache.maven.archetypes:maven-archetype-quickstart (An archetype which contains a sample Maven project.)
+8: internal -> org.apache.maven.archetypes:maven-archetype-site (An archetype which contains a sample Maven site which demonstrates
+      some of the supported document types like APT, XDoc, and FML and demonstrates how
+      to i18n your site. This archetype can be layered upon an existing Maven project.)
+9: internal -> org.apache.maven.archetypes:maven-archetype-site-simple (An archetype which contains a sample Maven site.)
+10: internal -> org.apache.maven.archetypes:maven-archetype-webapp (An archetype which contains a sample Maven Webapp project.)
+Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): 7: 
+[INFO] Using property: javaCompilerVersion = 17
+[INFO] Using property: junitVersion = 5.11.0
+Define value for property 'groupId': com.silascript.exercise
+[INFO] Using property: artifactId = e02
+Define value for property 'version' 1.0-SNAPSHOT: 
+Define value for property 'package' com.silascript.exercise: 
+Confirm properties configuration:
+javaCompilerVersion: 17
+junitVersion: 5.11.0
+groupId: com.silascript.exercise
+artifactId: e02
+version: 1.0-SNAPSHOT
+package: com.silascript.exercise
+ Y: y
+[INFO] ----------------------------------------------------------------------------
+[INFO] Using following parameters for creating project from Archetype: maven-archetype-quickstart:1.5
+```
+而如果是通过命令参数 `-DarchetyDpeArtifactId` 显式指定 Archetype，那如果 `DarchetypeVersion` 参数未指定，最终它会使用 archetype 的最旧版本：
+
+```shell
+$ mvn archetype:generate -DgroudId=com.sialscript.exercise -DartifactId=e02 -DarchetypeArtifactId=maven-archetype-quickstart
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< org.apache.maven:standalone-pom >-------------------
+[INFO] Building Maven Stub Project (No POM) 1
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] >>> archetype:3.4.0:generate (default-cli) > generate-sources @ standalone-pom >>>
+[INFO] 
+[INFO] <<< archetype:3.4.0:generate (default-cli) < generate-sources @ standalone-pom <<<
+[INFO] 
+[INFO] 
+[INFO] --- archetype:3.4.0:generate (default-cli) @ standalone-pom ---
+[INFO] Generating project in Interactive mode
+[WARNING] failed to download from remoteorg.eclipse.aether.transfer.MetadataNotFoundException: /archetype-catalog.xml was not found in https://maven.aliyun.com/repository/public during a previous attempt. This failure was cached in the local repository and resolution is not be reattempted until the update interval of aliyunmaven has elapsed or updates are forced
+[WARNING] No archetype found in remote catalog. Defaulting to internal catalog
+[INFO] Artifact org.apache.maven.archetypes:maven-archetype-quickstart:jar:1.0 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [aliyunmaven (https://maven.aliyun.com/repository/public, default, releases)]
+[INFO] Artifact org.apache.maven.archetypes:maven-archetype-quickstart:jar:1.0 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [aliyunmaven (https://maven.aliyun.com/repository/public, default, releases)]
+Downloading from aliyunmaven: https://maven.aliyun.com/repository/public/org/apache/maven/archetypes/maven-archetype-quickstart/1.0/maven-archetype-quickstart-1.0.jar
+Downloaded from aliyunmaven: https://maven.aliyun.com/repository/public/org/apache/maven/archetypes/maven-archetype-quickstart/1.0/maven-archetype-quickstart-1.0.jar (0 B at 0 B/s)
+Define value for property 'groupId': com.silascript.exercise
+[INFO] Using property: artifactId = e02
+Define value for property 'version' 1.0-SNAPSHOT: 
+Define value for property 'package' com.silascript.exercise: 
+Confirm properties configuration:
+groupId: com.silascript.exercise
+artifactId: e02
+version: 1.0-SNAPSHOT
+package: com.silascript.exercise
+ Y: y
+[INFO] ----------------------------------------------------------------------------
+[INFO] Using following parameters for creating project from Old (1.x) Archetype: maven-archetype-quickstart:1.0
+```
+
+> [!tip] 
+> 
+> 综上所述，如果要使用 Archetype 最新版本，要么显示指定 `archetypeVersion`，要么连 `archetypeArtifactId` 也不要指定，不然会使用 Archetype 的最旧版本。
 
 ---
 
@@ -530,6 +704,12 @@ drwxr-xr-x     - silascript silascript 2025-03-20 20:58 ..
 ```shell
 mvn dependency:tree
 ```
+
+---
+
+## 相关文档
+
+* [Using Mirrors for Repositories – Maven](https://maven.apache.org/guides/mini/guide-mirror-settings.html)
 
 ---
 

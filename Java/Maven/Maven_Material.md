@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2025-03-08 19:05:30
-modified: 2025-10-06 12:29:52
+modified: 2025-10-06 17:54:30
 ---
 
 # Maven 资料清单
@@ -15,7 +15,19 @@ modified: 2025-10-06 12:29:52
 
 ## 通用
 
-* [Maven中配置maven-compiler-plugin 插件和jdk 17版本 - 楼兰胡杨 - 博客园](https://www.cnblogs.com/east7/p/13363069.html)
+### 镜像和仓库
+
+* [Maven远程仓库的各种配置-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1491184)
+* [maven多个镜像如何有效使用 - 池塘里洗澡的鸭子 - 博客园](https://www.cnblogs.com/ilovebath/p/16143594.html)
+* [Maven 多仓库和镜像配置](https://zhuanlan.zhihu.com/p/396703897)
+* [maven配置多个镜像 - 佩奇er - 博客园](https://www.cnblogs.com/hxun/p/11274196.html)
+* [Maven配置多个仓库共同使用的方法-个人计算机技术知识记录](https://oskr.cn/archives/maven-pei-zhi-duo-ge-cang-ku-gong-tong-shi-yong-de-fang-fa)
+* [Maven的settings.xml配置多仓库数据镜像源](https://www.oldmoon.top/post/180)
+* [Maven配置多仓库无效？- 掘金](https://juejin.cn/post/6963471281962352671)
+* [maven - mirrorOf 的坑、多镜像切换（避免一切无厘头报错）\_牛客博客](https://blog.nowcoder.net/n/1166815f837244caa74bf9f62c43d04c)
+* [Maven 多仓库和镜像配置](https://blog.einverne.info/post/2019/04/maven-multiple-repository-and-mirror.html)
+* [412B-A1D4A-MAVEN-镜像与仓库镜像 - 掘金](https://juejin.cn/post/7316931384878137384)
+* [Maven 仓库 - Maven 3.8.9](https://gaga.plus/app/maven-3.8.9/repositories.html)
 
 ---
 
@@ -28,6 +40,7 @@ modified: 2025-10-06 12:29:52
 ## 插件
 
 * [maven-compiler-plugin编译插件](https://zhuanlan.zhihu.com/p/690194882)
+* [Maven中配置maven-compiler-plugin 插件和jdk 17版本 - 楼兰胡杨 - 博客园](https://www.cnblogs.com/east7/p/13363069.html)
 
 ---
 
@@ -45,6 +58,7 @@ modified: 2025-10-06 12:29:52
 * [Mavan：自定义骨架及工程初始化\_maven\_程序员架构进阶\_InfoQ写作社区](https://xie.infoq.cn/article/a3a2bc9267e335c3b36aeb0e9)
 * [Maven 的41种骨架功能介绍](https://blog.csdn.net/weixin_42336002/article/details/80782896)
 * [【Maven实战技巧】「插件使用专题」Maven-Archetype插件创建自定义maven项目骨架本文正在参加「金石计 - 掘金](https://juejin.cn/post/7173891295830605861)
+* [Maven 骨架工程技术 - 掘金](https://juejin.cn/post/7137122035846610975)
 
 ### create
 

@@ -7,7 +7,7 @@ tags:
   - Eclipse
   - dbeaver
 created: 2023-01-30 11:19:11
-modified: 2025-10-06 21:15:36
+modified: 2025-10-07 02:32:48
 ---
 
 # Java 笔记
@@ -563,4 +563,5 @@ public class Demo_1{
 * [Java Apache 笔记](Java_Apache_Note.md)
 * [Java Web 笔记](Java_Servlet_Note.md)
 * [Java 日志框架 笔记](Java_Log_Note.md)
+* [Java 测试框架笔记](Test/Java_Test_Note.md)
 

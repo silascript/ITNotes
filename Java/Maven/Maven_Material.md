@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2025-03-08 19:05:30
-modified: 2025-10-07 01:21:30
+modified: 2025-10-07 22:02:20
 ---
 
 # Maven 资料清单
@@ -20,6 +20,11 @@ modified: 2025-10-07 01:21:30
 
 ### 镜像和仓库
 
+* [Maven 仓库 \| 菜鸟教程](https://www.runoob.com/maven/maven-repositories.html)
+* [Maven同时配置多个仓库源自动下载](https://zhuanlan.zhihu.com/p/512185371)
+* [Maven配置多个仓库共同使用的方法-个人计算机技术知识记录](https://oskr.cn/archives/maven-pei-zhi-duo-ge-cang-ku-gong-tong-shi-yong-de-fang-fa)
+* [maven配置国内镜像源maven的安装目录下 conf 目录下， 修改 settings.xml 其中 mirrors - 掘金](https://juejin.cn/post/7093693517377044494)
+* [几种常见的MAVEN仓库地址](http://www.javathinker.net/bbs_topic.do?postID=3572)
 * [Maven远程仓库的各种配置-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1491184)
 * [maven多个镜像如何有效使用 - 池塘里洗澡的鸭子 - 博客园](https://www.cnblogs.com/ilovebath/p/16143594.html)
 * [Maven 多仓库和镜像配置](https://zhuanlan.zhihu.com/p/396703897)
@@ -31,6 +36,8 @@ modified: 2025-10-07 01:21:30
 * [Maven 多仓库和镜像配置](https://blog.einverne.info/post/2019/04/maven-multiple-repository-and-mirror.html)
 * [412B-A1D4A-MAVEN-镜像与仓库镜像 - 掘金](https://juejin.cn/post/7316931384878137384)
 * [Maven 仓库 - Maven 3.8.9](https://gaga.plus/app/maven-3.8.9/repositories.html)
+* [maven中配置jboss仓库 - lavel - 博客园](https://www.cnblogs.com/manliu/p/4682003.html)
+* [Maven 教程（11）— Maven远程仓库的各种配置 - kszsa - 博客园](https://www.cnblogs.com/dyh004/p/11579586.html)
 
 ---
 

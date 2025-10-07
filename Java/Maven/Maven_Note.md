@@ -5,7 +5,7 @@ tags:
   - maven
   - jdk
 created: 2023-01-31 11:31:14
-modified: 2025-10-07 01:49:31
+modified: 2025-10-08 03:07:45
 ---
 
 # Maven 笔记
@@ -114,7 +114,7 @@ Maven 配置主要有以下几个：
 ### mirrorOf
 
 * 当 `mirrorOf` 中设置为 `*` 时,所有请求都会转到 镜像中所指的 `url` 中,此时 `profile` 中配置的 `repositories` 失效,当然 `profile` 中的其他配置还是有效的。
-* `mirrorOf` 设置是您正在使用的镜像的 [仓库](#mvn_repository)（`repository`）的 `id`。例如,默认情况下包含的主 Maven[中央仓库](#mvn_repository_remote_central) 的 ID 是 `Central`，且 Maven **仅使用匹配到的第一个镜像**，其余符合匹配条件的镜像将不起作用。也就是说，如果你的第一个仓库的 `mirrorOf` 配置为 `*`，则其余镜像配置将不起作用。
+* `mirrorOf` 设置是您正在使用的镜像的 [仓库](#mvn_repository)（`repository`）的 `id`。例如,默认情况下包含的主 Maven[中央仓库](#mvn_repository_remote_central) 的 ID 是 `central`，且 Maven **仅使用匹配到的第一个镜像**，其余符合匹配条件的镜像将不起作用。也就是说，如果你的第一个仓库的 `mirrorOf` 配置为 `*`，则其余镜像配置将不起作用。
 * 镜像的 `mirrorOf` 不能和任何镜像的 id 一致，因为 id 在 setting 中唯一，`mirrorOf` 要和 [仓库](#mvn_repository") 的 id 一致
 
 ```xml
@@ -131,6 +131,38 @@ Maven 配置主要有以下几个：
 
 `mirrorOf` 中的必须为 `central`，这样才能作为 [中央仓库](#mvn_repository_remote_central) 的镜像。
 
+`mirrorOf` 可以有以下配置方式：
+
+* `*`：everything
+* `external:*`：everything not on the localhost and not file based.
+* `repo,repo1`：repo or repo1
+* `*,!repo1`： everything except repo1
+
+> [!info] 
+> 
+> Maven 按以下顺序处理镜像：
+> 
+> 1. **精确匹配**：`mirrorOf` 与仓库 ID 完全匹配
+> 2. **模式匹配**：使用通配符的模式
+> 3. **第一个匹配的镜像生效** - 一旦找到匹配的镜像，就不会继续查找
+
+> [!tip] 
+> 
+> 最佳实践建议
+> 
+> 1. **避免镜像冲突**：确保不同镜像的 `mirrorOf` 不会重叠
+> 2. **合理排序**：将最具体的镜像放在前面，通用的放在后面
+> 3. **排除内部仓库**：公司内部仓库通常不需要镜像
+> 4. **测试配置**：使用 `mvn help:effective-settings` 验证配置
+
+|        特性        | `mirrorOf *` | `mirrorOf external:*` |
+|:------------------:|:------------:|:---------------------:|
+|  **本地文件仓库**  |   ✅ 匹配    |       ❌ 不匹配       |
+| **localhost 仓库** |   ✅ 匹配    |       ❌ 不匹配       |
+|   **局域网仓库**   |   ✅ 匹配    |        ✅ 匹配        |
+|   **互联网仓库**   |   ✅ 匹配    |        ✅ 匹配        |
+|    **中央仓库**    |   ✅ 匹配    |        ✅ 匹配        |
+
 ### 国内镜像
 
 国内镜像主要是 [阿里](https://developer.aliyun.com/mvn/guide)、[网易](https://mirrors.163.com/.help/maven.html)、华为和腾讯。
@@ -140,75 +172,7 @@ Maven 配置主要有以下几个：
 国内镜像配置如下：
 
 ```xml
-	<mirror>
-      <id>aliyun-central</id>
-      <mirrorOf>central</mirrorOf>
-      <name>阿里云公共仓库</name>
-      <url>https://maven.aliyun.com/repository/central</url>
-    </mirror>
 
-
-    <mirror>
-      <id>huaweicloud</id>
-      <mirrorOf>central</mirrorOf>
-      <name>HuaWei</name>
-      <url>https://repo.huaweicloud.com/repository/maven/</url>
-    </mirror>
-
-    <mirror>
-      <id>nju_mirror</id>
-      <mirrorOf>central</mirrorOf>
-      <url>https://repo.nju.edu.cn/repository/maven-public/</url>
-    </mirror>
-
-    <mirror>
-      <id>apachemaven</id>
-      <mirrorOf>central</mirrorOf>
-      <name>apache repo</name>
-      <url>https://repo.maven.apache.org/maven2/</url>
-    </mirror>
-
-    <mirror>
-      <id>repomaven</id>
-      <mirrorOf>central</mirrorOf>
-      <name>central repo</name>
-      <url>https://repo1.maven.org/maven2/</url>
-    </mirror>
-
-    <mirror>
-      <id>aliyun-spring</id>
-      <mirrorOf>spring</mirrorOf>
-      <name>阿里云Spring仓库</name>
-      <url>https://maven.aliyun.com/repository/spring</url>
-    </mirror>
-
-    <mirror>
-      <id>aliyun-spring-plugin</id>
-      <mirrorOf>spring-plugin</mirrorOf>
-      <name>阿里云Spring-plugin仓库</name>
-      <url>https://maven.aliyun.com/repository/spring-plugin</url>
-    </mirror>
-
-    <mirror>
-      <id>aliyun-gradle-plugin</id>
-      <mirrorOf>gradle-plugin</mirrorOf>
-      <name>阿里云gradle-plugin仓库</name>
-      <url>https://maven.aliyun.com/repository/gradle-plugin</url>
-    </mirror>
-
-    <mirror>
-      <id>aliyun-grails-core</id>
-      <mirrorOf>grails-core</mirrorOf>
-      <name>阿里云grails-core仓库</name>
-      <url>https://maven.aliyun.com/repository/grails-core</url>
-    </mirror>
-
-    <mirror>
-      <id>aliyun-apache-snapshots</id>
-      <mirrorOf>apache-snapshots</mirrorOf>
-      <name>阿里云apache snapshots仓库</name>
-      <url>https://maven.aliyun.com/repository/apache-snapshots</url>
-    </mirror>
 
 ```
 
@@ -774,7 +738,9 @@ mvn dependency:tree
 
 ## 相关文档
 
-* [Using Mirrors for Repositories – Maven](https://maven.apache.org/guides/mini/guide-mirror-settings.html)
+* [Using Mirrors for Repositories – Maven docs](https://maven.apache.org/guides/mini/guide-mirror-settings.html)
+* [guide-multiple-repository - Maven docs](https://maven.apache.org/guides/mini/guide-multiple-repositories.html)
+* [将红帽软件仓库添加到 Maven\| Red Hat Documentation](https://docs.redhat.com/zh-cn/documentation/red_hat_fuse/7.6/html/installing_on_jboss_eap/add-red-hat-repositories-to-maven)
 
 ---
 

@@ -5,7 +5,7 @@ tags:
   - maven
   - jdk
 created: 2023-01-31 11:31:14
-modified: 2025-10-08 04:28:39
+modified: 2025-10-08 04:33:46
 ---
 
 # Maven 笔记
@@ -156,14 +156,16 @@ JCenter 相比 [mavenCentral](#mavenCentral) 构件更多，性能也更好。�
 </mirrors>
 ```
 
-`mirrorOf` 中的必须为 `central`，这样才能作为 [中央仓库](#mvn_repository_remote_central) 的镜像。
+> `mirrorOf` 中的必须为 `central`，这样才能作为 [中央仓库](#mvn_repository_remote_central) 的镜像。
 
-`mirrorOf` 可以有以下配置方式：
+语法：`mirrorOf = [匹配模式],![排除模式1],![排除模式2],...`
 
-* `*`：everything
-* `external:*`：everything not on the localhost and not file based.
-* `repo,repo1`：repo or repo1
-* `*,!repo1`： everything except repo1
+规则说明：
+
+* `*`：匹配所有仓库
+* `!repo-id`：排除特定 ID 的仓库
+* `external:*`：匹配所有外部仓库
+* `*,!repo1,!repo2`：匹配除 repo1 和 repo2 外的所有仓库
 
 > [!info] 
 > 

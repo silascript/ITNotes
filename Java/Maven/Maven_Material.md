@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2025-03-08 19:05:30
-modified: 2025-10-07 22:02:20
+modified: 2025-10-08 04:16:57
 ---
 
 # Maven 资料清单
@@ -20,6 +20,10 @@ modified: 2025-10-07 22:02:20
 
 ### 镜像和仓库
 
+* [jcenter、mavenCentral及google三个远程仓库 - 神奇的旋风 - 博客园](https://www.cnblogs.com/xuan52rock/p/12772979.html)
+* [Android之maven 仓库，maven Central，JCenter及Nexus 私服之间关系\_maven nexus和center-CSDN博客](https://blog.csdn.net/u010349644/article/details/84715076)
+* [Jcenter 停止服务 - 掘金](https://juejin.cn/post/6954924581677170724)
+* [JCenter 迁移指南本 - 掘金](https://juejin.cn/post/7053774607160967199)
 * [Maven 仓库 \| 菜鸟教程](https://www.runoob.com/maven/maven-repositories.html)
 * [Maven同时配置多个仓库源自动下载](https://zhuanlan.zhihu.com/p/512185371)
 * [Maven配置多个仓库共同使用的方法-个人计算机技术知识记录](https://oskr.cn/archives/maven-pei-zhi-duo-ge-cang-ku-gong-tong-shi-yong-de-fang-fa)

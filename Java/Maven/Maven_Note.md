@@ -5,7 +5,7 @@ tags:
   - maven
   - jdk
 created: 2023-01-31 11:31:14
-modified: 2025-10-08 03:07:45
+modified: 2025-10-08 04:28:39
 ---
 
 # Maven 笔记
@@ -92,7 +92,22 @@ Maven 配置主要有以下几个：
 
 #### <span id="mvn_repository_remote_central">中央仓库</span>
 
-中央仓库地址：
+Maven 的中央仓库，其实是有两大中央仓库：
+
+* [Maven Central](#MavenCentral)
+* [JCenter](#JCenter)
+
+> [!info] 
+> 
+> 事实上两个仓库都具有相同的使命：提供 Java 或者 Android library 服务。上传到哪个（或者都上传）取决于开发者。
+>
+> 起初，Android Studio 选择 [MavenCentral](#MavenCentral)] 作为默认仓库。如果你使用老版本的 Android Studio 创建一个新项目，`mavenCentral()` 会自动的定义在 `build.gradle` 中 。
+>
+> 但是 Maven Central 的最大问题是对开发者不够友好。上传 library 异常困难。上传上去的开发者都是某种程度的极客。同时还因为诸如安全方面的其他原因，Android Studio 团队决定把默认的仓库替换成 [JCenter](#JCenter)。正如你看到的，一旦使用最新版本的 Android Studio 创建一个项目，`jcenter()` 自动被定义，而不是 `mavenCentral()`。
+
+##### MavenCentral
+
+Maven 中央仓库（[http://repo1.maven.org/maven2/](http://repo1.maven.org/maven2/)）是由 Sonatype 公司提供的服务，它是 Apache Maven、SBT 和其他构建系统的默认仓库。
 
 * [https://mvnrepository.com/](https://mvnrepository.com/)
 
@@ -100,6 +115,18 @@ Maven 配置主要有以下几个：
 > 
 > 如果是查询 jar 包，除了上面的中央仓库中查还可以到以下网站去查：
 > * [Sonatype Maven Central](https://central.sonatype.com)（老的域名是：[ https://search.maven.org](https://search.maven.org)）
+
+##### JCenter
+
+JCenter 仓库（[https://jcenter.bintray.com](https://jcenter.bintray.com)）是由 JFrog 公司提供的 Bintray 中的 [Java](../Java_Note.md) 仓库。
+
+它是当前世界上最大的 Java 和 Android 开源软件构件仓库。 所有内容都通过内容分发网络（CDN）使用加密 https 连接获取。JCenter 是 [Groovy](../Groovy_Gradle/Groovy_Note.md) Grape 内的默认仓库。
+
+JCenter 相比 [mavenCentral](#mavenCentral) 构件更多，性能也更好。但还是有些构件仅存在 [mavenCentral](#mavenCentral) 中。
+
+> [!important] 
+> 
+> JCenter 已经停止运营了，所以只能用 [MavenCentral](#MavenCentral)。
 
 ---
 
@@ -169,10 +196,101 @@ Maven 配置主要有以下几个：
 
 大体以阿里为主。
 
+阿里仓库列表：[https://maven.aliyun.com/mvn/view](https://maven.aliyun.com/mvn/view)
+
 国内镜像配置如下：
 
 ```xml
+<mirrors>
+	<mirror>
+	  <id>maven-default-http-blocker</id>
+	  <mirrorOf>external:http:*</mirrorOf>
+	  <name>Pseudo repository to mirror external repositories initially using HTTP.</name>
+	  <url>http://0.0.0.0/</url>
+	  <blocked>true</blocked>
+	</mirror>
+	
+	
+	<mirror>
+	  <id>aliyun-central</id>
+	  <mirrorOf>central</mirrorOf>
+	  <name>阿里云公共仓库</name>
+	  <url>https://maven.aliyun.com/repository/central</url>
+	</mirror>
+	
+	<mirror>
+	  <id>aliyun-public</id>
+	  <mirrorOf>external:*,!aliyun-central</mirrorOf>
+	  <name>阿里云jcenter和mavenCentral的聚合仓库</name>
+	  <url>https://maven.aliyun.com/repository/public</url>
+	</mirror>
+	
+	<mirror>
+	  <id>aliyun-spring</id>
+	  <mirrorOf>spring</mirrorOf>
+	  <name>阿里云Spring仓库</name>
+	  <url>https://maven.aliyun.com/repository/spring</url>
+	</mirror>
+	
+	
+	<mirror>
+	  <id>aliyun-spring-plugin</id>
+	  <mirrorOf>spring-plugin</mirrorOf>
+	  <name>阿里云Spring-plugin仓库</name>
+	  <url>https://maven.aliyun.com/repository/spring-plugin</url>
+	</mirror>
+	
+	<mirror>
+	  <id>aliyun-gradle-plugin</id>
+	  <mirrorOf>gradle-plugin</mirrorOf>
+	  <name>阿里云gradle-plugin仓库</name>
+	  <url>https://maven.aliyun.com/repository/gradle-plugin</url>
+	</mirror>
+	
+	<mirror>
+	  <id>aliyun-grails-core</id>
+	  <mirrorOf>grails-core</mirrorOf>
+	  <name>阿里云grails-core仓库</name>
+	  <url>https://maven.aliyun.com/repository/grails-core</url>
+	</mirror>
+	
+	<mirror>
+	  <id>aliyun-apache-snapshots</id>
+	  <mirrorOf>apache-snapshots</mirrorOf>
+	  <name>阿里云apache snapshots仓库</name>
+	  <url>https://maven.aliyun.com/repository/apache-snapshots</url>
+	</mirror>
+	
+	<mirror>
+	  <id>aliyun-google</id>
+	  <mirrorOf>google</mirrorOf>
+	  <name>阿里云google仓库</name>
+	  <url>https://maven.aliyun.com/repository/google</url>
+	</mirror>
+	
+	
+	<mirror>
+	  <id>netcn</id>
+	  <name>Mirror from Maven in china</name>
+	  <url>http://maven.net.cn/content/groups/public/</url>
+	  <mirrorOf>external:*,!aliyun-central,!aliyun-public</mirrorOf>
+	</mirror>
+	
+	<mirror>
+	  <id>apachemaven</id>
+	  <mirrorOf>external:central,!aliyun-central,!aliyun-public,!netcn</mirrorOf>
+	  <name>apache repo</name>
+	  <url>https://repo.maven.apache.org/maven2/</url>
+	</mirror>
+	
+	<mirror>
+	  <id>repomaven</id>
+	  <mirrorOf>external:*,!aliyun-central,!aliyun-public,!netcn</mirrorOf>
+	  <name>central repo1</name>
+	  <url>https://repo1.maven.org/maven2/</url>
+	</mirror>
 
+</mirrors>
 
 ```
 

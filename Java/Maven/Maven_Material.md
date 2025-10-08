@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2025-03-08 19:05:30
-modified: 2025-10-08 22:02:42
+modified: 2025-10-08 22:03:37
 ---
 
 # Maven 资料清单
@@ -37,6 +37,7 @@ modified: 2025-10-08 22:02:42
 * [maven - mirrorOf 的坑、多镜像切换（避免一切无厘头报错）\_牛客博客](https://blog.nowcoder.net/n/1166815f837244caa74bf9f62c43d04c)
 * [maven多个镜像如何有效使用 - 池塘里洗澡的鸭子 - 博客园](https://www.cnblogs.com/ilovebath/p/16143594.html)
 * [maven 多个镜像如何自动切换 - 希赛考试网](https://kaoshi.educity.cn/rk/4rwjtkvjet.html)
+* [maven 中配置多个mirror如何切换镜像\_maven 多个镜像如何自动切换-CSDN博客](https://blog.csdn.net/liangwenmail/article/details/94555054)
 * [Maven 多仓库和镜像配置](https://zhuanlan.zhihu.com/p/396703897)
 * [Maven仓库及镜像配置 \| 飘逸峰的博客](https://blog.hanqunfeng.com/2021/12/02/maven-setting/)
 * [maven仓库中心mirrors配置 - 民宿 - 博客园](https://www.cnblogs.com/gentlescholar/p/15049090.html)

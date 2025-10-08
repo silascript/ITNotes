@@ -5,7 +5,7 @@ tags:
   - maven
   - jdk
 created: 2023-01-31 11:31:14
-modified: 2025-10-08 20:47:45
+modified: 2025-10-08 23:20:05
 ---
 
 # Maven 笔记
@@ -128,6 +128,73 @@ JCenter 相比 [mavenCentral](#mavenCentral) 构件更多，性能也更好。�
 > 
 > JCenter 已经停止运营了，所以只能用 [MavenCentral](#MavenCentral)。
 
+### <span id="mvn_repository_multiple">多仓库</span>
+
+#### 项目级定义多仓库
+
+在 [项目](#mvn_project) 的 `pom` 文件中，使用 `<repositories>` 及 `<repository>` 标签来配置仓库。
+
+每一个 `<repository>` 定义一个仓库，`<repositories>` 可以定义多个 `<repository>`。
+
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+  
+  <repositories>
+    <repository>
+      <id>my-repo1</id>
+      <name>your custom repo</name>
+      <url>http://jarsm2.dyndns.dk</url>
+    </repository>
+    <repository>
+      <id>my-repo2</id>
+      <name>your custom repo</name>
+      <url>http://jarsm2.dyndns.dk</url>
+    </repository>
+  </repositories>
+</project>
+```
+
+#### 全局级定义多仓库
+
+而在 `setttins.xml` 中，是将整个「仓库组」`<repositories>` 放在 `<profile>` 标签中定义的。而为了一个 `<profile>` 定义一个仓库，所以 `<repositories>` 标签中只放一个仓库 `<repository>`。另外，要使用 `<profile>` 生效，还得在 `<activeProfiles>` 标签中配置「激活」它。
+
+示例：
+
+```xml
+<settings>
+	<profiles>
+		<profile>
+		 <id>myprofile</id>
+		 <repositories>
+		   <repository>
+			 <id>my-repo1</id>
+			 <name>your custom repo</name>
+			 <url>http://jarsm2.dyndns.dk</url>
+		   </repository>
+		 </repositories>
+		</profile>
+		
+		<profile>
+		 <id>myprofile2</id>
+		 <repositories>
+		   <repository>
+			 <id>my-repo2</id>
+			 <name>your custom repo2</name>
+			 <url>http://jarsm2.dyndns2.dk</url>
+		   </repository>
+		 </repositories>
+		</profile>
+		
+		
+	</profiles>
+	
+	<activeProfiles>
+		<activeProfile>myprofile</activeProfile>
+		<activeProfile>myprofile2</activeProfile>
+	</activeProfiles>
+</settings>
+```
+
 ---
 
 ## <span id="mvn_mirror">镜像</span>
@@ -159,6 +226,12 @@ JCenter 相比 [mavenCentral](#mavenCentral) 构件更多，性能也更好。�
 > `mirrorOf` 中的必须为 `central`，这样才能作为 [中央仓库](#mvn_repository_remote_central) 的镜像。
 
 语法：`mirrorOf = [匹配模式],![排除模式1],![排除模式2],...`
+
+> [!tip] 
+> 
+> `mirrorOf` 中除了 `*` 外，匹配模式中的的 `id` 是 [仓库](#mvn_repository)（`repostory`）的 ID，非其他镜像的 ID。
+> 
+> 镜像与镜像间，是备份关系。
 
 规则说明：
 

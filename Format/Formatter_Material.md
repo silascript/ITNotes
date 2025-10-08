@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2025-03-18 03:32:00
-modified: 2025-10-04 11:00:27
+modified: 2025-10-09 03:28:56
 ---
 
 # 格式化器资料清单
@@ -48,6 +48,8 @@ modified: 2025-10-04 11:00:27
 * [彻底搞懂ESLint与Prettier在vscode中的代码自动格式化 - 掘金](https://juejin.cn/post/7156893291726782500)
 * [Prettier-Code Formater代码格式化插件使用教程 - 虚伪渲染敷衍 - 博客园](https://www.cnblogs.com/fitzlovecode/p/code_formater.html)
 
+---
+
 ## SQL 格式化器
 
 ### sqlfluff
@@ -58,6 +60,14 @@ modified: 2025-10-04 11:00:27
 * [SQLFluff的简单使用](https://blog.csdn.net/m0_56263746/article/details/150463229)
 
 ### sql-format
+
+---
+
+## XML 格式化器
+
+* [xmllint命令 - 小时候挺菜 - 博客园](https://www.cnblogs.com/zzdbullet/p/10143215.html)
+* [（转）Shell解析处理XML方法汇总 - liujiacai - 博客园](https://www.cnblogs.com/liujiacai/p/16965387.html)
+* [使用xmllint处理xml \| hypc's blog](https://hypc.github.io/2019/12/30/xmllint/)
 
 ---
 

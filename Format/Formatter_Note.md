@@ -4,7 +4,7 @@ tags:
   - format
   - formatter
 created: 2024-05-24 09:57:51
-modified: 2025-10-04 11:07:13
+modified: 2025-10-09 04:43:06
 ---
 
 # 格式化工具笔记
@@ -309,6 +309,147 @@ npm install sql-formatter -g
 常用配置项：
 
 `language`：默认为 `sql`，详情参考：[sql-formatter-docs#language](https://github.com/sql-formatter-org/sql-formatter/blob/master/docs/language.md)
+
+---
+
+## XML
+
+### Tidy
+
+tidy 同样也是在 [Linux](../Linux/Linux_Note.md) 上常用的 [XML](../XML/XML_Note.md) 工具。
+
+#### 安装
+
+使用系统的包管理工具就能安装：`yay -S tidy `
+
+#### tidy 使用
+
+使用 tidy 格式化 xml 时 ，得加上 `-xml` 选项使用。
+
+常用参数：
+
+* `-xml`：指定输入为 XML（重要！）
+* `-i`：缩进元素
+* `-m`：修改原文件
+* `-wrap 80`：在 80 字符处换行
+* `-indent`：缩进内容
+* `-quiet`：不显示警告
+* `-omit` ：省略 XML 声明
+* `--indent-attributes yes`：属性缩进
+
+### XMLLint
+
+[XmlLint](https://xmllint.com) 这是一个 [XML](../XML/XML_Note.md) 的 Linter，它包括了格式化功能。
+
+#### 安装
+
+要安装 xmllint，只要安装 `libxml2` 就可以使用该命令了。
+
+[Linux](../Linux/Linux_Note.md) 很多核心库都带了这东西，不要在包管理器搜 xmllint，那是找不到的：
+
+```shell
+core/libxml2 2.14.6-1 (795.1 KiB 3.1 MiB) (已安装)
+    XML C parser and toolkit
+```
+
+#### XMLLint 使用
+
+可用的选项及参数如下：
+
+```shell
+Parse the XML files and output the result of the parsing
+--version : display the version of the XML library used
+--shell : run a navigating shell
+--debug : show additional debug information
+--copy : used to test the internal copy implementation
+--recover : output what was parsable on broken XML documents
+--huge : remove any internal arbitrary parser limits
+--noent : substitute entity references by their value
+--noenc : ignore any encoding specified inside the document
+--noout : don't output the result tree
+--path 'paths': provide a set of paths for resources
+--load-trace : print trace of all external entities loaded
+--nonet : refuse to fetch DTDs or entities over network
+--nocompact : do not generate compact text nodes
+--valid : validate the document in addition to std well-formed check
+--postvalid : do a posteriori validation, i.e after parsing
+--dtdvalid URL : do a posteriori validation against a given DTD
+--dtdvalidfpi FPI : same but name the DTD with a Public Identifier
+--insert : ad-hoc test for valid insertions
+--strict-namespace : Return application failure if document has any namespace errors
+--quiet : be quiet when succeeded
+--timing : print some timings
+--repeat : repeat 100 times, for timing or profiling
+--dropdtd : remove the DOCTYPE of the input docs
+--html : use the HTML parser
+--nodefdtd : do not default HTML doctype
+--xmlout : force to use the XML serializer when using --html
+--push : use the push mode of the parser
+--memory : parse from memory
+--maxmem nbbytes : limits memory allocation to nbbytes bytes
+--nowarning : do not emit warnings from parser/validator
+--noblanks : drop (ignorable?) blanks spaces
+--nocdata : replace cdata section with text nodes
+--nodict : create document without dictionary
+--pedantic : enable additional warnings
+--output file or -o file: save to a given file
+--format : reformat/reindent the output
+--encode encoding : output in the given encoding
+--pretty STYLE : pretty-print in a particular style
+				 0 Do not pretty print
+				 1 Format the XML content, as --format
+				 2 Add whitespace inside tags, preserving content
+--compress : turn on gzip compression of output
+--c14n : save in W3C canonical format v1.0 (with comments)
+--c14n11 : save in W3C canonical format v1.1 (with comments)
+--exc-c14n : save in W3C exclusive canonical format (with comments)
+--nsclean : remove redundant namespace declarations
+--catalogs : use SGML catalogs from $SGML_CATALOG_FILES
+			 otherwise XML Catalogs starting from 
+		 file:///home/silascript/miniforge3/etc/xml/catalog are activated by default
+--nocatalogs: deactivate all catalogs
+--auto : generate a small doc on the fly
+--xinclude : do XInclude processing
+--noxincludenode : same but do not generate XInclude nodes
+--nofixup-base-uris : do not fixup xml:base uris
+--loaddtd : fetch external DTD
+--dtdattr : loaddtd + populate the tree with inherited attributes 
+--stream : use the streaming interface to process very large files
+--walker : create a reader and walk though the resulting doc
+--pattern pattern_value : test the pattern support
+--relaxng schema : do RelaxNG validation against the schema
+--schema schema : do validation against the WXS schema
+--schematron schema : do validation against a schematron
+--sax1: use the old SAX1 interfaces for processing
+--sax: do not build a tree but work just at the SAX level
+--oldxml10: use XML-1.0 parsing rules before the 5th edition
+--xpath expr: evaluate the XPath expression, imply --noout
+--max-ampl value: set maximum amplification factor
+```
+
+##### 常用用法
+
+格式化语法：
+
+* `xmllint --format xxx.xml`
+* `xmllint --format --pretty 2 xx.xml`
+> [!info] 
+> 
+> 	`--pretty` 参数是指定部分格式化风格，参数 `2`，就是给一些标签加空格。主要是对 [XML](../XML/XML_Note.md) 命名空间那块的美化，如：
+> 
+> 未添加 `--pretty 2` 选项的： 
+> ```shell
+> <settings xmlns="http://maven.apache.org/SETTINGS/1.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd">
+> ```
+> 
+> 添加了 `--pretty 2` 选项的：
+> ```shell
+> <settings
+>   xmlns="http://maven.apache.org/SETTINGS/1.2.0"
+>   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+>  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd"
+> ```
+> 
 
 ---
 

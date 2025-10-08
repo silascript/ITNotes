@@ -5,7 +5,7 @@ tags:
   - maven
   - jdk
 created: 2023-01-31 11:31:14
-modified: 2025-10-08 04:33:46
+modified: 2025-10-08 20:47:45
 ---
 
 # Maven 笔记
@@ -194,9 +194,9 @@ JCenter 相比 [mavenCentral](#mavenCentral) 构件更多，性能也更好。�
 
 ### 国内镜像
 
-国内镜像主要是 [阿里](https://developer.aliyun.com/mvn/guide)、[网易](https://mirrors.163.com/.help/maven.html)、华为和腾讯。
+国内镜像主要是 [阿里](https://developer.aliyun.com/mvn/guide)、[网易](https://mirrors.163.com/.help/maven.html)、[华为](https://mirrors.huaweicloud.com/mirrorDetail/5ea0025f2ab89b484a4dd5ce?mirrorName=maven&catalog=language) 和 [腾讯](https://mirrors.cloud.tencent.com)。
 
-大体以阿里为主。
+大体以阿里的镜像为主。
 
 阿里仓库列表：[https://maven.aliyun.com/mvn/view](https://maven.aliyun.com/mvn/view)
 

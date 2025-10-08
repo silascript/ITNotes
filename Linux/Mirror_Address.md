@@ -6,7 +6,7 @@ tags:
   - list
   - opensource
 created: 2023-08-18 19:44:52
-modified: 2025-08-13 12:34:59
+modified: 2025-10-08 20:52:21
 ---
 # 开源镜像网址清单
 
@@ -40,6 +40,7 @@ modified: 2025-08-13 12:34:59
 ### 国外源
 
 * [xTom Open Source Software Mirror](https://mirror.xtom.nl/)
+* [ibiblio mirrors](https://www.ibiblio.org/catalog/exhibits/show/softwaremirrors/software-mirrors)
 
 ---
 

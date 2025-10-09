@@ -4,7 +4,7 @@ tags:
   - format
   - formatter
 created: 2024-05-24 09:57:51
-modified: 2025-10-09 04:43:06
+modified: 2025-10-09 10:54:52
 ---
 
 # 格式化工具笔记
@@ -314,6 +314,14 @@ npm install sql-formatter -g
 
 ## XML
 
+### xmlstarlet
+
+[XMLStarlet](https://xmlstar.sourceforge.net) 是一个 [XML](../XML/XML_Note.md) 专门的格式化器。
+
+#### 安装
+
+使用系统的包管理器直接安装就好了：`yay -S extra/xmlstarlet`
+
 ### Tidy
 
 tidy 同样也是在 [Linux](../Linux/Linux_Note.md) 上常用的 [XML](../XML/XML_Note.md) 工具。
@@ -449,7 +457,8 @@ Parse the XML files and output the result of the parsing
 >   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 >  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd"
 > ```
-> 
+
+* `--format --recover`：属性缩进
 
 ---
 

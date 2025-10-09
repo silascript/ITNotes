@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2025-03-18 03:32:00
-modified: 2025-10-09 03:28:56
+modified: 2025-10-09 05:10:09
 ---
 
 # 格式化器资料清单
@@ -64,6 +64,16 @@ modified: 2025-10-09 03:28:56
 ---
 
 ## XML 格式化器
+
+### lxml
+
+* [lxml 教程：使用 lxml 处理 XML 和 Web 抓取](https://oxylabs.cn/blog/lxml-tutorial)
+
+### xmlstarlet
+
+* [在命令行中使用 XMLStarlet 来解析 XML](https://zhuanlan.zhihu.com/p/394189056)
+
+### xmllint
 
 * [xmllint命令 - 小时候挺菜 - 博客园](https://www.cnblogs.com/zzdbullet/p/10143215.html)
 * [（转）Shell解析处理XML方法汇总 - liujiacai - 博客园](https://www.cnblogs.com/liujiacai/p/16965387.html)

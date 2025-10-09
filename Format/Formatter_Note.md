@@ -4,7 +4,7 @@ tags:
   - format
   - formatter
 created: 2024-05-24 09:57:51
-modified: 2025-10-09 10:54:52
+modified: 2025-10-09 11:09:49
 ---
 
 # 格式化工具笔记
@@ -321,6 +321,25 @@ npm install sql-formatter -g
 #### 安装
 
 使用系统的包管理器直接安装就好了：`yay -S extra/xmlstarlet`
+
+#### 使用
+
+格式化相关的选项及参数：
+
+```shell
+-n or --noindent            - do not indent
+-t or --indent-tab          - indent output with tabulation
+-s or --indent-spaces <num> - indent output with <num> spaces
+-o or --omit-decl           - omit xml declaration <?xml version="1.0"?>
+--net                       - allow network access
+-R or --recover             - try to recover what is parsable
+-D or --dropdtd             - remove the DOCTYPE of the input docs
+-C or --nocdata             - replace cdata section with text nodes
+-N or --nsclean             - remove redundant namespace declarations
+-e or --encode <encoding>   - output in the given encoding (utf-8, unicode...)
+-H or --html                - input is HTML
+-h or --help                - print help
+```
 
 ### Tidy
 

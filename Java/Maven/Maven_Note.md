@@ -5,7 +5,7 @@ tags:
   - maven
   - jdk
 created: 2023-01-31 11:31:14
-modified: 2025-10-08 23:20:05
+modified: 2025-10-09 11:40:35
 ---
 
 # Maven 笔记
@@ -130,9 +130,37 @@ JCenter 相比 [mavenCentral](#mavenCentral) 构件更多，性能也更好。�
 
 ### <span id="mvn_repository_multiple">多仓库</span>
 
-#### 项目级定义多仓库
+#### Maven 依赖查找顺序 (按优先级排序，由高到低)
 
-在 [项目](#mvn_project) 的 `pom` 文件中，使用 `<repositories>` 及 `<repository>` 标签来配置仓库。
+* 1.[本地仓库](#mvn_repository_local) 
+    * 路径：`settings.xml` 中 `<localRepository>` 指定的位置，默认 `~/.m2/repository`
+    * 优先级最高：如果本地已经有对应版本，Maven 默认直接使用，不会再去 [远程仓库](#mvn_repository_remote)（除非 `-U` 或本地缺失/损坏）。
+* 2.`settings.xml` 中的 `Profile` 仓库
+    * 路径：`settings.profiles.profile.repositories.repository`
+    * 只有在 `settings.xml` 里激活了 `<activeProfiles>`，对应的 `Profile` 才会生效。
+    * 优先级高于 `pom.xml` 里的所有仓库配置。
+* 3.`pom.xml` 中的 `Profile` 仓库
+    * 路径：`project.profiles.profile.repositories.repository`
+    * 必须在 `settings.xml` 中通过 `<activeProfiles>` 激活对应的 `Profile` 才会生效。
+    * 优先级低于 `settings.xml` 的 `Profile` 仓库，高于 `pom.xml` 普通仓库。
+* 4.`pom.xml` 中的 [普通仓库](#普通仓库)
+    * 路径：`project.repositories.repository`
+    * 通常用来指定项目专用的仓库，比如公司内部的 Nexus、Artifactory。
+* 5.Maven 默认 [中央仓库](#mvn_repository_remote_central) 
+    * URL: [https://repo.maven.apache.org/maven2](https://repo.maven.apache.org/maven2)
+    * 当以上所有仓库都找不到依赖时，才会去中央仓库。
+* 6.[镜像](#mvn_mirror)（Mirror）会改变顺序
+    * 如果你在 `settings.xml` 里配置了 `<mirrors>`，那么所有远程仓库的请求都会被重定向到镜像地址。
+    * 比如配置了 `Nexus` 作为中央仓库的镜像，所有原本去 [https://repo.maven.apache.org/maven2](https://repo.maven.apache.org/maven2) 的请求，都会被重定向到 Nexus。
+    * 即便是 `Profile` 声明的仓库，其在拉取镜像时也会优先匹配是否存在镜像仓库，如果匹配成功，则优先使用镜像仓库。
+
+#### 项目级配置多仓库
+
+在 [项目](#mvn_project) 的 `pom` 文件中，配置仓库有两种方式：
+
+##### 普通仓库
+
+`pom.xml` 文件根节点 `<project>` 下，直接使用 `<repositories>` 及 `<repository>` 标签定义的仓库。
 
 每一个 `<repository>` 定义一个仓库，`<repositories>` 可以定义多个 `<repository>`。
 
@@ -154,7 +182,13 @@ JCenter 相比 [mavenCentral](#mavenCentral) 构件更多，性能也更好。�
 </project>
 ```
 
-#### 全局级定义多仓库
+##### profile 仓库
+
+`pom.xml` 文件中，在 `<profile>` 节点中标签定义的仓库，与 [settings 级配置多仓库](#settings%20级配置多仓库) 是一样的。
+
+同样的，也得使用 `<activeProfiles>` 激活才能生效。
+
+#### settings 级配置多仓库
 
 而在 `setttins.xml` 中，是将整个「仓库组」`<repositories>` 放在 `<profile>` 标签中定义的。而为了一个 `<profile>` 定义一个仓库，所以 `<repositories>` 标签中只放一个仓库 `<repository>`。另外，要使用 `<profile>` 生效，还得在 `<activeProfiles>` 标签中配置「激活」它。
 

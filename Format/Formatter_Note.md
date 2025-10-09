@@ -4,7 +4,7 @@ tags:
   - format
   - formatter
 created: 2024-05-24 09:57:51
-modified: 2025-10-09 11:09:49
+modified: 2025-10-09 13:29:58
 ---
 
 # 格式化工具笔记
@@ -358,11 +358,19 @@ tidy 同样也是在 [Linux](../Linux/Linux_Note.md) 上常用的 [XML](../XML/X
 * `-xml`：指定输入为 XML（重要！）
 * `-i`：缩进元素
 * `-m`：修改原文件
-* `-wrap 80`：在 80 字符处换行
-* `-indent`：缩进内容
+* `-wrap 80` 或 `--wrap 80`：在 80 字符处换行
+* `-indent`：缩进宽度
 * `-quiet`：不显示警告
 * `-omit` ：省略 XML 声明
 * `--indent-attributes yes`：属性缩进
+
+```shell
+# 2 空格缩进
+tidy -xml -indent input.xml
+
+# 4 空格缩进
+tidy -xml -indent -indent-spaces 4 -wrap 120 input.xml
+```
 
 ### XMLLint
 

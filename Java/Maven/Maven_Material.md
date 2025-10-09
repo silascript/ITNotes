@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2025-03-08 19:05:30
-modified: 2025-10-08 22:03:37
+modified: 2025-10-09 21:20:13
 ---
 
 # Maven 资料清单
@@ -17,6 +17,11 @@ modified: 2025-10-08 22:03:37
 
 * [maven的使用 - 马昌伟 - 博客园](https://www.cnblogs.com/machangwei-8/p/18288999)
 * [IDEA 配置 maven 完美解决方案-华为开发者话题 \| 华为开发者联盟](https://developer.huawei.com/consumer/cn/forum/topic/0201204364964830559)
+* [Maven - wolai](https://www.wolai.com/tengfei-xy/ceHa4ggrTXv2VPWEbdLTGR)
+* [Maven构建中spring-boot-maven-plugin插件解析失败解决方案](https://comate.baidu.com/zh/page/a5sajt9jkpg)
+* [麒麟系统下IntelliJ IDEA配置Maven避坑指南一 - 掘金](https://juejin.cn/post/7491945534514610216)
+* [终于把项目构建神器Maven捋清楚了 \| 二哥的Java进阶之路](https://javabetter.cn/maven/maven.html)
+* [实话实说 \| 这些maven命令，你会几个？- 掘金](https://juejin.cn/post/6916843088195354638)
 
 ### 镜像和仓库
 
@@ -26,11 +31,16 @@ modified: 2025-10-08 22:03:37
 * [JCenter 迁移指南本 - 掘金](https://juejin.cn/post/7053774607160967199)
 * [Maven 仓库 \| 菜鸟教程](https://www.runoob.com/maven/maven-repositories.html)
 * [一文弄懂 maven 仓库, 仓库优先级, settings pom配置关系及差异](https://zhuanlan.zhihu.com/p/350404248)
+* [Maven三种仓库详解 - Java技术栈 - 博客园](https://www.cnblogs.com/javastack/p/13181107.html)
 * [MAVEN安装，以及中央仓库的配置（windows&linux）](https://zhuanlan.zhihu.com/p/689673606)
 * [Maven同时配置多个仓库源自动下载](https://zhuanlan.zhihu.com/p/512185371)
+* [maven 仓库, 仓库优先级, settings pom配置关系及差异 - Noleaf - 博客园](https://www.cnblogs.com/haoee/p/16280314.html)
 * [Maven配置多个仓库共同使用的方法-个人计算机技术知识记录](https://oskr.cn/archives/maven-pei-zhi-duo-ge-cang-ku-gong-tong-shi-yong-de-fang-fa)
 * [maven配置国内镜像源maven的安装目录下 conf 目录下， 修改 settings.xml 其中 mirrors - 掘金](https://juejin.cn/post/7093693517377044494)
 * [maven仓库是什么？怎么配置？（附配置国内镜像方法）](https://www.w3cschool.cn/article/23662532.html#:~:text=%E5%9B%BD%E5%86%85%E5%8F%AF%E4%BD%BF%E7%94%A8%E7%9A%84maven,.com/repository/maven/)
+* [关于Maven配置文件中的mirrorOf标签以及配置多个Maven镜像时使用镜像的顺序\_maven mirrorof-CSDN博客](https://blog.csdn.net/qq_42168543/article/details/113739953?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-5.pc_relevant_aa&spm=1001.2101.3001.4242.4&utm_relevant_index=8)
+* [一文说清Maven核心概念](https://zhuanlan.zhihu.com/p/461051721)
+* [maven访问仓库的顺序（六） - 慎终若始 - 博客园](https://www.cnblogs.com/szrs/p/15251319.html)
 * [几种常见的MAVEN仓库地址](http://www.javathinker.net/bbs_topic.do?postID=3572)
 * [Maven远程仓库的各种配置-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1491184)
 * [配置Maven镜像的正确方式 \| 红烧排骨饭](https://ikutarian.github.io/2020/02/12/%E9%85%8D%E7%BD%AEmaven%E7%9A%84%E9%95%9C%E5%83%8F%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%96%B9%E5%BC%8F/)

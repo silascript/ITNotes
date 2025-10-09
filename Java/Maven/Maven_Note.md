@@ -5,7 +5,7 @@ tags:
   - maven
   - jdk
 created: 2023-01-31 11:31:14
-modified: 2025-10-09 11:40:35
+modified: 2025-10-09 21:59:31
 ---
 
 # Maven 笔记
@@ -229,6 +229,68 @@ JCenter 相比 [mavenCentral](#mavenCentral) 构件更多，性能也更好。�
 </settings>
 ```
 
+如果是 [Maven 插件](#mvn_plugins)，也得单独是使用 `<pluginRepositories>` 及 `<pluginRepository>` 标签来配置：
+
+```xml
+<pluginRepositories>
+	<pluginRepository>
+		<id>aliyun-plugins</id>
+		<name>Aliyun Plugin Repository</name>
+		<url>https://maven.aliyun.com/repository/public</url>
+		<releases>
+			<enabled>true</enabled>
+		</releases>
+		<snapshots>
+			<enabled>false</enabled>
+		</snapshots>
+	</pluginRepository>
+</pluginRepositories>
+```
+
+```xml
+<profile>
+	<id>china-repos</id>
+	<repositories>
+		<repository>
+			<id>aliyun-central</id>
+			<name>aliyun central</name>
+			<url>https://maven.aliyun.com/repository/public</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	
+	<pluginRepositories>
+		<pluginRepository>
+			<id>aliyun-plugins</id>
+			<name>Aliyun Plugin Repository</name>
+			<url>https://maven.aliyun.com/repository/public</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+</profile>
+	
+</profiles>
+
+<activeProfiles>
+	<activeProfile>china-repos</activeProfile>
+</activeProfiles>
+
+```
+
+#### 多仓库使用
+
+在使用 [profile 仓库](#profile%20仓库) 时，是在命令中加入 `-P` 指定使用的 profile 仓库，如 `mvn install -P myprofile`，`-P` 的参数值是 `profile` 的 `<id>`。
+
 ---
 
 ## <span id="mvn_mirror">镜像</span>
@@ -290,6 +352,10 @@ JCenter 相比 [mavenCentral](#mavenCentral) 构件更多，性能也更好。�
 > 2. **合理排序**：将最具体的镜像放在前面，通用的放在后面
 > 3. **排除内部仓库**：公司内部仓库通常不需要镜像
 > 4. **测试配置**：使用 `mvn help:effective-settings` 验证配置
+>> [!info] 
+>> `mvn clean help:effective-settings` 清理 `effective-settings`
+>> 
+>> `mvn help:effective-settings` 及 `mvn clean help:effective-settings` 命令，应该在 Maven 项目中执行，不然第二次执行 `mvn help:effective-settings` 是没有下载信息，而如果要使用 `mvn clean help:effective-settings` 清理，也会报 `The goal you specified requires a project to execute but there is no POM in this directory` 错误。
 
 |        特性        | `mirrorOf *` | `mirrorOf external:*` |
 |:------------------:|:------------:|:---------------------:|

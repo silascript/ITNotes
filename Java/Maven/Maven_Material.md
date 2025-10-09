@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2025-03-08 19:05:30
-modified: 2025-10-09 21:20:13
+modified: 2025-10-10 04:47:11
 ---
 
 # Maven 资料清单
@@ -22,6 +22,12 @@ modified: 2025-10-09 21:20:13
 * [麒麟系统下IntelliJ IDEA配置Maven避坑指南一 - 掘金](https://juejin.cn/post/7491945534514610216)
 * [终于把项目构建神器Maven捋清楚了 \| 二哥的Java进阶之路](https://javabetter.cn/maven/maven.html)
 * [实话实说 \| 这些maven命令，你会几个？- 掘金](https://juejin.cn/post/6916843088195354638)
+* [Maven的这些坑，99%的人不知道！](https://zhuanlan.zhihu.com/p/1932111025253103305)
+
+### wrapper
+
+* [Maven Wrapper](https://zhuanlan.zhihu.com/p/690189270)
+* [把 Maven 提交到项目？Maven Wrapper的使用与好处](https://juejin.cn/post/7358704845736525835)
 
 ### 镜像和仓库
 

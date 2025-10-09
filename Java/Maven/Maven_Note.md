@@ -5,7 +5,7 @@ tags:
   - maven
   - jdk
 created: 2023-01-31 11:31:14
-modified: 2025-10-09 21:59:31
+modified: 2025-10-10 02:36:28
 ---
 
 # Maven 笔记
@@ -152,7 +152,7 @@ JCenter 相比 [mavenCentral](#mavenCentral) 构件更多，性能也更好。�
 * 6.[镜像](#mvn_mirror)（Mirror）会改变顺序
     * 如果你在 `settings.xml` 里配置了 `<mirrors>`，那么所有远程仓库的请求都会被重定向到镜像地址。
     * 比如配置了 `Nexus` 作为中央仓库的镜像，所有原本去 [https://repo.maven.apache.org/maven2](https://repo.maven.apache.org/maven2) 的请求，都会被重定向到 Nexus。
-    * 即便是 `Profile` 声明的仓库，其在拉取镜像时也会优先匹配是否存在镜像仓库，如果匹配成功，则优先使用镜像仓库。
+    * **即便是 `Profile` 声明的仓库，其在拉取镜像时也会优先匹配是否存在镜像仓库，如果匹配成功，则优先使用镜像仓库**（因为镜像实质就是一个「拦截器」）。
 
 #### 项目级配置多仓库
 
@@ -190,7 +190,37 @@ JCenter 相比 [mavenCentral](#mavenCentral) 构件更多，性能也更好。�
 
 #### settings 级配置多仓库
 
-而在 `setttins.xml` 中，是将整个「仓库组」`<repositories>` 放在 `<profile>` 标签中定义的。而为了一个 `<profile>` 定义一个仓库，所以 `<repositories>` 标签中只放一个仓库 `<repository>`。另外，要使用 `<profile>` 生效，还得在 `<activeProfiles>` 标签中配置「激活」它。
+而在 `setttins.xml` 中，是将整个「仓库组」`<repositories>` 放在 `<profile>` 标签中定义的。而为了一个 `<profile>` 定义一个仓库，所以 `<repositories>` 标签中只放一个仓库 `<repository>`。
+
+##### 启用 profile
+
+###### 自动启动
+
+另外，如果想要**自动**启动 `<profile>` 中配置的仓库，还得在 `<activeProfiles>` 标签中配置「激活」它。
+> [!info] 
+> 
+> 想要「激活」l 哪个 Profile，只需在 `<activeProfiles>` 中添加一个 `<activeProfile>` 项，其中的值就是 `<profile>` 中的 `<id>` 的值。
+> 
+> 示例：
+> ```xml
+> <activeProfiles>
+>	<activeProfile>profi id</activeProfile>
+></activeProfiles>
+> ```
+
+###### 手动
+
+在使用 [profile 仓库](#profile%20仓库) 时，可以在命令中加入 `-P` 「**手动**」显式指定使用的 profile 仓库，如 `mvn install -P myprofile`，`-P` 的参数值是 `profile` 的 `<id>`，这样就能在不同的 profile 仓库切换。
+
+如不使用 `-P` 指定 profile，如果 `settings.xml` 中有 [自动启动](#自动启动) 的配置，则按 `<activeProfile>` 顺序从上至下依次查询，如果找不到则到其他 Profile 中找。
+
+例如上面的示例中 `jboss-repos` 的 Profile 中没有使用 `<pluginRepositoies>` 配置 [Maven 插件](#mvn_plugins) 仓库，而使用 `jboss-repos` 这个 Profile 时，肯定是找不到的，则 Maven 会非常「智能」地跑到其他 Profile 中查找，如果都没找到，那才会到 [中央仓库](#mvn_repository_remote_central) 查找。
+
+而如果没有配置 [自动启动](#自动启动)，又没用 `-P` 进行显式的指定启用哪个 `profile`，那 Maven 就什么使用默为的 [中央仓库](#mvn_repository_remote_central)。
+
+> [!info] 
+> 
+> 总体看来，使用 `profile` 及 `<repository>` 配置仓库，比使用 [镜像](#mvn_mirror) 更灵活而「智能」！当然配置起来也相较使用镜像销微复杂一点。
 
 示例：
 
@@ -229,7 +259,13 @@ JCenter 相比 [mavenCentral](#mavenCentral) 构件更多，性能也更好。�
 </settings>
 ```
 
-如果是 [Maven 插件](#mvn_plugins)，也得单独是使用 `<pluginRepositories>` 及 `<pluginRepository>` 标签来配置：
+如果是 [Maven 插件](#mvn_plugins)，也得单独是使用 `<pluginRepositories>` 及 `<pluginRepository>` 标签来配置。
+> [!info] 
+> 
+> 如果没有使用 `<pluginRepositories>` 及 `<pluginRepository>` 为 Maven 插件配置仓库，即便 `<Reopository>` 中配的仓库有组件，Maven 也不会去查询，它只能跳到别的 Profile 中查询是否配了 `<pluginRepository>`，如果都没配，那就到默认的 [中央仓库](#mvn_repository_remote_central) 中下了。
+> 
+> 因为 [Maven 插件](#mvn_plugins) 所有 Maven 项目或多或少都会用到，所以建议每个 Profile 中最好还是添加 `<pluginRepositories>` 及 `<pluginRepository>` 的配置。
+> 
 
 ```xml
 <pluginRepositories>
@@ -278,18 +314,26 @@ JCenter 相比 [mavenCentral](#mavenCentral) 构件更多，性能也更好。�
 		</pluginRepository>
 	</pluginRepositories>
 </profile>
+
+<profile>
+	<id>jboss-repos</id>
+	<repositories>
+		<repository>
+			<id>jboss-public</id>
+			<name>jboss public</name>
+			<url>https://repository.jboss.org/nexus/repository/public/</url>
+		</repository>
+	</repositories>
+</profile>
 	
 </profiles>
 
 <activeProfiles>
+	<activeProfile>jboss-repos</activeProfile>
 	<activeProfile>china-repos</activeProfile>
 </activeProfiles>
 
 ```
-
-#### 多仓库使用
-
-在使用 [profile 仓库](#profile%20仓库) 时，是在命令中加入 `-P` 指定使用的 profile 仓库，如 `mvn install -P myprofile`，`-P` 的参数值是 `profile` 的 `<id>`。
 
 ---
 

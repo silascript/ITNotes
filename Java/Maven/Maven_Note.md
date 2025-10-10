@@ -5,7 +5,7 @@ tags:
   - maven
   - jdk
 created: 2023-01-31 11:31:14
-modified: 2025-10-10 02:36:28
+modified: 2025-10-10 21:49:08
 ---
 
 # Maven 笔记
@@ -92,6 +92,41 @@ Maven 配置主要有以下几个：
 
 #### <span id="mvn_repository_remote_central">中央仓库</span>
 
+在 `org/apache/maven/maven-model-builder/3.0/` 中有个 `maven-model-builder-3.0.jar`。解包，其中有个 `pom.xml`，其中可以看到中央仓库的配置：
+
+```xml
+<repositories>
+    <repository>
+      <id>central</id>
+      <name>Maven Repository Switchboard</name>
+      <url>http://repo1.maven.org/maven2</url>
+      <layout>default</layout>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>central</id>
+      <name>Maven Plugin Repository</name>
+      <url>http://repo1.maven.org/maven2</url>
+      <layout>default</layout>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <releases>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+    </pluginRepository>
+  </pluginRepositories>
+```
+
+> [!tip] 
+> 
+> 可以看到中央仓库和 [插件仓库](#mvn_repository_plugin)，都使用了 [http://repo1.maven.org/maven2](http://repo1.maven.org/maven2) 这个地址。
+
 Maven 的中央仓库，其实是有两大中央仓库：
 
 * [Maven Central](#MavenCentral)
@@ -127,6 +162,41 @@ JCenter 相比 [mavenCentral](#mavenCentral) 构件更多，性能也更好。�
 > [!important] 
 > 
 > JCenter 已经停止运营了，所以只能用 [MavenCentral](#MavenCentral)。
+
+### <span id="mvn_repository_plugin">插件仓库</span>
+
+> [!info] 
+> 
+> 通过对 `maven-model-builder-3.0.jar` 解包，从其中的 `pom.xml` 文件得知，默认的插件仓库与 [中央仓库](#mvn_repository_remote_central) 默认地址是一样的： [http://repo1.maven.org/maven2](http://repo1.maven.org/maven2) 。
+
+插件仓库使用 `<pluginRepositories>` 及 `pluginRepository` 标签来配置。
+
+示例（Maven 官方默认的插件仓库配置）：
+
+```xml
+  <pluginRepositories>
+    <pluginRepository>
+      <id>central</id>
+      <name>Maven Plugin Repository</name>
+      <url>http://repo1.maven.org/maven2</url>
+      <layout>default</layout>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <releases>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+    </pluginRepository>
+  </pluginRepositories>
+```
+
+插件仓库定义标签说明：
+
+* `<pluginRepositories>`：插件仓库组，其中可以定义多个插件仓库。
+* `<pluginRepository>`：插件仓库定义
+	* `<id>`：插件仓库唯一标识
+	* `<name>`：插件仓库描述
+	* `<url>`：插件仓库地址
 
 ### <span id="mvn_repository_multiple">多仓库</span>
 
@@ -1078,6 +1148,12 @@ mvn dependency:tree
 * [Using Mirrors for Repositories – Maven docs](https://maven.apache.org/guides/mini/guide-mirror-settings.html)
 * [guide-multiple-repository - Maven docs](https://maven.apache.org/guides/mini/guide-multiple-repositories.html)
 * [将红帽软件仓库添加到 Maven\| Red Hat Documentation](https://docs.redhat.com/zh-cn/documentation/red_hat_fuse/7.6/html/installing_on_jboss_eap/add-red-hat-repositories-to-maven)
+
+---
+
+## 相关连接
+
+* [个人Maven settings.xml配置](https://github.com/silascript/LinuxConfigs/blob/master/.m2/settings.xml)
 
 ---
 

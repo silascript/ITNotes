@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2025-03-08 19:05:30
-modified: 2025-10-10 04:47:11
+modified: 2025-10-10 20:48:42
 ---
 
 # Maven 资料清单
@@ -23,6 +23,7 @@ modified: 2025-10-10 04:47:11
 * [终于把项目构建神器Maven捋清楚了 \| 二哥的Java进阶之路](https://javabetter.cn/maven/maven.html)
 * [实话实说 \| 这些maven命令，你会几个？- 掘金](https://juejin.cn/post/6916843088195354638)
 * [Maven的这些坑，99%的人不知道！](https://zhuanlan.zhihu.com/p/1932111025253103305)
+* [Maven原理 \| yx91490的博客](https://yx91490.github.io/java/maven/maven_principle.html)
 
 ### wrapper
 
@@ -36,6 +37,7 @@ modified: 2025-10-10 04:47:11
 * [Jcenter 停止服务 - 掘金](https://juejin.cn/post/6954924581677170724)
 * [JCenter 迁移指南本 - 掘金](https://juejin.cn/post/7053774607160967199)
 * [Maven 仓库 \| 菜鸟教程](https://www.runoob.com/maven/maven-repositories.html)
+* [mvn仓库配置多个镜像激活 maven仓库和镜像](https://blog.51cto.com/u_16099320/11162065)
 * [一文弄懂 maven 仓库, 仓库优先级, settings pom配置关系及差异](https://zhuanlan.zhihu.com/p/350404248)
 * [Maven三种仓库详解 - Java技术栈 - 博客园](https://www.cnblogs.com/javastack/p/13181107.html)
 * [MAVEN安装，以及中央仓库的配置（windows&linux）](https://zhuanlan.zhihu.com/p/689673606)
@@ -55,6 +57,7 @@ modified: 2025-10-10 04:47:11
 * [maven 多个镜像如何自动切换 - 希赛考试网](https://kaoshi.educity.cn/rk/4rwjtkvjet.html)
 * [maven 中配置多个mirror如何切换镜像\_maven 多个镜像如何自动切换-CSDN博客](https://blog.csdn.net/liangwenmail/article/details/94555054)
 * [Maven 多仓库和镜像配置](https://zhuanlan.zhihu.com/p/396703897)
+* [基于Maven的profiles多环境配置](https://zhuanlan.zhihu.com/p/690510225)
 * [Maven仓库及镜像配置 \| 飘逸峰的博客](https://blog.hanqunfeng.com/2021/12/02/maven-setting/)
 * [maven仓库中心mirrors配置 - 民宿 - 博客园](https://www.cnblogs.com/gentlescholar/p/15049090.html)
 * [maven配置多个镜像 - 佩奇er - 博客园](https://www.cnblogs.com/hxun/p/11274196.html)
@@ -66,7 +69,17 @@ modified: 2025-10-10 04:47:11
 * [412B-A1D4A-MAVEN-镜像与仓库镜像 - 掘金](https://juejin.cn/post/7316931384878137384)
 * [Maven 仓库 - Maven 3.8.9](https://gaga.plus/app/maven-3.8.9/repositories.html)
 * [maven中配置jboss仓库 - lavel - 博客园](https://www.cnblogs.com/manliu/p/4682003.html)
+* [maven springboot多环境profile加载不同配置文件自由切换 - Marydon - 博客园](https://www.cnblogs.com/Marydon20170307/p/14197828.html)
+* [maven详解 \| blog人生](http://ghostlaycoo.com/2021/12/20/Maven%E8%AF%A6%E8%A7%A3/)
 * [Maven 教程（11）— Maven远程仓库的各种配置 - kszsa - 博客园](https://www.cnblogs.com/dyh004/p/11579586.html)
+
+---
+
+## 项目
+
+### spring
+
+* [Spring入门(四)：使用Maven管理Spring项目 - 申城异乡人 - 博客园](https://www.cnblogs.com/zwwhnly/p/10894781.html)
 
 ---
 
@@ -89,6 +102,7 @@ modified: 2025-10-10 04:47:11
 * [Maven Archetype自定义工程原型/添加远程Archetype原型 - DawnTraveler - 博客园](https://www.cnblogs.com/trmbh12/p/18082475)
 * [maven脚手架指引.md - SegmentFault 思否](https://segmentfault.com/a/1190000044903352)
 * [老问题了：idea中使用maven archetype新建项目时卡住 - 三国梦回 - 博客园](https://www.cnblogs.com/grey-wolf/p/17641808.html)
+* [Maven Archetype制作Dubbo项目原型 - 若明天不见的博客](https://tillend.github.io/2018/08/15/maven-archetype-dubbo/)
 
 ---
 

@@ -5,7 +5,7 @@ tags:
   - maven
   - jdk
 created: 2023-01-31 11:31:14
-modified: 2025-10-10 21:49:08
+modified: 2025-10-11 11:33:28
 ---
 
 # Maven 笔记
@@ -19,6 +19,7 @@ modified: 2025-10-10 21:49:08
 	* [本地仓库](#mvn_repository_local)
 	* [远程仓库](#mvn_repository_remote)
 		* [中央仓库](#mvn_repository_remote_central)
+	* [插件仓库](#mvn_repository_plugin)
 * [镜像](#mvn_mirror)
 * [Maven 项目](#mvn_project)
 	* [JDK 版本指定](#mvn_project_jdk_version)
@@ -74,6 +75,10 @@ Maven 配置主要有以下几个：
 
 ### <span id="mvn_repository_local">本地仓库</span>
 
+默认的「本地仓库」是： `~/.m2/repository` 。
+
+使用 `<localReopository>` 标签设置自定义的本地仓库。
+
 > [!example] 配置示例
 >
 > Windows：
@@ -96,31 +101,31 @@ Maven 配置主要有以下几个：
 
 ```xml
 <repositories>
-    <repository>
-      <id>central</id>
-      <name>Maven Repository Switchboard</name>
-      <url>http://repo1.maven.org/maven2</url>
-      <layout>default</layout>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
+	<repository>
+		<id>central</id>
+		<name>Maven Repository Switchboard</name>
+		<url>http://repo1.maven.org/maven2</url>
+		<layout>default</layout>
+		<snapshots>
+			<enabled>false</enabled>
+		</snapshots>
+	</repository>
+</repositories>
 
-  <pluginRepositories>
-    <pluginRepository>
-      <id>central</id>
-      <name>Maven Plugin Repository</name>
-      <url>http://repo1.maven.org/maven2</url>
-      <layout>default</layout>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <releases>
-        <updatePolicy>never</updatePolicy>
-      </releases>
-    </pluginRepository>
-  </pluginRepositories>
+<pluginRepositories>
+	<pluginRepository>
+		<id>central</id>
+		<name>Maven Plugin Repository</name>
+		<url>http://repo1.maven.org/maven2</url>
+		<layout>default</layout>
+		<snapshots>
+			<enabled>false</enabled>
+		</snapshots>
+		<releases>
+			<updatePolicy>never</updatePolicy>
+		</releases>
+	</pluginRepository>
+</pluginRepositories>
 ```
 
 > [!tip] 
@@ -174,20 +179,20 @@ JCenter 相比 [mavenCentral](#mavenCentral) 构件更多，性能也更好。�
 示例（Maven 官方默认的插件仓库配置）：
 
 ```xml
-  <pluginRepositories>
-    <pluginRepository>
-      <id>central</id>
-      <name>Maven Plugin Repository</name>
-      <url>http://repo1.maven.org/maven2</url>
-      <layout>default</layout>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <releases>
-        <updatePolicy>never</updatePolicy>
-      </releases>
-    </pluginRepository>
-  </pluginRepositories>
+<pluginRepositories>
+	<pluginRepository>
+		<id>central</id>
+		<name>Maven Plugin Repository</name>
+		<url>http://repo1.maven.org/maven2</url>
+		<layout>default</layout>
+		<snapshots>
+			<enabled>false</enabled>
+		</snapshots>
+		<releases>
+			<updatePolicy>never</updatePolicy>
+		</releases>
+	</pluginRepository>
+</pluginRepositories>
 ```
 
 插件仓库定义标签说明：
@@ -597,6 +602,18 @@ mvn help:system
 ---
 
 ## <span id="mvn_project">maven 项目</span>
+
+### 坐标
+
+一个项目的「**坐标**」有三个必要的要素：
+
+* `groupId`：项目名称，一般以反转域名
+* `artifactId`：模块名称
+* `version`：版本号
+
+### 依赖
+
+使用 `<dependencies>` 来定义组件的依赖。
 
 ### 通用目录结构
 

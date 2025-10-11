@@ -5,7 +5,7 @@ tags:
   - maven
   - jdk
 created: 2023-01-31 11:31:14
-modified: 2025-10-11 11:33:28
+modified: 2025-10-12 02:50:13
 ---
 
 # Maven 笔记
@@ -14,19 +14,22 @@ modified: 2025-10-11 11:33:28
 
 ## 目录
 
+* [Maven 版本](#mvn_version)
 * [配置](#mvn_settings)
 * [仓库](#mvn_repository)
 	* [本地仓库](#mvn_repository_local)
 	* [远程仓库](#mvn_repository_remote)
 		* [中央仓库](#mvn_repository_remote_central)
 	* [插件仓库](#mvn_repository_plugin)
+	* [多仓库](#mvn_repository_multiple)
 * [镜像](#mvn_mirror)
+* [Archetype](#mvn_archetype)
 * [Maven 项目](#mvn_project)
 	* [JDK 版本指定](#mvn_project_jdk_version)
 
 ---
 
-## <span>Maven 版本的 JDK 版本要求</span>
+## <span id="mvn_version">Maven 版本</span>
 
 maven 版本与 JDK 版本对应请参考：[Maven – Maven Releases History](https://maven.apache.org/docs/history.html)
 
@@ -39,6 +42,8 @@ maven 版本与 JDK 版本对应请参考：[Maven – Maven Releases History](h
 |    3.8     |               JDK 1.7                |
 |    3.9     |     [JDK8](../Java_Note.md#JDK8)     |
 |    4.0     |    [JDK17](../Java_Note.md#JDK17)    |
+
+---
 
 ## <span id="mvn_settings">配置</span>
 
@@ -600,6 +605,302 @@ mvn help:system
 ```
 
 ---
+## <span id="mvn_plugins">Maven 插件</span>
+
+maven 接口依赖关系图：
+
+![maven deps shotcut](https://maven.apache.org/ref/3.9.4/images/maven-deps.png)
+
+Maven 插件是下载到 [本地仓库](#本地仓库) 目录下的 `org/apache/maven/plugins` 目录中：
+```shell
+$ ll mvn_repository/org/apache/maven/plugins 
+Permissions Size User       Group      Date Modified    Name
+drwxr-xr-x     - silascript silascript 2025-03-20 20:58 .
+drwxr-xr-x     - silascript silascript 2025-03-16 10:33 ..
+drwxr-xr-x     - silascript silascript 2023-08-24 03:18 maven-antrun-plugin
+drwxr-xr-x     - silascript silascript 2025-03-15 01:49 maven-archetype-plugin
+drwxr-xr-x     - silascript silascript 2025-03-15 02:23 maven-assembly-plugin
+drwxr-xr-x     - silascript silascript 2025-03-15 01:52 maven-clean-plugin
+drwxr-xr-x     - silascript silascript 2025-03-15 01:52 maven-compiler-plugin
+drwxr-xr-x     - silascript silascript 2025-03-15 02:23 maven-dependency-plugin
+drwxr-xr-x     - silascript silascript 2025-03-15 03:51 maven-deploy-plugin
+drwxr-xr-x     - silascript silascript 2025-03-20 20:58 maven-help-plugin
+drwxr-xr-x     - silascript silascript 2025-03-15 03:47 maven-install-plugin
+drwxr-xr-x     - silascript silascript 2025-03-05 23:42 maven-jar-plugin
+.rw-r--r--   14k silascript silascript 2025-03-09 14:39 maven-metadata-apachemaven.xml
+.rw-r--r--    40 silascript silascript 2025-03-20 20:58 maven-metadata-apachemaven.xml.sha1
+.rw-r--r--   14k silascript silascript 2023-08-24 03:18 maven-metadata-central.xml
+.rw-r--r--    40 silascript silascript 2023-08-24 03:18 maven-metadata-central.xml.sha1
+drwxr-xr-x     - silascript silascript 2025-03-15 02:23 maven-plugins
+drwxr-xr-x     - silascript silascript 2023-08-24 03:18 maven-release-plugin
+drwxr-xr-x     - silascript silascript 2025-03-15 01:52 maven-resources-plugin
+drwxr-xr-x     - silascript silascript 2023-08-24 03:18 maven-site-plugin
+drwxr-xr-x     - silascript silascript 2025-03-15 03:52 maven-surefire-plugin
+drwxr-xr-x     - silascript silascript 2025-03-15 03:07 maven-war-plugin
+.rw-r--r--   250 silascript silascript 2025-03-20 20:58 resolver-status.properties
+
+```
+
+如最开始的 `mvn help:system` 命令，实质就是下载了 `maven-help-plugin` 这个插件，这插件包括了 `pom` 文件及 `jar` 包。
+
+```shell
+
+$ mvn help:system
+[INFO] Scanning for projects...
+Downloading from apachemaven: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/3.1.2/maven-install-plugin-3.1.2.pom
+Downloaded from apachemaven: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/3.1.2/maven-install-plugin-3.1.2.pom (8.5 kB at 937 B/s)
+Downloading from apachemaven: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/3.1.2/maven-deploy-plugin-3.1.2.pom
+Downloaded from apachemaven: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/3.1.2/maven-deploy-plugin-3.1.2.pom (9.6 kB at 22 kB/s)
+Downloading from apachemaven: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
+Downloading from apachemaven: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
+Downloaded from apachemaven: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (21 kB at 89 kB/s)
+Downloaded from apachemaven: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (14 kB at 1.3 kB/s)
+Downloading from apachemaven: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-help-plugin/maven-metadata.xml
+Downloaded from apachemaven: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-help-plugin/maven-metadata.xml (807 B at 5.8 kB/s)
+
+$ ll mvn_repository/org/apache/maven/plugins/maven-help-plugin 
+Permissions Size User       Group      Date Modified    Name
+drwxr-xr-x     - silascript silascript 2025-03-20 20:58 .
+drwxr-xr-x     - silascript silascript 2025-03-20 20:58 ..
+drwxr-xr-x     - silascript silascript 2024-02-23 06:46 3.4.0
+drwxr-xr-x     - silascript silascript 2025-03-15 02:24 3.5.1
+.rw-r--r--   807 silascript silascript 2024-10-22 01:52 maven-metadata-apachemaven.xml
+.rw-r--r--    40 silascript silascript 2025-03-20 20:58 maven-metadata-apachemaven.xml.sha1
+.rw-r--r--   714 silascript silascript 2023-08-24 03:18 maven-metadata-central.xml
+.rw-r--r--    40 silascript silascript 2023-08-24 03:18 maven-metadata-central.xml.sha1
+.rw-r--r--   250 silascript silascript 2025-03-20 20:58 resolver-status.properties
+
+$ ll mvn_repository/org/apache/maven/plugins/maven-help-plugin/3.5.1 
+Permissions Size User       Group      Date Modified    Name
+drwxr-xr-x     - silascript silascript 2025-03-15 02:24 .
+drwxr-xr-x     - silascript silascript 2025-03-20 20:58 ..
+.rw-r--r--   222 silascript silascript 2025-03-15 02:24 _remote.repositories
+.rw-r--r--   65k silascript silascript 2024-10-18 18:11 maven-help-plugin-3.5.1.jar
+.rw-r--r--    40 silascript silascript 2025-03-15 02:24 maven-help-plugin-3.5.1.jar.sha1
+.rw-r--r--   10k silascript silascript 2024-10-18 18:11 maven-help-plugin-3.5.1.pom
+.rw-r--r--    40 silascript silascript 2025-03-15 02:24 maven-help-plugin-3.5.1.pom.sha1
+
+```
+
+### 编译插件
+
+```xml
+<project>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.14.0</version>
+					<configuration>
+					<!-- put your configurations here -->
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>
+```
+
+---
+
+## <span id="mvn_archetype">Archetype</span>
+
+`archetype` （翻译为「骨架」或「模板」）是 [创建项目](#mvn_project_create) 时使用的项目模板，这个模板定义了项目的基本架构。
+
+### Archetype Plugin
+
+Archetype 不是 Maven 的核心，它是通过插件来实现的，这插件就是 [maven-archetype-plugin](https://maven.apache.org/archetype/maven-archetype-plugin)
+
+maven 内置骨架：[Apache Maven Archetypes – Maven Archetypes](https://maven.apache.org/archetypes/index.html)
+
+##### ArchetypeArtifactId
+
+`-DarchetyDpeArtifactId=maven-archetype-quickstart`：表示使用 `maven-archetype-quickstart` 这个 [骨架](#mvn_project_archetype) 来创建项目。
+此参数是可选，如果未指定此参数，maven 会输出一个 [骨架](#mvn_project_archetype)（`archetype`）列表供用户选择，默认是选择 `maven-archetype-quickstart` 这个骨架：
+```shell
+Choose archetype:
+1: internal -> org.apache.maven.archetypes:maven-archetype-archetype (An archetype which contains a sample archetype.)
+2: internal -> org.apache.maven.archetypes:maven-archetype-j2ee-simple (An archetype which contains a simplifed sample J2EE application.)
+3: internal -> org.apache.maven.archetypes:maven-archetype-plugin (An archetype which contains a sample Maven plugin.)
+4: internal -> org.apache.maven.archetypes:maven-archetype-plugin-site (An archetype which contains a sample Maven plugin site.
+      This archetype can be layered upon an existing Maven plugin project.)
+5: internal -> org.apache.maven.archetypes:maven-archetype-portlet (An archetype which contains a sample JSR-268 Portlet.)
+6: internal -> org.apache.maven.archetypes:maven-archetype-profiles ()
+7: internal -> org.apache.maven.archetypes:maven-archetype-quickstart (An archetype which contains a sample Maven project.)
+8: internal -> org.apache.maven.archetypes:maven-archetype-site (An archetype which contains a sample Maven site which demonstrates
+      some of the supported document types like APT, XDoc, and FML and demonstrates how
+      toDi18n your site. This archetype can be layered upon an existing Maven project.)
+9: internal -> org.apache.maven.archetypes:maven-archetype-site-simple (An archetype which contains a sample Maven site.)
+10: internal -> org.apache.maven.archetypes:maven-archetype-webapp (An archetype which contains a sample Maven Webapp project.)
+Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): 7:
+```
+
+##### ArchetypeVersion
+
+`-DarchetypeVersion=1.5`：这是指定 [Archetype](#mvn_project_archetype) 的版本。
+
+这也是可选。
+
+如果未指定 [ArchetypeArtifactId](#ArchetypeArtifactId)，将使用最新版本：
+```shell
+$ mvn archetype:generate -DgroudId=com.sialscript.exercise -DartifactId=e02                                                 
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< org.apache.maven:standalone-pom >-------------------
+[INFO] Building Maven Stub Project (No POM) 1
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] >>> archetype:3.4.0:generate (default-cli) > generate-sources @ standalone-pom >>>
+[INFO] 
+[INFO] <<< archetype:3.4.0:generate (default-cli) < generate-sources @ standalone-pom <<<
+[INFO] 
+[INFO] 
+[INFO] --- archetype:3.4.0:generate (default-cli) @ standalone-pom ---
+[INFO] Generating project in Interactive mode
+[WARNING] failed to download from remoteorg.eclipse.aether.transfer.MetadataNotFoundException: /archetype-catalog.xml was not found in https://maven.aliyun.com/repository/public during a previous attempt. This failure was cached in the local repository and resolution is not be reattempted until the update interval of aliyunmaven has elapsed or updates are forced
+[WARNING] No archetype found in remote catalog. Defaulting to internal catalog
+[INFO] No archetype defined. Using maven-archetype-quickstart (org.apache.maven.archetypes:maven-archetype-quickstart:1.0)
+Choose archetype:
+1: internal -> org.apache.maven.archetypes:maven-archetype-archetype (An archetype which contains a sample archetype.)
+2: internal -> org.apache.maven.archetypes:maven-archetype-j2ee-simple (An archetype which contains a simplifed sample J2EE application.)
+3: internal -> org.apache.maven.archetypes:maven-archetype-plugin (An archetype which contains a sample Maven plugin.)
+4: internal -> org.apache.maven.archetypes:maven-archetype-plugin-site (An archetype which contains a sample Maven plugin site.
+      This archetype can be layered upon an existing Maven plugin project.)
+5: internal -> org.apache.maven.archetypes:maven-archetype-portlet (An archetype which contains a sample JSR-268 Portlet.)
+6: internal -> org.apache.maven.archetypes:maven-archetype-profiles ()
+7: internal -> org.apache.maven.archetypes:maven-archetype-quickstart (An archetype which contains a sample Maven project.)
+8: internal -> org.apache.maven.archetypes:maven-archetype-site (An archetype which contains a sample Maven site which demonstrates
+      some of the supported document types like APT, XDoc, and FML and demonstrates how
+      to i18n your site. This archetype can be layered upon an existing Maven project.)
+9: internal -> org.apache.maven.archetypes:maven-archetype-site-simple (An archetype which contains a sample Maven site.)
+10: internal -> org.apache.maven.archetypes:maven-archetype-webapp (An archetype which contains a sample Maven Webapp project.)
+Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): 7: 
+[INFO] Using property: javaCompilerVersion = 17
+[INFO] Using property: junitVersion = 5.11.0
+Define value for property 'groupId': com.silascript.exercise
+[INFO] Using property: artifactId = e02
+Define value for property 'version' 1.0-SNAPSHOT: 
+Define value for property 'package' com.silascript.exercise: 
+Confirm properties configuration:
+javaCompilerVersion: 17
+junitVersion: 5.11.0
+groupId: com.silascript.exercise
+artifactId: e02
+version: 1.0-SNAPSHOT
+package: com.silascript.exercise
+ Y: y
+[INFO] ----------------------------------------------------------------------------
+[INFO] Using following parameters for creating project from Archetype: maven-archetype-quickstart:1.5
+```
+而如果是通过命令参数 `-DarchetyDpeArtifactId` 显式指定 Archetype，那如果 `DarchetypeVersion` 参数未指定，最终它会使用 archetype 的最旧版本：
+
+```shell
+$ mvn archetype:generate -DgroudId=com.sialscript.exercise -DartifactId=e02 -DarchetypeArtifactId=maven-archetype-quickstart
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< org.apache.maven:standalone-pom >-------------------
+[INFO] Building Maven Stub Project (No POM) 1
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] >>> archetype:3.4.0:generate (default-cli) > generate-sources @ standalone-pom >>>
+[INFO] 
+[INFO] <<< archetype:3.4.0:generate (default-cli) < generate-sources @ standalone-pom <<<
+[INFO] 
+[INFO] 
+[INFO] --- archetype:3.4.0:generate (default-cli) @ standalone-pom ---
+[INFO] Generating project in Interactive mode
+[WARNING] failed to download from remoteorg.eclipse.aether.transfer.MetadataNotFoundException: /archetype-catalog.xml was not found in https://maven.aliyun.com/repository/public during a previous attempt. This failure was cached in the local repository and resolution is not be reattempted until the update interval of aliyunmaven has elapsed or updates are forced
+[WARNING] No archetype found in remote catalog. Defaulting to internal catalog
+[INFO] Artifact org.apache.maven.archetypes:maven-archetype-quickstart:jar:1.0 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [aliyunmaven (https://maven.aliyun.com/repository/public, default, releases)]
+[INFO] Artifact org.apache.maven.archetypes:maven-archetype-quickstart:jar:1.0 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [aliyunmaven (https://maven.aliyun.com/repository/public, default, releases)]
+Downloading from aliyunmaven: https://maven.aliyun.com/repository/public/org/apache/maven/archetypes/maven-archetype-quickstart/1.0/maven-archetype-quickstart-1.0.jar
+Downloaded from aliyunmaven: https://maven.aliyun.com/repository/public/org/apache/maven/archetypes/maven-archetype-quickstart/1.0/maven-archetype-quickstart-1.0.jar (0 B at 0 B/s)
+Define value for property 'groupId': com.silascript.exercise
+[INFO] Using property: artifactId = e02
+Define value for property 'version' 1.0-SNAPSHOT: 
+Define value for property 'package' com.silascript.exercise: 
+Confirm properties configuration:
+groupId: com.silascript.exercise
+artifactId: e02
+version: 1.0-SNAPSHOT
+package: com.silascript.exercise
+ Y: y
+[INFO] ----------------------------------------------------------------------------
+[INFO] Using following parameters for creating project from Old (1.x) Archetype: maven-archetype-quickstart:1.0
+```
+
+> [!tip] 
+> 
+> 综上所述，如果要使用 Archetype 最新版本，要么显示指定 `archetypeVersion`，要么连 `archetypeArtifactId` 也不要指定，不然会使用 Archetype 的最旧版本。
+
+### Archetype Catalog
+
+当用户不指定 Acchetype 坐标的方式使用 [Archetype Plugin](#Archetype%20Plugin) 时，会输出一个 Archetype 列表供用户选择。而这个列表来自一个 `archetype-catalog.xml` 文件。
+
+`archetype-catalog.xml` 来源：
+
+* internal：内置 Archetype Catalog，包含 58 个 Archetype 信息。
+* local：指向用户本地的 Archetype Catalog，位置：`~/.m2/archetype-catalog.xml`，默认此文件是不存在的。
+* remote：远程，指向了 Maven[中央仓库](#mvn_repository_remote_central) 的 Archetype Catalog，确切地址：[https://repo.maven.apache.org/maven2/archetype-catalog.xml](https://repo.maven.apache.org/maven2/archetype-catalog.xml)
+* file：用户指定本机任何位置的 `archetype-catalog.xml` 文件
+* http：用户指定使用 [Http](../../Network/Http_Note.md) 协议远程的 `archetype-catalog.xml` 文件
+
+#### local
+
+ `-DarchetypeCatalog=local`，默认情况，会读取 `~/.m2/archetype-catalog.xml` 文件，但如果设置过 [本地仓库](#mvn_repository_local) 后， 这个 `local` 指的就是「本地仓库」的根目录。
+
+如：`<localRepository>${user.home}/mvn_repository</localRepository>`，本地仓库设在了 `~/mvn_repository` 这个目录，那 `archetype-catalog.xml` 就应该放在此目录中，这样使用 `-DarchetypeCatalog=local` 参数时，才会去读取到此 xml 文件。
+
+这文件有 10m 大小，Archetype 非常的多，有 3000 多个，总有一款适合你：
+
+```shell
+3587: local -> za.co.absa.hyperdrive:component-archetype_2.12 (-)
+Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): 2275: 
+```
+
+#### remote
+
+使用 `-DarchetypeCatalog=remote` 指定远程 Archetype Catalog，跟默认情况，即不使用 `-DarchetypeCatalog` 参数来创建目录，是一致的：
+
+```shell
+$ mvn archetype:generate -DarchetypeCatalog=remote                       
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< org.apache.maven:standalone-pom >-------------------
+[INFO] Building Maven Stub Project (No POM) 1
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] 
+[INFO] >>> archetype:3.4.0:generate (default-cli) > generate-sources @ standalone-pom >>>
+[INFO] 
+[INFO] <<< archetype:3.4.0:generate (default-cli) < generate-sources @ standalone-pom <<<
+[INFO] 
+[INFO] 
+[INFO] --- archetype:3.4.0:generate (default-cli) @ standalone-pom ---
+[INFO] Generating project in Interactive mode
+Downloading from aliyunmaven: https://maven.aliyun.com/repository/public/archetype-catalog.xml
+[WARNING] failed to download from remoteorg.eclipse.aether.transfer.MetadataNotFoundException: Could not find metadata /archetype-catalog.xml in aliyunmaven (https://maven.aliyun.com/repository/public)
+[WARNING] No archetype found in remote catalog. Defaulting to internal catalog
+[INFO] No archetype defined. Using maven-archetype-quickstart (org.apache.maven.archetypes:maven-archetype-quickstart:1.0)
+Choose archetype:
+1: internal -> org.apache.maven.archetypes:maven-archetype-archetype (An archetype which contains a sample archetype.)
+2: internal -> org.apache.maven.archetypes:maven-archetype-j2ee-simple (An archetype which contains a simplifed sample J2EE application.)
+3: internal -> org.apache.maven.archetypes:maven-archetype-plugin (An archetype which contains a sample Maven plugin.)
+4: internal -> org.apache.maven.archetypes:maven-archetype-plugin-site (An archetype which contains a sample Maven plugin site.
+      This archetype can be layered upon an existing Maven plugin project.)
+5: internal -> org.apache.maven.archetypes:maven-archetype-portlet (An archetype which contains a sample JSR-268 Portlet.)
+6: internal -> org.apache.maven.archetypes:maven-archetype-profiles ()
+7: internal -> org.apache.maven.archetypes:maven-archetype-quickstart (An archetype which contains a sample Maven project.)
+8: internal -> org.apache.maven.archetypes:maven-archetype-site (An archetype which contains a sample Maven site which demonstrates
+      some of the supported document types like APT, XDoc, and FML and demonstrates how
+      to i18n your site. This archetype can be layered upon an existing Maven project.)
+9: internal -> org.apache.maven.archetypes:maven-archetype-site-simple (An archetype which contains a sample Maven site.)
+10: internal -> org.apache.maven.archetypes:maven-archetype-webapp (An archetype which contains a sample Maven Webapp project.)
+Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): 7: 
+```
+
+---
 
 ## <span id="mvn_project">maven 项目</span>
 
@@ -851,301 +1152,6 @@ Permissions Size User       Group      Date Modified    Name
 drwxr-xr-x     - silascript silascript 2025-10-06 11:17 .
 drwxr-xr-x     - silascript silascript 2025-09-24 02:51 ..
 drwxr-xr-x     - silascript silascript 2025-10-06 11:17 e02
-```
-
-### <span id="mvn_project_archetype">Archetype</span>
-
-`archetype` （翻译为「骨架」或「模板」）是 [创建项目](#mvn_project_create) 时使用的项目模板，这个模板定义了项目的基本架构。
-
-#### Archetype Plugin
-
-Archetype 不是 Maven 的核心，它是通过插件来实现的，这插件就是 [maven-archetype-plugin](https://maven.apache.org/archetype/maven-archetype-plugin)
-
-maven 内置骨架：[Apache Maven Archetypes – Maven Archetypes](https://maven.apache.org/archetypes/index.html)
-
-###### ArchetypeArtifactId
-
-`-DarchetyDpeArtifactId=maven-archetype-quickstart`：表示使用 `maven-archetype-quickstart` 这个 [骨架](#mvn_project_archetype) 来创建项目。
-此参数是可选，如果未指定此参数，maven 会输出一个 [骨架](#mvn_project_archetype)（`archetype`）列表供用户选择，默认是选择 `maven-archetype-quickstart` 这个骨架：
-```shell
-Choose archetype:
-1: internal -> org.apache.maven.archetypes:maven-archetype-archetype (An archetype which contains a sample archetype.)
-2: internal -> org.apache.maven.archetypes:maven-archetype-j2ee-simple (An archetype which contains a simplifed sample J2EE application.)
-3: internal -> org.apache.maven.archetypes:maven-archetype-plugin (An archetype which contains a sample Maven plugin.)
-4: internal -> org.apache.maven.archetypes:maven-archetype-plugin-site (An archetype which contains a sample Maven plugin site.
-      This archetype can be layered upon an existing Maven plugin project.)
-5: internal -> org.apache.maven.archetypes:maven-archetype-portlet (An archetype which contains a sample JSR-268 Portlet.)
-6: internal -> org.apache.maven.archetypes:maven-archetype-profiles ()
-7: internal -> org.apache.maven.archetypes:maven-archetype-quickstart (An archetype which contains a sample Maven project.)
-8: internal -> org.apache.maven.archetypes:maven-archetype-site (An archetype which contains a sample Maven site which demonstrates
-      some of the supported document types like APT, XDoc, and FML and demonstrates how
-      toDi18n your site. This archetype can be layered upon an existing Maven project.)
-9: internal -> org.apache.maven.archetypes:maven-archetype-site-simple (An archetype which contains a sample Maven site.)
-10: internal -> org.apache.maven.archetypes:maven-archetype-webapp (An archetype which contains a sample Maven Webapp project.)
-Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): 7:
-```
-
-###### ArchetypeVersion
-
-`-DarchetypeVersion=1.5`：这是指定 [Archetype](#mvn_project_archetype) 的版本。
-
-这也是可选。
-
-如果未指定 [ArchetypeArtifactId](#ArchetypeArtifactId)，将使用最新版本：
-```shell
-$ mvn archetype:generate -DgroudId=com.sialscript.exercise -DartifactId=e02                                                 
-[INFO] Scanning for projects...
-[INFO] 
-[INFO] ------------------< org.apache.maven:standalone-pom >-------------------
-[INFO] Building Maven Stub Project (No POM) 1
-[INFO] --------------------------------[ pom ]---------------------------------
-[INFO] 
-[INFO] >>> archetype:3.4.0:generate (default-cli) > generate-sources @ standalone-pom >>>
-[INFO] 
-[INFO] <<< archetype:3.4.0:generate (default-cli) < generate-sources @ standalone-pom <<<
-[INFO] 
-[INFO] 
-[INFO] --- archetype:3.4.0:generate (default-cli) @ standalone-pom ---
-[INFO] Generating project in Interactive mode
-[WARNING] failed to download from remoteorg.eclipse.aether.transfer.MetadataNotFoundException: /archetype-catalog.xml was not found in https://maven.aliyun.com/repository/public during a previous attempt. This failure was cached in the local repository and resolution is not be reattempted until the update interval of aliyunmaven has elapsed or updates are forced
-[WARNING] No archetype found in remote catalog. Defaulting to internal catalog
-[INFO] No archetype defined. Using maven-archetype-quickstart (org.apache.maven.archetypes:maven-archetype-quickstart:1.0)
-Choose archetype:
-1: internal -> org.apache.maven.archetypes:maven-archetype-archetype (An archetype which contains a sample archetype.)
-2: internal -> org.apache.maven.archetypes:maven-archetype-j2ee-simple (An archetype which contains a simplifed sample J2EE application.)
-3: internal -> org.apache.maven.archetypes:maven-archetype-plugin (An archetype which contains a sample Maven plugin.)
-4: internal -> org.apache.maven.archetypes:maven-archetype-plugin-site (An archetype which contains a sample Maven plugin site.
-      This archetype can be layered upon an existing Maven plugin project.)
-5: internal -> org.apache.maven.archetypes:maven-archetype-portlet (An archetype which contains a sample JSR-268 Portlet.)
-6: internal -> org.apache.maven.archetypes:maven-archetype-profiles ()
-7: internal -> org.apache.maven.archetypes:maven-archetype-quickstart (An archetype which contains a sample Maven project.)
-8: internal -> org.apache.maven.archetypes:maven-archetype-site (An archetype which contains a sample Maven site which demonstrates
-      some of the supported document types like APT, XDoc, and FML and demonstrates how
-      to i18n your site. This archetype can be layered upon an existing Maven project.)
-9: internal -> org.apache.maven.archetypes:maven-archetype-site-simple (An archetype which contains a sample Maven site.)
-10: internal -> org.apache.maven.archetypes:maven-archetype-webapp (An archetype which contains a sample Maven Webapp project.)
-Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): 7: 
-[INFO] Using property: javaCompilerVersion = 17
-[INFO] Using property: junitVersion = 5.11.0
-Define value for property 'groupId': com.silascript.exercise
-[INFO] Using property: artifactId = e02
-Define value for property 'version' 1.0-SNAPSHOT: 
-Define value for property 'package' com.silascript.exercise: 
-Confirm properties configuration:
-javaCompilerVersion: 17
-junitVersion: 5.11.0
-groupId: com.silascript.exercise
-artifactId: e02
-version: 1.0-SNAPSHOT
-package: com.silascript.exercise
- Y: y
-[INFO] ----------------------------------------------------------------------------
-[INFO] Using following parameters for creating project from Archetype: maven-archetype-quickstart:1.5
-```
-而如果是通过命令参数 `-DarchetyDpeArtifactId` 显式指定 Archetype，那如果 `DarchetypeVersion` 参数未指定，最终它会使用 archetype 的最旧版本：
-
-```shell
-$ mvn archetype:generate -DgroudId=com.sialscript.exercise -DartifactId=e02 -DarchetypeArtifactId=maven-archetype-quickstart
-[INFO] Scanning for projects...
-[INFO] 
-[INFO] ------------------< org.apache.maven:standalone-pom >-------------------
-[INFO] Building Maven Stub Project (No POM) 1
-[INFO] --------------------------------[ pom ]---------------------------------
-[INFO] 
-[INFO] >>> archetype:3.4.0:generate (default-cli) > generate-sources @ standalone-pom >>>
-[INFO] 
-[INFO] <<< archetype:3.4.0:generate (default-cli) < generate-sources @ standalone-pom <<<
-[INFO] 
-[INFO] 
-[INFO] --- archetype:3.4.0:generate (default-cli) @ standalone-pom ---
-[INFO] Generating project in Interactive mode
-[WARNING] failed to download from remoteorg.eclipse.aether.transfer.MetadataNotFoundException: /archetype-catalog.xml was not found in https://maven.aliyun.com/repository/public during a previous attempt. This failure was cached in the local repository and resolution is not be reattempted until the update interval of aliyunmaven has elapsed or updates are forced
-[WARNING] No archetype found in remote catalog. Defaulting to internal catalog
-[INFO] Artifact org.apache.maven.archetypes:maven-archetype-quickstart:jar:1.0 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [aliyunmaven (https://maven.aliyun.com/repository/public, default, releases)]
-[INFO] Artifact org.apache.maven.archetypes:maven-archetype-quickstart:jar:1.0 is present in the local repository, but cached from a remote repository ID that is unavailable in current build context, verifying that is downloadable from [aliyunmaven (https://maven.aliyun.com/repository/public, default, releases)]
-Downloading from aliyunmaven: https://maven.aliyun.com/repository/public/org/apache/maven/archetypes/maven-archetype-quickstart/1.0/maven-archetype-quickstart-1.0.jar
-Downloaded from aliyunmaven: https://maven.aliyun.com/repository/public/org/apache/maven/archetypes/maven-archetype-quickstart/1.0/maven-archetype-quickstart-1.0.jar (0 B at 0 B/s)
-Define value for property 'groupId': com.silascript.exercise
-[INFO] Using property: artifactId = e02
-Define value for property 'version' 1.0-SNAPSHOT: 
-Define value for property 'package' com.silascript.exercise: 
-Confirm properties configuration:
-groupId: com.silascript.exercise
-artifactId: e02
-version: 1.0-SNAPSHOT
-package: com.silascript.exercise
- Y: y
-[INFO] ----------------------------------------------------------------------------
-[INFO] Using following parameters for creating project from Old (1.x) Archetype: maven-archetype-quickstart:1.0
-```
-
-> [!tip] 
-> 
-> 综上所述，如果要使用 Archetype 最新版本，要么显示指定 `archetypeVersion`，要么连 `archetypeArtifactId` 也不要指定，不然会使用 Archetype 的最旧版本。
-
-#### Archetype Catalog
-
-当用户不指定 Acchetype 坐标的方式使用 [Archetype Plugin](#Archetype%20Plugin) 时，会输出一个 Archetype 列表供用户选择。而这个列表来自一个 `archetype-catalog.xml` 文件。
-
-`archetype-catalog.xml` 来源：
-
-* internal：内置 Archetype Catalog，包含 58 个 Archetype 信息。
-* local：指向用户本地的 Archetype Catalog，位置：`~/.m2/archetype-catalog.xml`，默认此文件是不存在的。
-* remote：远程，指向了 Maven[中央仓库](#mvn_repository_remote_central) 的 Archetype Catalog，确切地址：[https://repo.maven.apache.org/maven2/archetype-catalog.xml](https://repo.maven.apache.org/maven2/archetype-catalog.xml)
-* file：用户指定本机任何位置的 `archetype-catalog.xml` 文件
-* http：用户指定使用 [Http](../../Network/Http_Note.md) 协议远程的 `archetype-catalog.xml` 文件
-
-##### local
-
- `-DarchetypeCatalog=local`，默认情况，会读取 `~/.m2/archetype-catalog.xml` 文件，但如果设置过 [本地仓库](#mvn_repository_local) 后， 这个 `local` 指的就是「本地仓库」的根目录。
-
-如：`<localRepository>${user.home}/mvn_repository</localRepository>`，本地仓库设在了 `~/mvn_repository` 这个目录，那 `archetype-catalog.xml` 就应该放在此目录中，这样使用 `-DarchetypeCatalog=local` 参数时，才会去读取到此 xml 文件。
-
-这文件有 10m 大小，Archetype 非常的多，有 3000 多个，总有一款适合你：
-
-```shell
-3587: local -> za.co.absa.hyperdrive:component-archetype_2.12 (-)
-Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): 2275: 
-```
-
-##### remote
-
-使用 `-DarchetypeCatalog=remote` 指定远程 Archetype Catalog，跟默认情况，即不使用 `-DarchetypeCatalog` 参数来创建目录，是一致的：
-
-```shell
-$ mvn archetype:generate -DarchetypeCatalog=remote                       
-[INFO] Scanning for projects...
-[INFO] 
-[INFO] ------------------< org.apache.maven:standalone-pom >-------------------
-[INFO] Building Maven Stub Project (No POM) 1
-[INFO] --------------------------------[ pom ]---------------------------------
-[INFO] 
-[INFO] >>> archetype:3.4.0:generate (default-cli) > generate-sources @ standalone-pom >>>
-[INFO] 
-[INFO] <<< archetype:3.4.0:generate (default-cli) < generate-sources @ standalone-pom <<<
-[INFO] 
-[INFO] 
-[INFO] --- archetype:3.4.0:generate (default-cli) @ standalone-pom ---
-[INFO] Generating project in Interactive mode
-Downloading from aliyunmaven: https://maven.aliyun.com/repository/public/archetype-catalog.xml
-[WARNING] failed to download from remoteorg.eclipse.aether.transfer.MetadataNotFoundException: Could not find metadata /archetype-catalog.xml in aliyunmaven (https://maven.aliyun.com/repository/public)
-[WARNING] No archetype found in remote catalog. Defaulting to internal catalog
-[INFO] No archetype defined. Using maven-archetype-quickstart (org.apache.maven.archetypes:maven-archetype-quickstart:1.0)
-Choose archetype:
-1: internal -> org.apache.maven.archetypes:maven-archetype-archetype (An archetype which contains a sample archetype.)
-2: internal -> org.apache.maven.archetypes:maven-archetype-j2ee-simple (An archetype which contains a simplifed sample J2EE application.)
-3: internal -> org.apache.maven.archetypes:maven-archetype-plugin (An archetype which contains a sample Maven plugin.)
-4: internal -> org.apache.maven.archetypes:maven-archetype-plugin-site (An archetype which contains a sample Maven plugin site.
-      This archetype can be layered upon an existing Maven plugin project.)
-5: internal -> org.apache.maven.archetypes:maven-archetype-portlet (An archetype which contains a sample JSR-268 Portlet.)
-6: internal -> org.apache.maven.archetypes:maven-archetype-profiles ()
-7: internal -> org.apache.maven.archetypes:maven-archetype-quickstart (An archetype which contains a sample Maven project.)
-8: internal -> org.apache.maven.archetypes:maven-archetype-site (An archetype which contains a sample Maven site which demonstrates
-      some of the supported document types like APT, XDoc, and FML and demonstrates how
-      to i18n your site. This archetype can be layered upon an existing Maven project.)
-9: internal -> org.apache.maven.archetypes:maven-archetype-site-simple (An archetype which contains a sample Maven site.)
-10: internal -> org.apache.maven.archetypes:maven-archetype-webapp (An archetype which contains a sample Maven Webapp project.)
-Choose a number or apply filter (format: [groupId:]artifactId, case sensitive contains): 7: 
-```
-
----
-
-## <span id="mvn_plugins">Maven 插件</span>
-
-maven 接口依赖关系图：
-
-![maven deps shotcut](https://maven.apache.org/ref/3.9.4/images/maven-deps.png)
-
-Maven 插件是下载到 [本地仓库](#本地仓库) 目录下的 `org/apache/maven/plugins` 目录中：
-```shell
-$ ll mvn_repository/org/apache/maven/plugins 
-Permissions Size User       Group      Date Modified    Name
-drwxr-xr-x     - silascript silascript 2025-03-20 20:58 .
-drwxr-xr-x     - silascript silascript 2025-03-16 10:33 ..
-drwxr-xr-x     - silascript silascript 2023-08-24 03:18 maven-antrun-plugin
-drwxr-xr-x     - silascript silascript 2025-03-15 01:49 maven-archetype-plugin
-drwxr-xr-x     - silascript silascript 2025-03-15 02:23 maven-assembly-plugin
-drwxr-xr-x     - silascript silascript 2025-03-15 01:52 maven-clean-plugin
-drwxr-xr-x     - silascript silascript 2025-03-15 01:52 maven-compiler-plugin
-drwxr-xr-x     - silascript silascript 2025-03-15 02:23 maven-dependency-plugin
-drwxr-xr-x     - silascript silascript 2025-03-15 03:51 maven-deploy-plugin
-drwxr-xr-x     - silascript silascript 2025-03-20 20:58 maven-help-plugin
-drwxr-xr-x     - silascript silascript 2025-03-15 03:47 maven-install-plugin
-drwxr-xr-x     - silascript silascript 2025-03-05 23:42 maven-jar-plugin
-.rw-r--r--   14k silascript silascript 2025-03-09 14:39 maven-metadata-apachemaven.xml
-.rw-r--r--    40 silascript silascript 2025-03-20 20:58 maven-metadata-apachemaven.xml.sha1
-.rw-r--r--   14k silascript silascript 2023-08-24 03:18 maven-metadata-central.xml
-.rw-r--r--    40 silascript silascript 2023-08-24 03:18 maven-metadata-central.xml.sha1
-drwxr-xr-x     - silascript silascript 2025-03-15 02:23 maven-plugins
-drwxr-xr-x     - silascript silascript 2023-08-24 03:18 maven-release-plugin
-drwxr-xr-x     - silascript silascript 2025-03-15 01:52 maven-resources-plugin
-drwxr-xr-x     - silascript silascript 2023-08-24 03:18 maven-site-plugin
-drwxr-xr-x     - silascript silascript 2025-03-15 03:52 maven-surefire-plugin
-drwxr-xr-x     - silascript silascript 2025-03-15 03:07 maven-war-plugin
-.rw-r--r--   250 silascript silascript 2025-03-20 20:58 resolver-status.properties
-
-```
-
-如最开始的 `mvn help:system` 命令，实质就是下载了 `maven-help-plugin` 这个插件，这插件包括了 `pom` 文件及 `jar` 包。
-
-```shell
-
-$ mvn help:system
-[INFO] Scanning for projects...
-Downloading from apachemaven: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/3.1.2/maven-install-plugin-3.1.2.pom
-Downloaded from apachemaven: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-install-plugin/3.1.2/maven-install-plugin-3.1.2.pom (8.5 kB at 937 B/s)
-Downloading from apachemaven: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/3.1.2/maven-deploy-plugin-3.1.2.pom
-Downloaded from apachemaven: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-deploy-plugin/3.1.2/maven-deploy-plugin-3.1.2.pom (9.6 kB at 22 kB/s)
-Downloading from apachemaven: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
-Downloading from apachemaven: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
-Downloaded from apachemaven: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (21 kB at 89 kB/s)
-Downloaded from apachemaven: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (14 kB at 1.3 kB/s)
-Downloading from apachemaven: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-help-plugin/maven-metadata.xml
-Downloaded from apachemaven: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-help-plugin/maven-metadata.xml (807 B at 5.8 kB/s)
-
-$ ll mvn_repository/org/apache/maven/plugins/maven-help-plugin 
-Permissions Size User       Group      Date Modified    Name
-drwxr-xr-x     - silascript silascript 2025-03-20 20:58 .
-drwxr-xr-x     - silascript silascript 2025-03-20 20:58 ..
-drwxr-xr-x     - silascript silascript 2024-02-23 06:46 3.4.0
-drwxr-xr-x     - silascript silascript 2025-03-15 02:24 3.5.1
-.rw-r--r--   807 silascript silascript 2024-10-22 01:52 maven-metadata-apachemaven.xml
-.rw-r--r--    40 silascript silascript 2025-03-20 20:58 maven-metadata-apachemaven.xml.sha1
-.rw-r--r--   714 silascript silascript 2023-08-24 03:18 maven-metadata-central.xml
-.rw-r--r--    40 silascript silascript 2023-08-24 03:18 maven-metadata-central.xml.sha1
-.rw-r--r--   250 silascript silascript 2025-03-20 20:58 resolver-status.properties
-
-$ ll mvn_repository/org/apache/maven/plugins/maven-help-plugin/3.5.1 
-Permissions Size User       Group      Date Modified    Name
-drwxr-xr-x     - silascript silascript 2025-03-15 02:24 .
-drwxr-xr-x     - silascript silascript 2025-03-20 20:58 ..
-.rw-r--r--   222 silascript silascript 2025-03-15 02:24 _remote.repositories
-.rw-r--r--   65k silascript silascript 2024-10-18 18:11 maven-help-plugin-3.5.1.jar
-.rw-r--r--    40 silascript silascript 2025-03-15 02:24 maven-help-plugin-3.5.1.jar.sha1
-.rw-r--r--   10k silascript silascript 2024-10-18 18:11 maven-help-plugin-3.5.1.pom
-.rw-r--r--    40 silascript silascript 2025-03-15 02:24 maven-help-plugin-3.5.1.pom.sha1
-
-```
-
-### 编译插件
-
-```xml
-<project>
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.14.0</version>
-					<configuration>
-					<!-- put your configurations here -->
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-	</build>
-</project>
 ```
 
 ---

@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2025-10-07 02:03:03
+modified: 2025-10-13 04:36:18
 
 ---
 
@@ -33,7 +33,35 @@ modified: 2025-10-07 02:03:03
 
 VSCode 或 VSCodium 新版本内置的功能已实现部分插件功能，所以网上部分插件推荐应该已经过时了。
 
-### <span>使用命令操作插件</span>
+### 修改插件市场
+
+VSCodium 的插件相对于 VSCode 要少一些，如果想要使用 VSCode 的一些插件，除要去下载 `vsix` 文件安装外，还可以修改市场源。
+
+其中要修改的属性就是 `extensionGallery`，原始 VSCodium 的是这样的：
+
+```json
+"extensionsGallery": {
+    "serviceUrl": "https://open-vsx.org/vscode/gallery",
+    "itemUrl": "https://open-vsx.org/vscode/item",
+    "latestUrlTemplate": "https://open-vsx.org/vscode/gallery/{publisher}/{name}/latest",
+    "controlUrl": "https://raw.githubusercontent.com/EclipseFdn/publish-extensions/refs/heads/master/extension-control/extensions.json"
+  }
+```
+
+修改为 VSCode 的，就改 `extensionGallery` 这几个属性就好了：
+
+```json
+"extensionsGallery": {
+	"serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
+	"itemUrl": "https://marketplace.visualstudio.com/items",
+	"publisherUrl": "https://marketplace.visualstudio.com/publishers",
+	"resourceUrlTemplate": "https://{publisher}.vscode-unpkg.net/{publisher}/{name}/{version}/{path}",
+	"extensionUrlTemplate": "https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest",
+	"controlUrl": "https://main.vscode-cdn.net/extensions/marketplace.json",
+
+```
+
+### 使用命令操作插件
 
 安装插件：
 
@@ -862,12 +890,50 @@ VSCode 已经内置了大名鼎鼎的 [Emmet](https://emmet.io) （[Emmet Wiki](
 
 * vti  Terminal 接口
 
-#### <span id="vscode_extensions_frontend_open-in-default-browser">Open In Default Browser</span>
+#### <span id="vscode_extensions_frontend_browser">浏览器插件</span>
+
+[前端](../Frontend/Front-end_Note.md) 开发，大都需要使用浏览器预览，所以得添加一一款浏览器插件辅助开发。
+
+##### Open In Default Browser
 
  [Open In Default Browser](https://marketplace.visualstudio.com/items?itemName=peakchen90.open-html-in-browser#overview) [![Open In Default Browser Repo](https://img.shields.io/github/stars/peakchen90/vscode-open-in-default-browser
 )](https://github.com/peakchen90/vscode-open-in-default-browser) 是一个使用默认 [浏览器](../Browsers/Browser_Note.md) 打开页面的插件。
 
 ![open-in-default-browser screenshot | 1200x700](https://github.com/peakchen90/vscode-open-in-default-browser/raw/master/public/preview.gif)
+
+##### Open Browser Preview
+
+[Open Browser Preview](https://marketplace.visualstudio.com/items?itemName=Wscats.cors-browser) [![Open Browser Preview Repo](https://img.shields.io/github/stars/Wscats/browser-preview
+)](https://github.com/Wscats/browser-preview) 同样也是一款浏览器预览插件。
+
+![Open Browser Preview shotcut](https://user-images.githubusercontent.com/17243165/100516702-a106ee80-31c0-11eb-8d85-89b1567810bb.gif)
+
+##### Open in Browser
+
+[Open in Browser](https://marketplace.visualstudio.com/items?itemName=holazz.vsc-open-in-browser) [![vscode-open-in-browser](https://img.shields.io/github/stars/holazz/vscode-open-in-browser
+)](https://github.com/holazz/vscode-open-in-browser) 同样也是一款浏览器插件。
+
+![Open in Browser shotcut 1](https://github.com/holazz/vscode-open-in-browser/raw/HEAD/screenshots/explorer-context.png)
+
+![Open in Browser shotcut 2](https://github.com/holazz/vscode-open-in-browser/raw/HEAD/screenshots/editor-title-context.png)
+
+这个插件有两种预览模式：
+
+1. 本地文件形式的打开当前 [Html](../Frontend/Html_Note.md) 网页来预览
+2. 内置了一个小型服务器，使用 `localhost:端口` 这种接近实际的网络访问方式来预览。
+
+这两种模式是可以任选其中，在设置中可以勾选。
+
+##### VSCode Open in Browser
+
+[VSCode Open in Browser](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-open-in-browsers) [![vscode-open-in-browsers Repo](https://img.shields.io/github/stars/fabiospampinato/vscode-open-in-browsers
+)](https://github.com/fabiospampinato/vscode-open-in-browsers) 也是浏览器插件。
+
+这个插件特色，是能设置使用的浏览器。
+
+```json
+"openInBrowsers.browser": "chrome",
+```
 
 ---
 

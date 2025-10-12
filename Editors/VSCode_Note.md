@@ -5,7 +5,7 @@ tags:
   - vscode
   - vscodium
 created: 2023-01-30 11:19:11
-modified: 2025-10-05 21:26:00
+modified: 2025-10-12 20:41:30
 ---
 
 # VSCode 笔记
@@ -29,8 +29,15 @@ modified: 2025-10-05 21:26:00
 
 * `Ctrl+Shift+p`：打开命令面板
 * `Ctrl+p`：查找并打开文件
+* `Ctrl+w`：关闭当前文件
+* `Ctrl+,`：开打 [Settings](#vscode_config_settings) 面板
+* `Ctrl+Tab`：在已经打开的多个文件间跳转
+* `Ctrl+Shift+o`：在当前文件的各种方法间跳转
 * `Ctrl+Alt+-`：Go Back 跳回之前的文件
 * `Ctrl+Shift+t`：恢复刚关闭的文件
+* `Ctrl+Shift+y`：显示隐藏控制台
+* `Ctrl+\`：拆分多个编辑器
+* `Ctrl+数字`：用于拆分的多个编辑器间切换，`Ctrl+1` 切换聚焦到第 1 个编辑器，`Ctrl+2` 切换聚焦到第 2 个编辑器
 
 官方给的快捷键帮助文档：
 

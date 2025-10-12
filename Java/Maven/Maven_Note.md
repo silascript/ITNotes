@@ -5,7 +5,7 @@ tags:
   - maven
   - jdk
 created: 2023-01-31 11:31:14
-modified: 2025-10-12 02:50:13
+modified: 2025-10-12 02:50:58
 ---
 
 # Maven 笔记
@@ -35,7 +35,7 @@ maven 版本与 JDK 版本对应请参考：[Maven – Maven Releases History](h
 
 > [!tip]
 > 
-> **3.9.4**开始最低都是 Java8。
+> **3.9.4**开始最低都是 [JDK8](../Java_Note.md#JDK8)。
 
 | Maven 版本 | [JDK 版本](../Java_Note.md#java_jdk) |
 |:----------:|:------------------------------------:|

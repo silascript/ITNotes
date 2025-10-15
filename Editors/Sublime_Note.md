@@ -244,7 +244,7 @@ SublimeText 基本设置：
  #emmet
 
 [Emmet 2](https://packagecontrol.io/packages/Emmet)  [![Emmet Plugin Repo](https://img.shields.io/github/stars/emmetio/sublime-text-plugin?style=social
-)](https://github.com/emmetio/sublime-text-plugin) 这应该是必装的。当然这是新版的 [Emmet](../Frontend/Css_Note.md#emmet) 插件（[老版Emmet插件](https://github.com/sergeche/emmet-sublime) 已经不维护了），所以叫「Emmet 2」。
+)](https://github.com/emmetio/sublime-text-plugin) 这应该是必装的。当然这是新版的 [Emmet](../Frontend/CSS_Note.md#emmet) 插件（[老版Emmet插件](https://github.com/sergeche/emmet-sublime) 已经不维护了），所以叫「Emmet 2」。
 
 装完，如果有需要可以改下快捷键：
 

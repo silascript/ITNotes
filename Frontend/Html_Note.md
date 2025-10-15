@@ -330,6 +330,6 @@ HTML 代码由不同的标签构成。
 * [前端笔记](Front-end_Note.md)
 * [前端资料清单](Front-end_Material.md)
 * [前端教程视频清单](./Front-end_Videos.md)
-* [Css 笔记](Css_Note.md)
+* [Css 笔记](CSS_Note.md)
 * [Javascript 笔记](../JS/JS_Note.md)
 

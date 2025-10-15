@@ -848,14 +848,14 @@ VSCode 已经内置了大名鼎鼎的 [Emmet](https://emmet.io) （[Emmet Wiki](
 ##### <span id="vscode_extensions_frontend_CSS_CSSPeek">CSS Peek</span>
 
 [CSS Peek](https://marketplace.visualstudio.com/items?itemName=pranaygp.vscode-css-peek) [![CSS Peek Repo](https://img.shields.io/github/stars/pranaygp/vscode-css-peek
-)](https://github.com/pranaygp/vscode-css-peek) 是一个帮助前端开发者，在 [HTML](../Frontend/Html_Note.md) 和 [JavaScript](../JS/JS_Note.md) 文件快速导航和编辑外部样式表中定义的 [CSS样式](../Frontend/Css_Note.md) 定义的插件。
+)](https://github.com/pranaygp/vscode-css-peek) 是一个帮助前端开发者，在 [HTML](../Frontend/Html_Note.md) 和 [JavaScript](../JS/JS_Note.md) 文件快速导航和编辑外部样式表中定义的 [CSS样式](../Frontend/CSS_Note.md) 定义的插件。
 
 ![CSS Peek screenshot](https://github.com/pranaygp/vscode-css-peek/raw/master/readme/working.gif)
 
 ##### <span id="vscode_extensions_frontend_CSS_support">HTML CSS Support</span>
 
 [HTML CSS Support](https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css) [![HTML CSS Support Repo](https://img.shields.io/github/stars/ecmel/vscode-html-css
-)](https://github.com/ecmel/vscode-html-css) 是一个 CSS 的辅助插件，它能让开发者在 [HTML](../Frontend/Html_Note.md) 标签中 `id` 或 `class` 属性设置时，快速选择已在 [CSS](../Frontend/Css_Note.md) 样式文件中定义好的相关样式。
+)](https://github.com/ecmel/vscode-html-css) 是一个 CSS 的辅助插件，它能让开发者在 [HTML](../Frontend/Html_Note.md) 标签中 `id` 或 `class` 属性设置时，快速选择已在 [CSS](../Frontend/CSS_Note.md) 样式文件中定义好的相关样式。
 
 ```json
 "css.enabledLanguages": [

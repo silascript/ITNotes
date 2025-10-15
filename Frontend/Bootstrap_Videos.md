@@ -42,5 +42,5 @@ modified: 2024-02-07 11:16:12
 * [Html 笔记](Html_Note.md)
 * [Bootstrap 笔记](Bootstrap_Note.md)
 * [Bootstrap 视频清单](Bootstrap_Videos.md)
-* [Css 笔记](Css_Note.md)
+* [Css 笔记](CSS_Note.md)
 * [CSS 视频清单](CSS_Videos.md)

@@ -70,7 +70,7 @@ modified: 2025-09-04 21:38:11
 
 * [前端笔记](Front-end_Note.md)
 * [Html 笔记](Html_Note.md)
-* [Css 笔记](Css_Note.md)
+* [Css 笔记](CSS_Note.md)
 * [CSS 视频清单](CSS_Videos.md)
 * [JS 笔记](../JS/JS_Note.md)
 * [JS 视频清单](../JS/JS_Videos.md)

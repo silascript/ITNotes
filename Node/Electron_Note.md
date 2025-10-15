@@ -13,7 +13,7 @@ modified: 2024-08-06 20:46:17
 ---
 
 [Electron](https://www.electronjs.org) [![electron repo](https://img.shields.io/github/stars/electron/electron
-)](https://github.com/electron/electron) 是一个使用 [JavaScript](../JS/JS_Note.md)、[Html](../Frontend/Html_Note.md) 和 [Css](../Frontend/Css_Note.md) 构建桌面应用程序的框架。
+)](https://github.com/electron/electron) 是一个使用 [JavaScript](../JS/JS_Note.md)、[Html](../Frontend/Html_Note.md) 和 [Css](../Frontend/CSS_Note.md) 构建桌面应用程序的框架。
 
 ---
 

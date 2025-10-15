@@ -22,5 +22,5 @@ modified: 2024-07-14 18:18:01
 
 * [前端笔记](Front-end_Note.md)
 * [Html 笔记](Html_Note.md)
-* [Css 笔记](Css_Note.md)
+* [Css 笔记](CSS_Note.md)
 

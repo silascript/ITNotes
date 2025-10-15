@@ -678,7 +678,7 @@ STS 三种安装方式：
 
 ## Eclipse 界面
 
-界面相关的 [CSS](../../Frontend/Css_Note.md) 放在 `plugins/org.eclipse.ui.themes_xxx/css` 目录下：
+界面相关的 [CSS](../../Frontend/CSS_Note.md) 放在 `plugins/org.eclipse.ui.themes_xxx/css` 目录下：
 
 ```shell
 $ ll org.eclipse.ui.themes_1.2.2700.v20250122-1423/css 

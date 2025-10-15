@@ -10,7 +10,7 @@ tags:
   - w3c
   - whatwg
 created: 2023-08-18 19:44:52
-modified: 2025-02-12 12:41:53
+modified: 2025-10-14 23:07:50
 ---
 
 # Html 笔记
@@ -256,9 +256,80 @@ HTML 代码由不同的标签构成。
 * `<noscript>` 浏览器不支持脚本时，所要显示的内容
 * `<base>` 设置网页内部相对 URL 的计算基准
 
+## <span id="html_tag_table">表格</span>
+
 ---
+
+## <span id="html_tag_form">表单</span>
+
+网页信息交互最重要的一块就是「**表单**」。表单作为客户与服务器交互的重要媒介，在网络应用中发挥的作用不可替代。
+
+表单作为网页一部分可以采集客户端输入的信息，然后发送给服务器端特定的处理程序这样可以完成服务器端和客户端之间的交互，从而实现用户注册、用户登录、网络投票、在互惠考试等网络应用。
+
+### form 标签
+
+### input 标签
+
+`<input>` 标签用于收集用户输入的数据。
+
+#### 重要属性
+
+##### type
+
+`<input>` 标签有一个重要的属性：`<type>`，这个属性的值决定的 `<input>` 标签的类型，而不同的类型的 `<input>` 标签是有其不同用途。
+
+##### name
+
+`<input>` 标签的 `name` 属性值，是在服务器端处理相应程序中获利该表单的控件值时使用。
+
+#### 单行文本框
+
+单行文本框的 `type` 属性值为 `text`：
+
+```html
+<input type="text"  name="" />
+```
+
+#### 密码框
+
+密码框的 `type` 属性值为 `password`，当用户在输入内容时，「`*`」来代替显示每个输入的字符，以保证密码的安全性。
+
+示例：
+
+```html
+
+<input type="password"  name="" />
+```
+
+#### <span id="html_tag_form_new">HTML5 新 input 类型</span>
+
+#### number
+
+`number` 类型，是一个只能输入数字的输入域。
+
+`number` 类型还能设定所接受数字的限定：
+* `min`：最小值
+* `max`：最大值
+
+示例：
+
+```html
+<input type="number" name="activate_code" id="activate_code" min="1" max="20" />
+```
+
+---
+
 ## 相关链接
 
-* [前端教程视频清单](./Front-end_Videos.md)
 * [Mozilla HTML 教程](https://developer.mozilla.org/zh-CN/docs/Web/HTML)
+
+---
+
+## 相关笔记
+
+* [前端笔记](Front-end_Note.md)
+* [前端资料清单](Front-end_Material.md)
+* [前端教程视频清单](./Front-end_Videos.md)
+* [Css 笔记](Css_Note.md)
+* [Javascript 笔记](../JS/JS_Note.md)
 

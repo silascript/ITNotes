@@ -8,7 +8,7 @@ tags:
   - material
   - list
 created: 2024-08-16 10:08:24
-modified: 2025-02-11 19:02:10
+modified: 2025-10-14 01:05:33
 ---
 
 # JS 资料清单
@@ -19,6 +19,13 @@ modified: 2025-02-11 19:02:10
 
 * [简介 - JavaScript教程 - 廖雪峰的官方网站](https://liaoxuefeng.com/books/javascript/introduction/index.html)
 * [现代JavaScript教程](https://zh.javascript.info)
+
+### 表单
+
+* [复选框checkBox取值的三种方法 - 花皎 - 博客园](https://www.cnblogs.com/emojio/p/11497793.html)
+* [页面如何获取checkbox选中的多个值？- 掘金](https://juejin.cn/post/7021763805575118855)
+
+---
 
 ## ESLint
 

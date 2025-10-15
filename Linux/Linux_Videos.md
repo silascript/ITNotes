@@ -10,7 +10,7 @@ tags:
   - tutorial
   - list
 created: 2023-08-18 19:44:52
-modified: 2025-08-28 01:52:55
+modified: 2025-10-13 22:30:11
 ---
 
 # Linux 视频清单
@@ -19,6 +19,8 @@ modified: 2025-08-28 01:52:55
 
 ## Linux 入门
 
+* [linux邪修开始修--------修！修！！](https://www.bilibili.com/video/BV1MRxEzUE5W)
+* [学习有关 Linux 的一切知识！2025 版更新！100 多小时（第1部分）](https://www.bilibili.com/video/BV18opfzZEpC)
 * [2023完整版 Linux从入门到精通](https://www.bilibili.com/video/BV1tX4y1r7Bn)
 * [Linux系统基础入门](https://www.bilibili.com/video/BV1v7421K74X)
 * [2024最新版Linux运维视频精讲教程，从入门到精通（146集全）](https://www.bilibili.com/video/BV1pm411C7nX)

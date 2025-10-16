@@ -10,7 +10,7 @@ tags:
   - w3c
   - whatwg
 created: 2023-08-18 19:44:52
-modified: 2025-10-14 23:07:50
+modified: 2025-10-16 11:37:04
 ---
 
 # Html 笔记
@@ -174,9 +174,19 @@ HTML 代码由不同的标签构成。
 
 ### <span id="html_basic_concept_attribute">属性</span>
 
-**属性** 是标签的额外信息，使用空格与棱名和其他属性分隔。
+**属性** 是标签的额外信息，属性都是以「键值对」的形式出现，使用空格和其他属性分隔。
 
 ![attribute](https://mdn.mozillademos.org/files/16476/attribute.png)
+
+#### 通用属性
+
+##### id
+
+`id` 属性，是一个 [标签](#html_basic_concept_tag) 的**唯一标识**，不可重复。
+
+##### class
+
+`class` 属性，是将一些有相同功能的标签归类的标识，可重复。
 
 ---
 

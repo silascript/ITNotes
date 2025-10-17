@@ -39,4 +39,4 @@ modified: 2025-10-16 21:37:03
 
 * [JS 笔记](JS_Note.md)
 * [JS 视频清单](JS_Videos.md)
-* [JS 图表笔记](Charts/JS_Charts.md)
+* [JS 图表笔记](JS_Charts_Note.md)

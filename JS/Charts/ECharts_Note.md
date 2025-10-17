@@ -23,4 +23,4 @@ modified: 2025-10-16 21:36:30
 ## 相关笔记
 
 * [Javascript 笔记](../JS_Note.md)
-* [JS 图表笔记](JS_Charts.md)
+* [JS 图表笔记](../JS_Charts_Note.md)

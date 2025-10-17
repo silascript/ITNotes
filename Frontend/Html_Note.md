@@ -10,7 +10,7 @@ tags:
   - w3c
   - whatwg
 created: 2023-08-18 19:44:52
-modified: 2025-10-16 11:37:04
+modified: 2025-10-17 22:37:03
 ---
 
 # Html 笔记
@@ -276,9 +276,9 @@ HTML 代码由不同的标签构成。
 
 表单作为网页一部分可以采集客户端输入的信息，然后发送给服务器端特定的处理程序这样可以完成服务器端和客户端之间的交互，从而实现用户注册、用户登录、网络投票、在互惠考试等网络应用。
 
-### form 标签
+### form
 
-### input 标签
+### <span id="html_tag_form_input">input</span>
 
 `<input>` 标签用于收集用户输入的数据。
 
@@ -311,7 +311,7 @@ HTML 代码由不同的标签构成。
 <input type="password"  name="" />
 ```
 
-#### <span id="html_tag_form_new">HTML5 新 input 类型</span>
+#### <span id="html_tag_form_input_newtype">HTML5 input 类型</span>
 
 #### number
 
@@ -327,11 +327,114 @@ HTML 代码由不同的标签构成。
 <input type="number" name="activate_code" id="activate_code" min="1" max="20" />
 ```
 
+#### email
+
+`<input>` 的 `type` 如果设置为 `email`，那该输入框只能输入 emailk 地址：
+
+```html
+<input type="eamil" />
+```
+
+#### color
+
+`<input>` 的 `type` 如果设置为 `color`，那它将是一个颜色拾取器：
+
+```html
+<input type="color" name="color1" />
+```
+
+##### datePickers
+
+日期选择器。有多个可供选取日期和时间类型。
+
+`type` 属性可以选：
+
+* `date`：选取日、月、年，不包括时间
+* `month`：选取月、年
+* `week`：选取周和年
+* `time`：选取时间（小时和分钟）
+* `datetime-local`：选取时间、日、月、年（本地时间）
+
+> [!tip] 
+> 
+> 本来还有个 `datetime` 的，不过后来的标准移除此类型了：[Remove input\[type=datetime\] · Issue #336 · whatwg/html](https://github.com/whatwg/html/issues/336)
+
+```html
+<input type="date" name="user_date" id="user_date" />
+<input type="datetime-local" name="user_datetimel" id="user_datetimel" />
+<input type="month" name="user_month" id="user_month" />
+<input type="time" name="user_time" id="user_time" />
+<input type="week" name="user_week" id="user_week" />
+```
+
+#### <span id="html_tag_form_input_new">HTML5 新 input 标签</span>
+
+##### datelist
+
+`<datalist>` 标签用于定义输入框的选项列表。
+
+如果 [单行文本框](#单行文本框) 想要在输入时出现使用 `<datalist>` 定义的数据，可以通过 `list` 属性与 `<datalist>` 的 `id` 值「绑定」：
+
+```html
+
+<input type="text" list="address" />
+
+<datalist id="address">
+	<option>上海</option>
+	<option>北京</option>
+	<option>广州</option>
+</datalist>
+```
+
+##### select
+
+`<select>` 与 [datelist](#datelist) 类似的控件，区别是不能输入，只能选取。
+
+同样的选项也是 `<option>` 标签：
+
+```html
+<label for="user_province">省份：</label>
+
+<select name="user_province" id="user_province">
+	<option value="js">江苏</option>
+	<option value="gd">广东</option>
+	<option value="hn">河南</option>
+	<option value="hb">河北</option>
+	<option value="sd">山东</option>
+	<option value="sx">山西</option>
+	<option value="shx">陕西</option>
+	<option value="hn">湖南</option>
+	<option value="hb">湖北</option>
+	<option value="sc">四川</option>
+</select>
+```
+
+还能对 `<option>` 使用 `<optgroup>` 标签进行「分组」：
+
+```html
+<select>
+	<optgroup label="国内">
+		<option value="gz">广州</option>
+		<option value="sz">深圳</option>
+		<option value="bj" selected>北京</option>
+	</optgroup>
+	<optgroup label="国外">
+		<option value="ld">伦敦</option>
+		<option value="ny">纽约</option>
+		<option value="xn">悉尼</option>
+	</optgroup>
+</select>
+```
+
 ---
 
 ## 相关链接
 
 * [Mozilla HTML 教程](https://developer.mozilla.org/zh-CN/docs/Web/HTML)
+
+### 检测
+
+* [Can I use](https://caniuse.com)
 
 ---
 

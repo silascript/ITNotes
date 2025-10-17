@@ -10,7 +10,7 @@ tags:
   - w3c
   - whatwg
 created: 2023-08-18 19:44:52
-modified: 2025-10-17 22:37:03
+modified: 2025-10-18 03:26:14
 ---
 
 # Html 笔记
@@ -369,9 +369,25 @@ HTML 代码由不同的标签构成。
 
 #### <span id="html_tag_form_input_new">HTML5 新 input 标签</span>
 
+##### option
+
+`<option>` 这个标签一般不会单独使用，它是作 [select](#select), [optgroup](#optgroup) 、[datelist](#datelist) 标签的子标签存在。
+
+> [!tip] 
+> 
+> 其中 `<option>` 标签有个属性 `selected`，是设定该选项默认被选中的，如果未设置此属性，默认选中第一个选项。
+
+##### optgroup
+
+`<optgroup>` 同样也不会单独使用，是作为 [select](#select) 标签的子标签，[option](#option) 的父级标签存在。
+
+它的功能是将多个 `<option>` 进行分组。
+
 ##### datelist
 
 `<datalist>` 标签用于定义输入框的选项列表。
+
+选项使用 [option](#option) 标签进行定义。
 
 如果 [单行文本框](#单行文本框) 想要在输入时出现使用 `<datalist>` 定义的数据，可以通过 `list` 属性与 `<datalist>` 的 `id` 值「绑定」：
 
@@ -390,14 +406,14 @@ HTML 代码由不同的标签构成。
 
 `<select>` 与 [datelist](#datelist) 类似的控件，区别是不能输入，只能选取。
 
-同样的选项也是 `<option>` 标签：
+同样的选项也是 [option](#option) 标签：
 
 ```html
 <label for="user_province">省份：</label>
 
 <select name="user_province" id="user_province">
 	<option value="js">江苏</option>
-	<option value="gd">广东</option>
+	<option value="gd" selected="true">广东</option>
 	<option value="hn">河南</option>
 	<option value="hb">河北</option>
 	<option value="sd">山东</option>
@@ -409,7 +425,7 @@ HTML 代码由不同的标签构成。
 </select>
 ```
 
-还能对 `<option>` 使用 `<optgroup>` 标签进行「分组」：
+还能对 `<option>` 使用 [optgroup](#optgroup) 标签进行「分组」：
 
 ```html
 <select>
@@ -435,6 +451,7 @@ HTML 代码由不同的标签构成。
 ### 检测
 
 * [Can I use](https://caniuse.com)
+* [HTML5test](https://html5test.com)
 
 ---
 

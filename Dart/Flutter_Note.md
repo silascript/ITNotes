@@ -4,7 +4,7 @@ tags:
   - flutter
   - dart
 created: 2025-09-19 02:05:06
-modified: 2025-09-19 21:10:19
+modified: 2025-10-20 21:56:52
 ---
 
 # Flutter 笔记
@@ -317,4 +317,6 @@ export PATH=$PATH:~/.pub-cache/bin
 ## 相关笔记
 
 * [Dart 笔记](Dart_Note.md)
+* [Flutter 资料清单](Flutter_Dart_Material.md)
+* [Flutter及Dart 视频清单](Flutter_Dart_Videos.md)
 

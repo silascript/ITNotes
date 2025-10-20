@@ -10,7 +10,7 @@ tags:
   - w3c
   - whatwg
 created: 2023-08-18 19:44:52
-modified: 2025-10-18 03:26:14
+modified: 2025-10-20 00:04:16
 ---
 
 # Html 笔记
@@ -49,7 +49,7 @@ modified: 2025-10-18 03:26:14
 
 ### HTML4
 
-### <span id="html_introducton_xhtml">XHTML</span>
+### XHTML
 
  #xhtml
 
@@ -59,7 +59,7 @@ HTML 语法比较的「自由奔放」，所以在不同的浏览器渲染出现
 
 XHTML 应用出现在 2005 年到 2012 年左右的「重构时代」。
 
-### <span id="html_introducton_html5">HTML5</span>
+### HTML5
 
  #html5
 
@@ -84,6 +84,24 @@ WHATWG（WHATWG 正确发音是：[what-wig]）， Web Hypertext Application Tec
 后来随着 Chrome 浏览器大行其道，Google 也加入其中。再后来连微软了加入的。
 
 WHATWG 是针对 [W3C](#W3C) 网页标准的发展缓慢，以及 [W3C](#W3C) 意图放弃 HTML 转而发展以 XML 为基础的技术而成立。
+
+---
+
+## 网页标准
+
+Web 标准的内容主要包括 [结构](#结构标准)（Structure）、[表现](#表现标准)（Presentation） 和 [行为](#行为标准)（Behavior）。
+
+### 结构标准
+
+结构用于对网页元素进行整理和分类，结构化标准语言包括 [XML](../XML/XML_Note.md)、HTML、[XHTML](#XHTML)。
+
+### 表现标准
+
+表现标准用于设置网页元素的版式、颜色、大小等外观样式，主要指的是 [CSS](CSS_Note.md)（层叠样式表 Cascading Style Sheet）标准。
+
+### 行为标准
+
+行为标准主要包括对象模型，如 [DOM](../JS/DOM_Note.md)、[ECMAScript](../JS/JS_Note.md) 等。
 
 ---
 
@@ -266,7 +284,100 @@ HTML 代码由不同的标签构成。
 * `<noscript>` 浏览器不支持脚本时，所要显示的内容
 * `<base>` 设置网页内部相对 URL 的计算基准
 
+---
+
 ## <span id="html_tag_table">表格</span>
+
+一个表格构成需要三个标签：
+
+* `<table>`：一个表格
+* `<tr>`：表的一行
+* `<td>`：表的一个单元格
+
+示例：
+
+```html
+<table>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+```
+
+### <span id="html_tag_table_tr">行</span>
+
+#tr
+
+`<tr>`，用于定义表格的一行，必须嵌套在 `<table>` 标签中。
+
+为了对表格行进行更细的语义化，还可以使用 [`<thead>`](#thead)、[`<tbody>`](#tbody) 和 [`<tfoot>`](#tfoot) 三个标签对 `<tr>` 标签进行分组。
+
+示例：
+
+```html
+
+<table>
+	<thead>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>	
+	</tbody>
+	
+	
+</table>
+```
+
+#### thead
+
+`<thead>` 用于定义表格的头部，必须位于 [`<table>`](#html_tag_table) 标签中。
+
+一个表格只能定义一对 `<thead>`。
+
+#### tbody
+
+`<tbody>` 用于定义表格的头部，必须位于 [`<table>`](#html_tag_table) 标签中。
+
+一个表格只能定义一对 `<tbody>`。
+
+#### tfoot
+
+`<tfoot>` 用于定义表格的头部，必须位于 [`<table>`](#html_tag_table) 标签中。
+
+一个表格只能定义一对 `<tfoot>`。
+
+### <span id="html_tag_table_td">单元格</span>
+
+#td
+
+`<td>` 用于定义表格中的单元格，必须嵌套在 [`<tr>`](#html_tag_table_tr) 标签中。一个 `<tr>` 中有几个 `<td>`，即表示该行有几列。
+
+#### th
+
+`<th>` 用于定义「表头单元格」,其属性、用法与普通的 `<td>` 完全相同，属性对单元格的**语义化**标签。
+
+> [!tip] 
+> 
+> `<th>` 中的文本默认是加粗居中显示，这对于普通的单元格 `<td>` 来说，完全可以通过自身的相关属性或 [CSS](CSS_Note.md) 设置达到。所以 `<th>` 对于表格而言，并不是必须的，完全可以只使用普通的 `<td>`。
 
 ---
 
@@ -277,6 +388,13 @@ HTML 代码由不同的标签构成。
 表单作为网页一部分可以采集客户端输入的信息，然后发送给服务器端特定的处理程序这样可以完成服务器端和客户端之间的交互，从而实现用户注册、用户登录、网络投票、在互惠考试等网络应用。
 
 ### form
+
+### <span id="html_tag_form_attributes">form 标签属性</span>
+
+`<form>` 标签有几个重要的属性：
+
+* `action`：表单提交的目的地
+* `method`：表单提交方式，一般有两种：`post` 和 `get`
 
 ### <span id="html_tag_form_input">input</span>
 

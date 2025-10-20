@@ -6,7 +6,7 @@ tags:
   - jdk
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-09-21 20:07:51
+modified: 2025-10-21 03:18:44
 ---
 
 # Java 资料清单
@@ -37,7 +37,9 @@ modified: 2025-09-21 20:07:51
 
 ---
 
-## Eclipse
+## IDE
+
+### Eclipse
 
 * [Linux下通过设置代理以在线方式为eclipse安装CDT插件 - AzYet - 博客园](https://www.cnblogs.com/azyet/p/3633865.html)
 * [Eclipse - Arch Linux 中文维基](https://wiki.archlinuxcn.org/wiki/Eclipse)
@@ -45,7 +47,7 @@ modified: 2025-09-21 20:07:51
 * [转载-【使用Eclipse Installer安装Eclipse】\_eclipseinstaller-CSDN博客](https://blog.csdn.net/qq_34932433/article/details/136187944)
 * [在Linux上安装Eclipse，Windows通用 - Biem - 博客园](https://www.cnblogs.com/biem/p/12923263.html)
 
-### 字体颜色
+#### 字体颜色
 
 * [eclipse 中修改提示框（alt+/）背景色或文字颜色\_eclipse alt+鼠标面板提示框颜色设置-CSDN博客](https://blog.csdn.net/whisely/article/details/74012402)
 * [Eclipse修改皮肤主题、编辑区、Log区背景/Eclipse修改皮肤主题、编辑区、Log区背景.md at master · chenshouyin/DevNote · GitHub](https://github.com/chenshouyin/DevNote/blob/master/%E5%B7%A5%E5%85%B7%E6%8A%80%E5%B7%A7%E7%AF%87/Eclipse%E4%BF%AE%E6%94%B9%E7%9A%AE%E8%82%A4%E4%B8%BB%E9%A2%98%E3%80%81%E7%BC%96%E8%BE%91%E5%8C%BA%E3%80%81Log%E5%8C%BA%E8%83%8C%E6%99%AF/Eclipse%E4%BF%AE%E6%94%B9%E7%9A%AE%E8%82%A4%E4%B8%BB%E9%A2%98%E3%80%81%E7%BC%96%E8%BE%91%E5%8C%BA%E3%80%81Log%E5%8C%BA%E8%83%8C%E6%99%AF.md)
@@ -56,24 +58,24 @@ modified: 2025-09-21 20:07:51
 * [Eclipse e4 概览](https://holbrook.github.io/2014/01/07/eclipse_e4_RCP_quickstart.html)
 * [Eclipse 4.2 中的轻量级 CSS 编辑器 - OSCHINA - 中文开源技术交流社区](https://www.oschina.net/translate/eclipse4-css?cmp)
 
-### 插件
+#### 插件
 
 * [IDE中下载JDK的插件：可视化自由选择下载特定版本的JDK - 极道](https://www.jdon.com/56931.html)
 * [Disco API 使用教程-CSDN博客](https://blog.csdn.net/gitblog_00470/article/details/141801343)
 
-### Server
+#### Server
 
 * [Eclipse中servers框中右击Tomcat有个profile栏选项 - 假程序猿 - 博客园](https://www.cnblogs.com/straybirds/p/8953324.html)
 * [java - Eclipse Tomcat Error: "Could not launch in profiling mode because no profilers are configured." - Stack Overflow](https://stackoverflow.com/questions/40729817/eclipse-tomcat-error-could-not-launch-in-profiling-mode-because-no-profilers-a)
 * [Specifications - Apache Tomcat - Apache Software Foundation](https://cwiki.apache.org/confluence/display/TOMCAT/Specifications)
 
----
-
-## IDEA
+### IDEA
 
 * [2023.3 Idea配置Tomcat环境](https://www.cnblogs.com/bktown/p/17636156.html)
 * [Idea 配置Tomcat - Merray - 博客园](https://www.cnblogs.com/merray/p/12698810.html)
 * [Intellij IDEA系列教材 （七）- 基础 - 配置Tomcat](https://how2j.cn/k/idea/idea-tomcat/1361.html)
+
+---
 
 ## RMI
 

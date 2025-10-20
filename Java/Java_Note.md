@@ -7,7 +7,7 @@ tags:
   - Eclipse
   - dbeaver
 created: 2023-01-30 11:19:11
-modified: 2025-10-11 19:47:03
+modified: 2025-10-21 03:23:48
 ---
 
 # Java 笔记
@@ -20,6 +20,7 @@ modified: 2025-10-11 19:47:03
 	* [Open JDK](#OpenJDK)
 * [JRE](#java_jre)
 * [JVM](#java_jvm)
+* [IDE](#java_ide)
 * [Java相关的配置](#java_config)
 * [SDKMan](#java_sdkman)
 * [IO 相关](#java_io)
@@ -215,9 +216,15 @@ sudo ./bin/jlink --module-path jmods --add-modules java.desktop --output jre
 
 ---
 
-## <span id="java_eclipse">Eclipse</span>
+## <span id="java_ide">IDE</span>
 
-[Eclipse 笔记](IDE/Java_IDE_Eclipse.md)
+### <span id="java_ide_eclipse">Eclipse</span>
+
+* [Eclipse 笔记](IDE/Java_IDE_Eclipse.md)
+
+### <span id="java_ide_idea">IDEA</span>
+
+* [Idea 笔记](IDE/Java_IDE_Idea.md)
 
 ---
 
@@ -556,7 +563,6 @@ public class Demo_1{
 
 * [Java 视频清单](./Java_Videos.md)
 * [Java 资料清单](Java_Material.md)
-* [Eclipse 笔记](IDE/Java_IDE_Eclipse.md)
 * [Kotlin 笔记](Kotlin/Kotlin_Note.md)
 * [Java IO 笔记](Java_IO_Note.md)
 * [Java 网络笔记](Java_Network.md)

@@ -5,7 +5,7 @@ tags:
   - ide
   - idea
 created: 2025-10-21 03:20:34
-modified: 2025-10-21 23:07:27
+modified: 2025-10-22 03:22:39
 ---
 
 # Java Idea 笔记
@@ -117,6 +117,55 @@ StartupWMClass=jetbrains-idea
 > 注意！可能默认是没有 `idea64.vmoptions` 这个文件的，而只有 `idea.vmoptions` 文件。如果是这样，有可能会激活失效，因为现在的 Idea 都是 64 位的。
 > 
 > 解决方案：把 `idea.vmoptions` 复制一份更名为 `idea64.vmoptions`，重启 IDE 或电脑后，启动激活工具再走一遍激活流程就应该能激活成功了！
+
+---
+
+## 配置
+
+### 优化
+
+`idea.vmoptions` 或 `idea64.vmoptions` 文件中添加 `-Xmx2048m`，即将堆内存上限限制在 2G--`2048` 这个数值可以根据自已需求自行设置。
+
+> [!info] 
+> 
+> 当然这个设置也可以通过 Idea 的 `帮助`-->`更改内存设置` 中设置。
+> 
+> 也可以通过点击 `帮助`-->`编辑自定义虚拟机/VM选项`，在 Idea 中直接打开 `idea.vmoptions` 或 `idea64.vmoptions`，直接编辑。
+
+* `-Xms`：启用时堆内存大小
+* `-Xmx`：运行时最大堆内存大小
+
+---
+
+## 快捷键
+
+### 常用
+
+* `Ctrl+Alt+l`：格式化
+
+---
+
+## 插件
+
+### vim 相关
+
+#### IdeaVim
+
+Idea 上实现 vim 插件的插件。
+
+这个插件的配置文件是 `~/.ideavimrc` 这个文件。
+
+#### IdeaVim-EasyMotion
+
+[IdeaVim-EasyMotion](https://github.com/AlexPl292/IdeaVim-EasyMotion) 是在 Idea 上实现 [easymotion](../../vim/Vim_Plugin.md#easymotion) 插件效果的插件。
+
+这个插件用的配置文件是与 [IdeaVim](#IdeaVim) 一样的，即 `~/.ideavimrc`。
+
+##### 启用 easymotion
+
+默认就算装了这个插件，它还是没有启用的。
+
+要启用 IdeaVim-EasyMotion 这插件，就在 `~/.ideavimrc` 中添加 `set easymotion` 配置。
 
 ---
 

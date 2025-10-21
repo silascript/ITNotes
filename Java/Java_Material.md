@@ -6,7 +6,7 @@ tags:
   - jdk
   - list
 created: 2024-08-28 23:40:22
-modified: 2025-10-21 03:18:44
+modified: 2025-10-22 02:52:08
 ---
 
 # Java 资料清单
@@ -74,6 +74,7 @@ modified: 2025-10-21 03:18:44
 * [2023.3 Idea配置Tomcat环境](https://www.cnblogs.com/bktown/p/17636156.html)
 * [Idea 配置Tomcat - Merray - 博客园](https://www.cnblogs.com/merray/p/12698810.html)
 * [Intellij IDEA系列教材 （七）- 基础 - 配置Tomcat](https://how2j.cn/k/idea/idea-tomcat/1361.html)
+* [解决IDEA内存占用过高问题\_idea内存占用过大怎么办-CSDN博客](https://blog.csdn.net/qq_38231598/article/details/134366546)
 
 ---
 

@@ -2,18 +2,23 @@
 aliases: []
 tags:
   - vscode
+  - vscodium
   - editor
   - material
   - list
 created: 2024-08-13 18:49:29
-modified: 2025-10-24 02:10:33
+modified: 2025-10-24 04:26:48
 ---
 
 # VSCode 资料清单
 
 ---
 
-## 主题和图标
+## 通用
+
+* [2025 年实用、全面的 VS Code 插件推荐](https://zhuanlan.zhihu.com/p/1911554793664681596)
+
+### 主题和图标
 
 * [产品图标主题 | Visual Studio Code 扩展 API - VSCode 中文](https://vscode.js.cn/api/extension-guides/product-icon-theme)
 * [🗂 让你的 VSCode 文件图标更好看的10个文件图标主题一个好用的文件图标主题除了能够愉悦身心之外，对于开发的效率 - 掘金](https://juejin.cn/post/7247569496696389691)
@@ -80,7 +85,11 @@ modified: 2025-10-24 02:10:33
 
 ---
 
-## ESLint
+## 前端
+
+* [2024，VSCode 前端插件推荐（包括浏览器插件）开发综合推荐 - 掘金](https://juejin.cn/post/7123367320109449230)
+
+### ESLint
 
 * [ESLint](../JS/JS_Material.md#ESLint)
 

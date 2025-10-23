@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2025-10-23 22:54:45
+modified: 2025-10-24 04:22:48
 
 ---
 
@@ -1087,12 +1087,6 @@ VSCode Prettier 插件设置：
 )](https://github.com/filllabs/dependi) 是新一代的依赖管理插件。它支持 [Rust](../Rust/Rust_Note.md)、[Go](../GoLang/GoLang_Note.md)、[Python](../Python/Python_Note.md)、[NodeJS](../Node/NodeJS_Note.md) 及 [PHP](../PHP/PHP_Note.md) 多种语言。
 
 ![Dependi screenshot](https://camo.githubusercontent.com/b117a103bf54fce35acdbfc8c0ab302b37cd1e9125daa396fb898bdfa3085478/68747470733a2f2f7777772e646570656e64692e696f2f73637265656e73686f74732f746f6f6c7469702e706e67)
-
----
-
-## 相关资料
-
-* [VSCode 资料清单](VSCode_Material.md)
 
 ---
 

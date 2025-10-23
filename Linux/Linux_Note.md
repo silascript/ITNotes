@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2025-10-05 22:52:12
+modified: 2025-10-23 19:49:18
 ---
 
 # Linux 笔记
@@ -275,6 +275,9 @@ tar -tzf xxx.tar.gz
 # 如果加上v 可以看到包内文件的如权限等详细信息
 tar -czvf xxx.tar.gz
 tar -xzvf xxx.tar.gz
+
+# 另上-C 参数 解压到指定目录
+tar -xzvf xxx.tar.gz -C ./xxx
 
 ```
 

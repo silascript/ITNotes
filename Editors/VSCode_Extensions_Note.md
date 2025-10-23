@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2025-10-23 19:03:45
+modified: 2025-10-23 22:50:08
 
 ---
 
@@ -37,7 +37,9 @@ VSCode 或 VSCodium 新版本内置的功能已实现部分插件功能，所以
 
 VSCodium 的插件相对于 VSCode 要少一些，如果想要使用 VSCode 的一些插件，除要去下载 `vsix` 文件安装外，还可以修改市场源。
 
-其中要修改的属性就是 `extensionGallery`，原始 VSCodium 的是这样的：
+VSCodium 安装根目录下，`resources/app/product.json` 文件，其中有个 `extensionGallery` 属性，这个就是设置插件市场的属性。只要对其修改就能将 VSCodium 的插件市场修改为微软的插件市场了。
+
+原始 VSCodium 的是这样的：
 
 ```json
 "extensionsGallery": {
@@ -776,12 +778,12 @@ clangd --version
 
 ### <span id="vscode_extensions_rust"> Rust 开发环境</span>
 
-### rust-analyzer
+#### rust-analyzer
 
 [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) [![rust-analyzer Repo](https://img.shields.io/github/stars/rust-lang/rust-analyzer
 )](https://github.com/rust-lang/rust-analyzer) 是 VSCode 上 [Rust](../Rust/Rust_Note.md) 的语言服务插件，也是 Rust 插件的核心。
 
-### Even Better TOML
+#### Even Better TOML
 
 [Even Better TOML](https://marketplace.visualstudio.com/items?itemName=tamasfe.even-better-toml)  [![Even Better TOML Repo](https://img.shields.io/github/stars/tamasfe/taplo
 )](https://github.com/tamasfe/taplo) 是一个 [Toml](../Rust/Rust_Note.md#toml) 的插件。
@@ -1084,7 +1086,7 @@ VSCode Prettier 插件设置：
 [Dependi](https://marketplace.visualstudio.com/items?itemName=fill-labs.dependi) [![Dependi Repo](https://img.shields.io/github/stars/filllabs/dependi
 )](https://github.com/filllabs/dependi) 是新一代的依赖管理插件。它支持 [Rust](../Rust/Rust_Note.md)、[Go](../GoLang/GoLang_Note.md)、[Python](../Python/Python_Note.md)、[NodeJS](../Node/NodeJS_Note.md) 及 [PHP](../PHP/PHP_Note.md) 多种语言。
 
-![Dependi screenshot](https://camo.githubusercontent.com/1fa31026e7474ab3f08041ab2d444795b75df54b2ce8888aa6d4d4e45065c756/68747470733a2f2f7777772e646570656e64692e696f2f73637265656e73686f74732f746f6f6c7469702e706e67)
+![Dependi screenshot](https://camo.githubusercontent.com/b117a103bf54fce35acdbfc8c0ab302b37cd1e9125daa396fb898bdfa3085478/68747470733a2f2f7777772e646570656e64692e696f2f73637265656e73686f74732f746f6f6c7469702e706e67)
 
 ---
 

@@ -5,7 +5,7 @@ tags:
   - vscode
   - vscodium
 created: 2023-01-30 11:19:11
-modified: 2025-10-23 11:30:21
+modified: 2025-10-24 02:24:10
 ---
 
 # VSCode 笔记
@@ -370,6 +370,37 @@ Profile 是包括了 [Settings](#vscode_config_settings)、插件、snippet 等�
 * [VSCode Profile Github Repo](https://github.com/silascript/VSCode_Settings)
 * [VSCode Settings Syncing Gist for Linux](https://gist.github.com/silascript/fd1d5111ce372d3f313eae6064c173c3)
 * [VSCode Settings Syncing Gist for Windows](https://gist.github.com/silascript/690b9a6eefe395a0f0f6cba397f06c3c)
+
+---
+
+## <span id="vscode_proxy">代理</span>
+
+VSCode 相关域名：
+
+* `update.code.visualstudio.com`：VScode 的下载和升级服务
+* `code.visualstudio.com`：VScode 的官方文档
+* `go.microsoft.com`：前置的 Microsoft 服务链接
+* `vscode.blob.core.windows.net`：VScode 的远程存储，用于远程服务器
+* `marketplace.visualstudio.com`：VScode 的应用市场
+* `*.gallery.vsassets.io`：VScode 的应用市场
+* `*.gallerycdn.vsassets.io`：VScode 的应用市场
+* `rink.hockeyapp.net`：崩溃报告服务
+* `rink.hockeyapp.net`：在产品中查询设置
+* `vscode.search.windows.net`：在产品内查询设置
+* `raw.githubusercontent.com`：访问 Github 存储库原始文件
+* `vsmarketplacebadges.dev`：VScode 市场徽章服务
+* `Visual Studio Marketplace badge service`：VScode 下载 CND
+* `download.visualstudio.microsoft.com`：VScode 下载服务，提供一些依赖给某些 VScode 的扩展
+* `vscode-sync.trafficmanager.net`：VScode 设置同步服务
+* `vscode-sync-insiders.trafficmanager.net`：VScode 设置同步服务（Insders 版本）
+* `vscode.dev`：用于当你登录 GitHub 或者 Microsoft 为一个扩展设置同步的时候
+* `default.exp-tas.com`：VScode 实验服务，用于提供实验员实验信息
+
+### 代理相关设置
+
+`http.proxy`：这里是设置代理服务器地埴，如使用 [Clash-Verge-Rev](../Ladder/Ladder_Note.md#Clash-Verge-Rev)，可以填入 `https://127.0.0.1:7897`。
+
+`http.proxySupport`：这个是设置插件是否也使用代理。有几个选项值：`off`、`on` 、`override` 和 `fallback`。如果不想使用代理来装插件，就设为 `off`。
 
 ---
 

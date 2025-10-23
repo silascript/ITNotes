@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-13 18:49:29
-modified: 2025-10-12 21:08:06
+modified: 2025-10-24 02:10:33
 ---
 
 # VSCode 资料清单
@@ -97,6 +97,14 @@ modified: 2025-10-12 21:08:06
 * [VSCode官方的配置同步方案这几天在迁移电脑工作环境，对于VSCode，我实在不想从头做下载插件、配置代码规则这样的事 - 掘金](https://juejin.cn/post/7066622158184644621)
 * [\`settingsSync.ignoredSettings\` no longer accepts \`window.zoomLevel\`? · Issue #116046 · microsoft/vscode · GitHub](https://github.com/microsoft/vscode/issues/116046)
 * [Settings Sync syncs zoom level · Issue #114013 · microsoft/vscode · GitHub](https://github.com/microsoft/vscode/issues/114013)
+
+---
+
+## 代理
+
+* [VSCode学习笔记No.3\_vscode 关闭代理-CSDN博客](https://blog.csdn.net/qq_50550800/article/details/130365627)
+* [Visual Studio Code 中设置代理服务器的方法 – aahgo](https://www.aahgo.com/post/328.html)
+* [VSCode设置代理模式](https://zhuanlan.zhihu.com/p/17864898987)
 
 ---
 

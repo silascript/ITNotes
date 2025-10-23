@@ -5,7 +5,7 @@ tags:
   - vscode
   - vscodium
 created: 2023-01-30 11:19:11
-modified: 2025-10-12 20:41:30
+modified: 2025-10-23 11:30:21
 ---
 
 # VSCode 笔记
@@ -73,7 +73,9 @@ VSCodium：
 
 `~/.vscode-oss/vscodium` 插件存放目录
 
-> 如果要重置 VSCode 或 VSCodium，就需要清理这两个目录。
+> [!tip] 
+> 
+> 如果要重置 VSCode 或 VSCodium，就需要清理 `~/.vscode` 或 `~/.vscode-oss/vscodium` 目录。
 >
 > 如果只清 `~/.config/Code` 或 `~/.config/VSCodium` 这个设置目录，启动 VSCode 或 VSCodium ，插件还是存在的。
 
@@ -83,6 +85,8 @@ VSCodium：
 2. 解压到想要安装的路径下。
 3. 先不要启动 VSCode，在 VSCode 根目录下手动新建 `data` 目录，这个目录是存在用户数据及插件安装目录。如果想临时文件也放在这个目录中，所以在 `data` 目录下再新建一个 `tmp` 目录，用于存放临时文件。
 4. 启动 VSCode，这样 VSCode 就会将用户数据、插件等放到 `data` 目录中了，这样文件将 VSCode 作成「便携包」。
+
+---
 
 ## <span id="vscode_install">安装</span>
 

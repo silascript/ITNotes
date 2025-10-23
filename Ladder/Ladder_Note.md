@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2025-08-22 19:43:17
+modified: 2025-10-23 04:17:03
 ---
 
 # 梯子笔记
@@ -787,6 +787,7 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 > 
 > 网址：
 > 
+> * [https://leiting.uk](https://leiting.uk)
 > * [GitHub - 雷霆](https://github.com/winston779/leitingjichang)
 > * [www.leiting.io](https://www.leiting.io)
 > * [leiting.lol](https://leiting.lol)

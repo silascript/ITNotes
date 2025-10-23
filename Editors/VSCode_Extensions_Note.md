@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2025-10-13 04:36:18
+modified: 2025-10-23 19:03:45
 
 ---
 
@@ -929,10 +929,22 @@ VSCode 已经内置了大名鼎鼎的 [Emmet](https://emmet.io) （[Emmet Wiki](
 [VSCode Open in Browser](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-open-in-browsers) [![vscode-open-in-browsers Repo](https://img.shields.io/github/stars/fabiospampinato/vscode-open-in-browsers
 )](https://github.com/fabiospampinato/vscode-open-in-browsers) 也是浏览器插件。
 
-这个插件特色，是能设置使用的浏览器。
+这个插件特色，是能设置使用的哪个浏览器打开页面。
+
+> [!info] 
+> 
+> 这个插件是众多浏览器插件少见的，缺点就是缺少右键菜单，全部操作只能通过命令面板来完成，适合「键盘流」。
 
 ```json
-"openInBrowsers.browser": "chrome",
+// 默认浏览器
+"openInBrowsers.browser": "brave",
+// 浏览器候选项
+// 在命令面板进行选择一个浏览器打开当前页面
+"openInBrowsers.browsers": [
+	"floorp",
+	"microsoft-edge-stable",
+	"brave"
+]
 ```
 
 ---

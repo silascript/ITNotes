@@ -8,7 +8,7 @@ tags:
   - conda
   - uv
 created: 2023-08-18 19:44:52
-modified: 2025-09-02 04:00:45
+modified: 2025-10-22 23:28:07
 ---
 
 # Python 笔记
@@ -1142,6 +1142,39 @@ lrwxrwxrwx     - silascript silascript 2025-08-13 03:10 python3.11 -> python
 [结巴分词](https://github.com/fxsjy/jieba) 是一个 Python 的中文分词组件。
 
 Obsidan 中 [中文分词插件](../NoteSoft/Obsidian/Obsidian_Note.md#obn_plugins_wordsplitting_ch) 就有可能用到这个组件。
+
+---
+
+## <span id="python_ide">IDE</span>
+
+### <span id="python_ide_pycharm">Pycharm</span>
+
+[Pycharm](https://www.jetbrains.com/pycharm/) 跟 [Idea](../Java/IDE/Java_IDE_Idea.md) 一样，都是 JetBrains 旗下的一款 IDE。
+
+#### 安装
+
+以 [Linux](../Linux/Linux_Note.md) 版本安装为例。
+
+Pycharm 的 [Desktop](../Linux/Linux_Note.md#Desktop%20文件解析)：
+
+```desktop
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Pycharm 2025
+Icon=pycharm.png
+Exec=/opt/pycharm/bin/pycharm
+Comment=The Python IDE
+Categories=Development;IDE;
+Terminal=false
+StartupWMClass=jetbrains-pycharm
+```
+
+破解跟 Idea 类似，可以到 [https://blog.idejihuo.com](https://blog.idejihuo.com/) 找相关资源。
+
+> [!tip]
+> 
+> 注意，激活时，用的是 `pycharm64.vmoptions` 这个配置文件指定激活工具路径，而非默认的 `pycharm.vmoptions`。
 
 ---
 

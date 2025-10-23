@@ -5,7 +5,7 @@ tags:
   - ide
   - idea
 created: 2025-10-21 03:20:34
-modified: 2025-10-22 03:22:39
+modified: 2025-10-22 20:14:27
 ---
 
 # Java Idea 笔记
@@ -40,7 +40,7 @@ StartupWMClass=jetbrains-idea
 
 #### crack
 
-到 [IDE激活网](https://blog.idejihuo.com) 找相应的激活工具，按照其说明激活应该就可以了。
+到 [https://blog.idejihuo.com](https://blog.idejihuo.com) 找相应的激活工具，按照其说明激活应该就可以了。
 
 ##### 激活流程
 
@@ -59,6 +59,7 @@ StartupWMClass=jetbrains-idea
 `.profile` 被配置后，要么 `source` 下 `.proifle`，要么重启下电脑，让 `.profile` 生效 -- 建议如果没有问题，还是重启下电脑，因为有时 `source` 不一定会让 `profile` 生效。
 
 ###### 生成 Idea 配置目录
+
 > [!info] 
 > 
 > 安装完 idea 的 [Linux](../../Linux/Linux_Note.md) 版其实就是把 idea 解个包而已，run 下 `bin` 下的 `idea`，启动 idea。
@@ -132,8 +133,8 @@ StartupWMClass=jetbrains-idea
 > 
 > 也可以通过点击 `帮助`-->`编辑自定义虚拟机/VM选项`，在 Idea 中直接打开 `idea.vmoptions` 或 `idea64.vmoptions`，直接编辑。
 
-* `-Xms`：启用时堆内存大小
-* `-Xmx`：运行时最大堆内存大小
+* `-Xms`：堆内存最小值
+* `-Xmx`：堆内存最大值
 
 ---
 

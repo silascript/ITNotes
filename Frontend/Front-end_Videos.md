@@ -4,19 +4,18 @@ tags:
   - front-end
   - html
   - css
-  - bootstrap
   - js
   - javascript
   - video
   - list
 created: 2023-08-18 19:44:52
-modified: 2025-09-04 21:38:11
+modified: 2025-10-26 02:25:26
 ---
 # 前端教程视频清单
 
 ---
 
-## HTML
+## HTML 及 CSS
 
 ### 基础
 
@@ -40,21 +39,29 @@ modified: 2025-09-04 21:38:11
 * [HTML5+CSS3+JS音频播放器实战 | 2024全新 快速上手实战](https://www.bilibili.com/video/BV1SC411B7o3)
 * [【前端Flex布局】一个商城实例让你从0开始彻底学会移动端布局](https://www.bilibili.com/video/BV1Gm41197Bg)
 
----
-
-## CSS
+### CSS
 
 * [CSS视频清单](CSS_Videos.md)
 
+### canvas
+
+* [canvas入门【渡一教育】](https://www.bilibili.com/video/BV1PSWCzGEBr)
+
 ---
 
-## Bootstrap
+## 前端工程
+
+* [前端工程化-宏观篇【渡一教育】](https://www.bilibili.com/video/BV14ynizDECX)
+
+---
+
+## 框架
+
+### Bootstrap
 
 * [Bootstrap 视频清单](Bootstrap_Videos.md)
 
----
-
-## Angular
+### Angular
 
 * [2023 Angular教程 ](https://www.bilibili.com/video/BV1PQ4y1W7TB)
 

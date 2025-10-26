@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2025-10-23 04:17:03
+modified: 2025-10-26 05:16:21
 ---
 
 # 梯子笔记
@@ -1182,7 +1182,9 @@ rules+:
 
 ### Karing
 
-[karing](https://github.com/KaringX/karing) 是使用的「魔改」的 [Singbox](#Singbox) 内核而构建的客户端。暂不支持 [Linux](../Linux/Linux_Note.md) 系统。
+[karing](https://github.com/KaringX/karing) 是使用的「魔改」的 [Singbox](#Singbox) 内核而构建的客户端。~~暂不支持 [Linux](../Linux/Linux_Note.md) 系统。~~
+
+界面是手机模式的。
 
 ### V2Fly
 

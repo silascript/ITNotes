@@ -7,7 +7,7 @@ tags:
   - material
   - list
 created: 2025-02-18 03:56:48
-modified: 2025-10-17 20:26:17
+modified: 2025-10-25 11:02:22
 ---
 
 # 前端资料清单
@@ -21,6 +21,12 @@ modified: 2025-10-17 20:26:17
 * [前言 \| 千古前端图文教程](https://web.qianguyihao.com)
 * [首页-前端队长の技术博客](https://daotin.github.io)
 * [2025年最新超详细的前端学习路线（建议收藏🔥） \| 二哥的Java进阶之路](https://javabetter.cn/xuexiluxian/qianduan.html)
+
+---
+
+## 前端工程
+
+* [简介 \| 带你入门前端工程](https://woai3c.github.io/introduction-to-front-end-engineering)
 
 ---
 

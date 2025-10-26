@@ -8,7 +8,7 @@ tags:
   - scite
   - lsp
 created: 2023-01-30 11:19:11
-modified: 2025-10-05 20:10:35
+modified: 2025-10-26 10:54:22
 ---
 
 # 编辑器笔记
@@ -187,6 +187,12 @@ style.*.35=italics,back:#ebeef3
 ## <span id="editors_lapce">Lapce</span>
 
 [Lapce](https://lap.dev/lapce/) 是使用 [Rust](../Rust/Rust_Note.md) 写的文本编辑器。
+
+---
+
+## <span id="editors_pulsar">pulsar</span>
+
+[Pulsar](https://pulsar-edit.dev) 源于 Atom。
 
 ---
 

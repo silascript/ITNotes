@@ -7,7 +7,7 @@ tags:
   - tutorial
   - list
 created: 2023-02-12 11:23:37
-modified: 2025-09-02 03:30:59
+modified: 2025-10-27 21:18:28
 ---
 
 # Python 视频清单
@@ -24,6 +24,7 @@ python 相关视频汇集整理。
 
 ## 基础入门
 
+* [尚硅谷Python教程，python零基础入门](https://www.bilibili.com/video/BV1tDsgzxECr)
 * [Alex 8天 Python](https://www.bilibili.com/video/BV1hk4y1H7Q1)
 * python 速成教程——5 天魔鬼训练营从入门到精通
 	* [链接1](https://www.bilibili.com/video/BV1vN4y1d7Ri)

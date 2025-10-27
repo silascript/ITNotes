@@ -10,7 +10,7 @@ tags:
   - w3c
   - whatwg
 created: 2023-08-18 19:44:52
-modified: 2025-10-26 21:09:51
+modified: 2025-10-27 20:58:11
 ---
 
 # Html 笔记
@@ -208,7 +208,7 @@ HTML 代码由不同的标签构成。
 
 > [!info] 
 > 
-> 类名的第一个字符不能使用数字，并且严格区分大小写，一般采用小写的英文字母。
+> 类名的命名规则，与 [Java](../Java/Java_Note.md) 等语言类似，最重要一条便是：第一个字符不能使用数字。类名大小写敏感，一般采用小写的英文字母。
 
 ---
 
@@ -563,6 +563,22 @@ HTML 代码由不同的标签构成。
 	</optgroup>
 </select>
 ```
+
+---
+
+## <span id="html_tag_list">列表</span>
+
+### ul
+
+`ul` 是无序列表（Unordered List）。
+
+### ol
+
+`ol` 是有序列表（Ordered List）。
+
+### dl
+
+`dl` 是定义列表（Definition List）。
 
 ---
 

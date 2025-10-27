@@ -6,7 +6,7 @@ tags:
   - es
   - ecmascript
 created: 2023-01-31 11:31:14
-modified: 2025-02-12 12:49:12
+modified: 2025-10-27 11:41:29
 ---
 
 # JavaScript 笔记
@@ -24,7 +24,6 @@ modified: 2025-02-12 12:49:12
 	    * [值的范围](#jsn_datatype_number_range)
 	    * [NaN](#jsn_datatype_number_NaN)
 	* [面向对象](#jsn_oop)
-* [DOM 笔记](./DOM_Note.md)
 
 ---
 
@@ -212,14 +211,15 @@ npm install eslint --global
 
 ---
 
+## <span id="jsn_aboutlinks">相关链接</span>
+
+* [JavaScript 文档 - MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)
+
+---
+
 ## 相关笔记
 
 * [JS 资料清单](JS_Material.md)
 * [JS 视频清单](JS_Videos.md)
-
----
-
-## <span id="jsn_aboutlinks">相关链接</span>
-
-* [JavaScript 文档 - MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)
+* [前端笔记](../Frontend/Front-end_Note.md)
 

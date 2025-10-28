@@ -7,7 +7,7 @@ tags:
   - lux
   - google
 created: 2023-08-18 19:44:52
-modified: 2024-11-16 20:56:46
+modified: 2025-10-28 11:10:45
 ---
 
 # 常用小工具笔记
@@ -15,8 +15,17 @@ modified: 2024-11-16 20:56:46
 ---
 
 ## 目录
+
 * [视频下载工具](#tools_vdowners)
 * [重命名工具](#tools_rename)
+
+---
+
+## <span id="tools_toolbox">工具箱</span>
+
+### utools
+
+[uTools](https://www.u-tools.cn) 是一个小工具集。
 
 ---
 

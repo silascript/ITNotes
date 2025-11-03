@@ -5,7 +5,7 @@ tags:
   - css
   - emmet
 created: 2023-08-18 19:44:52
-modified: 2025-10-28 01:50:08
+modified: 2025-10-31 21:21:39
 ---
 
 # CSS 笔记
@@ -243,7 +243,9 @@ p[id*="demo"]{
 
 #### list-style-type
 
-`list-style-type` 属性用于控制列表项显示符号的类型。
+#css/列表项符号
+
+`list-style-type` 属性用于控制列表项符号的类型。
 
 |         属性值         |                  描述                   |
 |:----------------------:|:---------------------------------------:|
@@ -270,18 +272,60 @@ p[id*="demo"]{
 
 #### list-style-position
 
-`list-style-position` 属性是设置列表项的位置。
+`list-style-position` 属性是设置 [列表项符号](#list-style-type) 的位置。
 
 取值有两种：
 
-* `inside`：列表项符号位于列表文本以内
-* `outside`：列表项符号位于列表文本以外。（默认值）
+* `inside`：列表项符号位于列表文本以内，占用 `<li>` 的宽度。
+* `outside`：列表项符号位于列表文本以外，不占用 `<li>` 的宽度。
+
+> [!info] 
+> 
+> 简单说，`list-style-position` 这个属性就是决定列表项符号是否算进 `<li>` 中。
 
 #### list-style
 
 `list-style` 是一个复合属性，可以将列表相关样式都综合在一个属性中。
 
 语法：`list-style: 列表项目符号 列表项目符号位置 列表项目图像`
+
+---
+
+## 元素分类
+
+### 块级元素
+
+### 行内元素
+
+---
+
+## 盒子模型
+
+盒模型是 CSS 中最重要、最基础的部分，它指定 [块级元素](#块级元素) 如何显示及如何相互交互。
+
+### 边框
+
+#### border-style
+
+`borkder-style` 设置顺序：**上、右、下、左**。
+
+#### border-width
+
+`border-width` 设置有 4 值、2 值、 3 值及 1 值。1 值就是 4 条边框都设置同一个值。其余三种值的顺序如下：
+
+* 4 值：**上、右、下、左**
+* 3 值：**上、左右、下**
+* 2 值：**上下、左右**
+
+### 内边距
+
+#### padding
+
+`padding` 设置的顺序与 [边框](#边框)（`border-style`、`border-width`）类似，即**上、右、下、左**。
+
+而 `padding` 的 2 值、3 值和 4 值设置顺序与 [border-style](#border-style) 或 [border-width](#border-width) 一样。
+
+### 外边距
 
 ---
 

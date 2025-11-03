@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2025-10-26 05:16:21
+modified: 2025-11-01 10:34:38
 ---
 
 # 梯子笔记
@@ -661,6 +661,10 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 * 最新官网❶：[https://cloud.52iplc.com](https://cloud.52iplc.com)
 * 备用官网②:[https://nanoapi.github.io](https://nanoapi.github.io)
 * 永久频道③:[https://nanoceo.github.io](https://nanoceo.github.io)
+> [!info] 
+> 
+> 其他域名：
+> * [https://edu.shimo.men](https://edu.shimo.men)
 
 性价比套餐：
 
@@ -1298,6 +1302,7 @@ export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_pr
 * [fanqiangdang](https://fanqiangdang.org)
 * [ACL4SSR 在线订阅转换](https://acl4ssr-sub.github.io)
 * [Subscription Converter](https://api.nameless13.com)
+* [机场、协议、客户端 ](https://dbzdk.com/across-the-gfw/)
 
 ### 机场汇集
 

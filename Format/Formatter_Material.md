@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2025-03-18 03:32:00
-modified: 2025-10-09 05:10:09
+modified: 2025-10-30 11:34:51
 ---
 
 # 格式化器资料清单
@@ -37,6 +37,7 @@ modified: 2025-10-09 05:10:09
 * [prettier configuration doc](https://prettier.nodejs.cn/docs/en/configuration.html)
 * [使用prettier格式化你的代码prettier是目前比较流行，用的比较多的代码格式化工具，当你在编辑器里面保存代码滴 - 掘金](https://juejin.cn/post/6919293060186636296)
 * [Prettier配置指南1. 创建格式化参考规则 1. 项目的package.json文件中 2. .prettierr - 掘金](https://juejin.cn/post/6938687606687432740)
+* [前端代码格式化 - 【Prettier】 - 常见配置 +\_牛客网](https://www.nowcoder.com/discuss/518071813067243520)
 
 ### prettierd
 

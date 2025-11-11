@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2025-09-19 02:06:05
-modified: 2025-10-20 21:59:07
+modified: 2025-11-06 21:36:20
 ---
 
 ## Flutter 及 Dart 资料清单
@@ -15,7 +15,9 @@ modified: 2025-10-20 21:59:07
 
 ## Flutter
 
-## 多版本
+* [Flutter版本选择指南：避坑3.27，3.35基本稳定 \| 2025年10月 - SegmentFault 思否](https://segmentfault.com/a/1190000047349660)
+
+### 多版本
 
 * [Flutter 多版本管理工具 Puro ，它和 FVM 有什么区别](https://zhuanlan.zhihu.com/p/49313090195)
 * [Flutter 多版本开发优雅方案：FVM 全解析与实战指南对比Flutter原生flutter channel与FVM - 掘金](https://juejin.cn/post/7529335762447384576)

@@ -5,7 +5,7 @@ tags:
   - css
   - emmet
 created: 2023-08-18 19:44:52
-modified: 2025-10-31 21:21:39
+modified: 2025-11-05 10:55:03
 ---
 
 # CSS 笔记
@@ -303,7 +303,11 @@ p[id*="demo"]{
 
 盒模型是 CSS 中最重要、最基础的部分，它指定 [块级元素](#块级元素) 如何显示及如何相互交互。
 
-### 边框
+### border
+
+ #css/边框
+
+边框以外是 [外边距](#margin)。
 
 #### border-style
 
@@ -317,15 +321,21 @@ p[id*="demo"]{
 * 3 值：**上、左右、下**
 * 2 值：**上下、左右**
 
-### 内边距
+直接包围内容的部分是「**内边距**」，称为「**内填充**」。
+
+内边距边缘是 [边框](#边框)。
 
 #### padding
 
-`padding` 设置的顺序与 [边框](#边框)（`border-style`、`border-width`）类似，即**上、右、下、左**。
+  #css/内边距
+
+`padding` 设置的顺序与 [边框](#border)（`border-style`、`border-width`）类似，即**上、右、下、左**。
 
 而 `padding` 的 2 值、3 值和 4 值设置顺序与 [border-style](#border-style) 或 [border-width](#border-width) 一样。
 
-### 外边距
+### margin
+
+ #css/外边距  
 
 ---
 

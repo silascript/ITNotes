@@ -5,7 +5,7 @@ tags:
   - video
   - list
 created: 2023-12-07 11:31:08
-modified: 2025-11-03 12:55:51
+modified: 2025-11-04 23:16:42
 ---
 
 # C++ 视频清单
@@ -27,6 +27,7 @@ modified: 2025-11-03 12:55:51
 * [【零基础C++】（允许白嫖）这绝对是2025年B站最全最细的C++零基础全套教程](https://www.bilibili.com/video/BV1bdySBPEqo)
 * [C++系列课程](https://www.bilibili.com/video/BV16p4nzGErd)
 * [C++入门教程 2025](https://www.bilibili.com/video/BV1xNeuz6ErV)
+* [一个很变态，但可以让你快速学会C++的方法！](https://www.bilibili.com/video/BV1ZqyBB2EEb)
 
 ## 进阶
 

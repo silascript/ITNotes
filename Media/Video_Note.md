@@ -7,7 +7,7 @@ tags:
   - h265
   - hevc
 created: 2024-07-08 21:20:42
-modified: 2024-08-07 03:36:37
+modified: 2025-11-12 03:08:15
 ---
 
 # 视频相关笔记
@@ -43,4 +43,5 @@ HEVC，high efficiency Video Coding，即**h.265**
 ## 相关笔记
 
 * [视频播放器笔记](VideoPlayer_Note.md)
+* [视频资料清单](Video_Material.md)
 

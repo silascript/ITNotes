@@ -5,7 +5,7 @@ tags:
   - player
   - mpv
 created: 2024-08-07 03:34:31
-modified: 2024-08-07 03:41:57
+modified: 2025-11-12 03:09:23
 ---
 
 # 视频播放器笔记
@@ -31,3 +31,4 @@ modified: 2024-08-07 03:41:57
 ## 相关笔记
 
 * [视频相关笔记](Video_Note.md)
+* [视频资料清单](Video_Material.md)

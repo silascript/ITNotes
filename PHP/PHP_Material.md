@@ -7,7 +7,7 @@ tags:
   - material
   - list
 created: 2024-09-07 22:23:16
-modified: 2025-07-29 02:26:37
+modified: 2025-11-12 22:38:25
 ---
 
 # PHP 资料清单
@@ -35,6 +35,12 @@ modified: 2025-07-29 02:26:37
 * [How to Install PHP 8.3 on Debian 12, 11 or 10](https://linuxcapable.com/how-to-install-php-8-3-on-debian-linux/)
 
 ## 配置
+
+### Window 下 PHP 配置
+
+* [「PHP」以nginx、php-cgi为例，把nginx、php-cgi安装为Windows系统服务 - 哔哩哔哩](https://www.bilibili.com/opus/413501021558594453)
+* [十年了，xxfpm 终于更新了 - 一 定 会 去 旅 行 - 博客园](https://www.cnblogs.com/jying/p/14220560.html)
+* [解决windows下php-cgi进程经常自动关闭](https://www.goozp.com/article/33.html)
 
 ### OPCache
 

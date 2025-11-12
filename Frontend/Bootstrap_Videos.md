@@ -2,11 +2,14 @@
 aliases: []
 tags:
   - front-end
+  - framework
   - bootstrap
   - video
+  - list
 created: 2024-02-06 22:47:55
-modified: 2024-02-07 11:16:12
+modified: 2025-11-12 11:15:06
 ---
+
 # Bootstrap 视频清单
 
 ---
@@ -26,6 +29,8 @@ modified: 2024-02-07 11:16:12
 * [Web前端必学框架Bootstrap5完整版从零入门到精通到实战（HTML/CSS/Bootstrap5/Vue/JS/零基础入门)S0051](https://www.bilibili.com/video/BV1Ez4y1q7oA)
 * [Bootstrap教程](https://www.bilibili.com/video/BV1Ah4y1Y7eZ)
 * [最新一小时快速搞定BootStrap](https://www.bilibili.com/video/BV1Vc411z7uQ)
+* [金魚都能懂的Bootstrap5網頁框架開發入門](https://youtu.be/-lWqpJchgf8?list=PLqivELodHt3jq3oWBZfdhMu0GE7774HBW)
+* [Bootstrap 5 新手教學實戰營](https://www.youtube.com/playlist?list=PLYrA-SsMvTPOX9oF6ld9RGwWlo7PceI_P)
 
 ---
 
@@ -41,6 +46,6 @@ modified: 2024-02-07 11:16:12
 * [前端视频清单](Front-end_Videos.md)
 * [Html 笔记](Html_Note.md)
 * [Bootstrap 笔记](Bootstrap_Note.md)
-* [Bootstrap 视频清单](Bootstrap_Videos.md)
+* [Bootstrap 资料清单](Bootstrap_Material.md)
 * [Css 笔记](CSS_Note.md)
 * [CSS 视频清单](CSS_Videos.md)

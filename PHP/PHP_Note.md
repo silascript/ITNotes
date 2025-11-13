@@ -4,7 +4,7 @@ tags:
   - PL
   - php
 created: 2023-09-21 23:13:13
-modified: 2025-07-29 23:14:12
+modified: 2025-11-14 04:31:05
 ---
 
 # PHP 笔记
@@ -27,6 +27,10 @@ PHP 的每个发布分支在其最初的稳定版本发布后的**两年**内完
 一旦**三年**的支持完成，分支即达到使用寿命，不再受支持。可以使用生命终结分支表。
 
 可以参考：[版本支持相关文档](PHP_Material.md#版本)
+
+### PHP7
+
+### PHP8
 
 ---
 
@@ -54,7 +58,7 @@ php81 -S localhost:8088 -t /home/silascript/DevWorkSpace/PHPExercise
 
 ## 扩展
 
-## PECL
+### PECL
 
 PHP 扩展社区库（英语：The PHP Extension Community Library，简称 PECL，读作 pickle），是一个 PHP 扩展库，提供了一个 PHP 所有已知扩展的下载和托管目录。PECL 通过 PEAR 进行打包和安装。
 
@@ -222,10 +226,10 @@ composer config --unset repos.packagist
 
 ## 其他相关笔记
 
-* [Linux下PHP安装](Linux下PHP安装.md)
-* [Linux下安装配置Apache](Linux下安装配置Apache.md)
-* [PHP 视频清单](PHP_Videos.md)
+* [PHP 安装笔记](PHP_Install_Note.md)
 * [PHP 资料清单](PHP_Material.md)
+* [PHP 视频清单](PHP_Videos.md)
+* [Linux下安装配置Apache](Linux下安装配置Apache.md)
 * [PHP 扩展笔记](PHP扩展.md)
 * [PHP 基础语法笔记](PHP_Base_Note.md)
 * [Docker 笔记](../Docker/Docker_Note.md)

@@ -1,24 +1,25 @@
 ---
-aliases:
+aliases: []
 tags:
   - linux
   - php
-created: 2023-01-13, 12:27:46
-modified: 2023-01-30, 9:18:05
+  - install
+created: 2023-08-18 19:44:52
+modified: 2025-11-14 04:32:45
 ---
+
 # Linux 下 PHP 安装
 
 ---
 
 ## 目录
+
 * [php 安装](#linux_php_install)
 * [Docker 下安装 PHP](#linux_php_docker)
-
 
 ---
 
 ## <span id="linux_php_install">PHP 安装</span>
-
 
 ### 从源码安装
 
@@ -27,8 +28,6 @@ modified: 2023-01-30, 9:18:05
 如下图：
 
 ![2020-05-30 00-42-17 屏幕截图](./Linux 下 PHP 安装.assets/2020-05-30 00-42-17 屏幕截图.png)
-
-
 
 #### 2. 配置
 
@@ -51,32 +50,31 @@ php-src/ext/pdo_mysql/
 
 关系:mysql,mysqli,pdo_mysql 这 3 套 PHP 操作 MySQL 的编程接口底层都依赖 PHP 内置的 MySQL 驱动 mysqlnd.
 
-PHP5.3 这样启用 mysqlnd 支持:
+PHP5.3 这样启用 mysqlnd 支持：
+
 ```shell
 --with-mysql=mysqlnd
 --with-mysqli=mysqlnd
 --with-pdo-mysql=mysqlnd
 ```
 
-**PHP5.4 后留空则默认启用 mysqlnd**:
+**PHP5.4 后留空则默认启用 mysqlnd**：
+
 ```shell
 --with-mysql
 --with-mysqli
 --with-pdo-mysql
 ```
 
-**PHP7 开始不再支持 --with-mysql**
-
+> [!important] 
+> 
+> [PHP7](PHP_Note.md#PHP7) 开始不再支持 `--with-mysql`
 
 #### 3. make
 
 #### 4. make install
 
-
-
 ### 使用 phpize 来编译和安装 php 的扩展
-
-
 
 #### phpize 在 php 安装目录中的 bin 目录下
 
@@ -96,8 +94,6 @@ PHP5.3 这样启用 mysqlnd 支持:
 
 `--with-php-config` 用来指定 php-config 的路径，php-config 是 php 安装目录中 bin 目录中的一个跟 php 配置相关的程序
 
-
-
 **如果是 mysql 扩展，得再加其他配置选项**
 
 php-5.3.x: 
@@ -105,7 +101,6 @@ php-5.3.x:
 ```shell
 ./configure --with-mysql=mysqlnd \ --with-mysqli=mysqlnd \ --with-pdo-mysql=mysqlnd \ 
 ```
-
 
 php-5.4+
 
@@ -134,15 +129,10 @@ PHP7 正式移除了 `mysql` 扩展
 --with-mysqli=/usr/bin/mysql_config
 ```
 
-
 > 若用 which apxs 查找不到路径的话，可能是没有安装 http-devel 这个包，安装一下就好。
-
- 
 
 3. make
 4. make install
-
-
 
 ---
 
@@ -150,10 +140,5 @@ PHP7 正式移除了 `mysql` 扩展
 
 如果想快速安装使用 php，可以考虑使用 Docker。
 
-Docker 下如何安装 PHP，请参考：[Docker 安装 PHP](../Docker/Docker_Note.md#dk_softc_demo_php)
-
-
-
-
-
+Docker 下如何安装 PHP，请参考：[Docker 安装 PHP](../../Docker/Docker_Note.md#dk_softc_demo_php)
 

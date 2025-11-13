@@ -62,7 +62,7 @@ modified: 2024-01-25 00:23:03
 
 ### PHP
 
-* [Linux下PHP安装](PHP/Linux下PHP安装.md)
+* [PHP_Install_Linux](PHP/Install/PHP_Install_Linux.md)
 * [Linux 下安装配置Apache](PHP/Linux下安装配置Apache.md)
 
 ### Javascript

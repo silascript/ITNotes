@@ -5,7 +5,7 @@ tags:
   - php
   - install
 created: 2023-08-18 19:44:52
-modified: 2025-11-14 04:32:45
+modified: 2025-11-14 04:33:46
 ---
 
 # Linux 下 PHP 安装
@@ -142,3 +142,10 @@ PHP7 正式移除了 `mysql` 扩展
 
 Docker 下如何安装 PHP，请参考：[Docker 安装 PHP](../../Docker/Docker_Note.md#dk_softc_demo_php)
 
+---
+
+## 相关笔记
+
+* [PHP 笔记](../PHP_Note.md)
+* [PHP 资料清单](../PHP_Material.md)
+* [Docker 示例](../../Docker/Docker_Examples.md)

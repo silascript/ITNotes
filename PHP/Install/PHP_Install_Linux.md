@@ -5,7 +5,7 @@ tags:
   - php
   - install
 created: 2023-08-18 19:44:52
-modified: 2025-11-14 04:33:46
+modified: 2025-11-14 11:36:05
 ---
 
 # Linux 下 PHP 安装
@@ -140,7 +140,7 @@ PHP7 正式移除了 `mysql` 扩展
 
 如果想快速安装使用 php，可以考虑使用 Docker。
 
-Docker 下如何安装 PHP，请参考：[Docker 安装 PHP](../../Docker/Docker_Note.md#dk_softc_demo_php)
+Docker 下如何安装 PHP，请参考：[Docker 下安装PHP](../../Docker/Docker_Examples.md#dke_php)
 
 ---
 

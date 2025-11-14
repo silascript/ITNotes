@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2025-08-04 21:34:51
-modified: 2025-10-26 03:15:06
+modified: 2025-11-14 11:19:17
 ---
 
 # Markdown 资料清单
@@ -22,6 +22,10 @@ modified: 2025-10-26 03:15:06
 * [obsidian 论坛  成雙醬 的Markdown 教程](https://forum-zh.obsidian.md/t/topic/435)
 * [https://www.markdown.cn](https://www.markdown.cn)
 * [Github Markdown 规范](https://gfm.docschina.org/zh-hans/)
+
+### 代码块
+
+* [github-linguist github支持的代码语言列表](https://github.com/github-linguist/linguist/blob/main/vendor/README.md)
 
 ### 小技巧
 

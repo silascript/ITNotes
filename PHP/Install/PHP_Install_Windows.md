@@ -5,14 +5,14 @@ tags:
   - install
   - windows
 created: 2025-11-14 04:26:58
-modified: 2025-11-14 11:44:34
+modified: 2025-11-14 20:11:16
 ---
 
 # Windows 下安装 PHP
 
 ---
 
-## PHP 配置
+## 配置 PHP
 
 [PHP](../PHP_Note.md) 配置文件是 `php.ini`。
 
@@ -40,12 +40,16 @@ extension_dir = "ext"
 2. 多字节文本支持：
 
 ```ini
-extension=php_mbstring.dll
+# extension=php_mbstring.dll
+extension=mbstring
 ```
 
 3. l 图片相关支持：
 
 ```ini
+# gd2用于处理图像、例如创建缩略图、裁剪图片、制作验证码图片等
+extension=gd2
+
 # 打启exif 可以处理图片的元数据。例如：可以读取数码相机照到的照片的元数据。  
 # EXIF（Exchangeable image file format）是可交换图像文件的缩写
 # 是专门为数码相机的照片设定的，可以记录数码照片的属性信息和拍摄数据。  
@@ -75,7 +79,7 @@ cgi.fix_pathinfo=1
 
 ---
 
-## PHP 运行
+## 运行 PHP
 
 ### 运行 php-cgi
 
@@ -104,15 +108,15 @@ tasklist /fi "imagename eq php-cgi.exe"
 
 ---
 
-## nginx
+## Nginx
 
-### 配置 nginx
+### 配置 Nginx
 
 与在 [Linux下配置Nginx](../../Docker/Docker_Examples.md#nginx%20配置文件) 基本一样。
 
 `nginx.conf` 文件示例：
 
-```
+```conf
 
 server {
         listen       8899;         //端口号（默认80，因已存在一个集成环境造成冲突，改成81），根据自己需要修改
@@ -174,12 +178,9 @@ server {
 > 
 > `fastcgi_pass` 这个属性是最重要的，告诉 [Nginx](../../Network/Nginx/Nginx_Note.md) 如何调 [PHP](../PHP_Note.md) 引擎来解析 php 文件。
 
----
-
-## Ngnix 运行
+### 运行 Ngnix
 
 ```shell
-
 # 开启 nginx
 start nginx
 ```
@@ -190,7 +191,7 @@ start nginx
 >
 >如果需要真正关闭 nginx，需要 nginx -s stop 命令
 
-### 其他 nginx 命令
+#### 其他 Nginx 命令
 
 * 停止：`nginx -s stop` 
 * 重启：`nginx -s reload` 
@@ -209,6 +210,73 @@ tasklist /fi "imagename eq nginx.exe"
 ```shell
 taskkill /f /t /im nginx.exe
 ```
+
+---
+
+## Apach
+
+### 配置 Apache
+
+`httpd.conf` 是 [Apache](https://httpd.apache.org) 的主配置文件。
+
+常用配置有如下这几项：
+
+#### 设置端口
+	
+示例：`Listen 9988`
+
+#### 指定服务器根目录
+
+示例：`ServerRoot "I:/soft/phpsuit/Apache24"`
+
+#### 加载 [PHP](../PHP_Note.md) 模块及指定 PHP 安装目录
+
+示例：
+
+```properties
+LoadModule php5_module "I:/soft/phpsuit/php55/php5apache2_4.dll"
+PHPIniDir "I:/soft/phpsuit/php55"
+```
+
+#### 指定 `DocumentRoot` 并配置 `Directory` 节点
+示例：
+
+```properties
+DocumentRoot "I:/soft/phpsuit/Apache24/htdocs"
+<Directory "J:/PHPExercise/">
+```
+
+#### 添加 Apache 服务器识别 php 类型
+	
+示例：`AddType application/x-httpd-php .php`
+
+#### 加载虚拟目录的配置文件
+
+示例：`Include conf/extra/httpd-vhosts.conf`
+
+### 辅配置文件
+
+辅配置文件是 Apache 主配置文件 `httpd.conf` 的扩展文件，用于将一部分配置抽取出来，以便于修改，但默认并没有启用，所以要想使用辅配置文件，得先启用。
+
+在 `httpd.conf` 主配置文件中使用 `Include` 方式，启用导入或称其为「加载」辅配置文件，如 [加载虚拟目录的配置文件](#加载虚拟目录的配置文件)。
+
+#### 配置虚拟主机
+
+配置虚拟主机，是在 `httpd-vhost.conf` 配置文件中配置的，所以要想虚拟主机的配置生效，得先启用这个 [辅配置文件](#辅配置文件)，即在主配置文件 `httpd.conf` 中 [加载虚拟目录的配置文件](#加载虚拟目录的配置文件)。
+
+示例：
+
+```xml
+<VirtualHost *:9988>
+    DocumentRoot J:/PHPExercise
+</VirtualHost>
+```
+
+> [!tip] 
+> 
+> 指定虚拟目录路径及端口时，其路径结尾不带 `/`
+
+### 运行 Apache
 
 ---
 

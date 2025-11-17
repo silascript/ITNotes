@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2025-09-15 19:08:46
+modified: 2025-11-17 07:59:15
 ---
 
 # Obsidian 笔记
@@ -48,6 +48,21 @@ modified: 2025-09-15 19:08:46
 	* [未在社区插件库的插件](#obn_plugins_outside_community)
 * [Obsidian 专用语法](#obn_syntax)
 	* [Callout Blocks](#obn_syntax_calloutblocks)
+
+---
+
+## 简介
+
+[Obsidian](https://obsidian.md/) 是一个基于 [Markdown](../../Markdown/Markdown_Note.md) 的笔记软件。
+
+### Obsidian-releases Repo
+
+[obsidian-releases](https://github.com/obsidianmd/obsidian-releases) 这个是 Obsidian 的 release 仓库，包含了 [插件市场](#插件市场) 的插件列表、[主题](#obn_themes) 列表等。
+
+几个重要的列表文件：
+
+* [ommunity-css-themes.json](https://github.com/obsidianmd/obsidian-releases/blob/master/community-css-themes.json)：[主题](#obn_themes) 列表
+* [community-plugins.json](https://github.com/obsidianmd/obsidian-releases/blob/master/community-plugins.json)：插件列表
 
 ---
 
@@ -505,6 +520,31 @@ Obsidian 的插件分为 [核心插件](#obn_plugins_core) 和 [第三方插件]
 
 各种解决访问 github 的方案：[Github加速](../../Git/Git_Note.md#Github加速)
 
+#### 插件市场
+
+##### 插件列表
+
+[obsidianmd/obsidian-releases](https://github.com/obsidianmd/obsidian-releases) 仓库中有一个文件：[community-plugins.json](https://github.com/obsidianmd/obsidian-releases/blob/master/community-plugins.json)，此文件就是插件市场中所有插件列表。
+
+community-plugins.json 大致模样：
+
+```json
+{
+    "id": "nldates-obsidian",
+    "name": "Natural Language Dates",
+    "author": "Argentina Ortega Sainz",
+    "description": "Create date-links based on natural language.",
+    "repo": "argenos/nldates-obsidian"
+  },
+  {
+    "id": "hotkeysplus-obsidian",
+    "name": "Hotkeys++",
+    "author": "Argentina Ortega Sainz",
+    "description": "Additional hotkeys to do common things.",
+    "repo": "argenos/hotkeysplus-obsidian"
+  },
+```
+
 #### 插件目录结构
 
 `plugins` 目录中各插件都以目录形式存放，其中由 `manifest.json` 和 `main.js` 两个**必要**文件及 `styles.css` 和 `data.json`**非必要可选**文件构成。所以如果手动下载安装插件，可以直接把这三个文件「丢」到 `plugins` 目录，就算安装成功了！
@@ -513,7 +553,7 @@ Obsidian 的插件分为 [核心插件](#obn_plugins_core) 和 [第三方插件]
 > 
 > 装完插件后，除上插件本身的那三个文件外，会自动生成一个 `data.json` 文件，这是 obsidian 自动生成的，所以不用理。
 
-当然 `plugins` 目录如果未关闭「安全模式」及通过插件市场安装至少一个插件，这个目录是不存在的，所以如果采取手动下载安装方式，先 `mkdir` 下 `plugins` 目录。
+当然 `plugins` 目录如果未关闭「安全模式」及通过 [插件市场](#插件市场) 安装至少一个插件，这个目录是不存在的，所以如果采取手动下载安装方式，先 `mkdir` 下 `plugins` 目录。
  
 插件目录的目录名是由 `manifest.json` 中的 `id` 的值决定的，如：
  
@@ -1550,6 +1590,10 @@ Callout Blocks 预置类型：
 
 ### Obsidian-CLI
 
+有多款 CLI 工具。
+
+#### Yakitrak/obsidian-cli
+
 [obsidian-cli](https://github.com/Yakitrak/obsidian-cli) 是一个 Obsidian 的命令行工具。
 
 > [!tip]
@@ -1579,6 +1623,12 @@ Available Commands:
   search        Searches note in vault
   set-default   Sets default vault
 ```
+
+#### Bip901/obsidian-cli
+
+这一款 CLI 工具是用 [Python_Note](../../Python/Python_Note.md) 写的，所以可以使用 [pip](../../Python/Python_Note.md#python_pip) 或 [pipx](../../Python/Python_Note.md#python_pipx) 安装：
+
+`pipx install obsidian-cli`
 
 ---
 

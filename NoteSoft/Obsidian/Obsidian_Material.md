@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2025-02-07 05:28:08
-modified: 2025-09-02 03:17:19
+modified: 2025-11-17 10:52:12
 ---
 
 # Obsidian 资料清单
@@ -13,6 +13,8 @@ modified: 2025-09-02 03:17:19
 ---
 
 ## 通用
+
+* [玩转Obsidian的保姆级别教程：如何安装插件？ By Garrett（Wyatt） - 经验分享 - Obsidian 中文论坛](https://forum-zh.obsidian.md/t/topic/134)
 
 ### 文档
 
@@ -38,6 +40,7 @@ modified: 2025-09-02 03:17:19
 ## 插件
 
 * [PKMer\_Obsidian 插件：Lazy Plugin Loader 插件重度用户的福音，Obsidian 启动缓慢终结者](https://pkmer.cn/Pkmer-Docs/10-obsidian/obsidian%E7%A4%BE%E5%8C%BA%E6%8F%92%E4%BB%B6/lazy-plugins/)
+* [A single button click to reinstall all community plugins after cloning/pulling git repository that ignores plugins - Plugins ideas - Obsidian Forum](https://forum.obsidian.md/t/a-single-button-click-to-reinstall-all-community-plugins-after-cloning-pulling-git-repository-that-ignores-plugins/100826/4)
 
 ### AI
 

@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2025-11-17 20:13:33
+modified: 2025-11-18 06:36:40
 ---
 
 # Shell 笔记
@@ -1170,7 +1170,15 @@ shell 下有多款 json 小工具：
 yay -S jq
 ```
 
-##### 选项
+##### 语法
+
+```shell
+jq [options] <jq filter> [file...]
+jq [options] --args <jq filter> [strings...]
+jq [options] --jsonargs <jq filter> [JSON_TEXTS...]
+```
+
+###### 选项
 
 * `-c`：紧凑而不是漂亮的输出
 * `-n`：使用 `null` 作为单个输入值
@@ -1189,6 +1197,30 @@ yay -S jq
 * `--args`：其余参数是字符串参数，而不是文件
 * `--jsonargs`：其余的参数是 JSON 参数，而不是文件
 * `--`：终止参数处理
+
+##### 内置函数
+
+`jq` 支持一些内置函数，如 `length`, `keys`, `values`, `tostring` 等，用于操作和处理 JSON 数据。
+
+###### 数组
+
+* `map(f)`：对数组中的每个元素应用过滤器 `f`
+* `sort`：对数组中的元素进行排序
+* `sort_by(f)`：根据过滤器 `f` 的结果对数组排序
+* `min`，`max`：找出数组最小值和最大值。
+* `reverse`：反转数组元素的顺序
+
+###### 对象操作
+
+* `keys` ：函数是获取对象所有的键，并以数组形式返回
+* `values` ：函数是获取对象的值。
+* `map_values(f)`：对对象中每个值应用过滤器 `f`
+* `has(key)`：判断对象是否有某个键
+
+###### 字符串操作
+
+* `contains(x)`：判断输入是否完全包含参数 `x`
+* `tostring`：将输入转换成字符串
 
 ##### 示例
 
@@ -1230,7 +1262,43 @@ dl_url=$(curl $channel_json_v3 | jq -r --arg pkg_name $package_name --arg pkg_ve
 > 注意，`select(.name==$pkg_name)` 或 `select(.version==$pkg_version)`，引用「形参」时，不要加双引号，而且 `==` 不要加空格。
 > 
 > 「实参」`"$package_version"` 这个可以加双引号，防止传进来的字符串带有空格，被「自动切割」。
-> 
+
+###### 示例 3
+
+下面是 [Obsidian](../../NoteSoft/Obsidian/Obsidian_Note.md) 的 [vault](../../NoteSoft/Obsidian/Obsidian_Note.md#vault) 列表配置文件：
+
+```json
+{
+  "vaults": {
+    "88a790a7d8b3e712": {
+      "path": "/home/silascript/MyNotes/ITNotes",
+      "ts": 1763336737061,
+      "open": true
+    },
+    "50006d35f784463b": {
+      "path": "/home/silascript/MyNotes/WritingNotes",
+      "ts": 1763353935904
+    },
+    "38ba7ce6d75f3dc4": {
+      "path": "/home/silascript/MyNotes/WritingExericse",
+      "ts": 1763304814607
+    },
+    "8e5254dd564849f2": {
+      "path": "/home/silascript/MyNotes/LHP_Note",
+      "ts": 1763324507963
+    }
+  },
+  "frame": "custom",
+  "disableGpu": true,
+  "updateDisabled": true
+}
+```
+
+如果想要根据 vault 的目录路径找到相应的 vault 的 ID，可以使用以下代码：
+
+```shell
+cat .config/obsidian/obsidian.json | jq -r '.vaults | map_values(select(.path=="/home/silascript/MyNotes/WritingExericse")) | keys'
+```
 
 ### 其他小工具
 

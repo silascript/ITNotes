@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2025-11-17 07:59:15
+modified: 2025-11-18 10:15:24
 ---
 
 # Obsidian 笔记
@@ -524,7 +524,7 @@ Obsidian 的插件分为 [核心插件](#obn_plugins_core) 和 [第三方插件]
 
 ##### 插件列表
 
-[obsidianmd/obsidian-releases](https://github.com/obsidianmd/obsidian-releases) 仓库中有一个文件：[community-plugins.json](https://github.com/obsidianmd/obsidian-releases/blob/master/community-plugins.json)，此文件就是插件市场中所有插件列表。
+[obsidianmd/obsidian-releases](https://github.com/obsidianmd/obsidian-releases) 仓库中有一个文件：[community-plugins.json](<p align="left">https://github.com/obsidianmd/obsidian-releases/blob/master/community-plugins.json</p>)，此文件就是插件市场中所有插件列表。
 
 community-plugins.json 大致模样：
 
@@ -549,13 +549,17 @@ community-plugins.json 大致模样：
 
 `plugins` 目录中各插件都以目录形式存放，其中由 `manifest.json` 和 `main.js` 两个**必要**文件及 `styles.css` 和 `data.json`**非必要可选**文件构成。所以如果手动下载安装插件，可以直接把这三个文件「丢」到 `plugins` 目录，就算安装成功了！
 
+* `main.js`：插件程序主文件（**必要**）
+* `manifest.json`：插件描述信息文件（**必要**）
+* `styles.css`：插件样式文件（可选）
+
 > [!tip] 
 > 
-> 装完插件后，除上插件本身的那三个文件外，会自动生成一个 `data.json` 文件，这是 obsidian 自动生成的，所以不用理。
+> 装完插件后，除上插件本身的那三个文件外，还会自动生成一个 `data.json` 文件，这是 obsidian 自动生成的，所以不用理。
 
 当然 `plugins` 目录如果未关闭「安全模式」及通过 [插件市场](#插件市场) 安装至少一个插件，这个目录是不存在的，所以如果采取手动下载安装方式，先 `mkdir` 下 `plugins` 目录。
  
-插件目录的目录名是由 `manifest.json` 中的 `id` 的值决定的，如：
+插件目录的**目录名**是由 `manifest.json` 中的 `id` 的值决定的，如：
  
 ```json
 {
@@ -570,7 +574,9 @@ community-plugins.json 大致模样：
 }
  ```
 
-这个插件的插件目录名就叫 `floating-foc`。
+> [!info] 
+> 
+> 如示例中的插件目录名就叫 `floating-foc`。
 
 #### 常用插件
 

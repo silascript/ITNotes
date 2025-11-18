@@ -5,7 +5,7 @@ tags:
   - github
   - gist
 created: 2023-01-30 11:19:11
-modified: 2025-07-31 21:41:00
+modified: 2025-11-18 09:02:35
 ---
 
 # Git 笔记
@@ -206,9 +206,14 @@ git push origin --tags
 
 ### <span id="git_branch">分支</span>
 
+> [!info] 
+> 
 > Git 中的 **分支** 实际上是一个指向某个特定提交的 *命名指针*。
+> 
 > 当你签出分支时，你将提交对象（由指针标识）中储存的数据复制到你的工作目录。
-> 当工作被复制到工作目录后，你可以进行任何操作（增删改），并且将更改作为一个新的提交对象储存到 [本地仓库](#本地仓库)
+> 
+> 当工作被复制到工作目录后，你可以进行任何操作（增删改），并且将更改作为一个新的提交对象储存到 [本地仓库](#本地仓库)。
+> 
 > 命名指针会自动更新并指向你刚创建的提交对象，同时你的分支也将更新。
 
 #### <span id="git_branch_config_global_defaultbranch">配置默认分支</span>
@@ -945,6 +950,68 @@ otpauth://totp/V2EX:账号?secret=xxxx&issuer=V2EX
 每一行就是一个生成对象。其中 `secret` 这个参数的值是判断是不是同一个生成对象。
 
 通过备份的导出导入，就可以进行跨浏览器使用。
+
+### Github API
+
+#### releases
+
+##### 所有 releases 信息
+
+地址格式：https://api.github.com/repos/账号/仓库名/releases
+
+> [!info] 
+> 
+> 会返回一个 json 文件，记录该仓库所有 releases 的信息。其中 `tag_name` 是记录其中一个 tag 的版本号
+
+> [!import]
+> 
+> 另外，需要注意的是，在使用此地址格式时，地址最后不能有 `/`，不然会查不到数据。
+
+示例：
+
+> 在 [Shell](../Linux/Shell/Shell_Note.md) 中使用 [curl](../Linux/Linux_Note.md#linux_network_command_downloader_curl) 访问并使用 [jq](../Linux/Shell/Shell_Note.md#jq)「美化」了下 json 格式
+
+```shell
+curl https://api.github.com/repos/lukeleppan/better-word-count/releases | jq -r
+```
+
+##### 根据 tag 名查询相应版本的 release 信息
+
+地址格式：https://api.github.com/repos/账号/仓库名/releases/tags/tag_name
+
+示例：
+
+```shell
+curl https://api.github.com/repos/lukeleppan/better-word-count/releases/tags/0.10.1 | jq -r
+```
+
+##### 查询最新版本的 release 信息
+
+地址格式：https://api.github.com/repos/账号/仓库名/releases/latest
+
+示例：
+
+```shell
+curl https://api.github.com/repos/lukeleppan/better-word-count/releases/latest | jq -r
+```
+
+##### releases 文件解析
+
+示例：
+
+> 使用 `jq` 来解析 [Obsidian](../NoteSoft/Obsidian/Obsidian_Note.md)`beter-word-count` 这个 [插件](../NoteSoft/Obsidian/Obsidian_Plugins_Note.md) 的 json
+
+```shell
+$ curl https://api.github.com/repos/lukeleppan/better-word-count/releases/tags/0.10.0 | jq -r '.assets[] | .browser_download_url | select ( contains("main.js") or contains("manifest.json") or contains("styles.css") ) '
+```
+
+解析结果：
+
+```shell
+https://github.com/lukeleppan/better-word-count/releases/download/0.10.0/main.js
+https://github.com/lukeleppan/better-word-count/releases/download/0.10.0/manifest.json
+https://github.com/lukeleppan/better-word-count/releases/download/0.10.0/styles.css
+```
 
 ---
 

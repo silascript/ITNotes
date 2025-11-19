@@ -5,14 +5,18 @@ tags:
   - shell
   - awk
 created: 2024-09-19 21:43:32
-modified: 2024-09-19 21:50:38
+modified: 2025-11-19 12:24:49
 ---
 
 # AWK 笔记
 
 ---
 
-统计 [zip](Linux_Note.md#zip) 包中有多少个一级目录：
+## 示例
+
+### 路径和文件相关
+
+#### 统计 [zip](Linux_Note.md#zip) 包中有多少个一级目录
 
 ```shell
 zipinfo $zip_file | grep "^d" | awk '{print $9}' | awk 'BEGIN{FS="/"}{print $1}' | uniq | wc -l
@@ -26,10 +30,29 @@ zipinfo $zip_file | grep "^d" | awk '{print $9}' | awk 'BEGIN{FS="/"}{print $1}'
 > 4. `uniq`：去重，把相同名称的（一级）目录去掉重复
 > 5. `wc -l`：统计数量
 
+#### 打印路径中最近的目录
+
+```shell
+echo "~/MyNotes/ITNotes/常用字体.txt" | awk -F '/' '{print $(NF-1)}'
+```
+
+结果：
+
+```shell
+ITNotes
+```
+
+> [!info] 
+> 
+> `-F` 是指定分隔符，默认是 `:` 来分隔的
+> 
+> `$NF` 是最后一列，而倒数第二个就是 `$(NF-1)`
+
 ---
 
 ## 相关笔记
 
 * [Linux 笔记](Linux_Note.md)
 * [Shell 笔记](Shell/Shell_Note.md)
+* [AWK 资料清单](AWK_Material.md)
 

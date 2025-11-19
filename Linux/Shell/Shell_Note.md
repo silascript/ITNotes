@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2025-11-18 06:36:40
+modified: 2025-11-19 11:15:15
 ---
 
 # Shell 笔记
@@ -337,6 +337,53 @@ echo $PWD
 > [!tip] 
 > 
 > `$PWD`，跟 echo 命令一起使用时，必须大写。
+
+### 文件
+
+#### basename
+
+使用 `basename` 命令可以得到一个包含后缀名的文件名。
+
+示例：
+
+```shell
+$ basename ~/MyNotes/ITNotes/常用字体.txt 
+常用字体.txt
+```
+
+`-s`：不显示指定的后缀名。
+
+示例：
+
+```shell
+$ basename -s .txt ~/MyNotes/ITNotes/常用字体.txt
+常用字体
+```
+
+当然 `-s` 也可以省略，而指定的不显示的后缀名作为第二个参数：
+
+```shell
+$ basename  ~/MyNotes/ITNotes/常用字体.txt .txt
+常用字体
+```
+
+甚至这个指定的后缀名不一定是后缀名，而是指定的任务结尾的字符，它本质只是**在结果的末尾去掉匹配的字符串**：
+
+```shell
+$ basename  ~/MyNotes/ITNotes/常用字体.txt t   
+常用字体.tx
+```
+
+#### dirname
+
+使用 `dirname`，可以得到文件所在的目录路径字符串。
+
+示例：
+
+```shell
+$ dirname ~/MyNotes/ITNotes/常用字体.txt
+/home/silascript/MyNotes/ITNotes
+```
 
 ---
 

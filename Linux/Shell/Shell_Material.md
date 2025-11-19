@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2025-11-17 22:30:04
+modified: 2025-11-19 12:09:26
 ---
 
 # Shell 资料清单
@@ -149,11 +149,15 @@ modified: 2025-11-17 22:30:04
 
 ## 文件路径
 
-### 路径
+### 文件及路径
 
 * [Linux: Shell脚本中处理文件路径参数,兼容相对路径与绝对路径在编写Shell脚本时，处理文件路径参数是一个常 - 掘金](https://juejin.cn/post/7374986809476382731)
 * [相对路径 与 绝对路径之间的转换](https://tiandezhen.wordpress.com/2010/01/26/%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84-%E4%B8%8E-%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2/)
 * [使用Bash将给定的当前目录的绝对路径转换为相对路径-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/ask/sof/29631/answer/102124272)
+* [Shell 截取文件名和后缀 \| Cloud's Blog](https://zuyunfei.com/2016/03/23/Shell-Truncate-File-Extension/)
+* [linux环境下从路径字符串中截取目录和文件名信息 \| Albert World](http://www.008ct.top/blog/2021/10/24/linux%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BB%8E%E8%B7%AF%E5%BE%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E6%88%AA%E5%8F%96%E7%9B%AE%E5%BD%95%E5%92%8C%E6%96%87%E4%BB%B6%E5%90%8D%E4%BF%A1%E6%81%AF/)
+* [shell之文件路径截取 - hddkman - 博客园](https://www.cnblogs.com/hddkman/articles/14437493.html)
+* [Shell截取字符串 - \| Cloud Strife \|](https://www.bitlogs.tech/post/os/linux/shell/shell%E6%88%AA%E5%8F%96%E5%AD%97%E7%AC%A6%E4%B8%B2/)
 
 ---
 

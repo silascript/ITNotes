@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2025-10-23 19:49:18
+modified: 2025-11-20 10:28:13
 ---
 
 # Linux 笔记
@@ -1036,8 +1036,23 @@ curl -o a.html http://xxx.com
 ```shell
 # 注意这是 大 O，与上面的小 o 需要自已定义保存文件名不一样
 # 将服务器响应保存成文件，以请求的最后部分当成文件名
+	# 完整选项应该是 --remote-name 顾名思义就是使用链接中的文件名当作保存文件的文件名
 curl -O http://www.com/a.html
 ```
+
+```shell
+culr --output-dir 目录 -O http://xxx/xxx/xxx.xx
+# 或者
+culr --output-dir 目录 -o xxx.xx http://xxx/xxx/xxx.xx
+```
+
+> [!info] 
+> 
+> `--outplut-dir` 是指定文件的保存目录，与 [wget](#linux_network_command_downloader_wget") 的 `-P` 功能一样。
+> 
+> 另外，使用了这个选项，那还得使用 `-O` 或 `-o` 来指定保存的文件名。
+> 
+> 如果目录不存在，想要创建目录可以加上 `--create-dirs` 选项。
 
 ```shell
 # 指定代理
@@ -1093,7 +1108,6 @@ wget http://xxx.com
  # 大O 下载并重命令文件
  # 相当于 curl 的小o参数的操作
  # 如果当前目录已存在同名文件将覆盖
- 
  wget -O rename.zip http://xxxx.com/xxx.xxx
  
  # 小o与大O类似，就是重命名文件
@@ -1111,6 +1125,7 @@ wget http://xxx.com
 # 指定下载到哪目录
 # 文件名使用下载地址最后部分
 # -P 指定的目录如果不存在则自动创建
+# 如果有重同文件，不会覆盖，会将新下载的文件文件名后加.序号，如 .1 .2等
 wget -P /home/test http://xxxx
 ```
 
@@ -1172,6 +1187,10 @@ wget -r -l 1 URL
 wget -r -l 1 -A azw3 http://xxxxx
 
 ```
+
+> [!tip] 
+>
+> 如果不想检查 `certification` 可以加下 `--no-check-certificate` 选项。
 
 wget 相关资料：
 

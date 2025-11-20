@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-10 03:06:48
-modified: 2025-10-05 22:38:54
+modified: 2025-11-20 10:24:46
 ---
 
 # Linux 资料清单
@@ -73,6 +73,7 @@ modified: 2025-10-05 22:38:54
 * [shell命令：wget下载文件](https://blog.51cto.com/u_15275035/4025257)
 * [shell命令：wget下载文件 - xuejianbest - 博客园](https://www.cnblogs.com/xuejianbest/p/10285218.html)
 * [linux wget指定下载目录和重命名 - brady-wang - 博客园](https://www.cnblogs.com/brady-wang/p/12812458.html)
+* [使用wget或者curl下载github release文件 \| 小张哥blog](https://xiaomozhang.github.io/2020/02/14/cmd-download-file/#!)
 
 ## appimage
 

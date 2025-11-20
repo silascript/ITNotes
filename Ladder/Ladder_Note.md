@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2025-11-01 10:34:38
+modified: 2025-11-19 19:30:48
 ---
 
 # 梯子笔记
@@ -521,7 +521,17 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 
 #### 飞狗
 
-[飞狗 ](https://1.mmcks.top) （[新域名](https://na.fgmcks.top)）套餐调整，[直连](#直连) 套餐减少 -- 其实就是变相涨价：
+[飞狗 ](https://1.mmcks.top) 
+
+> [!info] 
+> 
+> 最新网址：[https://fg111.nxxbbf.com](https://fg111.nxxbbf.com)
+>
+> 旧网址：[1.mmcks.top](1.mmcks.top)（需要梯子访问）
+> 
+> [https://feigou.idsduf.com](https://feigou.idsduf.com)（需要梯子访问）
+
+套餐调整，[直连](#直连) 套餐减少 -- 其实就是变相涨价：
 
 1. 年付 6 元/年，每月 100G，[直连](#直连) 节点，含 [Hysteria2](#Hysteria)，不限客户端数（节点 0.5x 消耗，相当于能使用 200g）
 ~~2. 季付 6 元/季，每月 500G，港、台 [直连](#直连) 节点，不限客户端数~~

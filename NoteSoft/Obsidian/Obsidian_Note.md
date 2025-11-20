@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2025-11-18 10:15:24
+modified: 2025-11-20 09:57:47
 ---
 
 # Obsidian 笔记
@@ -217,11 +217,11 @@ Categories=Office;
     >> }
     >> ```
 * `core-plugins.json`：核心插件配置文件
-* `community-plugins.json`：第三方插件列表文件。
+* `community-plugins.json`：第三方插件已启用列表文件。
 
    > [!note] 
    > 
-   > 这文件中的数据，只有插件被「启用」后，才会加入此文件列表中。如果没有一个第三方插件被启用，这文件中的数据为空。
+   > 只有插件被「**启用**」后，才会加入 `community-plugins.json` 这个文件列表中。如果没有一个第三方插件被启用，这文件中的数据为空。
 * `graph.json`：图表相关的配置文件（像什么链接、关系图谱等）
 * `hotkeys.json`：快捷键配置文件
 

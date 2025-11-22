@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2025-11-19 11:15:15
+modified: 2025-11-22 17:43:55
 ---
 
 # Shell 笔记
@@ -635,6 +635,93 @@ local ads_array=($@)
 > 也就是说，函数内接收数组，其实是初始化了一个数组用来接收。
 > 
 
+###### 特殊案例
+
+需求：第 2 个参数是一个数组，函数如何接收：
+
+方案一：先接收第一个参数，然后使用 `shift` 命令用于实现实现位置参数左移，
+
+语法格式：`shift [n]`
+
+> [!info] 
+> 
+> 说明：`shift` 命令用来删除参数。`shift` 命令参数默认为 **1**，表示 从命令行删除第一个参数。当指定了参数 **n** 时，`shift` 命令就一次删除 **n** 个参数。
+
+```shell
+
+# 定义函数
+my_function() {
+    local first_arg="$1"
+	# 移除第一个参数
+    shift  
+    
+    # 剩余的参数就是数组元素
+    local array=("$@")
+    
+    echo "第一个参数: $first_arg"
+    echo "数组元素:"
+    for element in "${array[@]}"; do
+        echo "  $element"
+    done
+}
+# 调用函数
+my_function "hello" "apple" "banana" "cherry"
+```
+
+方案二：使用 [字符串](#shell_string) 来接收，然后然 [字符串](#shell_string) 转成数组。
+
+```shell
+# 定义函数
+my_function() {
+    local first_arg="$1"
+    local array_string="$2"
+    
+    # 将字符串转换回数组
+    IFS=',' read -ra array <<< "$array_string"
+    
+    echo "第一个参数: $first_arg"
+    echo "数组元素:"
+    for element in "${array[@]}"; do
+        echo "  $element"
+    done
+}
+
+# 准备数组
+my_array=("apple" "banana" "cherry")
+
+# 将数组转换为字符串（使用逗号分隔）
+array_string=$(IFS=','; echo "${my_array[*]}")
+
+# 调用函数
+my_function "hello" "$array_string"
+```
+
+方案三：使用 [Bash](#Bash)4.3+ 的新特性：**名称引用**
+
+```shell
+# 定义函数
+my_function() {
+    local first_arg="$1"
+    local -n array_ref="$2"  # 使用 nameref
+    
+    echo "第一个参数: $first_arg"
+    echo "数组元素:"
+    for element in "${array_ref[@]}"; do
+        echo "  $element"
+    done
+}
+
+# 准备数组
+my_array=("apple" "banana" "cherry")
+
+# 调用函数，传递数组名称
+my_function "hello" my_array
+```
+
+> [!info] 
+> 
+> `local -n` 是 Bash 4.3 及以上版本引入的 **nameref（名称引用）** 功能，它允许你创建一个对另一个变量的引用。
+
 #### 6. 判断数组是否为空
 
 ##### 方式 1
@@ -954,6 +1041,24 @@ Shell 脚本内，传递参数格式为 `$n`，**1**为执行脚本的第一个�
 * `$$`：脚本运行的当前进程 ID 号。
 * `$!`：后台运行的最后一个进程 ID 号。
 * `$?`：显示最后命令的退出状态。`0` 表示没有错误，其他任何值表明有错误。
+
+#### 示例
+
+判断是否一个参数都没传：
+
+```shell
+if [[ $# -eq 0 ]]; then
+
+fi
+```
+
+遍历参数：
+
+```shell
+for temp in "$@"; do
+
+done
+```
 
 ### <span id="shell_function_returnv">返回值</span>
 

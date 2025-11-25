@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2025-11-25 01:44:42
+modified: 2025-11-25 16:38:32
 ---
 
 # Obsidian 笔记
@@ -218,6 +218,7 @@ Categories=Office;
     >> ```
 * `core-plugins.json`：核心插件配置文件
 * `community-plugins.json`：第三方插件已启用列表文件。
+* `webviewer.json`：网页浏览器配置文件
 
    > [!note] 
    > 
@@ -237,7 +238,10 @@ Categories=Office;
 
 每个 theme（主题）都是以目录形式存放在 theme 目录中。
 
-而每个主题目录中，至少有两个文件：`manifest.json` 和 `theme.css`
+而每个主题目录中，至少有两个文件：
+
+* `manifest.json` 
+* `theme.css`
 
 ```shell
 $ ll MyNotes/ITNotes/.obsidian/themes/AnuPpuccin 

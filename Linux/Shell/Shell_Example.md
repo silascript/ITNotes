@@ -5,7 +5,7 @@ tags:
   - linux
   - example
 created: 2023-09-23 01:34:32
-modified: 2024-08-11 02:23:14
+modified: 2025-11-24 12:42:06
 ---
 
 # Shell 脚本示例笔记
@@ -54,6 +54,15 @@ if [[ $# -eq 0 ]]; then
 	echo -e "\e[93m必须输入一个要查询的字符串! \n \e[0m"
 	return
 fi
+```
+
+### 路径相关
+
+
+示例1：确保目录路径不以斜杠结尾
+
+```shell
+SRC_DIR=${SRC_DIR%/}
 ```
 
 ---

@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2025-11-20 10:28:13
+modified: 2025-11-25 10:48:26
 ---
 
 # Linux 笔记
@@ -19,9 +19,8 @@ modified: 2025-11-20 10:28:13
 ## 目录
 
 * [配置文件](#linux_configs)
-* [目录](#linux_directory)
 * [用户](#linux_user)
-
+* [目录文件](#linux_dirfile)
 * [打包压缩](#linux_tarc)
   * [Tar 命令](#linux_tarc_tar)
   * [压缩工具](#linux_tarc_comptools)
@@ -183,10 +182,6 @@ lsb 其他选项和参数：
 > [Shell](Shell/Shell_Note.md) 文件开头的那个 `#!/usr/bin/env bash` 命令，意思就是使用 `env` 去找 [Bash](Shell/Shell_Note.md#Bash) 解析器来解析当前的 Shell 脚本。
 
 ---
-
-## <span id="linux_directory">目录</span>
-
-----
 
 ## <span id="linux_user">用户</span>
 
@@ -697,9 +692,26 @@ zip -F 烤肉500.zip --out 500.zip
 
 ---
 
-## <span id="linux_file">文件</span>
+## <span id="linux_dirfile">目录文件</span>
 
-### <span id="linux_file_search">文件查找</span>
+### 复制
+
+#### cp
+
+`cp` 命令用来复制文件或目录。
+
+选项：
+
+* `-r`：递归复制目录及其内容
+* `-i`：使用交互模式，覆盖前提示用户确认
+* `-f`：强制复制，覆盖目标文件而不提示
+* `-v`：显示详细的复制过程
+
+> [!tip] 
+> 
+> 如果目标文件已存在，默认情况下 `cp` 会覆盖它（除非使用 `-i` 选项）
+
+### <span id="linux_dirfile_search">文件查找</span>
 
 #### find
 

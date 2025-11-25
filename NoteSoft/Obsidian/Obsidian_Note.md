@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2025-11-20 09:57:47
+modified: 2025-11-25 01:44:42
 ---
 
 # Obsidian 笔记
@@ -1350,6 +1350,14 @@ note 类型
 * `Instant`：随着 Obsidian 打开，立刻启动
 * `Short Delay`：根据你设置的 Short Delay 时间进行延迟对应插件的启动
 * `Long Delay`：根据你设置的 Long Delay 时间进行延迟对应插件的启动
+
+#### obsidian-maps
+
+[obsidian-maps](https://github.com/obsidianmd/obsidian-maps) 这个插件是由 Obsidian 官方开发的，是基于 [Bases](Obsidian_Bases.md) 的。
+
+安装这个插件前提：Obsidian 版本是 **1.10+**。
+
+这个插件其实是 [Bases](Obsidian_Bases.md) 的一个 [视图](Obsidian_Bases.md#视图)。
 
 #### <span id="obn_plugins_outside_community">未在社区插件库的插件</span>
 

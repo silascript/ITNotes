@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2025-11-22 19:45:35
+modified: 2025-11-24 12:05:27
 ---
 
 # Shell 资料清单
@@ -28,6 +28,15 @@ modified: 2025-11-22 19:45:35
 * [执行Shell脚本的三种方式执行Shell脚本的三种方式 脚本 首先我们创建一个test.bash文件，test.bas - 掘金](https://juejin.cn/post/7087583630314176526)
 * [linux中sh -c的作用 - 百度文库](https://wenku.baidu.com/view/24f86bb88aeb172ded630b1c59eef8c75ebf9503.html?_wkts_=1725708838370&bdQuery=hell%E5%91%BD%E4%BB%A4sh+-c)
 * [\`sh -c\`命令——解决命令权限问题、一条命令中执行多个指令\_shell sh -c-CSDN博客](https://blog.csdn.net/weixin_53389944/article/details/136560945)
+
+#### 条件判断
+
+* [Shell脚本中if条件判断的写法实例\_linux shell\_脚本之家](https://www.jb51.net/article/235932.htm#_lab2_3_2)
+* [linux,shell中if else if的写法,if elif - Zhai\_David - 博客园](https://www.cnblogs.com/chuanzhang053/p/8566043.html)
+
+#### echo
+
+* [Linux基础命令----echo 颜色输出 (Bash技巧: 颜色和格式)\_bash echo 颜色-CSDN博客](https://blog.csdn.net/Dreamhai/article/details/103432525)
 
 ---
 
@@ -247,6 +256,7 @@ modified: 2025-11-22 19:45:35
 * [linux - jq命令用法总结 - SegmentFault 思否](https://segmentfault.com/a/1190000041912631)
 * [jq命令用法总结 - 扣钉日记 - 博客园](https://www.cnblogs.com/codelogs/p/16324928.html)
 * [Using Variables in shell script · Issue #626 · jqlang/jq · GitHub](https://github.com/jqlang/jq/issues/626)
+* [JSON格式化输出和解析工具 - jq - 散尽浮华 - 博客园](https://www.cnblogs.com/kevingrace/p/7565371.html)
 
 ### yq
 

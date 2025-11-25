@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2025-11-22 17:43:55
+modified: 2025-11-24 12:05:39
 ---
 
 # Shell 笔记
@@ -320,11 +320,6 @@ fi
 > [!tip]
 > 
 > 如果当前 Shell 不支持逻辑判断符，可使用 [布尔运算符](#布尔运算) 替代。
-
-### 相关资料
-
-* [Shell脚本中if条件判断的写法实例\_linux shell\_脚本之家](https://www.jb51.net/article/235932.htm#_lab2_3_2)
-* [linux,shell中if else if的写法,if elif - Zhai\_David - 博客园](https://www.cnblogs.com/chuanzhang053/p/8566043.html)
 
 ---
 

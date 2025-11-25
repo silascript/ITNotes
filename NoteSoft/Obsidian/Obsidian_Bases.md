@@ -5,7 +5,7 @@ tags:
   - plugin
   - bases
 created: 2025-08-20 21:47:51
-modified: 2025-08-20 21:52:44
+modified: 2025-11-25 01:43:50
 ---
 
 ## Obsidian Bases 笔记
@@ -15,6 +15,8 @@ modified: 2025-08-20 21:52:44
 ## 简介
 
 「Bases」是 Obsidian 1.9 版本推出的一个「核心插件」。
+
+### 视图
 
 ---
 

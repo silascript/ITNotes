@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2025-02-07 05:28:08
-modified: 2025-11-17 10:52:12
+modified: 2025-11-27 18:29:24
 ---
 
 # Obsidian 资料清单
@@ -26,6 +26,13 @@ modified: 2025-11-17 10:52:12
 * [Obsidian 插件开发文档](https://luhaifeng666.github.io/obsidian-plugin-docs-zh/)
 * [Obsidian 中文文档 V2.0 - 开发讨论 - Obsidian 中文论坛](https://forum-zh.obsidian.md/t/topic/9352/3)
 * [Obsdian TTRPG Tutorials](https://obsidianttrpgtutorials.com/Obsidian+TTRPG+Tutorials/Getting+Started/Getting+Started)
+
+#### URI
+
+* [Obsidian URI - Obsidian 中文帮助 - Obsidian Publish](https://publish.obsidian.md/help-zh/%E6%89%A9%E5%B1%95+Obsidian/Obsidian+URI)
+* [Obsidian Advanced URI](https://vinzent03.github.io/obsidian-advanced-uri/zh-CN/getting_started)
+* [PKMer\_Obsidian URI](https://pkmer.cn/Pkmer-Docs/10-obsidian/obsidian%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/obsidian_uri/)
+* [Obsidian插件:Advanced URI 通过打开一些 URIs 来控制 Obsidian 不同功能的能力](https://zhuanlan.zhihu.com/p/662188726)
 
 ### 技巧
 

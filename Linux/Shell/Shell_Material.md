@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2025-11-25 19:29:15
+modified: 2025-11-27 02:47:36
 ---
 
 # Shell 资料清单
@@ -241,6 +241,7 @@ modified: 2025-11-25 19:29:15
 * [GitHub - alingse/jq-manual-cn: jq 中文手册](https://github.com/alingse/jq-manual-cn)
 * [Linux jq 命令 \| 菜鸟教程](https://www.runoob.com/linux/linux-comm-jq.html)
 * [如何用 Linux 命令行工具解析和格式化输出 JSON - 知乎](https://zhuanlan.zhihu.com/p/77177160)
+* [JQ JSON数据操作和函数](https://zhuanlan.zhihu.com/p/663704969)
 * [Shell：如何解析json - 知乎](https://zhuanlan.zhihu.com/p/675809200)
 * [Linux 中的 JQ 命令使用实例 | 《Linux就该这么学》](https://www.linuxprobe.com/linux-jq-json.html)
 * [Jq命令使用详解 - SoulChild随笔记](https://www.soulchild.cn/post/jq%E5%91%BD%E4%BB%A4%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3/)
@@ -258,6 +259,10 @@ modified: 2025-11-25 19:29:15
 * [jq命令用法总结 - 扣钉日记 - 博客园](https://www.cnblogs.com/codelogs/p/16324928.html)
 * [Using Variables in shell script · Issue #626 · jqlang/jq · GitHub](https://github.com/jqlang/jq/issues/626)
 * [JSON格式化输出和解析工具 - jq - 散尽浮华 - 博客园](https://www.cnblogs.com/kevingrace/p/7565371.html)
+
+#### 修改
+
+* [jq命令实现JSON子元素删除的四种方法](https://comate.baidu.com/zh/page/p8wjegp8wvk)
 
 ### yq
 

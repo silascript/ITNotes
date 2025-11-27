@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2025-11-24 12:05:39
+modified: 2025-11-26 21:40:37
 ---
 
 # Shell 笔记
@@ -1311,7 +1311,9 @@ shell 下有多款 json 小工具：
 
  #shell #tools  #json #jq
 
-安装 `jq`：
+[jq](https://jqlang.org) 是一个 Shell 下操作 json 的小工具。
+
+##### 安装
 
 ```shell
 yay -S jq
@@ -1348,6 +1350,8 @@ jq [options] --jsonargs <jq filter> [JSON_TEXTS...]
 ##### 内置函数
 
 `jq` 支持一些内置函数，如 `length`, `keys`, `values`, `tostring` 等，用于操作和处理 JSON 数据。
+
+* `del`：直接删除目标字段，生成新对象。
 
 ###### 数组
 
@@ -1406,6 +1410,11 @@ dl_url=$(curl $channel_json_v3 | jq -r --arg pkg_name $package_name --arg pkg_ve
 
 > [!info] 
 > 
+
+> `pkg_name` 和 `pkg_version` 这两个是形参，用于 jq 内部引用的。
+> 
+> `$package_name` 和 `$package_version` 是实参，是 jq 外部实际传进来的值。
+>  
 > 注意，`select(.name==$pkg_name)` 或 `select(.version==$pkg_version)`，引用「形参」时，不要加双引号，而且 `==` 不要加空格。
 > 
 > 「实参」`"$package_version"` 这个可以加双引号，防止传进来的字符串带有空格，被「自动切割」。

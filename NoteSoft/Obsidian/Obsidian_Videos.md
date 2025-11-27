@@ -6,7 +6,7 @@ tags:
   - video
   - list
 created: 2023-05-19 20:49:18
-modified: 2025-02-09 01:10:55
+modified: 2025-11-27 10:37:59
 ---
 
 # Obsidian 视频清单
@@ -26,6 +26,10 @@ modified: 2025-02-09 01:10:55
 ## 基础
 
 * [Obsdian 教学及分享合集](https://www.bilibili.com/video/BV19z4y1s7nk)
+
+### 高级
+
+* [Johnny学OB 第39集 用Obsidian的URI协议，将Airtable中的数据，添加或者更新到OB Obsidian教程\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1344y1i71m)
 
 ---
 

@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2025-11-25 16:38:32
+modified: 2025-11-27 12:16:13
 ---
 
 # Obsidian 笔记
@@ -141,7 +141,7 @@ Categories=Office;
 
 其中主配置文件 `obsidian.json`，这配置文件主要是 [vault](#vault) 的列表。
 
-#### `obsidian.json` 示例
+#### obsidian.json
 
 ```json
 {
@@ -173,6 +173,10 @@ Categories=Office;
 	"updateDisabled": true
 }
 ```
+
+#### vault id
+
+仓库 ID 是分配给仓库的 16 个随机字符，例如 `ef6ca3e3b524d22f`。此 ID 对于计算机上每个仓库文件夹都是唯一的。
 
 > [!info] 
 > 
@@ -458,6 +462,59 @@ $ cat MyNotes/ITNotes/.obsidian/themes/AnuPpuccin/manifest.json
 |     命令功能     | 快捷键 |
 |:----------------:|:------:|
 | 折叠/展开 当前行 | Ctrl+Z | 
+
+---
+
+## 高级用法
+
+### URI
+
+语法：`obsidian://action?param1=value&param2=value`
+
+主要由 [action](#action) 和参数构成。
+
+#### action
+
+action 是操作 Obsidian 的一个「动作」。
+
+* `open` ：打开一个 vault 或笔记
+* `new` ：创建一个新的笔记
+* `daily` ：创建一个日记笔记
+* `search` ：搜索并打开笔记
+
+##### open
+
+`open` 这个动作用于打开一个仓库或笔记。
+
+###### 参数
+
+* `vault`：仓库名称或 [vault id](#vault%20id)
+  
+  这个仓库 ID，可以在 `~/.config/obsidian/obsidian.json` 文件中查看。
+
+* `file`：如果是要打开一个笔记，这个参数就是指定要打开的笔记文件的**文件名**或者**从库根目录到文件的相对路径**。如果文件后缀名为 `md`，可省略。
+* `path`：文件的绝对路径。这参数将覆盖 `vault` 和 `file` 两参数。
+
+##### new
+
+`new` 动作可以给一个仓库添加一个新笔记。
+
+###### 参数
+
+* `vault`：与 [`open`](#open) 命令一样，指定是哪个仓库，如果同名，将执行 [`open`](#open) 动作。
+* `name`：要创建笔记的笔记名称
+* `file`：绝对路径，包括 `name`，如果指定了这个参数，它将覆盖掉之前 `name` 参数指定的笔记名
+* `path`：全局绝对路径。同样与[open](#open)的`path`参数类似。
+
+#### Linux 下的使用
+
+[Linux](../../Linux/Linux_Note.md) 在 [ 终端 ](../../Linux/Linux_Note.md#linux_terminal) 中，可以使用 `xdg-open` 来使用 Obsidian 的 URI 功能。
+
+示例：
+
+```shell
+xdg-open "obsidian://open?vault=TestV"
+```
 
 ---
 
@@ -1647,6 +1704,16 @@ Available Commands:
 这一款 CLI 工具是用 [Python_Note](../../Python/Python_Note.md) 写的，所以可以使用 [pip](../../Python/Python_Note.md#python_pip) 或 [pipx](../../Python/Python_Note.md#python_pipx) 安装：
 
 `pipx install obsidian-cli`
+
+##### 常用功能
+
+```shell
+obsidian open vault路径
+```
+
+```shell
+obsidian rm vault路径
+```
 
 ---
 

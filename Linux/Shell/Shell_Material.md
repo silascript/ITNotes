@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2025-11-27 02:47:36
+modified: 2025-11-30 10:49:46
 ---
 
 # Shell 资料清单
@@ -170,6 +170,10 @@ modified: 2025-11-27 02:47:36
 * [shell之文件路径截取 - hddkman - 博客园](https://www.cnblogs.com/hddkman/articles/14437493.html)
 * [Shell截取字符串 - \| Cloud Strife \|](https://www.bitlogs.tech/post/os/linux/shell/shell%E6%88%AA%E5%8F%96%E5%AD%97%E7%AC%A6%E4%B8%B2/)
 
+#### 目录
+
+* [Shell脚本判断目录是否为空 - 山间一棵松 - 博客园](https://www.cnblogs.com/share23/p/14075705.html)
+
 ---
 
 ## 进程
@@ -259,6 +263,7 @@ modified: 2025-11-27 02:47:36
 * [jq命令用法总结 - 扣钉日记 - 博客园](https://www.cnblogs.com/codelogs/p/16324928.html)
 * [Using Variables in shell script · Issue #626 · jqlang/jq · GitHub](https://github.com/jqlang/jq/issues/626)
 * [JSON格式化输出和解析工具 - jq - 散尽浮华 - 博客园](https://www.cnblogs.com/kevingrace/p/7565371.html)
+* [JSON解析工具-jq \| 编程技术分享](https://hellogitlab.com/OS/Centos/json_tool_jq#_4-4-%E5%88%97%E8%A1%A8-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%87%E7%89%87)
 
 #### 修改
 

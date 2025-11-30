@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2025-11-27 12:16:13
+modified: 2025-11-30 18:00:26
 ---
 
 # Obsidian 笔记
@@ -174,7 +174,40 @@ Categories=Office;
 }
 ```
 
-#### vault id
+#### 相关概念
+
+#### vault
+
+在 Obsidian 的 **vault**，就是所谓的「库」，其根目录下，Obsidian 会生成一个配置目录 `.obsidian`。
+
+> [!tip]
+> 
+> 如果 `.obsidian` 目录已存在，将不会再生成，只有 vault 根目录下没有 `.obsidian` 目录，ob 才会生成此配置目录。
+
+##### 创建
+
+通过 Obsidian 相关文档：[Create a vault - Obsidian Help](https://help.obsidian.md/vault) 可知，创建一个 vault 大概有两种方式：
+
+* [创建一个空的Vault](https://help.obsidian.md/vault#Create+empty+vault)
+
+这种方式，在创建时，要给定两个参数：
+
+1. vault 名称
+2. 存储位置
+
+> [!info] 
+> 
+> 这个方式创建的 vault，实际存储位置是 `存储位置/vault名称`。也就是说，「**存储位置**」的路径，实际是 vault 的根目录的父级目录，而 [vault 名称](#vault%20name) 实际是 vault 的根目录。
+
+* [打开一个已经存在的目录](https://help.obsidian.md/vault#Open+existing+folder)
+
+> [!info] 
+> 
+> 这种方式实际是将第一种创建方式进行合并操作，选择的目录路径，最后一节的目录名，其实是 [vault 名称](#vault%20name)，而其父级目录路径是「存储位置」。
+
+而讲得更彻底点，所谓「**创建**」一个 vault，其实就是将一个目录路径「注册」到 Obsidian 的 vault 列表中，而在注册时，生成一个 [vault id](#vault%20id) 作为 vault 的唯一标识。
+
+##### vault id
 
 仓库 ID 是分配给仓库的 16 个随机字符，例如 `ef6ca3e3b524d22f`。此 ID 对于计算机上每个仓库文件夹都是唯一的。
 
@@ -184,13 +217,30 @@ Categories=Office;
 > 
 > `path` 属性是 vault 的路径，`open` 是指明这个 vault 当前是否打开状态。
 
-### vault
+通过 [Obsidian-CLI 小工具](#Obsidian-CLI) 其中一个的 [Bip901/obsidian-cli](#Bip901/obsidian-cli) 的源码，可以看到 vault id 的生成：
 
-在 Obsidian 的 **vault**，就是所谓的「库」，其根目录下，Obsidian 会生成一个配置目录 `.obsidian`。
+```python
+ def ensure_path_is_vault(self, path: Path) -> str:
+        """
+        Registers the given path as an Obsidian vault, if necessary.
 
-> [!tip]
-> 
-> 如果 `.obsidian` 目录已存在，将不会再生成，只有 vault 根目录下没有 `.obsidian` 目录，ob 才会生成此配置目录。
+        :return: The vault ID.
+        """
+        obsidian_config = ObsidianConfig.load()
+        vault_id = obsidian_config.find_vault_id_by_path(path)
+        if vault_id is None:
+            local_time_now = datetime.now(tz=UTC).astimezone()
+            vault_id = Vault.generate_id()
+            obsidian_config.vaults[vault_id] = Vault(path=path, ts=local_time_now)
+            obsidian_config.save()
+        return vault_id
+```
+
+##### vault name
+
+`vault name` 这是 [vault](#vault) 显示名称，这个名称实际是 vault 存储路径最后一个节，就是 vault 的根目录的目录名。
+
+在无论是「新建」vault 还是「打开」一个目录作为一个 vault，无论这两种哪种方式「创建」vault，vault 的根目录的目录就是这个 vault 的 `vault name`，这在 [URI](#URI) 中会使用到。
 
 ### .obsidian 目录结构
 
@@ -488,7 +538,7 @@ action 是操作 Obsidian 的一个「动作」。
 
 ###### 参数
 
-* `vault`：仓库名称或 [vault id](#vault%20id)
+* `vault`：[仓库名称](#vault%20name)（`vault name`）或 [vault id](#vault%20id)
   
   这个仓库 ID，可以在 `~/.config/obsidian/obsidian.json` 文件中查看。
 
@@ -504,7 +554,7 @@ action 是操作 Obsidian 的一个「动作」。
 * `vault`：与 [`open`](#open) 命令一样，指定是哪个仓库，如果同名，将执行 [`open`](#open) 动作。
 * `name`：要创建笔记的笔记名称
 * `file`：绝对路径，包括 `name`，如果指定了这个参数，它将覆盖掉之前 `name` 参数指定的笔记名
-* `path`：全局绝对路径。同样与[open](#open)的`path`参数类似。
+* `path`：全局绝对路径。同样与 [open](#open) 的 `path` 参数类似。
 
 #### Linux 下的使用
 
@@ -1701,7 +1751,7 @@ Available Commands:
 
 #### Bip901/obsidian-cli
 
-这一款 CLI 工具是用 [Python_Note](../../Python/Python_Note.md) 写的，所以可以使用 [pip](../../Python/Python_Note.md#python_pip) 或 [pipx](../../Python/Python_Note.md#python_pipx) 安装：
+[ Bip901/obsidian-cli](https://github.com/Bip901/obsidian-cli) 这一款 CLI 工具是用 [Python_Note](../../Python/Python_Note.md) 写的，所以可以使用 [pip](../../Python/Python_Note.md#python_pip) 或 [pipx](../../Python/Python_Note.md#python_pipx) 安装：
 
 `pipx install obsidian-cli`
 

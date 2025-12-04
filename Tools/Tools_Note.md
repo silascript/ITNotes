@@ -7,7 +7,7 @@ tags:
   - lux
   - google
 created: 2023-08-18 19:44:52
-modified: 2025-10-28 11:10:45
+modified: 2025-12-03 22:33:14
 ---
 
 # 常用小工具笔记
@@ -383,6 +383,16 @@ pipx install you-get
 
 * [lux proxy](https://github.com/iawia002/lux?tab=readme-ov-file#proxy)
 * [You-Get, Youtube-dl, Lux/Annie 视频下载器 一键安装脚本 - Lussac's Blog](https://blog.lussac.net/archives/121/)
+
+---
+
+## 加速器
+
+### XGet
+
+[Xget](https://github.com/xixu-me/Xget) 是一个加速器。
+
+URL 转换器：[https://xuc.xi-xu.me](https://xuc.xi-xu.me)
 
 ---
 

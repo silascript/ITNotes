@@ -6,12 +6,14 @@ tags:
   - list
   - linux
 created: 2024-07-07 19:25:20
-modified: 2024-08-11 02:13:22
+modified: 2025-12-02 18:08:08
 ---
 
 # Shell 视频清单
 
 ---
+
+## 基础
 
 * [2023年最通俗易懂的Shell教程](https://www.bilibili.com/video/BV1Tu411W7Up)
 * [2023年最新Shell自动化开发全套顶级天花板教程](https://www.bilibili.com/video/BV1494y1i7ca)
@@ -22,6 +24,10 @@ modified: 2024-08-11 02:13:22
 * [279个拿来就能用的shell脚本 助你秒变Linux高手](https://www.bilibili.com/video/BV1vM4m197ZT)
 * [那些在学Linux运维的小伙伴，一定不能落下这套Shell编程，看到不收藏那是你的损失！](https://www.bilibili.com/video/BV1oi421Y7Pr)
 * [B站最全Shell脚本编程全套视频教程121集(全)](https://www.bilibili.com/video/BV1qZ421N7mH)
+
+## 零散知识点
+
+* [小于符号作为标准输入其实是一条独立的命令](https://www.bilibili.com/video/BV1ssUHBxE9q)
 
 ---
 

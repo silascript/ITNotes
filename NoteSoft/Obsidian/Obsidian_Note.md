@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2025-11-30 18:00:26
+modified: 2025-12-03 11:47:43
 ---
 
 # Obsidian 笔记
@@ -234,6 +234,27 @@ Categories=Office;
             obsidian_config.vaults[vault_id] = Vault(path=path, ts=local_time_now)
             obsidian_config.save()
         return vault_id
+        
+        
+class Vault(BaseModel, extra="allow"):
+    path: Path
+    last_opened: IntDatetime = Field(alias="ts")
+    open: bool = False
+
+	" id生成方法
+    @staticmethod
+    def generate_id() -> str:
+        return secrets.token_hex(8)        
+
+```
+
+这里工具作者使用的是 [Python](../../Python/Python_Note.md) 的 `secrets` 模块的 `token_hex_(nbytes=None)` 生成的一个十六进行的字符串，这就是在 `~/.config/obsidian/obsidian.json` 中 vaults 的键值：
+
+```json
+"8e5254dd564849f2": {
+      "path": "/home/silascript/MyNotes/LHP_Note",
+      "ts": 1763324507963
+    }
 ```
 
 ##### vault name
@@ -241,6 +262,14 @@ Categories=Office;
 `vault name` 这是 [vault](#vault) 显示名称，这个名称实际是 vault 存储路径最后一个节，就是 vault 的根目录的目录名。
 
 在无论是「新建」vault 还是「打开」一个目录作为一个 vault，无论这两种哪种方式「创建」vault，vault 的根目录的目录就是这个 vault 的 `vault name`，这在 [URI](#URI) 中会使用到。
+
+##### path
+
+[obsidian.json](#obsidian.json) 中 `path` 的属性，是 [vault](#vault) 的目录路径。其中最后一节的目录的名，就是 [vault 名称](#vault%20name)。
+
+##### ts
+
+在 [obsidian.json](#obsidian.json) 中除了 [vault id](#vault%20id)、[path](#path) 外，还有一个属性：`ts`，这个是属性是「时间戳」。
 
 ### .obsidian 目录结构
 
@@ -1472,6 +1501,8 @@ note 类型
 
 #### <span id="obn_plugins_outside_community">未在社区插件库的插件</span>
 
+##### BRAT
+
 要安装未在社区插件库上架的插件，得先安装 [obsidian42-brat](https://github.com/TfTHacker/obsidian42-brat) 这个插件。
 
 **obsidian42-brat** github 地址： [https://github.com/TfTHacker/obsidian42-brat](https://github.com/TfTHacker/obsidian42-brat)。
@@ -1764,6 +1795,12 @@ obsidian open vault路径
 ```shell
 obsidian rm vault路径
 ```
+
+### 音乐插件
+
+[albus-status-bar-music: Add a music player to the status bar of Obsidian.](https://github.com/AlbusGuo/albus-status-bar-music) 这是一个状态栏音乐插件。
+
+这个插件可以使用 [BRAT](#BRAT) 进行安装。
 
 ---
 

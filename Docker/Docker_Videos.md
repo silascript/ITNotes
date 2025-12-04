@@ -6,13 +6,14 @@ tags:
   - video
   - list
 created: 2023-08-18 19:44:52
-modified: 2025-01-06 20:18:01
+modified: 2025-12-04 01:51:07
 ---
 
 # Docker & K8s 视频清单
 
 ---
 
+* [2025带你吃透Docker，一周带你从入门到精通，附加落地实战项目，少走99%弯路！](https://www.bilibili.com/video/BV1yiUqBPEHv)
 * [动力2023最新版Docker实战](https://www.bilibili.com/video/BV1Th4y1n7E8)
 * [Docker 每天10分钟](https://www.bilibili.com/video/BV18o4y1871N)
 * [Docker 1小时快速上手教程](https://www.bilibili.com/video/BV11L411g7U1)

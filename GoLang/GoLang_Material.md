@@ -6,7 +6,7 @@ tags:
   - list
   - material
 created: 2024-07-31 21:50:14
-modified: 2025-11-21 01:37:22
+modified: 2025-12-05 16:04:36
 ---
 
 # Go 语言资料
@@ -16,6 +16,10 @@ modified: 2025-11-21 01:37:22
 ## 通用
 
 * [不一样的go语言-gopher - eventer - 博客园](https://www.cnblogs.com/laud/p/gopher.html)
+
+### 依赖
+
+* [GO依赖管理，看这篇就够了Go依赖管理经历了GoPath、vendor、Go Module阶段，最后由Go Module - 掘金](https://juejin.cn/post/7337233551023439872)
 
 ---
 

@@ -8,7 +8,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2025-08-17 18:24:56
+modified: 2025-12-10 19:11:45
 ---
 
 # Python 资料清单
@@ -18,6 +18,18 @@ modified: 2025-08-17 18:24:56
 ## 基础
 
 * [如何在 Ubuntu 24.04 LTS 中安装 Python 3.12 或指定版本](https://www.sysgeek.cn/install-python-ubuntu/)
+
+### 面向对象
+
+#### 类
+
+##### 方法
+
+* [python 实例方法、静态方法、类方法的区别 - 三只松鼠 - 博客园](https://www.cnblogs.com/shenh/p/13045035.html)
+
+### 导包
+
+* [Python引入自定义模块](https://zhuanlan.zhihu.com/p/42220907)
 
 ## pip
 
@@ -157,6 +169,14 @@ modified: 2025-08-17 18:24:56
 * [miniforge3安装](https://redpanda.zone/p/miniforge/)
 * [Python基础知识-1（部署开发环境）](https://blog.51cto.com/cerana/11525301)
 * [python虚拟环境（二）进阶用法：miniforge - sysmaid - SegmentFault 思否](https://segmentfault.com/a/1190000046615670)
+
+---
+
+## 框架
+
+### Web
+
+* [黑马程序员PythonWeb开发：FastAPI从入门到实战视频教程](https://www.bilibili.com/video/BV1zV2QBtE39)
 
 ---
 

@@ -4,7 +4,7 @@ tags:
   - python
   - syntax
 created: 2025-08-03 04:08:51
-modified: 2025-12-07 11:28:49
+modified: 2025-12-09 20:58:45
 ---
 
 # Python 语法笔记
@@ -27,15 +27,30 @@ modified: 2025-12-07 11:28:49
 
 ### <span id="syntax_basic_type">简单数据类型</span>
 
-#### <span id="syntax_basic_">数值类型</span>
+Python3 中有 6 个标准数据类型：
 
-##### <span id="syntax_basic_int">整型</span>
+* [数值](#syntax_basic_type_number)
+* [字符串](#syntax_basic_type_string)
+* [列表](#syntax_type_list)
+* [元组](#syntax_type_tuple)
+* [集合](#syntax_type_set)
+* [字典](#syntax_type_dictionary)
 
-##### <span id="syntax_basic_float">浮点型</span>
+> [!info] 
+> 
+> 不可变数据： [数值](#syntax_basic_type_number)、[字符串](#syntax_basic_type_string) 和 [元组](#syntax_type_tuple)
+>
+> 可变数据：[列表](#syntax_type_list)、[集合](#syntax_type_set) 和 [字典](#syntax_type_dictionary)
 
-##### <span id="syntax_basic_complex">复数</span>
+#### <span id="syntax_basic_type_number">数值类型</span>
 
-#### <span id="syntax_basic_string">字符串</span>
+##### <span id="syntax_basic_type_int">整型</span>
+
+##### <span id="syntax_basic_type_float">浮点型</span>
+
+##### <span id="syntax_basic_type_fcomplex">复数</span>
+
+#### <span id="syntax_basic_type_string">字符串</span>
 
 ##### 表达方式
 
@@ -51,7 +66,7 @@ Python 字符串索引与 [C](../C/C_Note.md)、[Java](../Java/Java_Note.md) 从
 
 ### 复合数据类型
 
-#### 列表
+#### <span id="syntax_type_list">列表</span>
 
 列表定义：
 
@@ -68,7 +83,7 @@ Python 的列表类型特点：
 > 
 > Python 的列表相当于 [Java](../Java/Java_Note.md) 中的 [数组](../Java/Java_Base_Note.md#数组)
 
-#### 元组
+#### <span id="syntax_type_tuple">元组</span>
 
 元组与 [列表](#列表) 类似，但元组是「**只读**」的。其由一系列特定顺序排列的元素组成，不同在于元组一旦创建其**元素不能被修改**，算是一种「特殊的」列表，又称为「不可变列表」。
 
@@ -148,7 +163,7 @@ print(t1)
 
 ###### 删除元素
 
-#### 集合
+#### <span id="syntax_type_set">集合</span>
 
 集合是由**不重复**元素组成的**无序**容器。Python 的中**集合**完全就是数学中的「集合] 概念的模拟，所以 Python 的集合中的元素特点：「**无序**」、「**不可重复**」。
 
@@ -179,13 +194,103 @@ b = {1,3,4}
 b2 = set()
 ```
 
-#### 字典
+#### <span id="syntax_type_dictionary">字典</span>
 
 ### 函数
 
+#### 函数参数
+
+##### 形式参数
+
+[定义函数](#定义函数) 时，函数名称后面小括号的参数称为「**形式参数**」，简称「**形参**」。
+
+##### 形式参数
+
+[调用函数](#调用函数)] 时，函数名称后面小括号的参数称为「**实际参数**」，简称「**实参**」。
+
+#### 定义函数
+
+定义函数基本语法：
+
+```python
+def 函数名(参数列表):
+	# 函数体
+```
+
+函数**定义部分**以 `def` 关键字开头，后接函数名、小括号 `()` 和冒号 `:`。
+
+函数体由多条语句组成的代码块，相对于函数定义部分保持合理缩进。
+
+如果函数有**返回值**，使用 `return` 语句返回。如果函数中没有 `return` 语句，或者省略 `return` 语句的表达式，将返回 `None`，即返回空值。
+
+#### 调用函数
+
+基本语法：
+
+```python
+函数名(实参1,实参2...)
+```
+
+调用函数，实际就是将 [实际参数](#实际参数) 传递给 [形式参数](#形式参数)，然后在函数体内实现相应功能的过程（函数本质在其实是表达式，即其核心功能就是求值，而求值之外的功能都称为「副作用」）。
+
 ### 类
 
+类定义的基本语法：
+
+```python
+class 类名:
+	# 类体
+```
+
+> [!info] 
+> 
+> 类名一般使用大写字母开头，采用「**大驼峰命名法**」。
+> 
+> 类名后有个冒号 `:`，类体向右缩进。
+
+#### 实例
+
+创建类的实例基本语法：
+
+```python
+类名()
+```
+
+#### 属性
+
+在类中定义的变量称为类的**属性**，根据定义位置不同，可以分为：
+
+* 类属性
+* 实例属性
+
 #### 方法
+
+##### 实例方法
+
+##### 类方法
+
+##### 静态方法
+
+静态方法，其方法休中不能使用类或实例的任何属性和方法。
+
+实例对象和类对象都可以调用类的静态方法。
+
+静态方法是类中的 [函数](#函数)，不需要实例。
+
+> [!info] 
+> 
+> 静态方法逻辑上属于类，但是和类本身没有关系。也就是说，在静态方法中，不会涉及类的属性和方法的操作。
+> 
+> 可以说静态方法是个独立的、单纯的 [函数](#函数)，只是「托管」给某个类的名称空间中，便于使用和维护。
+
+##### 专有方法
+
+类的专有方法，**方法名**通常用「双下划线」`__`**开头**和**结尾**。
+
+类的常用专有方法：
+
+* `__init__`：构造方法，生成对象时被调用
+* `__del__`：析构方法，释放对象时被使用
 
 ### IO
 
@@ -207,7 +312,7 @@ file=open(filename[,mode[,buffering[,encoding=Nonne]]])
 
 * `file`：表示被创建的文件对象
 * `filename`：用于指定包含待打开或待创建文件的文件路径与文件名称 [字符串](#syntax_basic_string) 值，需要使用单引号或双引号标。
-* `mode`：可选参数，用于指定打开文件的模式，即描述文件如何使用，如读、写等。默认文件访问模式是只读，即 `r`。
+* `mode`：可选参数，用于指定打开文件的模式，即描述文件如何使用，如读、写等。默认文件访问模式是「**只读**」，即 `r`。
 
 常见模式及状态：
 

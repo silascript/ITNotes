@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2025-11-25 10:48:26
+modified: 2025-12-11 20:57:26
 ---
 
 # Linux 笔记
@@ -1928,6 +1928,36 @@ Inter 显卡：`pacman -Syu mesa`
 
 * Mesa 驱动不支持 2 代及之前的 CPU，`mesa-amber` 可以支持 2 代 cpu
 * 2~4 代 CPU，需要安装 `xf86-video-intel`，因为 `modsettings` 驱动不支持 4 代之前的 CPU。
+
+---
+
+## 小问题
+
+### u 盘
+
+#### 挂载问题
+
+因为文件系统格式不同，u 盘挂载不了，可能会出现类型的错误：
+
+```shell
+Error mounting /dev/sdc1
+
+wrong fs type,bad option,bad superblock
+```
+
+先确定是不是文件系统格式问题，使用 `blkid` 命令查看：
+
+```shell
+sudo blkid /dev/sdc1
+```
+
+如果返回信息中 `TYPE="ntfs"`，这就代表 u 盘是 `ntfs` 格式，Linux 挂载时可能出现错误，得修复。
+
+修复：
+
+```shell
+sudo ntfsfix -d /dev/sdc1
+```
 
 ---
 

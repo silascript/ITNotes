@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-10 03:06:48
-modified: 2025-11-20 10:24:46
+modified: 2025-12-11 20:58:22
 ---
 
 # Linux 资料清单
@@ -156,6 +156,10 @@ modified: 2025-11-20 10:24:46
 
 * [关于yay的问题求助 - #6，来自 blufest - 应用程序与桌面环境 - Arch Linux 中文论坛](https://forum.archlinuxcn.org/t/topic/13063/6)
 * [\[已解决\]我的yay有问题： - #8，来自 xian - 应用程序与桌面环境 - Arch Linux 中文论坛](https://forum.archlinuxcn.org/t/topic/14704/8)
+
+#### u 盘
+
+* [解决ubuntu移动硬盘自动挂载报错：Error mounting: wrong fs type, bad option, bad superblock on /dev/sdb1问题](https://blog.csdn.net/gianttj/article/details/140405815)
 
 ### arch 镜像
 

@@ -4,7 +4,7 @@ tags:
   - PL
   - rust
 created: 2023-01-30 11:19:11
-modified: 2025-09-24 01:59:43
+modified: 2025-12-12 01:37:47
 ---
 
 # Rust 笔记
@@ -305,3 +305,5 @@ rustup component add rust-src
 ## 相关笔记
 
 * [TOML 笔记](../TOML/TOML_Note.md)
+* [Rust 视频清单](Rust_Videos.md)
+* [Rust 资料清单](Rust_Material.md)

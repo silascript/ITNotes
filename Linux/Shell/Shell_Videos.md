@@ -6,7 +6,7 @@ tags:
   - list
   - linux
 created: 2024-07-07 19:25:20
-modified: 2025-12-02 18:08:08
+modified: 2025-12-13 13:01:57
 ---
 
 # Shell 视频清单
@@ -28,6 +28,7 @@ modified: 2025-12-02 18:08:08
 ## 零散知识点
 
 * [小于符号作为标准输入其实是一条独立的命令](https://www.bilibili.com/video/BV1ssUHBxE9q)
+* [别再写 “垃圾脚本” 了！Shell 脚本设计规范避坑指南，少踩 90% 维护坑](https://www.bilibili.com/video/BV1yQmEBjEiz)
 
 ---
 

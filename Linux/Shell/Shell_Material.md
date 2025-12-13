@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2025-11-30 10:49:46
+modified: 2025-12-13 13:07:23
 ---
 
 # Shell 资料清单
@@ -308,9 +308,15 @@ modified: 2025-11-30 10:49:46
 
 ## 相关笔记
 
+### 个人笔记
+
 * [Shell 笔记](Shell_Note.md)
 * [Shell 示例](Shell_Example.md)
 * [Linux 笔记](Linux_Note.md)
 * [Linux资料清单](Linux_Material.md)
 * [Zsh 资料清单](Zsh_Material.md)
+
+### 其他笔记
+
+* [Ops-Learning-Journey - Shell 编程.md](https://github.com/xuruizhao00-sys/Ops-Learning-Journey/blob/main/Shell%20%E7%BC%96%E7%A8%8B/Shell%20%E7%BC%96%E7%A8%8B.md)
 

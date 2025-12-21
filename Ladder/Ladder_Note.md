@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2025-12-04 20:11:56
+modified: 2025-12-21 10:50:29
 ---
 
 # 梯子笔记
@@ -893,6 +893,8 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 
 ~~* [直连域名](https://needay04.729388.xyz)~~
 ~~* [需代理域名](https://needay03.729388.xyz)~~
+
+[https://needay.needaysafe.top](https://needay.needaysafe.top/)
 
 ~~订阅域名 2024 年 12 月 6 日更新： ~~
 

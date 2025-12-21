@@ -8,7 +8,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2025-12-10 19:11:45
+modified: 2025-12-13 21:53:04
 ---
 
 # Python 资料清单
@@ -67,6 +67,10 @@ modified: 2025-12-10 19:11:45
 * [Python虚拟环境（pipenv、venv、conda一网打尽）-腾讯云](https://cloud.tencent.com/developer/article/2124483)
 * [最全的Python虚拟环境使用方法 - 知乎](https://zhuanlan.zhihu.com/p/60647332)
 * [11款常用的Python虚拟环境管理器](https://www.51cto.com/article/792961.html)
+
+#### 小技巧
+
+* [Python的.env文件用法](https://www.bilibili.com/video/BV1Cty7BAEwH)
 
 ### poetry
 

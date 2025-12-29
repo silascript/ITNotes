@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2025-10-24 04:22:48
+modified: 2025-12-24 22:54:39
 
 ---
 
@@ -60,7 +60,7 @@ VSCodium 安装根目录下，`resources/app/product.json` 文件，其中有个
 	"resourceUrlTemplate": "https://{publisher}.vscode-unpkg.net/{publisher}/{name}/{version}/{path}",
 	"extensionUrlTemplate": "https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest",
 	"controlUrl": "https://main.vscode-cdn.net/extensions/marketplace.json",
-
+}
 ```
 
 ### 使用命令操作插件

@@ -5,7 +5,7 @@ tags:
   - ide
   - eclipse
 created: 2025-02-23 21:17:37
-modified: 2025-09-04 00:59:02
+modified: 2025-12-25 03:11:12
 ---
 
 # Eclipse 笔记
@@ -596,13 +596,16 @@ STS 三种安装方式：
 > 
 > 最新几个版本的**URL**：
 >
-> * Eclipse 4.36: https://cdn.spring.io/spring-tools/release/TOOLS/sts4/update/e4.36/
-> * Eclipse 4.35: https://cdn.spring.io/spring-tools/release/TOOLS/sts4/update/e4.35/
-> * Eclipse 4.34: https://cdn.spring.io/spring-tools/release/TOOLS/sts4/update/e4.34/
+> *  Eclipse 4.38: https://cdn.spring.io/spring-tools/release/update/e4.38/
+> * Eclipse 4.36:  https://cdn.spring.io/spring-tools/release/TOOLS/sts4/update/e4.36/
+> * Eclipse 4.35:  https://cdn.spring.io/spring-tools/release/TOOLS/sts4/update/e4.35/
 >   
 >   更多内容请参考：[Installation · spring-projects/spring-tools Wiki · GitHub](https://github.com/spring-projects/spring-tools/wiki/Installation#install-spring-tools-into-an-existing-eclipse-via-a-p2-repo)
 >   
-3. 通过 [Marketplace](#Marketplace) 安装
+>   
+>   最新的 Spring-Tools URL： https://cdn.spring.io/spring-tools/release/update/latest/
+>   
+1. 通过 [Marketplace](#Marketplace) 安装
 
 > [!tip] 
 > 
@@ -658,6 +661,9 @@ STS 三种安装方式：
 | 2024-09  |       N/A        |    4.33    |    2024 年 9 月     |    JDK 17     |   N/A    |
 | 2024-12  |       N/A        |    4.34    |    2024 年 12 月    |    JDK 17     |   N/A    |
 | 2025-03  |       N/A        |    4.35    |    2025 年 3 月     |    JDK 17     |   N/A    |
+| 2025-06  |       N/A        |    4.36    |    2025 年 6 月     |    JDK 17     |   N/A    |
+| 2025-09  |       N/A        |    4.37    |    2025 年 9 月     |    JDK 17     |   N/A    |
+| 2025-12  |       N/A        |    4.38    |    2025 年 12 月    |    JDK 17     |   N/A    |
 
 > [!tip] 32 位与 64 位
 > 
@@ -671,7 +677,10 @@ STS 三种安装方式：
 >* **Eclipse 4.6 至 4.18** 需要 [JDK8](#JDK8)。
 > * **Eclipse 4.6 以下** 需要 **JDK 7** 或更低版本
 >   
-> 详细信息：[Eclipse/Installation - Eclipsepedia](https://wiki.eclipse.org/Eclipse/Installation/)
+> 详细信息：
+> 
+> * [Eclipse/Installation - Eclipsepedia](https://wiki.eclipse.org/Eclipse/Installation/)
+> * [Simultaneous\_Release.md at main · eclipse-simrel/.github · GitHub](https://github.com/eclipse-simrel/.github/blob/main/wiki/Simultaneous_Release.md)
 > 
 
 ---

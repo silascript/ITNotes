@@ -6,7 +6,7 @@ tags:
   - video
   - list
 created: 2023-05-26 11:00:13
-modified: 2024-08-14 21:49:45
+modified: 2025-12-29 13:00:10
 ---
 
 # Javascript 视频清单
@@ -49,6 +49,7 @@ modified: 2024-08-14 21:49:45
 * [JavaScript 算法和数据结构大师班(一)](https://www.bilibili.com/video/BV1DN4y1m7at)
 * [【前端高级程序员必懂】高能详解JavaScript运行机制--JavaScript底层知识](https://www.bilibili.com/video/BV1Qi421o7TD)
 * [2024最新JavaScript高级教程/核心进阶，前端必学](https://www.bilibili.com/video/BV1k2421F7xG)
+* [【JavaScript进阶】救命级 JS 资料，模块化 / 原型链 / 函数式 / 垃圾回收](https://www.bilibili.com/video/BV1uuqoBPEkK)
 
 ---
 

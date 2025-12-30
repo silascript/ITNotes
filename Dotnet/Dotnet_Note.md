@@ -4,7 +4,7 @@ tags:
   - dotnet
   - csharp
 created: 2024-07-18 17:32:19
-modified: 2025-09-18 12:33:43
+modified: 2025-12-30 20:46:23
 ---
 
 # .Net 笔记
@@ -196,4 +196,5 @@ $ dotnet tool uninstall --global dotnet-suggest
 
 * [.Net 资料清单](Dotnet_Material.md)
 * [.Net 视频清单](Dotnet_Videos.md)
+* [SQLServer 视频清单](../DataBase/SQLServer/SQLServer_Videos.md)
 

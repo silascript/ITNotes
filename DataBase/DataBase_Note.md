@@ -14,7 +14,7 @@ tags:
   - navicat
   - dbeaver
 created: 2023-08-18 19:44:52
-modified: 2025-08-23 03:23:10
+modified: 2025-12-30 20:50:10
 ---
 
 # 数据库笔记
@@ -113,6 +113,9 @@ modified: 2025-08-23 03:23:10
 ### Oracle
 
 ### SQLSERVER
+
+* [SQLServer 笔记](SQLServer/SQLServer_Note.md)
+* [SQLServer 视频清单](SQLServer/SQLServer_Videos.md)
 
 ### PostgreSQL
 

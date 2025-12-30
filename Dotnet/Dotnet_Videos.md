@@ -9,7 +9,7 @@ tags:
   - list
   - video
 created: 2024-05-01 03:10:27
-modified: 2025-09-30 10:35:29
+modified: 2025-12-30 20:47:15
 ---
 
 # Dotnet 视频清单
@@ -61,3 +61,4 @@ modified: 2025-09-30 10:35:29
 
 * [.net 笔记](Dotnet_Note.md)
 * [WPF笔记](WPF_Note.md)
+* [SQLServer视频清单](../DataBase/SQLServer/SQLServer_Videos.md)

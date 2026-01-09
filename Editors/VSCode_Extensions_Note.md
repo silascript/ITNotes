@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2025-12-24 22:54:39
+modified: 2026-01-09 22:02:38
 
 ---
 
@@ -507,6 +507,14 @@ Runtime 名称列表：[runtime name](https://github.com/redhat-developer/vscode
 
 [Project Manager for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-dependency) [![Project Manager for Java Repo](https://img.shields.io/github/stars/Microsoft/vscode-java-dependency
 )](https://github.com/Microsoft/vscode-java-dependency) 微软出的 Java 项目管理插件。
+
+此插件方便创建、打开并管理 Java 项目。
+
+> [!info] 
+> 
+> 如果要打开一个非 [Maven](../Java/Maven/Maven_Note.md) 项目，不能使用 [VSCode](VSCode_Note.md) 自带的项目功能将项目目录加入到工作区中，而是得使用此插件打开相关目录。不然会出现当前目录没法正确添加到 classpath 中，出现 Java 文件编译和运行错误。
+> 
+> ![Project Manager for Java import Java project](VSCode_Extensions_Note.assets/vscode_java_project_manager.png)
 
 ![Project Manager for Java screenshot 1](https://raw.githubusercontent.com/Microsoft/vscode-java-dependency/main/images/project-explorer.png)
 

@@ -1,10 +1,10 @@
 ---
-aliases:
+aliases: []
 tags:
   - java
   - mybatis
-created: 2023-01-13, 12:27:45
-modified: 2023-01-30, 9:16:27
+created: 2023-08-18 19:44:52
+modified: 2026-01-08 18:24:01
 ---
 # MyBatis 笔记
 
@@ -14,8 +14,14 @@ modified: 2023-01-30, 9:16:27
 
 ---
 
-## 配置
+## 简介
 
+[MyBatis](https://blog.mybatis.org)[![mybatis repo](https://img.shields.io/github/stars/mybatis/mybatis-3
+)](https://github.com/mybatis/mybatis-3) 原来是 Apache 的开源项目 iBatis，后迁移到 Google Code 并更名为 MyBatis，2013 年迁移到 [GitHub](../Git/Git_Note.md#git_github)。
+
+---
+
+## 配置
 
 `pom.xml` 配置：
 
@@ -50,8 +56,6 @@ modified: 2023-01-30, 9:16:27
 ```
 
 以下依赖，除了 mybatis 包外，还有 mysql 驱动，及 [Druid](https://github.com/alibaba/druid) 数据链接池。
-
-
 
 Mybatis 主配置文件：
 
@@ -110,9 +114,6 @@ Mybatis 主配置文件：
 
 主配置文件配了俩数据池，一个是阿里的 Druid，另一个是内置的，可以随时切换。
 
-
-
-
 如果直接将 `<datasource>` 的 `type` 属性设置为 `com.alibaba.druid.pool.DruidDataSource`，会报以下错误： 
 ```
 class com.alibaba.druid.pool.DruidDataSource cannot be cast to class org.apache.ibatis.datasource.DataSourceFactory
@@ -156,13 +157,7 @@ public class MyDruidDataSourceFactory implements DataSourceFactory {
 }
 ```
 
-
-
 Druid 具体使用请参考：[druid wiki](https://github.com/alibaba/druid/wiki)
 
 ---
-
-
-
-
 

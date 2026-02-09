@@ -5,7 +5,7 @@ tags:
   - ruby
   - gem
 created: 2023-08-18 19:44:52
-modified: 2025-07-18 10:43:05
+modified: 2026-02-09 08:54:05
 ---
 
 # Ruby 笔记
@@ -473,4 +473,5 @@ gem update --system
 
 * [ruby官网](https://www.ruby-lang.org/)
 * [ruby china](https://ruby-china.org/)
+	* [Ruby 源代码镜像服务 · Ruby China](https://ruby-china.org/wiki/ruby-mirror)
 * [rubyinstaller.cn](https://rubyinstaller.cn/)

@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2025-12-21 10:50:29
+modified: 2026-02-28 02:03:02
 ---
 
 # 梯子笔记
@@ -894,7 +894,8 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 ~~* [直连域名](https://needay04.729388.xyz)~~
 ~~* [需代理域名](https://needay03.729388.xyz)~~
 
-[https://needay.needaysafe.top](https://needay.needaysafe.top/)
+* [https://needay.needaysafe.top](https://needay.needaysafe.top/)
+* [https://web.needaytech.top](https://web.needaytech.top)
 
 ~~订阅域名 2024 年 12 月 6 日更新： ~~
 
@@ -905,6 +906,10 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 > [!info] 
 > 
 > needaycloud 机场 9 折优惠码 ：laoma90off 一次性套餐除外！ 一、活动主题 畅游世界，自由上网 —— 长期福利大放送！ 二、活动时间 2025 年 5 月 5 日 - 2026 年 1 月 1 日 三、9 折优惠码 ：laoma90off 新的订阅域名 ：[https://vip.subscribe-needay.xyz](https://vip.subscribe-needay.xyz)
+
+> [!important] 
+> 
+> 注意：此机场域名经常会污染失效，得不时关注新域名更新！
 
 性价比套餐有蛮多款：
 

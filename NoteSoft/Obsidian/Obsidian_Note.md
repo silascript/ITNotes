@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2025-12-03 11:47:43
+modified: 2026-03-04 18:05:31
 ---
 
 # Obsidian 笔记
@@ -1747,6 +1747,35 @@ Callout Blocks 预置类型：
 ### Obsidian-CLI
 
 有多款 CLI 工具。
+
+#### 官方 CLI
+
+从**1.12**版本开始，Obsidian 加入了一个重要功能就是 CLI。
+
+> [!info] 
+> 
+> 唯一吐槽的是，这个 CLI 是个残疾的 CLI。必须得启动 Obsidan 才能用，也就是说这个 CLI 是得依赖 Obsidian 图形界面的，这设计太蠢了。
+
+##### CLI 常用用法
+
+###### vault 相关
+
+`obsidian vaults` 是显示 [vault](#vault) 的信息。
+
+如果要显示 [vault](#vault) 的路径，可以加上子参数 `verbose`：
+
+```shell
+obsidian vaults verbose
+```
+
+效果：
+
+```shell
+ITNotes	/home/silascript/MyNotes/ITNotes
+WritingNotes	/home/silascript/MyNotes/WritingNotes
+LHP_Note	/home/silascript/MyNotes/LHP_Note
+WritingExericse	/home/silascript/MyNotes/WritingExericse
+```
 
 #### Yakitrak/obsidian-cli
 

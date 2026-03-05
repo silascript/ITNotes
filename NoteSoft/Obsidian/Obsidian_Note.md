@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2026-03-04 18:05:31
+modified: 2026-03-04 20:58:23
 ---
 
 # Obsidian 笔记
@@ -1760,7 +1760,9 @@ Callout Blocks 预置类型：
 
 ###### vault 相关
 
-`obsidian vaults` 是显示 [vault](#vault) 的信息。
+1. 显示 [vault](#vault) 信息
+
+`obsidian vaults` 
 
 如果要显示 [vault](#vault) 的路径，可以加上子参数 `verbose`：
 
@@ -1775,6 +1777,12 @@ ITNotes	/home/silascript/MyNotes/ITNotes
 WritingNotes	/home/silascript/MyNotes/WritingNotes
 LHP_Note	/home/silascript/MyNotes/LHP_Note
 WritingExericse	/home/silascript/MyNotes/WritingExericse
+```
+
+2. 打开某个 [vault](#vault)
+
+```shell
+obsidian vault=vault名称
 ```
 
 #### Yakitrak/obsidian-cli

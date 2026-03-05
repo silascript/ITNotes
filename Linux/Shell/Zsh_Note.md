@@ -6,7 +6,7 @@ tags:
   - zinit
   - linux
 created: 2023-08-18 19:44:52
-modified: 2025-09-16 11:18:02
+modified: 2026-03-05 11:03:28
 ---
 
 # zsh 笔记
@@ -174,6 +174,15 @@ oh-my-zsh 的插件非常丰富。
 
 [zinit](https://github.com/zdharma-continuum/zinit) 是一个轻量级的 zsh 插件管理器，速度快。
 
+> [!info] 
+> 
+> zdharma 的 zinit 原作者删库跑路后，zinit 社区就「分裂」了，出现了两个后继版本：
+>
+> * [zdharma-continuum](https://github.com/zdharma-continuum) （`continuum` 这个名字，应该是 `continue` 和 `community` 的混合，即表示社区「接棒」 zinit 的更新）
+> * [z-shell/zi](https://github.com/z-shell/zi)（`z-shell/zi` 又有一个 fork 版本：[https://github.com/zdharma/zi](https://github.com/zdharma/zi)）。
+>   
+>  现在使用更多，更活跃的是 [zdharma-continuum](https://github.com/zdharma-continuum) 这个，建议使用这个版本。
+
 ![zinit compare shotcut](https://raw.githubusercontent.com/zdharma-continuum/zinit/images/startup-times.png)
 
 ##### <span id="zsh_plugins_mgs_zinit_install">安装 zinit</span>
@@ -243,6 +252,10 @@ source "${ZINIT_HOME}/zinit.zsh"
 ```
 
 ##### <span id="zsh_plugins_mgs_zinit_commands">zinit 常用命令</span>
+
+> [!info] 
+> 
+> `zi` 是 `zinit` 的别名，所以如果懒得敲这么多字母，也可以使用 `zi` 命令代替。
 
 ###### 查看 zinit 的帮助
 

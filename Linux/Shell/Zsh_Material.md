@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2025-08-10 17:41:10
-modified: 2025-09-16 11:15:27
+modified: 2026-03-05 10:56:13
 ---
 
 # Zsh 资料清单
@@ -15,6 +15,8 @@ modified: 2025-09-16 11:15:27
 
 * [zsh 下 git 别名（alias） 和 oh-my-zsh git 插件的故事 - hello, world - SegmentFault 思否](https://segmentfault.com/a/1190000007059404)
 * [个人zsh配置 · MyBlog](https://blog.xiadengma.com/posts/%E4%B8%AA%E4%BA%BAzsh%E9%85%8D%E7%BD%AE/)
+* [ZSH + ZI + PURE 配置教程](https://sdl.moe/post/zsh-conf/)
+* [新zinit套件管理器--zdharma-continuum版 - hongdada - 博客园](https://www.cnblogs.com/hongdada/p/16821715.html)
 
 ## 插件
 

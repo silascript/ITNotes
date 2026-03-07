@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2026-03-04 20:58:23
+modified: 2026-03-07 08:23:01
 ---
 
 # Obsidian 笔记
@@ -654,7 +654,9 @@ Obsidian 的插件分为 [核心插件](#obn_plugins_core) 和 [第三方插件]
 
 ### <span id="obn_plugins_commp">第三方插件</span>
 
-要安装和使用第三方插件前，先得把「设置」中的「安全模式」开关关闭，才能浏览和安装第三方插件。
+#### 安全模式
+
+要安装和使用第三方插件前，先得把「设置」中的「**安全模式**」开关关闭，才能浏览和安装第三方插件。
 
 插件安装，同样因为众所周知的原因，访问起来存在一定的困难性，因为它用的是 [github](https://github.com/)。
 
@@ -1783,6 +1785,110 @@ WritingExericse	/home/silascript/MyNotes/WritingExericse
 
 ```shell
 obsidian vault=vault名称
+```
+
+###### 插件
+
+`obsidian plugin`
+
+1. 查看当前 [vault](#vault) 所有的插件
+
+显示所有插件，无论是否启用：
+
+```shell
+obsidian plugins
+```
+
+显示已启用的插件：
+
+```shell
+obsidian plugins:enabled
+```
+
+显示插件版本信息：
+
+* `obsidian plugins versions`
+* `obsidian plugins:enabled versions`
+
+2. 查看某插件
+
+需要指定插件的 `id`：
+
+```shell
+obsidian plugin id=file-explorer-note-count
+```
+
+效果：
+
+```shell
+$ obsidian plugin id=file-explorer-note-count
+type	community
+name	File Explorer Note Count
+version	1.2.4
+author	Ozan Tellioglu
+enabled	true
+description	The plugin helps you to see the number of notes under each folder within the file explorer.
+```
+
+3. 启用和禁用插件
+
+启用插件：
+
+```shell
+obsidan plugin:enable id=插件id
+```
+
+禁用插件：
+
+```shell
+obsidian plugin:disable id=插件id
+```
+
+4. 安装插件
+
+```shell
+obsidian plugin:install id=插件
+```
+
+> [!tip] 
+> 
+> `plugin:install` 子命令还有一个属性：`enable`，即安装完后启用该插件。
+
+5. 卸载插件：
+
+```shell
+obsidian plugin:uninstall id=插件id
+```
+
+6. 重载插件：
+
+```shell
+obsidian plugin:reload id=插件id
+```
+
+7. 安全模式：
+
+查看当前 [安全模式](#安全模式) 状态：
+
+```shell
+obsidian plugins:restrict
+```
+
+> [!info] 
+> 
+> * `off`：关闭 [安全模式](#安全模式)，能够浏览、安装和使用插件社区中 [第三方插件](#obn_plugins_commp)
+> * `on`：开启 [安全模式](#安全模式)，[第三方插件](#obn_plugins_commp) 不能安装、使用等操作
+
+关闭 [安全模式](#安全模式)：
+
+```shell
+obsidian plugins:restrict off
+```
+
+开启 [安全模式](#安全模式)：
+
+```shell
+obsidian plugins:restrict on
 ```
 
 #### Yakitrak/obsidian-cli

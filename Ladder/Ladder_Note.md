@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2026-02-28 02:03:02
+modified: 2026-03-09 02:41:06
 ---
 
 # 梯子笔记
@@ -896,6 +896,15 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 
 * [https://needay.needaysafe.top](https://needay.needaysafe.top/)
 * [https://web.needaytech.top](https://web.needaytech.top)
+
+> [!info] 
+> 
+> 
+> 已转稳到游隼云机杨！
+> 
+> 游隼云机场：
+> 
+> * [https://falco.falcosafe.top](https://falco.falcosafe.top)
 
 ~~订阅域名 2024 年 12 月 6 日更新： ~~
 

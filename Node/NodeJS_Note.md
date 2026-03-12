@@ -7,7 +7,7 @@ tags:
   - fnm
   - npm
 created: 2023-08-19 23:06:10
-modified: 2025-08-10 21:32:20
+modified: 2026-03-12 10:29:00
 ---
 
 # NodeJS 笔记
@@ -29,6 +29,34 @@ modified: 2025-08-10 21:32:20
 ## <span id="node_insetings">安装和配置</span>
 
 ### npm
+
+#### 常用命令
+
+##### 安装包
+
+本地安装
+
+```shell
+npm install 包名
+```
+
+全局安装
+
+```shell
+npm install 包名 -g
+```
+
+安装指定版本
+
+```shell
+npm install 包名@1.11.0
+```
+
+安装某版本中最新版
+
+```shell
+npm install 包名@1
+```
 
 ### <span id="node_install">安装</span>
 

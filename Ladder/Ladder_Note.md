@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2026-03-09 02:43:13
+modified: 2026-03-10 21:33:43
 ---
 
 # 梯子笔记
@@ -1337,6 +1337,7 @@ export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_pr
 * [2025年稳定好用的机场推荐（2025-2更新） - Kerry的学习笔记](https://kerrynotes.com/best-ssr-v2ray-proxy/)
 * [2025年性价比机场推荐（持续更新）](https://kerrynotes.com/cost-effective-ss-proxy/)
 * [2025年最新性价比机场推荐](https://github.com/KaWaIDeSuNe/xingjiabijichang)
+* [GitHub - 029danio/fly: 机场推荐2026](https://github.com/029danio/fly)
 * [GitHub - KaWaIDeSuNe/dijiajichang: 2025最新低价机场推荐](https://github.com/KaWaIDeSuNe/dijiajichang)
 * [2025最新低价机场推荐](https://github.com/KaWaIDeSuNe/dijiajichang)
 * [性价比机场测速 - by Duang](https://duangks.com)

@@ -7,7 +7,7 @@ tags:
   - Eclipse
   - dbeaver
 created: 2023-01-30 11:19:11
-modified: 2025-10-21 03:23:48
+modified: 2026-03-23 18:23:04
 ---
 
 # Java 笔记
@@ -289,6 +289,7 @@ SDKMane 语法 `sdk <command> [candidate] [version]`。
 `sdk list 软件名`：列出此软件所有版本。
 
 以 `sdk list java` 为例：
+
 ![sdkman list 1](./Java_Note.assets/sdkman_list_1.png)
 
 可以从截图看出列出了 SDKMan 包含的 JDK 版本信息。
@@ -301,9 +302,23 @@ SDKMane 语法 `sdk <command> [candidate] [version]`。
 
 `Dist` 栏是版本发行商。
 
-`Identifier` 栏是标识符，用于安装时指定的。就是 `sdk <command> [candidate] [version]` 命令语法中最后那个 `version` 的值。
+`Identifier` 栏是版本标识符，用于安装时指定的版本。就是 `sdk <command> [candidate] [version]` 命令语法中最后那个 `version` 的值。
 
 #### install 命令
+
+```shell
+sdk inistall 软件名 版本标识符
+```
+
+> [!tip] 
+> 
+> 软件的版本标识符可以利用 [list 命令](#list%20命令) 来查询。
+
+示例：
+
+```shell
+sdk install tomcat 11.0.18
+```
 
 ---
 

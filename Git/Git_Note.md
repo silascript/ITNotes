@@ -5,7 +5,7 @@ tags:
   - github
   - gist
 created: 2023-01-30 11:19:11
-modified: 2025-11-18 09:02:35
+modified: 2026-04-13 19:34:13
 ---
 
 # Git 笔记
@@ -862,15 +862,11 @@ git config --global --unset url.https://github.com/.insteadof
 
 #### 旁门左道的加速 git
 
- #steampp #watt_toolkit
+ 另类的加速 git 或 github 方式，可以使用 [Steam++](../Tools/Tools_Note.md#Steam++)（新名字：`WattToolkit`）。
 
-使用 [steam++](https://steampp.net/) 来加速 git 访问。 ^steampp
-
-![steam++](Git_Note.assets/steampp.png)
-
-速度真的可以啊！而且这个软件是全平台的，Windows、mac 和 Linux 都支持。
-
-类似的还有网易的 [UU加速器](https://uu.163.com/)，不过 **UU 加速器** 没有 Linux 版本。
+> [!info] 
+> 
+> 类似的还有网易的 [UU加速器](https://uu.163.com/)，不过 **UU 加速器** 没有 Linux 版本。
 
 ---
 

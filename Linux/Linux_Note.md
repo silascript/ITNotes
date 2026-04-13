@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2025-12-11 20:57:26
+modified: 2026-04-13 19:34:57
 ---
 
 # Linux 笔记
@@ -44,14 +44,15 @@ modified: 2025-12-11 20:57:26
     * [SSH 各种问题](#linux_ssh_bugs)
 * [Shell相关](#linux_shell)
 
+* [Desktop](#linux_soft_desktop)
 * [部分软件安装设置](#linux_soft_installsetup)
-  * [使用 desktop](#linux_soft_install_desktop)
 
 * [图形界面相关](#图形界面相关)
 	* [Xorg](#Xorg)
 	* [Wayland](#Wayland)
 * [其他Linux笔记](#linux_notes)
 * [相关资源链接](#linux_resource_links)
+
 ---
 
 ## <span id="linux_terminal"> 终端 </span>
@@ -943,6 +944,8 @@ awk 语法结构：`awk 'pattern {action} pattern {action}..' 文件`
 安装 [字体](../Fonts/Fonts_Note.md)：
 
 1. 使用字体安装程序点击安装
+> [!info] 
+> 
 > 也可以直接将字体文件复制到 `/usr/share/fonts` 目录下  
 > 如果是 ttf 字体，应复制在 `/usr/share/fonts/TTF` 目录下  
 > 也可以直接把字体文件复制到 `~/.local/share/fonts` 目录， 这是仅当前用户可用的字体
@@ -1116,7 +1119,7 @@ wget http://xxx.com
 > 
 > 这操作实际已经包含指定目录的操作，即包含了 `-P` 的操作，如果重命名时，目录不存在，会像 `-P` 一样先创建目录，然后才开始下载然后对下载文件进行重命名。
 
- ```shell
+```shell
  # 大O 下载并重命令文件
  # 相当于 curl 的小o参数的操作
  # 如果当前目录已存在同名文件将覆盖
@@ -1151,7 +1154,7 @@ wget -c http://xxx.com
 
  `-c` 和 `-O` 组合使用下载示例：
  
- ```shell
+```shell
  wget -c -O miniconda_py39_4.12.0.sh https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh
 ```
 
@@ -1307,7 +1310,8 @@ aria2c --conf-path="/etc/aria2/aria2.conf"
 Aria2 除了使用命令行临时配置，还可以将配置写进配置文件 `aria2.conf`。
 
 常用配置：
-```
+
+```shell
 # 磁盘缓存, 0 为禁用缓存，默认:16M
 # 磁盘缓存的作用是把下载的数据块临时存储在内存中，然后集中写入硬盘，以减少磁盘 I/O ，提升读写性能，延长硬盘寿命。
 # 建议在有足够的内存空闲情况下适当增加，但不要超过剩余可用内存空间大小。
@@ -1395,7 +1399,7 @@ export all_proxy=socks5://127.0.0.1:端口
 
 > [!tip] 
 > 
-> `http_proxy` 后面的值，可以加双引号 `"`，也可以不加。即可以写成这样：`export https_proxy="http://127.0.0.1:7897"`
+> `http_proxy` 后面的值，可以加双引号 `\"`，也可以不加。即可以写成这样：`export https_proxy="http://127.0.0.1:7897"`
 > 
 > 如果使用 Clash 客户端，如 [Clash-Verge-Rev](../Ladder/Ladder_Note.md#Clash-Verge-Rev)，其中有个功能能方便复制「环境变量」，点一个，就能复制出要执行的代码，诸如：`export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_proxy=socks5://127.0.0.1:7897`，将代码贴到终端中，执行下，当前终端窗口就能启用临时代理了。
 > 
@@ -1418,7 +1422,7 @@ unset https_proxy
 > * [linux终端设置临时代理 - 建站笔记 - 博客园](https://www.cnblogs.com/dede369/p/14475170.html)
 > * [Windows / Linux 下为 命令行 设置临时代理](https://blog.csdn.net/weixin_45956258/article/details/120423310)
 > * [linux命令配置代理 • Worktile社区](https://worktile.com/kb/ask/313574.html)
-> * [终端使用代理加速的正确方式（Clash） | Ln's Blog](https://weilining.github.io/294.html)
+> * [终端使用代理加速的正确方式（Clash）](https://weilining.github.io/294.html)
 
 ---
 
@@ -1606,11 +1610,7 @@ Shell 语言相关内容：[Shell笔记](Shell/Shell_Note.md)
 
 ---
 
-## <span id="linux_soft_installsetup"> 部分软件安装设置 </span>
-
----
-
-### <span id="linux_soft_install_desktop"> 使用 desktop</span>
+## <span id="linux_soft_desktop">Desktop</span>
 
 1. 新建 `desktop` 文件
 在/usr/share/applications/目录中新建一个后缀名为 `desktop` 的文件
@@ -1701,7 +1701,146 @@ sudo update-desktop-database /usr/share/applications
 
 如点击 Steam++ 运行中窗口后，终端显示：`WM_CLASS(STRING) = "Steam++", "Steam++"`
 
+#### desktop 示例
+
+[Idea](../Java/IDE/Java_IDE_Idea.md)：
+
+```shell
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=IntelliJ Idea 2025
+Icon=idea.png
+# Exec=/opt/JavaIDE/idea_iu/bin/idea.sh
+Exec=/opt/JavaIDE/idea_iu/bin/idea
+Comment=The Java IDE
+Categories=Development;IDE;
+Terminal=false
+StartupWMClass=jetbrains-idea
+```
+
+[Pycharm](../Python/Python_Note.md#Pycharm)：
+
+```shell
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Pycharm 2025
+Icon=pycharm.png
+Exec=/opt/pycharm/bin/pycharm
+Comment=The Python IDE
+Categories=Development;IDE;
+Terminal=false
+StartupWMClass=jetbrains-pycharm
+```
+
+[Eclipse](../Java/IDE/Java_IDE_Eclipse.md)：
+
+```shell
+[Desktop Entry]
+Name=Eclipse-EE
+Comment=Eclipse-EE2025-09
+Type=Application
+
+Exec=/opt/JavaIDE/eclipse-ee/eclipse
+Icon=/opt/JavaIDE/eclipse-ee/icon.xpm
+
+StartupWMClass=Eclipse
+
+Terminal=false
+Categories=Development;
+StartupNotify=true
+```
+
+[Obsidian](../NoteSoft/Obsidian/Obsidian_Note.md)：
+
+```shell
+[Desktop Entry]
+Name=Obsidian
+Exec=/home/silascript/myappimages/Obsidian-1.12.7.AppImage %U
+Terminal=false
+Type=Application
+Icon=/home/silascript/myappimages/icons/obsidian.png
+StartupWMClass=obsidian
+X-AppImage-Version=1.12.7
+Comment=Obsidian 1.12.7
+MimeType=x-scheme-handler/obsidian;
+Categories=Office;
+```
+
+[思源笔记](../NoteSoft/Siyuan/SiYuan_Note.md)：
+
+```shell
+[Desktop Entry]
+Name=Siyuan
+Exec=/home/silascript/myappimages/siyuan-3.6.3.AppImage --no-sandbox %U
+Terminal=false
+Type=Application
+Icon=/home/silascript/myappimages/icons/siyuan.png
+StartupWMClass=siyuan
+X-AppImage-Version=3.6.3
+Comment=Siyuan 3.6.3
+MimeType=x-scheme-handler/siyuan;
+Categories=Office;
+```
+
+> [!tip] 
+> 
+> 思源笔记，弄好 `desktop` 后，执行 `update-desktop-database` 命令后，是不能立即让这个 `desktop` 生效的，重重启系统，才能让生效。
+
+VSCodium（[VSCode](../Editors/VSCode_Note.md) 类似）：
+
+```shell
+[Desktop Entry]
+Name=VSCodium
+Comment=Code Editing. Redefined.
+GenericName=Text Editor
+Exec=/opt/VSCodium/bin/codium %F
+Icon=/opt/VSCodium/resources/app/resources/linux/code.png
+Type=Application
+StartupNotify=false
+StartupWMClass=vscodium
+Categories=TextEditor;Development;IDE;
+MimeType=application/x-code-workspace;
+Actions=new-empty-window;
+Keywords=vscodium;VSCodium
+
+[Desktop Action new-empty-window]
+Name=New Empty Window
+Name[cs]=Nové prázdné okno
+Name[de]=Neues leeres Fenster
+Name[es]=Nueva ventana vacía
+Name[fr]=Nouvelle fenêtre vide
+Name[it]=Nuova finestra vuota
+Name[ja]=新しい空のウィンドウ
+Name[ko]=새 빈 창
+Name[ru]=Новое пустое окно
+Name[zh_CN]=新建空窗口
+Name[zh_TW]=開新空視窗
+Exec=/opt/VSCodium/bin/codium --new-window %F
+Icon=/opt/VSCodium/resources/app/resources/linux/code.png
+```
+
+[Steam++](../Tools/Tools_Note.md#Steam++)（WattToolkit）：
+
+```shell
+[Desktop Entry]
+Name=Watt Toolkit
+Comment=A cross-platform Steam toolbox.
+Comment[zh_CN]=一个开源跨平台的多功能Steam工具箱。
+Type=Application
+Exec=/opt/SteamPP/Steam++.sh
+Icon=/opt/SteamPP/Icons/Watt-Toolkit.png
+# Terminal=false
+StartupNotify=true
+StartupWMClass=Steam++
+Categories=Network;Utility
+Keywords=Steam;Steam++;SteamTools;WattToolkit
+```
+
 ---
+
+## <span id="linux_soft_installsetup"> 部分软件安装设置 </span>
 
 ### <span id="linux_soft_install_komodo">Komodo Edit 安装 </span>
 

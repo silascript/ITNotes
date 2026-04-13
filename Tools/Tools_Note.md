@@ -7,7 +7,7 @@ tags:
   - lux
   - google
 created: 2023-08-18 19:44:52
-modified: 2025-12-03 22:33:14
+modified: 2026-04-13 19:36:00
 ---
 
 # 常用小工具笔记
@@ -486,6 +486,20 @@ f2 内置了一些变量，能够快速实现常用功能：
 
 * [2023-2024 最新可用Google镜像地址 长期更新 - 哔哩哔哩](https://www.bilibili.com/opus/886060167271022609)
 * [谷歌镜像，谷歌学术镜像——2024年1月最新 - 知乎](https://zhuanlan.zhihu.com/p/607795300?utm_id=0&wd=&eqid=a982987d007d0be9000000056583f3f6)
+
+---
+
+## 加速器
+
+### Steam++
+
+#steampp #watt_toolkit
+
+使用 [steam++](https://steampp.net/) 来加速 git 访问。 ^steampp
+
+![steam++](Git_Note.assets/steampp.png)
+
+速度真的可以啊！而且这个软件是全平台的，Windows、mac 和 Linux 都支持。
 
 ---
 

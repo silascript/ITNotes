@@ -5,7 +5,7 @@ tags:
   - ruby
   - gem
 created: 2023-08-18 19:44:52
-modified: 2026-02-09 08:54:05
+modified: 2026-04-26 20:57:48
 ---
 
 # Ruby 笔记
@@ -330,6 +330,9 @@ frum 有个配置目录，默认是在 `~/.frum`，可以使用 `echo $FRUM_DIR`
 ##### 常用命令
 
 * `frum install -l`：列出可以安装的 ruby 版本。
+```shell
+frum install 3.4.9
+```
 * `frum install 版本号`：安装指定版本的 ruby。
 > [!note] 
 > 

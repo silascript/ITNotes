@@ -6,7 +6,7 @@ tags:
   - video
   - list
 created: 2023-05-19 20:49:18
-modified: 2025-11-27 10:37:59
+modified: 2026-05-05 21:38:39
 ---
 
 # Obsidian 视频清单
@@ -47,6 +47,12 @@ modified: 2025-11-27 10:37:59
 ## 主题相关
 
 * [AnuPpuccin 主题完全设置与讲解](https://www.bilibili.com/video/BV1Ds4y1Q7T9)
+
+---
+
+## 实例
+
+* [5分钟打造obsidian个人图书馆_bilibili](https://www.bilibili.com/video/BV1E69aB9E7T)
 
 ---
 

@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-22 01:36:41
-modified: 2025-09-23 22:42:09
+modified: 2026-05-06 01:35:59
 ---
 
 # Docker 资料清单
@@ -18,6 +18,11 @@ modified: 2025-09-23 22:42:09
 * [docker容器之run命令 - 进击的davis - 博客园](https://www.cnblogs.com/davis12/p/14467421.html)
 * [docker run常用参数-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/2246184)
 * [Warning: Stopping docker.service, but it can still be activated by: docker.socket-CSDN博客](https://blog.csdn.net/qq_42533216/article/details/121489855)
+
+### 镜像
+
+* [Docker开源数千款DHI镜像](https://zhuanlan.zhihu.com/p/1984920409074845276)
+* [Docker Hardened Images（DHI）：如何选择和使用最安全的容器镜像-CSDN博客](https://blog.csdn.net/gitblog_00058/article/details/141515730)
 
 ### 代理相关
 

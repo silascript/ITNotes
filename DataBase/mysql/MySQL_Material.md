@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2025-02-22 20:01:30
-modified: 2025-09-24 03:54:57
+modified: 2026-05-05 22:40:31
 ---
 
 # MySQL 资料清单
@@ -15,6 +15,7 @@ modified: 2025-09-24 03:54:57
 
 ## 版本
 
+* [MySQL 9.7 LTS 重點解析：8.0 EOL 在即，這版到底值不值得升 – Tony.Wu's Blog](https://www.itnotetk.com/2026/04/28/mysql-9-7-lts-features-and-comparison/)
 * [MySQL :: MySQL 8.4 Reference Manual :: 1.3 MySQL Releases: Innovation and LTS](https://cunzaima.cn/mysql8.4-zh/dev.mysql.com/doc/refman/8.4/en/mysql-releases.html)
 
 * [MySQL8.1来了：MySQL创新和长期支持（LTS）版本简介-腾讯云开发者社区-腾讯云](https://cloud.tencent.cn/developer/article/2303772)

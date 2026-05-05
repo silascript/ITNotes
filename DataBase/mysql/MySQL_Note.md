@@ -5,7 +5,7 @@ tags:
   - db
   - mysql
 created: 2023-01-30 11:19:11
-modified: 2025-07-19 10:19:04
+modified: 2026-05-05 22:49:33
 ---
 
 # MySQL 笔记
@@ -108,6 +108,14 @@ LTS 版本将遵循 [Oracle 终身支持政策](https://link.zhihu.com/?target=
 ![mysql version schedule screenshot](https://developer.qcloudimg.com/http-save/10653659/60a817fc9e60ec8daebd29fe56699ab8.png)
 
 [MySQL各版本发布时间轴](https://docs.google.com/spreadsheets/u/0/d/e/2PACX-1vSs5aqTLLVWZGS6PnASYtZiyEupJTAnmNRV9tAVtNSX98xKmiNGt_eKfnd2rCT2C0LRVA6UHIVUA0AU/pubhtml?gid=1117405558&single=true&pli=1)
+
+### 版本差异
+
+#### 身份验证插件
+
+* 8.0.4 开始，默认谁插件改为 `caching_sha2_password`
+* 8.0.34 版本开始，弃用 `mysql_native_password‌`；
+* 8.4 默认禁用 `mysql_native_password‌`
 
 ---
 

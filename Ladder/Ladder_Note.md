@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2026-04-28 18:38:46
+modified: 2026-05-03 21:45:12
 ---
 
 # 梯子笔记
@@ -528,7 +528,8 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 > 最新网址：
 > 
 > * ~~[https://fg111.nxxbbf.com](https://fg111.nxxbbf.com)~~
-> * [https://fg-3.nxxbbf.com](https://fg-3.nxxbbf.com)
+> * ~~[https://fg-3.nxxbbf.com](https://fg-3.nxxbbf.com)~~
+> * [https://xx.ffg-g.net ](https://xx.ffg-g.net/)
 >
 > 旧网址：[https://1.mmcks.top](https://1.mmcks.top)（需要梯子访问）
 > 
@@ -737,6 +738,8 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 > 
 > 以 5 元不限时 100G 的套餐看，节点有香港、韩国、印度、马来西亚、美国、泰国、巴西、以色列等，[Shadowsocks](#Shadowsocks) 协议。速度还行。
 > 
+> 
+> 注意：用这机场节点，经常性的不能更新自己，甚至连访问机场的官网都会卡，有点可笑了！
 
 #### 养鸡场
 
@@ -1148,6 +1151,10 @@ export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_pr
 ### Mihomo-Party
 
 [Mihomo Party](https://mihomo.party)[Mihomo](#^mihomo) 的客户端。
+
+> [!tip] 
+> 
+> 已更名为「Clash-Party」。
 
 [Mihomo Party github](https://github.com/mihomo-party-org/mihomo-party) 
 

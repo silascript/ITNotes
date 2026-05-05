@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2026-01-09 22:02:38
+modified: 2026-05-01 20:48:03
 
 ---
 
@@ -61,6 +61,23 @@ VSCodium 安装根目录下，`resources/app/product.json` 文件，其中有个
 	"extensionUrlTemplate": "https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest",
 	"controlUrl": "https://main.vscode-cdn.net/extensions/marketplace.json",
 }
+```
+
+或者：
+
+```json
+"extensionsGallery": {
+	"nlsBaseUrl": "https://www.vscode-unpkg.net/_lp/",
+	"serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
+	"itemUrl": "https://marketplace.visualstudio.com/items",
+	"publisherUrl": "https://marketplace.visualstudio.com/publishers",
+	"resourceUrlTemplate": "https://{publisher}.vscode-unpkg.net/{publisher}/{name}/{version}/{path}",
+	"extensionUrlTemplate": "https://www.vscode-unpkg.net/_gallery/{publisher}/{name}/latest",
+	"controlUrl": "https://main.vscode-cdn.net/extensions/marketplace.json",
+	"mcpUrl": "https://main.vscode-cdn.net/mcp/servers.json",
+	"accessSKUs": ["copilot_enterprise_seat", "copilot_enterprise_seat_quota", "copilot_enterprise_seat_multi_quota", "copilot_enterprise_seat_assignment", "copilot_enterprise_seat_assignment_quota", "copilot_enterprise_seat_assignment_multi_quota", "copilot_enterprise_trial_seat", "copilot_enterprise_trial_seat_quota", "copilot_for_business_seat", "copilot_for_business_seat_quota", "copilot_for_business_seat_multi_quota", "copilot_for_business_seat_assignment", "copilot_for_business_seat_assignment_quota", "copilot_for_business_seat_assignment_multi_quota", "copilot_for_business_trial_seat", "copilot_for_business_trial_seat_quota"]
+}
+
 ```
 
 ### 使用命令操作插件

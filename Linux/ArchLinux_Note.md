@@ -8,7 +8,7 @@ tags:
   - ime
 date created: 2022-11-08 11:32
 created: 2023-08-18 19:44:52
-modified: 2025-09-29 19:21:18
+modified: 2026-04-29 21:34:47
 ---
 
 # ArchLinux 笔记
@@ -63,6 +63,16 @@ Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 #### 更新
 
 做完以上的操作后，就需要更新系统数据库：
+
+```shell
+pamac checkupdates
+pamac update
+```
+> [!tip] 
+> 
+> `pamac` 是 [Manjaro](https://manjaro.org) 原生集成的包的管理工具，Arch Linux 默认不包含。
+
+或者使用 Arch Linux 的 `pacman`：
 
 ```shell
 sudo pacman -Syyu

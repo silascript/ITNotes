@@ -8,7 +8,7 @@ tags:
   - scite
   - lsp
 created: 2023-01-30 11:19:11
-modified: 2025-10-26 10:54:22
+modified: 2026-05-05 12:03:27
 ---
 
 # 编辑器笔记
@@ -54,6 +54,14 @@ VSCode 主要有几个版本：
 
 * [VSCode 笔记](VSCode_Note.md)
 * [VSCode 插件笔记](VSCode_Extensions_Note.md)
+
+---
+
+## <span id="editors_sidex">SideX</span>
+
+[Sidex](https://github.com/Sidenai/sidex) 是一个「精简版」的 [VSCode](#editors_vscode)
+
+![sidex screenshot](https://github.com/Sidenai/sidex/raw/main/docs/assets/preview.jpg)
 
 ---
 

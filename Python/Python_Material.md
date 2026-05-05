@@ -8,7 +8,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2025-12-13 21:53:04
+modified: 2026-05-04 20:12:01
 ---
 
 # Python 资料清单
@@ -164,7 +164,9 @@ modified: 2025-12-13 21:53:04
 #### miniforge
 
 * [conda、pip、anaconda、miniconda、miniforge、mambaforge都是啥？有什么区别？应该用哪个？](https://zhuanlan.zhihu.com/p/674145143)
+* [是时候跟Conda说再见了-腾讯云](https://cloud.tencent.com/developer/article/2415053)
 * [（数据科学学习手札160）使用miniforge代替miniconda - 费弗里 - 博客园](https://www.cnblogs.com/feffery/p/18158285)
+* [使用miniforge代替miniconda - 木子欢儿 - 博客园](https://www.cnblogs.com/HGNET/p/18701724)
 * [【Miniforge系列1】使用Miniforge替代anaconda](https://zhuanlan.zhihu.com/p/704157473)
 * [Miniforge：轻量级Conda安装器的深度解析与应用指南-易源AI资讯 \| 万维易源](https://www.showapi.com/news/article/670986f34ddd79f11a3d4d0a)
 * [conda — 地震“学”软件](https://seismo-learn.org/software/conda/)

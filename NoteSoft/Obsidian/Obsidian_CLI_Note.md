@@ -6,7 +6,7 @@ tags:
   - cli
   - ai
 created: 2026-05-06 21:28:55
-modified: 2026-05-06 21:38:52
+modified: 2026-05-07 05:14:43
 ---
 
 # Obsidian CLI 笔记
@@ -34,9 +34,20 @@ modified: 2026-05-06 21:38:52
 
 ### vault 相关
 
-1. 显示 [vault](#vault) 信息
+通过 `obsidian help` 查看 [vault](Obsidian_Note.md#vault) 相关的 API：
 
-`obsidian vaults` 
+```shell
+vault                 Show vault info
+    info=name|path|files|folders|size  - Return specific info only
+
+vaults                List known vaults
+    total               - Return vault count
+    verbose             - Include vault paths
+```
+
+1. 显示所有 [vault](#vault) 信息
+
+`obsidian vaults` ：
 
 如果要显示 [vault](#vault) 的路径，可以加上子参数 `verbose`：
 
@@ -53,11 +64,33 @@ LHP_Note	/home/silascript/MyNotes/LHP_Note
 WritingExericse	/home/silascript/MyNotes/WritingExericse
 ```
 
-2. 打开某个 [vault](#vault)
+2. 打某个 [vault](#vault) 
 
 ```shell
 obsidian vault=vault名称
 ```
+
+> [!info] 
+> 
+> 如果不指定 vault 名称，即 `obsidian vault`，则相当于指定了焦点所在的 vault（因为 Obsidan CLI 要使用必须先启动 Obsidian，所以必会打开一个 vault）, vault 是否处于焦点，可以查看 vault 列表， vault 列表中有个「**✓**」的，就表明这个 vault 处于「焦点」状态，如果这时执行 `obsidian vault` 命令，就会在终端中显示该 vault 的各种信息，示例如下：
+> 
+> ```shell
+> $ obsidian vault        
+> name	ITNotes
+> path	/home/silascript/MyNotes/ITNotes
+> files	433
+> folders	121
+> size	20680940
+> ```
+> 
+> 而如果明文指定要打开的 vault，而该 vault 是「焦点」状态，则会在终端显示相关的操作菜单。意思就是，当前 vault 已经处于打开并处于「焦点」状态，你可以对其进行下一步的操作。示例：
+> 
+> ```shell
+> obsidian vault=ITNotes
+> ```
+> 
+> ![obsidian cli vault sc](obsidian_cli_vault_sc.gif)
+> 
 
 ### 插件
 

@@ -7,7 +7,7 @@ tags:
   - lux
   - google
 created: 2023-08-18 19:44:52
-modified: 2026-04-13 19:36:00
+modified: 2026-05-07 05:04:30
 ---
 
 # 常用小工具笔记
@@ -461,6 +461,30 @@ f2 内置了一些变量，能够快速实现常用功能：
 
 ---
 
+## 录屏
+
+### Asciinema
+
+* 官方网站为：[https://asciinema.org](https://asciinema.org) 
+* 项目主页：[https://github.com/asciinema](https://github.com/asciinema)
+
+#### 常用操作
+
+1. 开始录制：
+
+`asciinema rec 文件名.cast`
+
+2. 停止录制：`ctrl+d` 或 `exit` 即：可
+
+#### agg
+
+[agg](https://github.com/asciinema/agg) 这个工具可以转换成 `gif` 文件。
+
+转换操作：
+`agg 文件名.cast 文件名.gif`
+
+---
+
 ## Google 相关
 
 ### Google 镜像
@@ -527,6 +551,7 @@ WakaTime 的 api key 就是 WakaTime 与编辑器或支持 WakaTime 的关键。
 
 ## 相关笔记
 
+* [工具资料](Tools_Material.md)
 * [Ladder 笔记](../Ladder/Ladder_Note.md)
 * [Youtube笔记](../Ladder/Youtube_Note.md)
 * [Linux 笔记](../Linux/Linux_Note.md)

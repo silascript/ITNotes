@@ -5,7 +5,7 @@ tags:
   - yaml
   - ime
 created: 2023-08-18 19:44:52
-modified: 2025-03-14 02:34:55
+modified: 2026-05-07 04:22:01
 ---
 
 # Rime 笔记
@@ -114,6 +114,57 @@ patch:
     states: [ 漢字, 汉字 ]
 ```
 
+#### 特殊字符
+
+特殊字符默认是放在 `symbols.yaml` 文件中。
+
+如果想要在某输入方案中使用默认的特殊字符，得对 `xxx.schema.yaml` 或 `xxxx.custom.yaml` 文件进行配置以下两处配置：
+
+1. 启用特殊符号
+```yaml
+  punctuator:
+    import_preset: symbols
+```
+2. 配置识别器 `recognizer` 中的模式 `patterns`：
+   
+```yaml
+recognizer:
+  patterns:
+    punct: "^/[a-z]+$"
+```
+
+> [!tip] 
+> 
+> `patterns` 中，`punct` 就是配置 `punctuator` 的触发模式，使用的是「正则表达式」。
+> 
+> 例子中 `^/[a-z]+$` 的意思是：以 `/` 符号就触发特殊符号输入。
+
+以 `wubi98.custom.yaml` 文件为例：
+
+```yaml
+patch:
+  switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ 中文, 英文 ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
+  - name: extended_charset
+    states: [ 通用, 增廣 ]
+  - name: ascii_punct
+    states: [ 。，, ．， ]
+  - name: simplification
+    reset: 0
+    states: [ 漢字, 汉字 ]
+  punctuator:
+    import_preset: symbols
+  recognizer:
+    import_preset: default
+    patterns:
+      reverse_lookup: "^z[a-z]*$"
+      punct: "^/[a-z]+$"
+```
+
 ### vim 输入法切换
 
 解决 vim 或其他支持 vim 模式的编辑器中，输入法切换的麻烦，可以使用 `app_options` 选项中针对指定软件 vim 模式的配置。
@@ -209,4 +260,5 @@ app_opsions:
 * [Plum](https://github.com/rime/plum)
 * [五笔小筑](https://wubi98.gitee.io/)
 * [98五笔资源库](http://98wb.ysepan.com/)
+* [sheepduke/rime-config](https://github.com/sheepduke/rime-config)
 

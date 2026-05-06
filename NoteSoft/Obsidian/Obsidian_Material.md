@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2025-02-07 05:28:08
-modified: 2025-11-27 18:29:24
+modified: 2026-05-06 21:28:05
 ---
 
 # Obsidian 资料清单
@@ -68,6 +68,10 @@ modified: 2025-11-27 18:29:24
 * [Obsidian 达人成长之路 5：使用 Templater 减少重复工作 - 掘金](https://juejin.cn/post/7381347654767804425)
 
 ### Bases
+
+### CLI
+
+* [Obsidian CLI - Obsidian 中文帮助](https://obsidian.md/zh/help/cli)
 
 ---
 

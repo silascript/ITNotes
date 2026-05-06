@@ -6,10 +6,17 @@ tags:
   - cli
   - ai
 created: 2026-05-06 21:28:55
-modified: 2026-05-06 21:34:48
+modified: 2026-05-06 21:38:52
 ---
 
 # Obsidian CLI 笔记
+
+---
+
+## 目录
+
+* [目录](#目录)
+* [CLI 常用用法](#CLI%20常用用法)
 
 ---
 
@@ -21,9 +28,11 @@ modified: 2026-05-06 21:34:48
 > 
 > 唯一吐槽的是，这个 CLI 是个残疾的 CLI。必须得启动 Obsidan 才能用，也就是说这个 CLI 是得依赖 Obsidian 图形界面的，这设计太蠢了。
 
-#### CLI 常用用法
+---
 
-##### vault 相关
+## CLI 常用用法
+
+### vault 相关
 
 1. 显示 [vault](#vault) 信息
 
@@ -50,9 +59,11 @@ WritingExericse	/home/silascript/MyNotes/WritingExericse
 obsidian vault=vault名称
 ```
 
-##### 插件
+### 插件
 
 `obsidian plugin`
+
+#### 查看插件
 
 1. 查看当前 [vault](#vault) 所有的插件
 
@@ -62,18 +73,18 @@ obsidian vault=vault名称
 obsidian plugins
 ```
 
-显示已启用的插件：
+2. 显示已启用的插件：
 
 ```shell
 obsidian plugins:enabled
 ```
 
-显示插件版本信息：
+3. 显示插件版本信息：
 
 * `obsidian plugins versions`
 * `obsidian plugins:enabled versions`
 
-2. 查看某插件
+4. 查看某插件
 
 需要指定插件的 `id`：
 
@@ -93,21 +104,21 @@ enabled	true
 description	The plugin helps you to see the number of notes under each folder within the file explorer.
 ```
 
-3. 启用和禁用插件
+#### 启用和禁用插件
 
-启用插件：
+1. 启用插件：
 
 ```shell
 obsidan plugin:enable id=插件id
 ```
 
-禁用插件：
+2. 禁用插件：
 
 ```shell
 obsidian plugin:disable id=插件id
 ```
 
-4. 安装插件
+3. 安装插件
 
 ```shell
 obsidian plugin:install id=插件
@@ -117,19 +128,19 @@ obsidian plugin:install id=插件
 > 
 > `plugin:install` 子命令还有一个属性：`enable`，即安装完后启用该插件。
 
-5. 卸载插件：
+4. 卸载插件：
 
 ```shell
 obsidian plugin:uninstall id=插件id
 ```
 
-6. 重载插件：
+5. 重载插件：
 
 ```shell
 obsidian plugin:reload id=插件id
 ```
 
-7. 安全模式：
+#### 安全模式
 
 查看当前 [安全模式](#安全模式) 状态：
 

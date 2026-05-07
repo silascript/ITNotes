@@ -7,7 +7,7 @@ tags:
   - lux
   - google
 created: 2023-08-18 19:44:52
-modified: 2026-05-07 11:32:54
+modified: 2026-05-07 21:09:23
 ---
 
 # 常用小工具笔记
@@ -470,11 +470,18 @@ f2 内置了一些变量，能够快速实现常用功能：
 
 #### 常用操作
 
-1. 开始录制：
+1. 开始录制
+```shell
+asciinema rec 文件名.cast`
+```
 
-`asciinema rec 文件名.cast`
+2. 停止录制
+`ctrl+d` 或 `exit` 即可
 
-2. 停止录制：`ctrl+d` 或 `exit` 即：可
+3. 播放
+```shell
+asciinema play 文件名.cast
+```
 
 #### agg
 

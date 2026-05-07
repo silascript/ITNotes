@@ -6,7 +6,7 @@ tags:
   - cli
   - ai
 created: 2026-05-06 21:28:55
-modified: 2026-05-07 11:22:30
+modified: 2026-05-08 03:59:30
 ---
 
 # Obsidian CLI 笔记
@@ -64,7 +64,7 @@ LHP_Note	/home/silascript/MyNotes/LHP_Note
 WritingExericse	/home/silascript/MyNotes/WritingExericse
 ```
 
-2. 打某个 [vault](#vault) 
+2. 打开某个 [vault](#vault) 
 
 ```shell
 obsidian vault=vault名称
@@ -72,7 +72,9 @@ obsidian vault=vault名称
 
 > [!info] 
 > 
-> 如果不指定 vault 名称，即 `obsidian vault`，则相当于指定了焦点所在的 vault（因为 Obsidan CLI 要使用必须先启动 Obsidian，所以必会打开一个 vault）, vault 是否处于焦点，可以查看 vault 列表， vault 列表中有个「**✓**」的，就表明这个 vault 处于「焦点」状态，如果这时执行 `obsidian vault` 命令，就会在终端中显示该 vault 的各种信息，示例如下：
+> 如果终端当前工作目录是一个仓库文件夹，则默认使用该仓库。否则，使用当前「**活动**」[vault](Obsidian_Note.md#vault)。
+> 
+> 如果不指定 vault 名称，即 `obsidian vault`，则相当于指定了当前「**活动**」 vault（因为 Obsidan CLI 要使用必须先启动 Obsidian，所以必会打开一个 vault）, vault 是否处于「活动」状态，可以查看 vault 列表， vault 列表中有个「**✓**」的，就表明这个 vault 处于「活动」状态，如果这时执行 `obsidian vault` 命令，就会在终端中显示该 vault 的各种信息，示例如下：
 > 
 > ```shell
 > $ obsidian vault        
@@ -83,7 +85,7 @@ obsidian vault=vault名称
 > size	20680940
 > ```
 > 
-> 而如果**明文**指定要打开的 vault，而该 vault 是「焦点」状态，则会在终端显示相关的操作菜单。意思就是，当前 vault 已经处于打开并处于「焦点」状态，你可以对其进行下一步的操作。示例：
+> 而如果**明文**指定要打开的 vault，而该 vault 是「活动」状态，则会在终端显示相关的操作菜单。意思就是，当前 vault 已经处于打开并处于「活动」状态，你可以对其进行下一步的操作。示例：
 > 
 > ```shell
 > obsidian vault=ITNotes

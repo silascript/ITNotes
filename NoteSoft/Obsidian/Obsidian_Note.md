@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2026-05-06 21:32:56
+modified: 2026-05-08 03:59:21
 ---
 
 # Obsidian 笔记
@@ -183,6 +183,19 @@ Categories=Office;
 > [!tip]
 > 
 > 如果 `.obsidian` 目录已存在，将不会再生成，只有 vault 根目录下没有 `.obsidian` 目录，ob 才会生成此配置目录。
+
+##### vault 状态
+
+vault 有四种状态：
+
+1. 未加入 vault 列表
+2. 已加入 vault 列表，但未打开
+3. 已打开，但处于非活动状态
+4. 已打开，且处于活动状态
+
+> [!info] 
+> 
+>  vault 列表中有个「**✓**」的，就表明这个 vault 处于「活动」状态
 
 ##### 创建
 

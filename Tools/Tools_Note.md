@@ -7,7 +7,7 @@ tags:
   - lux
   - google
 created: 2023-08-18 19:44:52
-modified: 2026-05-07 05:04:30
+modified: 2026-05-07 11:32:54
 ---
 
 # 常用小工具笔记
@@ -479,6 +479,29 @@ f2 内置了一些变量，能够快速实现常用功能：
 #### agg
 
 [agg](https://github.com/asciinema/agg) 这个工具可以转换成 `gif` 文件。
+
+安装 agg：
+
+本地环境得有 [Rust](../Rust/Rust_Note.md) 环境，因为需要使用 `cargo` 进行编译安装：
+
+```shell
+cargo install --git https://github.com/asciinema/agg
+```
+
+或
+
+```shell
+git clone https://github.com/asciinema/agg
+cd agg
+cargo build --release
+```
+
+编译生成完成，在 `~/agg/target/release/` 目录下有一个 `agg` 可执行文件，这就是 agg 的程序了。
+> [!info] 
+> 
+> 可以复制到 `~/.local/bin` 下，就能在当前用户下直接执行 agg 了：
+> 
+> `cp agg/target/release/agg .local/bin/`
 
 转换操作：
 `agg 文件名.cast 文件名.gif`

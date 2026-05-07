@@ -6,7 +6,7 @@ tags:
   - cli
   - ai
 created: 2026-05-06 21:28:55
-modified: 2026-05-07 05:14:43
+modified: 2026-05-07 11:22:30
 ---
 
 # Obsidian CLI 笔记
@@ -83,13 +83,13 @@ obsidian vault=vault名称
 > size	20680940
 > ```
 > 
-> 而如果明文指定要打开的 vault，而该 vault 是「焦点」状态，则会在终端显示相关的操作菜单。意思就是，当前 vault 已经处于打开并处于「焦点」状态，你可以对其进行下一步的操作。示例：
+> 而如果**明文**指定要打开的 vault，而该 vault 是「焦点」状态，则会在终端显示相关的操作菜单。意思就是，当前 vault 已经处于打开并处于「焦点」状态，你可以对其进行下一步的操作。示例：
 > 
 > ```shell
 > obsidian vault=ITNotes
 > ```
 > 
-> ![obsidian cli vault sc](obsidian_cli_vault_sc.gif)
+> ![obsidian cli vault sc](Obsidian_Note.assets/obsidian_cli_vault_sc.gif)
 > 
 
 ### 插件

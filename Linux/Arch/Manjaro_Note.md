@@ -5,10 +5,16 @@ tags:
   - archlinux
   - manjaro
 created: 2026-05-10 00:55:58
-modified: 2026-05-10 01:05:08
+modified: 2026-05-10 01:17:34
 ---
 
 # Manjaro 笔记
+
+---
+
+## 简介
+
+[Manjaro ](https://manjaro.org) 是一个基于 [ArchLinux](ArchLinux_Note.md) 构建的 Linux 操作系统。
 
 ---
 
@@ -19,19 +25,22 @@ Manjaro 换源于原生的 [ArchLinux](ArchLinux_Note.md) 是一样的，可以�
 #### mirrorlist 示例
 
 ```shell
-## Country : China
+## 南京大学
+Server = https://mirror.nju.edu.cn/manjaro/stable/$repo/$arch
+
+## 清华
 Server = https://mirrors.tuna.tsinghua.edu.cn/manjaro/stable/$repo/$arch
 
-## Country : China
-Server = https://mirrors.ustc.edu.cn/manjaro/stable/$repo/$arch
-
-## China
+## 北大
 Server = https://mirrors.pku.edu.cn/manjaro/$repo/os/$arch
 
-## Country : China
+## 上海交大
 Server = https://mirrors.sjtug.sjtu.edu.cn/manjaro/stable/$repo/$arch
 
-## Country : China
+## 中科大
+Server = https://mirrors.ustc.edu.cn/manjaro/stable/$repo/$arch
+
+## 南阳理工
 Server = https://mirror.nyist.edu.cn/manjaro/stable/$repo/$arch
 
 ```
@@ -68,3 +77,4 @@ pacman -Syyu
 ## 相关笔记
 
 * [ArchLinux 笔记](ArchLinux_Note.md)
+* [Arch 系资料](../Linux_Material.md#Arch%20系)

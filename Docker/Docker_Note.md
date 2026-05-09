@@ -594,7 +594,7 @@ Docker Hardened Images（**DHI**）‌ 是由 Docker 官方维护的‌安全加
 DHI 特点：
 
 * 移除 [Shell](../Linux/Shell/Shell_Note.md)，理由是防止在容器内执行任意命令
-* 移除包管理器，如 [APT](../Linux/Debian_Note.md#APT) 等，防止乱安装或乱升级
+* 移除包管理器，如 [APT](../Linux/Debian/Debian_Note.md#APT) 等，防止乱安装或乱升级
 * 移除编译器和解释器，防止引入用于运行或注入恶意代码的工具。
 * 移除调试工具，减少利用或信息泄露的风险
 

@@ -219,13 +219,13 @@ yum install openssh-clients
 
   * 在 `/etc/ssh/` 目录下有 **sshd_config** 配置文件
   * 将端口号和访问 IP 地址的注释去掉
-      ![centos_ssh_ip_port](./CentOS_Note.assets/centos_ssh_ip_port.png)
+      ![centos_ssh_ip_port](../CentOS_Note.assets/centos_ssh_ip_port.png)
   * 允许 root 用户登录  
-      ![centos_ssh_rootlogin](./CentOS_Note.assets/centos_ssh_rootlogin.png)
+      ![centos_ssh_rootlogin](../CentOS_Note.assets/centos_ssh_rootlogin.png)
   * 将 **PermitTTY yes** 这一项的注释也去掉，并且将其值设置为 **yes**，才能开启远程登录
-      ![centos_ssh_permittty](./CentOS_Note.assets/centos_ssh_permittty.png)
+      ![centos_ssh_permittty](../CentOS_Note.assets/centos_ssh_permittty.png)
   * 将 **PasswordAuthentication** 这一项也注释去掉并设为 **yes**，这是用户密码登录
-      ![centos_ssh_pwauthentication](./CentOS_Note.assets/centos_ssh_pwauthentication.png)
+      ![centos_ssh_pwauthentication](../CentOS_Note.assets/centos_ssh_pwauthentication.png)
 	* 将 `UsePAM` 改为 `no`
   * 改 root 登录密码
   ```shell
@@ -264,7 +264,7 @@ AlmaLinux 有四种变体：Minimal、Base、Micro 和 Init。
 
 Minimal：  一个最小的压缩镜像,包含有限的包集,并使用 `microdnf` 包管理器作为 `DNF:` 的替代品。 ^minimal
 
-Base：一个镜像,旨在成为您的容器化应用程序、中间件和实用程序的基础。基本映像包括一些有用的操作系统工具,如 find、[Tar 命令](Linux_Note.md#Tar%20命令)、[Vi](../vim/Vim_Note.md) 等,以及完整的 DNF 堆栈。 
+Base：一个镜像,旨在成为您的容器化应用程序、中间件和实用程序的基础。基本映像包括一些有用的操作系统工具,如 find、[Tar 命令](Linux_Note.md#Tar%20命令)、[Vi](../../vim/Vim_Note.md) 等,以及完整的 DNF 堆栈。 
 
 Micro：一个更加最小化的镜像。它在没有任何包管理器的情况下分发。 Micro 镜像使用底层主机上的包管理器来安装包,通常使用 `Buildah` 或带有 `Podman` 的多阶段构建。 Micro 图像比 Base 图像小 82%,比 [Minimal](#^minimal) 图像小 68%。
 
@@ -306,9 +306,9 @@ microdnf install vim -y          # vim
 
 ## 其他相关笔记
 
-* [Linux 笔记](./Linux_Note.md)
-* [Fedora 笔记](./Fedora_Note.md)
-* [ArchLinux 笔记](./ArchLinux_Note.md)
-* [Debian 笔记](./Debian_Note.md)
-* [Ubuntu 笔记](./Ubuntu_Note.md)
+* [Linux 笔记](../Linux_Note.md)
+* [Fedora 笔记](Fedora_Note.md)
+* [ArchLinux 笔记](Arch/ArchLinux_Note.md)
+* [Debian 笔记](Debian/Debian_Note.md)
+* [Ubuntu 笔记](Debian/Ubuntu_Note.md)
 

@@ -113,15 +113,15 @@ sudo apt remove vim
 sudo add-apt-repository -r ppa:jonathonf/vim
 ```
 
-vim 具体使用请参考 [Vim_Note](../vim/Vim_Note.md) 笔记。
+vim 具体使用请参考 [Vim_Note](../../vim/Vim_Note.md) 笔记。
 
 ---
 
 ## 其他相关笔记
 
-* [Linux 笔记](./Linux_Note.md)
-* [Debian 笔记](./Debian_Note.md)
-* [CentOS 笔记](./CentOS_Note.md)
-* [Fedora 笔记](./Fedora_Note.md)
-* [ArchLinux 笔记](./ArchLinux_Note.md)
+* [Linux 笔记](../Linux_Note.md)
+* [Debian 笔记](Debian/Debian_Note.md)
+* [CentOS 笔记](../Redhat/CentOS_Note.md)
+* [Fedora 笔记](../Redhat/Fedora_Note.md)
+* [ArchLinux 笔记](Arch/ArchLinux_Note.md)
 

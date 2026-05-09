@@ -291,7 +291,7 @@ go 1.21.3
 
 #### 安装和配置
 
-安装很简使用系统的包管理器装：以 [ArchLinux](../Linux/ArchLinux_Note.md) 为例：`yay -S goenv`
+安装很简使用系统的包管理器装：以 [ArchLinux](../Linux/Arch/ArchLinux_Note.md) 为例：`yay -S goenv`
 
 装完 goenv 后，最好在终端上跑下 `goenv` 命令，这样会在 `HOME` 目录下生成 `.goenv` 目录，这是当前用户 goenv 的根目录，下面配置 goenv 的环境变量时会配到这个目录。
 

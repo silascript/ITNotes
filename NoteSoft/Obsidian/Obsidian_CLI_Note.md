@@ -6,7 +6,7 @@ tags:
   - cli
   - ai
 created: 2026-05-06 21:28:55
-modified: 2026-05-08 03:59:30
+modified: 2026-05-08 21:27:37
 ---
 
 # Obsidian CLI 笔记
@@ -31,6 +31,12 @@ modified: 2026-05-08 03:59:30
 ---
 
 ## CLI 常用用法
+
+重启 [Obsidian](Obsidian_Note.md)
+
+```shell
+obsidian restart
+```
 
 ### vault 相关
 

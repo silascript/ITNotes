@@ -821,7 +821,7 @@ drwxr-xr-x     - silascript silascript 2025-02-18 21:44 you-get
 
 1. 使用系统包管理器安装
 
-以 [ArchLinux](../Linux/ArchLinux_Note.md) 为例：
+以 [ArchLinux](../Linux/Arch/ArchLinux_Note.md) 为例：
 
 ```shell
 yay -S uv

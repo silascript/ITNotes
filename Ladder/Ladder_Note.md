@@ -990,7 +990,7 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 
 ##### 安装
 
-以 [ArchLinux](../Linux/ArchLinux_Note.md) 为例：
+以 [ArchLinux](../Linux/Arch/ArchLinux_Note.md) 为例：
 
 ```shell
 pacman -S clash-verge

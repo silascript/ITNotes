@@ -317,7 +317,7 @@ export RUBY_BUILD_HTTP_CLIENT=wget
 
 ##### 安装及配置
 
-可以使用系统的包管理器安装，如 [ArchLinux](../Linux/ArchLinux_Note.md)：
+可以使用系统的包管理器安装，如 [ArchLinux](../Linux/Arch/ArchLinux_Note.md)：
 
 ```
 yay -S frum-bin

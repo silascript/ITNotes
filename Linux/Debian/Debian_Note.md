@@ -176,7 +176,7 @@ deb http://mirrors.ustc.edu.cn/debian-security/ stable-security main non-free co
 * [Linux 笔记](Linux_Note.md)
 * [Linux 资料清单](Linux_Material.md)
 * [Ubuntu 笔记](Ubuntu_Note.md)
-* [ArchLinux 笔记](ArchLinux_Note.md)
-* [Fedora 笔记](Fedora_Note.md)
-* [CentOS 笔记](CentOS_Note.md)
+* [ArchLinux 笔记](Arch/ArchLinux_Note.md)
+* [Fedora 笔记](../Redhat/Fedora_Note.md)
+* [CentOS 笔记](../Redhat/CentOS_Note.md)
 

@@ -217,7 +217,7 @@ fnm 有两特点：
 
 #### 安装
 
-[Linux](../Linux/Linux_Note.md) 下可以使用各自的包管理器安装。以 [ArchLinux](../Linux/ArchLinux_Note.md) 为例：
+[Linux](../Linux/Linux_Note.md) 下可以使用各自的包管理器安装。以 [ArchLinux](../Linux/Arch/ArchLinux_Note.md) 为例：
 
 ```shell
 yay -S fnm

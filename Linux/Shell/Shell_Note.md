@@ -1472,7 +1472,7 @@ pipx install yq
 
 当然 yq 通过系统的包管理器安装：
 
-（[ArchLinux_Note](../ArchLinux_Note.md) 上包管理器中的 `yq` 是 python 版本，而 go 版的是叫 `go-yq`）
+（[ArchLinux_Note](../Arch/ArchLinux_Note.md) 上包管理器中的 `yq` 是 python 版本，而 go 版的是叫 `go-yq`）
 
 ```shell
 pacman -S go-yq

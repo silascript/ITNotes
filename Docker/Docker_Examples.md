@@ -877,7 +877,7 @@ CentOS 开启 SSH 服务
 * 在 CentOS 容器内添加 SSH 服务并进行相应的配置
 >[!info] 
 >
-> 参考 [CentOS 开启 SSH 服务](../Linux/CentOS_Note.md#cent_cs_ssh)
+> 参考 [CentOS 开启 SSH 服务](../Linux/Redhat/CentOS_Note.md#cent_cs_ssh)
 * 提交镜像
 >[!info] 
 >

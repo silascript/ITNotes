@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2026-04-13 19:34:57
+modified: 2026-05-08 20:13:57
 ---
 
 # Linux 笔记
@@ -35,6 +35,7 @@ modified: 2026-04-13 19:34:57
 	* [sed](#linux_textprocessing_sed)
 	* [awk](#linux_textprocessing_awk)
 * [字体](#linux_font)
+* [服务](#linux_service)
 * [网络](#linux_network) ^dee618
   * [Linux 网络相关命令](#linux_network_command)
     * [ip](#linux_network_command_ip)
@@ -607,7 +608,7 @@ pacman -S unrar
 
 > [!tip]
 > 
-> [ArchLinux_Note](ArchLinux_Note.md) 如果安装了 [AUR Helper](ArchLinux_Note.md#AUR%20Helper)，如 [yay](ArchLinux_Note.md#yay)，就能使用相应的 aur helper 来安装。
+> [ArchLinux_Note](Arch/ArchLinux_Note.md) 如果安装了 [AUR Helper](Arch/ArchLinux_Note.md#AUR%20Helper)，如 [yay](Arch/ArchLinux_Note.md#yay)，就能使用相应的 aur helper 来安装。
 
 `unrar` 简单示例：
 
@@ -959,6 +960,22 @@ fc-cache -fv
 ```shell
 # 查看中文字体
 fc-list :lang=zh
+```
+
+---
+
+## <span id="linux_service">服务</span>
+
+1. 列出所有**已加载**、**正在运行**的服务：
+
+```shell
+systemctl list-units --type=service
+```
+
+2. 列出所有服务（包括未运行的、已禁用的）：
+
+```shell
+systemctl list-unit-files --type=service
 ```
 
 ---
@@ -2132,7 +2149,7 @@ FileManager-Actions 这个工具可以方便更改右键菜单。
 
 ![Gcolor3 screenshot](https://www.hjdskes.nl/img/projects/gcolor3/picker.png)
 
-使用包管理器安装，以 [ArchLinux](ArchLinux_Note.md) 为例：
+使用包管理器安装，以 [ArchLinux](Arch/ArchLinux_Note.md) 为例：
 
 ```shell
 yay -S extra/gcolor3
@@ -2255,11 +2272,11 @@ Core 1:        +42.0°C  (high = +82.0°C, crit = +102.0°C)
 
 ## <span id="linux_notes">其他 Linux 笔记</span>
 
-* [ArchLinux 笔记](ArchLinux_Note.md)
-* [CentOS 笔记](CentOS_Note.md)
-* [Fedora 笔记](Fedora_Note.md)
-* [Ubuntu 笔记](Ubuntu_Note.md)
-* [Debian 笔记](Debian_Note.md)
+* [ArchLinux 笔记](Arch/ArchLinux_Note.md)
+* [CentOS 笔记](Redhat/CentOS_Note.md)
+* [Fedora 笔记](Redhat/Fedora_Note.md)
+* [Ubuntu 笔记](Debian/Ubuntu_Note.md)
+* [Debian 笔记](Debian/Debian_Note.md)
 * [Shell 笔记](Shell/Shell_Note.md)
 * [Linux 视频清单](./Linux_Videos.md)
 * [Shell 视频清单](Shell/Shell_Videos.md)

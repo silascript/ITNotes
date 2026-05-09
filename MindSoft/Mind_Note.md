@@ -28,7 +28,7 @@ modified: 2023-10-16 01:22:59
 
 ##### Linux
 
-仍以 [ArchLinux系](../Linux/ArchLinux_Note.md) 为例：
+仍以 [ArchLinux系](../Linux/Arch/ArchLinux_Note.md) 为例：
 
 ```shell
 pacman -S freeplane
@@ -48,7 +48,7 @@ pacman -S freeplane
 
 ##### Linux
 
-以 [ArchLinux系](../Linux/ArchLinux_Note.md) 为例：
+以 [ArchLinux系](../Linux/Arch/ArchLinux_Note.md) 为例：
 
 ```shell
 pacman -S aur/drawio-desktop-bin

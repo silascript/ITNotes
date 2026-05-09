@@ -171,7 +171,7 @@ modified: 2025-12-11 20:58:22
 ## 相关笔记
 
 * [Linux笔记](Linux_Note.md)
-* [ArchLinux 笔记](ArchLinux_Note.md)
-* [Debian 笔记](Debian_Note.md)
-	* [Ubuntu 笔记](Ubuntu_Note.md)
+* [ArchLinux 笔记](Arch/ArchLinux_Note.md)
+* [Debian 笔记](Debian/Debian_Note.md)
+	* [Ubuntu 笔记](Debian/Ubuntu_Note.md)
 * [Shell资料清单](Shell/Shell_Material.md)

@@ -6,7 +6,7 @@ tags:
   - cloudecode
   - iflowcli
 created: 2026-04-27 21:34:00
-modified: 2026-04-27 22:30:33
+modified: 2026-05-09 10:56:40
 ---
 
 # Agent 笔记
@@ -44,4 +44,5 @@ modified: 2026-04-27 22:30:33
 
 ## 相关笔记
 
+* [Agent 资料](Agent_Material.md)
 * [AI 笔记](../AI_Note.md)

@@ -8,7 +8,7 @@ tags:
   - ime
 date created: 2022-11-08 11:32
 created: 2023-08-18 19:44:52
-modified: 2026-04-29 21:34:47
+modified: 2026-05-10 01:04:37
 ---
 
 # ArchLinux 笔记
@@ -29,11 +29,12 @@ modified: 2026-04-29 21:34:47
 ### <span id="archlinux_configs_chsources">换源</span>
 
 可以使用以下命令快速探测出速度较快的国内镜像源：
+
 ```shell
 sudo pacman-mirrors -i -c China -m rank
 ```
 
-出现选项列表勾选所需的源。这些源配置就会出现在 `/etc/pacman.d/mirrorlist` 这个文件中，如果想进一步手动配置，可以使用 [Vim](../vim/Vim_Note.md) 等编辑器来手动配置。
+出现选项列表勾选所需的源。这些源配置就会出现在 `/etc/pacman.d/mirrorlist` 这个文件中，如果想进一步手动配置，可以使用 [Vim](../../vim/Vim_Note.md) 等编辑器来手动配置。
 > [!tip]
 > 其实需要手动，主要是 `pacman-mirrors -i -c China -m rank` 这命令并不太靠谱，有时会选上海交大或华为的源，这俩货，要么速度有时会慢，要么直接挂了，非常不稳定。而且有时只能「刷」出一个国内源可勾选，所以建议还是手动添加多个国内源更保险。
 
@@ -63,16 +64,6 @@ Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 #### 更新
 
 做完以上的操作后，就需要更新系统数据库：
-
-```shell
-pamac checkupdates
-pamac update
-```
-> [!tip] 
-> 
-> `pamac` 是 [Manjaro](https://manjaro.org) 原生集成的包的管理工具，Arch Linux 默认不包含。
-
-或者使用 Arch Linux 的 `pacman`：
 
 ```shell
 sudo pacman -Syyu
@@ -220,7 +211,7 @@ pacman -Syyuu
 
 在众多 [AUR Helper](#AUR%20Helper) 中，其中比较出名的是要属 [yay](https://aur.archlinux.org/packages/yay) [![yay Repo](https://img.shields.io/github/stars/Jguer/yay?style=social)](https://github.com/Jguer/yay)。
 
-yay 是用 [Go语言](../GoLang/GoLang_Note.md) 编写的。
+yay 是用 [Go语言](../../GoLang/GoLang_Note.md) 编写的。
 
 因为 `yay` 是对 [pacman](#pacman) 的封装，所以命令与 `pacman` 命令高度一致。
 
@@ -240,7 +231,7 @@ yay 是用 [Go语言](../GoLang/GoLang_Note.md) 编写的。
 #### paru
 新的 [AUR Helper](#AUR%20Helper)，[yay](#yay) 的「继任者」，当属 [paru](https://aur.archlinux.org/packages/paru) [![paru repo](https://img.shields.io/github/stars/morganamilo/paru?style=social)](https://github.com/morganamilo/paru)。
 
-paru 是使用 [Rust语言](../Rust/Rust_Note.md) 编写的。
+paru 是使用 [Rust语言](../../Rust/Rust_Note.md) 编写的。
 
 ---
 
@@ -285,7 +276,7 @@ ibus-daemon -d -x
 
 > [!info] 关于 xprofile
 > 
-> 使用到有图形界面的 Linux 系统，建议还是使用 `.xprofile` 文件来代替 `.profile`。因为有部分「奇葩」软件，它们在终端启动和通过桌面图标（Desktop）启动，读取配置文件，「竟然」是读取不同的，如果只配置了 `.profile`，那这些「奇葩」在使用桌面图标启动时，它们就找 `PATH` 时，就不会去找 `.profile`，而是试图去找 `.xprofile`，找不到，它们就使用默认的根的 profile，这时就可能出现问题，比如 [SublimeText](../Editors/Editors_Note.md#SublimeText) 中使用到 [常用 LSP 插件列表](../Editors/Editors_Note.md#常用%20LSP%20插件列表) 时，有可能找 [NodeJS](../Node/NodeJS_Note.md)，即便在 `.profile` 已经配置了 node，但只要是通过桌面方式启动 Sublime，那就永远找不到 node-- 而相对的使用终端启动 Sublime 就能找到 node，这就是由于 Sublime 启动后使用不同的配置文件的策略造成的。所以建议使用图形界面的 Linux 系统时，还是使用 `.xprofile` 来代替 `profile` 来配置各种环境变量。
+> 使用到有图形界面的 Linux 系统，建议还是使用 `.xprofile` 文件来代替 `.profile`。因为有部分「奇葩」软件，它们在终端启动和通过桌面图标（Desktop）启动，读取配置文件，「竟然」是读取不同的，如果只配置了 `.profile`，那这些「奇葩」在使用桌面图标启动时，它们就找 `PATH` 时，就不会去找 `.profile`，而是试图去找 `.xprofile`，找不到，它们就使用默认的根的 profile，这时就可能出现问题，比如 [SublimeText](../../Editors/Editors_Note.md#SublimeText) 中使用到 [常用 LSP 插件列表](../../Editors/Editors_Note.md#常用%20LSP%20插件列表) 时，有可能找 [NodeJS](../../Node/NodeJS_Note.md)，即便在 `.profile` 已经配置了 node，但只要是通过桌面方式启动 Sublime，那就永远找不到 node-- 而相对的使用终端启动 Sublime 就能找到 node，这就是由于 Sublime 启动后使用不同的配置文件的策略造成的。所以建议使用图形界面的 Linux 系统时，还是使用 `.xprofile` 来代替 `profile` 来配置各种环境变量。
 >
 > [关于sublime lsp-json插件](Editors_Note#^3026e5)
 
@@ -355,7 +346,7 @@ desktop 规范：[Desktop Entry Specification](https://specifications.freedeskto
 
 ### Archlinux-java
 
-archlinux-java 这个工具是用来查看当前系统 [Java](../Java/Java_Note.md) 环境情况的。
+archlinux-java 这个工具是用来查看当前系统 [Java](../../Java/Java_Note.md) 环境情况的。
 
 安装 直接用包管理器装：
 
@@ -365,7 +356,7 @@ pacman -S archlinux-java
 
 #### 常用命令
 
-* `archlinux-java status` ：命令查看当前系统的 [Java](../Java/Java_Note.md) 环境。
+* `archlinux-java status` ：命令查看当前系统的 [Java](../../Java/Java_Note.md) 环境。
 * `sudo archlinux-java set java-21-openjdk`：设置默认 jdk。
 
 ### NetworkManager
@@ -420,12 +411,13 @@ nmcli device show
 
 ## 其他相关笔记
 
-* [Linux 笔记](./Linux_Note.md)
+* [Manjaro 笔记](Manjaro_Note.md)
+* [Linux 笔记](../Linux_Note.md)
 * [Linux 资料清单](Linux_Material.md)
-* [Debian 笔记](./Debian_Note.md)
-* [Ubuntu 笔记](./Ubuntu_Note.md)
-* [CentOS 笔记](./CentOS_Note.md)
-* [Fedora 笔记](./Fedora_Note.md)
+* [Debian 笔记](../Debian/Debian_Note.md)
+* [Ubuntu 笔记](../Debian/Ubuntu_Note.md)
+* [CentOS 笔记](../Redhat/CentOS_Note.md)
+* [Fedora 笔记](../Redhat/Fedora_Note.md)
 * [自用初始化配置](linux_init/init_config_linux.md)
 * [wps相关](linux_init/wps相关.md)
 

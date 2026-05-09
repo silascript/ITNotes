@@ -1773,7 +1773,7 @@ Callout Blocks 预置类型：
 
 > [!tip]
 > 
-> 在 [Manjaro](https://manjaro.org/) 或 [ArchLinux](../../Linux/ArchLinux_Note.md) 中，是叫 `obs-bin` 这个名字。
+> 在 [Manjaro](https://manjaro.org/) 或 [ArchLinux](../../Linux/Arch/ArchLinux_Note.md) 中，是叫 `obs-bin` 这个名字。
 
 obs-cli 大致使用：
 

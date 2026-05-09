@@ -365,7 +365,7 @@ Package Control: Installed missing dependency pyte
 > 
 > 在 `View` > `Show Console`，在输入框中输入：`import os; os.environ["PATH"]`，就能看到当前 Sublime 能获取到的「PATH」值是什么了。
 >
-> 原因：在终端中启用 Sublime Text，Sublime Text 使用的是 `.profile` 配置文件，而通过桌面图标（DeskTop）启动 Sublime Text，这时 Sublime Text 是使用 `xprofile` 配置。这是合理但也有点奇葩的。[关于xprofile](../Linux/ArchLinux_Note.md#^eba7ef)
+> 原因：在终端中启用 Sublime Text，Sublime Text 使用的是 `.profile` 配置文件，而通过桌面图标（DeskTop）启动 Sublime Text，这时 Sublime Text 是使用 `xprofile` 配置。这是合理但也有点奇葩的。[关于xprofile](../Linux/Arch/ArchLinux_Note.md#^eba7ef)
 > 
 > 解决方案：将 `.profile` 更名为 `xprofile`，其他原来引用到 `.profile` 配置文件的 shell 配置，如 `.zshrc`、`.bashrc`，都更改引用 `.xprofile`，反正使用到 Sublime Text 的 Linux 操作系统都是用了图形界面的，所以使用 `xprofile` 也是非常合情合理的，而 `.xprofile` 也是能给文本模式的终端使用的。
 > 

@@ -24,7 +24,7 @@ modified: 2024-06-26 19:53:18
 
 ### 相关目录
 
-以 [manjaro](../../Linux/ArchLinux_Note.md#Arch%20各种变体) 系统为例，logseq 主要有两个与配置相关的目录需要关注：
+以 [manjaro](../../Linux/Arch/ArchLinux_Note.md#Arch%20各种变体) 系统为例，logseq 主要有两个与配置相关的目录需要关注：
 
 * `.config/Logseq`：
 * `~/.logseq`：其中有 `plugins` 子目录用来存放 logseq 插件的。

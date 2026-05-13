@@ -7,7 +7,7 @@ tags:
   - material
   - list
 created: 2024-08-13 18:49:29
-modified: 2026-01-09 21:38:45
+modified: 2026-05-14 01:55:45
 ---
 
 # VSCode 资料清单
@@ -47,6 +47,7 @@ modified: 2026-01-09 21:38:45
 * [VSCode中如何新建一个JavaWeb项目](https://blog.51cto.com/u_16175434/6597670)
 * [VSCode中如何新建一个JavaWeb项目 vscode创建一个java项目](https://blog.51cto.com/u_16099231/6267891)
 * [vscode java debug,Could not find or load main class x \| 编程笔记](https://programnotes.cn/vscode-java-debug/)
+* [VS Code报错Language Support for Java(TM)插件显示需要JDK11 写java代码没有提示](https://blog.51cto.com/u_16213681/14580624)
 
 ### SpringBoot
 

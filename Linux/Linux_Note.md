@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2026-05-08 20:13:57
+modified: 2026-05-14 19:54:32
 ---
 
 # Linux 笔记
@@ -1366,16 +1366,7 @@ http-accept-gzip=true
 
 下面介绍几款，用得比较多的基于 aria2 的下载器。
 
-**Motrix**
-
-[Motrix](https://motrix.app) 是一款开源的支持多平台的，基于 [aria2](#linux_network_command_downloader_aria2) 的下载工具。
-
-它支持 HTTP、FTP、BT、磁力链、百度网盘等资源，界面简洁，开箱即用。
-
-**AriaNg**
-[AiraNg](https://github.com/mayswind/AriaNg) 基于 Aria2 Web 前端。同样也是开源的。
-
-![AriaNg screenshot](https://raw.githubusercontent.com/mayswind/AriaNg-WebSite/master/screenshots/desktop.png)
+* [Aria UI](../Tools/Downloader_Note.md#Aria%20UI)
 
 ---
 

@@ -1,12 +1,13 @@
 ---
 aliases: []
 tags:
+  - tools
   - download
   - downloader
   - aria2
   - motrix
 created: 2026-05-14 19:50:19
-modified: 2026-05-14 19:55:02
+modified: 2026-05-14 19:55:38
 ---
 
 # 下载器笔记

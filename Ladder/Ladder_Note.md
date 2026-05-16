@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2026-05-03 21:45:12
+modified: 2026-05-16 20:54:50
 ---
 
 # 梯子笔记
@@ -1199,11 +1199,24 @@ rules+:
 - DOMAIN,baidu.com,DIRECT
 ```
 
+###### 匹配规则
+
+* `DOMAIN`：域名全匹配
+* `DOMAIN-SUFFIX`：域名后缀
+* `DOMAIN-KEYWORD`：域名关键字
+
 示例：
 
 ```yaml
 rules+:
   - 'DOMAIN-SUFFIX,agedm.vip,DIRECT'
+```
+
+```yaml
++rules:
+ - DOMAIN-KEYWORD,bangnixia,DIRECT
+ - DOMAIN-KEYWORD,e-daixia,DIRECT
+ - DOMAIN-KEYWORD,langou123,DIRECT
 ```
 
 > [!info] 
@@ -1354,6 +1367,7 @@ export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_pr
 * [2025最新低价机场推荐](https://github.com/KaWaIDeSuNe/dijiajichang)
 * [性价比机场测速 - by Duang](https://duangks.com)
 * [ 免费clash节点](https://github.com/free-nodes/clashfree)
+* [overthefirewall](https://github.com/ZGQ-inc/overthefirewall)
 
 #### 跑路机场
 

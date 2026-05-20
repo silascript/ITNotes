@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2026-05-16 20:54:50
+modified: 2026-05-20 20:53:24
 ---
 
 # 梯子笔记
@@ -902,8 +902,8 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 ~~* [直连域名](https://needay04.729388.xyz)~~
 ~~* [需代理域名](https://needay03.729388.xyz)~~
 
-* [https://needay.needaysafe.top](https://needay.needaysafe.top/)
-* [https://web.needaytech.top](https://web.needaytech.top)
+* ~~[https://needay.needaysafe.top](https://needay.needaysafe.top/)~~
+* ~~[https://web.needaytech.top](https://web.needaytech.top)~~
 
 > [!info] 
 > 
@@ -955,15 +955,13 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 
 > [!important] 
 > 
+> 此机场已没有 1 倍率节点。
+> 
 > 没事就停用账号，随时有跑路的危险，千万不要使用此机场！
 
 ---
 
 ## 客户端
-
-> [!info] 
-> 
-> * [【2024年】V2rayN 和 Clash 客户端哪个好用？机场小白应该如何选择？ – 胖橙博客](https://jiasupanda.com/v2rayn-clash)
 
 ### Clash
 
@@ -1183,9 +1181,9 @@ Mihomo-Party 同样也能开启「PAC 模式」并设置，与 [Clash-Verge-Rev]
 
 覆写格式分为 [YAML](../YAML/YAML_Note.md) 和 [Javascript](../JS/JS_Note.md)。
 
-yaml 格式的覆写文件写法与订阅配置文件相同，只需将需要修改的条目写入即可。
+`YAML` 格式的覆写文件写法与订阅配置文件相同，只需将需要修改的条目写入即可。
 
-YAML 格式的语法：
+`YAML` 格式的语法：
 
 ```yaml
 # 直接覆盖整个规则
@@ -1199,13 +1197,33 @@ rules+:
 - DOMAIN,baidu.com,DIRECT
 ```
 
-###### 匹配规则
+一条规则依次由**三部分**组成，每个部分使用 `,` 分隔：
 
-* `DOMAIN`：域名全匹配
-* `DOMAIN-SUFFIX`：域名后缀
-* `DOMAIN-KEYWORD`：域名关键字
+`分流规则类型,域名部分,策略组`
 
-示例：
+1. [分流规则类型](#分流规则类型)
+2. [域名部分](#域名部分)
+3. [策略组](#策略组)
+
+###### 分流规则类型
+
+* `DOMAIN`：**完整域名**匹配
+* `DOMAIN-SUFFIX`：**域名后缀**匹配
+* `DOMAIN-KEYWORD`：**域名关键字**匹配
+
+###### 域名部分
+
+域名部分，根据 [分流规则类型](#分流规则类型)，可以是**完整域名**，也可以**域名后缀**亦或是**域名的关键字**。
+
+###### 策略组
+
+这一部分可以是策略组、代理组或节点组。
+
+* `DIRECT`：直连
+* `REJECT`：拒绝
+* `PASS`：：跳过此规则
+
+###### 示例
 
 ```yaml
 rules+:
@@ -1222,8 +1240,14 @@ rules+:
 > [!info] 
 > 
 > 如果要追加规则，记得启用「全局启用」，而且要在原规则之前追加，即 `+rules`，有时不生效。
-
-相关文档：[覆写 - Mihomo Party](https://mihomo.party/docs/guide/override)
+>
+>> [!tip] 
+>> 
+>> 相关文档：[覆写 - Mihomo Party](https://mihomo.party/docs/guide/override)
+>> 
+>> 相关视频：
+>> 
+>> * [ Mihomo Party 覆写功能教程 - YouTube](https://www.youtube.com/watch?v=iQOuXDSW1l8)
 
 #### 问题
 

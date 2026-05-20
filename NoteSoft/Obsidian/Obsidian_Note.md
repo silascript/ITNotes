@@ -5,7 +5,7 @@ tags:
   - notesoft
   - obsidian
 created: 2023-01-13 12:27:45
-modified: 2026-05-08 03:59:21
+modified: 2026-05-17 11:15:23
 ---
 
 # Obsidian 笔记
@@ -1724,6 +1724,7 @@ Callout Blocks 预置类型：
 
 * `warning` 或 `caution`、`attention`
 > [!waring]
+> 
 
 * `failure` 或 `fail`、`missing`
 > [!fail]
@@ -1744,6 +1745,10 @@ Callout Blocks 预置类型：
 
 > [!tip]
 > [github](https://github.com) 支持有图标显示，语法与 obsidian 的 callout 完全一致的只有：**note**、**tip**、**important**、**warning**。
+> 
+> 
+>> 在 [github](https://github.com) 中还有一个是 Obsidian 没有的，即 `Caution` ：
+>> [!caution] 
 > 
 > 具体请参考：[基本撰写和格式语法 - GitHub 文档](https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#referencing-issues-and-pull-requests)
 

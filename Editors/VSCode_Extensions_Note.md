@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2026-05-14 02:15:00
+modified: 2026-05-23 02:29:46
 
 ---
 
@@ -98,7 +98,7 @@ VSCode 的语言包。
 
 ### <span id="vscode_extensions_syncing">Syncing（VSCode 同步配置插件）</span> 
 
-[Syncing](https://open-vsx.org/extension/nonoroazoro/syncing) [![](https://img.shields.io/github/stars/nonoroazoro/vscode-syncing?style=social)](https://github.com/nonoroazoro/vscode-syncing
+[Syncing](https://open-vsx.org/extension/nonoroazoro/syncing) [![Syncing github repo](https://img.shields.io/github/stars/nonoroazoro/vscode-syncing?style=social)](https://github.com/nonoroazoro/vscode-syncing
 ) 这是一个款同步 VSCode 配置的插件。
 
 这个插件是使用到 [Gist](https://gist.github.com) 来存放 VSCode 的配置文件。

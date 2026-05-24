@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2026-05-20 20:53:24
+modified: 2026-05-24 20:27:24
 ---
 
 # 梯子笔记
@@ -967,7 +967,7 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 
 #### Clash-Meta
 
-#Clash/Mihomo 
+#Clash/Mihomo  ^756b70
  
 [Clash Meta](https://github.com/MetaCubeX/mihomo)（现更名为 *Mihomo* ）是一个基于广受欢迎的开源项目 Clash 的高级版本。它继承了 Clash 的核心功能，保留了原始 Clash 的灵活性和高效性，并增加了一些独特的特性，并包括部分 Clash Premium 核心功能，是目前网络代理和数据流管理最强大的软件。 ^mihomo
 
@@ -1032,8 +1032,10 @@ Clash-Verge-Rev 的数据目录：`~/.local/share/clash-verge` 及 `~/.local/sha
 
 #### Clash-Nyanpasu
 
-[Clash Nyanpasu](https://nyanpasu.elaina.moe/zh-CN/) [![clash nyanpasu github repo](https://img.shields.io/github/stars/LibNyanpasu/clash-nyanpasu?style=social
-)](https://github.com/LibNyanpasu/clash-nyanpasu) 是 Clash 内核删库事件之后新开发的 Clash GUI 客户端，采用 Clash Meta 内核，兼容 Clash Premium 配置，支持 Windows、Mac 和 [Linux](../Linux/Linux_Note.md)。
+[Clash Nyanpasu](https://nyanpasu.elaina.moe/zh-CN/)[![clash nyanpasu github repo](https://img.shields.io/github/stars/LibNyanpasu/clash-nyanpasu?style=social
+)](https://github.com/LibNyanpasu/clash-nyanpasu) 
+
+是 Clash 内核删库事件之后新开发的 Clash GUI 客户端，采用 Clash Meta 内核，兼容 Clash Premium 配置，支持 Windows、Mac 和 [Linux](../Linux/Linux_Note.md)。
 
 > [!quote] 
 > 
@@ -1084,7 +1086,10 @@ function FindProxyForURL(url, host) {
 		"www.lingshulian.com",
 		"www.deepseek.com",
 		"linux.do",
-		"www.e-daixia.com"
+		"www.e-daixia.com",
+		"bangnixia.com"
+		
+		//"www.wuyouxia.net"
 
 		// 影视
 		// "update.code.visualstudio.com"
@@ -1119,6 +1124,12 @@ function FindProxyForURL(url, host) {
 >  相关文档
 > 
 > * [代理自动配置文件（PAC）文件 - HTTP | MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Proxy_servers_and_tunneling/Proxy_Auto-Configuration_PAC_file)
+
+#### Stelliberty
+
+[GitHub - Kindness-Kismet/Stelliberty: A modern client built with Flutter and Rust, powered by Mihomo · GitHub](https://github.com/Kindness-Kismet/Stelliberty) 同样是一个 [Mihomo](#^756b70) 的 GUI 客户端，与 [Clash-Verge-Rev](#Clash-Verge-Rev) 类似。
+
+![Stelliberty screenshot](https://github.com/Kindness-Kismet/Stelliberty/raw/main/.github/screenshots/home-page-light.jpg)
 
 ### V2ray
 
@@ -1383,15 +1394,20 @@ export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_pr
 
 ### 机场汇集
 
-* [2025年稳定好用的机场推荐（2025-2更新） - Kerry的学习笔记](https://kerrynotes.com/best-ssr-v2ray-proxy/)
+* [稳定好用的机场推荐 - Kerry的学习笔记](https://kerrynotes.com/best-ssr-v2ray-proxy/)
+* [按流量付费的机场推荐 - Kerry的学习笔记](https://kerrynotes.com/best-vpn-pay-by-traffic/)
 * [2025年性价比机场推荐（持续更新）](https://kerrynotes.com/cost-effective-ss-proxy/)
 * [2025年最新性价比机场推荐](https://github.com/KaWaIDeSuNe/xingjiabijichang)
-* [GitHub - 029danio/fly: 机场推荐2026](https://github.com/029danio/fly)
-* [GitHub - KaWaIDeSuNe/dijiajichang: 2025最新低价机场推荐](https://github.com/KaWaIDeSuNe/dijiajichang)
-* [2025最新低价机场推荐](https://github.com/KaWaIDeSuNe/dijiajichang)
+* [机场推荐2026](https://github.com/029danio/fly)
+* [低价机场推荐](https://github.com/KaWaIDeSuNe/dijiajichang)
 * [性价比机场测速 - by Duang](https://duangks.com)
-* [ 免费clash节点](https://github.com/free-nodes/clashfree)
 * [overthefirewall](https://github.com/ZGQ-inc/overthefirewall)
+
+#### 免费节点
+
+* [ 免费clash节点](https://github.com/free-nodes/clashfree)
+* [nodefree.me](https://nodefree.me)
+* ~~[nodefree](https://github.com/Fukki-Z/nodefree)~~
 
 #### 跑路机场
 

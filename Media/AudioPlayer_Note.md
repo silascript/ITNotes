@@ -4,7 +4,7 @@ tags:
   - audio
   - player
 created: 2025-02-03 20:18:33
-modified: 2025-02-03 20:50:58
+modified: 2026-05-24 20:38:05
 ---
 
 # 音频播放器
@@ -37,6 +37,12 @@ modified: 2025-02-03 20:50:58
 界面非常现代。
 
 ![Harmonoid srceenshot](https://harmonoid.com/assets/images/album-view-41e9db16323e0b33fd838ebf194f733d.webp)
+
+## Sylvakru
+
+[sylvakru](https://github.com/AfalpHy/sylvakru) 同样是一个跨平台音乐播放器。
+
+![sylvakru screenshot](https://github.com/AfalpHy/sylvakru/raw/master/screenshots/mobile1.png)
 
 ---
 

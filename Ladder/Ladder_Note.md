@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2026-05-24 20:27:24
+modified: 2026-05-25 21:37:30
 ---
 
 # 梯子笔记
@@ -1379,39 +1379,6 @@ export https_proxy=http://127.0.0.1:7897 http_proxy=http://127.0.0.1:7897 all_pr
 > * [终端使用代理加速的正确方式（Clash） | Ln's Blog](https://weilining.github.io/294.html)
 > * [终端使用代理 - faf4r - 博客园](https://www.cnblogs.com/faf4r/p/17765134.html)
 > * [在 Linux 中使用 Clash | AISYUN's Blog](https://blog.cyida.com/2023/32KRQRV.html#%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86)
-
----
-
-## 相关链接
-
-* [clashios爱好者](https://clashios.com/)
-* [clashverge.org](https://clashverge.org/)
-* [whoer.net](https://whoer.net)
-* [fanqiangdang](https://fanqiangdang.org)
-* [ACL4SSR 在线订阅转换](https://acl4ssr-sub.github.io)
-* [Subscription Converter](https://api.nameless13.com)
-* [机场、协议、客户端 ](https://dbzdk.com/across-the-gfw/)
-
-### 机场汇集
-
-* [稳定好用的机场推荐 - Kerry的学习笔记](https://kerrynotes.com/best-ssr-v2ray-proxy/)
-* [按流量付费的机场推荐 - Kerry的学习笔记](https://kerrynotes.com/best-vpn-pay-by-traffic/)
-* [2025年性价比机场推荐（持续更新）](https://kerrynotes.com/cost-effective-ss-proxy/)
-* [2025年最新性价比机场推荐](https://github.com/KaWaIDeSuNe/xingjiabijichang)
-* [机场推荐2026](https://github.com/029danio/fly)
-* [低价机场推荐](https://github.com/KaWaIDeSuNe/dijiajichang)
-* [性价比机场测速 - by Duang](https://duangks.com)
-* [overthefirewall](https://github.com/ZGQ-inc/overthefirewall)
-
-#### 免费节点
-
-* [ 免费clash节点](https://github.com/free-nodes/clashfree)
-* [nodefree.me](https://nodefree.me)
-* ~~[nodefree](https://github.com/Fukki-Z/nodefree)~~
-
-#### 跑路机场
-
-* [科学上网🕸️之跑路机场名单收集（2020-2025）](https://github.com/limbopro/Paolujichang)
 
 ---
 

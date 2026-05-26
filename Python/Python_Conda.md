@@ -7,7 +7,7 @@ tags:
   - conda-forge
   - miniforge
 created: 2025-08-15 01:32:08
-modified: 2025-08-20 21:43:22
+modified: 2026-05-26 20:59:43
 ---
 
 # Conda 笔记
@@ -765,6 +765,10 @@ conda install python=3.11.5
 ```shell
 conda install python=3.12.10 -c conda-forge
 ```
+
+> [!tip] 
+> 
+> 如果是使用 [Miniforge](#Miniforge)，因为其默认使用的 [channel](#channel) 就是 `conda-forge`，所以不使用再指定 `-c` 参数了！
 
 ##### 升级
 

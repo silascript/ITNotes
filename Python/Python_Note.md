@@ -8,7 +8,7 @@ tags:
   - conda
   - uv
 created: 2023-08-18 19:44:52
-modified: 2025-10-22 23:28:07
+modified: 2026-05-26 21:07:18
 ---
 
 # Python 笔记
@@ -741,6 +741,14 @@ pipx upgrade 模块名
 
 ```shell
 pipx upgrade-all
+```
+
+### 重装
+
+如果是升级的 python 版本，在 [升级](#升级) 其已安装的模块时，什么有提示让你重新安装这些模块，所以最好使用 `reinstall-all` 进行重装：
+
+```shell
+pipx reinstall-all
 ```
 
 ### 卸载

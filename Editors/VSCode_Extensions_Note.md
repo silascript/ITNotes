@@ -7,7 +7,7 @@ tags:
   - vscode-extension
   - list
 created: 2023-08-10 15:44:32 
-modified: 2026-05-25 20:47:13
+modified: 2026-05-26 02:45:13
 
 ---
 
@@ -728,11 +728,11 @@ Community Server Deployment 有两种部署方式：
 
 1. 在已经 [添加Tomcat](#添加Tomcat) 右键菜单中选择「**Add Deployment**」 
 
-![vscode community server connector add deployment](Editors_Note.assets/vscode_CSC_adddeployment.png)
+![vscode community server connector add deployment](VSCode_Extensions_Note.assets/vscode_CSC_adddeployment.png)
 
 2. 选择「**file**」，弹出选择 war 文件选择
 
-![vscode community server connector add war file](Editors_Note.assets/vscode_CSC_deploy_addwarfile.png)
+![vscode community server connector add war file](VSCode_Extensions_Note.assets/vscode_CSC_deploy_addwarfile.png)
 
 3. 选择 war 文件后，会弹出是否编辑选项选项，选默认的「**No**」后布署操作便完成了
 
@@ -1129,7 +1129,7 @@ VSCode Prettier 插件设置：
 [Dependi](https://marketplace.visualstudio.com/items?itemName=fill-labs.dependi) [![Dependi Repo](https://img.shields.io/github/stars/filllabs/dependi
 )](https://github.com/filllabs/dependi) 是新一代的依赖管理插件。它支持 [Rust](../Rust/Rust_Note.md)、[Go](../GoLang/GoLang_Note.md)、[Python](../Python/Python_Note.md)、[NodeJS](../Node/NodeJS_Note.md) 及 [PHP](../PHP/PHP_Note.md) 多种语言。
 
-![Dependi screenshot](https://camo.githubusercontent.com/b117a103bf54fce35acdbfc8c0ab302b37cd1e9125daa396fb898bdfa3085478/68747470733a2f2f7777772e646570656e64692e696f2f73637265656e73686f74732f746f6f6c7469702e706e67)
+![Dependi screenshot](https://camo.githubusercontent.com/fbd17119cc79664224c05d2f07d48e3b67141bd8713d6972f59c10202283e0e4/68747470733a2f2f7777772e646570656e64692e696f2f73637265656e73686f74732f746f6f6c7469702e706e67)
 
 ---
 

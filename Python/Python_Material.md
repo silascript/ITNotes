@@ -8,7 +8,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2026-05-04 20:12:01
+modified: 2026-05-26 22:25:36
 ---
 
 # Python 资料清单
@@ -18,6 +18,7 @@ modified: 2026-05-04 20:12:01
 ## 基础
 
 * [如何在 Ubuntu 24.04 LTS 中安装 Python 3.12 或指定版本](https://www.sysgeek.cn/install-python-ubuntu/)
+* [Python 3.12 vs 3.13 怎么选？2026 最新安装配置指南（附环境优化）- 掘金](https://juejin.cn/post/7627408214331768858)
 
 ### 面向对象
 

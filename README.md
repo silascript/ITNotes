@@ -86,7 +86,7 @@ modified: 2026-05-25 21:29:44
 ### Java
 
 * [Java 笔记](Java/Java_Note.md)
-	* [i++和++i分析](Java/i++和++i分析.md)
+	* [Java_IncOperator](Java/Java_IncOperator.md)
 * [Java 视频清单](Java/Java_Videos.md)
 * [Java IO 笔记](Java/Java_IO_Note.md)
 * [JAVA EE 笔记](Java/JAVA_EE_Note.md)

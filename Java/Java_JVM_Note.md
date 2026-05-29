@@ -5,7 +5,7 @@ tags:
   - java
   - jvm
 created: 2026-05-27 02:16:10
-modified: 2026-05-27 02:45:08
+modified: 2026-05-29 21:25:56
 ---
 
 # JVM 笔记
@@ -67,4 +67,6 @@ JVM Stack，即「虚拟机栈」
 ## 相关笔记
 
 * [Java 笔记](Java_Note.md)
+* [Java 资料清单](Java_Material.md)
+* [Java 自增运算符 笔记](Java_IncOperator.md)
 

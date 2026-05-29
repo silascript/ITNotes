@@ -224,6 +224,6 @@ Java 反射机制获取一个类的 Class 对象，有三种获取方式：
 * [Java IO 笔记](Java_IO_Note.md)
 * [Java Log 笔记](Java_Log_Note.md)
 * [Java Web 笔记](Java_Servlet_Note.md)
-* [i++和++i分析](i++和++i分析.md)
+* [Java_IncOperator](Java_IncOperator.md)
 * [Java 资料清单](Java_Material.md)
 

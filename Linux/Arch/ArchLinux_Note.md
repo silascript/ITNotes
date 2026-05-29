@@ -8,7 +8,7 @@ tags:
   - ime
 date created: 2022-11-08 11:32
 created: 2023-08-18 19:44:52
-modified: 2026-05-10 01:04:37
+modified: 2026-05-29 21:13:08
 ---
 
 # ArchLinux 笔记
@@ -235,6 +235,23 @@ paru 是使用 [Rust语言](../../Rust/Rust_Note.md) 编写的。
 
 ---
 
+## 驱动
+
+### mesa
+
+有几个版本不要装：
+
+* `25.3.5`：登录系统，一直卡在黑屏，屏中只一个光标有闪，图形界面加载不出来。
+* `26.1.1`：有可能出现图片、缩略图、浏览器等出现花屏现象。
+
+如果出现因驱动造成的显示问题，可以使用 [downgrade](#downgrade) 进行降版本。
+
+> [!tip] 
+> 
+> 现在正常的最新的版本是 `26.0.6：`。
+
+---
+
 ## <span id="archlinux_ime">输入法</span>
 
 ### <span id="archlinux_ime_ibus_rime">ibus-rime</span>
@@ -389,6 +406,26 @@ nmcli device wifi
 ```shell
 nmcli device show
 ```
+
+---
+
+## 降级
+
+有时，某些软件出 bug 了，需要降级，那就需要一个小工具 [downgrade](#downgrade)。
+
+### downgrade
+
+```shell
+yay -S downgrade
+```
+
+使用：
+
+```shell
+downgrade 软件名
+```
+
+执行以上命令后，就会出现一个各版本窗口，让你选择一个要降级的版本，选择好就开始下载和安装。安装好如果不想这个软件暂时不在被升级回去，可以在 `/etc/pacman.conf` 中的 `IgnorePkg` 选项后添加其（如：`IgnorePkg = sublime-text-4 lib32-mesa mesa`），这样下次 `Syu` 就不会升级这个软件了。
 
 ---
 

@@ -4,11 +4,13 @@ tags:
   - java
   - base
   - JVM
+  - operator
+  - increment
 created: 2023-08-18 19:44:52
-modified: 2026-05-29 21:18:41
+modified: 2026-05-29 21:27:29
 ---
 
-# 自增相关
+# 自增运算符
 
 ---
 

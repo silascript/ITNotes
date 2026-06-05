@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2025-08-04 21:34:51
-modified: 2025-11-14 11:19:17
+modified: 2026-06-06 03:25:32
 ---
 
 # Markdown 资料清单
@@ -36,6 +36,14 @@ modified: 2025-11-14 11:19:17
 ## markdown 编辑器
 
 * [Markdown 编辑器推荐 - Markdown文档网](https://www.markdownlang.com/zh/intro/editors.html)
+
+---
+
+## 数学公式
+
+* [一文学会在Markdown中编辑数学符号与公式 - 行无际 - 博客园](https://www.cnblogs.com/bytesfly/p/markdown-formula.html)
+* [Markdown与数学公式](https://zhuanlan.zhihu.com/p/712312660)
+* [Markdown 数学公式](https://www.runoob.com/markdown/md-math.html)
 
 ---
 

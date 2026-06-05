@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2026-05-25 21:37:30
+modified: 2026-06-05 01:51:21
 ---
 
 # 梯子笔记
@@ -359,7 +359,9 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 >
 > 此机场节点，会用一段时间就会断，得开关下。稳定性不如 [超悦](#超悦机场)。
 >
->
+>> [!info] 
+>> 
+>> [一分机场教程中心](https://web.netwiki.link)
 
 #### 三分机场
 
@@ -1267,6 +1269,18 @@ rules+:
 `.config/mihomo-party/work/rules` 这个目录下是存放着外部资料，规则数据库文件，就是 [geoip](#geoip)、[geosite](#geosite) 这些。有时不知道为什么，会出现权限问题，使用 `ls` 命令可以看到有的库文件所有者变成 `root`，这就造成更新这库时，现出权限问题。
 
 解决这个问题方法很简单，直接删除 `rules` 这个目录。重启 Mihomo-Party，它就会重新生成一个新的 `rules` 目录，这时再使用 `ls` 命令查看，就会发现库文件的所有者就*变回*到当前用户，这就没有权限问题了！
+
+### Sparkle
+
+[sparkle](https://github.com/xishang0128/sparkle) 是 [Mihomo-Party](#Mihomo-Party)`fork` 出来的版本。
+
+> [!quote] 
+> 
+> [Sparkle(Mihomo) – 介绍](https://mihomoparty.net/sparkle/)
+
+### Bettbox
+
+[Bettbox](https://github.com/appshubcc/Bettbox) 是一个基于 [FLClash](#FLClash) 早期版本重构的多平台客户端。
 
 ### Singbox
 

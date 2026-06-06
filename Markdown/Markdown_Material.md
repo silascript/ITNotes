@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2025-08-04 21:34:51
-modified: 2026-06-06 03:25:32
+modified: 2026-06-06 19:31:36
 ---
 
 # Markdown 资料清单
@@ -57,4 +57,5 @@ modified: 2026-06-06 03:25:32
 ## 相关笔记
 
 * [Markdown 笔记](Markdown_Note.md)
+* [Mermaid 笔记](Mermaid_Note.md)
 

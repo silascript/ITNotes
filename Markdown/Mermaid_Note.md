@@ -4,7 +4,7 @@ tags:
   - markdown
   - mermaid
 created: 2026-06-06 19:29:54
-modified: 2026-06-06 19:34:20
+modified: 2026-06-06 19:40:50
 ---
 
 # Mermaid 笔记
@@ -206,3 +206,4 @@ pie
 ## 相关笔记
 
 * [Markdown 笔记](Markdown_Note.md)
+* [Mermaid 资料清单](Mermaid_Material.md)

@@ -7,7 +7,7 @@ tags:
   - typora
   - mermaid
 created: 2023-01-13 12:27:45
-modified: 2026-06-06 19:34:49
+modified: 2026-06-07 03:24:16
 ---
 
 # Markdown 笔记
@@ -458,7 +458,7 @@ number = true # 有序列表按数字排序
 
 Obsidian 设置更丰富，而且更自由，更换配色主题比 Typora 方便多了！
 
-Obsidian 是 windows、macos 和 Linux 三平台都支持的编辑器。Linux 下它依赖 electron，有 Snap 版和 Appimage 版本。
+Obsidian 是 windows、macos 和 Linux 三平台都支持的编辑器。[Linux](../Linux/Linux_Note.md) 下它依赖 [Electron_Note](../Node/Electron_Note.md)，有 Snap 版和 Appimage 版本。
 
 Obsidian 具体使用请参考：[Obsidian 笔记](../NoteSoft/Obsidian/Obsidian_Note.md)
 
@@ -477,5 +477,6 @@ Obsidian 具体使用请参考：[Obsidian 笔记](../NoteSoft/Obsidian/Obsidian
 ## 相关笔记
 
 * [Markdown 资料清单](Markdown_Material.md)
+* [Mermaid 资料清单](Mermaid_Material.md)
 * [Obsidian 笔记](../NoteSoft/Obsidian/Obsidian_Note.md)
 

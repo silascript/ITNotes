@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2025-08-04 21:34:51
-modified: 2026-06-06 19:31:36
+modified: 2026-06-06 19:39:11
 ---
 
 # Markdown 资料清单
@@ -49,8 +49,7 @@ modified: 2026-06-06 19:31:36
 
 ## Mermaid
 
-* [小书匠语法说明之mermaid](https://soft.xiaoshujiang.com/docs/grammar/feature/mermaid/#e7b1bbe59bbe_36)
-* [Mermaid之类图(classDiagram) \| PasseRR's Blog](https://www.xiehai.zone/2021-12-11-mermaid-class-diagram.html)
+* [Mermaid 资料清单](Mermaid_Material.md)
 
 ---
 

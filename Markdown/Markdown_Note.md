@@ -7,7 +7,7 @@ tags:
   - typora
   - mermaid
 created: 2023-01-13 12:27:45
-modified: 2026-06-07 03:24:16
+modified: 2026-06-07 20:56:15
 ---
 
 # Markdown 笔记
@@ -232,28 +232,7 @@ GFW 支持 5 种引用扩展样式：
 
 ### <span id="md_advance_maths">数学公式</span>
 
-markdown 中显示数学符号或公式，是通过 Latex 来实现的。
-
-数学公式是放在 `$` 块中：
-
-1. 行内：数学公式相关代码，放在以 `$` 开始及 `$` 结束之间，如要显示 $\sqrt{2}$，就写成 `$\sqrt{2}$`
-2. 数学公式块：数学公式相关代码，放在以 `$$` 开始及 `$$` 结束的块中
-
-#### 基础语法
-
-* 命令：以反斜杠 `\` 开头，如 `\alpha`、`\sum`
-* 参数：用花括号 `{}` 包围，如 `\frac{a}{b}`
-* 下标：使用 `_`，如 `x_1`
-* 上标：使用 `^`，如 `x^2`
-* 分组：用花括号将多个字符组合，如 `x_{i+1}`
-
-#### 常用命令
-
-* `\alpha`, `\beta`, `\gamma` 希腊字母
-* `\sum`, `\prod`, `\int` 求和、乘积、积分
-* `\frac{分子}{分母}` 分数
-* `\sqrt{表达式}` 平方根
-* `\sqrt[n]{表达式}`       n 次根
+* [数字公式](LaTex_Note.md#数字公式)
 
 ---
 
@@ -458,7 +437,7 @@ number = true # 有序列表按数字排序
 
 Obsidian 设置更丰富，而且更自由，更换配色主题比 Typora 方便多了！
 
-Obsidian 是 windows、macos 和 Linux 三平台都支持的编辑器。[Linux](../Linux/Linux_Note.md) 下它依赖 [Electron_Note](../Node/Electron_Note.md)，有 Snap 版和 Appimage 版本。
+Obsidian 是 windows、macos 和 Linux 三平台都支持的编辑器。[Linux](../Linux/Linux_Note.md) 下它依赖 [Electron](../Node/Electron_Note.md)，有 Snap 版和 Appimage 版本。
 
 Obsidian 具体使用请参考：[Obsidian 笔记](../NoteSoft/Obsidian/Obsidian_Note.md)
 
@@ -479,4 +458,5 @@ Obsidian 具体使用请参考：[Obsidian 笔记](../NoteSoft/Obsidian/Obsidian
 * [Markdown 资料清单](Markdown_Material.md)
 * [Mermaid 资料清单](Mermaid_Material.md)
 * [Obsidian 笔记](../NoteSoft/Obsidian/Obsidian_Note.md)
+* [LaTex 笔记](LaTex_Note.md)
 

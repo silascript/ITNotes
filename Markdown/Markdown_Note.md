@@ -7,7 +7,7 @@ tags:
   - typora
   - mermaid
 created: 2023-01-13 12:27:45
-modified: 2026-06-07 20:56:15
+modified: 2026-06-07 21:02:57
 ---
 
 # Markdown 笔记
@@ -232,7 +232,16 @@ GFW 支持 5 种引用扩展样式：
 
 ### <span id="md_advance_maths">数学公式</span>
 
-* [数字公式](LaTex_Note.md#数字公式)
+markdown 中显示数学符号或公式，是通过 Latex 来实现的。
+
+数学公式是放在 `$` 块中：
+
+1. 行内：数学公式相关代码，放在以 `$` 开始及 `$` 结束之间，如要显示 $\sqrt{2}$，就写成 `$\sqrt{2}$`
+2. 数学公式块：数学公式相关代码，放在以 `$$` 开始及 `$$` 结束的块中
+
+> [!tip] 
+> 
+> 更多 LaTex 内容参考：[LaTex 笔记](LaTex_Note.md#数字公式)
 
 ---
 

@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2025-12-13 13:07:23
+modified: 2026-07-25 03:09:39
 ---
 
 # Shell 资料清单
@@ -128,12 +128,18 @@ modified: 2025-12-13 13:07:23
 
 ### 函数
 
-* [shell脚本——如何获取函数的返回值](https://blog.csdn.net/qq_31598113/article/details/80611480)
 * [Shell函数（函数定义、函数变量、函数调用、函数传参、函数返回值、获取函数返回值）](https://blog.csdn.net/xhaimail/article/details/103208901) 
+
+#### 参数
+
 * [linux脚本：shell, 判断输入参数的个数（命令行） - oucaijun - 博客园](https://www.cnblogs.com/mylinux/p/4834332.html)
+* [Linux——shell脚本的传参方式 - moutory - 博客园](https://www.cnblogs.com/moutory/p/17752677.html)
+* [shell 解析命令行参数方式（直接处理/getopts/getopt）](https://zhuanlan.zhihu.com/p/681787243)
+* [Shell脚本中的while getopts用法小结 - 散尽浮华 - 博客园](https://www.cnblogs.com/kevingrace/p/11753294.html)
 
 #### 返回值
 
+* [shell脚本——如何获取函数的返回值](https://blog.csdn.net/qq_31598113/article/details/80611480)
 * [shell函数（调用、返回值，返回值获取） - duanxz - 博客园](https://www.cnblogs.com/duanxz/p/4661767.html)
 * [shell 脚本中如何获取java 执行后的最后一行打印值 shell获取执行结果](https://blog.51cto.com/u_12195/11039081)
 
@@ -169,6 +175,8 @@ modified: 2025-12-13 13:07:23
 * [linux环境下从路径字符串中截取目录和文件名信息 \| Albert World](http://www.008ct.top/blog/2021/10/24/linux%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BB%8E%E8%B7%AF%E5%BE%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E6%88%AA%E5%8F%96%E7%9B%AE%E5%BD%95%E5%92%8C%E6%96%87%E4%BB%B6%E5%90%8D%E4%BF%A1%E6%81%AF/)
 * [shell之文件路径截取 - hddkman - 博客园](https://www.cnblogs.com/hddkman/articles/14437493.html)
 * [Shell截取字符串 - \| Cloud Strife \|](https://www.bitlogs.tech/post/os/linux/shell/shell%E6%88%AA%E5%8F%96%E5%AD%97%E7%AC%A6%E4%B8%B2/)
+* [Shell获取脚本当前路径 - 卡洛小豆 - 博客园](https://www.cnblogs.com/tudou1179006580/p/14875214.html)
+* [linux获取当前脚本的绝对路径 \| aimuke](https://aimuke.github.io/linux/2019/04/29/how-to-get-abusolute-path/)
 
 #### 目录
 

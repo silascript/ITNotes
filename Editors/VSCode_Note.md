@@ -5,7 +5,7 @@ tags:
   - vscode
   - vscodium
 created: 2023-01-30 11:19:11
-modified: 2026-07-24 13:02:14
+modified: 2026-07-24 18:41:03
 ---
 
 # VSCode 笔记
@@ -514,7 +514,9 @@ code --install-extension publisher.extension
 
 语法：`code --profile profile名称`
 
-如果 Profile 不存在，就创建。
+> [!info] 
+> 
+> 如果 Profile 不存在，就创建。
 
 示例：
 
@@ -522,9 +524,27 @@ code --install-extension publisher.extension
 code --profile "Java_Profile"
 ```
 
-#### 创建 Profile 并同时安装插件
+#### 使用 Profile 打开目录
+
+语法：`code 目的路径 --profile Profile名称`
+
+示例：
+
+```shell
+code ~/projects/web-sample --profile "Web Development"
+```
+
+#### 为 Profile 安装插件
 
 语法：`code --profile profile名称 --install-extension 插件id`
+
+> [!info] 
+> 
+> 注意：[Profile](#vscode_config_profile) 必须已存在，不然会报 Profile 找不到，并安装失败：
+> 
+> ```shell
+> Profile 'Python_Profile' not found.
+> ```
 
 示例：
 

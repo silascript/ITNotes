@@ -8,7 +8,7 @@ tags:
   - bash
   - zsh
 created: 2023-08-18 19:44:52
-modified: 2025-11-28 10:33:19
+modified: 2026-07-25 03:29:25
 ---
 
 # Shell 笔记
@@ -1022,6 +1022,14 @@ function 函数名(){
 
 ### <span id="shell_function_parameter">参数</span>
 
+Shell 解析参数一般有三种方式：
+
+1. [直接处理](#直接处理)：使用 $1、$2、$3… 进行解析
+2. [getopts](#getopts)命令：短选项的情况，例如：`-n 10 -f file.txt`。`getopts`不能直接处理长的选项（如：`--prefix=/home` 等）
+3. [getopt](#getopt)命令：处理短选项或者长选项，例如：`--perfix=/home` 等
+
+#### 直接处理
+
 Shell 脚本内，传递参数格式为 `$n`，**1**为执行脚本的第一个参数，**2**为执行脚本的第二个参数，以此类推。
 
 * `$#`：传递到脚本的参数个数。
@@ -1039,7 +1047,7 @@ Shell 脚本内，传递参数格式为 `$n`，**1**为执行脚本的第一个�
 * `$!`：后台运行的最后一个进程 ID 号。
 * `$?`：显示最后命令的退出状态。`0` 表示没有错误，其他任何值表明有错误。
 
-#### 示例
+##### 示例
 
 判断是否一个参数都没传：
 
@@ -1056,6 +1064,25 @@ for temp in "$@"; do
 
 done
 ```
+
+#### getopts
+
+getpots 是 Shell 命令行参数解析工具，旨在从 Shell Script 的命令行当中解析参数。
+
+`getopts` 命令格式：`getopts optstring  VARNAME`
+
+> [!info] 
+> 
+> optstring：列出了对应的 Shell 脚本可以使用的所有选项或参数。
+> 
+> 如果 optstring 前面存在单个冒号 `:`，则表示静默模式，忽略一般错误信息
+
+`getopts` 命令有两个内置变量：
+
+* `OPTIND`：下一个选项或参数的索引。「**IND**」其实就是「**INDEX**」的缩写。
+* `OPTARG`：getopts 执行匹配参数时，会将参数值存放在一个叫 OPTARG 的变量中。「**ARG**」其实是「**ARGUMENT**」的缩写。
+
+#### getopt
 
 ### <span id="shell_function_returnv">返回值</span>
 

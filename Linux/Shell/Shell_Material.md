@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2026-07-25 03:09:39
+modified: 2026-07-25 03:55:25
 ---
 
 # Shell 资料清单
@@ -136,6 +136,8 @@ modified: 2026-07-25 03:09:39
 * [Linux——shell脚本的传参方式 - moutory - 博客园](https://www.cnblogs.com/moutory/p/17752677.html)
 * [shell 解析命令行参数方式（直接处理/getopts/getopt）](https://zhuanlan.zhihu.com/p/681787243)
 * [Shell脚本中的while getopts用法小结 - 散尽浮华 - 博客园](https://www.cnblogs.com/kevingrace/p/11753294.html)
+* [shell脚本中的$0、$n、$#、$-、$?、$!、$$、$\*、$@等和shift - 没有星星的夏季 - 博客园](https://www.cnblogs.com/shanfeng1000/p/18837085)
+* [shell 脚本参数个数超过9个的问题 - 掘金](https://juejin.cn/post/7166812350979244063)
 
 #### 返回值
 

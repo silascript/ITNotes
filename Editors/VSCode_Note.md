@@ -5,7 +5,7 @@ tags:
   - vscode
   - vscodium
 created: 2023-01-30 11:19:11
-modified: 2026-07-24 18:41:03
+modified: 2026-08-04 20:34:17
 ---
 
 # VSCode 笔记
@@ -286,7 +286,7 @@ Profile 新功能还支持将配置「导入」和「导出」，非常适合将
 
 Profile 是包括了 [Settings](#vscode_config_settings)、插件、snippet 等部分的配置。
 
-![VSCode Profile](./Editors_Note.assets/vscode_profile.png)
+![VSCode Profile](./VSCode_Note.assets/vscode_profile.png)
 
 #### <span id="vscode_config_profile_default">默认 Profile</span>
 
@@ -368,6 +368,22 @@ Profile 是包括了 [Settings](#vscode_config_settings)、插件、snippet 等�
 jq -r '.userDataProfiles[] | select(.name="JavaP") | .location' ~/.config/Code/User/globalStorage/storage.json
 ```
 
+如果要使用参数形式判断某 Profile 是否已创建：
+
+```shell
+jq --arg p_name $profile_name '.userDataProfiles[] | .name==$p_name' ~/.config/Code/User/globalStorage/storage.json
+```
+
+> [!tip] 
+> 
+> `jq` 如何传参，可以参考：[示例 2](../Linux/Shell/Jq_Note.md#示例%202)
+
+如果只判断 `.name` 值是否存在，如果存在就返回`true`，反之返回`false`：
+
+```shell
+jq '.userDataProfiles[] | .name=="JavaP"' ~/.config/Code/User/globalStorage/storage.json
+```
+
 > [!important] 
 > 
 > 注意：如果除了默认 Profile 外，一个自定义的 Profile 都没有，那 `userDataProfiles`这个节点都不存在，上述的`jq` 查询会报 error 错误：
@@ -383,6 +399,13 @@ jq -r '.userDataProfiles[] | select(.name="JavaP") | .location' ~/.config/Code/U
 > ```shell
 > jq '.userDataProfiles' ~/.config/Code/User/globalStorage/storage.json
 > ```
+> 
+> 只返回 `true` 或`false`：
+> 
+> ```shell
+> jq 'has("userDataProfiles")' ~/.config/Code/User/globalStorage/storage.json
+> ```
+> 
 
 #### <span id="vscode_config_profile_import">导入 Profile</span>
 

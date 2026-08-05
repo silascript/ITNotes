@@ -5,7 +5,7 @@ tags:
   - vscode
   - vscodium
 created: 2023-01-30 11:19:11
-modified: 2026-08-04 20:34:17
+modified: 2026-08-05 18:59:32
 ---
 
 # VSCode 笔记
@@ -317,9 +317,32 @@ Profile 是包括了 [Settings](#vscode_config_settings)、插件、snippet 等�
 > 
 > 也就是说，在当前 VSCode 版本 (1.81.0) 下，要通过选择已有的非内置 Profile 创建新的 Profile，只能在当前正在使用的 Profile 为模板创建。估计之后的版本会修正这个小 bug。
 
+创建 Profile 后，会在 `~/.config/Code/User/globalStorage/storage.json` 这个全局存储配置文件中记录相关 Profile 的信息。
+
+其中 `userDataProfiles` 这个节点最重要，这个节点记录了某 Profile 对象。这个对象由[Profile 名称](#Profile%20名称)与 [Profile ID](#Profile%20ID) 组成，示例：
+
+```json
+"userDataProfiles": [
+	{
+		"location": "2f12960c",
+		"name": "Test_Profile"
+	}
+]
+```
+
+##### Profile 名称
+
+`userataProfiles`中每个 Profile 对象中 `name` 值就是 Profile 名称。
+
+##### Profile ID
+
+`userDataProfiles`中，每个 Profile 对象中 `location` 的值，就是 Profile ID，这个 ID 同时也是 Profile 的实际存储目录的**目录名**。
+
 ##### Profile 目录结构
 
-无论通过何种方式创建一个新的 Profile，都会在 `~/.config/Code/User/profiles/` 目录下新建一个目录，目录名是一串数字构成，而这个 Profile 的 Settings、插件描述文件 `extensions.json`、snippet 都在这个目录下。如下图：
+无论通过何种方式创建一个新的 Profile，都会在 `~/.config/Code/User/profiles/` 目录下新建一个目录，目录名是一串数字构成，即[Profile ID](#Profile%20ID)，而这个 Profile 的 Settings、插件描述文件 `extensions.json`、snippet 都在这个目录下。
+
+如下图：
 
 ![VSCode Profile Dir](./VSCode_Note.assets/vscode_profile_dir.png)
 
@@ -330,20 +353,6 @@ Profile 是包括了 [Settings](#vscode_config_settings)、插件、snippet 等�
 > 默认 Profile 的插件描述文件是存放 `~/.vscode/extensions/` 目录下，同样也是叫 `extensions.json` 文件。
 > 
 > 
-> 而 Profile 的目录名，可以通过 `Code/User/globalStorage/storage.json` 这个文件中的 `userDataProfiles` 节点查看，如：
-> 
-> ```json
-> "userDataProfiles": [
-> 	{
-> 		 "location": "-7916349e",
-> 		 "name": "JavaP"
-> 	}
-> ]
-> ```
-> 
-> `name`就是 Profile 的名称，而 `location` 就是这个 Profile 对应的那个目录名。
-> 
-> 
 >> [!tip] 
 >> 
 >> `storage.json` 文件在不同操作系统中的路径：
@@ -352,11 +361,14 @@ Profile 是包括了 [Settings](#vscode_config_settings)、插件、snippet 等�
 >>  * **macOS**: `~/Library/Application Support/Code/User/globalStorage/storage.json`
 >>  * **Linux**: `~/.config/Code/User/globalStorage/storage.json`
 >
->
 
 ##### 查找 profile 目录名 
 
-如果要根据 Profile 名称查找其目录名，可以使用 [jq](../Linux/Shell/Shell_Note.md#jq)工具进行对`storage.json` 进行解析。
+Profile 的存储目录的目录名，其实是就是创建 Profile 时生成的 [Profile ID](#Profile%20ID)。
+
+这个 ID 是记录在 `storage.json`中的`userDataProfiles`节点中`location` 属性。
+
+所以，如果要根据 Profile 名称查找其目录名，可以使用 [jq](../Linux/Shell/Shell_Note.md#jq)工具进行对`storage.json` 进行解析。
 
 示例：
 
@@ -426,6 +438,12 @@ jq '.userDataProfiles[] | .name=="JavaP"' ~/.config/Code/User/globalStorage/stor
 #### <span id="vscode_config_profile_extensions">Profile 中的插件</span>
 
 某 Profile 的插件描述文件是在 `~/.config/Code/User/xxx/` 下的 `extensions.json` 文件。
+
+#### <span id="vscode_config_profile_settings">Profile 中的配置</span>
+
+某 Profile 的配置文件：`~/.config/Code/User/profiles/Profile ID/settings.json`
+
+`Profile ID` 是在
 
 #### <span id="vscode_config_profile_resource">关于 Profile 的其他资料</span>
 

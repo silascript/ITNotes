@@ -5,7 +5,7 @@ tags:
   - vscode
   - vscodium
 created: 2023-01-30 11:19:11
-modified: 2026-08-05 18:59:32
+modified: 2026-08-06 02:12:31
 ---
 
 # VSCode 笔记
@@ -319,7 +319,7 @@ Profile 是包括了 [Settings](#vscode_config_settings)、插件、snippet 等�
 
 创建 Profile 后，会在 `~/.config/Code/User/globalStorage/storage.json` 这个全局存储配置文件中记录相关 Profile 的信息。
 
-其中 `userDataProfiles` 这个节点最重要，这个节点记录了某 Profile 对象。这个对象由[Profile 名称](#Profile%20名称)与 [Profile ID](#Profile%20ID) 组成，示例：
+其中 `userDataProfiles` 这个节点最重要，这个节点记录了某 Profile 对象。这个对象由[Profile 名称](#Profile%20名称)与 [Profile location](#Profile%20location) 组成，示例：
 
 ```json
 "userDataProfiles": [
@@ -334,13 +334,17 @@ Profile 是包括了 [Settings](#vscode_config_settings)、插件、snippet 等�
 
 `userataProfiles`中每个 Profile 对象中 `name` 值就是 Profile 名称。
 
-##### Profile ID
+这个值实际就是此 Profile 的「**逻辑标识**」,用于显示及内部的逻辑区分，不可重复。
 
-`userDataProfiles`中，每个 Profile 对象中 `location` 的值，就是 Profile ID，这个 ID 同时也是 Profile 的实际存储目录的**目录名**。
+##### Profile location
+
+`userDataProfiles`中，每个 Profile 对象中 `location` 的值：，同时也是 Profile 的实际存储目录的**目录名**。
+
+这个值实际是此 Profile 的实际「**存储标识**」,用于实际存储的区分。
 
 ##### Profile 目录结构
 
-无论通过何种方式创建一个新的 Profile，都会在 `~/.config/Code/User/profiles/` 目录下新建一个目录，目录名是一串数字构成，即[Profile ID](#Profile%20ID)，而这个 Profile 的 Settings、插件描述文件 `extensions.json`、snippet 都在这个目录下。
+无论通过何种方式创建一个新的 Profile，都会在 `~/.config/Code/User/profiles/` 目录下新建一个目录，目录名是一串数字构成，即[Profile location](#Profile%20location)，而这个 Profile 的 Settings、插件描述文件 `extensions.json`、snippet 都在这个目录下。
 
 如下图：
 
@@ -364,37 +368,29 @@ Profile 是包括了 [Settings](#vscode_config_settings)、插件、snippet 等�
 
 ##### 查找 profile 目录名 
 
-Profile 的存储目录的目录名，其实是就是创建 Profile 时生成的 [Profile ID](#Profile%20ID)。
+Profile 的存储目录的目录名，其实是就是创建 Profile 时生成的 [Profile location](#Profile%20location) 值。
 
-这个 ID 是记录在 `storage.json`中的`userDataProfiles`节点中`location` 属性。
+上述已知，这个值是记录在 `storage.json`中的`userDataProfiles`节点下，Profile 对象节点中`location` 属性。
 
 所以，如果要根据 Profile 名称查找其目录名，可以使用 [jq](../Linux/Shell/Shell_Note.md#jq)工具进行对`storage.json` 进行解析。
 
-示例：
+###### 示例 1
+
+判断某 Profile 是否已创建，返回 `true` 或`false`，示例：
 
 ```shell
-# 从本地存储中检索该名称对应的 location
-# Windows
-# jq -r '.userDataProfiles[] | select(.name=="WebDev") | .location' ~/Library/Application\ Support/Code/User/globalStorage/storage.json
-# Linux
-jq -r '.userDataProfiles[] | select(.name="JavaP") | .location' ~/.config/Code/User/globalStorage/storage.json
+jq '.userDataProfiles[] | select(.name=="Test_Profile") | .name=="Test_Profile"' .config/Code/User/globalStorage/storage.json
 ```
 
-如果要使用参数形式判断某 Profile 是否已创建：
+要使用传参形式：
 
 ```shell
-jq --arg p_name $profile_name '.userDataProfiles[] | .name==$p_name' ~/.config/Code/User/globalStorage/storage.json
+jq --arg p_name $profile_name '.userDataProfiles[] | select(.name==$p_name) | .name==$p_name' .config/Code/User/globalStorage/storage.json
 ```
 
 > [!tip] 
 > 
 > `jq` 如何传参，可以参考：[示例 2](../Linux/Shell/Jq_Note.md#示例%202)
-
-如果只判断 `.name` 值是否存在，如果存在就返回`true`，反之返回`false`：
-
-```shell
-jq '.userDataProfiles[] | .name=="JavaP"' ~/.config/Code/User/globalStorage/storage.json
-```
 
 > [!important] 
 > 
@@ -418,6 +414,18 @@ jq '.userDataProfiles[] | .name=="JavaP"' ~/.config/Code/User/globalStorage/stor
 > jq 'has("userDataProfiles")' ~/.config/Code/User/globalStorage/storage.json
 > ```
 > 
+
+###### 示例 2
+
+根本 [Profile 名称](#Profile%20名称)查询其[Profile location](#Profile%20location) 值：
+
+```shell
+# 从本地存储中检索该名称对应的 location
+# Windows
+# jq -r '.userDataProfiles[] | select(.name=="WebDev") | .location' ~/Library/Application\ Support/Code/User/globalStorage/storage.json
+# Linux
+jq -r '.userDataProfiles[] | select(.name=="JavaP") | .location' ~/.config/Code/User/globalStorage/storage.json
+```
 
 #### <span id="vscode_config_profile_import">导入 Profile</span>
 

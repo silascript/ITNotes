@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2026-07-12 11:32:07
+modified: 2026-08-22 11:46:43
 ---
 
 # 梯子笔记
@@ -461,28 +461,28 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 
 域名列表：
 
-* **永久官网**：[https://五毛.top](https://五毛.top)
-* [https://www.freebb.me](https://www.freebb.me)
-* [https://五毛.top](https://五毛.top)
-* [https://200900.xyz](https://200900.xyz)
+~~* **永久官网**：[https://五毛.top](https://五毛.top)~~
+~~* [https://www.freebb.me](https://www.freebb.me)~~
+~~* [https://五毛.top](https://五毛.top)~~
+~~* [https://200900.xyz](https://200900.xyz)~~
 
-性价比套餐：
+~~性价比套餐：~~
 
-* 3 元/月付，500G，10Gbps，不限制设备
-* 5 元/月付，1000G，10Gbps，不限制设备
+~~* 3 元/月付，500G，10Gbps，不限制设备~~
+~~* 5 元/月付，1000G，10Gbps，不限制设备~~
 
-> [!info] 
-> 
-> 3 元 500G，跟 [鸡场](#鸡场)2 元 500G 相当。
-> 
-> 节点有香港（有 1 倍和 3 倍的）、台湾、日本、韩国和新加坡，[VLess](#VLess) 协议，速度还行。
-> 
-> *但这机场竟然不能用自己的代理更新订阅！*
-> 
+~~> [!info] ~~
+~~> ~~
+~~> 3 元 500G，跟 [鸡场](#鸡场)2 元 500G 相当。~~
+~~> ~~
+~~> 节点有香港（有 1 倍和 3 倍的）、台湾、日本、韩国和新加坡，[VLess](#VLess) 协议，速度还行。~~
+~~> ~~
+~~> *但这机场竟然不能用自己的代理更新订阅！*~~
+~~> ~~
 
-不限时长套餐：
+~~不限时长套餐：~~
 
-* 24 元，1000G，不限制设备
+~~* 24 元，1000G，不限制设备~~
 
 #### 山水云
 
@@ -543,6 +543,7 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 > 
 > * ~~[https://fg111.nxxbbf.com](https://fg111.nxxbbf.com)~~
 > * ~~[https://fg-3.nxxbbf.com](https://fg-3.nxxbbf.com)~~
+> * [https://zxc.ffg-g.com](https://zxc.ffg-g.com)
 > * [https://xx.ffg-g.net ](https://xx.ffg-g.net/)
 >
 > 旧网址：[https://1.mmcks.top](https://1.mmcks.top)（需要梯子访问）

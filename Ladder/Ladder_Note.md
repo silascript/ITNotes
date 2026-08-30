@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2026-08-22 11:46:43
+modified: 2026-08-30 21:55:25
 ---
 
 # 梯子笔记
@@ -545,6 +545,7 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 > * ~~[https://fg-3.nxxbbf.com](https://fg-3.nxxbbf.com)~~
 > * [https://zxc.ffg-g.com](https://zxc.ffg-g.com)
 > * [https://xx.ffg-g.net ](https://xx.ffg-g.net/)
+> * 最新网址：[https://2x.ffg-g.net/](https://2x.ffg-g.net/)
 >
 > 旧网址：[https://1.mmcks.top](https://1.mmcks.top)（需要梯子访问）
 > 
@@ -955,7 +956,8 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 ~~* 9 元，1000G，直连~~
 ~~* 50 元，9TB，直连~~
 
-* 16 元，400G，部分 [CN2](#CN2) 线路
+~~* 16 元，400G，部分 [CN2](#CN2) 线路~~
+* 15 元，200G，
 
 ~~* 13 元，1000G，[Hysteria2](#Hysteria) 节点，部分 [CN2](#CN2) 线路、部分 AS0020 线路、部分移动 CMI 线路。~~
 
@@ -968,7 +970,7 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 
 > [!important] 
 > 
-> 此机场已没有 1 倍率节点。
+> 此机场 1 倍率节点非常少，而且经常 `timeout`。
 > 
 > 没事就停用账号，随时有跑路的危险，千万不要使用此机场！
 

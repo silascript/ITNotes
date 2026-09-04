@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2026-08-30 21:55:25
+modified: 2026-08-31 18:12:05
 ---
 
 # 梯子笔记
@@ -545,7 +545,7 @@ DNS 分流 +[白名单模式](#ChinaList)，是现比较好的解决方案。
 > * ~~[https://fg-3.nxxbbf.com](https://fg-3.nxxbbf.com)~~
 > * [https://zxc.ffg-g.com](https://zxc.ffg-g.com)
 > * [https://xx.ffg-g.net ](https://xx.ffg-g.net/)
-> * 最新网址：[https://2x.ffg-g.net/](https://2x.ffg-g.net/)
+> * [https://2x.ffg-g.net/](https://2x.ffg-g.net/)
 >
 > 旧网址：[https://1.mmcks.top](https://1.mmcks.top)（需要梯子访问）
 > 

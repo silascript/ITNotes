@@ -4,7 +4,7 @@ tags:
   - PL
   - c
 created: 2023-08-18 19:44:52
-modified: 2024-08-06 12:16:49
+modified: 2026-09-06 11:04:37
 ---
 
 # C 语言笔记
@@ -45,13 +45,17 @@ modified: 2024-08-06 12:16:49
 
 ## 表达式
 
-表达式是由 <a href="#exp_primary">初等表达式</a>与运算符构成的一个合乎 C 语言语法的序列组合。
+表达式（Expression）是由 <a href="#exp_primary">初等表达式</a>与运算符构成的一个合乎 C 语言语法的序列组合。
 
 表达式核心功能：**求值**。求值之外的所有功能都称为 **副作用**/**副效应**（Side Effect）。
 
+> [!tip] 
+> 
+> 相当于数学中的「式」，数学中的「式」英文就是「**Expression**」。
+
 > [!exampl]
 > 
-> 如 `printf()` 函数为例，以下是 `printf` 函数的<a href="#func_prototype">声明</a>
+> 如 `printf()` 函数为例，以下是 `printf` 函数的<a href="#func_prototype"> 声明</a>
 >
 > ```c
 > int printf(const char *format, ...);
@@ -64,13 +68,19 @@ modified: 2024-08-06 12:16:49
 
 ### <a id="exp_primary">初等表达式</a>
 
-Primary Expressions **初等表达式**，也译为「主表达式」、「 元表达式」
+Primary Expression **初等表达式**，也译为「主表达式」、「 元表达式」
 
 初等表达式有以下几种：
 
 * 变量名或函数名
 * 常量
 * 文字串字面量
+
+> [!tip] 
+> 
+> 这跟数学中的「单项式」（monomial）可以说在几乎一样。所以使用数学「单项式」的概念理解和判断，是更容易。
+> 
+> 单项式：由数学或字母的**积**构成。
 
 ---
 

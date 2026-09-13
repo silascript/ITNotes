@@ -5,7 +5,7 @@ tags:
   - ide
   - eclipse
 created: 2025-02-23 21:17:37
-modified: 2026-06-22 12:20:36
+modified: 2026-09-13 12:58:04
 ---
 
 # Eclipse 笔记
@@ -376,9 +376,29 @@ HeapStatus {
 }
 ```
 
+#### vogella Eclipse Themes
+
+[vogella Eclipse Themes](https://vogellacompany.github.io/eclipse-themes/) 是一款 Eclipse Theme 插件。
+
+> [!tip] 
+> 
+> [jeeeyuls-eclipse-themes](#jeeeyuls-eclipse-themes) 这个插件在新版本的 Eclipse 中已经安装不了，可以使用这个当成平替。
+
+在「Install New Software」中添加 [https://vogellacompany.github.io/eclipse-themes/](https://vogellacompany.github.io/eclipse-themes/) URL 来安装。
+
 #### e4-spies
 
 [e4 spies](https://marketplace.eclipse.org/content/e4-spies) 这个可能获取 Eclipse 界面各组件的 CSS ID，配合 [jeeeyuls-eclipse-themes](#jeeeyuls-eclipse-themes) 插件中的 CSS 样式，可以设置 Eclipse 界面样式。
+
+#### Eclipse-Themes
+
+[eclipse-themes](https://github.com/ahatem/eclipse-themes-plugin)是 [Eclipse Color Themes](https://eclipse-color-themes.vercel.app/) 官方插件。
+
+此插件可以通过插件市场安装，也可以在「Install  New Software」里自行添加 [https://ahatem.github.io/eclipse-themes-plugin](https://ahatem.github.io/eclipse-themes-plugin) 这个 URL 来安装。
+
+> [!info] 
+> 
+> 这个插件可以替代 [colortheme](#colortheme) 插件了！
 
 #### colortheme
 

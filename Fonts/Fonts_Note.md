@@ -5,7 +5,7 @@ tags:
   - unicode
   - cjk
 created: 2023-01-31 11:31:14
-modified: 2026-08-20 00:57:26
+modified: 2026-09-13 19:53:23
 ---
 
 # 字体笔记
@@ -643,6 +643,35 @@ DejaVu 的 「星号」是偏中上的，Menlo 将其改到居中位置。
 [sarasa mono](https://github.com/be5invis/Sarasa-Gothic)（更纱黑体），懒人福音。
 
 这是思源字体 +[Iosevka](https://typeof.net/Iosevka/) [![Iosevka](https://img.shields.io/github/stars/be5invis/Iosevka?style=social)](https://github.com/be5invis/Iosevka) 而成的字体。
+
+#### 字体名含义
+
+* `slab`：数字和字母的笔画末端加入衬线
+* `Mono`：等宽
+
+##### 字重
+
+* `regular`：标准字形
+* `semibold`：半粗
+* `bold`：粗体
+* `light`：细体
+
+##### 汉字字形
+
+* `cl`：即 `classical`，汉字的旧字形
+* `HC`：香港字形
+* `J`：日本字形
+* `K`：韩国字形
+* `SC`：简体中文字形
+* `TC`：繁体中文，台湾地区字形
+
+|  风格  | 等宽 | 弯引号 | 破折号 | 连字 |
+|:------:|:----:|:------:|:------:|:----:|
+| Gothic |  否  |  全宽  |  全宽  |  否  |
+|   UI   |  否  |  半宽  |  全宽  |  否  |
+|  Mono  |  是  |  半宽  |  全宽  |  是  |
+|  Term  |  是  |  半宽  |  半宽  |  是  |
+| Fixed  |  是  |  半宽  |  半宽  |  否  |
 
 ---
 ### <span id="fonts_program_firacode">FiraCode</span>

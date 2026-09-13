@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2026-08-24 02:44:45
+modified: 2026-09-13 20:25:16
 ---
 
 # Linux 笔记
@@ -1833,6 +1833,22 @@ rm -rf squashfs-root
 
 #### desktop 示例
 
+[Obsidian](../NoteSoft/Obsidian/Obsidian_Note.md)：
+
+```shell
+[Desktop Entry]
+Name=Obsidian
+Exec=/home/silascript/myappimages/Obsidian-1.13.7.AppImage %U
+Terminal=false
+Type=Application
+Icon=/home/silascript/myappimages/icons/obsidian.png
+StartupWMClass=md.obsidian.Obsidian
+X-AppImage-Version=1.13.7
+Comment=Obsidian 1.13.7
+MimeType=x-scheme-handler/obsidian;
+Categories=Office;
+```
+
 [Idea](../Java/IDE/Java_IDE_Idea.md)：
 
 ```shell
@@ -1880,22 +1896,6 @@ StartupWMClass=Eclipse
 Terminal=false
 Categories=Development;
 StartupNotify=true
-```
-
-[Obsidian](../NoteSoft/Obsidian/Obsidian_Note.md)：
-
-```shell
-[Desktop Entry]
-Name=Obsidian
-Exec=/home/silascript/myappimages/Obsidian-1.12.7.AppImage %U
-Terminal=false
-Type=Application
-Icon=/home/silascript/myappimages/icons/obsidian.png
-StartupWMClass=obsidian
-X-AppImage-Version=1.12.7
-Comment=Obsidian 1.12.7
-MimeType=x-scheme-handler/obsidian;
-Categories=Office;
 ```
 
 [思源笔记](../NoteSoft/Siyuan/SiYuan_Note.md)：

@@ -7,7 +7,7 @@ tags:
   - material
   - list
 created: 2025-07-31 03:39:18
-modified: 2026-08-18 23:10:33
+modified: 2026-09-13 19:37:15
 ---
 
 # 字体资料清单
@@ -27,6 +27,14 @@ modified: 2026-08-18 23:10:33
 * [如何看待GB18030强制标准与通用汉字规范表的关系? - 知乎](https://www.zhihu.com/question/401240131)
 * [CJK 统一汉字扩充 I （修订版）（Unicode® 15.1.0） - 知乎](https://zhuanlan.zhihu.com/p/643930520)
 * [gb18030-2022 标准 - 哔哩哔哩](https://www.bilibili.com/opus/811757185558118408)
+
+---
+
+## 字体相关资料
+
+### 更纱黑体
+
+* [更纱黑体这么多版本，要怎么选](https://zhuanlan.zhihu.com/p/627059922)
 
 ---
 

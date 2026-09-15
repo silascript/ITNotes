@@ -5,7 +5,7 @@ tags:
   - unicode
   - cjk
 created: 2023-01-31 11:31:14
-modified: 2026-09-13 19:53:23
+modified: 2026-09-16 00:16:30
 ---
 
 # 字体笔记
@@ -585,7 +585,14 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 
 ![TH Khaai Test](./Fonts_Note.assets/天珩标楷测试.png)
 
+### 朱雀仿宋
+
+[朱雀仿宋](https://github.com/TrionesType/zhuque) 是一款开源的仿宋字体。
+
+![zhuque preview | 640x320](https://github.com/TrionesType/zhuque/raw/main/docs/preview.png)
+
 ---
+
 ## <span id="fonts_program">编程字体</span>
 
 常用的编程字体：

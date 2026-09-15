@@ -5,7 +5,7 @@ tags:
   - yaml
   - ime
 created: 2023-08-18 19:44:52
-modified: 2026-08-20 18:34:16
+modified: 2026-09-16 03:57:25
 ---
 
 # Rime 笔记
@@ -259,10 +259,22 @@ bash rime-install plum
 
 #### 五笔
 
-* [rime-wubi98](https://github.com/lotem/rime-wubi98 "五筆98版 Rime 輸入方案")
-* [arzyu/rime-wubi98](https://github.com/arzyu/rime-wubi98)
-* [shrekuu/rime-wubi98](https://github.com/shrekuu/rime-wubi98)
+* [rime-wubi98](https://github.com/lotem/rime-wubi98 "五筆98版 Rime 輸入方案") 
+  > [!info] 
+  > 
+  >`wubi98.dict.yaml` 文件大小 `1.8 MB`
+* [arzyu/rime-wubi98](https://github.com/arzyu/rime-wubi98) 
+  > [!info] 
+  > 
+  > `wubi98.dict.yaml` 文件大小 `1.07 MB`
+* [shrekuu/rime-wubi98](https://github.com/shrekuu/rime-wubi98) 
+  > [!info] 
+  > 
+  > `wubi98.dict.yaml` 文件大小 `800 KB`
 * [ThreeDefenders/my-wubi-98](https://github.com/ThreeDefenders/my-wubi-98 "在lotem/rime-wubi98基础上修改的")
+  > [!info] 
+  > 
+  > `wubi98.dict.yaml` 文件大小 `1.81 MB`
 * [yanhuacuo/98wubi-unicode: 98五笔超大字符集码表](https://github.com/yanhuacuo/98wubi-unicode)
 
 #### 仓颉

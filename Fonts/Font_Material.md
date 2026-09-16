@@ -2,17 +2,24 @@
 aliases: []
 tags:
   - font
+  - opentype
   - cjk
   - utf8
   - material
   - list
 created: 2025-07-31 03:39:18
-modified: 2026-09-13 19:37:15
+modified: 2026-09-16 23:56:32
 ---
 
 # 字体资料清单
 
 ---
+
+## 字体格式
+
+### OpenType
+
+* [The Type — 参数化设计与字体战争：从 OpenType 1.8 说起](https://www.thetype.com/2016/09/10968/)
 
 ## 字符集
 

@@ -7,7 +7,7 @@ tags:
   - Eclipse
   - dbeaver
 created: 2023-01-30 11:19:11
-modified: 2026-07-21 20:07:04
+modified: 2026-09-17 04:26:45
 ---
 
 # Java 笔记
@@ -118,6 +118,16 @@ Temurin JDK 清华镜像：[https://mirror.tuna.tsinghua.edu.cn/Adoptium/](https
 > `-version` 将产品版本输出到错误流并退出
 > 
 >  `--version` 将产品版本输出到输出流并退出
+
+#### 更新版本
+
+##### Update 441
+
+从 Java 8 Update 441（8u441）开始，**JavaFX 将不再包括在 JDK/JRE 8 中**！
+
+> [!info] 
+> 
+> 更新多 JDK 8 版本更新信息可以参考：[Java 8 发行版更改](https://www.java.com/zh-cn/download/help/release_changes.html)
 
 #### 新特性
 

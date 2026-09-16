@@ -8,7 +8,7 @@ tags:
   - material
   - list
 created: 2025-07-31 03:39:18
-modified: 2026-09-16 23:56:32
+modified: 2026-09-17 04:47:17
 ---
 
 # 字体资料清单
@@ -81,6 +81,7 @@ modified: 2026-09-16 23:56:32
 * [校园网联合镜像站 - 字体](https://mirrors.cernet.edu.cn/font)
 * [font-collection](https://www.thisfaner.com/p/font-collection/)
 * [開源中文字體收藏](https://blog.yucheng.me/post/open-source-chinese-font-list/)
+* [免費商用中文字體總整理](https://github.com/yuleshow/chinese-fonts)
 * [中文开源字体集 Open Source Fonts Collection for Chinese \| OSFCC](https://drxie.github.io/OSFCC/)
 
 ---

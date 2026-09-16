@@ -5,7 +5,7 @@ tags:
   - unicode
   - cjk
 created: 2023-01-31 11:31:14
-modified: 2026-09-16 22:58:53
+modified: 2026-09-17 04:56:15
 ---
 
 # 字体笔记
@@ -496,6 +496,16 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 ![LanternMing preview](https://raw.githubusercontent.com/GuiWonder/LanternMing/main/pictures/hn002.jpg)
 
 ![LanternMing Test](./Fonts_Note.assets/上元明朝测试.png)
+
+### 文悦古典明朝体
+
+[文悦古典明朝体](https://wenyue.cn/fonts/508) 一个类似「康熙字典体」类似的字体，可代替「康熙字典体」使用。
+
+> [!important] 
+> 
+> 此字体商业使用须购买字体授权。
+
+![wenyue mincho preview | 1024x600](https://wenyue-public.oss-cn-hangzhou.aliyuncs.com/illustrations/fonts/508/Jieziyuan.jpg)
 
 ### 文鼎 PL 字体
 

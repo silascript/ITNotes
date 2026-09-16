@@ -5,7 +5,7 @@ tags:
   - yaml
   - ime
 created: 2023-08-18 19:44:52
-modified: 2026-09-16 03:57:25
+modified: 2026-09-16 13:21:14
 ---
 
 # Rime 笔记
@@ -184,6 +184,37 @@ patch:
       reverse_lookup: "^z[a-z]*$"
       punct: "^/[a-z]+$"
 ```
+
+#### 添加用户词库
+
+##### 为方案添加用户自定义词库
+
+1. 新建用户词库文件
+
+新建一个 `.txt` 文件。默认常用的是`custom_phrase.txt`，但其实是可以自定义的。
+> [!tip] 
+> 
+> 文件名必要是纯英文、数字或下划线；另外，文件后缀必要是 `.txt`
+
+2. 为特定 [方案](#方案) 配置指定的用户词库
+
+默认情况，所有用户自定义词库是对所有 [方案](#方案) 都通用的，但如果只针对某个方案，则必须进行以下配置：
+
+```yaml
+  "engine/translators/@next": table_translator@wubi98_custom_phrase
+  wubi98_custom_phrase:
+    dictionary: ""
+    user_dict: wubi98_custom_phrase
+    db_class: stabledb
+    enable_completion: false
+    enable_setence: false
+    initial_quality: 1000
+```
+> [!info] 
+> 
+> `engine/translators/@next`：这个选项是指定 `table_translator@` 后，是用户词库文件的文件名
+>
+> `user_dict`：这个选项配的也是用户词库文件的文件名，不要有 `.txt`
 
 ### vim 输入法切换
 

@@ -5,7 +5,7 @@ tags:
   - unicode
   - cjk
 created: 2023-01-31 11:31:14
-modified: 2026-09-16 00:16:30
+modified: 2026-09-16 11:37:04
 ---
 
 # 字体笔记
@@ -225,6 +225,12 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 这是一款支持 [传承字形](#fonts_zh_inheritedglyphs) 的字体。
 
 <img src="https://github.com/ChiuMing-Neko/ChiuKongMincho/raw/master/public/images/ChiuKongMinchoLogo_Dark.svg#gh-dark-mode-only" style="filter:invert(10%);width:45em;height:auto;">
+
+##### <span id="fonts_zh_notofont_child_plangothic">遍黑体</span>
+
+[遍黑体](https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic_Project) 是以中国大陆字形为标准的对中日韩统一表意文字扩展区进行字形补充的项目。
+
+![Plangothic preview](https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic_Project/raw/main/documentation/samples/31fix.svg))
 
 ##### <span id="fonts_zh_notofont_genne">源音黑体</span>
 

@@ -5,7 +5,7 @@ tags:
   - unicode
   - cjk
 created: 2023-01-31 11:31:14
-modified: 2026-09-16 11:37:04
+modified: 2026-09-16 22:49:34
 ---
 
 # 字体笔记
@@ -226,11 +226,17 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 
 <img src="https://github.com/ChiuMing-Neko/ChiuKongMincho/raw/master/public/images/ChiuKongMinchoLogo_Dark.svg#gh-dark-mode-only" style="filter:invert(10%);width:45em;height:auto;">
 
+#### <span id="fonts_zh_notofont_child_wejinmincho">文津宋体</span>
+
+[文津宋体](https://github.com/takushun-wu/WenJinMincho) 基于 [思源](#fonts_zh_notofont) 宋体，可免费商用的宋体大字符集字体。
+
+![wenjinmincho preview | 378x537](https://github.com/takushun-wu/WenJinMincho/raw/main/pic/wenjin-release.png)
+
 ##### <span id="fonts_zh_notofont_child_plangothic">遍黑体</span>
 
 [遍黑体](https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic_Project) 是以中国大陆字形为标准的对中日韩统一表意文字扩展区进行字形补充的项目。
 
-![Plangothic preview](https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic_Project/raw/main/documentation/samples/31fix.svg))
+<img src="https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic_Project/raw/main/documentation/samples/31fix.svg" style="width:45em;height:auto;">
 
 ##### <span id="fonts_zh_notofont_genne">源音黑体</span>
 

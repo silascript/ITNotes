@@ -5,7 +5,7 @@ tags:
   - yaml
   - ime
 created: 2023-08-18 19:44:52
-modified: 2026-09-16 13:21:14
+modified: 2026-09-16 20:25:49
 ---
 
 # Rime 笔记
@@ -74,6 +74,91 @@ ibus restart
 ### 方案
 
 「**方案**」就是包括码表在内的一套输入方案。
+
+### 布署
+
+配置完，要想使配置生效，就必须重新**布署**。
+
+布署后，会生成为 [方案](#方案)生成对应的`xxx.userdb` 目录。
+
+> [!tip] 
+> 
+> 有时，在 [Linux](../Linux/Linux_Note.md)下重新布署后，并不生效，可以将方案对应的`xxx.userdb` 目录删除，再重新「布署」一次。
+
+### 同步
+
+#### ibus-rime
+
+如果点击「同步」后，会在 `~/.config/ibus/rime/sync` 目录下生成新的子目录，该目录保存当前各种配置，示例：
+
+```shell
+$ ll .config/ibus/rime/sync/267ae9a0-d5c3-4679-89e6-e8746da271eb 
+Permissions Size User       Group      Date Modified    Name
+drwxr-xr-x     - silascript silascript 2026-09-16 18:18 .
+drwxr-xr-x     - silascript silascript 2026-09-16 12:15 ..
+.rw-r--r--  5.3k silascript silascript 2026-09-16 12:15 bopomofo.schema.yaml
+.rw-r--r--   627 silascript silascript 2026-09-16 12:15 bopomofo_express.schema.yaml
+.rw-r--r--   770 silascript silascript 2026-09-16 12:15 bopomofo_tw.schema.yaml
+.rw-r--r--  789k silascript silascript 2026-09-16 12:15 cangjie5.dict.yaml
+.rw-r--r--  2.4k silascript silascript 2026-09-16 12:15 cangjie5.schema.yaml
+.rw-r--r--   326 silascript silascript 2026-09-16 18:24 cangjie5.userdb.txt
+.rw-r--r--  2.5k silascript silascript 2026-09-16 12:15 cangjie5_express.schema.yaml
+.rwxr-xr-x  1.1M silascript silascript 2026-09-16 12:15 cangjie6.dict.yaml
+.rw-r--r--  1.7M silascript silascript 2026-09-16 12:15 cangjie6.extended.dict.yaml
+.rw-r--r--  1.5M silascript silascript 2026-09-16 12:15 cangjie6.extsimp.dict.yaml
+.rw-r--r--  5.2k silascript silascript 2026-09-16 12:15 cangjie6.schema.yaml
+.rw-r--r--   263 silascript silascript 2026-09-16 18:24 cangjie6.userdb.txt
+.rw-r--r--  4.1k silascript silascript 2026-09-16 12:15 cangjie6_express.schema.yaml
+.rw-r--r--   357 silascript silascript 2026-09-16 12:15 default.custom.yaml
+.rw-r--r--  4.0M silascript silascript 2026-09-16 12:15 essay.txt
+.rw-r--r--   139 silascript silascript 2026-09-16 18:24 hangyl.userdb.txt
+.rw-r--r--   141 silascript silascript 2026-09-16 18:24 hannomPS.userdb.txt
+.rw-r--r--   245 silascript silascript 2026-09-16 12:15 installation.yaml
+.rw-r--r--  1.3k silascript silascript 2026-09-16 12:15 ipa_xsampa.dict.yaml
+.rw-r--r--   784 silascript silascript 2026-09-16 12:15 ipa_xsampa.schema.yaml
+.rw-r--r--  6.3k silascript silascript 2026-09-16 12:15 ipa_yunlong.dict.yaml
+.rw-r--r--   906 silascript silascript 2026-09-16 12:15 ipa_yunlong.schema.yaml
+.rw-r--r--   171 silascript silascript 2026-09-16 12:15 japanese.dict.yaml
+.rw-r--r--  6.7M silascript silascript 2026-09-16 12:15 japanese.jmdict.dict.yaml
+.rw-r--r--  6.6k silascript silascript 2026-09-16 12:15 japanese.kana.dict.yaml
+.rw-r--r--   31M silascript silascript 2026-09-16 12:15 japanese.mozc.dict.yaml
+.rw-r--r--   11k silascript silascript 2026-09-16 12:15 japanese.schema.yaml
+.rw-r--r--  1.9k silascript silascript 2026-09-16 18:24 japanese.userdb.txt
+.rw-r--r--   142 silascript silascript 2026-09-16 18:24 jyutping.userdb.txt
+.rw-r--r--  3.0k silascript silascript 2026-09-16 12:15 key_bindings.yaml
+.rw-r--r--  890k silascript silascript 2026-09-16 12:15 luna_pinyin.dict.yaml
+.rw-r--r--  2.1k silascript silascript 2026-09-16 12:15 luna_pinyin.schema.yaml
+.rw-r--r--   384 silascript silascript 2026-09-16 18:24 luna_pinyin.userdb.txt
+.rw-r--r--   527 silascript silascript 2026-09-16 12:15 luna_pinyin_fluency.schema.yaml
+.rw-r--r--   739 silascript silascript 2026-09-16 12:15 luna_pinyin_simp.schema.yaml
+.rw-r--r--   623 silascript silascript 2026-09-16 12:15 luna_pinyin_tw.schema.yaml
+.rw-r--r--   398 silascript silascript 2026-09-16 12:15 luna_quanpin.schema.yaml
+.rw-r--r--  4.8k silascript silascript 2026-09-16 12:15 pinyin.yaml
+.rw-r--r--  1.3M silascript silascript 2026-09-16 12:15 pinyin_simp.dict.yaml
+.rw-r--r--  1.9k silascript silascript 2026-09-16 12:15 pinyin_simp.schema.yaml
+.rw-r--r--  2.1k silascript silascript 2026-09-16 12:15 punctuation.yaml
+.rw-r--r--  2.2M silascript silascript 2026-09-16 12:15 stroke.dict.yaml
+.rw-r--r--   140 silascript silascript 2026-09-16 18:24 stroke.userdb.txt
+.rw-r--r--   28k silascript silascript 2026-09-16 12:15 symbols.yaml
+.rw-r--r--  1.8M silascript silascript 2026-09-16 12:15 terra_pinyin.dict.yaml
+.rw-r--r--  5.1k silascript silascript 2026-09-16 12:15 terra_pinyin.schema.yaml
+.rw-r--r--   169 silascript silascript 2026-09-16 18:24 terra_pinyin.userdb.txt
+.rw-r--r--  1.3k silascript silascript 2026-09-16 12:15 terra_pinyin_12345.schema.yaml
+.rw-r--r--   315 silascript silascript 2026-09-16 18:24 user.yaml
+.rw-r--r--   723 silascript silascript 2026-09-16 18:18 wubi98.custom.yaml
+.rw-r--r--  1.9M silascript silascript 2026-09-16 12:38 wubi98.dict.yaml
+.rw-r--r--  1.5k silascript silascript 2026-09-16 12:38 wubi98.schema.yaml
+.rw-r--r--   21M silascript silascript 2026-09-16 18:24 wubi98.userdb.txt
+.rw-r--r--    16 silascript silascript 2026-09-16 18:24 wubi98_custom_phrase.txt
+.rw-r--r--  1.1k silascript silascript 2026-09-16 12:15 zhuyin.yaml
+
+```
+
+> [!info] 
+> 
+> 可以从看到，同步子目录中，有 `xxx.userdb.txt`这个是用户字典、词频相关的同步文件，即将`xxx.userdb` 目录的导出成一个`txt` 文件。
+
+---
 
 ## <span id="rime_input">打字操作</span>
 
@@ -290,7 +375,7 @@ bash rime-install plum
 
 #### 五笔
 
-* [rime-wubi98](https://github.com/lotem/rime-wubi98 "五筆98版 Rime 輸入方案") 
+* [lotem/rime-wubi98](https://github.com/lotem/rime-wubi98) 
   > [!info] 
   > 
   >`wubi98.dict.yaml` 文件大小 `1.8 MB`
@@ -315,50 +400,6 @@ bash rime-install plum
 * [rime-aca/rime-cangjie6: 蒼頡檢字法](https://github.com/rime-aca/rime-cangjie6)
 * [LEOYoon-Tsaw/Cangjie6: 蒼頡檢字法](https://github.com/LEOYoon-Tsaw/Cangjie6)
 * [RIME 倉頡輸入法方案集成](https://github.com/cangjie-system/rime-cangjie-integrated)
-
-### 日语输入方案
-
-* [日语输入法](https://github.com/gkovacs/rime-japanese)
-* [Rime-KappaJP](https://github.com/momijineko/Rime-KappaJP "Rime 河童日本語五筆字型入力方法")
-
-### 音标及拼音
-
-#### 国际音标
-
-* [rime英语音标输入方案。](https://github.com/mapleafly/rime-ipa-english)
-* [ipa_xsampa](https://github.com/rime/rime-ipa)
-
-安装国际音标：
-
-```shell 
-bash rime-install ipa
-```
-
-包括了两种输入方案：
-
-* x-sampa
-* 雲龍 IPA
-
-启用输入方案，只需在 `default.custom.yaml`，添加相应的`schema` 项就好了：
-
-```yaml
-patch:
-  schema_list:
-    - schema: wubi98
-    - schema: luna_pinyin
-    - schema: cangjie5
-    - schema: cangjie5_express
-    - schema: cangjie6
-    - schema: cangjie6_express
-    - schema: japanese
-    - schema: ipa_xsampa
-    - schema: ipa_yunlong
-```
-
-> [!info] 
-> 
-> * x-sampa 的 schema 名叫：`ipa_xsampa`
-> * 雲龍 IPA 的 schema 名叫：`ipa_yunlong`
 
 #### 拼音
 
@@ -398,6 +439,48 @@ bash rime-install luna-pinyin
 ##### 输出拼音
 
 按 `Control+Return`或`Shift+Return` 输出已編輯的拼音，但因为这个输入方案本身不支持声调，所以输出的拼音是不带声调的，其实如果使用这个输入方案输出拼音字母，不如按`Shift` 键切成英文模式，还更方便。所以如果要使用输出带声调的拼音字母，建议使用[地球拼音](#地球拼音)。
+
+### 日语输入方案
+
+* [日语输入法](https://github.com/gkovacs/rime-japanese)
+* [Rime-KappaJP](https://github.com/momijineko/Rime-KappaJP "Rime 河童日本語五筆字型入力方法")
+
+### 国际音标
+
+* [rime英语音标输入方案](https://github.com/mapleafly/rime-ipa-english)
+* [ipa_xsampa](https://github.com/rime/rime-ipa)
+
+安装国际音标：
+
+```shell 
+bash rime-install ipa
+```
+
+包括了两种输入方案：
+
+* x-sampa
+* 雲龍 IPA
+
+启用输入方案，只需在 `default.custom.yaml`，添加相应的`schema` 项就好了：
+
+```yaml
+patch:
+  schema_list:
+    - schema: wubi98
+    - schema: luna_pinyin
+    - schema: cangjie5
+    - schema: cangjie5_express
+    - schema: cangjie6
+    - schema: cangjie6_express
+    - schema: japanese
+    - schema: ipa_xsampa
+    - schema: ipa_yunlong
+```
+
+> [!info] 
+> 
+> * x-sampa 的 schema 名：`ipa_xsampa`
+> * 雲龍 IPA 的 schema 名：`ipa_yunlong`
 
 ---
 

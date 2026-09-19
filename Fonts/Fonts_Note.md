@@ -5,7 +5,7 @@ tags:
   - unicode
   - cjk
 created: 2023-01-31 11:31:14
-modified: 2026-09-17 21:29:16
+modified: 2026-09-19 20:28:46
 ---
 
 # 字体笔记
@@ -275,13 +275,13 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 
 对比 1：
 
-思源宋：<img src="https://chiron-fonts.github.io/build/familiar-1.aMuzu7e__Z2tHUMD.svg" style="filter: invert(100%);">
-昭源宋：<img src="https://chiron-fonts.github.io/build/familiar-9.C_MDEvJV_2uptob.svg" style="filter: invert(100%);">
+思源宋：<img src="https://chiron-fonts.github.io/build/familiar-1.aMuzu7e__Z2tHUMD.svg" style="filter: invert(100%);width:20em;height:10em;">
+昭源宋：<img src="https://chiron-fonts.github.io/build/familiar-9.C_MDEvJV_2uptob.svg" style="filter: invert(100%);width:20em;height:10em;">
 
 对比 2：
 
-思源宋：<img src="https://chiron-fonts.github.io/build/relax-1.DC_7tQFg_Z2tjvDv.svg" style="filter: invert(100%);">
-昭源宋：<img src="https://chiron-fonts.github.io/build/relax-9.rDcAYQqM_Z2tfrrO.svg" style="filter: invert(100%);">
+思源宋：<img src="https://chiron-fonts.github.io/build/relax-1.DC_7tQFg_Z2tjvDv.svg" style="filter: invert(100%);width:20em;height:10em;">
+昭源宋：<img src="https://chiron-fonts.github.io/build/relax-9.rDcAYQqM_Z2tfrrO.svg" style="filter: invert(100%);width:20em;height:10em;">
 
 ##### <span id="fonts_zh_notofont_nowar">有爱黑体</span>
 
@@ -322,31 +322,24 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 
 秦简牍中的「色」：
 
-<img src="./Fonts_Note.assets/71_EA10.svg" width="100" height="100" />
-<img src="./Fonts_Note.assets/71_EA11.svg" width="100" height="100" />
+<img src="./Fonts_Note.assets/71_EA10.svg" style="filter:invert(100%)" width="100" height="100" />
+<img src="./Fonts_Note.assets/71_EA11.svg" style="filter:invert(100%)" width="100" height="100" />
 
 但问题是，「配」字历史上右边有写成「己」也有写成「巳」。
 
-《说文》：
+《说文》：<img src="./Fonts_Note.assets/27_914D.svg" style="filter:invert(100%)" width="100" height="100" />
 
-<img src="./Fonts_Note.assets/27_914D.svg" width="100" height="100" />
+西周早中期：<img src="./Fonts_Note.assets/34_EA8C.svg" style="filter:invert(100%)" width="100" height="100" />
 
-金文：
-
-西周早中期：
-<img src="./Fonts_Note.assets/34_EA8C.svg" width="100" height="100" />
 西周晚期：
-<img src="./Fonts_Note.assets/34_EA8D.svg" width="100" height="100" />
-<img src="./Fonts_Note.assets/34_EA90.svg" width="100" height="100" />
+<img src="./Fonts_Note.assets/34_EA8D.svg" style="filter:invert(100%)" width="100" height="100" />
+<img src="./Fonts_Note.assets/34_EA90.svg" style="filter:invert(100%)" width="100" height="100" />
 
-春秋：
-<img src="./Fonts_Note.assets/34_EA91.svg" width="100" height="100" />
-战国：
-<img src="./Fonts_Note.assets/34_EA92.svg" width="100" height="100" />
+春秋：<img src="./Fonts_Note.assets/34_EA91.svg" style="filter:invert(100%)" width="100" height="100" />
 
-楚简帛：
+战国：<img src="./Fonts_Note.assets/34_EA92.svg" style="filter:invert(100%)" width="100" height="100" />
 
-<img src="./Fonts_Note.assets/58_E344.svg" width="100" height="100" />
+楚简帛：<img src="./Fonts_Note.assets/58_E344.svg" style="filter:invert(100%)" width="100" height="100" />
 
 > 以上「色」和「配」字的图片均来自 [汉典网](https://www.zdic.net)
 
@@ -384,50 +377,50 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 
 字体名称解释：
 
-| 名称 | 样式 |
-| :---: | :---: |
-| unhinted | 无微调字体 |
-| ttf | TrueType 字体格式 |
-| ttc |	TrueType 字体集文件格式 |
+|   名称   |          样式           |
+|:--------:|:-----------------------:|
+| unhinted |       无微调字体        |
+|   ttf    |    TrueType 字体格式    |
+|   ttc    | TrueType 字体集文件格式 |
 
 第一个名称：
 
-| 名称 | 样式 |
-| :---: | :---: |
-| gothic | 引号为全宽 |
-| ui | 引号为窄的 |
-| mono | monospace 破折号为全宽 等宽字体 |
-| term | 连字、破折号为半宽 |
-| fixed	| 不连字、且破折号为半宽 |
+|  名称  |              样式               |
+|:------:|:-------------------------------:|
+| gothic |           引号为全宽            |
+|   ui   |           引号为窄的            |
+|  mono  | monospace 破折号为全宽 等宽字体 |
+|  term  |       连字、破折号为半宽        |
+| fixed  |     不连字、且破折号为半宽      |
 
 第二个名称：
 
-| 名称 | 样式 |
-| :---: | :---: |
-| cl | Classical orthography 古典字形 |
-| sc | 简体字形 |
-| tc| 繁体字形 |
-| j	| 日文字形 |
-| k	| 韩文字形 |
-| hc | 香港字形 |
+| 名称 |              样式              |
+|:----:|:------------------------------:|
+|  cl  | Classical orthography 古典字形 |
+|  sc  |            简体字形            |
+|  tc  |            繁体字形            |
+|  j   |            日文字形            |
+|  k   |            韩文字形            |
+|  hc  |            香港字形            |
 
 附加名称：
 * slab			超厚笔划字形
 
 第三个名称：
 
-| 名称 | 样式 |
-| :---: | :---: |
-| regular	|	常规 |
-| italic	|	斜体 |
-| extralight|	超细 |
-| light		|	细体 |
-| semibold	|	半粗 |
-| bold		|	粗体 |
+|       名称       |   样式   |
+|:----------------:|:--------:|
+|     regular      |   常规   |
+|      italic      |   斜体   |
+|    extralight    |   超细   |
+|      light       |   细体   |
+|     semibold     |   半粗   |
+|       bold       |   粗体   |
 | extralightitalic | 超细斜体 |
-| lightitalic	 |	细斜体 |
-| semibolditalic |	半粗斜体 |
-| bolditalic | 粗斜体 |
+|   lightitalic    |  细斜体  |
+|  semibolditalic  | 半粗斜体 |
+|    bolditalic    |  粗斜体  |
 
 更纱黑体各版差异：
 

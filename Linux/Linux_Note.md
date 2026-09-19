@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2026-09-13 20:25:16
+modified: 2026-09-19 12:42:30
 ---
 
 # Linux 笔记
@@ -2229,6 +2229,20 @@ Inter 显卡：`pacman -Syu mesa`
 
 * Mesa 驱动不支持 2 代及之前的 CPU，`mesa-amber` 可以支持 2 代 cpu
 * 2~4 代 CPU，需要安装 `xf86-video-intel`，因为 `modsettings` 驱动不支持 4 代之前的 CPU。
+
+### 复制粘贴
+
+Linux 命令行剪贴板工具。
+
+#### wl-clipboard
+
+[Wayland](#Wayland)环境：用 `wl-clipboard`包，其专为 Wayland 设计，安全性更好。其中包括 `wl-copy` 和`wl-paste` 两块模块。
+
+#### xclip
+
+[x11](#x11) 或 XWayland 优先使用 `xclip`。
+
+#### xsel
 
 ---
 

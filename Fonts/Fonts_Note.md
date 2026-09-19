@@ -5,7 +5,7 @@ tags:
   - unicode
   - cjk
 created: 2023-01-31 11:31:14
-modified: 2026-09-17 04:56:15
+modified: 2026-09-17 21:29:16
 ---
 
 # 字体笔记
@@ -226,7 +226,7 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 
 <img src="https://github.com/ChiuMing-Neko/ChiuKongMincho/raw/master/public/images/ChiuKongMinchoLogo_Dark.svg#gh-dark-mode-only" style="filter:invert(10%);width:45em;height:auto;">
 
-#### <span id="fonts_zh_notofont_child_wejinmincho">文津宋体</span>
+##### <span id="fonts_zh_notofont_child_wejinmincho">文津宋体</span>
 
 [文津宋体](https://github.com/takushun-wu/WenJinMincho) 基于 [思源](#fonts_zh_notofont) 宋体，可免费商用的宋体大字符集字体。
 
@@ -497,48 +497,6 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 
 ![LanternMing Test](./Fonts_Note.assets/上元明朝测试.png)
 
-### 文悦古典明朝体
-
-[文悦古典明朝体](https://wenyue.cn/fonts/508) 一个类似「康熙字典体」类似的字体，可代替「康熙字典体」使用。
-
-> [!important] 
-> 
-> 此字体商业使用须购买字体授权。
-
-![wenyue mincho preview | 1024x600](https://wenyue-public.oss-cn-hangzhou.aliyuncs.com/illustrations/fonts/508/Jieziyuan.jpg)
-
-### 文鼎 PL 字体
-
-文鼎 PL 公众授权字型（Public License Font），共有六套：
-
-**1999 版本**：四套提供予社会大众免费下载，开放用于商业或营利性质之目的：
-
-* 文鼎 PL 细上海宋
-* 文鼎 PL 中楷：
-	* AR PL UKai CN
-	* AR PL UKai HK
-	* AR PL UKai TW
-	* AR PL UKai MBE
-* 文鼎 PL 简报宋
-* 文鼎 PL 简中楷
-
-**2010 版本**：二套提供予社会大众免费下载，使用限于非商业或非营利性质之目的：
-
-* 文鼎 PL 明体 U20-L
-* 文鼎 PL 报宋 2GBK
-
-#### UKai-ExtC
-
-[UKai-ExtC](https://github.com/extc/UKai-ExtC) 这是一个把 UKai HK 与 UKai-ExtC 的合集。
-
-> [!quote] 
-> 
-> 是开源中文字体 **AR PL UKai**（文鼎楷体）的一个扩展衍生版本，主要用于在开源和 Linux 系统中提供包含 Unicode 扩展字符（如 CJK 扩展区 A/B 等冷僻字）的楷书支持。
-
-因为它是以 UKai HK 为底，所以是以文鼎 PL 中楷的香港版主体，补入了中国内地的通用字，所以如果某字是香港内地同码异型，最终显示的是香港版本，如「骨」,测试如下：
-
-![UKai-ExtC Test](Fonts_Note.assets/文鼎PL中楷测试.png)
-
 ### 寒蝉字体
 
 #### 寒蝉活字
@@ -597,7 +555,71 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 
 ![HuiWen Test preview](./Fonts_Note.assets/汇文字体测试.png)
 
-### 天珩字库
+#### 汇文明朝补字版
+
+[汇文明朝 AI补字版](https://zhuanlan.zhihu.com/p/2073823068577870999) 是由木相在知乎发布了通过扩散模型对字体进行补缺字，补充了 1.6 万个缺字。
+
+### 朱雀仿宋
+
+[朱雀仿宋](https://github.com/TrionesType/zhuque) 是一款开源的仿宋字体。
+
+![zhuque preview | 640x320](https://github.com/TrionesType/zhuque/raw/main/docs/preview.png)
+
+### 超大字符集字体
+
+#### 98 五笔超大字符集码表
+
+[98五笔超大字符集码表](https://github.com/yanhuacuo/98wubi-unicode) 这是 98 五笔资源库在提供大字符集码表时「附带」的大字符集字体。此字体支持到 Unicode 15.1 版本，即支持到「I 区」扩展字符集，是完整收录，不像现在主流字体，B 区只是象征性地收了很少的一些！
+
+#### 开心宋体
+
+[开心宋体](https://www.guoxuedashi.com/zidian/bujian/KaiXinSong.php) 是 [国学大师](https://www.guoxuedashi.com) 网站提供的一套大字符集字体。支持到「G 区」，同样也是所有字符。
+
+### 需授权字体
+
+#### 文悦古典明朝体
+
+[文悦古典明朝体](https://wenyue.cn/fonts/508) 一个类似「康熙字典体」类似的字体，可代替「康熙字典体」使用。
+
+> [!important] 
+> 
+> 此字体商业使用须购买字体授权。
+
+![wenyue mincho preview | 1024x600](https://wenyue-public.oss-cn-hangzhou.aliyuncs.com/illustrations/fonts/508/Jieziyuan.jpg) 
+
+#### 文鼎 PL 字体
+
+文鼎 PL 公众授权字型（Public License Font），共有六套：
+
+**1999 版本**：四套提供予社会大众免费下载，开放用于商业或营利性质之目的：
+
+* 文鼎 PL 细上海宋
+* 文鼎 PL 中楷：
+	* AR PL UKai CN
+	* AR PL UKai HK
+	* AR PL UKai TW
+	* AR PL UKai MBE
+* 文鼎 PL 简报宋
+* 文鼎 PL 简中楷
+
+**2010 版本**：二套提供予社会大众免费下载，使用限于非商业或非营利性质之目的：
+
+* 文鼎 PL 明体 U20-L
+* 文鼎 PL 报宋 2GBK
+
+##### UKai-ExtC
+
+[UKai-ExtC](https://github.com/extc/UKai-ExtC) 这是一个把 UKai HK 与 UKai-ExtC 的合集。
+
+> [!quote] 
+> 
+> 是开源中文字体 **AR PL UKai**（文鼎楷体）的一个扩展衍生版本，主要用于在开源和 Linux 系统中提供包含 Unicode 扩展字符（如 CJK 扩展区 A/B 等冷僻字）的楷书支持。
+
+因为它是以 UKai HK 为底，所以是以文鼎 PL 中楷的香港版主体，补入了中国内地的通用字，所以如果某字是香港内地同码异型，最终显示的是香港版本，如「骨」,测试如下：
+
+![UKai-ExtC Test](Fonts_Note.assets/文鼎PL中楷测试.png)
+
+#### 天珩字库
 
 [天珩字库](http://cheonhyeong.com) 是一个包括宋、楷、黑的字体家族。
 
@@ -605,17 +627,11 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 > 
 > 因为这个字库只是整理，属于「拼好字」，而此库的字体用到了很多厂商字体，所以使用这个字库的字体，有非常高的侵权风险！
 
-#### 天珩标楷
+##### 天珩标楷
 
 天珩字库 - 标楷是按照香港标准。
 
 ![TH Khaai Test](./Fonts_Note.assets/天珩标楷测试.png)
-
-### 朱雀仿宋
-
-[朱雀仿宋](https://github.com/TrionesType/zhuque) 是一款开源的仿宋字体。
-
-![zhuque preview | 640x320](https://github.com/TrionesType/zhuque/raw/main/docs/preview.png)
 
 ---
 

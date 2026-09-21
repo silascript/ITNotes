@@ -7,7 +7,7 @@ tags:
   - material
   - list
 created: 2025-03-11 06:18:21
-modified: 2025-07-30 21:34:09
+modified: 2026-09-22 03:32:25
 ---
 
 # Tomcat 资料清单
@@ -29,6 +29,13 @@ modified: 2025-07-30 21:34:09
 ## VSCode 集成
 
 * [Visual Studio Code配置Tomcat运行Java Web项目使用Visual Studio Code工具 - 掘金](https://juejin.cn/post/7282692942719713338)
+
+## 源码分析
+
+### session
+
+* [Tomcat源码分析 （十）----- 彻底理解 Session机制 - chen\_hao - 博客园](https://www.cnblogs.com/java-chen-hao/p/11316172.html)
+* [java session id 生成_sessionid如何产生？由谁产生？保存在哪里](https://blog.csdn.net/weixin_42513928/article/details/114097260)
 
 ---
 

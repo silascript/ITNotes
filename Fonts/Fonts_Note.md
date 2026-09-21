@@ -5,7 +5,7 @@ tags:
   - unicode
   - cjk
 created: 2023-01-31 11:31:14
-modified: 2026-09-19 20:28:46
+modified: 2026-09-20 02:39:07
 ---
 
 # 字体笔记
@@ -514,7 +514,21 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 
 ![Chillkai Test](./Fonts_Note.assets/寒蝉正楷测试.png)
 
-### 霞鶩文楷
+### 霞鶩字体
+
+#### 霞鹜致宋
+
+[霞鹜致宋](https://github.com/lxgw/LxgwZhiSong) 是「IPAex 明朝」的衍生字体。
+
+![LxgwZhiSong preview | 960x540](https://github.com/lxgw/LxgwZhiSong/raw/main/documentation/images/zs-compare-1.png)
+
+#### 霞鹜新致宋
+
+[新致宋](https://github.com/lxgw/LxgwNeoZhiSong) 其实是 [霞鹜致宋](#霞鹜致宋) 的大陆规范版本，主要满足简体中文需求。
+
+![LxgwNeoZhiSon preview | 960x540](https://raw.githubusercontent.com/lxgw/LxgwNeoZhiSong/main/documentation/images/neozhisong-2.png)
+
+#### 霞鶩文楷
 
 [霞鹜文楷](https://github.com/lxgw/LxgwWenkai) 是基于日本 Klee One 衍生的楷体字体。主要是在 Klee One 上添加简体字。
 
@@ -527,7 +541,7 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 * [芫荽](https://github.com/ButTaiwan/iansui)：采用台标
 * [芫茜雅楷](https://github.com/ItMarki/jyunsaikaai)：采用香港标准
 
-#### 霞鶩文楷 TC
+##### 霞鶩文楷 TC
 
 [霞鶩文楷 TC](https://github.com/lxgw/LxgwWenkaiTC) 是 [霞鶩文楷](https://github.com/lxgw/LxgwWenkai) 的繁体版，其字形参考了[傳承字形標準化文件](https://github.com/ichitenfont/inheritedglyphs)。
 

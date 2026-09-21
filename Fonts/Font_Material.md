@@ -8,7 +8,7 @@ tags:
   - material
   - list
 created: 2025-07-31 03:39:18
-modified: 2026-09-17 04:47:17
+modified: 2026-09-20 02:15:15
 ---
 
 # 字体资料清单
@@ -83,6 +83,7 @@ modified: 2026-09-17 04:47:17
 * [開源中文字體收藏](https://blog.yucheng.me/post/open-source-chinese-font-list/)
 * [免費商用中文字體總整理](https://github.com/yuleshow/chinese-fonts)
 * [中文开源字体集 Open Source Fonts Collection for Chinese \| OSFCC](https://drxie.github.io/OSFCC/)
+* [ZeoSeven Fonts (ZSFT) \| 释放字体自由](https://fonts.zeoseven.com)
 
 ---
 

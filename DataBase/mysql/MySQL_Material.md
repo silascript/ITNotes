@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2025-02-22 20:01:30
-modified: 2026-05-05 22:40:31
+modified: 2026-09-26 18:28:37
 ---
 
 # MySQL 资料清单
@@ -32,6 +32,13 @@ modified: 2026-05-05 22:40:31
 ## 操作
 
 * [mysql数据库指定ip远程访问(设置远程连接)，赋权操作 - 熊仔其人 - 博客园](https://www.cnblogs.com/xiongzaiqiren/p/16821748.html)
+
+## 权限加密
+
+### 密码
+
+* [MySQL 8.0 配置mysql\_native\_password身份验证插件的密码 - davie2020 - 博客园](https://www.cnblogs.com/bjx2020/p/12118614.html)
+* [【MySQL安全】密码插件指南：从配置到踩坑-腾讯云开发者社区-腾讯云](https://developer.cloud.tencent.com/article/2648176)
 
 ---
 

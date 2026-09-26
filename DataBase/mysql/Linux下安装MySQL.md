@@ -6,7 +6,7 @@ tags:
   - db2
   - database
 created: 2023-08-18 19:44:52
-modified: 2025-09-24 03:47:30
+modified: 2026-09-26 18:37:38
 ---
 
 # Linux 下安装 MySQL5.7
@@ -96,6 +96,8 @@ chown mysql data mysql-files
 bin/mysql_ssl_rsa_setup --datadir=/usr/local/mysql-5.7/data
 ```
 
+---
+
 ### 启动
 
 #### 启动方式 1
@@ -184,23 +186,27 @@ cp support-files/mysql.server /etc/init.d/mysql.server
 >sudo mysql_server-5.7 stop
 >```
 
+---
+
+## 用户密码权限
+
 ### 修改密码及权限
 
 > [!tip]
 >
-> 使用初始化给的 root 帐号及随机密码登录 mysql 成功后，要修改密码
+> 使用 [初始化](#初始化)给的 `root` 帐号及随机密码登录 mysql 成功后，要修改密码
 
 ```mysql
 alter user 'root'@'localhost' identified by 'youpassword'; 
 ```
 
-###### 记得刷新下
+ 记得刷新下：
 
 ```mysql
 flush privileges;
 ```
 
-###### 以下的修改密码不能在临时密码状态下使用，只能在上面修改后重新登录后才能使用
+以下的修改密码不能在临时密码状态下使用，只能在上面修改后重新登录后才能使用。
 
 ```mysql
 grant all privileges on *.* to 'energy_pf'@'192.168.2.65' identified by 'energy_pf' with grant option;
@@ -213,7 +219,7 @@ grant all privileges on *.* to 'energy_pf'@'192.168.2.65' identified by 'energy_
 MySQL 8.0+ 版本，创建用户和授权应分开。
 所以上面那个 `grant ... identified by ...` 创建和授权一句搞掂的方式，在 MySQL8 下是无效的。
 
-在 MySQL8 下应分「两步走」，使用以下方式：
+在 MySQL 8 下应分「两步走」，使用以下方式：
 
 > [!tip] 
 > 
@@ -249,7 +255,7 @@ GRANT ALL PRIVILEGES ON *.* TO 'remote'@'%' WITH GRANT OPTION;
 > `'用户名'@'%'` 这是授权用户所有连接地址都连上 MySQL，但除了 `localhost`。要使用 localhost，得再单独对 `localhost` 连接地址授权一次。可以查看 `mysql.user` 表，`%` 和 `localhost` 是分别存放在两行的。
 >
 
-##### 查看 user 表
+### 查看 user 表
 
 > [!info] 
 > 
@@ -268,7 +274,7 @@ GRANT ALL PRIVILEGES ON *.* TO 'remote'@'%' WITH GRANT OPTION;
 >
 > ![image-20201130080857639](linux下安装mysql.assets/image-20201130080857639.png)
 
-##### 其他账号操作
+### 其他账号操作
 
 添加新账号：
 
@@ -286,7 +292,17 @@ DROP USER '用户名'@'连接地址';
 > 
 > `DROP USER 'root'@'%';`
 
-#### Misc
+### 密码插件
+
+ 查看用户的认证插件：
+ 
+```shell
+SELECT user, host, plugin FROM mysql.user ;
+```
+
+---
+
+## Misc
 
 ```shell
 
@@ -310,6 +326,8 @@ killall -9 mysqld
 
 如果原来使用 mysqld_safe 启动，可以使用 **killall mysqld** 关闭
 
+> [!info] 
+> 
 > Unix 和类似 Unix 的系统上的 MySQL 发行版包含一个名为 **mysql.server** 的脚本，该脚本使用 **mysqld_safe** 启动 MySQL 服务器。它可以在使用 System V 样式的运行目录来启动和停止系统服务的系统 (例如 Linux 和 Solaris) 上使用。
 >
 > **mysql.server** 是在 MySQL 源代码树中使用的脚本名称。安装的名称可能不同 (例如 **mysqld** 或 **mysql**)。

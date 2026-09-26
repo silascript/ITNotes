@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2026-07-03 21:59:38
+modified: 2026-09-26 18:56:06
 ---
 
 # Docker 示例
@@ -723,9 +723,15 @@ docker run --name mariadb10.8 -p 3366:3306 -v /home/silascript/Docker_Mount/mari
 
 > [!tip] mysql 相关相关的目录、文件路径
 > 
-> 配置文件目录：/etc/mysql
+> 配置文件目录：`/etc/mysql`
+>> [!tip] 
+>> 
+>> Docker MySQL 镜像的 BaseOS 分成 [Debian](../Linux/Debian/Debian_Note.md) 和 Oracle 两种。
+>> 
+>> Debian 版本的 `my.cnf`是放在`/etc/mysql`目录；而 Oracle 版本的`my.cnf`是直接放在`/etc/` 目录下。
+>> 
 >
-> 数据存放目录：/var/lib/mysql
+> 数据存放目录：`/var/lib/mysql`
 >
 > mariadb 的链接地址：
 > 

@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-22 01:36:41
-modified: 2026-07-03 21:53:42
+modified: 2026-09-27 12:15:09
 ---
 
 # Docker 资料清单
@@ -18,6 +18,7 @@ modified: 2026-07-03 21:53:42
 * [docker容器之run命令 - 进击的davis - 博客园](https://www.cnblogs.com/davis12/p/14467421.html)
 * [docker run常用参数-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/2246184)
 * [Warning: Stopping docker.service, but it can still be activated by: docker.socket-CSDN博客](https://blog.csdn.net/qq_42533216/article/details/121489855)
+* [Docker 学习笔记 - 在 Linux 上安装和使用 Docker - Changbin's Blog](https://www.misterma.com/archives/963/)
 
 ### 镜像
 
@@ -84,6 +85,7 @@ modified: 2026-07-03 21:53:42
 * [Mysql容器设置字符集 - 运维笔记](http://zongming.net/read-1232/)
 * [修改Docker MySQL官方镜像字符集UTF8 - CSDN博客](https://blog.csdn.net/Three_dog/article/details/91415268)
 * [docker 文件方式修改mysql配置（时区+字符集）永久修改Docker容器中mysql的时区 对mysql doc - 掘金](https://juejin.cn/post/7113921256717549575)
+* [Docker安装MySQL8：绕过传统部署的80%环境坑-CSDN博客](https://blog.csdn.net/weixin_33824385/article/details/162217374)
 
 ### PostgreSQL
 

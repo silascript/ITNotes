@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2026-09-27 20:59:50
+modified: 2026-09-28 02:28:10
 ---
 
 # Docker 示例
@@ -890,7 +890,7 @@ performance_schema = off
 
 ## <span id="dke_mariadb">示例 5：MariaDB</span>
 
-而 [MariaDB](../DataBase/mysql/MariaDB_Note.md) 镜像底层系统也分俩：[Ubuntu](../Linux/Debian/Ubuntu_Note.md) 和**UBI**（Redhat 的 「Universal Base Image」）。
+ [MariaDB](../DataBase/mysql/MariaDB_Note.md) 镜像底层系统也分俩：[Ubuntu](../Linux/Debian/Ubuntu_Note.md) 和**UBI**（Redhat 的 「Universal Base Image」）。
 
 > [!info] 
 > 
@@ -901,15 +901,149 @@ performance_schema = off
  [MariaDB](../DataBase/mysql/MariaDB_Note.md)与 [MySQL](../DataBase/mysql/MySQL_Note.md)的[镜像](Docker_Note.md#dk_image) 大小对比：
 
 ```shell
-$ docker images             
+$ docker images                 
                                                                                                            i Info →   U  In Use
 IMAGE                 ID             DISK USAGE   CONTENT SIZE   EXTRA
 mariadb:12.3.3        dfff46ef3f9d        334MB             0B        
+mariadb:12.3.3-ubi    f8b1125cca12        529MB             0B        
 mysql:8.0.46-debian   fecd5f252684        610MB             0B        
 mysql:8.4.11-oracle   ee241324a55f        813MB             0B        
 ```
 
+> [!info] 
+> 
+> 可见，与 [MySQL镜像](#dke_mysql) 类似，MariaB 的 UBI 的版本是要比 Ubuntu 版本，体积要大！
+
+> [!tip] 
+> 
+> 
+> 注意 UBI 版本，可能会出现 CPU 兼容问题，如 `Fatal glibc error: CPU does not support x86-64-v3`。
+> 
+> **x86-64-v3** 要求 CPU 必须支持 **AVX、AVX2、BMI1、BMI2、FMA3、LZCNT、MOVBE** 等较新的指令集（通常需要 2013 年及之后的 Intel Haswell / AMD Excavator 或更现代的处理器）。
+> 
+> 检测宿主机是否支持 v3：`/lib64/ld-linux-x86-64.so.2 --help` 或 `/lib64/ld-linux-x86-64.so.2 --help | grep -E "v3|v4"`
+> 
+> 要显示 `(supported, searched)` 标识，才是当前 CPU 是支持。如下就是只支持到`v2`：
+> 
+> ```shell
+> Subdirectories of glibc-hwcaps directories, in priority order:
+> x86-64-v4
+> x86-64-v3
+> x86-64-v2 (supported, searched)
+> ```
+> 
+> 
+
 Docker 安装 MariaDB 基本与 [MySQL](#dke_mysql) 基本相同。
+
+1. 创建一个临时容器
+```shell
+docker run -d --name d_mariadb12 -e MARIADB_ROOT_PASSWORD=123456 mariadb:12.3.3
+```
+
+> [!tip] 
+> 
+> MariaDB 用的是 `MARIADB_ROOT_PASSWORD`，在初始化时为`root` 设置密码。
+
+2. 复制配置目录
+
+将容器中的 mariadb 的 [配置目录](#配置目录) 复制到宿主机目录：
+
+```shell
+docker cp d_mariadb12:/etc/mysql /home/silascript/Docker_Mount/mariadb_m/config
+```
+
+### 配置目录
+
+MariaDB 配置目录：`/etc/mysql`，`mariadb.cnf` 都在此目录中。
+
+```shell
+root@36f0b6161102:/# ls -al /etc/mysql/
+total 28
+drwxr-xr-x 4 root root 4096 Sep 16 03:26 .
+drwxr-xr-x 1 root root 4096 Sep 27 13:29 ..
+drwxr-xr-x 2 root root 4096 Aug 20 12:37 conf.d
+-rwxr-xr-x 1 root root 1435 Aug 20 06:33 debian-start
+-rw------- 1 root root  548 Sep 16 03:26 debian.cnf
+-rw-r--r-- 1 root root 1129 Sep 16 03:26 mariadb.cnf
+drwxr-xr-x 3 root root 4096 Sep 16 03:26 mariadb.conf.d
+lrwxrwxrwx 1 root root   24 Sep 16 03:26 my.cnf -> /etc/alternatives/my.cnf
+
+```
+
+---
+
+## <span id="dke_percona">示例 6：Percona</span>
+
+Docker 下安装 [Percona_Note](../DataBase/mysql/Percona_Note.md)与[MySQL](#dke_mysql) 与是基本相同。
+
+镜像对比，Percona 的镜像真的是比 [MySQL](#dke_mysql)、[MariaDB](#dke_mariadb) 的镜像都大很多：
+
+```shell
+$ docker images                                 
+                                                                                                           i Info →   U  In Use
+IMAGE                                ID             DISK USAGE   CONTENT SIZE   EXTRA
+mariadb:12.3.3                       dfff46ef3f9d        334MB             0B        
+mysql:8.0.46-debian                  fecd5f252684        610MB             0B        
+mysql:8.4.11-oracle                  ee241324a55f        813MB             0B        
+percona/percona-server:8.4.11-11.1   18a1438e50ae       1.65GB             0B        
+```
+
+1. 创建一个临时容器
+```shell
+docker run -d --name d_percona84 -e MYSQL_ROOT_PASSWORD=123456 percona/percona-server:8.4.11-11.1
+```
+> [!tip] 
+> 
+> 创建容器时，为 `root` 设置密码的属性的环境变量（Environment Variables，即`-e` 选项设置），与 MySQL 完全相同，即`MYSQL_ROOT_PASSWORD`
+
+2. 复制配置
+
+需要复制两种配置：
+
+* `my.cnf`是直接放在 `/etc/` 目录下：
+
+```shell
+$ ls -al /etc/
+-rw-rw-r-- 1 mysql root   1313 Sep 24 17:41 my.cnf
+drwxrwxr-x 1 mysql root   4096 Sep 24 17:41 my.cnf.d
+```
+
+而且没有像 MySQL 和 MariaDB 一样，有个 `/etc/mysql` 目录，所以只用复制配置文件到宿主机即可：
+
+```shell
+docker cp d_percona84:/etc/my.cnf /home/silascript/Docker_Mount/percona_m/config/
+```
+
+* [Docker](Docker_Note.md) 相关的配置
+
+`docker.cnf`配置文件是放在 `/etc/my.cnf.d` 目录下：
+
+```shell
+[mysql@daf61e8d2ed3 /]$ ls -al /etc/my.cnf.d/
+total 12
+drwxrwxr-x 1 mysql root 4096 Sep 24 17:41 .
+drwxr-xr-x 1 root  root 4096 Sep 27 18:08 ..
+-rw-rw-r-- 1 mysql root   45 Sep 24 17:41 docker.cnf
+```
+
+所以 `/etc/my.cnf.d` 也得复制出来：
+
+```shell
+docker cp d_percona84:/etc/my.cnf.d /home/silascript/Docker_Mount/percona_m/config/ 
+```
+
+> [!tip] 
+> 
+> 详细配置参考：[percona/percona-server - config-file](https://hub.docker.com/r/percona/percona-server#using-a-custom-percona-server-config-file)
+
+3. 重新创建一个完整版本容器
+
+> [!info] 
+> 
+> 与 MySQL 一样，在创建容器时，同样能为其设置字符集：
+> 
+> `docker run --name container-name -d  percona/percona-server --character-set-server=utf8 --collation-server=utf8_general_ci`
 
 ---
 

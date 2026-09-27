@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-22 01:36:41
-modified: 2026-09-27 12:15:09
+modified: 2026-09-27 22:43:50
 ---
 
 # Docker 资料清单
@@ -86,6 +86,11 @@ modified: 2026-09-27 12:15:09
 * [修改Docker MySQL官方镜像字符集UTF8 - CSDN博客](https://blog.csdn.net/Three_dog/article/details/91415268)
 * [docker 文件方式修改mysql配置（时区+字符集）永久修改Docker容器中mysql的时区 对mysql doc - 掘金](https://juejin.cn/post/7113921256717549575)
 * [Docker安装MySQL8：绕过传统部署的80%环境坑-CSDN博客](https://blog.csdn.net/weixin_33824385/article/details/162217374)
+
+### MariaDB
+
+* [docker中安装Mariadb - 掘金](https://juejin.cn/post/7203237297402658874)
+* [Docker安装Mariadb踩坑 - 掘金](https://juejin.cn/post/7145351253130739725)
 
 ### PostgreSQL
 

@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2026-09-26 18:56:06
+modified: 2026-09-27 11:24:17
 ---
 
 # Docker 示例
@@ -729,6 +729,33 @@ docker run --name mariadb10.8 -p 3366:3306 -v /home/silascript/Docker_Mount/mari
 >> Docker MySQL 镜像的 BaseOS 分成 [Debian](../Linux/Debian/Debian_Note.md) 和 Oracle 两种。
 >> 
 >> Debian 版本的 `my.cnf`是放在`/etc/mysql`目录；而 Oracle 版本的`my.cnf`是直接放在`/etc/` 目录下。
+>> 
+>>  Debian：
+>>  
+>> ```shell
+>> 
+>> root@206765fc9111:/# ls -al /etc/mysql/
+>> total 24
+>> drwxr-xr-x 1 root root 4096 Apr 22 01:41 .
+>> drwxr-xr-x 1 root root 4096 Sep 27 03:18 ..
+>> drwxr-xr-x 1 root root 4096 Apr 22 01:41 conf.d
+>> -rw-r--r-- 1 root root 1080 Apr 22 01:41 my.cnf
+>> -rw-r--r-- 1 root root 1498 Apr  7 16:05 my.cnf.fallback
+>> ```
+>> 
+>> OracleLinux：
+>> 
+>> ```shell
+>> 
+>> bash-5.1# ls -al /etc/
+>> total 1028
+>> drwxr-xr-x 1 root root   4096 Sep 27 03:01 .
+>> drwxr-xr-x 1 root root   4096 Sep 27 03:01 ..
+>> -rw-r--r-- 1 root root    999 Sep 21 23:08 my.cnf
+>> drwxr-xr-x 2 root root   4096 Jun 30 19:20 my.cnf.d
+>> drwxr-xr-x 3 root root   4096 Sep 21 23:08 mysql
+>> ```
+>> 
 >> 
 >
 > 数据存放目录：`/var/lib/mysql`

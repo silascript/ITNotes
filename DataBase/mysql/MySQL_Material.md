@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2025-02-22 20:01:30
-modified: 2026-09-26 18:28:37
+modified: 2026-09-27 02:36:49
 ---
 
 # MySQL 资料清单
@@ -24,6 +24,7 @@ modified: 2026-09-26 18:28:37
 * [如何选择适合的 MySQL Connector/J 版本](https://segmentfault.com/a/1190000044667101)
 * [MySQL版本历史与主要特性 – orczhou.com](https://www.orczhou.com/index.php/2023/05/mysql-version-history/)
 * [MySQL版本现状与选择 – orczhou.com](https://www.orczhou.com/index.php/how-to-choose-the-right-mysql-version/)
+* [MySQL 26.7 EA 来了：版本号一夜跳到了26，社区版正在发生变化 - 17认证网](https://www.17cert.com/?p=22192)
 
 ## Timezone
 

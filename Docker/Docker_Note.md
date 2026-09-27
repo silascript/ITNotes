@@ -8,7 +8,7 @@ tags:
   - ubuntu
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2026-05-06 01:50:03
+modified: 2026-09-27 11:15:14
 ---
 
 # Docker 笔记
@@ -642,10 +642,13 @@ docker start 容器名|容器ID
 `docker create` 命令的常用选项参数，在 `docker run` 命令都通用：如 `-i`、`-t`、`-p`、`-v` 等。
 
 `docker run` 独有的常用选项参数：
+
 `-d,detach`：在后台运行容器并将打印出容器的 ID
 > [!info] 
 > 
 > 更多的时候，需要让 Docker 容器在后台以守护形式运行，这就要加上 `-d` 选项来实现，而 `-d` 其实就是 「Daemon」。
+> 
+> 如果不加 `-d`，那当前 Shell 窗口就一直被`run` 进程占用。
 
 ### <span id="dk_container_stop">停止容器</span>
 
@@ -786,7 +789,7 @@ docker volume rm volume名
 
 > [!tip]
 > 
-> volume 的名称可以通过	`dokcer volumes ls` 命令查询。
+> volume 的名称可以通过	`dokcer volume ls` 命令查询。
 
 #### 清理无主 volume
 

@@ -5,7 +5,7 @@ tags:
   - db
   - mysql
 created: 2023-01-30 11:19:11
-modified: 2026-05-05 22:49:33
+modified: 2026-09-27 02:55:01
 ---
 
 # MySQL 笔记
@@ -108,6 +108,18 @@ LTS 版本将遵循 [Oracle 终身支持政策](https://link.zhihu.com/?target=
 ![mysql version schedule screenshot](https://developer.qcloudimg.com/http-save/10653659/60a817fc9e60ec8daebd29fe56699ab8.png)
 
 [MySQL各版本发布时间轴](https://docs.google.com/spreadsheets/u/0/d/e/2PACX-1vSs5aqTLLVWZGS6PnASYtZiyEupJTAnmNRV9tAVtNSX98xKmiNGt_eKfnd2rCT2C0LRVA6UHIVUA0AU/pubhtml?gid=1117405558&single=true&pli=1)
+
+### 版本号变更
+
+从 `9.7`之后，MySQL 的版本号变为使用`YY.M.P` 日期格式来命名。
+
+* `YY`：年份
+* `M`：月份
+* `P`：补丁号
+
+> [!info] 
+> 
+> 因为「创新版」是每个季度都更新一次，所以 `P`这个正常情况都是`0`，而当`YY.M`部分不变，而`P`部分变更为 1 及 1+ 时，这表明此`YY.M`版本已经正式成为[LTS](#LTS) 版本了！
 
 ### 版本差异
 

@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2026-09-27 11:24:17
+modified: 2026-09-27 19:35:07
 ---
 
 # Docker 示例
@@ -705,11 +705,30 @@ phpinfo();
 
 ## <span id="dke_mysql">示例 4：MySQL/Mariadb</span>
 
-[GitHub - docker-library](https://github.com/docker-library/mysql) 的镜像按底层系统分为 debian 和 oracle。
+[MySQL](../DataBase/mysql/MySQL_Note.md)和 [MariaDB](../DataBase/mysql/MariaDB_Note.md)[镜像](Docker_Note.md#dk_image) 大小对比：
+
+```shell
+$ docker images             
+                                                                                                           i Info →   U  In Use
+IMAGE                 ID             DISK USAGE   CONTENT SIZE   EXTRA
+mariadb:12.3.3        dfff46ef3f9d        334MB             0B        
+mysql:8.0.46-debian   fecd5f252684        610MB             0B        
+mysql:8.4.11-oracle   ee241324a55f        813MB             0B        
+```
+
+[MySQL镜像](https://github.com/docker-library/mysql) 按底层系统分为 [Debian](../Linux/Debian/Debian_Note.md) 和 Oracle Linux。
 
 > [!info] 
 > 
 > 8.0.38 之后，官方镜像默认使用自家的 Oracle Linux。
+
+而 MariaDB 镜像底层系统也分俩人：[Ubuntu](../Linux/Debian/Ubuntu_Note.md) 和**UBI**（Redhat 的 「Universal Base Image」）。
+
+> [!info] 
+> 
+> Red Hat Universal Base Image（UBI）是红帽推出的免费、可自由再分发的容器基础镜像，本质上是 Red Hat Enterprise Linux（RHEL）的一个子集。‌‌‌
+>
+> UBI 的设计目标很明确：让开发者在任意平台（包括非红帽环境）上构建、部署和分享容器化应用，同时获得企业级的基础镜像质量。‌‌
 
 ```shell
 # 不指定挂载目录

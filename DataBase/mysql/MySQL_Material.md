@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2025-02-22 20:01:30
-modified: 2026-09-27 12:53:16
+modified: 2026-09-27 18:31:48
 ---
 
 # MySQL 资料清单
@@ -49,6 +49,7 @@ modified: 2026-09-27 12:53:16
 
 * [MySQL 分支的选择：Percona 还是 MariaDB - 花儿笑弯了腰 - 博客园](https://www.cnblogs.com/Irving/p/9594097.html)
 * [MySQL开源替代品大比拼：MariaDB与Percona Server的兼容性与差异全解析-腾讯云开发者社区-腾讯云](https://developer.cloud.tencent.com/article/2595347?policyId=1004)
+* [MySQL/Percona/MariaDB 在 2026 年 1 月的性能评估 - 墨天轮](https://www.modb.pro/db/2015992342009421824)
 
 ---
 

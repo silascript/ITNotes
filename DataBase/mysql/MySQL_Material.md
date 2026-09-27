@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2025-02-22 20:01:30
-modified: 2026-09-27 12:12:47
+modified: 2026-09-27 12:53:16
 ---
 
 # MySQL 资料清单
@@ -44,6 +44,11 @@ modified: 2026-09-27 12:12:47
 ## Docker 相关
 
 * [Docker MySQL 资料清单](../../Docker/Docker_Material.md#MySQL)
+
+## 其他分支
+
+* [MySQL 分支的选择：Percona 还是 MariaDB - 花儿笑弯了腰 - 博客园](https://www.cnblogs.com/Irving/p/9594097.html)
+* [MySQL开源替代品大比拼：MariaDB与Percona Server的兼容性与差异全解析-腾讯云开发者社区-腾讯云](https://developer.cloud.tencent.com/article/2595347?policyId=1004)
 
 ---
 

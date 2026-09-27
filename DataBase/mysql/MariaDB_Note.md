@@ -6,7 +6,7 @@ tags:
   - mariadb
   - mysql
 created: 2026-09-27 12:19:44
-modified: 2026-09-27 12:27:04
+modified: 2026-09-27 12:57:47
 ---
 
 # MariaDB 笔记
@@ -16,6 +16,12 @@ modified: 2026-09-27 12:27:04
 ## 简介
 
 [MariaDB](https://mariadb.org)是 「[MySQL](MySQL常用操作.md) 之父」[Michael Widenius](https://baike.baidu.com/item/Michael%20Widenius/5446947?fromModule=lemma_inlink)「再建」的一个「类 MySQL」的开源数据库。
+
+MariaDB 10.0.9 版起使用 [Percona](Percona_Note.md)的 XtraDB（名称代号为 Aria）来代替[MySQL](MySQL_Note.md) 的 InnoDB。
+
+> [!info] 
+> 
+> [MariaDB 简介 - MariaDB.org](https://mariadb.org/zh/)
 
 ---
 
@@ -32,4 +38,5 @@ LTS，长期支持版，
 ## 相关笔记
 
 * [MySQL 笔记](MySQL_Note.md)
+* [Percona 笔记](Percona_Note.md)
 

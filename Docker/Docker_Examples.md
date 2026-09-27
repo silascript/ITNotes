@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2026-09-27 19:35:07
+modified: 2026-09-27 20:59:50
 ---
 
 # Docker 示例
@@ -703,18 +703,7 @@ phpinfo();
 
 ---
 
-## <span id="dke_mysql">示例 4：MySQL/Mariadb</span>
-
-[MySQL](../DataBase/mysql/MySQL_Note.md)和 [MariaDB](../DataBase/mysql/MariaDB_Note.md)[镜像](Docker_Note.md#dk_image) 大小对比：
-
-```shell
-$ docker images             
-                                                                                                           i Info →   U  In Use
-IMAGE                 ID             DISK USAGE   CONTENT SIZE   EXTRA
-mariadb:12.3.3        dfff46ef3f9d        334MB             0B        
-mysql:8.0.46-debian   fecd5f252684        610MB             0B        
-mysql:8.4.11-oracle   ee241324a55f        813MB             0B        
-```
+## <span id="dke_mysql">示例 4：MySQL</span>
 
 [MySQL镜像](https://github.com/docker-library/mysql) 按底层系统分为 [Debian](../Linux/Debian/Debian_Note.md) 和 Oracle Linux。
 
@@ -722,13 +711,15 @@ mysql:8.4.11-oracle   ee241324a55f        813MB             0B
 > 
 > 8.0.38 之后，官方镜像默认使用自家的 Oracle Linux。
 
-而 MariaDB 镜像底层系统也分俩人：[Ubuntu](../Linux/Debian/Ubuntu_Note.md) 和**UBI**（Redhat 的 「Universal Base Image」）。
+[MySQL](../DataBase/mysql/MySQL_Note.md)8.0 与 8.4 的 [镜像](Docker_Note.md#dk_image) 大小对比：
 
-> [!info] 
-> 
-> Red Hat Universal Base Image（UBI）是红帽推出的免费、可自由再分发的容器基础镜像，本质上是 Red Hat Enterprise Linux（RHEL）的一个子集。‌‌‌
->
-> UBI 的设计目标很明确：让开发者在任意平台（包括非红帽环境）上构建、部署和分享容器化应用，同时获得企业级的基础镜像质量。‌‌
+```shell
+$ docker images             
+                                                                                                           i Info →   U  In Use
+IMAGE                 ID             DISK USAGE   CONTENT SIZE   EXTRA
+mysql:8.0.46-debian   fecd5f252684        610MB             0B        
+mysql:8.4.11-oracle   ee241324a55f        813MB             0B        
+```
 
 ```shell
 # 不指定挂载目录
@@ -796,10 +787,14 @@ docker run -d --name d_mysql80 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql:
 通过 `docker volume ls` 命令可以看到一个 「**匿名挂载**」的 volume：
 
 ![docker_mysql_volume_ls](./Docker_Note.assets/docker_mysql_volume_ls.png)
+> [!info] 
+> 
 > 通过 `docker volume inspect 匿名挂载名` 命令查看挂载的 volume 的详细信息。 
 
 直接查看那个 **Mountpoint** 的那个目录存放着什么：
 ![docker_mysql_volume_data_ls](./Docker_Note.assets/docker_mysql_volume_data_ls.png)
+> [!tip] 
+> 
 > 很明显，存放的就是 mysql 的数据文件。可见之前在 Dockerfile 文件中那一句 `VOLUME /var/lib/mysql` 代码就是让 mysql 容器创建后，将数据目录设为挂载点。
 
 Docker MySQL 挂载方案：
@@ -808,7 +803,7 @@ Docker MySQL 挂载方案：
 但 MySQL 的配置目录没有这样的「特性」，所以得做些操作实现将容器数据复制到宿主机的挂载目录。
 
 大概步骤：
-1. 创建一个「临时」容器。
+1. 创建一个「临时」容器
 ```shell
 docker run -d --name d_mysql80 -e MYSQL_ROOT_PASSWORD=123456 mysql:8.0.28-debian
 ```
@@ -893,6 +888,29 @@ performance_schema = off
 > * [MySQL常用操作](../DataBase/mysql/MySQL常用操作.md)
 > * [Linux下安装MySQL](../DataBase/mysql/Linux下安装MySQL.md)
 
+## <span id="dke_mariadb">示例 5：MariaDB</span>
+
+而 [MariaDB](../DataBase/mysql/MariaDB_Note.md) 镜像底层系统也分俩：[Ubuntu](../Linux/Debian/Ubuntu_Note.md) 和**UBI**（Redhat 的 「Universal Base Image」）。
+
+> [!info] 
+> 
+> Red Hat Universal Base Image（UBI）是红帽推出的免费、可自由再分发的容器基础镜像，本质上是 Red Hat Enterprise Linux（RHEL）的一个子集。‌‌‌
+>
+> UBI 的设计目标很明确：让开发者在任意平台（包括非红帽环境）上构建、部署和分享容器化应用，同时获得企业级的基础镜像质量。‌‌
+
+ [MariaDB](../DataBase/mysql/MariaDB_Note.md)与 [MySQL](../DataBase/mysql/MySQL_Note.md)的[镜像](Docker_Note.md#dk_image) 大小对比：
+
+```shell
+$ docker images             
+                                                                                                           i Info →   U  In Use
+IMAGE                 ID             DISK USAGE   CONTENT SIZE   EXTRA
+mariadb:12.3.3        dfff46ef3f9d        334MB             0B        
+mysql:8.0.46-debian   fecd5f252684        610MB             0B        
+mysql:8.4.11-oracle   ee241324a55f        813MB             0B        
+```
+
+Docker 安装 MariaDB 基本与 [MySQL](#dke_mysql) 基本相同。
+
 ---
 
 ## 示例 7：安装 PostgreSQL
@@ -907,7 +925,7 @@ docker pull postgres
 
 ---
 
-## 示例 6：安装 CentOS
+## 示例 8：安装 CentOS
 
 创建 CentOS 容器：
 
@@ -965,7 +983,7 @@ CentOS 开启 SSH 服务
 
 ---
 
-## 示例 7：安装 Debian
+## 示例 9：安装 Debian
 
 创建容器与 CentOS 一样。
 
@@ -1005,7 +1023,7 @@ docker cp vim/ d_debian12:/root/vim_custum/
 
 ---
 
-## 示例 8：安装 Ubuntu
+## 示例 10：安装 Ubuntu
 
 ```shell
 docker run -itd --name d_ubuntu21 --network vbridge01 --ip 172.20.0.20 -p 2225:22 ubuntu:jammy

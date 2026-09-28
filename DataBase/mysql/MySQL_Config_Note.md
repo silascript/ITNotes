@@ -6,7 +6,7 @@ tags:
   - database
   - config
 created: 2024-07-24 18:49:11
-modified: 2026-09-29 03:23:09
+modified: 2026-09-29 03:26:48
 ---
 
 # MySQL 配置笔记
@@ -100,6 +100,13 @@ MySQL 8.0 开始，客户端的配置放在 `conf.d` 目录下的 `mysql.cnf` �
 >
 > * 服务端配置：写在 `[mysqld]` 或 `[server]` 标签下。
 > * 客户端配置：写在 `[client]`、`[mysql]`（命令行客户端）或 `[mysqldump]` 标签下。
+>   
+>  常见的配置段落说明：
+>   
+>  * `[mysqld]`：MySQL 服务端程序（后台守护进程）读取的配置。
+> * `[client]`：所有 MySQL 客户端工具（如 `mysql` 命令行、`mysqldump` 等）都会读取的通用客户端配置。
+> * `[mysql]`：仅供 `mysql` 交互式命令行客户端读取的配置。
+>   
 
 ---
 

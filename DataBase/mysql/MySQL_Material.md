@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2025-02-22 20:01:30
-modified: 2026-09-27 18:31:48
+modified: 2026-09-29 03:30:06
 ---
 
 # MySQL 资料清单
@@ -25,6 +25,10 @@ modified: 2026-09-27 18:31:48
 * [MySQL版本历史与主要特性 – orczhou.com](https://www.orczhou.com/index.php/2023/05/mysql-version-history/)
 * [MySQL版本现状与选择 – orczhou.com](https://www.orczhou.com/index.php/how-to-choose-the-right-mysql-version/)
 * [MySQL 26.7 EA 来了：版本号一夜跳到了26，社区版正在发生变化 - 17认证网](https://www.17cert.com/?p=22192)
+
+## 配置
+
+* [MySQL之my.cnf配置文件](https://zhuanlan.zhihu.com/p/566391298)
 
 ## Timezone
 
@@ -55,7 +59,10 @@ modified: 2026-09-27 18:31:48
 
 ## 相关笔记
 
-* [MySQL笔记](MySQL_Note.md)
+* [MySQL 笔记](MySQL_Note.md)
+* [MySQL 配置笔记](MySQL_Config_Note.md)
+* [MariaDB 笔记](MariaDB_Note.md)
+* [Percona 笔记](Percona_Note.md)
 * [数据库资料](DataBase_Material.md)
 * [数据库笔记](../DataBase_Note.md)
 

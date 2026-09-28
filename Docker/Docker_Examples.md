@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2026-09-28 19:04:31
+modified: 2026-09-28 21:26:04
 ---
 
 # Docker 示例
@@ -1061,6 +1061,46 @@ docker run -d --name d_percona84 --network mybridge --ip 172.21.0.22 -p 3358:330
 > `docker run --name container-name -d  percona/percona-server --character-set-server=utf8 --collation-server=utf8_general_ci`
 > 
 > 另外，Percona 的数据存储目录路径与 MySQL 亦相同：`/var/lib/mysql`
+
+Percona 的镜像在挂载数据目录时（即 `/etc/lib/mysql`），出现权限问题，而挂载失败，从而使初始化失败，最终 run 不起来。
+
+查看 `logs`，可以看到类似错误信息：
+
+```shell
+mysqld: Can't create/write to file '/var/lib/mysql/is_writable' (OS errno 13 - Permission denied)
+2026-09-28T10:53:29.750331Z 0 [System] [MY-015017] [Server] MySQL Server Initialization - start.
+2026-09-28T10:53:29.752070Z 0 [System] [MY-013169] [Server] /usr/sbin/mysqld (mysqld 8.4.11-11) initializing of server in progress as process 14
+2026-09-28T10:53:29.754057Z 0 [ERROR] [MY-010460] [Server] --initialize specified but the data directory exists and is not writable. Aborting.
+2026-09-28T10:53:29.754061Z 0 [ERROR] [MY-013236] [Server] The designated data directory /var/lib/mysql/ is unusable. You can remove all files that the server added to it.
+```
+
+去看下宿主机的挂载目录：
+
+```shell
+$ ll Docker_Mount/percona_m         
+Permissions Size User       Group      Date Modified    Name
+drwxr-xr-x     - silascript silascript 2026-09-28 18:33 .
+drwxr-xr-x     - silascript silascript 2026-09-28 02:17 ..
+drwxr-xr-x     - silascript silascript 2026-09-28 02:26 config
+drwxr-xr-x     - root       root       2026-09-28 18:33 data
+```
+
+可以看到 `data`目录的用户和用户组都是`root`，这就是为什么`logs`中会有`Can't create/write to file '/var/lib/mysql/is_writable' (OS errno 13 - Permission denied)` 的错误信息了。
+
+所以得在 `run` 时，设置挂载目录的用户
+
+```shell
+docker run -d --name d_percona84 --user $(id -u):$(id -g) --network mybridge --ip 172.21.0.22 -p 3358:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/percona_m/data:/var/lib/mysql -v /home/silascript/Docker_Mount/percona_m/config/my.cnf.d:/etc/my.cnf.d -v /home/silascript/Docker_Mount/percona_m/config/my.cnf:/etc/my.cnf percona/percona-server:8.4.11-11.1
+```
+
+查看镜像的 `uid`：`docker run --rm <image> id`
+
+示例：
+
+```shell
+$ docker run --rm percona/percona-server:8.4.11-11.1 id
+uid=1001(mysql) gid=1001(mysql) groups=1001(mysql)
+```
 
 ---
 

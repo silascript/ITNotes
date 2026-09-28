@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-22 01:36:41
-modified: 2026-09-28 20:22:44
+modified: 2026-09-28 22:15:58
 ---
 
 # Docker 资料清单
@@ -105,6 +105,7 @@ modified: 2026-09-28 20:22:44
 * [当前版本mysql问题 · Issue #45 · garylab/dnmp · GitHub](https://github.com/garylab/dnmp/issues/45)
 * [Docker挂载目录权限问题完全解决指南：从诊断到实战的5大方案](https://eastondev.com/blog/zh/posts/dev/20251217-docker-mount-permissions-guide/)
 * [Docker 权限被拒绝错误解决 \| Docker 卷权限问题 \| LabEx](https://labex.io/zh/tutorials/docker-how-to-resolve-permission-denied-error-when-mounting-volume-in-docker-417724)
+* [mysql容器问题mbind: Operation not permitted\_mysql mbind: operation not permitted-CSDN博客](https://blog.csdn.net/2301_79385221/article/details/139692271)
 
 ---
 

@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2026-09-28 20:21:40
+modified: 2026-09-28 20:39:41
 ---
 
 # Linux 笔记
@@ -224,6 +224,17 @@ chown -R 用户名:用户组名 文件名
 ```shell
 $ id
 uid=1000(silascript) gid=1000(silascript) 组=1000(silascript),90(network),98(power),956(docker),984(users),987(storage),991(lp),994(input),996(audio),998(wheel)
+```
+
+常用参数：
+
+* `-u`：显示用户 ID
+* `-g` 或 `--group`：显示用户所属组的 ID
+* `-G` 或 `--goups`：显示用户所属附加组的 ID
+* `-n`或 `--name`：显示用户、所属组及附加组的名称，不能单独使用，需跟`-u`、`-g` 等一起使用
+```shell
+$ id -un  
+silascript
 ```
 
 ---

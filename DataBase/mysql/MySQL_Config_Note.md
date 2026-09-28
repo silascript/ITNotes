@@ -339,5 +339,5 @@ default-time-zone='Asia/Shanghai'
 
 * [MySQL 笔记](MySQL_Note.md)
 * [MySQL资料](MySQL_Material.md)
-* [Linux下安装MySQL](Linux下安装MySQL.md)
+* [MySQL_Linux](MySQL_Linux.md)
 

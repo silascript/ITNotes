@@ -33,7 +33,7 @@ modified: 2026-06-20 21:15:51
 
 * [数据库笔记](DataBase/DataBase_Note.md)
 	* [MySQL笔记](DataBase/mysql/MySQL_Note.md)
-		* [Linux下安装MySQL](DataBase/mysql/Linux下安装MySQL.md)
+		* [MySQL_Linux](DataBase/mysql/MySQL_Linux.md)
 		* [MySQL常用操作](DataBase/mysql/MySQL常用操作.md)
 	* [PostgreSQL 笔记](DataBase/PostgrSQL/PostgreSQL_Note.md)
 	* [SQLServer 笔记](DataBase/SQLServer/SQLServer_Note.md)

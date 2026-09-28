@@ -134,7 +134,7 @@ LTS 版本将遵循 [Oracle 终身支持政策](https://link.zhihu.com/?target=
 ## 相关笔记
 
 * [MySQL 资料清单](MySQL_Material.md)
-* [Linux 下安装 MySQL](Linux下安装MySQL.md)
+* [Linux 下安装 MySQL](MySQL_Linux.md)
 * [Windows 下 MySQL 笔记](MySQL_Windows_Note.md)
 * [MySQL常用操作](MySQL常用操作.md)
 * [MySQL配置笔记](MySQL_Config_Note.md)

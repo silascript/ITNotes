@@ -5,7 +5,7 @@ tags:
   - db
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2024-07-24 18:54:47
+modified: 2026-09-29 00:49:40
 ---
 
 # MySQL 常用操作
@@ -23,8 +23,8 @@ modified: 2024-07-24 18:54:47
 
 ### 登录
 
-```
-mysql -h localhst -P 3356 -u silascript -p 123456
+```shell
+mysql -h localhost -P 3356 -u silascript -p 123456
 ```
 
 * `-h`：连接地址
@@ -82,11 +82,9 @@ status
 	* `select version();`
 	> 还有上面的 `status` 命令也能看到 MySQL 的版本号信息
 
-
 ---
 
 ## DML
-
 
 ## 创建数据库
 
@@ -97,9 +95,6 @@ CREATE DATABASE 库名
   CHARACTER SET utf8mb4
   COLLATE utf8mb4_general_ci;
 ```
-
-
-
 
 ---
 

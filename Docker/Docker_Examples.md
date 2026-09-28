@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2026-09-29 00:03:05
+modified: 2026-09-29 02:51:00
 ---
 
 # Docker 示例
@@ -829,8 +829,8 @@ docker cp d_mysql80:/etc/mysql /home/silascript/Docker_Mount/mysql_m/config
 > 2. 把已 `cp` 到宿主机 `config` 目录下的 `mysql` 目录中的所有配置文件都复制到 `config` 目录下
 > 
 
-1. [停止容器](Docker_Note.md#dk_container_stop) 和 [删除容器](Docker_Note.md#dk_container_delete) 并 [清理volume](Docker_Note.md#清理无主%20volume)。
-2. 新建一个指定挂载宿主机路径的 MySQL 容器
+3. [停止容器](Docker_Note.md#dk_container_stop) 和 [删除容器](Docker_Note.md#dk_container_delete) 并 [清理volume](Docker_Note.md#清理无主%20volume)。
+4. 新建一个指定挂载宿主机路径的 MySQL 容器
 ```shell
 docker run -d --name d_mysql80 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/mysql8_m/config/mysql:/etc/mysql -v /home/silascript/Docker_Mount/mysql8_m/data:/var/lib/mysql mysql:8.0.28-debian
 ```
@@ -865,6 +865,11 @@ docker run -d --name d_mysql80 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /ho
 >```shell
 > docker run -d --name d_mysql80 --network mybridge --ip 172.21.0.20 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/mysql_m/config/mysql:/etc/mysql -v /home/silascript/Docker_Mount/mysql_m/data:/var/lib/mysql mysql:8.0.41-debian --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
 > ```
+> 
+>> [!important] 
+>> 
+>> `--character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci` 要添加在最后。
+> 
 
 ##### OracleLinux 版
 
@@ -883,7 +888,7 @@ oraclelinux 版本因为配置文件在些许不同，得复制以下三个：
 ```shell
 docker cp d_mysql84:/etc/mysql ~/Docker_Mount/mysql84_m/config
 ```
-* 复制 `my.cnf.d` **目录**
+* 复制 `/etc/my.cnf.d` **目录**
 ```shell
 docker cp d_mysql84:/etc/my.cnf.d ~/Docker_Mount/mysql84_m/config
 ```
@@ -892,15 +897,74 @@ docker cp d_mysql84:/etc/my.cnf.d ~/Docker_Mount/mysql84_m/config
 docker cp d_mysql84:/etc/my.cnf ~/Docker_Mount/mysql84_m/config
 ```
 
+3. [停止容器](Docker_Note.md#dk_container_stop) 和 [删除容器](Docker_Note.md#dk_container_delete) 并 [清理volume](Docker_Note.md#清理无主%20volume)。
+4. 新建一个指定挂载宿主机路径的 MySQL 容器
+```shell
+docker run -d --name d_mysql84 --network mybridge --ip 172.21.0.21 -p 3357:3306 -e MYSQL_ROOT_PASSWORD=123456 -v $HOME/Docker_Mount/mysql84_m/config/mysql:/etc/mysql -v $HOME/Docker_Mount/mysql84_m/config/my.cnf.d:/etc/my.cnf.d -v $HOME/Docker_Mount/mysql84_m/config/my.cnf:/etc/my.cnf -v $HOME/Docker_Mount/mysql84_m/data:/var/lib/mysql mysql:8.4.11-oracle
+```
+
+> [!info] 
+> 
+> 添加字符集设置：
+> 
+> ```shell
+> docker run -d --name d_mysql84 --network mybridge --ip 172.21.0.21 -p 3357:3306 -e MYSQL_ROOT_PASSWORD=123456 -v $HOME/Docker_Mount/mysql84_m/config/mysql:/etc/mysql -v $HOME/Docker_Mount/mysql84_m/config/my.cnf.d:/etc/my.cnf.d -v $HOME/Docker_Mount/mysql84_m/config/my.cnf:/etc/my.cnf -v $HOME/Docker_Mount/mysql84_m/data:/var/lib/mysql mysql:8.4.11-oracle --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+> ```
+
+5. 进入容器中测试
+```shell
+docker exec -it d_mysql84 /bin/bash
+```
+
+登录 [MySQL](../DataBase/mysql/MySQL_Note.md)，看下是否正常：
+```shell
+mysql -h localhost -P 3306 -u silascript -p 123456
+```
+> [!info] 
+> 
+> 容器内登录 MySQL，用的端口号就是默认的 `3306` 或配置文件配的端口，而不是对外映射的端口。
+
 ### 配置
 
 #### 字符集设置
 
-[字符集设置](../DataBase/mysql/Linux下安装MySQL.md#字符集设置)
+[字符集设置](../DataBase/mysql/MySQL_Config_Note.md#字符集设置)
+
+未在 `run` 中设置字符集，亦未在配置文件中设置字符集：
+
+```shell
+mysql> status;
+--------------
+mysql  Ver 8.4.11 for Linux on x86_64 (MySQL Community Server - GPL)
+
+Connection id:		8
+Current database:	
+Current user:		root@localhost
+SSL:			Not in use
+Current pager:		stdout
+Using outfile:		''
+Using delimiter:	;
+Server version:		8.4.11 MySQL Community Server - GPL
+Protocol version:	10
+Connection:		Localhost via UNIX socket
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	latin1
+Conn.  characterset:	latin1
+UNIX socket:		/var/run/mysqld/mysqld.sock
+Binary data as:		Hexadecimal
+Uptime:			50 min 54 sec
+```
+
+> [!tip] 
+> 
+> * `Server`及 `DB` 两项默认是`utf8mb4`（「满血版」UFT8）
+> 
+> * `Client`和 `Connection` 两项未设置时，默认均为`latin1`。
 
 #### MySQL 内存优化
 
-conf.d 目录下 **docker.cnf** 文件中 `[mysqld]` 下添加以下代码：
+`conf.d` 目录下 `docker.cnf` 文件中 `[mysqld]` 下添加以下代码：
 
 ```conf
 [mysqld]
@@ -912,6 +976,21 @@ performance_schema = off
 > [!tip] 
 > 
 > 内存占用优化挺明显的。  
+> 
+> 优化前：
+> ```shell
+> $ docker stats d_mysql84 --no-stream                                                                       
+> CONTAINER ID   NAME        CPU %     MEM USAGE / LIMIT     MEM %     NET I/O         BLOCK I/O         PIDS
+> b843e175c41b   d_mysql84   0.35%     469.4MiB / 15.52GiB   2.95%     1.46kB / 126B   78.3MB / 16.9MB   34
+> ```
+>
+> 优化后：
+> ```shell
+> $ docker stats d_mysql84 --no-stream
+> CONTAINER ID   NAME        CPU %     MEM USAGE / LIMIT     MEM %     NET I/O       BLOCK I/O       PIDS
+> b843e175c41b   d_mysql84   0.36%     193.7MiB / 15.52GiB   1.22%     806B / 126B   31MB / 16.6MB   35
+> ```
+> 
 > `performan_schema` 关不关可根据需要。这货是 5.7 及以上版本才默认开启的。
 
 > [!info] 
@@ -921,7 +1000,7 @@ performance_schema = off
 > * [MySQL笔记](../DataBase/mysql/MySQL_Note.md)
 > * [MySQL配置笔记](../DataBase/mysql/MySQL_Config_Note.md)
 > * [MySQL常用操作](../DataBase/mysql/MySQL常用操作.md)
-> * [Linux下安装MySQL](../DataBase/mysql/Linux下安装MySQL.md)
+> * [MySQL_Linux](../DataBase/mysql/MySQL_Linux.md)
 
 ## <span id="dke_mariadb">示例 5：MariaDB</span>
 

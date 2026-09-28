@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2026-09-28 21:26:04
+modified: 2026-09-29 00:03:05
 ---
 
 # Docker 示例
@@ -797,7 +797,9 @@ docker run -d --name d_mysql80 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql:
 > 
 > 很明显，存放的就是 mysql 的数据文件。可见之前在 Dockerfile 文件中那一句 `VOLUME /var/lib/mysql` 代码就是让 mysql 容器创建后，将数据目录设为挂载点。
 
-Docker MySQL 挂载方案：
+#### Docker MySQL 挂载方案
+
+##### Debian 版
 
 因为 MySQL 的数据目录即便是「bind mount」类型的挂载，都会将容器数据复制到指定目录，所以这个目录可以直接指定。
 但 MySQL 的配置目录没有这样的「特性」，所以得做些操作实现将容器数据复制到宿主机的挂载目录。
@@ -808,7 +810,9 @@ Docker MySQL 挂载方案：
 docker run -d --name d_mysql80 -e MYSQL_ROOT_PASSWORD=123456 mysql:8.0.28-debian
 ```
 
-2. 将容器中 `/etc/mysql` 目录复制到宿主指定的目录
+2. 将容器中配置相关的文件及目录复制到宿主指定目录中
+
+Debian 版本的配置都放在 `/etc/mysql` **目录**，所以只需要复制此**目录**到宿主指定的目录中即可：
 ```shell
 docker cp d_mysql80:/etc/mysql /home/silascript/Docker_Mount/mysql_m/config 
 ```
@@ -861,6 +865,32 @@ docker run -d --name d_mysql80 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /ho
 >```shell
 > docker run -d --name d_mysql80 --network mybridge --ip 172.21.0.20 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/mysql_m/config/mysql:/etc/mysql -v /home/silascript/Docker_Mount/mysql_m/data:/var/lib/mysql mysql:8.0.41-debian --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
 > ```
+
+##### OracleLinux 版
+
+其实与 [Debian 版](#Debian%20版) 差不多，主要区别是配置文件复制及挂载上，大致步骤：
+
+1. 创建一个「临时」容器
+```shell
+docker run -d --name d_mysql84 -e MYSQL_ROOT_PASSWORD=123456 mysql:8.4.11-oracle
+```
+
+2. 复制配置相关的文件及目录
+
+oraclelinux 版本因为配置文件在些许不同，得复制以下三个：
+
+* 复制 `/etc/mysql` **目录**
+```shell
+docker cp d_mysql84:/etc/mysql ~/Docker_Mount/mysql84_m/config
+```
+* 复制 `my.cnf.d` **目录**
+```shell
+docker cp d_mysql84:/etc/my.cnf.d ~/Docker_Mount/mysql84_m/config
+```
+* 复制 `/etc/my.cnf` **文件**
+```shell
+docker cp d_mysql84:/etc/my.cnf ~/Docker_Mount/mysql84_m/config
+```
 
 ### 配置
 

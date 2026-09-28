@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2026-09-19 12:42:30
+modified: 2026-09-28 20:21:40
 ---
 
 # Linux 笔记
@@ -210,6 +210,21 @@ chown -R 用户名:用户组名 文件名
 ### 权限
 
 `chmod` 命令是用来修改用户权限的。
+
+### id 命令
+
+> [!quote] 
+> 
+> Linux 内核其实只认数字：`UID`（用户 ID）和 `GID`（组 ID）。用户名只是给人类看的昵称而已。
+
+`id`命令能查看当前系统 `UID` 及`GID`。
+
+示例：
+
+```shell
+$ id
+uid=1000(silascript) gid=1000(silascript) 组=1000(silascript),90(network),98(power),956(docker),984(users),987(storage),991(lp),994(input),996(audio),998(wheel)
+```
 
 ---
 

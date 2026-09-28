@@ -8,7 +8,7 @@ tags:
   - ubuntu
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2026-09-27 11:15:14
+modified: 2026-09-28 20:18:09
 ---
 
 # Docker 笔记
@@ -649,6 +649,14 @@ docker start 容器名|容器ID
 > 更多的时候，需要让 Docker 容器在后台以守护形式运行，这就要加上 `-d` 选项来实现，而 `-d` 其实就是 「Daemon」。
 > 
 > 如果不加 `-d`，那当前 Shell 窗口就一直被`run` 进程占用。
+
+#### 指定用户
+
+`--user 用户id:用户组`
+
+````
+docker run --user $(id -u):$(id -g) -v /host/data:/app/data myimage
+````
 
 ### <span id="dk_container_stop">停止容器</span>
 

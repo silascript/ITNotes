@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2026-09-28 02:28:10
+modified: 2026-09-28 19:04:31
 ---
 
 # Docker 示例
@@ -834,17 +834,22 @@ docker run -d --name d_mysql80 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /ho
 > [!info]
 > 
 > 因为之前已经将配置文件数据已经复制到要挂载的目录中，这样就不会因为宿主机目录为空，而使容器启动不了了。
-> 
-> 另外还有一个目录也非常重要，就是 MySQL 的数据目录，即 `/var/lib/mysql` 目录，只不过这个目录不用自己手动 `cp`，因为 MySQL 镜像 的「特性」会自动复制数据到要挂载的目录，所以能直接挂载到指定路径。
-> 
+>
 > 这个方案的 **核心** 就是解决配置文件目录的挂载问题。
+
+> [!important] 
+> 
+> 另外还有一个目录也非常重要，就是 MySQL 的**数据目录**，即 `/var/lib/mysql` 目录，只不过这个目录不用自己手动 `cp`，因为 MySQL 镜像 的「特性」会自动复制数据到要挂载的目录，所以能直接挂载到指定路径。但注意这个目录得是**空目录**，当然也可以是不存在，如果不存在，[Docker](Docker_Note.md) 会自行创建。
+> 
+> 如示例中 `~/Docker_Mount/mysql8_m/data`这个宿主机路径中，`data`这个将要挂载 MySQL 容器数据目录的宿主机目录，必须为一个**空目录**，或者`data`这个目录在`mysql8_m` 父级目录下，实际并不存在，这样由 Docker 自行创建。如非如此，将在容器初始化失败，如果查看`logs`，会看到诸如`--initialize specified but the data directory has files in it.` 的错误信息。
+> 
 
 > [!info]
 > 
 > 如果要指定网桥及 ip，可以用以下方式创建 MySQL 容器：
 >
 >```shell
-> docker run -d --name d_mysql80 --network mybridge --ip 172.21.0.20 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/mysql_m/config/mysql:/etc/mysql -v /home/silascript/Docker_Mount/mysql_m/data:/var/lib/mysql mysql:8.0.38
+> docker run -d --name d_mysql80 --network mybridge --ip 172.21.0.20 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/mysql_m/config/mysql:/etc/mysql -v /home/silascript/Docker_Mount/mysql_m/data:/var/lib/mysql mysql:8.0.46-debian
 >```
 
 如果要在 `run` 时设置默认字符集，可以加上 `--character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci` 参数。
@@ -1039,11 +1044,23 @@ docker cp d_percona84:/etc/my.cnf.d /home/silascript/Docker_Mount/percona_m/conf
 
 3. 重新创建一个完整版本容器
 
+```shell
+docker run -d --name d_percona84 --network mybridge --ip 172.21.0.22 -p 3358:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/percona_m/data:/var/lib/mysql -v /home/silascript/Docker_Mount/percona_m/config/my.cnf.d:/etc/my.cnf.d -v /home/silascript/Docker_Mount/percona_m/config/my.cnf:/etc/my.cnf percona/percona-server:8.4.11-11.1
+```
+
+带字符集设置：
+
+```shell
+docker run -d --name d_percona84 --network mybridge --ip 172.21.0.22 -p 3358:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/percona_m/config/my.cnf.d:/etc/my.cnf.d -v /home/silascript/Docker_Mount/percona_m/config/my.cnf:/etc/my.cnf -v /home/silascript/Docker_Mount/percona_m/data:/var/lib/mysql percona/percona-server:8.4.11-11.1 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+```
+
 > [!info] 
 > 
 > 与 MySQL 一样，在创建容器时，同样能为其设置字符集：
 > 
 > `docker run --name container-name -d  percona/percona-server --character-set-server=utf8 --collation-server=utf8_general_ci`
+> 
+> 另外，Percona 的数据存储目录路径与 MySQL 亦相同：`/var/lib/mysql`
 
 ---
 

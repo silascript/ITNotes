@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-22 01:36:41
-modified: 2026-09-27 22:43:50
+modified: 2026-09-28 20:22:44
 ---
 
 # Docker 资料清单
@@ -97,6 +97,14 @@ modified: 2026-09-27 22:43:50
 * [Docker安装部署PostgreSQL数据库 - 掘金](https://juejin.cn/post/7239990044333801533)
 * [docker安装pg(postgresql) - 白玉神驹 - 博客园](https://www.cnblogs.com/cgy-home/p/17984101)
 * [Linux环境下基于Docker安装 PostgreSQL数据库并配置 - CSDN博客](https://blog.csdn.net/u012856866/article/details/148231568)
+
+### 问题
+
+* [容器内执行docker命令](https://www.awaimai.com/2703.html)
+* [mysqld: Can't create/write to file '/var/lib/mysql/is\_writable' (Errcode: 13 - Permission denied) · Issue #219 · docker-library/mysql · GitHub](https://github.com/docker-library/mysql/issues/219)
+* [当前版本mysql问题 · Issue #45 · garylab/dnmp · GitHub](https://github.com/garylab/dnmp/issues/45)
+* [Docker挂载目录权限问题完全解决指南：从诊断到实战的5大方案](https://eastondev.com/blog/zh/posts/dev/20251217-docker-mount-permissions-guide/)
+* [Docker 权限被拒绝错误解决 \| Docker 卷权限问题 \| LabEx](https://labex.io/zh/tutorials/docker-how-to-resolve-permission-denied-error-when-mounting-volume-in-docker-417724)
 
 ---
 

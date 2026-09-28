@@ -5,7 +5,7 @@ tags:
   - db
   - mysql
 created: 2023-01-30 11:19:11
-modified: 2026-09-27 12:27:51
+modified: 2026-09-29 03:12:51
 ---
 
 # MySQL 笔记
@@ -56,11 +56,74 @@ mycli 登录与 mysql 自带的客户端几乎一样。
 ##### 字符集问题
 
  mycli 默认情况下，存在客户端字符集问题，使用 mycli 登录时，使用 `status` 或 `show variables like "%char%";` 命令查询字符集，`Client characterset` 和 `Conn.characterset` 还是 `utf8mb3`，这即便已经在 mysql 的配置文件中 `[client]` 中设置了 `default-character-set = utf8mb4`，也是无效。
- 
+
 不过幸好 [github](https://github.com) 上有解决方法，就是加字符集参数：
 
 ```shell
 mycli -h localhost -P 3356 -u silascript -p 123456 --charset=utf8mb4
+```
+
+新版本，好像解决了字符集问题：
+
+使用 mycli 2.25.3 版本，连接 Docker MySQL 8.4.11（oracle linux 版），字符集情况：
+
+```shell
+$ mycli -h localhost -P 3357 -u root -p 123456
+MySQL 8.4.11
+mycli 2.25.3
+Home: https://mycli.net
+Bug tracker: https://github.com/dbcli/mycli/issues
+Thanks to the sponsor — Heath Naylor
+MySQL root@localhost:(none)> status;
+--------------
+mycli 2.25.3 running on CPython 3.13.15
+
++----------------------+-----------------------------------------+
+| Setting              | Value                                   |
++----------------------+-----------------------------------------+
+| Connection id:       | 9                                       |
+| Current database:    | <null>                                  |
+| Current user:        | root@172.21.0.1                         |
+| Current pager:       | less                                    |
+| Using delimiter:     | ;                                       |
+| Using outfile:       |                                         |
+| Server version:      | 8.4.11 MySQL Community Server - GPL     |
+| Protocol version:    | 10                                      |
+| SSL:                 | Cipher in use is TLS_AES_256_GCM_SHA384 |
+| SSL/TLS version:     | TLSv1.3                                 |
+| Connection:          | localhost via TCP/IP                    |
+| Server characterset: | utf8mb4                                 |
+| Db     characterset: | utf8mb4                                 |
+| Client characterset: | utf8mb4                                 |
+| Conn.  characterset: | utf8mb4                                 |
+| Result characterset: | utf8mb4                                 |
+| TCP port:            | 3357                                    |
+| Server timezone:     | UTC                                     |
+| Local  timezone:     | CST                                     |
+| Uptime:              | 1 min 2 sec                             |
++----------------------+-----------------------------------------+
+```
+
+```shell
+$ mycli -h localhost -P 3357 -u root -p 123456
+MySQL 8.4.11
+mycli 2.25.3
+Home: https://mycli.net
+Bug tracker: https://github.com/dbcli/mycli/issues
+Tip — /t toggles timing of commands!
+MySQL root@localhost:(none)> show variables like "%char%";
++--------------------------+--------------------------------+
+| Variable_name            | Value                          |
++--------------------------+--------------------------------+
+| character_set_client     | utf8mb4                        |
+| character_set_connection | utf8mb4                        |
+| character_set_database   | utf8mb4                        |
+| character_set_filesystem | binary                         |
+| character_set_results    | utf8mb4                        |
+| character_set_server     | utf8mb4                        |
+| character_set_system     | utf8mb3                        |
+| character_sets_dir       | /usr/share/mysql-8.4/charsets/ |
++--------------------------+--------------------------------+
 ```
 
 ### 连接问题

@@ -6,7 +6,7 @@ tags:
   - database
   - config
 created: 2024-07-24 18:49:11
-modified: 2025-03-13 02:01:22
+modified: 2026-09-29 03:23:09
 ---
 
 # MySQL 配置笔记
@@ -89,6 +89,17 @@ init_connect='SET NAMES utf8mb4'
 > `my.cnf` 的默认查找路径，从上往下找到的文件先读，但优先级逐级提升。
 
 MySQL 8.0 开始，客户端的配置放在 `conf.d` 目录下的 `mysql.cnf` 文件。
+
+> [!info] 
+>
+> * `my.cnf`：通常是 MySQL 的主配置文件，里面既可以包含服务端配置（如 `[mysqld]`），也可以包含客户端配置（如 `[client]`、`[mysql]`）。
+> 
+> * `mysql.cnf`：通常放在系统的配置目录（如 `/etc/mysql/conf.d/`）中，常用于专门存放客户端或特定模块的配置，但它里面同样可以通过 `[mysqld]` 标签来写服务端配置。
+>
+> MySQL 区分配置属于服务端还是客户端，**不是靠文件名**，而是靠文件内部的**组名（Header）**：
+>
+> * 服务端配置：写在 `[mysqld]` 或 `[server]` 标签下。
+> * 客户端配置：写在 `[client]`、`[mysql]`（命令行客户端）或 `[mysqldump]` 标签下。
 
 ---
 

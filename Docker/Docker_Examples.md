@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2026-09-29 02:51:00
+modified: 2026-09-29 03:15:15
 ---
 
 # Docker 示例
@@ -930,7 +930,7 @@ mysql -h localhost -P 3306 -u silascript -p 123456
 
 [字符集设置](../DataBase/mysql/MySQL_Config_Note.md#字符集设置)
 
-未在 `run` 中设置字符集，亦未在配置文件中设置字符集：
+未在 `run` 中设置字符集，亦未在配置文件中设置字符集，进入容器后登录 MySQL 后使用`status` 查看字符集情况：
 
 ```shell
 mysql> status;
@@ -956,11 +956,29 @@ Binary data as:		Hexadecimal
 Uptime:			50 min 54 sec
 ```
 
+```shell
+mysql> show variables like "%char%";
++--------------------------+--------------------------------+
+| Variable_name            | Value                          |
++--------------------------+--------------------------------+
+| character_set_client     | latin1                         |
+| character_set_connection | latin1                         |
+| character_set_database   | utf8mb4                        |
+| character_set_filesystem | binary                         |
+| character_set_results    | latin1                         |
+| character_set_server     | utf8mb4                        |
+| character_set_system     | utf8mb3                        |
+| character_sets_dir       | /usr/share/mysql-8.4/charsets/ |
++--------------------------+--------------------------------+
+```
+
 > [!tip] 
 > 
 > * `Server`及 `DB` 两项默认是`utf8mb4`（「满血版」UFT8）
 > 
 > * `Client`和 `Connection` 两项未设置时，默认均为`latin1`。
+
+使用 [mycli](../DataBase/mysql/MySQL_Note.md#mycli) 查看字符集情况。
 
 #### MySQL 内存优化
 

@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-22 01:36:41
-modified: 2026-09-28 22:15:58
+modified: 2026-09-30 03:18:54
 ---
 
 # Docker 资料清单
@@ -86,6 +86,7 @@ modified: 2026-09-28 22:15:58
 * [修改Docker MySQL官方镜像字符集UTF8 - CSDN博客](https://blog.csdn.net/Three_dog/article/details/91415268)
 * [docker 文件方式修改mysql配置（时区+字符集）永久修改Docker容器中mysql的时区 对mysql doc - 掘金](https://juejin.cn/post/7113921256717549575)
 * [Docker安装MySQL8：绕过传统部署的80%环境坑-CSDN博客](https://blog.csdn.net/weixin_33824385/article/details/162217374)
+* [Docker MySql进阶配置 \| docker](https://tuonioooo-notebook.gitbook.io/docker/advanced/docker-mysql-advanced)
 
 ### MariaDB
 
@@ -106,6 +107,7 @@ modified: 2026-09-28 22:15:58
 * [Docker挂载目录权限问题完全解决指南：从诊断到实战的5大方案](https://eastondev.com/blog/zh/posts/dev/20251217-docker-mount-permissions-guide/)
 * [Docker 权限被拒绝错误解决 \| Docker 卷权限问题 \| LabEx](https://labex.io/zh/tutorials/docker-how-to-resolve-permission-denied-error-when-mounting-volume-in-docker-417724)
 * [mysql容器问题mbind: Operation not permitted\_mysql mbind: operation not permitted-CSDN博客](https://blog.csdn.net/2301_79385221/article/details/139692271)
+* [Docker容器排错实战｜常见问题一网打尽](https://zhuanlan.zhihu.com/p/1980239430460675260)
 
 ---
 

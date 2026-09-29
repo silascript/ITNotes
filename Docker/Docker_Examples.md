@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2026-09-29 23:24:58
+modified: 2026-09-30 03:17:40
 ---
 
 # Docker 示例
@@ -871,18 +871,70 @@ docker run -d --name d_mysql80 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /ho
 >> `--character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci` 要添加在最后。
 > 
 
+##### Unbuntu 版
+
+与 [Debian 版](#Debian%20版) 大同小异。
+
+大致步骤：
+
+1. 创建一个临时容器
+```shell
+docker run -d --name d_mysql80u -e MYSQL_ROOT_PASSWORD=123456 ubuntu/mysql:8.4-26.04_stable
+```
+
+2. 复制配置
+
+> [!info] 
+> 
+> Ubuntu 版本，配置与 [Debian 版](#Debian%20版)相同，配置都放在`/etc/mysql`目录下。不过只有一个`my.cnf` 配置文件。
+> 
+> ```shell
+> root@95acd12c4a1f:/# ls -al /etc/mysql
+> total 12
+> drwxr-xr-x 2 root root 4096 Aug 18 08:43 .
+> drwxr-xr-x 1 root root 4096 Sep 29 18:45 ..
+> -rw-rw-r-- 1 root root 1041 Aug 18 08:40 my.cnf
+> ```
+> 
+> 文档中提到 [MySQL](../DataBase/mysql/MySQL_Note.md)的配置文件是放在`/etc/mysql/mysql.conf.d/` 这个目录。
+> 
+
+```shell
+```
+
+3. [停止容器](Docker_Note.md#dk_container_stop) 和 [删除容器](Docker_Note.md#dk_container_delete) 并 [清理volume](Docker_Note.md#清理无主%20volume)。
+
+4. 创建完整
+
+> [!tip] 
+> 
+> 挂载需要的目录。数据目录都一样，都在 `/var/lib/mysql` 目录。
+> 
+> 
+```shell
+
+```
+
 ##### OracleLinux 版
+
+> [!tip] 
+>
+> 从 MySQL 8.4 开始，[官方镜像](https://hub.docker.com/_/mysql)只提供 Oracle Linux 版本的镜像。如果想使用 [Debian](../Linux/Debian/Debian_Note.md) 版的镜像，要么自己打包镜像，要么使用[Ubuntu 的 镜像](https://hub.docker.com/r/ubuntu/mysql)。
 
 其实与 [Debian 版](#Debian%20版) 差不多，主要区别是配置文件复制及挂载上，大致步骤：
 
 1. 创建一个「临时」容器
+
+> [!tip] 
+> 
+> 不用指定挂载目录
 ```shell
 docker run -d --name d_mysql84 -e MYSQL_ROOT_PASSWORD=123456 mysql:8.4.11-oracle
 ```
 
 2. 复制配置相关的文件及目录
 
-oraclelinux 版本因为配置文件在些许不同，得复制以下三个：
+OracleLinux 版本，因为配置文件在些许不同，得复制以下三个：
 
 * 复制 `/etc/mysql` **目录**
 ```shell
@@ -898,7 +950,11 @@ docker cp d_mysql84:/etc/my.cnf ~/Docker_Mount/mysql84_m/config
 ```
 
 3. [停止容器](Docker_Note.md#dk_container_stop) 和 [删除容器](Docker_Note.md#dk_container_delete) 并 [清理volume](Docker_Note.md#清理无主%20volume)。
-4. 新建一个指定挂载宿主机路径的 MySQL 容器
+4. 创建正式的 MySQL 容器
+
+> [!tip] 
+> 
+> 指定挂载需要的目录
 ```shell
 docker run -d --name d_mysql84 --network mybridge --ip 172.21.0.21 -p 3357:3306 -e MYSQL_ROOT_PASSWORD=123456 -v $HOME/Docker_Mount/mysql84_m/config/mysql:/etc/mysql -v $HOME/Docker_Mount/mysql84_m/config/my.cnf.d:/etc/my.cnf.d -v $HOME/Docker_Mount/mysql84_m/config/my.cnf:/etc/my.cnf -v $HOME/Docker_Mount/mysql84_m/data:/var/lib/mysql mysql:8.4.11-oracle
 ```
@@ -1302,6 +1358,10 @@ docker run -d --name d_percona84 --user $(id -u):$(id -g) --network mybridge --i
 $ docker run --rm percona/percona-server:8.4.11-11.1 id
 uid=1001(mysql) gid=1001(mysql) groups=1001(mysql)
 ```
+
+> [!info] 
+> 
+> 现阶段 Percona 的镜像，虽然使用 `--user $(id -u):$(id -g)`方式添加挂载目录的用户，但实际`run`最后还是会失败 -- 即便刚开始使用`docker ps` 能看到容器，但过一段时间，这个容器就「停」了，实际还是初始化失败，而原因仍是挂载目录用户权限问题。这是镜像打包时设置问题造成的。
 
 ---
 

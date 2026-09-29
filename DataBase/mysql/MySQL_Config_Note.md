@@ -6,7 +6,7 @@ tags:
   - database
   - config
 created: 2024-07-24 18:49:11
-modified: 2026-09-29 03:26:48
+modified: 2026-09-29 20:18:47
 ---
 
 # MySQL 配置笔记
@@ -231,7 +231,7 @@ MySQL 如果在字符集设置时，将值设为 utf8​，那最终在 MySQL 8.
 
 原因是 MySQL 在 8.x 版本之前的 utf8，是「残血版」，只支持到三个字节的 utf8。在 8.x 后，这个「残血版」的 utf8 被修订为 `utf8mb3​`，即这里的 3​ ​指的就是「三字节」。真正「满血版」的 utf8，应该为 `utf8mb4`​，即四字节的 utf8。所以在对于 8.x 的 MySQL 配置，应该是配的是 `utf8mb4`​。
 
-因为 8.x 开始，MySQL 已经默认设置服务器端为 `utf8mb4`​，所以真正需要自己手动设置的只有客户端的字符集。所以在 8.x 及以上版本中，`[mysqld]​` ​里的字符集设置是不需要的，即 `character-set-server`​ ​和 `collation_server​` ​已经不用再配了。
+因为 8.x 开始，MySQL 已经默认设置服务器端为 `utf8mb4`​，所以真正需要自己手动设置的只有**客户端的字符集**。所以在 8.x 及以上版本中，`[mysqld]​` ​里的字符集设置是不需要的，即 `character-set-server`​ ​和 `collation_server​` ​已经不用再配了。
 
 客户端是没有设置的，需要用户自行设置。
 

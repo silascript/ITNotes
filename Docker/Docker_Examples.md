@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2026-09-29 03:15:15
+modified: 2026-09-29 20:54:31
 ---
 
 # Docker 示例
@@ -930,7 +930,13 @@ mysql -h localhost -P 3306 -u silascript -p 123456
 
 [字符集设置](../DataBase/mysql/MySQL_Config_Note.md#字符集设置)
 
-未在 `run` 中设置字符集，亦未在配置文件中设置字符集，进入容器后登录 MySQL 后使用`status` 查看字符集情况：
+##### 设置字符集前后对比
+
+###### 未设置字符集
+
+所谓未设置，是即未在 `run` 时使用`--character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci` 设置字符集，亦未在配置文件中设置字符集。
+
+进入容器后登录 MySQL 后使用 `status` 及`show variables like "%char%"` 查看字符集情况：
 
 ```shell
 mysql> status;
@@ -977,6 +983,62 @@ mysql> show variables like "%char%";
 > * `Server`及 `DB` 两项默认是`utf8mb4`（「满血版」UFT8）
 > 
 > * `Client`和 `Connection` 两项未设置时，默认均为`latin1`。
+
+###### 设置字符集
+
+在 `mysql.cnf` 配置文件中，设置了字符集后，重启容器，再次进入容器后，字符集情况：
+
+> [!info] 
+> 
+> 
+> `mysql.cnf` 设置字符集（主要就是设置了客户端的字符集）：
+>
+> ```cnf
+> [mysql]
+> default_character_set=utf8mb4
+> [client]
+> default_character_set=utf8mb4
+> ```
+
+```shell
+mysql> status;
+--------------
+mysql  Ver 8.4.11 for Linux on x86_64 (MySQL Community Server - GPL)
+
+Connection id:		8
+Current database:	
+Current user:		root@localhost
+SSL:			Not in use
+Current pager:		stdout
+Using outfile:		''
+Using delimiter:	;
+Server version:		8.4.11 MySQL Community Server - GPL
+Protocol version:	10
+Connection:		Localhost via UNIX socket
+Server characterset:	utf8mb4
+Db     characterset:	utf8mb4
+Client characterset:	utf8mb4
+Conn.  characterset:	utf8mb4
+UNIX socket:		/var/run/mysqld/mysqld.sock
+Binary data as:		Hexadecimal
+Uptime:			47 sec
+```
+
+```shell
+mysql> show variables like "%char%";
++--------------------------+--------------------------------+
+| Variable_name            | Value                          |
++--------------------------+--------------------------------+
+| character_set_client     | utf8mb4                        |
+| character_set_connection | utf8mb4                        |
+| character_set_database   | utf8mb4                        |
+| character_set_filesystem | binary                         |
+| character_set_results    | utf8mb4                        |
+| character_set_server     | utf8mb4                        |
+| character_set_system     | utf8mb3                        |
+| character_sets_dir       | /usr/share/mysql-8.4/charsets/ |
++--------------------------+--------------------------------+
+```
 
 使用 [mycli](../DataBase/mysql/MySQL_Note.md#mycli) 查看字符集情况。
 

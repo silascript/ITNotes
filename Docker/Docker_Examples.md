@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2026-09-29 20:54:31
+modified: 2026-09-29 23:24:58
 ---
 
 # Docker 示例
@@ -910,6 +910,8 @@ docker run -d --name d_mysql84 --network mybridge --ip 172.21.0.21 -p 3357:3306 
 > ```shell
 > docker run -d --name d_mysql84 --network mybridge --ip 172.21.0.21 -p 3357:3306 -e MYSQL_ROOT_PASSWORD=123456 -v $HOME/Docker_Mount/mysql84_m/config/mysql:/etc/mysql -v $HOME/Docker_Mount/mysql84_m/config/my.cnf.d:/etc/my.cnf.d -v $HOME/Docker_Mount/mysql84_m/config/my.cnf:/etc/my.cnf -v $HOME/Docker_Mount/mysql84_m/data:/var/lib/mysql mysql:8.4.11-oracle --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
 > ```
+> 
+> [设置字符集前后比较](#未设置字符集)
 
 5. 进入容器中测试
 ```shell
@@ -934,7 +936,7 @@ mysql -h localhost -P 3306 -u silascript -p 123456
 
 ###### 未设置字符集
 
-所谓未设置，是即未在 `run` 时使用`--character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci` 设置字符集，亦未在配置文件中设置字符集。
+所谓未设置，亦未在配置文件中设置字符集。
 
 进入容器后登录 MySQL 后使用 `status` 及`show variables like "%char%"` 查看字符集情况：
 
@@ -962,6 +964,10 @@ Binary data as:		Hexadecimal
 Uptime:			50 min 54 sec
 ```
 
+> [!tip] 
+> 
+> 这里展示的是 8.4 的版本的情况，但实际 8.0 与 8.4 版本字符集情况都一样。
+
 ```shell
 mysql> show variables like "%char%";
 +--------------------------+--------------------------------+
@@ -983,6 +989,12 @@ mysql> show variables like "%char%";
 > * `Server`及 `DB` 两项默认是`utf8mb4`（「满血版」UFT8）
 > 
 > * `Client`和 `Connection` 两项未设置时，默认均为`latin1`。
+>   
+>> [!info] 
+>> 
+>>  `run` 时是否添加 `--character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci` 两个参数设置字符集，并不影响字符集情况。`Client`和 `Connection` 两项未设置时，仍为`latin1`。因为从这两参数名称`--character-set-server`、`--collation-server`，就可看出，这两参数是针对于`Server`及`DB`设置的，未涉及`Client`及`Connection` 的设置，所以才有相同的效果。
+>>  
+>>  可以得出一个结论，就是 `run` 时加不加`--character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci`，结果都是一样的。
 
 ###### 设置字符集
 

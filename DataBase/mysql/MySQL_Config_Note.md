@@ -6,7 +6,7 @@ tags:
   - database
   - config
 created: 2024-07-24 18:49:11
-modified: 2026-09-29 20:18:47
+modified: 2026-09-30 13:15:35
 ---
 
 # MySQL 配置笔记
@@ -85,16 +85,21 @@ init_connect='SET NAMES utf8mb4'
 > [!info]
 >
 > MySQL 实例启动需要依赖 `my.cnf` 配置文件，而配置文件可以存在于多个操作系统目录下。
->
-> `my.cnf` 的默认查找路径，从上往下找到的文件先读，但优先级逐级提升。
+> 
+> mysql 数据库会按照优先级顺序从 `/etc/my.cnf`, `/etc/mysql/my.cnf`, `/usr/etc/my.cnf`, `~/.my.cnf`四个位置找`my.cnf` 配置文件。
+> 
+>> [!tip] 
+>> 
+>> [Ubuntu](../../Linux/Debian/Ubuntu_Note.md)untu 默认将 `my.cnf`配置问价放置在`/etc/mysql/my.cnf`位置，没有`/etc/my.cnf` 文件。
+> 
 
 MySQL 8.0 开始，客户端的配置放在 `conf.d` 目录下的 `mysql.cnf` 文件。
 
 > [!info] 
 >
-> * `my.cnf`：通常是 MySQL 的主配置文件，里面既可以包含服务端配置（如 `[mysqld]`），也可以包含客户端配置（如 `[client]`、`[mysql]`）。
+> * `my.cnf`：通常是 MySQL 的**主配置文件**，里面既可以包含服务端配置（如 `[mysqld]`），也可以包含客户端配置（如 `[client]`、`[mysql]`）。
 > 
-> * `mysql.cnf`：通常放在系统的配置目录（如 `/etc/mysql/conf.d/`）中，常用于专门存放客户端或特定模块的配置，但它里面同样可以通过 `[mysqld]` 标签来写服务端配置。
+> * `mysql.cnf`：通常放在系统的配置目录（如 `/etc/mysql/conf.d/`）中，常用于专门存放客户端或特定模块的配置，但它里面同样可以通过 `[mysqld]` 标签来写服务端配置。具体`mysql.cnf`放哪，主要是由`my.cnf`中[`!includedir`](#includedir) 指令指定的加载目录决定！
 >
 > MySQL 区分配置属于服务端还是客户端，**不是靠文件名**，而是靠文件内部的**组名（Header）**：
 >
@@ -108,9 +113,30 @@ MySQL 8.0 开始，客户端的配置放在 `conf.d` 目录下的 `mysql.cnf` �
 > * `[mysql]`：仅供 `mysql` 交互式命令行客户端读取的配置。
 >   
 
+### 配置文件规则
+
+#### includedir
+
+`!includedir`：MySQL 配置文件中的**目录包含指令**，作用是把指定目录下所有符合规则的文件自动合并进主配置一起失效，实现「模块化管理」配置。
+
+加载规则：
+
+* 只加载 `.cnf` 后缀的文件，其他后缀会被忽略
+* 加载顺序，按文件名的字母/数字顺序加载
+* 覆盖优先级，后加载的文件若与主配置有重复项，会覆盖先加载的（「最后生效」原则）
+
 ---
 
 ## 字符集设置
+
+### 字符校对原则
+
+字符校对原则（Collation）：更好理解的译法应该是「字符比对规则」，是指在同一字符集内字符之间的比较规则，又称「字符序」。
+> [!tip] 
+> 
+> 就是字符排序「比大小」时，用的比较规则，相当于 [Java](../../Java/Java_Note.md) 中的[Comparable 接口](../../Java/Java_Base_Note.md#Comparable) 定义的规则。
+
+使用 `SHOW CHARACTER SET;`命令可以查看[MySQL_Note](MySQL_Note.md) 支持的所有字符集及字符校对原则。
 
 ### MySQL 数据库中字符集转换流程
 

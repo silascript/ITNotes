@@ -5,7 +5,7 @@ tags:
   - base
   - syntax
 created: 2024-07-13 10:28:47
-modified: 2026-07-20 20:58:38
+modified: 2026-09-30 11:03:05
 ---
 
 # Java 基础语法笔记
@@ -31,6 +31,14 @@ modified: 2026-07-20 20:58:38
 ---
 
 ## 数组
+
+---
+
+## 比较器
+
+### Comparable
+
+### Comparator
 
 ---
 

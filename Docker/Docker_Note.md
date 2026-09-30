@@ -8,7 +8,7 @@ tags:
   - ubuntu
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2026-09-28 20:18:09
+modified: 2026-10-01 02:30:41
 ---
 
 # Docker 笔记
@@ -739,6 +739,8 @@ docker stats [容器名|容器ID]
 
 ### <span id="dk_container_cp">容器与宿主机间的文件拷贝</span>
 
+#### 示例 1
+
 ```shell
 docker cp .config/nvim/configs d_ubuntu21:/root/.vim/
 docker cp .config/nvim/init.vim d_ubuntu21:/root/
@@ -747,6 +749,19 @@ docker cp d_ubuntu21:/root/.vim/configs ~/mysoft/vims/custumvimconfig/linux/vim/
 > [!tip]
 > 
 > 左侧是拷贝源，右侧是目的地。哪边有 `:` 的，哪边就是容器。
+
+#### 示例 2
+
+```shell
+docker cp d_mysql84u:/var/lib/mysql/. $HOME/Docker_Mount/mysql84u_m/data
+```
+> [!tip] 
+> 
+> `/var/lib/mysql/.`：意思是复制 `var/lib/mysql` 目录下所有文件。
+> 
+> 路径末尾的 ` /.` 表示复制该目录底下的所有内容，而不是把目录本身复制过去。
+> 
+> 这里的 `.`类似于[Linux](../Linux/Linux_Note.md)命令中常用到的`*` 通配符。
 
 ---
 

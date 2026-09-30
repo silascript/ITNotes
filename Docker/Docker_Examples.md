@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2026-09-30 03:17:40
+modified: 2026-10-01 02:31:20
 ---
 
 # Docker 示例
@@ -863,7 +863,7 @@ docker run -d --name d_mysql80 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /ho
 > 带 [字符集设置](#字符集设置) 的 `run` 容器：
 > 
 >```shell
-> docker run -d --name d_mysql80 --network mybridge --ip 172.21.0.20 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/mysql_m/config/mysql:/etc/mysql -v /home/silascript/Docker_Mount/mysql_m/data:/var/lib/mysql mysql:8.0.41-debian --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+> docker run -d --name d_mysql80 --network mybridge --ip 172.21.0.20 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/mysql_m/config:/etc/mysql -v /home/silascript/Docker_Mount/mysql_m/data:/var/lib/mysql mysql:8.0.41-debian --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
 > ```
 > 
 >> [!important] 
@@ -882,7 +882,9 @@ docker run -d --name d_mysql80 -p 3356:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /ho
 docker run -d --name d_mysql80u -e MYSQL_ROOT_PASSWORD=123456 ubuntu/mysql:8.4-26.04_stable
 ```
 
-2. 复制配置
+2. 复制配置及数据目录
+
+* 复制配置目录 `/etc/mysql`
 
 > [!info] 
 > 
@@ -900,11 +902,30 @@ docker run -d --name d_mysql80u -e MYSQL_ROOT_PASSWORD=123456 ubuntu/mysql:8.4-2
 > 
 
 ```shell
+docker cp d_mysql84u:/etc/mysql $HOME/Docker_Mount/mysql84u_m/config
 ```
+
+* 复制数据目录 `/var/lib/mysql`
+
+> [!tip] 
+> 
+> [MySQL 官方镜像](#dke_mysql) 创建的容器不用这一步，原因可以看下镜像的 `Image Layers`，其中有这么一句：`VOLUME [/var/lib/mysql]`。
+> 
+> 而 Ubuntu MySQL 镜像是没有这个「自动复制」数据目录到宿主机的功能，所以得手动使用 `docker cp`命令，从容器复制到要挂载的目录中。不然，到创建正式容器时，[挂载](Docker_Note.md#dk_volume_mount) 了宿主的空目录给数据目录，那 MySQL 就「消失」了。
+> 
+> 如果不确定临时容器是否在创建时，容器是否自动复制数据目录到宿主机，可以使用 `docker volume ls`查看，没有指定挂载目录的「临时容器」，会将容器中的数据目录复制到 Docker 的`volume`目录下，即宿主机上`/var/lib/docker/volumes` 目录下。
+
+```shell
+docker cp d_mysql84u:/var/lib/mysql/. $HOME/Docker_Mount/mysql84u_m/data
+```
+> [!tip] 
+> 
+> `docker cp d_mysql84u:/var/lib/mysql/.`，这是个复制 `/var/lib/mysql`目录下所有文件。`路径/.`，表示路径下所有文件。相当于[Linux](../Linux/Linux_Note.md)中`*` 通配符。
+> 
 
 3. [停止容器](Docker_Note.md#dk_container_stop) 和 [删除容器](Docker_Note.md#dk_container_delete) 并 [清理volume](Docker_Note.md#清理无主%20volume)。
 
-4. 创建完整
+4. 创建完整正式版容器
 
 > [!tip] 
 > 
@@ -912,7 +933,7 @@ docker run -d --name d_mysql80u -e MYSQL_ROOT_PASSWORD=123456 ubuntu/mysql:8.4-2
 > 
 > 
 ```shell
-
+docker run -d --name d_mysql84u --network mybridge --ip 172.21.0.21 -p 3357:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/mysql84u_m/config/mysql:/etc/mysql -v /home/silascript/Docker_Mount/mysql84u_m/data:/var/lib/mysql ubuntu/mysql:8.4-26.04_stable
 ```
 
 ##### OracleLinux 版

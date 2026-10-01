@@ -8,7 +8,7 @@ tags:
   - ubuntu
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2026-10-01 02:30:41
+modified: 2026-10-01 20:45:55
 ---
 
 # Docker 笔记
@@ -762,6 +762,38 @@ docker cp d_mysql84u:/var/lib/mysql/. $HOME/Docker_Mount/mysql84u_m/data
 > 路径末尾的 ` /.` 表示复制该目录底下的所有内容，而不是把目录本身复制过去。
 > 
 > 这里的 `.`类似于[Linux](../Linux/Linux_Note.md)命令中常用到的`*` 通配符。
+
+#### 示例 3
+
+复制软链接文件，防止宿主机没有链接指向的对应文件出现「断链」，比较保险的做法就是，将容器中链接文件指向的实际文件的内容复制出来。
+
+如下面这个例子：
+
+```shell
+root@de806e56ed78:~# ll /etc/mysql/
+total 28
+drwxr-xr-x 4 root root 4096 Sep 16 03:26 ./
+drwxr-xr-x 1 root root 4096 Oct  1 11:29 ../
+drwxr-xr-x 2 root root 4096 Aug 20 12:37 conf.d/
+-rwxr-xr-x 1 root root 1435 Aug 20 06:33 debian-start*
+-rw------- 1 root root  548 Sep 16 03:26 debian.cnf
+-rw-r--r-- 1 root root 1129 Sep 16 03:26 mariadb.cnf
+drwxr-xr-x 3 root root 4096 Sep 16 03:26 mariadb.conf.d/
+lrwxrwxrwx 1 root root   24 Sep 16 03:26 my.cnf -> /etc/alternatives/my.cnf
+
+```
+
+可以看到，容器中 `/etc/mysql`目录下，有一个`my.cnf` 文件，但它是个软链接，它指向的是`/etc/alternatives/my.cnf`，如果要把这链接复制到宿主机，就必须考虑「断链」问题。
+
+两种方式：
+1. 连 `/etc/alternatives/my.cnf` 也一起复制到宿主机
+2. 将 `/etc/alternatives/my.cnf`文件的内容复制到`/etc/mysql/my.cnf` 中
+
+连被链接目标文件一起复制，这明显不太「优雅」，个人倾向是第 2 种方式。做法很简单，就是多加一个 `-L` 参数即可：
+
+```shell
+docker cp -L d_mariadb12:/etc/mysql/my.cnf /home/silascript/Docker_Mount/mariadb_m/config/mysql
+```
 
 ---
 

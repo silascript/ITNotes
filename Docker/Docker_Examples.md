@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2026-10-01 02:31:20
+modified: 2026-10-01 20:58:04
 ---
 
 # Docker 示例
@@ -1162,15 +1162,6 @@ performance_schema = off
 > 
 > `performan_schema` 关不关可根据需要。这货是 5.7 及以上版本才默认开启的。
 
-> [!info] 
-> 
-> MySQL 其他设置及操作请参考：
->
-> * [MySQL笔记](../DataBase/mysql/MySQL_Note.md)
-> * [MySQL配置笔记](../DataBase/mysql/MySQL_Config_Note.md)
-> * [MySQL常用操作](../DataBase/mysql/MySQL常用操作.md)
-> * [MySQL_Linux](../DataBase/mysql/MySQL_Linux.md)
-
 ## <span id="dke_mariadb">示例 5：MariaDB</span>
 
  [MariaDB](../DataBase/mysql/MariaDB_Note.md) 镜像底层系统也分俩：[Ubuntu](../Linux/Debian/Ubuntu_Note.md) 和**UBI**（Redhat 的 「Universal Base Image」）。
@@ -1221,7 +1212,7 @@ Docker 安装 MariaDB 基本与 [MySQL](#dke_mysql) 基本相同。
 
 1. 创建一个临时容器
 ```shell
-docker run -d --name d_mariadb12 -e MARIADB_ROOT_PASSWORD=123456 mariadb:12.3.3
+docker run -d --name d_mariadb12 -e MARIADB_ROOT_PASSWORD=123456 mariadb:12.3.3 
 ```
 
 > [!tip] 
@@ -1230,13 +1221,49 @@ docker run -d --name d_mariadb12 -e MARIADB_ROOT_PASSWORD=123456 mariadb:12.3.3
 
 2. 复制配置目录
 
-将容器中的 mariadb 的 [配置目录](#配置目录) 复制到宿主机目录：
+* 将容器中的 mariadb 的 [配置目录](#配置目录) 复制到宿主机目录
 
 ```shell
 docker cp d_mariadb12:/etc/mysql /home/silascript/Docker_Mount/mariadb_m/config
 ```
 
-### 配置目录
+* 单独再复制一次其中的 `/etc/mysql/`目录下的`my.cnf` 文件
+
+可以通过查看 `/etc/mysql`目录可知，此目录下的`my.cnf`是一个软软链接文件，它指向的是`/etc/alternatives/my.cnf` 文件：
+
+```sehll
+oot@de806e56ed78:~# ll /etc/mysql/
+total 28
+drwxr-xr-x 4 root root 4096 Sep 16 03:26 ./
+drwxr-xr-x 1 root root 4096 Oct  1 11:29 ../
+drwxr-xr-x 2 root root 4096 Aug 20 12:37 conf.d/
+-rwxr-xr-x 1 root root 1435 Aug 20 06:33 debian-start*
+-rw------- 1 root root  548 Sep 16 03:26 debian.cnf
+-rw-r--r-- 1 root root 1129 Sep 16 03:26 mariadb.cnf
+drwxr-xr-x 3 root root 4096 Sep 16 03:26 mariadb.conf.d/
+lrwxrwxrwx 1 root root   24 Sep 16 03:26 my.cnf -> /etc/alternatives/my.cnf
+
+```
+
+因为 `/etc/mysql/my.cnf` 是一个链接文件，复制到宿主机，极有可能出现「断链」。所以比较「优雅」的方式，就是将链接目标文件，即`/etc/alternatives/my.cnf`文件的内容复制到`/etc/mysql/my.cnf` 文件中，把软链接文件「改造」成普通文件。
+
+要实现这种功能，只需要在 `docker cp`命令中加入`-L` 参数即可：
+
+```shell
+docker cp -L d_mariadb12:/etc/mysql/my.cnf /home/silascript/Docker_Mount/mariadb_m/config/mysql
+```
+
+3. [停止容器](Docker_Note.md#dk_container_stop) 和 [删除容器](Docker_Note.md#dk_container_delete) 并 [清理volume](Docker_Note.md#清理无主%20volume)。
+
+4. 创建完整正式容器
+
+```shell
+docker run -d --name d_mariadb12 --network mybridge --ip 172.21.0.25 -p 3366:3306 -e MARIADB_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/mariadb_m/config/mysql:/etc/mysql -v /home/silascript/Docker_Mount/mariadb_m/data:/var/lib/mysql mariadb:12.3.3
+```
+
+### 配置
+
+#### 配置目录
 
 MariaDB 配置目录：`/etc/mysql`，`mariadb.cnf` 都在此目录中。
 
@@ -1320,7 +1347,9 @@ docker cp d_percona84:/etc/my.cnf.d /home/silascript/Docker_Mount/percona_m/conf
 > 
 > 详细配置参考：[percona/percona-server - config-file](https://hub.docker.com/r/percona/percona-server#using-a-custom-percona-server-config-file)
 
-3. 重新创建一个完整版本容器
+3. [停止容器](Docker_Note.md#dk_container_stop) 和 [删除容器](Docker_Note.md#dk_container_delete) 并 [清理volume](Docker_Note.md#清理无主%20volume)。
+
+4. 重新创建一个完整版本容器
 
 ```shell
 docker run -d --name d_percona84 --network mybridge --ip 172.21.0.22 -p 3358:3306 -e MYSQL_ROOT_PASSWORD=123456 -v /home/silascript/Docker_Mount/percona_m/data:/var/lib/mysql -v /home/silascript/Docker_Mount/percona_m/config/my.cnf.d:/etc/my.cnf.d -v /home/silascript/Docker_Mount/percona_m/config/my.cnf:/etc/my.cnf percona/percona-server:8.4.11-11.1

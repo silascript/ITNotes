@@ -3,10 +3,12 @@ aliases: []
 tags:
   - database
   - mysql
+  - mariadb
+  - percona
   - material
   - list
 created: 2025-02-22 20:01:30
-modified: 2026-09-30 02:22:57
+modified: 2026-10-02 01:09:14
 ---
 
 # MySQL 资料清单
@@ -30,6 +32,8 @@ modified: 2026-09-30 02:22:57
 * [MySQL版本现状与选择 – orczhou.com](https://www.orczhou.com/index.php/how-to-choose-the-right-mysql-version/)
 * [MySQL版本升级最佳实践：从5.7到8.0再到8.4 LTS的兼容性审计与迁移策略-阿里云开发者社区](https://developer.aliyun.com/article/1746456?scm=20140722.ID_community%40%40article%40%401746456._.ID_community%40%40article%40%401746456-OR_rec-PAR1_213fe13017907010286202627d0b2b-V_1-RL_community%40%40article%40%401742821)
 * [MySQL 8.0.35 单实例升级到MySQL 8.4.x - 潇湘隐者 - 博客园](https://www.cnblogs.com/kerrycode/p/19508872)
+* [MySQL 8.4 LTS 深度实战 - 程序员茄子](https://www.chenxutan.com/d/2268.html)
+* [MySQL 8.0 结束生命周期，8.4.9 LTS、9.7.0 LTS 发版上线：一个时代的交接与新生](https://blog.51cto.com/shawnyan/14562574)
 
 ### 9.7
 

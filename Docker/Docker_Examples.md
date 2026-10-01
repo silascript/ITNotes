@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2026-10-01 20:58:04
+modified: 2026-10-02 02:24:30
 ---
 
 # Docker 示例
@@ -955,6 +955,14 @@ docker run -d --name d_mysql84 -e MYSQL_ROOT_PASSWORD=123456 mysql:8.4.11-oracle
 
 2. 复制配置相关的文件及目录
 
+```shell
+bash-5.1# ls -al /etc/ 
+total 1028
+-rw-r--r-- 1 root root    999 Sep 21 23:08 my.cnf
+drwxr-xr-x 2 root root   4096 Jun 30 19:20 my.cnf.d
+drwxr-xr-x 3 root root   4096 Sep 21 23:08 mysql
+```
+
 OracleLinux 版本，因为配置文件在些许不同，得复制以下三个：
 
 * 复制 `/etc/mysql` **目录**
@@ -1002,6 +1010,20 @@ mysql -h localhost -P 3306 -u silascript -p 123456
 > [!info] 
 > 
 > 容器内登录 MySQL，用的端口号就是默认的 `3306` 或配置文件配的端口，而不是对外映射的端口。
+
+> [!info] 
+> 
+> OracleLinux 版本的 MySQL 的 `docker.cnf`、`mysql.cnf`配置文件放在 `/ect/mysql/conf.d` 目录下。当然主要看`/etc/my.cnf` 配置文件中的相关「导入」设置（`!includedir`）。
+> 
+> `mysql.cnf` 文件可加入客户端字符集相关配置：
+> 
+> ```cnf
+> [mysql]
+> default_character_set=utf8mb4
+> [client]
+> default_character_set=utf8mb4
+> ```
+> 
 
 ### 配置
 

@@ -5,7 +5,7 @@ tags:
   - db
   - mysql
 created: 2023-08-18 19:44:52
-modified: 2026-09-29 00:49:40
+modified: 2026-10-02 02:57:24
 ---
 
 # MySQL 常用操作
@@ -54,12 +54,16 @@ select database();
 show variables like 'port';
 ```
 
-4. 查看数据库编码
+4. 查看数据库字符集编码及校对规则
 ```shell
 show variables like 'character%';
+```
 
+```shell
 show variables like 'collation%';
+```
 
+```shell
 status;
 ```
 

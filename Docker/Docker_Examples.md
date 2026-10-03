@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2026-10-04 03:54:45
+modified: 2026-10-04 04:11:05
 ---
 
 # Docker 示例
@@ -282,6 +282,15 @@ docker exec -it d_php83 sh -c "$cmd_str/$*"
 如果再「自由」点，能将容器的名称也当成参数传入，脚本可以这样写：
 
 ```shell
+# docker php
+
+# Docker PHP 容器执行函数
+# 函数1：容器名称，如d_php85
+# 函数2...n：要调用容器中/usr/local/bin目录下可执行文件及参数
+# 调用示例：
+# 调用名为d_php85的容器中 /usr/local/bin目录下的php可执行文件,启动php内置的服务器
+# php -S ip -t 目录 这一串参数是PHP开启内置服务器的命令及参数
+# docker_cmds/docker_php.sh d_php85 php -S 172.21.0.30:8088 -t /var/www/html
 function docker_php_exec() {
 
 	# 判断参数个数
@@ -297,8 +306,7 @@ function docker_php_exec() {
 
 	# 执行容器脚本
 	local cmd_str="/usr/local/bin"
-	docker exec -it $docker_container_name sh -c "$cmd_str/$*"
-
+	docker exec -it "$docker_container_name" sh -c "$cmd_str/$*"
 }
 
 docker_php_exec "$@"

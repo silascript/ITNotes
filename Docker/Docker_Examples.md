@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2026-10-02 18:44:17
+modified: 2026-10-04 03:54:45
 ---
 
 # Docker 示例
@@ -271,13 +271,37 @@ docker exec -it d_php81 sh -c "php $*"
 > 
 > `php $*` 就是一个参数的实参。其中 `$*` 同样也也是个 [Shell](../Linux/Shell/Shell_Note.md) 语法元素，表示接收一个 [参数](../Linux/Shell/Shell_Note.md#参数) 列表。在这里的意思就是，让脚本能接收各种参数，以完成 php 各种调用需求。
 > 
-> 
 
 如果想更「自由」执行容器中 `/usr/local/bin` 下所有可执行程序，可以将脚本改成这样：
 
 ```shell
 cmd_str="/usr/local/bin"
 docker exec -it d_php83 sh -c "$cmd_str/$*"
+```
+
+如果再「自由」点，能将容器的名称也当成参数传入，脚本可以这样写：
+
+```shell
+function docker_php_exec() {
+
+	# 判断参数个数
+	if [[ $# -eq 0 ]]; then
+		echo -e "\e[93m必须输入一个要查询的字符串! \n \e[0m"
+		return
+	fi
+	# 获取第一个参数，即Docker 容器名称
+	local docker_container_name=$1
+
+	# 移除第一个参数
+	shift
+
+	# 执行容器脚本
+	local cmd_str="/usr/local/bin"
+	docker exec -it $docker_container_name sh -c "$cmd_str/$*"
+
+}
+
+docker_php_exec "$@"
 ```
 
 这样，不但能在宿主机通过这个脚本调用执行 `php`，还能执行如 `composer` 等程序（如果安装了）。

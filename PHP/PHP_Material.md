@@ -7,7 +7,7 @@ tags:
   - material
   - list
 created: 2024-09-07 22:23:16
-modified: 2026-07-07 22:33:27
+modified: 2026-10-04 01:41:46
 ---
 
 # PHP 资料清单
@@ -24,6 +24,8 @@ modified: 2026-07-07 22:33:27
 * [PHP Supported Versions 支持的版本](https://blog.51cto.com/u_13675550/6171798)
 * [2026 年 PHP 8.4 依然重要：跳到 8.5 之前你该掌握的特性 - JaguarJack - 博客园](https://www.cnblogs.com/catchadmin/p/19474910)
 * [PHP 语言简史 &amp; 我们能从中学到什么](https://catchadmin.com/post/2025-08/php-30-years-history)
+* [PHP version stats: July, 2026 \| stitcher.io](https://stitcher.io/blog/php-version-stats-july-2026)
+* [2026 年，PHP 还香吗？ - WordPress 果酱](https://blog.wpjam.com/article/is-php-still-relevant-in-2026/)
 
 ### 版本
 

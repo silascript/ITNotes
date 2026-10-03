@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-22 01:36:41
-modified: 2026-10-02 18:38:28
+modified: 2026-10-04 01:49:49
 ---
 
 # Docker 资料清单
@@ -75,6 +75,7 @@ modified: 2026-10-02 18:38:28
 * [haveyb/php](https://hub.docker.com/r/haveyb/php)
 * [PHP 8.0 is here! How to turn on JIT compiling - DEV Community](https://dev.to/tugboatqa/php-8-0-is-almost-here-how-to-turn-on-jit-compiling-1l6l)
 * [docker如何升级php \| PingCode智库](https://docs.pingcode.com/baike/3472543)
+* [Docker中安装PHP，各个版本区别 - Laravel自学开发 - 博客园](https://www.cnblogs.com/laraveler/p/18220196)
 
 #### 问题
 

@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2026-10-02 02:24:30
+modified: 2026-10-02 18:44:17
 ---
 
 # Docker 示例
@@ -1446,6 +1446,9 @@ docker pull postgres
 > [!info] 
 > 
 > [PostgreSQL](../DataBase/PostgrSQL/PostgreSQL_Note.md) 的官方镜像是叫「**postgres**」。
+> 
+> 镜像：[postgres - Official Image \| Docker Hub](https://hub.docker.com/_/postgres)
+> 
 
 ---
 

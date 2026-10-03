@@ -8,7 +8,7 @@ tags:
   - material
   - list
 created: 2025-02-22 20:01:30
-modified: 2026-10-02 01:09:14
+modified: 2026-10-02 18:31:39
 ---
 
 # MySQL 资料清单
@@ -46,6 +46,7 @@ modified: 2026-10-02 01:09:14
 ## 配置
 
 * [MySQL之my.cnf配置文件](https://zhuanlan.zhihu.com/p/566391298)
+* [MySQL参数调优入门：my.cnf里这几个关键项必须搞懂](https://zhuanlan.zhihu.com/p/1929025266111447895)
 
 ## Timezone
 

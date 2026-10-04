@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2026-10-04 11:32:38
+modified: 2026-10-04 11:44:21
 ---
 
 # Docker 示例
@@ -516,7 +516,25 @@ docker-php-ext-install zip
 	* `opcache.interned_strings_buffer=8`
 	* `opcache.max_accelerated_files=10000`
 
-	配置完成后，重启 [Docker服务](Docker_Note.md#dk_comm_commands) 及重启容器。
+	> [!info] 
+	> 
+	> 其他常用的配置
+	> 
+	> 内部字符串驻留 buffer
+	> 
+	> ```bash
+	>opcache.interned_strings_buffer=32
+	> ```
+	>
+	> PHP 使用了一种叫做字符串驻留（string interning）的技术来改善性能。  
+	> 
+	> 例如，如果你在代码中使用了 1000 次字符串「hello」，在 PHP 内部只会在第一使用这个字符串的时候分配一个不可变的内存区域来存储这个字符串，  
+	> 其他的 999 次使用都会直接指向这个内存区域。  
+	> 这个选项则会把这个特性提升一个层次——默认情况下这个不可变的内存区域只会存在于单个 php-fpm 的进程中，  如果设置了这个选项，那么它将会在所有的 php-fpm 进程中共享。  
+	> 在比较大的应用中，这可以非常有效地节约内存，提高应用的性能。  
+	> 这个选项的值是以兆字节（megabytes）作为单位，如果把它设置为 16，则表示 16MB，默认是 8MB  
+
+配置完成后，重启 [Docker服务](Docker_Note.md#dk_comm_commands) 及重启容器。
 	
 2. 进入容器中，执行以下安装代码：
 ```shell

@@ -7,7 +7,7 @@ tags:
   - material
   - list
 created: 2024-09-07 22:23:16
-modified: 2026-10-04 01:41:46
+modified: 2026-10-04 11:36:28
 ---
 
 # PHP 资料清单
@@ -50,6 +50,8 @@ modified: 2026-10-04 01:41:46
 
 * [《让PHP扩展开拓编程前路》 之 性能优化利器 OPcache | PHP 技术论坛](https://learnku.com/articles/84314)
 * [PHP: OPCache 配置 - Manual](https://www.php.net/manual/zh/opcache.configuration.php)
+* [php8:开启opcache和JIT(php 8.3.9) - 刘宏缔的架构森林 - 博客园](https://www.cnblogs.com/architectforest/p/18422461)
+* [查看 php docker 中是否启用了 opcache - 大象笔记](https://www.sunzhongwei.com/check-opcache-is-enabled-php-docker)
 
 #### JIT
 

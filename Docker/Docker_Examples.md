@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2026-10-04 04:11:05
+modified: 2026-10-04 11:32:38
 ---
 
 # Docker 示例
@@ -507,8 +507,8 @@ docker-php-ext-install zip
 	>> * `opcache.jit_buffer_size=100M`
 	
 	但在 Docker 中配置，并不是直接配置 `php.ini`，而是 `/usr/local/etc/php/conf.d/` 目录下各配置文件中配置。
-	OPCache 配置文件：`/usr/local/etc/php/conf.d/docker-php-ext-opcache.ini`。
-	将以下选项在此配置文件中添加：
+	
+	创建 OPCache 配置文件：`/usr/local/etc/php/conf.d/docker-php-ext-opcache.ini`，将以下选项在此配置文件中添加：
 
     * `opcache.enable=1`
 	* `opcache.enable_cli=0`
@@ -517,13 +517,16 @@ docker-php-ext-install zip
 	* `opcache.max_accelerated_files=10000`
 
 	配置完成后，重启 [Docker服务](Docker_Note.md#dk_comm_commands) 及重启容器。
+	
 2. 进入容器中，执行以下安装代码：
 ```shell
-docker-php-ext-configure opcache --enable-opcache && docker-php-ext-install opcache
+docker-php-ext-install opcache
 ```
 
 > [!info] 
 > 
+> 其实这个 `install` 不一定执行，因为**Docker 官方 PHP 镜像里，OPcache 扩展已经内置**了‌，所以只用配置完 OPCache 配置文件就能启动 OPCache 了。
+>  
 > 执行 `php -m`，看下是否已经安装上了。
 > 
 > ```shell

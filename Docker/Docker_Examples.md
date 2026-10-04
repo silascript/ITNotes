@@ -8,7 +8,7 @@ tags:
   - nginx
   - apache
 created: 2024-07-21 12:56:23
-modified: 2026-10-04 11:44:21
+modified: 2026-10-05 02:10:52
 ---
 
 # Docker 示例
@@ -17,65 +17,87 @@ modified: 2026-10-04 11:44:21
 
 ## 示例 1：安装及运行 Nginx
 
+1. 创建一个临时容器
+
 ```sh
 docker run -d --name d_nginx -p 8899:80 nginx:stable
 ```
 
-将宿主机的目录挂载到容器内：
+2. 复制配置文件
 
-> [!info]
-> 
-> 在执行以下操作前，应先 run 一个没有挂载目录的 nginx，然后将 default.conf 和 nginx.conf 这两个配置文件复制到宿主机目录中。  
-> 复制容器中的文件使用 `docker cp` 命令，语法：`docker cp 容器名称: 容器中文件路径 宿主机存放路径`  。
-> 
->> [!Example] 
->> 
->> 1. 复制配置目录及文件：
->> 
->> ```shell
->> docker cp d_nginx:/etc/nginx/conf.d Docker_Mount/nginx_m/etc/conf.d/
->> docker cp d_nginx:/etc/nginx/nginx.conf Docker_Mount/nginx_m/etc
->>```
->>
->>2. 复制配置成功后，就可以 [停止容器](Docker_Note.md#停止容器)，然后 [删除容器](Docker_Note.md#删除容器)。
->>
->> 3. 重新 run 个容器。
->
-> `/etc/nginx/conf.d` 这是个目录，这个目录下有一个 `default.conf`。
+Docker nginx 配置文件都放在 `/etc/nginx` 目录下：
+
+```shell
+root@49ff03e14280:~# ls -al /etc/nginx/
+drwxr-xr-x 1 root root 4096 Sep 19 00:20 .
+drwxr-xr-x 1 root root 4096 Oct  4 15:22 ..
+drwxr-xr-x 1 root root 4096 Oct  4 15:22 conf.d
+-rw-r--r-- 1 root root 1007 Sep 15 12:54 fastcgi_params
+-rw-r--r-- 1 root root 5349 Sep 15 12:54 mime.types
+lrwxrwxrwx 1 root root   22 Sep 15 14:04 modules -> /usr/lib/nginx/modules
+-rw-r--r-- 1 root root  644 Sep 15 14:04 nginx.conf
+-rw-r--r-- 1 root root  636 Sep 15 12:54 scgi_params
+-rw-r--r-- 1 root root  664 Sep 15 12:54 uwsgi_params
+```
+
+最重要的就 `conf.d`目录及`nginx.conf` 文件。所以复制就复制这两项：
+
+```shell
+docker cp d_nginx:/etc/nginx/conf.d /home/silascript/Docker_Mount/nginx_m/config/
+```
+
+```shell
+docker cp d_nginx:/etc/nginx/nginx.conf /home/silascript/Docker_Mount/nginx_m/config/
+```
+
+3. 复制配置成功后，就可以 [停止容器](Docker_Note.md#停止容器)，然后 [删除容器](Docker_Note.md#删除容器)
+
+ 4. 重新 run 个完整正式的容器
 
 ### <span id="dke_nginx_config">nginx 配置文件</span>  
 
-`/etc/nginx` 目录下的 `nginx.conf` 为主配置文件。
+1. 主配置文件
 
-在 `http` 节点中的 `server` 节点：
+`/etc/nginx` 目录下的 `nginx.conf` 为主配置文件。这配置文件，可以把所有配置都放进，但一般不建议这么干。而应该是「导入」各模块配置文件。
+> [!info] 
+> 
+> `include /etc/nginx/conf.d/*.conf;`
+
+2. 子配置文件
+
+`/etc/nginx/conf.d`目录下是各模块配置。[PHP](#dke_php) 可以在此目录新建一个配置文件，如 `php.conf`，并配置。
+
+主要是在 `http` 节点中的 `server` 节点：
 
 ```conf
 
 server {
-    	listen       80;
-    	listen  [::]:80;
-    	server_name  localhost;
+	listen       80;
+	listen  [::]:80;
+	server_name  localhost;
 
-    	#access_log  /var/log/nginx/host.access.log  main;
+	#access_log  /var/log/nginx/host.access.log  main;
 
-		location / {
-		    root   /usr/share/nginx/html;
-		    index  index.html index.htm;
-		}
+	location / {
+		root   /usr/share/nginx/html;
+		index  index.html index.htm;
+	}
 		
-		location ~ \.php$ {
-		   # root           html;
-		   
-		   fastcgi_pass   172.21.0.8:9000;
-		   fastcgi_index  index.php;
-		   # fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-		   fastcgi_param  SCRIPT_FILENAME  /var/www/html/$fastcgi_script_name;
-		   include        fastcgi_params;
-		}
+	location ~ \.php$ {
+		#fastcgi_split_path_info ^(.+.php)(/.+)$;
+		#root           html;
+		root           /var/www/html;
+		#fastcgi_pass   127.0.0.1:9000;
+		# 设置 php 引擎ip
+		fastcgi_pass   172.21.0.30:9000;
+		fastcgi_index  index.php;
+		#fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+		#fastcgi_param  SCRIPT_FILENAME  /var/www/html/$fastcgi_script_name;
+		fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+		include        fastcgi_params;
+	}
 
-		
-		
-    }
+}
 ```
 
 而如果是导入到 `nginx.conf` 的方式，即导入 `conf.d` 目录中的配置，在 `nginx.conf` 文件的 `server` 节点中使用 `include /etc/nginx/conf.d/*.conf;`。
@@ -95,21 +117,13 @@ drwxr-xr-x     - silascript silascript 2025-02-22 04:28 ..
 
 ```
 
-指定自定义网桥和 ip 生成容器：
-
 ```shell
-docker run -itd --name d_nginx --network 网桥名 --ip 172.20.0.9 -p 8899:80 -v /home/silascript/Docker_Mount/nginx_m/etc/conf.d:/etc/nginx/conf.d -v /home/silascript/DevWorkSpace/PHPExercise:/usr/share/nginx/html -v /home/silascript/Docker_Mount/nginx_m/log:/var/log/ngixn nginx:stable
-```
-
-多挂载个 log 目录，容器中的路径为：`/var/log/nginx`：
-
-```shell
-docker run -itd --name d_nginx --network mybridge --ip 172.21.0.31 -p 8899:80 -v /home/silascript/Docker_Mount/nginx_m/etc/nginx.conf:/etc/nginx/nginx.conf -v /home/silascript/Docker_Mount/nginx_m/etc/conf.d:/etc/nginx/conf.d -v /home/silascript/Docker_Mount/nginx_m/log:/var/nginx -v /home/silascript/DevWorkSpace/PHPExercise:/usr/share/nginx/html nginx:1.27.4
+docker run -d --name d_nginx --network mybridge --ip 172.21.0.31 -p 8899:80 -v /home/silascript/Docker_Mount/nginx_m/config/nginx.conf:/etc/nginx/nginx.conf -v /home/silascript/Docker_Mount/nginx_m/config/conf.d:/etc/nginx/conf.d -v /home/silascript/DevWorkSpace/PHPExercise:/usr/share/nginx/html nginx:1.31.6-perl
 ```
 
 > [!info] 
 > 
-> `-v /home/silascript/Docker_Mount/nginx_m/log:/var/nginx` log 目录挂载，宿主目录可以不用预先创建 `log` 目录，[Docker](Docker_Note.md) 挂载时，如果要挂载的宿主目录不存在，会自动创建相应目录再挂载。
+> `/usr/share/nginx/html` 目录是 nginx 的页面发布目录。示例中，因为要与 [PHP](#dke_php) 配合使用，所以挂载到宿主机 PHP 存放的目录上。
 
 如果想在 [PHP](../PHP/PHP_Note.md) 页面中显示 nginx 版本信息，可以使用以下代码：
 

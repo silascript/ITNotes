@@ -10,7 +10,7 @@ tags:
   - tutorial
   - list
 created: 2023-08-18 19:44:52
-modified: 2025-10-13 22:30:11
+modified: 2026-10-06 21:10:17
 ---
 
 # Linux 视频清单
@@ -45,7 +45,15 @@ modified: 2025-10-13 22:30:11
 * [Linux三剑客之awk超全超详细教程](https://www.bilibili.com/video/BV1fe4y127WP)
 * [20230906\_awk进阶教程](https://www.bilibili.com/video/BV17N411H7N8)
 
-## jq
+## 其他工具
+
+### xargs
+
+* [每天一个Linux命令-xargs\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1q8411R7tw)
+
+## 第三方工具
+
+### jq
 
 * [Linux的第4个剑客，使用jq命令处理json](https://www.bilibili.com/video/BV1Dj421R7fr)
 

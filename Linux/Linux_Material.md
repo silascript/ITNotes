@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-10 03:06:48
-modified: 2026-07-14 11:12:23
+modified: 2026-10-07 01:47:24
 ---
 
 # Linux 资料清单
@@ -28,6 +28,12 @@ modified: 2026-07-14 11:12:23
 ## grep
 
 * [grep 命令，Linux grep 命令详解：强大的文本搜索工具 - Linux 命令搜索引擎](https://wangchujiang.com/linux-command/c/grep.html)
+
+## xargs
+
+* [xargs命令详解 - dashery - 博客园](https://www.cnblogs.com/ydswin/p/18639288)
+* [Linux xargs 命令使用教程 - 我是唐青枫 - 博客园](https://www.cnblogs.com/TangQF/articles/18628831)
+* [Linux中“xargs”命令和“｜”管道符命令的区别与异同（一）](https://zhuanlan.zhihu.com/p/676163236)
 
 ## 环境变量
 

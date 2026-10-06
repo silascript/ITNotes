@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2026-10-06 01:18:25
+modified: 2026-10-06 21:09:41
 ---
 
 # Shell 资料清单
@@ -164,10 +164,6 @@ modified: 2026-10-06 01:18:25
 * [shell中while与for空行取值区别 - 小阿峰 - 博客园](https://www.cnblogs.com/xiaofeng666/p/12776345.html)
 * [linux 中 read -a 和 -r选项 - 小鲨鱼2018 - 博客园](https://www.cnblogs.com/liujiaxin2018/p/18020718)
 
-### xargs
-
-* [xargs命令详解 - dashery - 博客园](https://www.cnblogs.com/ydswin/p/18639288)
-
 ---
 
 ## 文件路径
@@ -321,8 +317,6 @@ modified: 2026-10-06 01:18:25
 ---
 
 ## 相关笔记
-
-### 个人笔记
 
 * [Shell 笔记](Shell_Note.md)
 * [Shell 示例](Shell_Example.md)

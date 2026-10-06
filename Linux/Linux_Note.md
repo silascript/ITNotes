@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2026-09-28 20:39:41
+modified: 2026-10-07 02:34:14
 ---
 
 # Linux 笔记
@@ -170,6 +170,50 @@ lsb 其他选项和参数：
  
 > [!tip] path 变量路径
 > 路径末尾不能以 **\/** 结尾，否则将导致整个 PATH 变量出错。
+
+---
+
+## 输入输出
+
+### 标准输入输出
+
+### 管道
+
+基本用法：`command1 | command2`
+
+限制：`command2`**必须**支持从标准输入中读取数据，否则管道无法直接使用。
+
+### xargs
+
+`xargs`：参数转换器，用于从标准输入构建和执行命令。它接受一个命令的输出，并将其作为参数提供给另一个命令。
+
+`xargs`是为了使一些不支持 [标准输入](#标准输入输出)作为参数的命令，如`echo`，能够接收标准输入而存在的一个「转换器」，即将[标准输入输出](#标准输入输出) 的数据转换为普通参数，让那些只支持参数的命令能够接收。
+
+`xargs`与 [管道](#管道) 简单对比示例：
+
+```shell
+$ echo hello world | echo                                                                                  
+
+```
+
+```shell
+# silascript @ (base) in ~ [1:53:17] 
+$ echo hello world | xargs echo
+hello world
+```
+
+常用参数及选项：
+
+`-n`：限制每个命令的参数数量
+
+示例：
+
+```shell
+$ echo hello world | xargs -n 1 echo
+hello
+world
+
+```
 
 ---
 

@@ -5,7 +5,7 @@ tags:
   - vscode
   - vscodium
 created: 2023-01-30 11:19:11
-modified: 2026-08-06 02:12:31
+modified: 2026-10-09 18:58:03
 ---
 
 # VSCode 笔记
@@ -376,7 +376,26 @@ Profile 的存储目录的目录名，其实是就是创建 Profile 时生成的
 
 ###### 示例 1
 
+根据 Profile 名称查询该 Profile 节点：
+
+```shell
+jq '.userDataProfiles[] | select(.name=="Go_pro") ' ~/.config/Code/User/globalStorage/storage.json 
+```
+返回以下结果：
+```shell
+{
+  "location": "-7cb6de71",
+  "name": "Go_pro"
+}
+```
+
+###### 示例 2
+
 判断某 Profile 是否已创建，返回 `true` 或`false`，示例：
+
+> [!info] 
+> 
+> 其实就是示例 1 的基础上，再加一个对 `name` 属性值的判断即可
 
 ```shell
 jq '.userDataProfiles[] | select(.name=="Test_Profile") | .name=="Test_Profile"' .config/Code/User/globalStorage/storage.json
@@ -385,7 +404,7 @@ jq '.userDataProfiles[] | select(.name=="Test_Profile") | .name=="Test_Profile"'
 要使用传参形式：
 
 ```shell
-jq --arg p_name $profile_name '.userDataProfiles[] | select(.name==$p_name) | .name==$p_name' .config/Code/User/globalStorage/storage.json
+jq -r --arg p_name $profile_name '.userDataProfiles[] | select(.name==$p_name) |.location' ~/.config/Code/User/globalStorage/storage.json
 ```
 
 > [!tip] 
@@ -415,7 +434,7 @@ jq --arg p_name $profile_name '.userDataProfiles[] | select(.name==$p_name) | .n
 > ```
 > 
 
-###### 示例 2
+###### 示例 3
 
 根本 [Profile 名称](#Profile%20名称)查询其[Profile location](#Profile%20location) 值：
 

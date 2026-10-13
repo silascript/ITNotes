@@ -7,7 +7,7 @@ tags:
   - typora
   - mermaid
 created: 2023-01-13 12:27:45
-modified: 2026-06-07 21:02:57
+modified: 2026-10-12 22:01:31
 ---
 
 # Markdown 笔记
@@ -459,6 +459,10 @@ Obsidian 具体使用请参考：[Obsidian 笔记](../NoteSoft/Obsidian/Obsidian
 	<!-- <script defer src="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.4/js/v4-shims.min.js"></script> -->
 	<link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.4/css/all.css" >
 </head>
+
+#### <span id="md_tools_mdeditors_wonderpen">妙笔</span>
+
+[WonderPen \| 妙笔](https://www.tominlab.com/wonderpen) 本是一个写作软件，不过它也能编辑 Markdown 文件。支持 Windows、Linux、MacOS、Android 和 IOS 多个系统。
 
 ---
 

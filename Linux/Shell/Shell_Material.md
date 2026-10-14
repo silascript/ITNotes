@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2026-10-06 21:09:41
+modified: 2026-10-14 10:38:08
 ---
 
 # Shell 资料清单
@@ -44,6 +44,11 @@ modified: 2026-10-06 21:09:41
 ## 基础语法
 
 * [yaml教程(YAML文件）和shell教程(shell文件）](https://zhuanlan.zhihu.com/p/468798865)
+
+### 常量
+
+* [shell 中怎么定义常量 - 滴滴滴 - 博客园](https://www.cnblogs.com/gaoyuechen/p/18459046)
+* [Shell脚本中定义常量的方法与最佳实践](https://comate.baidu.com/zh/page/axoqojt9jkp)
 
 ### 引号
 
@@ -248,7 +253,7 @@ modified: 2026-10-06 21:09:41
 
 ---
 
-## Shell 工具
+## Shell 命令及工具
 
 ### Jq
 
@@ -301,18 +306,31 @@ modified: 2026-10-06 21:09:41
 * [inotify+rsync+shell 脚本实现实时数据同步\_inotifywait shell脚本-CSDN博客](https://blog.csdn.net/m0_60758951/article/details/137879396)
 * [CentOS7.4安装inotify-tools及使用\_inotify-tools离线安装-CSDN博客](https://blog.csdn.net/zz_aiytag/article/details/107826135)
 
+### getopt
+
+* [shell 命令之：getopt - 法杰拉 - 博客园](https://www.cnblogs.com/hit-joseph/p/12060376.html)
+
 ---
 
-## 杂项资料
+## 模板
+
+* [pure-bash-bible-zh\_CN](https://github.com/A-BenMao/pure-bash-bible-zh_CN/blob/master/README.md)
+
+---
+
+## 杂项
 
 * [执行Shell脚本的三种方式 - 掘金](https://juejin.cn/post/7087583630314176526)
 * [Shell脚本调用另一个脚本的三种方法](https://blog.51cto.com/u_15060461/4074877)
 * [sh命令 – shell命令语言解释器 – Linux命令大全(手册)](https://www.linuxcool.com/sh)
 * [【Linux篇】Shell脚本语法 - 掘金](https://juejin.cn/post/7241020073480994872)
+* [Shell 脚本避免多次重复 source - sinferwu - 博客园](https://www.cnblogs.com/sinferwu/p/16196946.html)
 
-### getopt
+---
 
-* [shell 命令之：getopt - 法杰拉 - 博客园](https://www.cnblogs.com/hit-joseph/p/12060376.html)
+## 规范
+
+* [Shell脚本书写规范 - That's\_it - 博客园](https://www.cnblogs.com/thatsit/p/shell-jiao-ben-shu-xie-gui-fan.html)
 
 ---
 

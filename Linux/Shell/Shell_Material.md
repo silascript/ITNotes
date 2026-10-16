@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2026-10-14 10:38:08
+modified: 2026-10-15 11:06:57
 ---
 
 # Shell 资料清单
@@ -325,6 +325,7 @@ modified: 2026-10-14 10:38:08
 * [sh命令 – shell命令语言解释器 – Linux命令大全(手册)](https://www.linuxcool.com/sh)
 * [【Linux篇】Shell脚本语法 - 掘金](https://juejin.cn/post/7241020073480994872)
 * [Shell 脚本避免多次重复 source - sinferwu - 博客园](https://www.cnblogs.com/sinferwu/p/16196946.html)
+* [Linux下source命令详解() - 彬在俊 - 博客园](https://www.cnblogs.com/erlou96/p/16878399.html)
 
 ---
 

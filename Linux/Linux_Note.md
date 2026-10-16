@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2026-10-07 02:34:14
+modified: 2026-10-16 21:07:44
 ---
 
 # Linux 笔记
@@ -847,6 +847,29 @@ zip -F 烤肉500.zip --out 500.zip
 * 硬链接，以文件副本的形式存在，但不占用实际空间。
 * ***不允许给目录创建硬链接。**
 * 硬链接只有在同一个文件系统中才能创建。
+
+### dirname
+
+`dirname` 命令用于从给定的文件路径中**去除文件名部分，仅保留其所在的目录（父目录）路径**。
+
+### BASH_SOURCE
+
+`BASH_SOURCE` 是 [Bash](Shell/Shell_Note.md#Bash)内置的数组变量，用来记录当前脚本文件自身的路径和名称，即使被`source` 调用也能正确获取脚本文件位置。
+
+常用方式：
+
+* `${BASH_SOURCE}`：当前正在执行的脚本文件路径，最常用。
+* `${BASH_SOURCE[@]}`：整个调用栈中的脚本路径数组，适合调试或记录日志
+
+#### 示例
+
+1. 获取调用的脚本所在的目录路径
+
+配合 [dirname](#dirname) 及`pwd` 命令使用：
+
+```shell
+curdir_path=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+```
 
 ---
 

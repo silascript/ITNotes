@@ -5,7 +5,7 @@ tags:
   - vscode
   - vscodium
 created: 2023-01-30 11:19:11
-modified: 2026-10-09 18:58:03
+modified: 2026-10-18 03:08:32
 ---
 
 # VSCode 笔记
@@ -176,6 +176,14 @@ VSCode 中的 Settings 是分为 [全局 Settings](#vscode_config_settings_appli
 	> 
 	> 请注意是「User Settings」不是「Default Settings」。因为这里说的「全局」指的都是「用户 Settings」，而非「Default Settings」是「只读」，不能修改，它只相当于一个 Settings 的「模板」或「指南」存在，其他 Settings 都参考这个默认 Settings 来配置。
 	> 
+	> 默认 Profile 的名称是 `Default`，**首字母是大写**。
+	>> [!tip] 
+	>> 
+	>> **Profile**的名称是大小写敏感，所以用户自定义 Profile 名称可以是 `default`，与默认 Profile 不冲突。
+	>> 
+	>> ![Profile name exists](./VSCode_Note.assets/vscode_profile_name_exists.png)
+	>> 
+	> 
 	> 还要注意点击「设置」（Settings）或使用 `Open User Settings` 打开的 Settings 不一定就是全局 Settings，因为如果当前 Profile 不是 [默认Profile](#editors_vscode_config_profile_default)，这个操作，就会打开当前 Profile 的 Settings。
 	>
 	>> [!tip] 如何确定当前 Settings
@@ -297,7 +305,7 @@ Profile 是包括了 [Settings](#vscode_config_settings)、插件、snippet 等�
 > 
 > 在导入 Profile 时，在「创建 Profile」（Create Profile）时，会让你给导入后 Profile 起外名，这个名字不能是「**Default**」，因为「默认 Profile」就是这个名字，而「默认 Profile」是不支持被导入的 Profile 「覆盖」和替换的。
 > 
-> ![VSCode Default Profile Import Error](./Editors_Note.assets/vscode_default_import_error.png)
+> ![VSCode Default Profile Import Error](./VSCode_Note.assets/vscode_default_import_error.png)
 > 
 
 因为「默认 Profile」不支持外部导入「覆盖」，可以使用 [Syncing](#Syncing（VSCode%20同步配置插件）) 这个同步插件保存「默认 Profile」的 Settings。
@@ -319,7 +327,7 @@ Profile 是包括了 [Settings](#vscode_config_settings)、插件、snippet 等�
 
 创建 Profile 后，会在 `~/.config/Code/User/globalStorage/storage.json` 这个全局存储配置文件中记录相关 Profile 的信息。
 
-其中 `userDataProfiles` 这个节点最重要，这个节点记录了某 Profile 对象。这个对象由[Profile 名称](#Profile%20名称)与 [Profile location](#Profile%20location) 组成，示例：
+其中 `userDataProfiles` 这个节点最重要，这个节点记录了某 Profile 对象。这个对象由 [Profile 名称](#Profile%20名称) 与 [Profile location](#Profile%20location) 组成，示例：
 
 ```json
 "userDataProfiles": [
@@ -332,19 +340,19 @@ Profile 是包括了 [Settings](#vscode_config_settings)、插件、snippet 等�
 
 ##### Profile 名称
 
-`userataProfiles`中每个 Profile 对象中 `name` 值就是 Profile 名称。
+`userataProfiles` 中每个 Profile 对象中 `name` 值就是 Profile 名称。
 
 这个值实际就是此 Profile 的「**逻辑标识**」,用于显示及内部的逻辑区分，不可重复。
 
 ##### Profile location
 
-`userDataProfiles`中，每个 Profile 对象中 `location` 的值：，同时也是 Profile 的实际存储目录的**目录名**。
+`userDataProfiles` 中，每个 Profile 对象中 `location` 的值：，同时也是 Profile 的实际存储目录的**目录名**。
 
 这个值实际是此 Profile 的实际「**存储标识**」,用于实际存储的区分。
 
 ##### Profile 目录结构
 
-无论通过何种方式创建一个新的 Profile，都会在 `~/.config/Code/User/profiles/` 目录下新建一个目录，目录名是一串数字构成，即[Profile location](#Profile%20location)，而这个 Profile 的 Settings、插件描述文件 `extensions.json`、snippet 都在这个目录下。
+无论通过何种方式创建一个新的 Profile，都会在 `~/.config/Code/User/profiles/` 目录下新建一个目录，目录名是一串数字构成，即 [Profile location](#Profile%20location)，而这个 Profile 的 Settings、插件描述文件 `extensions.json`、snippet 都在这个目录下。
 
 如下图：
 
@@ -370,9 +378,9 @@ Profile 是包括了 [Settings](#vscode_config_settings)、插件、snippet 等�
 
 Profile 的存储目录的目录名，其实是就是创建 Profile 时生成的 [Profile location](#Profile%20location) 值。
 
-上述已知，这个值是记录在 `storage.json`中的`userDataProfiles`节点下，Profile 对象节点中`location` 属性。
+上述已知，这个值是记录在 `storage.json` 中的 `userDataProfiles` 节点下，Profile 对象节点中 `location` 属性。
 
-所以，如果要根据 Profile 名称查找其目录名，可以使用 [jq](../Linux/Shell/Shell_Note.md#jq)工具进行对`storage.json` 进行解析。
+所以，如果要根据 Profile 名称查找其目录名，可以使用 [jq](../Linux/Shell/Shell_Note.md#jq) 工具进行对 `storage.json` 进行解析。
 
 ###### 示例 1
 
@@ -391,7 +399,7 @@ jq '.userDataProfiles[] | select(.name=="Go_pro") ' ~/.config/Code/User/globalSt
 
 ###### 示例 2
 
-判断某 Profile 是否已创建，返回 `true` 或`false`，示例：
+判断某 Profile 是否已创建，返回 `true` 或 `false`，示例：
 
 > [!info] 
 > 
@@ -413,7 +421,7 @@ jq -r --arg p_name $profile_name '.userDataProfiles[] | select(.name==$p_name) |
 
 > [!important] 
 > 
-> 注意：如果除了默认 Profile 外，一个自定义的 Profile 都没有，那 `userDataProfiles`这个节点都不存在，上述的`jq` 查询会报 error 错误：
+> 注意：如果除了默认 Profile 外，一个自定义的 Profile 都没有，那 `userDataProfiles` 这个节点都不存在，上述的 `jq` 查询会报 error 错误：
 > 
 > ```shell
 > jq: error (at /home/silascript/.config/Code/User/globalStorage/storage.json:68): Cannot iterate over null (null)
@@ -427,7 +435,7 @@ jq -r --arg p_name $profile_name '.userDataProfiles[] | select(.name==$p_name) |
 > jq '.userDataProfiles' ~/.config/Code/User/globalStorage/storage.json
 > ```
 > 
-> 只返回 `true` 或`false`：
+> 只返回 `true` 或 `false`：
 > 
 > ```shell
 > jq 'has("userDataProfiles")' ~/.config/Code/User/globalStorage/storage.json
@@ -436,7 +444,7 @@ jq -r --arg p_name $profile_name '.userDataProfiles[] | select(.name==$p_name) |
 
 ###### 示例 3
 
-根本 [Profile 名称](#Profile%20名称)查询其[Profile location](#Profile%20location) 值：
+根本 [Profile 名称](#Profile%20名称) 查询其 [Profile location](#Profile%20location) 值：
 
 ```shell
 # 从本地存储中检索该名称对应的 location

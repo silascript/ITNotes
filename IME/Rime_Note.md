@@ -5,7 +5,7 @@ tags:
   - yaml
   - ime
 created: 2023-08-18 19:44:52
-modified: 2026-09-16 20:25:49
+modified: 2026-10-17 11:20:26
 ---
 
 # Rime 笔记
@@ -65,7 +65,7 @@ ibus restart
 
 ### 输入码输出
 
-如果想让输入的码输出，而非汉字输入，可以使用 `Ctrl+Return`或`Shift+Return` 实现。
+如果想让输入的码输出，而非汉字输入，可以使用 `Ctrl+Return` 或 `Shift+Return` 实现。
 
 ---
 
@@ -79,11 +79,11 @@ ibus restart
 
 配置完，要想使配置生效，就必须重新**布署**。
 
-布署后，会生成为 [方案](#方案)生成对应的`xxx.userdb` 目录。
+布署后，会生成为 [方案](#方案) 生成对应的 `xxx.userdb` 目录。
 
 > [!tip] 
 > 
-> 有时，在 [Linux](../Linux/Linux_Note.md)下重新布署后，并不生效，可以将方案对应的`xxx.userdb` 目录删除，再重新「布署」一次。
+> 有时，在 [Linux](../Linux/Linux_Note.md) 下重新布署后，并不生效，可以将方案对应的 `xxx.userdb` 目录删除，再重新「布署」一次。
 
 ### 同步
 
@@ -156,7 +156,7 @@ drwxr-xr-x     - silascript silascript 2026-09-16 12:15 ..
 
 > [!info] 
 > 
-> 可以从看到，同步子目录中，有 `xxx.userdb.txt`这个是用户字典、词频相关的同步文件，即将`xxx.userdb` 目录的导出成一个`txt` 文件。
+> 可以从看到，同步子目录中，有 `xxx.userdb.txt` 这个是用户字典、词频相关的同步文件，即将 `xxx.userdb` 目录的导出成一个 `txt` 文件。
 
 ---
 
@@ -276,7 +276,7 @@ patch:
 
 1. 新建用户词库文件
 
-新建一个 `.txt` 文件。默认常用的是`custom_phrase.txt`，但其实是可以自定义的。
+新建一个 `.txt` 文件。默认常用的是 `custom_phrase.txt`，但其实是可以自定义的。
 > [!tip] 
 > 
 > 文件名必要是纯英文、数字或下划线；另外，文件后缀必要是 `.txt`
@@ -335,7 +335,7 @@ app_opsions:
 
 在 [SublimeText](../Editors/Editors_Note.md#editors_sublime) 和 gedit 中，进行 [方案切换](#方案切换) 操作，就会使得各浏览器、目录窗口的缩放功能被激活，如果这时在浏览器或目录窗口中，滚动鼠标中键，那就不是页面的上下滚动，而且是页面的放大缩小，只有再按一次 `Ctrl+``，缩放功能才关闭。
 
-推测出现这种情况，大概是因为浏览器、目录窗口等缩放功能本就是使用是长按 `Ctrl` 键配合鼠标中键的滚动可实现缩放的，所以当 rime使用 `Ctrl+``切换方案时，有可能其中有什么bug，使得浏览器及目录窗口认为你在按着`Ctrl` 键不放，所以这时你滚动鼠标中键，就成了页面缩放了。
+推测出现这种情况，大概是因为浏览器、目录窗口等缩放功能本就是使用是长按 `Ctrl` 键配合鼠标中键的滚动可实现缩放的，所以当 rime 使用 `Ctrl+``切换方案时，有可能其中有什么bug，使得浏览器及目录窗口认为你在按着`Ctrl` 键不放，所以这时你滚动鼠标中键，就成了页面缩放了。
 
 这个情况，在 [VSCode](../Editors/VSCode_Note.md)、[Obsidian](../NoteSoft/Obsidian/Obsidian_Note.md) 中并没有发生。而且在浏览器输入框内使用 `Ctrl+`` 切换方案，也同样没有发生缩放功能被激活的状态。
 
@@ -401,6 +401,11 @@ bash rime-install plum
 * [LEOYoon-Tsaw/Cangjie6: 蒼頡檢字法](https://github.com/LEOYoon-Tsaw/Cangjie6)
 * [RIME 倉頡輸入法方案集成](https://github.com/cangjie-system/rime-cangjie-integrated)
 
+##### 速成
+
+* [GitHub - JACKCHAN000/Rime-Quick5-Setup: RIME 速成輸入法配置整合 for Windows小狼毫](https://github.com/JACKCHAN000/Rime-Quick5-Setup)
+* [GitHub - rime/rime-quick: 【速成】輸入方案 ](https://github.com/rime/rime-quick)
+
 #### 拼音
 
 * [地球拼音](https://github.com/rime/rime-terra-pinyin)
@@ -418,7 +423,7 @@ bash rime-install terra-pinyin
 
 ##### 输出拼音
 
-按 `Ctrl+Return`或`Shift+Return` 输出已編輯的拼音。因为此输入方案自身是支持声调的，所以输出的拼音字母是带声调的。
+按 `Ctrl+Return` 或 `Shift+Return` 输出已編輯的拼音。因为此输入方案自身是支持声调的，所以输出的拼音字母是带声调的。
 
 > [!tip] 
 > 
@@ -438,7 +443,7 @@ bash rime-install luna-pinyin
 
 ##### 输出拼音
 
-按 `Control+Return`或`Shift+Return` 输出已編輯的拼音，但因为这个输入方案本身不支持声调，所以输出的拼音是不带声调的，其实如果使用这个输入方案输出拼音字母，不如按`Shift` 键切成英文模式，还更方便。所以如果要使用输出带声调的拼音字母，建议使用[地球拼音](#地球拼音)。
+按 `Control+Return` 或 `Shift+Return` 输出已編輯的拼音，但因为这个输入方案本身不支持声调，所以输出的拼音是不带声调的，其实如果使用这个输入方案输出拼音字母，不如按 `Shift` 键切成英文模式，还更方便。所以如果要使用输出带声调的拼音字母，建议使用 [地球拼音](#地球拼音)。
 
 ### 日语输入方案
 
@@ -461,7 +466,7 @@ bash rime-install ipa
 * x-sampa
 * 雲龍 IPA
 
-启用输入方案，只需在 `default.custom.yaml`，添加相应的`schema` 项就好了：
+启用输入方案，只需在 `default.custom.yaml`，添加相应的 `schema` 项就好了：
 
 ```yaml
 patch:

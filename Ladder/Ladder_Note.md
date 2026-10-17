@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2026-10-14 00:57:45
+modified: 2026-10-17 11:52:51
 ---
 
 # 梯子笔记
@@ -1259,9 +1259,13 @@ rules+:
 
 ```yaml
 +rules:
- - DOMAIN-KEYWORD,bangnixia,DIRECT
- - DOMAIN-KEYWORD,e-daixia,DIRECT
- - DOMAIN-KEYWORD,langou123,DIRECT
+  - DOMAIN-KEYWORD,bangnixia,DIRECT
+  - DOMAIN-KEYWORD,e-daixia,DIRECT
+  - DOMAIN-KEYWORD,langou123,DIRECT
+  - DOMAIN-KEYWORD,paragames233,DIRECT
+  - DOMAIN-KEYWORD,jyut,DIRECT
+  - DOMAIN-KEYWORD,jd,DIRECT
+  - DOMAIN-KEYWORD,zdic,DIRECT
 ```
 
 > [!info] 

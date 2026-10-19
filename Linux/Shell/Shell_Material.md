@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-08-11 01:57:31
-modified: 2026-10-15 11:06:57
+modified: 2026-10-18 20:11:52
 ---
 
 # Shell 资料清单
@@ -309,6 +309,12 @@ modified: 2026-10-15 11:06:57
 ### getopt
 
 * [shell 命令之：getopt - 法杰拉 - 博客园](https://www.cnblogs.com/hit-joseph/p/12060376.html)
+
+---
+
+## 开发工具
+
+* [Shell脚本高效开发工具盘点：五大IDE效率对比解析](https://my.oschina.net/u/9670486/blog/19001116)
 
 ---
 

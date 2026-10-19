@@ -3,10 +3,11 @@ aliases: []
 tags:
   - editor
   - vim
+  - neovim
   - video
   - list
 created: 2023-08-18 19:44:52
-modified: 2025-08-31 18:00:46
+modified: 2026-10-18 11:10:01
 ---
 
 # vim 视频清单
@@ -20,6 +21,7 @@ modified: 2025-08-31 18:00:46
 * [【Vim】可能是B站最系统的Vim教程](https://www.bilibili.com/video/BV1s4421A7he)
 * [玩转Vim-从放弃到入门](https://www.bilibili.com/video/BV1NG4y1p74h)
 * [Vim核心基础: 光标移动](https://www.bilibili.com/video/BV1F14y1j7f4)
+* [Vim大师班 Vim Masterclass](https://www.bilibili.com/video/BV1vQe66bEbc)
 
 ### neovim
 

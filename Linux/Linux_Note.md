@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2026-10-16 21:07:44
+modified: 2026-10-19 10:03:01
 ---
 
 # Linux 笔记
@@ -187,9 +187,9 @@ lsb 其他选项和参数：
 
 `xargs`：参数转换器，用于从标准输入构建和执行命令。它接受一个命令的输出，并将其作为参数提供给另一个命令。
 
-`xargs`是为了使一些不支持 [标准输入](#标准输入输出)作为参数的命令，如`echo`，能够接收标准输入而存在的一个「转换器」，即将[标准输入输出](#标准输入输出) 的数据转换为普通参数，让那些只支持参数的命令能够接收。
+`xargs` 是为了使一些不支持 [标准输入](#标准输入输出) 作为参数的命令，如 `echo`，能够接收标准输入而存在的一个「转换器」，即将 [标准输入输出](#标准输入输出) 的数据转换为普通参数，让那些只支持参数的命令能够接收。
 
-`xargs`与 [管道](#管道) 简单对比示例：
+`xargs` 与 [管道](#管道) 简单对比示例：
 
 ```shell
 $ echo hello world | echo                                                                                  
@@ -261,7 +261,7 @@ chown -R 用户名:用户组名 文件名
 > 
 > Linux 内核其实只认数字：`UID`（用户 ID）和 `GID`（组 ID）。用户名只是给人类看的昵称而已。
 
-`id`命令能查看当前系统 `UID` 及`GID`。
+`id` 命令能查看当前系统 `UID` 及 `GID`。
 
 示例：
 
@@ -275,7 +275,7 @@ uid=1000(silascript) gid=1000(silascript) 组=1000(silascript),90(network),98(po
 * `-u`：显示用户 ID
 * `-g` 或 `--group`：显示用户所属组的 ID
 * `-G` 或 `--goups`：显示用户所属附加组的 ID
-* `-n`或 `--name`：显示用户、所属组及附加组的名称，不能单独使用，需跟`-u`、`-g` 等一起使用
+* `-n` 或 `--name`：显示用户、所属组及附加组的名称，不能单独使用，需跟 `-u`、`-g` 等一起使用
 ```shell
 $ id -un  
 silascript
@@ -822,7 +822,7 @@ zip -F 烤肉500.zip --out 500.zip
 
 需要在不同目录，用到相同的文件时，不需要在每一个需要的目录下，都放一个相同的文件，只需要在某个固定的目录，放上该文件，在其他目录下，用 `ln` 命令链接它就可以了，这种方式不必重复占用磁盘空间。
 
-创建一个链接使用 `ln` 命令。语法：`ln from to`，即`ln 源文件或目录 目标文件或目录`
+创建一个链接使用 `ln` 命令。语法：`ln from to`，即 `ln 源文件或目录 目标文件或目录`
 
 链接分为两种：
 
@@ -831,7 +831,7 @@ zip -F 烤肉500.zip --out 500.zip
 
 #### 软链接
 
-软链接也称为「符号链接」，命令就加个 `s` 参数，即`ln -s`。
+软链接也称为「符号链接」，命令就加个 `s` 参数，即 `ln -s`。
 
 软链接特点：
 
@@ -854,7 +854,7 @@ zip -F 烤肉500.zip --out 500.zip
 
 ### BASH_SOURCE
 
-`BASH_SOURCE` 是 [Bash](Shell/Shell_Note.md#Bash)内置的数组变量，用来记录当前脚本文件自身的路径和名称，即使被`source` 调用也能正确获取脚本文件位置。
+`BASH_SOURCE` 是 [Bash](Shell/Shell_Note.md#Bash) 内置的数组变量，用来记录当前脚本文件自身的路径和名称，即使被 `source` 调用也能正确获取脚本文件位置。
 
 常用方式：
 
@@ -865,7 +865,7 @@ zip -F 烤肉500.zip --out 500.zip
 
 1. 获取调用的脚本所在的目录路径
 
-配合 [dirname](#dirname) 及`pwd` 命令使用：
+配合 [dirname](#dirname) 及 `pwd` 命令使用：
 
 ```shell
 curdir_path=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
@@ -2044,6 +2044,35 @@ Exec=/opt/VSCodium/bin/codium --new-window %F
 Icon=/opt/VSCodium/resources/app/resources/linux/code.png
 ```
 
+[SublimeText](../Editors/Editors_Note.md#editors_sublime)：
+
+```shell
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Sublime Text
+GenericName=Text Editor
+Comment=Sophisticated text editor for code, markup and prose
+Exec=/opt/sublime_text/sublime_text %F
+Terminal=false
+MimeType=text/plain;
+Icon=sublime-text
+Categories=TextEditor;Development;
+StartupNotify=true
+Actions=new-window;new-file;
+StartupWMClass=sublime_text
+
+[Desktop Action new-window]
+Name=New Window
+Exec=/opt/sublime_text/sublime_text --launch-or-new-window
+OnlyShowIn=Unity;
+
+[Desktop Action new-file]
+Name=New File
+Exec=/opt/sublime_text/sublime_text --command new_file
+OnlyShowIn=Unity;
+```
+
 [Steam++](../Tools/Tools_Note.md#Steam++)（WattToolkit）：
 
 ```shell
@@ -2329,7 +2358,7 @@ Linux 命令行剪贴板工具。
 
 #### wl-clipboard
 
-[Wayland](#Wayland)环境：用 `wl-clipboard`包，其专为 Wayland 设计，安全性更好。其中包括 `wl-copy` 和`wl-paste` 两块模块。
+[Wayland](#Wayland) 环境：用 `wl-clipboard` 包，其专为 Wayland 设计，安全性更好。其中包括 `wl-copy` 和 `wl-paste` 两块模块。
 
 #### xclip
 

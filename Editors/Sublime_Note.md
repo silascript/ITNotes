@@ -5,7 +5,7 @@ tags:
   - sublimetext
   - editor
 created: 2024-07-09 18:50:20
-modified: 2024-09-18 12:55:11
+modified: 2026-10-19 11:20:11
 ---
 
 # Sublime 笔记
@@ -16,13 +16,40 @@ modified: 2024-09-18 12:55:11
 
 [Sublime 4](https://www.sublimetext.com/blog/articles/sublime-text-4) 是 SublimeText 最新版本。
 
+## Package Control
+
+在 [Linux](../Linux/Linux_Note.md) 下，Package Control 3.4.1 后，即 Sublime4 版本升级到 4200 后，需要 `OpenSSL` 1.1.1 库，所以查看下当前系统是否有装这个库。如果没装，装下：
+
+```shell
+yay -S archlinuxcn/openssl-1.1
+```
+> [!info] 
+> 
+> 注意，这个 `OpenSSL` 1.1.1 库在包管理中是区别于 `OpenSSL`，估计是老的库。所以一般是有单独的包，如 `openssl-1.1`。
+> 
+> 如我系统中就分别装了两个「OpenSSL」：
+> 
+> ```shell
+> archlinuxcn/openssl-1.1 1.1.1.w-14 (1.8 MiB 5.3 MiB) (已安装)
+> core/openssl 3.6.4-1 (5.5 MiB 12.2 MiB) (已安装)
+> ```
+
+> [!important] 
+> 
+> 如果要手动下载 Package Control 安装包，有个注意点就是 [https://packagecontrol.io](https://packagecontrol.io) 上的 Package Control 的包是旧的。
+>
+> 
+> 应该到 [https://github.com/sublimehq/package_control](https://github.com/sublimehq/package_control) 上去下最新的包。
+> 
+> 或者直接使用这个下载地址：[https://download.sublimetext.com/Package%20Control.sublime-package](https://download.sublimetext.com/Package%20Control.sublime-package)
+
 ## <span id="sublime_dir">目录结构</span>
 
 Sublime 所有设置都存在在 `~/.config/sublime-text/Packages/User/` 目录下。
 
 Sublime 全局设置：`~/.config/sublime-text/Packages/User/Preferences.sublime-settings`
 
-Pakage Control 设置： `.config/sublime-text/Packages/User/Package\ Control.sublime-settings`
+Package Control 设置： `.config/sublime-text/Packages/User/Package\ Control.sublime-settings`
 
 其他插件设置都放在： `.config/sublime-text/Packages/`
 
@@ -91,7 +118,7 @@ SublimeText 基本设置：
 2. 通过在 SublimeText 中，使用 `Ctrl+Shift+P`，呼出命令面板，敲入 `pacakge`，就能列出插件相关的命令。
 > [!tip]
 > 安装插件时，如果全新 sublime，得先装 `Package Control` 这个插件，这是安装其他插件的基础。
-> 安装 `Package Control` 插件可以通过 `Ctrl+Shift+P` 命令面板中安装，与可以下载 [Package Control  包](https://packagecontrol.io/Package%20Control.sublime-package) ，放到 `~/.config/sublime-text/Installed\ Packages` 目录下。
+> 安装 `Package Control` 插件可以通过 `Ctrl+Shift+P` 命令面板中安装，也可以下载 [Package Control  包](https://packagecontrol.io/Package%20Control.sublime-package) ，放到 `~/.config/sublime-text/Installed\ Packages` 目录下。
 > 
 > 命令很简单，不做过多介绍了，不非就是 `install` 安装插件，`upgrade` 升级插件，`remove` 卸载插件，`list` 列出插件。  
 

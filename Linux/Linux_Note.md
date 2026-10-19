@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2026-10-19 10:03:01
+modified: 2026-10-19 12:39:58
 ---
 
 # Linux 笔记
@@ -851,6 +851,49 @@ zip -F 烤肉500.zip --out 500.zip
 ### dirname
 
 `dirname` 命令用于从给定的文件路径中**去除文件名部分，仅保留其所在的目录（父目录）路径**。
+
+### basename
+
+`basename` 命令用于获取路径中的文件名或路径名，显示最后的目录名或文件名。
+
+示例 1：
+
+```shell
+$ basename mysoft/editors/VSCode/VSCodium-linux-x64-1.116.02821.tar.gz 
+VSCodium-linux-x64-1.116.02821.tar.gz
+```
+
+#### 去除后缀
+
+去掉后缀名有两种方式：
+
+1. 使用第二参数指定要去除的后缀
+
+语法：`basename 文件路径 要去除后缀`
+
+```shell
+$ basename mysoft/editors/VSCode/VSCodium-linux-x64-1.116.02821.tar.gz .gz
+VSCodium-linux-x64-1.116.02821.tar
+```
+
+```shell
+$ basename mysoft/editors/VSCode/VSCodium-linux-x64-1.116.02821.tar.gz .tar.gz
+VSCodium-linux-x64-1.116.02821
+```
+
+2. 使用 `-s` 指定要去除的后缀
+
+语法：`basename -s 要去除后缀 文件路径`
+
+```shell
+$ basename -s .gz mysoft/editors/VSCode/VSCodium-linux-x64-1.116.02821.tar.gz
+VSCodium-linux-x64-1.116.02821.tar
+```
+
+```shell
+$ basename -s .tar.gz mysoft/editors/VSCode/VSCodium-linux-x64-1.116.02821.tar.gz
+VSCodium-linux-x64-1.116.02821
+```
 
 ### BASH_SOURCE
 
@@ -2044,7 +2087,7 @@ Exec=/opt/VSCodium/bin/codium --new-window %F
 Icon=/opt/VSCodium/resources/app/resources/linux/code.png
 ```
 
-[SublimeText](../Editors/Editors_Note.md#editors_sublime)：
+[Sublime](../Editors/Sublime_Note.md)：
 
 ```shell
 [Desktop Entry]

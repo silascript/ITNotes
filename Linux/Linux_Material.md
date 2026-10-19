@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-10 03:06:48
-modified: 2026-10-07 01:47:24
+modified: 2026-10-19 12:16:48
 ---
 
 # Linux 资料清单
@@ -20,6 +20,11 @@ modified: 2026-10-07 01:47:24
 ## 目录文件
 
 * [shell 查看文件夹/文件大小、目录/文件数量\_shell 文件夹大小-CSDN博客](https://blog.csdn.net/qq_27003337/article/details/108282745)
+
+### dirname 及 basename
+
+* [dirname与basename的用法 - 开始认识 - 博客园](https://www.cnblogs.com/kaishirenshi/p/12761249.html)
+* [Linux—basename（从文件名中剥离目录和后缀）命令详解（一天一个命令）](https://zhuanlan.zhihu.com/p/583947767)
 
 ## 查看信息
 

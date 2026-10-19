@@ -5,7 +5,7 @@ tags:
   - sublimetext
   - editor
 created: 2024-07-09 18:50:20
-modified: 2026-10-19 11:20:11
+modified: 2026-10-19 12:58:51
 ---
 
 # Sublime 笔记
@@ -17,6 +17,22 @@ modified: 2026-10-19 11:20:11
 [Sublime 4](https://www.sublimetext.com/blog/articles/sublime-text-4) 是 SublimeText 最新版本。
 
 ## Package Control
+
+### 安装
+
+Sublime Text 菜单下 `Tools` 菜单中有 `Install Package Control` 选项，点击即可开始安装。
+
+或者使用 `Ctrl+Shift+P`，呼出命令面板，找到 `Install Package Control`，点击安装。
+
+#### 手动安装
+
+##### 方式 1
+
+打开 Sublime Text 终端，粘入以下代码：
+
+```shell
+from urllib.request import urlretrieve; urlretrieve(url="https://download.sublimetext.com/Package%20Control.sublime-package", filename=sublime.installed_packages_path() + '/Package Control.sublime-package')
+```
 
 在 [Linux](../Linux/Linux_Note.md) 下，Package Control 3.4.1 后，即 Sublime4 版本升级到 4200 后，需要 `OpenSSL` 1.1.1 库，所以查看下当前系统是否有装这个库。如果没装，装下：
 
@@ -33,6 +49,14 @@ yay -S archlinuxcn/openssl-1.1
 > archlinuxcn/openssl-1.1 1.1.1.w-14 (1.8 MiB 5.3 MiB) (已安装)
 > core/openssl 3.6.4-1 (5.5 MiB 12.2 MiB) (已安装)
 > ```
+
+#### 方式 2
+
+直接下载 Package Control 包，即 `Package Contron.sublime-package` 这个文件，放到 `~/.config/sublime-text/Installed Packages` 目录下，重启 Sublime Text，正常它就会自动安装。安装成功会在 `~/.config/sublime-text/Packages/User` 目录下，生成相应文件：
+
+* `Package Control.user-ca-bundle`
+* `Package Control.sublime-settings`
+* `Preferences.sublime-settings`
 
 > [!important] 
 > 

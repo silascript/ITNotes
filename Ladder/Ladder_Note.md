@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2026-10-20 11:28:00
+modified: 2026-10-20 11:29:15
 ---
 
 # 梯子笔记
@@ -1344,6 +1344,8 @@ rule-providers:
 
 * `rule-providers`：规则提供者，下面可以定义多个规则实体
 * `+rules`：与之前的的一样，设置启用哪个规则实体及行为
+
+详细说明可以参考：[Rule Providers 规则集 \| Clash 知识库](https://clash.wiki/premium/rule-providers.html)
 
 > [!tip] 
 > 

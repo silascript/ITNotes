@@ -5,7 +5,7 @@ tags:
   - sublimetext
   - editor
 created: 2024-07-09 18:50:20
-modified: 2026-10-19 12:58:51
+modified: 2026-10-20 19:17:07
 ---
 
 # Sublime 笔记
@@ -195,6 +195,23 @@ SublimeText 基本设置：
 
 ![FileIcons Shotcut](https://raw.githubusercontent.com/braver/FileIcons/master/icons.png)
 
+#### catppuccin-sublime-icons
+
+[catppuccin-sublime-icons](https://packages.sublimetext.com/packages/Icons%20-%20Catppuccin)
+[![catppuccin-sublime-icons Repo](https://img.shields.io/github/stars/predragnikolic/catppuccin-sublime-icons
+)](https://github.com/predragnikolic/catppuccin-sublime-icons) 同样也是一个文件图标插件。
+
+![catppuccin sublime icons shotcut](https://raw.githubusercontent.com/predragnikolic/catppuccin-sublime-icons/main/assets/example.png)
+
+启用个插件：
+
+```json
+// Preferences.sublime-settings
+{
+    "file_icon_theme": "Catppuccin Mocha.sublime-file-icons"
+}
+```
+
 #### <span id="sublime_plugins_beautify_theme">Theme</span>
 
 ##### <span id="sublime_plugins_beautify_theme_gruvbox">Gruvbox</span>
@@ -202,7 +219,7 @@ SublimeText 基本设置：
 [Gruvbox](https://packagecontrol.io/packages/gruvbox) [![Gruvbox theme Repo](https://img.shields.io/github/stars/morhetz/gruvbox?style=social
 )](https://github.com/morhetz/gruvbox) 是一个带有护眼配色的 Theme。这货之前是来自 [Vim](../vim/Vim_Note.md) 或 Emac 的。
 
-![Gruvbox Shotcut 1](https://camo.githubusercontent.com/a05028ef4dae5865098c508fc9f686b211f510198f07e6a5636734dbac618b30/687474703a2f2f692e696d6775722e636f6d2f476b496c38466e2e706e67)
+![Gruvbox Shotcut 1](https://camo.githubusercontent.com/05a4ecb5ad6e20bfce3fe1388c198b00878bbd66e94ebb602a15c7dbe82e86cd/687474703a2f2f692e696d6775722e636f6d2f3857556b7161352e706e67)
 
 这个 Theme 特点：
 
@@ -275,7 +292,7 @@ SublimeText 基本设置：
 [Theme - One](https://packagecontrol.io/packages/Theme%20-%20One)  [![One Repo](https://img.shields.io/github/stars/AmjadHD/sublime_one_theme?style=social
 )](https://github.com/AmjadHD/sublime_one_theme) 这算是比较新的 Theme 了 -- 毕竟介绍里写着支持 Sublime 4，可见其新鲜程度。
 
-![Theme One Shotcut](https://github.com/AmjadHD/sublime_one_theme/blob/main/one.png)
+![Theme One Shotcut](https://github.com/AmjadHD/sublime_one_theme/raw/main/one.png)
 
 但这个主题的部分 Icon 与 [A File Icon](#A%20File%20Icon) 插件冲突。
 

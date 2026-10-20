@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2026-10-17 11:52:51
+modified: 2026-10-20 11:28:00
 ---
 
 # 梯子笔记
@@ -1279,6 +1279,75 @@ rules+:
 >> 相关视频：
 >> 
 >> * [ Mihomo Party 覆写功能教程 - YouTube](https://www.youtube.com/watch?v=iQOuXDSW1l8)
+
+###### 规则集
+
+**Rule Providers** 规则集，它允许用户从外部源加载规则，从而使配置更加简洁。
+
+```yaml
+# https://clashparty.org/docs/guide/override/yaml
+
+# https://github.com/Loyalsoldier/clash-rules
+
+rule-providers:
+  reject:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt"
+    path: ./ruleset/reject.yaml
+    interval: 86400
+  
+  direct:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/direct.txt"
+    path: ./ruleset/direct.yaml
+    interval: 86400
+
+  tld-not-cn:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt"
+    path: ./ruleset/tld-not-cn.yaml
+    interval: 86400
+
+  cncidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/cncidr.txt"
+    path: ./ruleset/cncidr.yaml
+    interval: 86400
+
+  lancidr:
+    type: http
+    behavior: ipcidr
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/lancidr.txt"
+    path: ./ruleset/lancidr.yaml
+    interval: 86400
+
+  private:
+    type: http
+    behavior: domain
+    url: "https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt"
+    path: ./ruleset/private.yaml
+    interval: 86400
+
++rules:
+  - "RULE-SET,reject,REJECT"
+  - "RULE-SET,direct,DIRECT"
+  - "RULE-SET,tld-not-cn,DIRECT"
+  - "RULE-SET,cncidr,DIRECT"
+  - "RULE-SET,lancidr,DIRECT"
+  - "RULE-SET,private,DIRECT"
+
+```
+
+* `rule-providers`：规则提供者，下面可以定义多个规则实体
+* `+rules`：与之前的的一样，设置启用哪个规则实体及行为
+
+> [!tip] 
+> 
+> github 上不少的 Clash 的 [规则集的整理](Ladder_Material.md#规则库)，可以拿来改改就能用了。
 
 #### 问题
 

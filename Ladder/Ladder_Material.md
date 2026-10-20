@@ -14,7 +14,7 @@ tags:
   - 机场
   - list
 created: 2024-07-30 23:20:26
-modified: 2026-06-27 18:33:25
+modified: 2026-10-20 11:25:56
 ---
 
 # 梯子资料
@@ -63,6 +63,19 @@ modified: 2026-06-27 18:33:25
 ### 其他相关
 
 * [pac 使用 GFWList 和 IP 地址双重判断](https://github.com/iBug/pac)
+
+---
+
+## 规则相关
+
+### 文档
+
+* [Rules 规则 \| Clash 知识库](https://clash.wiki/configuration/rules.html)
+
+### 规则库
+
+* [GitHub - Loyalsoldier/clash-rules: 🦄️ 🎃 👻 Clash Premium 规则集(RULE-SET)](https://github.com/Loyalsoldier/clash-rules)
+* [GitHub - UykiZhao/Clash-Party-Override-Rule: Clash Party / Mihomo 覆盖规则](https://github.com/UykiZhao/Clash-Party-Override-Rule)
 
 ---
 

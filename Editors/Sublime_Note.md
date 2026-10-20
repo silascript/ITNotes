@@ -5,7 +5,7 @@ tags:
   - sublimetext
   - editor
 created: 2024-07-09 18:50:20
-modified: 2026-10-20 19:17:07
+modified: 2026-10-21 03:08:47
 ---
 
 # Sublime 笔记
@@ -407,7 +407,13 @@ sublime 的 LSP 的本地 Server 是装在 `~/.cache/sublime-text/Package Storag
 
 #### 文件监视器
 
-[LSP-file-watcher-chokidar](https://github.com/sublimelsp/LSP-file-watcher-chokidar) 这个插件，能配合 [LSP](#LSP%20相关) 使用， 监视文件变化。
+##### LSP-file-watcher-chokidar
+
+[LSP-file-watcher-chokidar](https://github.com/sublimelsp/LSP-file-watcher-chokidar) 这个插件，能配合 [LSP](#LSP%20相关) 使用， 监视文件变化。这插件是由 [NodeJS](../Node/NodeJS_Note.md) 实现，所以得依赖 NodeJS 的 Runtime。
+
+##### LSP-file-watcher-rust
+
+[LSP-file-watcher-rust](https://packagecontrol.io/packages/LSP-file-watcher-rust) 这插件，是用 [Rust](../Rust/Rust_Note.md) 实现的 [LSP-file-watcher-chokidar](#LSP-file-watcher-chokidar)，不需要依赖 NodeJS 的 Runtime。
 
 #### 常用 LSP 插件列表
 

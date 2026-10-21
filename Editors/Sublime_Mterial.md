@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2024-09-18 12:53:57
-modified: 2026-10-19 20:21:25
+modified: 2026-10-21 10:28:36
 ---
 
 # SublimeText 资料清单
@@ -14,6 +14,7 @@ modified: 2026-10-19 20:21:25
 ---
 
 * [批量安装sublime插件\_install package: expand selection to quoted-CSDN博客](https://blog.csdn.net/zhezhebie/article/details/90756857)
+* [如何使用 Sublime Text 4 优雅地写C++？](https://zhuanlan.zhihu.com/p/586687010)
 
 ## crack
 

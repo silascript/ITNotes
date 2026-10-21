@@ -5,7 +5,7 @@ tags:
   - sublimetext
   - editor
 created: 2024-07-09 18:50:20
-modified: 2026-10-21 03:08:47
+modified: 2026-10-21 11:27:58
 ---
 
 # Sublime 笔记
@@ -521,7 +521,23 @@ pip install ruff-lsp
 > 
 > 可以使用 pipx 安装，这样不会「污染」pip。而如果是在 [conda](../Python/Python_Note.md#python_conda) 中使用 [pipx](../Python/Python_Note.md#python_pipx) 安装，那就更好了，因为在 conda 中的 pipx 是能够在各虚拟环境中共享的，因为无论你在 conda 中哪个虚拟环境中使用 pipx 安装程序，它们都会在 `.local/bin` 目录建立「软链接」！
 
-##### LSP-CSS
+### LSP-jdtls
+
+[LSP-jdtls](https://github.com/sublimelsp/LSP-jdtls) 是 [Java_Note](../Java/Java_Note.md) 的 LSP 插件。
+
+如果要运行 `lsp_jdtls_run_test` 命令，得装上 [Debugger](#Debugger) 插件。
+
+#### LSP-json
+
+正常 `json` 文件，是不支持注释的，所以默认情况，`LSP-json` 对于 `//` 注释会显示红色波浪线的错误显示，如果要忽略 json 文件的注释检查，可以作以下设置：
+
+```json
+	"settings": {
+		"json.validate.comments": "ignore"
+	}
+```
+
+#### LSP-CSS
 
 [LSP-CSS](https://github.com/sublimelsp/LSP-css) 配置：
 
@@ -557,6 +573,26 @@ Sublime 要使用 markmark 这个 LSP，是没有对应的特定 LSClient，而�
 
 ---
 
+### Debug 插件
+
+#### Debugger
+
+[Debugger](https://github.com/daveleroy/SublimeDebugger) 是 Sublime 的一个 Debug 插件。
+
+此插件可以配合 [LSP](#sublime_plugins_lsp) 插件一起使用。
+
+使用这个插件还得装 [Terminus](#Terminus) 插件。
+
+在 `Debugger.sublime.settings` 配置文件中加入相关的 LSP 插件，如：
+
+```json
+{
+    "installed_packages": ["LSP", "LSP-jdtls"],
+}
+```
+
+---
+
 ### <span id="sublime_plugins_terminal">终端插件</span>
 
 #### Terminus
@@ -579,7 +615,7 @@ Sublime 要使用 markmark 这个 LSP，是没有对应的特定 LSClient，而�
 > 
 > 如果要使用那些 Theme，最好把 256 色开启，不然有可能有部分 Theme 中的一些字符因为颜色显示出问题。
 
-##### Terminal
+#### Terminal
 
 [Terminal](https://packagecontrol.io/packages/Terminal)  [![Terminal Repo](https://img.shields.io/github/stars/SublimeText/Terminal?style=social
 )](https://github.com/SublimeText/Terminal) 这也是一个终端插件，与 [Terminus](#Terminus) 不同的是，另开一个窗口调出当前操作系统默认终端。可以说这两个终端插件各有千秋。

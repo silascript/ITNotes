@@ -9,7 +9,7 @@ tags:
   - tutorial
   - list
 created: 2024-09-16 20:42:11
-modified: 2024-09-16 20:48:50
+modified: 2026-10-22 10:29:47
 ---
 
 # MyBatis 视频清单
@@ -17,6 +17,7 @@ modified: 2024-09-16 20:48:50
 ---
 
 * [【Java教程】MyBatis&MyBatisPlus全套视频教程（93集全）\_哔哩哔哩\_bilibili](https://www.bilibili.com/video/BV1gFp7e7EsT)
+* [MyBatis(2026)从入门到精通](https://www.bilibili.com/video/BV1R1w7zaEQ9)
 
 ---
 

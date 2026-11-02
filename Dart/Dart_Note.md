@@ -2,9 +2,10 @@
 aliases: []
 tags:
   - dart
+  - flutter
   - PL
 created: 2025-09-19 01:54:16
-modified: 2025-10-20 21:57:49
+modified: 2026-11-02 11:21:54
 ---
 
 # Dart 笔记
@@ -13,7 +14,7 @@ modified: 2025-10-20 21:57:49
 
 ## 简介
 
-[Dart](https://dart.dev) 是由 [Google](google.com) 开发的的下一代 Web 开发语言。
+[Dart](https://dart.dev) 是由 [Google](https://www.google.com) 开发的的下一代 Web 开发语言。
 
 > [!tip] 
 >  
@@ -41,5 +42,6 @@ modified: 2025-10-20 21:57:49
 
 ## 相关笔记
 
+* [Flutter 笔记](Flutter_Note.md)
 * [Flutter及Dart 资料清单](Flutter_Dart_Material.md)
 * [Flutter及Dart 视频清单](Flutter_Dart_Videos.md)

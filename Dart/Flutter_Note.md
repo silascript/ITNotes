@@ -4,7 +4,7 @@ tags:
   - flutter
   - dart
 created: 2025-09-19 02:05:06
-modified: 2026-04-28 21:53:08
+modified: 2026-11-02 11:47:54
 ---
 
 # Flutter 笔记
@@ -306,6 +306,31 @@ export PATH=$PATH:~/fvm/default/bin
 # dart sdk
 export PATH=$PATH:~/fvm/default/bin/cache/dart-sdk/bin
 export PATH=$PATH:~/.pub-cache/bin
+```
+
+###### 版本切换
+
+上面已经提到过的，使用 `fvm list` 命令可以查看当前版本情况。
+
+> [!important] 
+> 
+> 注意 `global` 和 `local` 两个是否已经「点亮」，如果没有，就是没有设置，只是把相应的版本下载下来而已。
+
+* `fvm global 版本号`：设置全局版本
+* `fvm use 版本号`：设置当前版本
+
+可以查看 `.fvm` 目录，其中有个 [软链接](../Linux/Linux_Note.md#软链接)`flutter_sdk`，看它指到哪个版本。
+
+```shell
+$ ll .fvm/           
+Permissions Size User       Group      Date Modified    Name
+drwxr-xr-x     - silascript silascript 2026-11-02 11:42 .
+drwx------     - silascript silascript 2026-11-01 10:02 ..
+lrwxrwxrwx     - silascript silascript 2026-11-02 11:42 flutter_sdk -> /home/silascript/fvm/versions/3.47.9
+.rw-r--r--    35 silascript silascript 2026-11-02 11:42 fvm_config.json
+.rw-r--r--     6 silascript silascript 2026-11-02 11:42 release
+.rw-r--r--     6 silascript silascript 2026-11-02 11:42 version
+drwxr-xr-x     - silascript silascript 2026-11-02 11:42 versions
 ```
 
 #### puro

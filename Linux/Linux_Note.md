@@ -10,7 +10,7 @@ tags:
   - shell
   - network
 created: 2023-08-18 19:44:52
-modified: 2026-10-19 12:39:58
+modified: 2026-11-03 10:44:44
 ---
 
 # Linux 笔记
@@ -2180,6 +2180,61 @@ grub 模板：`/etc/default/grub`
 制成配置文件：`grub-mkconfig -o /boot/grub/grub.cfg`
 
 重启电脑看效果。
+
+### os-prober
+
+`ob-prober` 这是用来探测可用操作系统的，用于生成启动项。
+
+> [!info] 
+> 
+> GRUB 2.16 还修改了 `30_os-prober` 脚本的行为：在支持 EFI 和 Legacy BIOS 双模式的 x86 系统上，`os-prober` 会**同时报告 EFI 和 BIOS 两种引导方式下的启动项**。
+
+###  efibootnext
+
+GRUB 2.16 新增了一个 **`efibootnext` 模块**，专门用于处理一次性 EFI 启动项。该模块依据 ESP 分区的 PARTUUID 和 vendor directory 来识别可用的 EFI 启动项。换言之，它的作用类似于主动探测。
+
+#### 禁用 BootNext
+
+如果不想 BootNext 出现，可以禁用它。
+
+1. 编辑 `/etc/default/grub`，在文件末加入以下设置：
+
+```shell
+GRUB_DISABLE_BOOTNEXT=true
+```
+
+2. 重新生成 grub 配置：
+
+```shell
+# Debian / Ubuntu / Arch
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+# 或者
+sudo update-grub
+```
+
+当然，也可以用 [efibootmgr](#efibootmgr) 命令删除相应的启动项。
+
+### efibootmgr
+
+`efibootmgr` 这个工具是用来管理 efi 启动项的。
+
+列出当前启动项：`efibootmgr`
+
+```shell
+BootCurrent: 0004
+Timeout: 1 seconds
+BootOrder: 0004,0000,0005
+Boot0000* Windows Boot Manager	HD(1,GPT,0f277ccc-813d-42c0-9153-cff7444db426,0x800,0x200000)/\EFI\Microsoft\Boot\bootmgfw.efi57494e444f5753000100000088000000780000004200430044004f0042004a004500430054003d007b00390064006500610038003600320063002d0035006300640064002d0034006500370030002d0061006300630031002d006600330032006200330034003400640034003700390035007d000000ffff0100000010000000040000007fff0400
+Boot0004* UEFI OS	HD(1,GPT,db2cd1d2-2aec-4084-8b8b-f308e549eb6a,0x800,0x3d0000)/\EFI\BOOT\BOOTX64.EFI
+Boot0005* Hard Drive 	BBS(HD,,0x0)414d474f414d4e4fb3000000010000006d00530061006d00730075006e006700200053005300440020003800360030002000450056004f0020003500300030004700420000000501090002000000007fff040002010c00d041030a0000000001010600021f03010800010000007fff040001043e00ef47642dc93ba041ac194d51d01b4ce63300530033005a0042004e004d00300035003500350038003300320020005200200020002000200000007fff0400414d424f414d4e4fa9000000010000006d005700440043002000570044003100300045005a00450058002d003000380057004e0034004100300000000501090002000000007fff040002010c00d041030a0000000001010600051f03010800000000007fff040001043e00ef47642dc93ba041ac194d51d01b4ce62000200020002000570020002d00440043005700360043003100590048005000370031005800370000007fff0400414d424f
+```
+
+`Boot0004` 这是启动项的编号 -- 后面的 `*` 不算。
+
+#### 删除启动项
+
+`sudo efibootmgr -b 启动项编号 -B`
 
 ## 常用选项
 

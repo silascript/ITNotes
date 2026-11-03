@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2024-08-10 03:06:48
-modified: 2026-10-19 12:16:48
+modified: 2026-11-03 10:31:29
 ---
 
 # Linux 资料清单
@@ -133,6 +133,17 @@ modified: 2026-10-19 12:16:48
 
 * [5K+ Star！终端命令行版文件管理器 - 知乎](https://zhuanlan.zhihu.com/p/677949849#:~:text=%E8%BF%99%E6%A0%B7%E6%AF%8F%E6%AC%A1%E4%BD%BF%E7%94%A8%E6%97%B6%E5%8F%AA,%E3%80%8D%E5%91%BD%E4%BB%A4%E5%8F%AF%E4%BB%A5%E9%80%80%E5%87%BA%E3%80%82)
 * [ Yazi Doc Quick Start](https://yazi-rs.github.io/docs/quick-start)
+
+---
+
+## 启动相关
+
+### efi
+
+* [Linux下使用efibootmgr删除UEFI多余启动项](https://zhuanlan.zhihu.com/p/1928928953592153736)
+* [linux删除多余grub引导 - 清风拂袖 - 博客园](https://www.cnblogs.com/lxa6688/p/18302982)
+* [Linux重装系统后如何清除多余、残留的系统引导项（UEFI引导清理指南） - 我不道啊的笔记](https://blog.xn--rpv331d.com/%E6%88%91%E4%B8%8D%E9%81%93%E5%95%8A/blog/64)
+* [删除Grub的EFI BootNext启动项 \| 橙子冰棒的博客](https://blog.orllow.cn/posts/a4e196f2/#:~:text=BootNext%20%E6%98%AF%20UEFI%20%E8%A7%84%E8%8C%83%E4%B8%AD%E5%AE%9A%E4%B9%89%E7%9A%84%E4%B8%80%E4%B8%AA%E6%A0%87%E5%87%86%E5%8F%98%E9%87%8F%EF%BC%8C%E5%AD%98%E5%82%A8%E5%9C%A8%E4%B8%BB%E6%9D%BF%20NVRAM%20%E4%B8%AD%E3%80%82,%E5%AE%83%E7%9A%84%E4%BD%9C%E7%94%A8%E6%98%AF%E6%8C%87%E5%AE%9A%E4%B8%8B%E4%B8%80%E6%AC%A1%E5%BC%80%E6%9C%BA%E6%97%B6%E4%BC%98%E5%85%88%E5%90%AF%E5%8A%A8%E7%9A%84%E6%9D%A1%E7%9B%AE%EF%BC%8C%E4%BB%85%E7%94%9F%E6%95%88%E4%B8%80%E6%AC%A1%E3%80%82%20%E5%85%B7%E4%BD%93%E6%B5%81%E7%A8%8B%E6%98%AF%E8%BF%99%E6%A0%B7%E7%9A%84%EF%BC%9A%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%88%96%E5%BC%95%E5%AF%BC%E7%A8%8B%E5%BA%8F%E5%90%91%20BootNext%20%E5%86%99%E5%85%A5%E4%B8%80%E4%B8%AA%E5%90%AF%E5%8A%A8%E9%A1%B9%E7%BC%96%E5%8F%B7%EF%BC%88%E5%A6%82%20Boot0001%EF%BC%89%EF%BC%9B%E4%B8%8B%E6%AC%A1%E5%BC%80%E6%9C%BA%E6%97%B6%EF%BC%8CUEFI%20%E5%9B%BA%E4%BB%B6%E4%BC%9A%E8%AF%BB%E5%8F%96%E8%BF%99%E4%B8%AA%E5%8F%98%E9%87%8F%EF%BC%8C%E5%88%A0%E9%99%A4%E5%AE%83%EF%BC%8C%E7%84%B6%E5%90%8E%E5%8A%A0%E8%BD%BD%E5%AF%B9%E5%BA%94%E7%9A%84%E5%90%AF%E5%8A%A8%E9%A1%B9%E3%80%82)
 
 ---
 

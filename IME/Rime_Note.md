@@ -5,7 +5,7 @@ tags:
   - yaml
   - ime
 created: 2023-08-18 19:44:52
-modified: 2026-10-17 11:20:26
+modified: 2026-11-05 00:12:10
 ---
 
 # Rime 笔记
@@ -333,19 +333,30 @@ app_opsions:
 
 默认情况，使用 **Ctrl+\`** 快捷键用来切换不同 [方案](#方案切换) 的。但在某些软件中使用这个快捷键切换方案，会使得另一些软件的缩放功能被激活。
 
-在 [SublimeText](../Editors/Editors_Note.md#editors_sublime) 和 gedit 中，进行 [方案切换](#方案切换) 操作，就会使得各浏览器、目录窗口的缩放功能被激活，如果这时在浏览器或目录窗口中，滚动鼠标中键，那就不是页面的上下滚动，而且是页面的放大缩小，只有再按一次 `Ctrl+``，缩放功能才关闭。
+在 [SublimeText](../Editors/Editors_Note.md#editors_sublime) 和 gedit 中，进行 [方案切换](#方案切换) 操作，就会使得各浏览器、目录窗口的缩放功能被激活，如果这时在浏览器或目录窗口中，滚动鼠标中键，那就不是页面的上下滚动，而且是页面的放大缩小，只有再按一次 **Ctrl+\`**，缩放功能才关闭。
 
-推测出现这种情况，大概是因为浏览器、目录窗口等缩放功能本就是使用是长按 `Ctrl` 键配合鼠标中键的滚动可实现缩放的，所以当 rime 使用 `Ctrl+``切换方案时，有可能其中有什么bug，使得浏览器及目录窗口认为你在按着`Ctrl` 键不放，所以这时你滚动鼠标中键，就成了页面缩放了。
+推测出现这种情况，大概是因为浏览器、目录窗口等缩放功能本就是使用是长按 `Ctrl` 键配合鼠标中键的滚动可实现缩放的，所以当 rime 使用 **Ctrl+\`**切换方案时，有可能其中有什么 bug，使得浏览器及目录窗口认为你在按着 `Ctrl` 键不放，所以这时你滚动鼠标中键，就成了页面缩放了。
 
-这个情况，在 [VSCode](../Editors/VSCode_Note.md)、[Obsidian](../NoteSoft/Obsidian/Obsidian_Note.md) 中并没有发生。而且在浏览器输入框内使用 `Ctrl+`` 切换方案，也同样没有发生缩放功能被激活的状态。
+这个情况，在 [VSCode](../Editors/VSCode_Note.md)、[Obsidian](../NoteSoft/Obsidian/Obsidian_Note.md) 中并没有发生。而且在浏览器输入框内使用 **Ctrl+\`** 切换方案，也同样没有发生缩放功能被激活的状态。
 
 > [!bug] 
 > 
 > [很奇怪的现象 · Issue #1533 · rime/home · GitHub](https://github.com/rime/home/issues/1533)
 
+> [!info]
+> 
+> 另外，在 [Sublime](../Editors/Sublime_Note.md) 呼出控制台的快捷键也是**Ctrl+\`**，所以这也存在快捷键冲突。
+
 `F4` 快捷键与 **Ctrl+\`** 快捷键作用一样，所以尽量使用 `F4` 快捷键 -- 而且**Ctrl+\`** 快捷键也与如 [VSCode](../Editors/VSCode_Note.md) 的调出终端快捷键冲突，所以尽量避免使用 **Ctrl+\`**。
 
 当然禁用这个快捷键是最好的选择。`.config/ibus/rime/default.yaml` 配置文件中，`switcher` 节点中，`hotkeys` 节点下，`- Control+grave`，这个就是 **Ctrl+\`** 快捷键的配置，将其注释就可以了（yaml 文件使用 `#` 来注释）。
+
+或者，在 `.config/ibus/rime/default.custom.yaml` 文件中，只设置 `F4` 为切换方案快捷键就好了：
+
+```yaml
+switcher/hotkeys:                                                                                                       
+  - "F4"      
+```
 
 ---
 

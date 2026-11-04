@@ -5,7 +5,7 @@ tags:
   - github
   - gist
 created: 2023-01-30 11:19:11
-modified: 2026-04-13 19:34:13
+modified: 2026-11-04 23:36:48
 ---
 
 # Git 笔记
@@ -592,6 +592,27 @@ git commit -m 'update .gitignore'
 
 ```shell
 git -c http.proxy='http://127.0.0.1:7890'
+```
+
+或者
+
+```shell
+git config --global http.proxy "http://127.0.0.1:7890" 
+git config --global https.proxy "http://127.0.0.1:7890"
+```
+
+如果针对 [GitHub](#git_github)：
+
+```shell
+git config --global http.https://github.com.proxy "http://127.0.0.1:7890"
+```
+
+取消代理：
+
+```shell
+git config --global --unset http.proxy 
+git config --global --unset https.proxy 
+git config --global --unset http.https://github.com.proxy
 ```
 
 ---

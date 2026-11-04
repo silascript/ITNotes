@@ -6,7 +6,7 @@ tags:
   - material
   - list
 created: 2025-02-27 18:12:38
-modified: 2025-07-31 21:43:09
+modified: 2026-11-04 23:29:03
 ---
 
 # Git 资料清单
@@ -25,6 +25,10 @@ modified: 2025-07-31 21:43:09
 ### 常见问题
 
 * [把git的默认分支master修改成main - 掘金](https://juejin.cn/post/7051873701305778207)
+
+### 代理
+
+* [git代理配置](https://eonun.com/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%B8%AA%E4%BA%BA%E9%9A%8F%E8%AE%B0/git%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE/)
 
 ## 托管平台
 

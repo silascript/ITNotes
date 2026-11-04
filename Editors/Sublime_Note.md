@@ -5,7 +5,7 @@ tags:
   - sublimetext
   - editor
 created: 2024-07-09 18:50:20
-modified: 2026-10-21 11:27:58
+modified: 2026-11-04 12:32:31
 ---
 
 # Sublime 笔记
@@ -521,11 +521,61 @@ pip install ruff-lsp
 > 
 > 可以使用 pipx 安装，这样不会「污染」pip。而如果是在 [conda](../Python/Python_Note.md#python_conda) 中使用 [pipx](../Python/Python_Note.md#python_pipx) 安装，那就更好了，因为在 conda 中的 pipx 是能够在各虚拟环境中共享的，因为无论你在 conda 中哪个虚拟环境中使用 pipx 安装程序，它们都会在 `.local/bin` 目录建立「软链接」！
 
-### LSP-jdtls
+#### LSP-jdtls
 
 [LSP-jdtls](https://github.com/sublimelsp/LSP-jdtls) 是 [Java_Note](../Java/Java_Note.md) 的 LSP 插件。
 
 如果要运行 `lsp_jdtls_run_test` 命令，得装上 [Debugger](#Debugger) 插件。
+
+##### LSP-jdtls 配置
+
+```json
+{
+	"version": "1.58.0",
+	"settings": {
+		"java.codeGeneration.generateComments": true,
+
+		"java.configuration.runtimes": [
+			{
+				"name": "JavaSE-1.8",
+				"path": "/home/silascript/.sdkman/candidates/java/9.0.504+1-tem"
+			},
+			{
+				"name": "JavaSE-17",
+				"path": "/home/silascript/.sdkman/candidates/java/17.0.21.0+9-tem"
+			},
+			{
+				"name": "JavaSE-21",
+				"path": "/home/silascript/.sdkman/candidates/java/21.0.13.0+9-tem",
+				// "default": true
+			},
+			{
+				"name": "JavaSE-25",
+				"path": "/home/silascript/.sdkman/candidates/java/25.0.5.0+8-tem",
+				"default": true
+			}
+		]
+	}
+}
+```
+
+* `version`：[jdtls](../Protocols/LSP_Note.md#jdtls) 的版本，太新的版本要求 [JDK](../Java/Java_Note.md#JDK) 的版本也是非常新的。
+  > [!tip] 
+ >  
+ > [JDK21](../Java/Java_Note.md#JDK21) 最高支持到 JDTLS 1.5x.x 版本。
+ > 
+ > 1.60+ 至少需要 [JDK 25](../Java/Java_Note.md#JDK25)。
+ > 
+ > 可以到 `.cache/sublime-text/Package\ Storage/LSP-jdtls/server` 目录查看 Sublime LSP-jdtls 用的 jdtls 的版本，如：
+ > 
+ > ```
+ > drwxr-xr-x     - silascript silascript 2026-11-04 11:56 jdtls-1.58.0
+ > .rw-r--r--  2.1M silascript silascript 2026-11-04 11:56 lombok-1.18.48.jar
+> drwxr-xr-x     - silascript silascript 2026-11-04 11:56 vscode-java-debug-0.60.0
+> drwxr-xr-x     - silascript silascript 2026-11-04 11:56 vscode-java-decompiler-57691a5fdacbc67a8b606e34fb636fa89687430b
+> drwxr-xr-x     - silascript silascript 2026-11-04 11:56 vscode-java-test-0.47.0
+> ```
+* `java.configuration.runtimes`：指定 Java Rumtime 版本。
 
 #### LSP-json
 

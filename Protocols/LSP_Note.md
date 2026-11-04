@@ -4,7 +4,7 @@ tags:
   - protocol
   - lsp
 created: 2024-04-08 00:48:22
-modified: 2025-09-25 05:54:53
+modified: 2026-11-04 12:33:24
 ---
 
 # LSP 协议笔记
@@ -107,6 +107,20 @@ AlignConsecutiveAssignments: true  # 连续赋值对齐
 > 
 > * **jdt**：Java Development Tools
 > * **ls**：Language Server
+
+下载：[Eclipse JDT LS \| projects.eclipse.org](https://projects.eclipse.org/projects/eclipse.jdt.ls/downloads)
+
+##### 版本
+
+* v1.60.0 以上，需要至少 [JDK25](../Java/Java_Note.md#JDK25)。
+* v1.44.0 及以上	JDK 21	当前主流/最新版本。从 2025 年底发布的 v1.44 版本开始，由于上游 [Eclipse](../Java/IDE/Java_IDE_Eclipse.md) 平台（如 Eclipse 2025）全面转向 JDK 21 基础设施，JDTLS 强制要求最低 JDK 21 运行环境。
+* v1.9.0 ～ v1.43.0	JDK 17	过渡期经典版本。2022 年至 2025 年间的大部分版本要求最低 JDK 17。如果在此区间使用更低版本 JDK 会导致 LSP 报 jdtls requires at least java 17 错误。
+* v0.57.0 ～ v1.8.0	JDK 11	2020 年至 2022 年初的版本，全面放弃了对 Java 8 运行环境的支持，要求最低 JDK 11。
+* v0.56.0 及以下历史版本	JDK 1.8 (Java 8)	极早期的历史版本，可在 Java 8 环境下直接启动。
+
+> [!info] 
+> 
+> JDTLS 里程碑版本：[https://download.eclipse.org/jdtls/milestones/](https://download.eclipse.org/jdtls/milestones/)
 
 #### Kotlin LSP
 

@@ -4,7 +4,7 @@ tags:
   - protocol
   - lsp
 created: 2024-04-08 00:48:22
-modified: 2026-11-04 12:33:24
+modified: 2026-11-05 11:55:27
 ---
 
 # LSP 协议笔记
@@ -274,13 +274,19 @@ pip install -U setuptools
 
 ### <span id="lang_lsps_lua">Lua LSP</span>
 
-#### <span id="lang_lsps_lua_lualsp">lua-lsp</span>
+#### lua-lsp
 
 [lua-lsp](https://github.com/Alloyed/lua-lsp) 这个 LSP 只支持 lua 版本到 5.3。
 
-#### <span id="lang_lsps_lua_lua-language-server">lua-language-server</span>
+#### lua-language-server
 
-[lua-language-server](https://github.com/LuaLS/lua-language-server)
+[LuaLS/lua-language-server](https://github.com/LuaLS/lua-language-server) 这个 LSP 支持到 [Lua](../Lua/Lua_Note.md) 5.5 版本。
+
+直接使用系统的包管理哭装就好了，如：
+
+```shell
+yay -S lua-language-server
+```
 
 ---
 
@@ -348,6 +354,16 @@ npm install yaml-language-server -g
 #### TOML
 
 TOML LSP 使用 [Taplo](../TOML/TOML_Note.md#Taplo)。
+
+---
+
+### <span id="lang_lsps_golang">GoLang LSP</span>
+
+[Go语言](../GoLang/GoLang_Note.md) 的 LSP 用的是 [Go Language Server](https://github.com/golang/tools/blob/master/gopls/README.md)，即「**gopls**」。
+
+---
+
+### <span id="lang_lsps_php">PHP LSP</span>
 
 ---
 

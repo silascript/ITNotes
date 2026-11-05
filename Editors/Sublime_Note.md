@@ -5,7 +5,7 @@ tags:
   - sublimetext
   - editor
 created: 2024-07-09 18:50:20
-modified: 2026-11-05 01:43:56
+modified: 2026-11-05 11:55:50
 ---
 
 # Sublime 笔记
@@ -453,7 +453,9 @@ Package Control: Installed missing dependency pyte
 * [LSP-lemminx: XML support for Sublime's LSP plugin](https://github.com/sublimelsp/LSP-lemminx)
 * [LSP-bash](https://github.com/sublimelsp/LSP-bash)
 * [LSP-jdtls](https://github.com/sublimelsp/LSP-jdtls)
+* [LSP-gopls](https://github.com/sublimelsp/LSP-gopls)
 * [LSP-intelephense](https://github.com/sublimelsp/LSP-intelephense)
+* [LSP-lua](https://github.com/sublimelsp/LSP-lua)
 * [LSP-vue](https://github.com/sublimelsp/LSP-vue)
 * [LSP-volar](https://github.com/sublimelsp/LSP-volar)
 
@@ -529,6 +531,8 @@ pip install ruff-lsp
 
 ##### LSP-jdtls 配置
 
+打开：「**Package Settings**」=>「**LSP**」=>「**Servers**」=>「**LSP-jdtls**」，做如下配置：
+
 ```json
 {
 	"version": "1.58.0",
@@ -600,6 +604,32 @@ pip install ruff-lsp
 > 
 > 这句代码，同样适用于其他语言（比如 html），只要出现 LSP 补全与 Sublime 内置补全的情况出现，就可以先打开相关文件，然后在 `Syntax Specific` 设置里禁掉这个语言的内置补全。
 >
+
+#### LSP-gopls
+
+[LSP-gopls](https://packagecontrol.io/packages/LSP-gopls)   [![LSP-gopls Repo](https://img.shields.io/github/stars/sublimelsp/LSP-gopls)](https://github.com/sublimelsp/LSP-gopls) 是一个针对 [Go语言](../GoLang/GoLang_Note.md) 的 LSP 插件。
+
+这个插件是使用到的 [gopls](../Protocols/LSP_Note.md#lang_lsps_golang)，所以提前得装上这货。
+
+##### LSP-gopls 配置
+
+打开：「**Package Settings**」=>「**LSP**」=>「**Servers**」=>「**LSP-gopls**」，做如下配置：
+
+```json
+{
+"settings": {
+		"gopls.env": {
+			"GOFLAGS": "-tags=integration"
+		}
+	}
+}
+```
+
+#### LSP-lua
+
+ [LSP-lua](https://packagecontrol.io/packages/LSP-lua) [![LSP-lua Repo](https://img.shields.io/github/stars/sublimelsp/LSP-lua)](https://github.com/sublimelsp/LSP-lua) 是 [Lua](../Lua/Lua_Note.md) 的 LSP 插件。
+
+这个插件依赖的是 [GitHub - LuaLS/lua-language-server: A language server that offers Lua language support - programmed in Lua · GitHub](https://github.com/LuaLS/lua-language-server) 这个 LSP。
 
 #### LSP-bash
 

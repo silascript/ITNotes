@@ -4,7 +4,7 @@ tags:
   - protocol
   - lsp
 created: 2024-04-08 00:48:22
-modified: 2026-11-05 23:31:29
+modified: 2026-11-06 03:20:14
 ---
 
 # LSP 协议笔记
@@ -374,6 +374,12 @@ cargo install taplo-cli --locked
 
 ```shell
 cargo install --features lsp --locked taplo-cli
+```
+
+* 或者通过操作系统的包管理器安装
+
+```shell
+yay -S taplo-cli
 ```
 
 * [npm](../Node/NodeJS_Note.md#npm) 安装

@@ -5,7 +5,7 @@ tags:
   - sublimetext
   - editor
 created: 2024-07-09 18:50:20
-modified: 2026-11-05 20:48:42
+modified: 2026-11-06 03:20:48
 ---
 
 # Sublime 笔记
@@ -576,6 +576,20 @@ pip install ruff-lsp
 > drwxr-xr-x     - silascript silascript 2026-11-04 11:56 vscode-java-test-0.47.0
 > ```
 * `java.configuration.runtimes`：指定 Java Rumtime 版本，可以配置多个版本。
+
+#### Rust 相关
+
+##### LSP-taplo
+
+[LSP-taplo](https://packagecontrol.io/packages/LSP-taplo) [![LSP-taplo Repo](https://img.shields.io/github/stars/tamasfe/taplo)](https://github.com/sublimelsp/LSP-taplo) 是 [TOML](../TOML/TOML_Note.md) 的LSP插件，其使用 [Taplo](../Protocols/LSP_Note.md#Taplo) 为 LSP。
+
+安装 `LSP` 及 `LSP-taplo` 插件，即可使用。
+
+##### LSP-tombi
+
+ [LSP-tombi ](https://packagecontrol.io/packages/LSP-tombi) [![LSP-tombi Repo]( https://img.shields.io/github/stars/sublimelsp/LSP-tombi)](https://github.com/sublimelsp/LSP-tombi) 同样为 [TOML](../TOML/TOML_Note.md) 的LSP插件，使用的是 [Tombi](../Protocols/LSP_Note.md#Tombi) 为 LSP。
+
+安装 `LSP` 及 `LSP-tombi` 插件，即可使用。
 
 #### LSP-json
 

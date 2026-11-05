@@ -7,7 +7,7 @@ tags:
   - material
   - list
 created: 2025-08-31 17:57:20
-modified: 2025-09-22 21:47:09
+modified: 2026-11-05 10:30:07
 ---
 
 # Vim 资料清单
@@ -47,6 +47,7 @@ modified: 2025-09-22 21:47:09
 
 * [详解nvim内建LSP体系与基于nvim-cmp的代码补全体系 - 知乎](https://zhuanlan.zhihu.com/p/643033884)
 * [Neovim 内置 LSP 配置 (二)：自动代码补全 - 知乎](https://zhuanlan.zhihu.com/p/445331508)
+* [Vim变身IDE：LSP十大现代插件深度评测 - OSCHINA](https://my.oschina.net/emacs_8000221/blog/19410105)
 
 #### nvim-lspconfig
 

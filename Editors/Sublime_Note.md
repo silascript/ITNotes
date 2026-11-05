@@ -5,7 +5,7 @@ tags:
   - sublimetext
   - editor
 created: 2024-07-09 18:50:20
-modified: 2026-11-04 12:32:31
+modified: 2026-11-05 01:43:56
 ---
 
 # Sublime 笔记
@@ -559,12 +559,8 @@ pip install ruff-lsp
 }
 ```
 
-* `version`：[jdtls](../Protocols/LSP_Note.md#jdtls) 的版本，太新的版本要求 [JDK](../Java/Java_Note.md#JDK) 的版本也是非常新的。
+* `version`：[jdtls](../Protocols/LSP_Note.md#jdtls) 的版本，太新的版本要求 [JDK](../Java/Java_Note.md#JDK) 的版本也是非常新的。如果没有指定，那就是最新版本，而且如果有新版本，就会更新。指定版本后，就不会更新。
   > [!tip] 
- >  
- > [JDK21](../Java/Java_Note.md#JDK21) 最高支持到 JDTLS 1.5x.x 版本。
- > 
- > 1.60+ 至少需要 [JDK 25](../Java/Java_Note.md#JDK25)。
  > 
  > 可以到 `.cache/sublime-text/Package\ Storage/LSP-jdtls/server` 目录查看 Sublime LSP-jdtls 用的 jdtls 的版本，如：
  > 
@@ -575,7 +571,7 @@ pip install ruff-lsp
 > drwxr-xr-x     - silascript silascript 2026-11-04 11:56 vscode-java-decompiler-57691a5fdacbc67a8b606e34fb636fa89687430b
 > drwxr-xr-x     - silascript silascript 2026-11-04 11:56 vscode-java-test-0.47.0
 > ```
-* `java.configuration.runtimes`：指定 Java Rumtime 版本。
+* `java.configuration.runtimes`：指定 Java Rumtime 版本，可以配置多个版本。
 
 #### LSP-json
 

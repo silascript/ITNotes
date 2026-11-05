@@ -4,7 +4,7 @@ tags:
   - protocol
   - lsp
 created: 2024-04-08 00:48:22
-modified: 2026-11-05 20:13:23
+modified: 2026-11-05 20:55:29
 ---
 
 # LSP 协议笔记
@@ -386,6 +386,18 @@ npm i intelephense -g
 [phpantom](https://github.com/PHPantom-dev/phpantom_lsp) 是一个使用 [Rust](../Rust/Rust_Note.md) 写的 [PHP](../PHP/PHP_Note.md) 的 LSP。
 
 因为使用 Rust 写的，所以性能非常不错。
+
+使用 [Cargo](../Rust/Rust_Note.md#<span%20id="rust_cargo">Cargo%20包管理器</span>) 安装：
+
+```shell
+cargo install phpantom_lsp
+```
+
+也可以使用操作系统的包管理器安装，如：
+
+```shell
+yay -S phpantom_lsp
+```
 
 #### phpactor
 

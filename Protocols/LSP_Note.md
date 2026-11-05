@@ -4,7 +4,7 @@ tags:
   - protocol
   - lsp
 created: 2024-04-08 00:48:22
-modified: 2026-11-05 20:55:29
+modified: 2026-11-05 23:31:29
 ---
 
 # LSP 协议笔记
@@ -353,7 +353,72 @@ npm install yaml-language-server -g
 
 #### TOML
 
-TOML LSP 使用 [Taplo](../TOML/TOML_Note.md#Taplo)。
+##### Taplo
+
+[Taplo](https://taplo.tamasfe.dev) [![taplo repo](https://img.shields.io/github/stars/tamasfe/taplo
+)](https://github.com/tamasfe/taplo) 这是使用 [Rust](../Rust/Rust_Note.md) 写的 [TOML](../TOML/TOML_Note.md) 工具，其中包含了 LSP 功能。
+
+#### 安装
+
+安装 Taplo 有多种方式。
+
+* 通过系统的包管理器安装，如 `yay -S taplo-cli`
+
+* 通过 [Cargo](../Rust/Rust_Note.md#rust_cargo) 来安装
+
+```shell
+cargo install taplo-cli --locked
+```
+
+或者：
+
+```shell
+cargo install --features lsp --locked taplo-cli
+```
+
+* [npm](../Node/NodeJS_Note.md#npm) 安装
+
+```shell
+npm install -g @taplo/cli
+```
+
+#### 功能
+
+##### LSP
+
+```shell
+taplo lsp stdio
+```
+
+```shell
+taplo lsp tcp --address 0.0.0.0:9181
+```
+
+##### 检测
+
+检查 TOML 文件，是否存在语法等错误等。
+
+```shell
+taplo check foo.toml
+```
+
+##### 格式化
+
+```shell
+taplo fmt foo.toml
+```
+
+##### 转换文件格式
+
+能将 TOML 转成其他格式的文件，如 JSON：
+
+```shell
+taplo get -f foo.toml -o json
+```
+
+##### Tombi
+
+[Tombi](https://tombi-toml.github.io/tombi/)  [![Tombi Repo](https://img.shields.io/github/stars/tombi-toml/tombi)](https://github.com/tombi-toml/tombi) 是一款同样使用 [Rust](../Rust/Rust_Note.md) 写 [TOML](../TOML/TOML_Note.md) 的 LSP。
 
 ---
 

@@ -5,7 +5,7 @@ tags:
   - sublimetext
   - editor
 created: 2024-07-09 18:50:20
-modified: 2026-11-05 11:55:50
+modified: 2026-11-05 20:48:42
 ---
 
 # Sublime 笔记
@@ -622,6 +622,91 @@ pip install ruff-lsp
 			"GOFLAGS": "-tags=integration"
 		}
 	}
+}
+```
+
+#### PHP 相关
+
+##### PHP Tools
+
+这里使用到的是 [devsense-php-ls](../Protocols/LSP_Note.md#devsense-php-ls) 这个LSP。Sublime没有对应的插件，只能在 [通用 LSP](#通用%20LSP) 插件中配置。
+
+1. 安装 devsense-php-ls
+```shell
+npm install devsense-php-ls -g
+```
+2. 安装 通用 LSP 插件
+3. 配置
+
+打开 `Preferences` > `Package Settings` > `LSP` > `Server Configurations`，添加以下配置：
+
+```json
+ "phptools":
+    {
+        "enabled": true,
+        "command": ["devsense-php-ls"],
+        "selector": "embedding.php",
+        "priority_selector": "source.php",
+        "initialization_options" : {
+            "0": "<YOUR_LICENSE_KEY>",
+            "php.stubs": "*",
+            "php.version": "8.5",
+            "phpTools.language": "en",
+            "php.completion.parameters": "parameters",
+            "php.format.codeStyle": "psr-12"
+        }
+    }
+```
+
+这个货是收费的，所以不建议用！
+
+##### LSP-intelephense
+
+  [LSP-intelephense](https://packagecontrol.io/packages/LSP-intelephense)  [![LSP-intelephense Repo](https://img.shields.io/github/stars/sublimelsp/LSP-intelephense)](https://github.com/sublimelsp/LSP-intelephense)，顾名思义，这个插件使用到的 LSP 就是 [PHP](../PHP/PHP_Note.md) 众LSP 中大名鼎鼎的 [Intelephense](../Protocols/LSP_Note.md#Intelephense)。
+  
+  > [!tip] 
+  > 
+  > 因为 [Intelephense](../Protocols/LSP_Note.md#Intelephense) 是用 [NodeJS](../Node/NodeJS_Note.md) 写的，所以先得使用 `npm` 安装好「Intelephense」。
+  > 
+  > 然后再装 LSP-Intelephense 这插件，装完就能用。
+
+##### phpactor
+
+如果使用 [phpactor](../Protocols/LSP_Note.md#phpactor) 作为LSP，同样也是通过配置 [通用 LSP](#通用%20LSP) 来实现。
+
+1. 安装 [phpactor](../Protocols/LSP_Note.md#phpactor)
+2. 安装 通用 LSP 插件
+3. 配置
+打开 `Preferences` > `Package Settings` > `LSP` > `Server Configurations`，添加以下配置：
+
+```json
+{
+    "phpactor": {
+        "enabled": true,
+        "command": ["PATH/TO/phpactor", "language-server"],
+        "selector": "embedding.php",
+        "priority_selector": "source.php",
+    }
+}
+```
+
+##### PHPantom
+
+使用 [PHPantom](../Protocols/LSP_Note.md#PHPantom) 作为 [PHP_Note](../PHP/PHP_Note.md) 的LSP，是通过配置 [通用 LSP](#通用%20LSP) 来实现。
+
+1. 安装 [PHPantom](../Protocols/LSP_Note.md#PHPantom)
+2. 安装 通用 LSP 插件
+3. 配置
+打开 `Preferences` > `Package Settings` > `LSP` > `Server Configurations`，添加以下配置：
+
+```json
+{
+  "phpantom": {
+    "enabled": true,
+    "command": ["phpantom_lsp"],
+    "selector": "embedding.php",
+    "priority_selector": "source.php"
+  }
 }
 ```
 

@@ -4,7 +4,7 @@ tags:
   - protocol
   - lsp
 created: 2024-04-08 00:48:22
-modified: 2026-11-05 11:55:27
+modified: 2026-11-05 20:13:23
 ---
 
 # LSP 协议笔记
@@ -364,6 +364,42 @@ TOML LSP 使用 [Taplo](../TOML/TOML_Note.md#Taplo)。
 ---
 
 ### <span id="lang_lsps_php">PHP LSP</span>
+
+#### Intelephense
+
+ [Intelephense](https://intelephense.com) 是一个用 [NodeJS](../Node/NodeJS_Note.md) 写的 [PHP](../PHP/PHP_Note.md) 的 闭源 LSP。
+
+使用 `npm` 安装即可：
+
+```shell
+npm i intelephense -g 
+```
+
+ > [!tip] 
+ > 
+ > [Intelephense - npmjs](https://www.npmjs.com/package/intelephense) 
+
+因为是闭源且收费的，所以其免费版的功能相对于收费版肯定是有所阉割的。
+
+####  PHPantom
+
+[phpantom](https://github.com/PHPantom-dev/phpantom_lsp) 是一个使用 [Rust](../Rust/Rust_Note.md) 写的 [PHP](../PHP/PHP_Note.md) 的 LSP。
+
+因为使用 Rust 写的，所以性能非常不错。
+
+#### phpactor
+
+[phpactor](https://github.com/phpactor/phpactor) 是用 [PHP](../PHP/PHP_Note.md) 写的 PHP 的 LSP。
+
+#### devsense-php-ls
+
+devsense-php-ls 是由 [DEVSENSE](https://www.devsense.com) 开发的一款 [PHP_Note](../PHP/PHP_Note.md)LSP。
+
+安装：
+
+```shell
+npm install devsense-php-ls -g
+```
 
 ---
 

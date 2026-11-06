@@ -5,7 +5,7 @@ tags:
   - sublimetext
   - editor
 created: 2024-07-09 18:50:20
-modified: 2026-11-06 03:20:48
+modified: 2026-11-06 11:32:41
 ---
 
 # Sublime 笔记
@@ -379,12 +379,10 @@ Sublime 中装的 LSP 插件其实是 LSP 的 **Client**。而 **Server** 得根
 
 LSP 常用插件：
 
-#### 通用 LSP
+#### LSP
 
-[通用 LSP](https://packagecontrol.io/packages/LSP) [![LSP Repo](https://img.shields.io/github/stars/sublimelsp/LSP?style=social
-)](https://github.com/sublimelsp/LSP/)
-
-这个插件不针对特定语言，属于基本 LSP 插件。其他特定语言 lsp 插件都在这插件之上建立的，所以如果要使用 LSP，这个插件必装。
+[LSP](https://packagecontrol.io/packages/LSP) [![LSP Repo](https://img.shields.io/github/stars/sublimelsp/LSP?style=social
+)](https://github.com/sublimelsp/LSP/) 这个插件是通用 LSP 插件。不针对特定语言，属于基本 LSP 插件。其他特定语言 lsp 插件都在这插件之上建立的，所以如果要使用 LSP，这个插件必装。
 
 具体语言的 LSP 得再装特定的 LSP 插件。-- 这个相当于 LSP 通用 Client，但有些语言得用特定 Client 才能调 LSP，所以这些语言对再装定的语言 LSP 插件。具体使用还得参考 [LSP配置说明](https://lsp.sublimetext.io/language_servers)。
 
@@ -643,7 +641,7 @@ pip install ruff-lsp
 
 ##### PHP Tools
 
-这里使用到的是 [devsense-php-ls](../Protocols/LSP_Note.md#devsense-php-ls) 这个LSP。Sublime没有对应的插件，只能在 [通用 LSP](#通用%20LSP) 插件中配置。
+这里使用到的是 [devsense-php-ls](../Protocols/LSP_Note.md#devsense-php-ls) 这个LSP。Sublime没有对应的插件，只能在 [LSP](#LSP) 插件中配置。
 
 1. 安装 devsense-php-ls
 ```shell
@@ -689,7 +687,7 @@ npm install devsense-php-ls -g
 如果使用 [phpactor](../Protocols/LSP_Note.md#phpactor) 作为LSP，同样也是通过配置 [通用 LSP](#通用%20LSP) 来实现。
 
 1. 安装 [phpactor](../Protocols/LSP_Note.md#phpactor)
-2. 安装 通用 LSP 插件
+2. 安装 通用 [LSP](#LSP) 插件
 3. 配置
 打开 `Preferences` > `Package Settings` > `LSP` > `Server Configurations`，添加以下配置：
 
@@ -709,7 +707,7 @@ npm install devsense-php-ls -g
 使用 [PHPantom](../Protocols/LSP_Note.md#PHPantom) 作为 [PHP_Note](../PHP/PHP_Note.md) 的LSP，是通过配置 [通用 LSP](#通用%20LSP) 来实现。
 
 1. 安装 [PHPantom](../Protocols/LSP_Note.md#PHPantom)
-2. 安装 通用 LSP 插件
+2. 安装 通用 [LSP](#LSP) 插件
 3. 配置
 打开 `Preferences` > `Package Settings` > `LSP` > `Server Configurations`，添加以下配置：
 
@@ -734,6 +732,14 @@ npm install devsense-php-ls -g
 
 [LSP-bash](https://packagecontrol.io/packages/LSP-bash) [![LSP-bash Repo](https://img.shields.io/github/stars/sublimelsp/LSP-bash?style=social
 )](https://github.com/sublimelsp/LSP-bash) 是写 bash shell 很好的 lsp。这插件使用到 [bash-language-server](../Protocols/LSP_Note.md#bash-language-server) 所以得安装下：`npm i -g bash-language-server`。
+
+#### XML
+
+##### LSP-lemminx
+
+ [LSP-lemminx](https://packagecontrol.io/packages/LSP-lemminx) [![LSP-lemminx Repo](https://img.shields.io/github/stars/sublimelsp/LSP-lemminx)](https://github.com/sublimelsp/LSP-lemminx) 是 Sublime 的 XML 的 LSP 插件。
+
+安装 [LSP](#LSP) 插件及 LSP-lemminx 插件，重启 Sublime，即可使用。
 
 #### Markdown
 

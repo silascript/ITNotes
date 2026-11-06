@@ -4,7 +4,7 @@ tags:
   - protocol
   - lsp
 created: 2024-04-08 00:48:22
-modified: 2026-11-06 03:20:14
+modified: 2026-11-06 11:53:51
 ---
 
 # LSP 协议笔记
@@ -843,6 +843,12 @@ cargo install --locked --git https://github.com/Feel-ix-343/markdown-oxide.git m
 ```shell
 npm install vls -g
 ```
+
+### <span id="lang_lsps_xml ">XML LSP</span>
+
+####  LemMinX
+
+[LemMinx](https://github.com/eclipse-lemminx/lemminx) 是由 [Red Hat](https://www.redhat.com/) and [Angelo ZERR](https://github.com/angelozerr/) 使用 [Java](../Java/Java_Note.md) 开发的一款 XML LSP。
 
 ---
 

@@ -3,10 +3,11 @@ aliases: []
 tags:
   - editor
   - sublime
+  - sublimetext
   - plugin
   - lsp
 created: 2026-11-06 12:10:23
-modified: 2026-11-06 12:19:41
+modified: 2026-11-06 12:34:30
 ---
 
 # Sublime LSP 笔记
@@ -15,22 +16,33 @@ modified: 2026-11-06 12:19:41
 
 ## 简介
 
-[关于LSP](../Protocols/LSP_Note.md#about_lsp)
-
-Sublime 中装的 LSP 插件其实是 LSP 的 **Client**。而 **Server** 得根据需求在 Sublime 外的系统中安装。
-
-如 vue lsp ，你得使用 `npm install -g vue-language-server` 安装 vue-language-server ，sublime 中的 `LSP-vue` 插件才能去调用这个 Server 以实现编程语言的诸如提示、分析等功能。
+* [关于LSP](../Protocols/LSP_Note.md#about_lsp)
 
 ---
 
 ## LSP
 
 [LSP](https://packagecontrol.io/packages/LSP) [![LSP Repo](https://img.shields.io/github/stars/sublimelsp/LSP?style=social
-)](https://github.com/sublimelsp/LSP/) 这个插件是通用 LSP 插件。不针对特定语言，属于基本 LSP 插件。其他特定语言 lsp 插件都在这插件之上建立的，所以如果要使用 LSP，这个插件必装。
+)](https://github.com/sublimelsp/LSP/) 这个插件是通用 LSP 插件。不针对特定语言，属于基本 LSP 插件。其他特定语言 LSP 插件都在这插件之上建立的，这个插件同时也是其他 LSP 插件的基础插件。
 
-使用这个插件，因为本身不内置 [LSP](../Protocols/LSP_Note.md)Server 端，所以是依赖外部的 LSP Server。这个插件本身其实只是的一个通用的 LSP Client 端。
+### 使用方式
 
-而具体语言的 LSP 得再装特定的 LSP 插件。这些特定语言的 LSP 插件，就不仅仅是 LSP Client 端，在安装插件时，同时在「Sublime 本地」就已经安装了内置的 LSP Server 端了。
+在 Sublime 中使用 LSP 其实是有两种方式：
+
+#### 方式 1
+
+只使用 [LSP](https://packagecontrol.io/packages/LSP) 这个「通用基础」LSP 插件
+
+如果只使用这个插件，因为其本身并不内置 [LSP](../Protocols/LSP_Note.md) 的 Server 端，所以必需依赖外部的 LSP Server。
+> [!tip] 
+> 
+> 这个插件本身其实只是的一个通用的 LSP Client 端。
+> 
+> 如只使用 [LSP](https://packagecontrol.io/packages/LSP) 这个插件，并拥有 vue lsp 功能 ，你得在 Sublime 外部使用 `npm install -g vue-language-server` 安装 `vue-language-server`，然后在 LSP 的配置中调用这个外部的 LSP Server： `vue-language-server`。
+
+#### 方式 2
+
+而如果使用具体特定语言的 LSP 插件，那就不仅仅是 LSP Client 端，在安装插件时，同时在「Sublime 本地」就已经安装了内置的 [本地 Server](#本地%20Server) 了。
 
 可以看下 `.cache/sublime-text/Package\ Storage/` 这个目录，这目录下就存储着各 LSP 插件的「缓存」。以 [LSP-jdtls](#LSP-jdtls) 为例：
 
@@ -57,7 +69,7 @@ drwxr-xr-x     - silascript silascript 2026-11-05 10:12 vscode-java-decompiler-5
 drwxr-xr-x     - silascript silascript 2026-11-05 10:12 vscode-java-test-0.47.0
 ```
 
-可以进一步观察 `server` 目录，可以看到 `jdtls-1.61.0` 这个目录，这就是 [jdtls](../Protocols/LSP_Note.md#jdtls)，即 [Java_Note](../Java/Java_Note.md) 这个 LSP 的 server 端存在的目录，而进一步查看，可以看到 `bin` 中就有 `jdtls` 可执行文件，这就是 LSP Server 执行实体：
+可以进一步观察 `server` 目录，可以看到 `jdtls-1.61.0` 这个目录，这就是 [jdtls](../Protocols/LSP_Note.md#jdtls)，即 [Java](../Java/Java_Note.md) 这个 LSP 的 server 端存在的目录，而进一步查看，可以看到 `bin` 中就有 `jdtls` 可执行文件，这就是 LSP Server 执行实体：
 
 ```shell
 $ ll .cache/sublime-text/Package\ Storage/LSP-jdtls/server/jdtls-1.61.0 
@@ -77,8 +89,9 @@ drwxr-xr-x     - silascript silascript 2026-09-03 21:22 config_ss_win
 drwxr-xr-x     - silascript silascript 2026-09-03 21:22 config_win
 drwxr-xr-x     - silascript silascript 2026-09-03 21:21 features
 drwxr-xr-x     - silascript silascript 2026-09-03 21:21 plugins
+```
 
-# silascript @ (base) in ~ [12:02:07] 
+```shell
 $ ll .cache/sublime-text/Package\ Storage/LSP-jdtls/server/jdtls-1.61.0/bin 
 Permissions Size User       Group      Date Modified    Name
 drwxr-xr-x     - silascript silascript 2026-09-03 21:22 .
@@ -97,7 +110,7 @@ drwxr-xr-x     - silascript silascript 2026-11-05 10:12 ..
 
 ### 本地 Server
 
-sublime 的 LSP 的本地 Server 是装在 `~/.cache/sublime-text/Package Storage` 下。
+Sublime 的如果使用了特定语言 LSP 插件，会在 Sublime「本地」安装了一个 LSP Server 端。其安装目录： `~/.cache/sublime-text/Package Storage`
 
 ### 内置提示与 LSP 重复
 
@@ -494,3 +507,4 @@ Sublime 要使用 markmark 这个 LSP，是没有对应的特定 LSClient，而�
 
 * [Sublime 笔记](Sublime_Note.md)
 * [Sublime 资料清单](Sublime_Mterial.md)
+* [文本编辑器笔记](Editors_Note.md)

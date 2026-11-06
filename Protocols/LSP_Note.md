@@ -4,7 +4,7 @@ tags:
   - protocol
   - lsp
 created: 2024-04-08 00:48:22
-modified: 2026-11-06 11:53:51
+modified: 2026-11-06 20:10:14
 ---
 
 # LSP 协议笔记
@@ -268,7 +268,17 @@ pip install -U setuptools
 
 ##### ruff-lsp
 
-[ruff-lsp](https://github.com/astral-sh/ruff-lsp) 因为没有补全功能，所以应跟 Python 其他 LSP，如 [pyright](#pyright) 配合使用，而 ruff-lsp 主要用来诊断用的。（[ruff-lsp README neovim example](https://github.com/astral-sh/ruff-lsp#example-neovim)）
+[ruff-lsp](https://github.com/astral-sh/ruff-lsp) 因为没有补全功能，所以应跟 [Python](../Python/Python_Note.md) 其他 LSP，如 [pyright](#pyright) 配合使用，而 ruff-lsp 主要用来诊断用的。（[ruff-lsp README neovim example](https://github.com/astral-sh/ruff-lsp#example-neovim)）
+
+安装 ruff-lsp：
+
+```shell
+pip install ruff-lsp
+```
+
+> [!tip] 
+> 
+> 可以使用 pipx 安装，这样不会「污染」pip。而如果是在 [conda](../Python/Python_Note.md#python_conda) 中使用 [pipx](../Python/Python_Note.md#python_pipx) 安装，那就更好了，因为在 conda 中的 pipx 是能够在各虚拟环境中共享的，因为无论你在 conda 中哪个虚拟环境中使用 pipx 安装程序，它们都会在 `.local/bin` 目录建立「软链接」！
 
 ---
 

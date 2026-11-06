@@ -7,7 +7,7 @@ tags:
   - plugin
   - lsp
 created: 2026-11-06 12:10:23
-modified: 2026-11-06 12:34:30
+modified: 2026-11-06 20:14:42
 ---
 
 # Sublime LSP 笔记
@@ -188,7 +188,9 @@ Package Control: Installed missing dependency pyte
 
 Sublime LSP 与 [Python](../Python/Python_Note.md) 相关的有以下三个插件：
 
-1. [LSP-pylsp](https://github.com/sublimelsp/LSP-pylsp)
+##### LSP-pylsp
+
+[LSP-pylsp](https://github.com/sublimelsp/LSP-pylsp)
 
  配置：
 
@@ -215,7 +217,9 @@ Sublime LSP 与 [Python](../Python/Python_Note.md) 相关的有以下三个插�
 > pylsp 默认格式化使用的是 `autopep8`，可以使用 `"pylsp.plugins.yapf.enabled"` 或 `"pylsp.plugins.pylsp_black.enabled"`，使用不同的格式策略。
 > 相关说明：[formatters](https://github.com/sublimelsp/LSP-pylsp#formatters)
 
-2. [LSP-pyright](https://github.com/sublimelsp/LSP-pyright)  
+##### LSP-pyright
+
+[LSP-pyright](https://github.com/sublimelsp/LSP-pyright)  
 
 lsp-pyright 配置：
 
@@ -234,17 +238,13 @@ lsp-pyright 配置：
 }
 ```
 
-3. [LSP-ruff](https://github.com/sublimelsp/LSP-ruff)
+##### LSP-ruff
 
- LSP-ruff 使用到 [ruff-lsp](https://github.com/astral-sh/ruff-lsp)，所以先装 ruff-lsp。
+ [LSP-ruff](https://packagecontrol.io/packages/LSP-ruff) [![LSP-ruff Repo](https://img.shields.io/github/stars/sublimelsp/LSP-ruff)](https://github.com/sublimelsp/LSP-ruff) 插件安装完，会内置 [ruff-lsp](../Protocols/LSP_Note.md#ruff-lsp)。
 
-```shell
-pip install ruff-lsp
-```
+###### 安装与配置
 
-> [!tip] 
-> 
-> 可以使用 pipx 安装，这样不会「污染」pip。而如果是在 [conda](../Python/Python_Note.md#python_conda) 中使用 [pipx](../Python/Python_Note.md#python_pipx) 安装，那就更好了，因为在 conda 中的 pipx 是能够在各虚拟环境中共享的，因为无论你在 conda 中哪个虚拟环境中使用 pipx 安装程序，它们都会在 `.local/bin` 目录建立「软链接」！
+安装 [LSP](#LSP) 和 [LSP-ruff](https://packagecontrol.io/packages/LSP-ruff) 插件，重启 Sublime 等内置 ruff-lsp 安装完后，即可使用。
 
 #### LSP-jdtls
 
@@ -301,6 +301,16 @@ pip install ruff-lsp
 * `java.configuration.runtimes`：指定 Java Rumtime 版本，可以配置多个版本。
 
 #### Rust 相关
+
+##### LSP-rust-analyzer
+
+[LSP-rust-analyzer](https://packagecontrol.io/packages/LSP-rust-analyzer) [![LSP-rust-analyzer Reop](https://img.shields.io/github/stars/sublimelsp/LSP-rust-analyzer)](https://github.com/sublimelsp/LSP-rust-analyzer) 是一个针对 [Rust](../Rust/Rust_Note.md) 的 LSP 插件。
+
+这插件内置的是 [rust-analyzer](https://github.com/rust-lang/rust-analyzer) 这个 Rust 官方 LSP。
+
+###### 安装
+
+安装 [LSP](#LSP) 和 [LSP-rust-analyzer](https://packagecontrol.io/packages/LSP-rust-analyzer) 插件，重启 Sublime，等插件装完内置的 `rust-analyzer` 后，即可使用。
 
 ##### LSP-taplo
 

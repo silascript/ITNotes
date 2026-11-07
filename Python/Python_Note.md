@@ -8,7 +8,7 @@ tags:
   - conda
   - uv
 created: 2023-08-18 19:44:52
-modified: 2026-05-26 21:07:18
+modified: 2026-11-07 13:11:36
 ---
 
 # Python 笔记
@@ -640,7 +640,7 @@ The following NEW packages will be INSTALLED:
 Proceed ([y]/n)? 
 ```
 
-使用 conda 直接安装 pipx，使用 `conda list` 查看包信息，可以看到该环境下的 [pip](#pip) 和 pipx 是同一级的：
+使用 [Conda](Python_Conda.md) 直接安装 pipx，使用 `conda list` 查看包信息，可以看到该环境下的 [pip](#pip) 和 pipx 是同一级的：
 
 ```shell
 pip                       23.3            py311h06a4308_0    https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main

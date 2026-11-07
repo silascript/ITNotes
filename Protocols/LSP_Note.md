@@ -4,7 +4,7 @@ tags:
   - protocol
   - lsp
 created: 2024-04-08 00:48:22
-modified: 2026-11-07 11:30:30
+modified: 2026-11-07 21:04:09
 ---
 
 # LSP 协议笔记
@@ -256,7 +256,7 @@ pip install -U setuptools
 
 #### ty
 
-[ty](https://github.com/astral-sh/ty) 是一个使用 [Rust](../Rust/Rust_Note.md) 写非常新的 [Python](../Python/Python_Note.md) 的 LSP。
+[ty](https://github.com/astral-sh/ty) 是 [Astral](https://astral.sh) 团队使用 [Rust](../Rust/Rust_Note.md) 开发的 [Python](../Python/Python_Note.md) 的 LSP。
 
 此 LSP 当前还处于「Preview」，所以尝鲜的可以试下，不建议用于正式的生产环境。
 
@@ -282,11 +282,19 @@ pipx install pyrefly
 
 #### <span id="lang_lsps_python_ruff">ruff</span>
 
-[ruff](https://github.com/astral-sh/ruff)
+[ruff](https://github.com/astral-sh/ruff) 是 [Astral](https://astral.sh) 团队用 [Rust](../Rust/Rust_Note.md) 编写的高性能 [Python](../Python/Python_Note.md) 静态代码检查与格式化工具（Linter & Formatter）。
+
+> [!important] 
+> 
+> 自 [ruff](#lang_lsps_python_ruff) v0.3.5 起引入了用 [Rust](../Rust/Rust_Note.md) 原生编写的内置语言服务器，并在 v0.5.3 正式稳定。目前官方推荐直接使用 `ruff server` 命令（即 `ruff check` / `ruff format` 结合原生 LSP），而**不再使用 [ruff-lsp](#ruff-lsp)**。
+> 
+> 但注意的是，ruff 的 LSP 是「残血版」，是没有代码提示功能的，所以要有代码提示功能，还得配合其他真正的 LSP 使用。
 
 ##### ruff-lsp
 
-[ruff-lsp](https://github.com/astral-sh/ruff-lsp) 因为没有补全功能，所以应跟 [Python](../Python/Python_Note.md) 其他 LSP，如 [pyright](#pyright) 配合使用，而 ruff-lsp 主要用来诊断用的。（[ruff-lsp README neovim example](https://github.com/astral-sh/ruff-lsp#example-neovim)）
+[ruff-lsp](https://github.com/astral-sh/ruff-lsp) 是一个早期将该工具桥接到编辑器语言服务器协议（LSP）的 [Python](../Python/Python_Note.md) 包装层。
+
+ruff-lsp 因为没有补全功能，所以应跟 [Python](../Python/Python_Note.md) 其他 LSP，如 [pyright](#pyright) 配合使用，而 ruff-lsp 主要用来诊断用的。（[ruff-lsp README neovim example](https://github.com/astral-sh/ruff-lsp#example-neovim)）
 
 安装 ruff-lsp：
 

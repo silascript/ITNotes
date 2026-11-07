@@ -8,7 +8,7 @@ tags:
   - material
   - list
 created: 2024-08-28 03:09:20
-modified: 2026-07-10 21:10:13
+modified: 2026-11-07 13:06:46
 ---
 
 # Python 资料清单
@@ -203,6 +203,11 @@ modified: 2026-07-10 21:10:13
 * [比其他工具快 10 到 100 倍！Rust 编写的 py 代码格式化工具 | 开源日报 No.339](https://osguider.com/blog/post/daily/daily-339/)
 * [（数据科学学习手札159）使用ruff对Python代码进行自动美化-腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/2407965)
 * [【Python 軍火庫🧨 - Ruff】更加豐富強大的Python Linter](https://vocus.cc/article/65390855fd89780001fe7001)
+* [Ruff使用指南：最新的超快速代码格式化工具 – 赛博红兔的科技博客](https://cyberhongtu.com/2025/05/24/ruff%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97%EF%BC%9A%E6%9C%80%E6%96%B0%E7%9A%84%E8%B6%85%E5%BF%AB%E9%80%9F%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%B7%A5%E5%85%B7/)
+
+### Pyrefly
+
+* [用 Rust 重塑开发体验：Meta 推出 PyreFly 类型检查器 - 掘金](https://juejin.cn/post/7510525852963586048)
 
 ### 相关资料
 
@@ -219,6 +224,12 @@ modified: 2026-07-10 21:10:13
 #### 列表
 
 * [python技巧——将list中的每个int元素转换成str\_list int 赚str-CSDN博客](https://blog.csdn.net/google19890102/article/details/80932546)
+
+---
+
+## 相关网站
+
+* [赛博红兔的科技博客](https://cyberhongtu.com)
 
 ---
 

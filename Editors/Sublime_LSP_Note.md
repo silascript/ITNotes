@@ -7,7 +7,7 @@ tags:
   - plugin
   - lsp
 created: 2026-11-06 12:10:23
-modified: 2026-11-07 12:52:18
+modified: 2026-11-07 21:02:50
 ---
 
 # Sublime LSP 笔记
@@ -243,11 +243,41 @@ Sublime LSP 与 [Python](../Python/Python_Note.md) 相关的有以下三个插�
 
 ##### LSP-ruff
 
- [LSP-ruff](https://packagecontrol.io/packages/LSP-ruff) [![LSP-ruff Repo](https://img.shields.io/github/stars/sublimelsp/LSP-ruff)](https://github.com/sublimelsp/LSP-ruff) 插件安装完，会内置 [ruff-lsp](../Protocols/LSP_Note.md#ruff-lsp)。
+ [LSP-ruff](https://packagecontrol.io/packages/LSP-ruff) [![LSP-ruff Repo](https://img.shields.io/github/stars/sublimelsp/LSP-ruff)](https://github.com/sublimelsp/LSP-ruff) 插件安装完，会内置 [ruff](../Protocols/LSP_Note.md#lang_lsps_python_ruff)。
 
 ###### 安装与配置
 
-安装 [LSP](#LSP) 和 [LSP-ruff](https://packagecontrol.io/packages/LSP-ruff) 插件，重启 Sublime 等内置 ruff-lsp 安装完后，即可使用。
+安装 [LSP](#LSP) 和 [LSP-ruff](https://packagecontrol.io/packages/LSP-ruff) 插件，重启 Sublime 等内置 ruff 安装完后，即可使用。
+
+> [!info] 
+> 
+> 因为 ruff 从 0.4.5 版本开始内置了使用 [Rust_Note](../Rust/Rust_Note.md) 编写的LSP，所以用0.4.5版本之后的ruff，就已经拥有LSP功能了，不用再另装 [LSP-pyright](#LSP-pyright) 或 [Pyrefly 配置](#Pyrefly%20配置) 作为 LSP 使用了。如果不确定当前的 LSP-ruff 插件装的 ruff 是否是拥有 LSP 能力，可以使用试着调用 `.cache` 目录下 LSP-ruff 目录下的 `ruff`，使用其子命令 `server`，看下能不能调出来，如下：
+> 
+> ```shell
+> .cache/sublime-text/Package\ Storage/LSP-ruff/server-venv-da334778/.venv/bin/ruff server --help
+> Run the language server
+>
+> Usage: ruff server [OPTIONS]
+> 
+> ```
+> 
+
+如果不想装 LSP-ruff 插件，也可以直接在 [LSP](#LSP) 插件中配置 `ruff`：
+
+```json
+{
+	"ruff": {
+		"enabled": true,
+		"command": [
+			"ruff",
+			"server"
+		],
+		"selector": "source.python"
+	}
+}
+```
+
+但注意的是，无论是使用 LSP-ruff，还是通用配置调用 Sublime 外部的 `ruff`，虽然 ruff 0.4.5 版本后内置了 LSP，但这个 LSP 是没有代码提示功能的，所以建议还是得配合 [LSP-pyright](#LSP-pyright) 或 [Pyrefly](#Pyrefly%20配置) 这些「真 LSP」来使用。
 
 ##### Pyrefly 配置
 

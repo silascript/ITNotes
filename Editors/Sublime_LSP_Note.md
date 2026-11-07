@@ -7,7 +7,7 @@ tags:
   - plugin
   - lsp
 created: 2026-11-06 12:10:23
-modified: 2026-11-06 20:20:10
+modified: 2026-11-07 12:52:18
 ---
 
 # Sublime LSP 笔记
@@ -249,9 +249,27 @@ Sublime LSP 与 [Python](../Python/Python_Note.md) 相关的有以下三个插�
 
 安装 [LSP](#LSP) 和 [LSP-ruff](https://packagecontrol.io/packages/LSP-ruff) 插件，重启 Sublime 等内置 ruff-lsp 安装完后，即可使用。
 
+##### Pyrefly 配置
+
+如果想要使用 [Pyrefly](../Protocols/LSP_Note.md#Pyrefly)，因为 [Sublime](Sublime_Note.md) 没有为其提供针对性的LSP插件，所以只有在 [LSP](#LSP) 插件中配置 Pyrefly。
+
+打开 「**Preferences**」 > 「**Package Settings**」 > 「**LSP**」 > 「**Server Configurations**」，添加以下配置：
+
+```json
+{
+    "pyrefly": {
+        "enabled": true,
+        "command": ["pyrefly", "lsp"],
+        "selector": "source.python"
+    }
+}
+```
+
+Pyrefly 可以配合 [LSP-ruff](#LSP-ruff) 插件使用。因为Pyrefly本身没有格式化功能，而 [LSP-ruff](#LSP-ruff) 正好补上了这个功能。
+
 #### LSP-jdtls
 
-[LSP-jdtls](https://github.com/sublimelsp/LSP-jdtls) 是 [Java_Note](../Java/Java_Note.md) 的 LSP 插件。
+[LSP-jdtls](https://github.com/sublimelsp/LSP-jdtls) 是 [Java](../Java/Java_Note.md) 的 LSP 插件。
 
 如果要运行 `lsp_jdtls_run_test` 命令，得装上 [Debugger](#Debugger) 插件。
 

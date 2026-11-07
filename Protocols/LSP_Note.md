@@ -4,7 +4,7 @@ tags:
   - protocol
   - lsp
 created: 2024-04-08 00:48:22
-modified: 2026-11-07 10:05:02
+modified: 2026-11-07 11:30:30
 ---
 
 # LSP 协议笔记
@@ -199,7 +199,9 @@ pip install 'python-language-server[yapf]'
 # 或者
 pip install 'python-language-server[all]'
 ```
+
 如果报 `'install_requires' must be a string or list of strings` 类似错误，请执行以下代码：
+
 ```shell
 pip install -U setuptools
 ```
@@ -258,6 +260,26 @@ pip install -U setuptools
 
 此 LSP 当前还处于「Preview」，所以尝鲜的可以试下，不建议用于正式的生产环境。
 
+#### Pyrefly
+
+[Pyrefly](https://pyrefly.org)  [![Pyrefly Repo](https://img.shields.io/github/stars/meta/pyrefly)](https://github.com/meta/pyrefly) 是 Meta出的一款使用 [Rust](../Rust/Rust_Note.md) 写的一款 [Python](../Python/Python_Note.md) 的类型检查器及 LSP。
+
+Pyrefly 比 [pyright](#pyright) 性能好多了！
+
+##### 安装配置
+
+可以使用 [uv](../Python/Python_Note.md#python_uv)、[pip](../Python/Python_Note.md#python_pip) 、[pipx](../Python/Python_Note.md#python_pipx)、[pixi](../Python/Python_Note.md#python_pixi) 及 [Conda](../Python/Python_Conda.md) 等方式安装 Prefly。
+
+以 `pipx` 为例：
+
+```shell
+pipx install pyrefly
+```
+
+> [!tip] 
+> 
+> 更多安装相关可以参考：[Installation \| Pyrefly](https://pyrefly.org/en/docs/installation/)
+
 #### <span id="lang_lsps_python_ruff">ruff</span>
 
 [ruff](https://github.com/astral-sh/ruff)
@@ -274,7 +296,7 @@ pip install ruff-lsp
 
 > [!tip] 
 > 
-> 可以使用 pipx 安装，这样不会「污染」pip。而如果是在 [conda](../Python/Python_Note.md#python_conda) 中使用 [pipx](../Python/Python_Note.md#python_pipx) 安装，那就更好了，因为在 conda 中的 pipx 是能够在各虚拟环境中共享的，因为无论你在 conda 中哪个虚拟环境中使用 pipx 安装程序，它们都会在 `.local/bin` 目录建立「软链接」！
+> 可以使用 pipx 安装，这样不会「污染」pip。而如果是在 [Conda](../Python/Python_Note.md#python_conda) 中使用 [pipx](../Python/Python_Note.md#python_pipx) 安装，那就更好了，因为在 Conda 中的 pipx 是能够在各虚拟环境中共享的，因为无论你在 Conda 中哪个虚拟环境中使用 pipx 安装程序，它们都会在 `.local/bin` 目录建立「软链接」！
 
 ---
 

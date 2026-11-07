@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2026-11-08 02:23:22
+modified: 2026-11-08 03:51:01
 ---
 
 # NeoVim 笔记
@@ -2083,6 +2083,8 @@ neovim 并没有自动补全功能，它的补全是通过 `omnifunc` 绑定来�
 
 ##### python lsp
 
+###### pyright
+
 python lsp 上是最常用的是： [pyright](Vim_LSP_Complete.md#pyright)+[ruff-lsp](Vim_LSP_Complete.md#ruff-lsp) 的组合。
 
 [pyright](../Protocols/LSP_Note.md#pyright) 是用来补全代码，而 [ruff](../Protocols/LSP_Note.md#lang_lsps_python_ruff) 是用来当 linter 用的。
@@ -2252,6 +2254,45 @@ require("settings_colorscheme")
 require("lsp_enable")
 
 ```
+
+###### pyrefly
+
+也可以使用 [Pyrefly](../Protocols/LSP_Note.md#Pyrefly)+[ruff](../Protocols/LSP_Note.md#lang_lsps_python_ruff) 的组合方式。
+
+使用原生的 `vim.lsp.config` 方式配置 pyrefly：
+
+```lua
+---@type vim.lsp.Config
+return {
+	cmd = { "pyrefly", "lsp" },
+	filetypes = { "python" },
+	root_markers = {
+		"pyrefly.toml",
+		"pyproject.toml",
+		"setup.py",
+		"setup.cfg",
+		"requirements.txt",
+		"Pipfile",
+		".git",
+	},
+	settings = {
+		python = {
+			pyrefly = {
+				typeCheckingMode = "default",
+			},
+		},
+	},
+	on_exit = function(code, _, _)
+		vim.schedule(function()
+			vim.notify("Closing Pyrefly LSP exited with code: " .. code, vim.log.levels.INFO)
+		end)
+	end,
+}
+```
+
+> [!tip] 
+> 
+> 更多 neovim 配置 pyrefly 请参考：[IDE Installation \| Pyrefly](https://pyrefly.org/en/docs/IDE/#neovim)
 
 #### lspsaga.nvim
 

@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2026-11-08 02:21:34
+modified: 2026-11-08 02:23:22
 ---
 
 # NeoVim 笔记
@@ -2083,9 +2083,9 @@ neovim 并没有自动补全功能，它的补全是通过 `omnifunc` 绑定来�
 
 ##### python lsp
 
-python lsp 上是使用 [pyright](Vim_LSP_Complete.md#pyright)+[ruff-lsp](Vim_LSP_Complete.md#ruff-lsp) 的组合。
+python lsp 上是最常用的是： [pyright](Vim_LSP_Complete.md#pyright)+[ruff-lsp](Vim_LSP_Complete.md#ruff-lsp) 的组合。
 
-pyright 是用来补全代码，而 ruff-lsp 是用来当 linter 用的。
+[pyright](../Protocols/LSP_Note.md#pyright) 是用来补全代码，而 [ruff](../Protocols/LSP_Note.md#lang_lsps_python_ruff) 是用来当 linter 用的。
 
 使用了 [nvim-lspconfig](#nvim-lspconfig) 插件，具体配置如下：
 

@@ -7,7 +7,7 @@ tags:
   - material
   - list
 created: 2025-08-31 17:57:20
-modified: 2026-11-05 10:30:07
+modified: 2026-11-08 02:10:27
 ---
 
 # Vim 资料清单
@@ -48,6 +48,10 @@ modified: 2026-11-05 10:30:07
 * [详解nvim内建LSP体系与基于nvim-cmp的代码补全体系 - 知乎](https://zhuanlan.zhihu.com/p/643033884)
 * [Neovim 内置 LSP 配置 (二)：自动代码补全 - 知乎](https://zhuanlan.zhihu.com/p/445331508)
 * [Vim变身IDE：LSP十大现代插件深度评测 - OSCHINA](https://my.oschina.net/emacs_8000221/blog/19410105)
+* [config/nvim/doc/lsp\_lint.md at main · zhangwwpeng/config · GitHub](https://github.com/zhangwwpeng/config/blob/main/nvim/doc/lsp_lint.md)
+* [NeoVim 使用笔记 - 凌杰 - 博客园](https://www.cnblogs.com/owlman/p/23077541)
+* [Neovim 配置 Python LSP 实战：pyright 与 pyrefly 方案对比-CSDN博客](https://blog.csdn.net/weixin_28839699/article/details/166497171)
+* [Neovim 配置 Python LSP：pyright 与 pyrefly 双服务器实战指南-CSDN博客](https://blog.csdn.net/weixin_28831461/article/details/166608983)
 
 #### nvim-lspconfig
 
@@ -56,6 +60,8 @@ modified: 2026-11-05 10:30:07
 * [📜2025-04-27 nvim-lspconfig v2でNeovim 0.11のLSPに最適な設定を構成する - Minerva](https://minerva.mamansoft.net/Notes/%F0%9F%93%9C2025-04-27+nvim-lspconfig+v2%E3%81%A7Neovim+0.11%E3%81%AELSP%E3%81%AB%E6%9C%80%E9%81%A9%E3%81%AA%E8%A8%AD%E5%AE%9A%E3%82%92%E6%A7%8B%E6%88%90%E3%81%99%E3%82%8B)
 * [NeoVim Builtin LSP的基本配置](https://xfyuan.github.io/2021/02/neovim-builtin-lsp-basic-configuration/)
 * [nvim-lspconfig server configuration doc](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
+* [Docs: Setup Pyrefly with Neovim · Issue #55 · meta/pyrefly · GitHub](https://github.com/meta/pyrefly/issues/55)
+* [IDE Installation \| Pyrefly](https://pyrefly.org/en/docs/IDE/#vimneovim--cocnvim)
 
 ### cmp
 

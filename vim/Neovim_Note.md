@@ -7,7 +7,7 @@ tags:
   - config
   - plugin
 created: 2023-08-18 19:44:52
-modified: 2025-09-26 05:20:01
+modified: 2026-11-08 02:21:34
 ---
 
 # NeoVim 笔记
@@ -2085,7 +2085,9 @@ neovim 并没有自动补全功能，它的补全是通过 `omnifunc` 绑定来�
 
 python lsp 上是使用 [pyright](Vim_LSP_Complete.md#pyright)+[ruff-lsp](Vim_LSP_Complete.md#ruff-lsp) 的组合。
 
-pyright 是用来补全代码，而 ruff-lsp 是用来当 linter 用的。具体配置如下：
+pyright 是用来补全代码，而 ruff-lsp 是用来当 linter 用的。
+
+使用了 [nvim-lspconfig](#nvim-lspconfig) 插件，具体配置如下：
 
 ```lua
 -- python
@@ -2114,6 +2116,141 @@ lspconfig.pyright.setup {
 -- 使用 ruff 或 ruff-lsp 来作python分析诊断
 -- lspconfig.ruff.setup {}
 lspconfig.ruff_lsp.setup {}
+```
+
+使用原生 `vim.lsp.conf` 接口配置
+
+1. 为 pyright 创建一个独立的配置文件，如 `pyright.lua`：
+
+```lua
+---@brief
+---
+--- https://github.com/microsoft/pyright
+---
+--- `pyright`, a static type checker and language server for python
+
+local function set_python_path(command)
+    local path = command.args
+    local clients =
+        vim.lsp.get_clients {
+        bufnr = vim.api.nvim_get_current_buf(),
+        name = "pyright"
+    }
+    for _, client in ipairs(clients) do
+        if client.settings then
+            client.settings.python = vim.tbl_deep_extend("force", client.settings.python, {pythonPath = path})
+        else
+            client.config.settings =
+                vim.tbl_deep_extend("force", client.config.settings, {python = {pythonPath = path}})
+        end
+        client:notify("workspace/didChangeConfiguration", {settings = nil})
+    end
+end
+
+---@type vim.lsp.Config
+return {
+    cmd = {"pyright-langserver", "--stdio"},
+    filetypes = {"python"},
+    root_markers = {
+        "pyproject.toml",
+        "setup.py",
+        "setup.cfg",
+        "requirements.txt",
+        "Pipfile",
+        "pyrightconfig.json",
+        ".git"
+    },
+    settings = {
+        pyright = {
+            disableOrganizeImport = true
+        },
+        python = {
+            analysis = {
+                -- autoSearchPaths = true,
+                -- useLibraryCodeForTypes = true,
+                -- diagnosticMode = "openFilesOnly"
+                ignore = {"*"}
+            }
+        }
+    },
+    on_attach = function(client, bufnr)
+        vim.api.nvim_buf_create_user_command(
+            bufnr,
+            "LspPyrightOrganizeImports",
+            function()
+                local params = {
+                    command = "pyright.organizeimports",
+                    arguments = {vim.uri_from_bufnr(bufnr)}
+                }
+
+                -- Using client.request() directly because "pyright.organizeimports" is private
+                -- (not advertised via capabilities), which client:exec_cmd() refuses to call.
+                -- https://github.com/neovim/neovim/blob/c333d64663d3b6e0dd9aa440e433d346af4a3d81/runtime/lua/vim/lsp/client.lua#L1024-L1030
+                client.request("workspace/executeCommand", params, nil, bufnr)
+            end,
+            {
+                desc = "Organize Imports"
+            }
+        )
+        vim.api.nvim_buf_create_user_command(
+            bufnr,
+            "LspPyrightSetPythonPath",
+            set_python_path,
+            {
+                desc = "Reconfigure pyright with the provided python path",
+                nargs = 1,
+                complete = "file"
+            }
+        )
+    end
+}
+
+
+```
+
+2. 启用 pyright。
+在一个独立配置文件中，如 `lsp_enable.lua `，加入上面 pyright 的配置文件，使用 `vim.lsp.enable` 启用 pyright，即可：
+
+```lua
+vim.lsp.enable({
+	"clangd",
+	"lua_ls",
+	"ts_ls",
+	"jdtls",
+	"kotlin_lsp",
+	"gopls",
+	 "pyright",
+	-- "pyrefly",
+	"ruff",
+	"bashls",
+	"rust_analyzer",
+	"taplo",
+	"cssls",
+	"html",
+	"emmet_language_server",
+	"docker_language_server",
+	"solargraph",
+	-- "sqlls",
+	"sqls",
+	"markdown_oxide",
+})
+```
+
+3. 加载 `lsp_enable.lua` 文件，如：
+```lua
+--  加载基础配置
+require("basic")
+-- 加载lazy.nvim 入口文件
+require("laziness")
+
+-- 加载配色配置
+-- 配色是lazy.nvim管理的
+-- 所以配色配置得在lazy.nvim加载后才加载
+require("settings_colorscheme")
+
+-- 加载lsp启用配置
+require("lsp_enable")
+
 ```
 
 #### lspsaga.nvim

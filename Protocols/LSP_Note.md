@@ -4,7 +4,7 @@ tags:
   - protocol
   - lsp
 created: 2024-04-08 00:48:22
-modified: 2026-11-06 20:10:14
+modified: 2026-11-07 10:05:02
 ---
 
 # LSP 协议笔记
@@ -170,11 +170,7 @@ python lsp 实现：
 
 [Pydev on VSCode ](https://www.pydev.org/vscode/index.html)： 这是 Pydev 针对 VSCode 的 python 插件。这个插件应该是既是 Server 也是 Client。
 
-之前两种 LSP 跟 插件耦合太明显，下面几款 LSP 能在各种编辑器用：
-
----
-
-下面几款 Python LSP 名字都有点相近：
+这两种 LSP 跟 插件耦合太明显，下面几款 LSP 能在各种编辑器用：
 
 #### pyright
 
@@ -182,7 +178,7 @@ python lsp 实现：
 
 ##### 安装
 
-pyright 可以用 npm 装也可以用 [pip](../Python/Python_Note.md#pip) 装，不过还是建议使用 npm 装，毕竟人家是用 [TypeScript](../JS/TypeScript/TypeScript_Note.md) 写的嘛！
+pyright 可以用 npm 装也可以用 [pip](../Python/Python_Note.md#pip) 装，不过还是建议使用 [npm](../Node/NodeJS_Note.md#npm) 装，毕竟人家是用 [TypeScript](../JS/TypeScript/TypeScript_Note.md) 写的嘛！
 
 ```shell
 npm i -g pyright
@@ -194,7 +190,7 @@ npm i -g pyright
 
 #### python-language-server
 
-[python-language-server](https://github.com/palantir/python-language-server) 这款 LSP 是基于 [jedi](#jedi) 。 这款 LSP 需要 Python 版本是 **3.5+**。 这款 LSP 是 [vim-lsp](https://github.com/prabirshrestha/vim-lsp) 示例配置中 Python 的 LSP。 这款 LSP 依赖的 [jedi] 版本相对「保守」点。
+[python-language-server](https://github.com/palantir/python-language-server) 这款 LSP 是基于 [jedi](#jedi) 。 这款 LSP 需要 [Python](../Python/Python_Note.md) 版本是 **3.5+**。 这款 LSP 是 [vim-lsp](https://github.com/prabirshrestha/vim-lsp) 示例配置中 Python 的 LSP。 这款 LSP 依赖的 [jedi] 版本相对「保守」点。
 
 python-language-server 安装：
 
@@ -218,7 +214,7 @@ pip install -U setuptools
 
 > [!tip] 
 > 
-> 其他 python 的 LSP 代码提示不正常，有可能是依赖的 jedi 等模块版本发生冲突，这大概是直接在 pip 中安装多个 python 的 LSP 所致。所以建议，如果想换着 LSP 来「玩」，可以使用 [pipx](../Python/Python_Note.md#pipx) 来装，这样每个 LSP 都有各自的虚拟环境，互不干扰。
+> 其他 python 的 LSP 代码提示不正常，有可能是依赖的 jedi 等模块版本发生冲突，这大概是直接在 [pip](../Python/Python_Note.md#python_pip) 中安装多个 Python 的 LSP 所致。所以建议，如果想换着 LSP 来「玩」，可以使用 [pipx](../Python/Python_Note.md#pipx) 来装，这样每个 LSP 都有各自的虚拟环境，互不干扰。
 
 jedi-language-server 安装：
 
@@ -258,7 +254,7 @@ pip install -U setuptools
 
 #### ty
 
-[ty](https://github.com/astral-sh/ty) 是一个使用 [Rust](../Rust/Rust_Note.md) 写非常新的 [Python](../Python/Python_Note.md)LSP。
+[ty](https://github.com/astral-sh/ty) 是一个使用 [Rust](../Rust/Rust_Note.md) 写非常新的 [Python](../Python/Python_Note.md) 的 LSP。
 
 此 LSP 当前还处于「Preview」，所以尝鲜的可以试下，不建议用于正式的生产环境。
 

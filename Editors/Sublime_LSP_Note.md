@@ -7,7 +7,7 @@ tags:
   - plugin
   - lsp
 created: 2026-11-06 12:10:23
-modified: 2026-11-06 20:14:42
+modified: 2026-11-06 20:20:10
 ---
 
 # Sublime LSP 笔记
@@ -219,9 +219,12 @@ Sublime LSP 与 [Python](../Python/Python_Note.md) 相关的有以下三个插�
 
 ##### LSP-pyright
 
-[LSP-pyright](https://github.com/sublimelsp/LSP-pyright)  
+[LSP-pyright](https://packagecontrol.io/packages/LSP-pyright) [![LSP-pyright Repo](https://img.shields.io/github/stars/sublimelsp/LSP-pyright)](https://github.com/sublimelsp/LSP-pyright) 插件内置的 LSP 是微软的 [pyright](https://github.com/microsoft/pyright)。
 
-lsp-pyright 配置：
+###### 安装与配置
+
+1. 安装 [LSP](#LSP) 与 [LSP-pyright](https://packagecontrol.io/packages/LSP-pyright) 插件
+2. lsp-pyright 配置：
 
 ```json
 "settings": {

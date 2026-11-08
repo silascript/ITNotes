@@ -14,7 +14,7 @@ tags:
   - 机场
   - list
 created: 2024-07-30 23:20:26
-modified: 2026-10-20 11:25:56
+modified: 2026-11-08 11:00:32
 ---
 
 # 梯子资料
@@ -86,6 +86,7 @@ modified: 2026-10-20 11:25:56
 		* [clash verge rev  Wiki · GitHub](https://github.com/clashbk/clash/wiki/clash-verge-rev)
 		* [clash party  Wiki · GitHub](https://github.com/clashbk/clash/wiki/clash-party)
 		* [flclash  Wiki · GitHub](https://github.com/clashbk/clash/wiki/flclash)
+		* [Sparkle 使用教程 - Mihomo/Clash Meta](https://clashmihomo.com/sparkle-tutorial/)
 
 * [【2024年】V2rayN 和 Clash 客户端哪个好用？机场小白应该如何选择？ – 胖橙博客](https://jiasupanda.com/v2rayn-clash)
 * [如何使用疾风云机场？-2025 VPN](https://gfwoff.com/how-to-use-jifeng-cloud-vpn/)

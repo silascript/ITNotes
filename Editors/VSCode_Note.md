@@ -5,7 +5,7 @@ tags:
   - vscode
   - vscodium
 created: 2023-01-30 11:19:11
-modified: 2026-10-18 03:08:32
+modified: 2026-11-08 20:48:49
 ---
 
 # VSCode 笔记
@@ -413,6 +413,35 @@ jq '.userDataProfiles[] | select(.name=="Test_Profile") | .name=="Test_Profile"'
 
 ```shell
 jq -r --arg p_name $profile_name '.userDataProfiles[] | select(.name==$p_name) |.location' ~/.config/Code/User/globalStorage/storage.json
+```
+
+使用 [Lua](../Lua/Lua_Note.md) 示例：
+
+```lua
+local home_path = os.getenv("HOME")
+
+local storage_file = home_path .. "/.config/Code/User/globalStorage/storage.json"
+local profile_name = "Test01"
+
+-- 格式化jq查询命令
+-- local cmd = string.format("jq --arg p_name %s '.userDataProfiles[] | select(.name==$p_name) | .name==$p_name' %s",
+-- 	profile_name, storage_file)
+
+local cmd2 = string.format("jq -r --arg p_name %s '.userDataProfiles[] | select(.name==$p_name) |.location' %s",
+	profile_name, storage_file)
+
+
+-- print(cmd)
+print(cmd2)
+-- 打开一个管道读取命令输出
+-- local handle = io.popen(cmd)
+local handle = io.popen(cmd2)
+
+-- 读取全部输出内容
+local result = handle:read("*a")
+handle:close()
+
+print(result)
 ```
 
 > [!tip] 

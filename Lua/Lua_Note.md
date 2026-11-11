@@ -4,7 +4,7 @@ tags:
   - PL
   - lua
 created: 2023-01-31 11:31:14
-modified: 2026-11-10 13:00:12
+modified: 2026-11-12 03:18:02
 ---
 
 # Lua 笔记
@@ -288,6 +288,32 @@ Lua 有几种常见的包管理器：
 #### LuaRocks
 
    [LuaRocks](https://luarocks.org/) 是 Lua 生态中最流行的包管理工具。
+
+### lfs
+
+LFS：LuaFileSystem（简称 lfs） 是 Lua 语言的一个轻量级、跨平台文件系统扩展库，由 LuaFileSystem 维护。它补充了 Lua 标准库在文件和目录操作上的不足，支持 Unix（Linux、BSD、macOS）和 Windows 系统。
+
+通用 [LuaRocks](#LuaRocks) 安装：
+
+```shell
+luarocks install luafilesystem --local
+```
+
+代码中引入：
+
+```lua
+local lfs = require("lfs")
+```
+
+### Penlight
+
+[Penlight](https://github.com/lunarmodules/Penlight) 这是一套‌**纯 Lua 编写的通用工具库**‌，功能灵感很多来自 [Python](../Python/Python_Note.md) 标准库，主要覆盖输入数据处理、函数式编程和操作系统路径管理。‌‌
+
+这个库依赖 [lfs](#lfs) 库。
+
+```shell
+luarocks install penlight --local
+```
 
 ### json
 

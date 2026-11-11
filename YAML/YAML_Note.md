@@ -4,7 +4,7 @@ tags:
   - yaml
   - yml
 created: 2023-08-18 19:44:52
-modified: 2025-08-22 02:22:21
+modified: 2026-11-12 03:18:15
 ---
 
 # YAML 笔记
@@ -66,7 +66,9 @@ address: Shanghai,
 > 
 > yaml 中的字符串引号，正好与 [Shell](../Linux/Shell/Shell_Note.md) 相反，它是双引号 `"` 不转义，单引号 `'` 转义。
 
-### 对象
+### 映射
+
+映射：Mapping/Dictionaries，类似于编程语言中的字典或
 
 ```yaml
 person:
@@ -81,9 +83,11 @@ person:
 person: {name: 陈皮, age: 18, man: true}
 ```
 
-### 数组
+### 序列
 
-用**短横杆**加**空格** `-` 开头的行，组成数组的每一个元素：
+序列：Sequences/Lists，类似于编程语言中的数组或列表。
+
+用**短横杆**加**空格** `-` 开头的行，组成序列的每一个元素：
 
 ```yaml
 address:
@@ -98,7 +102,7 @@ address:
 address: [深圳, 北京, 广州]
 ```
 
-#### 数组里嵌套数组
+#### 序列里嵌套序列
 
 ```yaml
 twoArr:  
@@ -112,7 +116,7 @@ twoArr:
       - 30
 ```
 
-#### 数组中嵌套对象
+#### 序列中嵌套对象
 
 ```yaml
 childs:

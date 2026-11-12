@@ -14,7 +14,7 @@ tags:
   - 机场
   - list
 created: 2024-07-30 23:20:26
-modified: 2026-11-08 11:00:32
+modified: 2026-11-12 10:30:43
 ---
 
 # 梯子资料
@@ -39,6 +39,7 @@ modified: 2026-11-08 11:00:32
 * [按流量付费的机场推荐 - Kerry的学习笔记](https://kerrynotes.com/best-vpn-pay-by-traffic/)
 * [2025年性价比机场推荐（持续更新）](https://kerrynotes.com/cost-effective-ss-proxy/)
 * [2025年最新性价比机场推荐](https://github.com/KaWaIDeSuNe/xingjiabijichang)
+* [jdnei/JiChangTuiJian: 2026最新好用的机场推荐与节点分享 · GitHub](https://github.com/jdnei/JiChangTuiJian)
 * [机场推荐2026](https://github.com/029danio/fly)
 * [低价机场推荐](https://github.com/KaWaIDeSuNe/dijiajichang)
 * [性价比机场测速 - by Duang](https://duangks.com)

@@ -14,7 +14,7 @@ tags:
   - xray
   - 机场
 created: 2024-05-25 22:58:31
-modified: 2026-11-14 20:05:39
+modified: 2026-11-14 20:12:31
 ---
 
 # 梯子笔记
@@ -1100,9 +1100,11 @@ Clash-Verge-Rev 的数据目录：`~/.local/share/clash-verge` 及 `~/.local/sha
 
 ##### 覆写
 
+「全局扩展覆写」功能，即使用 [YAML](../YAML/YAML_Note.md) 形式，在 Clash-Verge-Rev 新版是被阉割的，所以还是推荐使用脚本方式。
+
 「全局扩展脚本」，右键编辑文件，添加如下：
 
-```json
+```js
 // Define main function (script entry)
 
 // function main(config, profileName) {
@@ -1212,6 +1214,10 @@ function main(config) {
 }
 
 ```
+
+> [tip]
+> 
+> 其实还是存在问题，特定域名强制直连这部分是不生效的。对比 [Clash-Party](#Clash-Party) 的覆写功能，真是垃圾！
 
 #### Clash-Nyanpasu
 

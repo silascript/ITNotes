@@ -14,7 +14,7 @@ tags:
   - 机场
   - list
 created: 2024-07-30 23:20:26
-modified: 2026-11-12 10:30:43
+modified: 2026-11-14 19:54:59
 ---
 
 # 梯子资料
@@ -77,6 +77,8 @@ modified: 2026-11-12 10:30:43
 
 * [GitHub - Loyalsoldier/clash-rules: 🦄️ 🎃 👻 Clash Premium 规则集(RULE-SET)](https://github.com/Loyalsoldier/clash-rules)
 * [GitHub - UykiZhao/Clash-Party-Override-Rule: Clash Party / Mihomo 覆盖规则](https://github.com/UykiZhao/Clash-Party-Override-Rule)
+* [GitHub - Accademia/Clash\_Configuration\_Template: 🔥🔥🔥 🇺🇸 美国 数字居民级 Clash 配置模板 🔥🔥🔥](https://github.com/Accademia/Clash_Configuration_Template)
+* [dahaha-365/YaNet · GitHub](https://github.com/dahaha-365/YaNet/tree/main/Mihomo)
 
 ---
 

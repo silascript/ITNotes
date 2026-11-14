@@ -5,7 +5,7 @@ tags:
   - material
   - list
 created: 2025-05-28 01:33:13
-modified: 2026-11-12 02:24:10
+modified: 2026-11-13 10:21:50
 ---
 
 # Lua 资料清单
@@ -34,6 +34,7 @@ modified: 2026-11-12 02:24:10
 
 * [Lua 包管理工具 Luarocks 详解](https://segmentfault.com/a/1190000003920034)
 * [luarocks安装以及lfs安装 - SonoFelice - 博客园](https://www.cnblogs.com/sonofelice/p/8275811.html)
+* [Lua工程化实践从Penlight到Luarocks的演进之路](https://my.oschina.net/emacs_7993939/blog/19217419)
 
 ---
 

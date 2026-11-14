@@ -5,7 +5,7 @@ tags:
   - unicode
   - cjk
 created: 2023-01-31 11:31:14
-modified: 2026-09-21 18:15:59
+modified: 2026-11-12 12:51:02
 ---
 
 # 字体笔记
@@ -72,7 +72,7 @@ modified: 2026-09-21 18:15:59
 
 中国传统字体排印上的字号单位是「[号](#号)」，之后「点」制活字传入中国，而后采用「点」「[号](#号)」兼容并行的体制，但各地活字厂商的活字尺寸不尽相同，[号](#号)、点、毫米等单位之间也有不同换算。另外，由于「点」基于英制，用公制单位换算时只能采用近似数值。
 
-中国也将「点」俗称为「磅」，缩写为 `P` 或`p`。
+中国也将「点」俗称为「磅」，缩写为 `P` 或 `p`。
 
 1958 年，中国文化部出版事业管理局为了统一活字的标准曾公布《关于活字及字模规格化的决定（草案）》，里面直接规定「每点为 0.35 毫米」，铅字的高度规定为 23.32 毫米。
 
@@ -119,18 +119,20 @@ modified: 2026-09-21 18:15:59
 
 #cjk/字数
 
-|                                  **字符集**                                   | **字数** | **Unicode 编码** | **合计** |
-|:-----------------------------------------------------------------------------:|:--------:|:----------------:|:--------:|
-|    [基本汉字](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=jbhz)    | 20902 字 |    4E00-9FA5     | 20902 字 |
-| [基本汉字补充](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=jbhzbc) |  90 字   |    9FA6-9FFF     | 20992 字 |
-|      [扩展A](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kza)      | 6592 字  |    3400-4DBF     | 27584 字 |
-|      [扩展B](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzb)      | 42720 字 |   20000-2A6DF    | 70304 字 |
-|      [扩展C](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzc)      | 4154 字  |   2A700-2B739    | 74458 字 |
-|      [扩展D](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzd)      |  222 字  |   2B740-2B81D    | 74680 字 |
-|      [扩展E](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kze)      | 5762 字  |   2B820-2CEA1    | 80442 字 |
-|      [扩展F](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzf)      | 7473 字  |   2CEB0-2EBE0    | 87915 字 |
-|      [扩展G](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzg)      | 4939 字  |   30000-3134A    | 92854 字 |
-|      [扩展H](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzh)      | 4192 字  |   31350-323AF    | 97046 字 |
+|                                  **字符集**                                   | **字数** | **Unicode 编码** | **合计**  |
+|:-----------------------------------------------------------------------------:|:--------:|:----------------:|:---------:|
+|    [基本汉字](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=jbhz)    | 20902 字 |    4E00-9FA5     | 20902 字  |
+| [基本汉字补充](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=jbhzbc) |  90 字   |    9FA6-9FFF     | 20992 字  |
+|      [扩展A](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kza)      | 6592 字  |    3400-4DBF     | 27584 字  |
+|      [扩展B](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzb)      | 42720 字 |   20000-2A6DF    | 70304 字  |
+|      [扩展C](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzc)      | 4154 字  |   2A700-2B739    | 74458 字  |
+|      [扩展D](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzd)      |  222 字  |   2B740-2B81D    | 74680 字  |
+|      [扩展E](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kze)      | 5762 字  |   2B820-2CEA1    | 80442 字  |
+|      [扩展F](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzf)      | 7473 字  |   2CEB0-2EBE0    | 87915 字  |
+|      [扩展G](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzg)      | 4939 字  |   30000-3134A    | 92854 字  |
+|      [扩展H](https://www.qqxiuzi.cn/zh/hanzi-unicode-bianma.php?zfj=kzh)      | 4192 字  |   31350-323AF    | 97046 字  |
+|                                     扩展 I                                     |  622 字  |   2EBF0-2EE5D    | 97668 字  |
+|                                     扩展 J                                     | 4298 字  |   323B0-33479    | 101966 字 | 
 
 ### <span id="fonts_zh_gb18030">GB18030</span>
 
@@ -543,7 +545,7 @@ Google 版宋体的叫「Noto Serif CJK」，Adobe 版宋体叫「Source Han Ser
 
 ##### 霞鶩文楷 TC
 
-[霞鶩文楷 TC](https://github.com/lxgw/LxgwWenkaiTC) 是 [霞鶩文楷](https://github.com/lxgw/LxgwWenkai) 的繁体版，其字形参考了[傳承字形標準化文件](https://github.com/ichitenfont/inheritedglyphs)。
+[霞鶩文楷 TC](https://github.com/lxgw/LxgwWenkaiTC) 是 [霞鶩文楷](https://github.com/lxgw/LxgwWenkai) 的繁体版，其字形参考了 [傳承字形標準化文件](https://github.com/ichitenfont/inheritedglyphs)。
 
 ![LxgwWenkaiTC preview | 1024x600](https://raw.githubusercontent.com/lxgw/LxgwWenkaitc/main/documentation/wenkaitc-3.png)
 

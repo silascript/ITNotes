@@ -4,7 +4,7 @@ tags:
   - PL
   - lua
 created: 2023-01-31 11:31:14
-modified: 2026-11-12 03:18:02
+modified: 2026-11-12 21:28:19
 ---
 
 # Lua 笔记
@@ -288,6 +288,10 @@ Lua 有几种常见的包管理器：
 #### LuaRocks
 
    [LuaRocks](https://luarocks.org/) 是 Lua 生态中最流行的包管理工具。
+
+##### 配置
+
+将 `eval "$(luarocks path)"` 添加进 `~/.bashrc` 或 `~/.zshrc` 配置文件
 
 ### lfs
 
